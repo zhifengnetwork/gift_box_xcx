@@ -2,8 +2,6 @@
   "pages": [
     "pages/index/index",
     "pages/logs/logs",
-    "pages/home",
-    "pages/classify",
     "pages/home/home",
     "pages/classify/classify",
     "pages/my/my"
@@ -11,8 +9,9 @@
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
-    "navigationBarTitleText": "WeChat",
-    "navigationBarTextStyle": "black"
+    "navigationBarTitleText": "wechat",
+    "navigationBarTextStyle": "black",
+    "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json"
 }

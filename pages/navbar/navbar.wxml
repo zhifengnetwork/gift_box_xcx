@@ -1,0 +1,10 @@
+ <view class='status-bar'>
+   <!-- 返回按钮 -->
+    <view class='goBack' bindtap='goBack' style="padding-top:{{bar_Height}}px;"  hidden='{{show_bol}}'>			
+      <image src='../public/images/index/back.png'></image>
+    </view>
+    <!-- 标题 -->
+    <view class="tabar {{my_class ? 'tabar2':''}}" style="padding-top:{{bar_Height}}px;">
+      <text class="red">{{title}}</text>
+    </view>
+  </view>

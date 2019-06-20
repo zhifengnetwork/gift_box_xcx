@@ -1,11 +1,12 @@
 //app.js
+
 App({
   onLaunch: function () {
     // 展示本地存储能力
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    
     // 登录
     wx.login({
       success: res => {
@@ -31,9 +32,16 @@ App({
           })
         }
       }
-    })
+    }),
+      //获取设备顶部窗口的高度（不同设备窗口高度不一样，根据这个来设置自定义导航栏的高度
+      wx.getSystemInfo({
+        success: (res) => {
+          this.globalData.height = res.statusBarHeight
+        }
+      })
+
   },
   globalData: {
-    userInfo: null
+    height: 0
   }
 })

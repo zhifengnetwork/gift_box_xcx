@@ -1,13 +1,40 @@
-<!--index.wxml-->
-<view class="container">
-  <view class="userinfo">
-    <button wx:if="{{!hasUserInfo && canIUse}}" open-type="getUserInfo" bindgetuserinfo="getUserInfo"> 获取头像昵称 </button>
-    <block wx:else>
-      <image bindtap="bindViewTap" class="userinfo-avatar" src="{{userInfo.avatarUrl}}" mode="cover"></image>
-      <text class="userinfo-nickname">{{userInfo.nickName}}</text>
-    </block>
-  </view>
-  <view class="usermotto">
-    <text class="user-motto">{{motto}}</text>
+<component title='澳门星选' show_bol='{{true}}'></component>
+<!-- 轮播图 -->
+<view class='index_top'>
+  <view class='swiper_box'>
+    <swiper class='swipers' autoplay current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
+      <block wx:for="{{advimg}}" wx:key>
+        <swiper-item>
+          <image class="swiper_image" src="{{item.url}}" lazy-load="true" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">
+      <block wx:for="{{advimg}}" wx:key>
+        <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+      </block>
+    </view>
   </view>
 </view>
+<!-- 选择栏 -->
+<!-- <view class="selection_bar">
+</view> -->
+<text class="jiali_title">佳礼之供</text><text class="english">Selection Goods</text>
+<view class="img_box">
+ <view class="img_item"></view>
+ <view class="img_item"></view>
+ <view class="img_item"></view>
+ <view class="img_item"></view>
+ <view class="img_item"></view>
+ <view class="img_item"></view>
+</view>
+<text class="jiali_title">星供夏品</text><text class="english">Star Goods</text>
+<view class="dangimg_box">
+</view>
+<text class="jiali_title">时尚大牌</text><text class="english">Fashion Brands</text>
+<view class="fashion_ear">
+<view class="fashion_item"></view>
+<view class="fashion_item"></view>
+<view class="fashion_item"></view>
+</view>
+

@@ -1,21 +1,98 @@
-/**index.wxss**/
-.userinfo {
+
+/* 轮播图--s */
+.swiper_box {
+  height: auto;
+  position: relative;
+ 
+}
+.swipers {
+  height: 767rpx;
+}
+.swiper_box image {
+  width: 100%;
+  height: 100%;
+  /* border-radius: 100% 100% 100% 100% /0% 0% 30% 30%; */
+}
+/*用来包裹所有的小圆点  */
+ 
+.dots {
+  width: 210rpx;
+  height: 20rpx;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  justify-content: center;
+  flex-direction: row;
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+  bottom: 80rpx;
 }
-
-.userinfo-avatar {
-  width: 128rpx;
-  height: 128rpx;
-  margin: 20rpx;
-  border-radius: 50%;
+/*未选中时的小圆点样式 */
+.dot {
+  width: 15rpx;
+  height: 15rpx;
+  border-radius: 14rpx;
+  margin-right: 10rpx;
+  background-color: gray;
 }
-
-.userinfo-nickname {
-  color: #aaa;
+/*选中以后的小圆点样式  */
+.active {
+  width: 40rpx;
+  height: 15rpx;
+  background-color: white;
 }
+/* 轮播图--e */
+/* 选择栏--s */
+.selection_bar{
+width: 80%;
+}
+/* 选择栏--e */
+.jiali_title{
+  display: inline-block;
+  padding-left: 14rpx;
+  height: 80rpx;
+  line-height:80rpx;
+  font-size:40rpx;
+  font-weight: bolder;
+}
+.english{
+  display: inline-block;
+  height: 80rpx;
+  line-height:100rpx;
+  font-size: 30rpx;
+  padding-left: 15rpx
+}
+.img_box{
+  width: 90%;
+  margin-left: 5%;
+  height: 168pt;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  margin-bottom: 80rpx
+}
+/* 隐藏滚动条 */
+::-webkit-scrollbar {display:none}
+.img_item{
+  width: 85pt;
+  height: 168pt;
+  border: 1px solid green;
+  display: inline-block;
+  flex-shrink:0;
+  margin-top: 20rpx;
+  margin-right: 80rpx;
+  border-radius: 25rpx 
+}
+.dangimg_box{
+  width: 100%;
+  height: 400rpx;
+  border: 1px solid red
+}
+.fashion_item{
 
-.usermotto {
-  margin-top: 200px;
+  width: 101pt;
+  height: 101pt;
+  border: 1px solid red;
+  display: inline-block;
+
+
 }
