@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/home/integral/integral",
     "pages/logs/logs",
     "pages/home/home",
     "pages/classify/classify",

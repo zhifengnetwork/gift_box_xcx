@@ -1,0 +1,10 @@
+<component title='' show_bol='{{false}}'></component>
+<view class="bigger_box" style="background-image:url('../../../pages/public/images/home/integral/backgrond.png')">
+<!-- 太陽城貴賓會提供完備的一站式尊貴服務，涵蓋澳門至海外地區，由預訂交通住宿、代辦旅遊簽證，到個 -->
+<view class="global">全球尊貴娛樂體驗</view>
+<view class="global_text">太陽城責賓合提供完備的一站式尊貴服務， 涵蓋澳門至海外地區，由預打交通住宿、代辦旅遊簽證，到個人化行程安排、美食娱樂、奢華購物、專車接送等一唐俱全。</view>
+</view>
+<view>
+
+</view>
+<image src="../../../pages/public/images/home/integral/pic1.png" class="pic1"></image>

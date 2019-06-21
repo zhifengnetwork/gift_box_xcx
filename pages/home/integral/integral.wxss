@@ -1,0 +1,29 @@
+.bigger_box{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  top: 0;
+  background-size: 100% 100%; 
+  z-index: 1
+}
+.global{
+  width: 100%;
+  text-align: center;
+  color: #a08b67;
+  padding-top:170rpx;
+  padding-bottom: 39rpx;
+}
+.global_text{
+  padding:0 78rpx;
+  color: white;
+  font-size: 28rpx
+}
+.pic1{
+  width: 100%;
+  height: 421rpx;
+  position: absolute;
+  z-index: 99;
+  top: 450rpx
+  
+}
