@@ -40,12 +40,19 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 1,
 			"list": [
 				{
 					"id": 1,
 					"name": "星选",
 					"pathName": "pages/home/xingxuan/xingxuan",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 1,
+					"name": "电子礼盒",
+					"pathName": "pages/card/makecard/makecard",
 					"query": "",
 					"scene": null
 				}

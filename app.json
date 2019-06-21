@@ -5,7 +5,8 @@
     "pages/home/home",
     "pages/classify/classify",
     "pages/my/my",
-    "pages/home/xingxuan/xingxuan"
+    "pages/home/xingxuan/xingxuan",
+    "pages/card/makecard/makecard"
   ],
   "window": {
     "backgroundTextStyle": "light",

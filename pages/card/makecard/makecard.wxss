@@ -1,0 +1,128 @@
+/* pages/card/makecard.wxss */
+.makecard{
+  width: 100vw;
+  height: 100vh;
+  background: -moz-linear-gradient(45deg, #3F64FA, #B1B2FC);
+  background: -webkit-gradient(linear,0 100%,100% 0%,from(#3F64FA),to(#B1B2FC));
+  background: -webkit-linear-gradient(45deg, #3F64FA, #B1B2FC);
+  background: -o-linear-gradient(45deg, #3F64FA, #B1B2FC);
+}
+/* 头部导航 */
+.makecard_nav{
+  position: relative;
+  padding-top: 45rpx;
+  color: #fff;
+  line-height: 110rpx;
+  font-size:32rpx;
+  font-weight:500;
+  text-align: center;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  font-family:SourceHanSansCN-Medium;
+}
+.makecard_nav_img{
+  position: absolute;
+  left: 30rpx;
+  top: 45rpx;
+  bottom: 0;
+  margin: auto;
+  width:18rpx;
+  height:29rpx;
+  font-size:38rpx;
+  font-family:KaiTi;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+}
+/* 选择列表 */
+.select_list::after{
+  display: block;
+  content: '';
+  clear: both;
+}
+.select_list{
+  margin-top: 80rpx;
+  padding: 0 64rpx;
+}
+.select_item{
+  float: right;
+  position: relative;
+  margin-bottom: 60rpx;
+  width: 576rpx;
+  height: 170rpx;
+  color: #fff;
+  padding: 40rpx 0 0 130rpx;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: #303f7a;
+  border-radius: 25rpx;
+}
+.select_imgwrap{
+  position: absolute;
+  left: -50rpx;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  width: 100rpx;
+  height: 100rpx;
+  background: #2AC1E7;
+  border-radius: 20rpx;
+}
+.select_img{
+  width: 100%;
+  height: 100%;
+}
+.select_text{
+  line-height:50rpx;
+  font-size:38rpx;
+  font-weight:500;
+  color:rgba(255,255,255,1);
+  font-family:SourceHanSansCN-Medium;
+}
+.select_tips{
+  line-height:50rpx;
+  font-size:28rpx;
+  font-weight:400;
+  color:rgba(166,182,255,1);
+  font-family:SourceHanSansCN-Normal;
+}
+.select_icon{
+  position: absolute;
+  top: 55rpx;
+  right: 77rpx;
+  width:32rpx;
+  height:32rpx;
+}
+.select_icon_img{
+  width: 100%;
+  height: 100%; 
+}
+/* 预览 */
+.preview{
+  margin-top: 40rpx;
+  color: #323B7D;
+  line-height: 60rpx;
+  padding: 0 64rpx;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.preview_btn{
+  float: left;
+  width: 220rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  background: #fff;
+  border-radius: 30rpx;
+}
+.preview_succeed{
+  float: right;
+  width:72rpx;
+  height:52rpx;
+}
+.preview_succeed_img{
+  width: 100%;
+  height: 100%;
+}
