@@ -1,0 +1,41 @@
+/* pages/home/xingxuan/xingxuan.wxss */
+.xingxuan_t{
+    height: 60rpx;
+    text-align: center;
+    padding: 40rpx 0;
+}
+.xingxuan_t text{
+    height: 40rpx;
+    line-height: 40rpx;
+    font-size: 30rpx;
+    border-bottom: 5rpx solid #000;
+    padding-bottom: 10rpx;
+}
+.xingxuan_c{
+  height: 40rpx;
+  text-align: center;
+  font-size: 24rpx;
+  line-height: 40rpx;
+}
+.xingxuan_item{
+  width: 330rpx;
+  height: 500rpx;
+  background: pink;
+  margin-left: 30rpx;
+  /* display: inline-block; */
+  float: left;
+  margin-top: 30rpx;
+}
+.xingxuan_list_img{
+  width:330rpx;
+  height: 330rpx;
+  background: #f4f4f4;
+}
+.xingxuan_list_name{
+  font-size: 28rpx;
+  width: 330rpx;
+}
+.xingxuan_list_price{
+  font-size: 24rpx;
+}
+

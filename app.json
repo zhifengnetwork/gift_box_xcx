@@ -4,7 +4,8 @@
     "pages/logs/logs",
     "pages/home/home",
     "pages/classify/classify",
-    "pages/my/my"
+    "pages/my/my",
+    "pages/home/xingxuan/xingxuan"
   ],
   "window": {
     "backgroundTextStyle": "light",
