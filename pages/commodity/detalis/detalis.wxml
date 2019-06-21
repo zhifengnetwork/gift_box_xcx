@@ -1,0 +1,16 @@
+<view class="detalis_top"><component title='' show_bol='{{falsr}}'></component></view>
+<view class="detalisbox">
+  <view class="detalis_img">
+    <swiper class='detalis_swipers' autoplay current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
+      <block wx:for="{{advimg}}" wx:key>
+        <swiper-item>
+          <image class="detalis_swiper_image" src="{{item.url}}" lazy-load="true" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="detalis_top_connect">
+      <view class="detalis_top_connect_name">LOUIS VUITTON手袋</view>
+      <view class="detalis_top_connect_price">HK$<text>7600</text></view>
+    </view>
+  </view>
+</view>

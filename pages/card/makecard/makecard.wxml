@@ -1,0 +1,69 @@
+<!--pages/card/makecard.wxml-->
+<view class="makecard">
+  <!-- 头部导航 -->
+  <view class="makecard_nav">
+    <image class="makecard_nav_img" src="../../public/images/index/back_white.png"></image>
+    <text>制作电子礼盒</text>
+  </view>
+  <!-- 选择列表-s -->
+  <view class="select_list">
+    <!-- 列表项-s -->
+    <view class="select_item">
+      <view class="select_imgwrap">
+        <image class="select_img"></image>
+      </view>
+      <view class="select_text">选择音乐</view>
+      <view class="select_tips">确认歌曲</view>
+      <view class="select_icon">
+        <image class="select_icon_img" src="../../public/images/card/revision.png"></image>
+      </view>
+    </view>
+    <!-- 列表项-e -->
+    <!-- 列表项-s -->
+    <view class="select_item">
+      <view class="select_imgwrap">
+        <image class="select_img"></image>
+      </view>
+      <view class="select_text">选择音乐</view>
+      <view class="select_tips">确认歌曲</view>
+      <view class="select_icon">
+        <image class="select_icon_img" src="../../public/images/card/revision.png"></image>
+      </view>
+    </view>
+    <!-- 列表项-e -->
+    <!-- 列表项-s -->
+    <view class="select_item">
+      <view class="select_imgwrap">
+        <image class="select_img"></image>
+      </view>
+      <view class="select_text">选择音乐</view>
+      <view class="select_tips">确认歌曲</view>
+      <view class="select_icon">
+        <image class="select_icon_img" src="../../public/images/card/revision.png"></image>
+      </view>
+    </view>
+    <!-- 列表项-e -->
+    <!-- 列表项-s -->
+    <view class="select_item">
+      <view class="select_imgwrap">
+        <image class="select_img"></image>
+      </view>
+      <view class="select_text">选择音乐</view>
+      <view class="select_tips">确认歌曲</view>
+      <view class="select_icon">
+        <image class="select_icon_img" src="../../public/images/card/revision.png"></image>
+      </view>
+    </view>
+    <!-- 列表项-e -->
+  </view>
+  <!-- 选择列表-e -->
+  <view class="preview">
+    <view class="preview_btn">
+      预览
+    </view>
+    <view class="preview_succeed">
+      <image class="preview_succeed_img" src="../../public/images/card/succeed.png"></image>
+    </view>
+  </view>
+  <!-- 预览-e -->
+</view>

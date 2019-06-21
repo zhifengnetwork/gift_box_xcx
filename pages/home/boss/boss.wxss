@@ -1,0 +1,80 @@
+.boss_top{
+  height: 115rpx;
+}
+.boss_img{
+  height: 460rpx;
+  background: pink;
+}
+.about_page{
+  margin: 0 10px;
+}
+.swiper-tab{
+    width: 100%;
+    /* border-bottom: 2rpx solid #ccc; */
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-between;
+    color: #ccc;
+    font-size: 30rpx;
+}
+.swiper-tab-item{
+    width: 25%; 
+    color:#434343;
+}
+.active{
+    color: #000;
+    /* border-bottom: 4rpx solid #F65959; */
+    font-size: 32rpx;
+    font-weight: bold;
+    border-bottom: 1rpx solid #000;
+}
+.show{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+.boss_c{
+  /* width: 100%; */
+  background: pink;
+  overflow-x: scroll;
+}
+.boss_cbox{
+  width: 2360rpx;
+  overflow-y: scroll;
+  display: flex;
+  flex-wrap:wrap;
+  margin-top: 20rpx;
+}
+::-webkit-scrollbar {display:none}
+.boss_cbox_box{
+  width: 250rpx;
+  height: 490rpx;
+  margin-left: 40rpx;
+  background: burlywood;
+}
+.boss_cbox .boss_cbox_box:nth-child(8n){
+  margin-right: 40rpx;
+}
+.boss_cbox_img{
+  width: 250rpx;
+  height: 310rpx;
+  background: orange;
+}
+.boss_cbox_name{
+font-size:24rpx;
+font-family:SourceHanSansCN-Medium;
+font-weight:bold;
+color:rgba(51,51,51,1);
+line-height:36rpx;
+display: inline-block
+}
+.boss_cbox_price{
+font-size:30rpx;
+font-family:SourceHanSansCN-Regular;
+font-weight:400;
+color:rgba(68,68,68,1);
+}
