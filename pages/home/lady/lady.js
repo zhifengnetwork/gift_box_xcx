@@ -1,4 +1,4 @@
-// pages/home/.js
+// pages/home/lady/lady.js
 Page({
 
   /**

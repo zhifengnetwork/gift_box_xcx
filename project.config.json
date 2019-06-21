@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 1,
+			"current": 3,
 			"list": [
 				{
 					"id": 1,
@@ -50,9 +50,30 @@
 					"scene": null
 				},
 				{
-					"id": 1,
+					"id": -1,
+					"name": "女士礼品",
+					"pathName": "pages/home/lady/lady",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
 					"name": "电子礼盒",
 					"pathName": "pages/card/makecard/makecard",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "Boss",
+					"pathName": "pages/home/boss/boss",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/commodity/detalis/detalis",
 					"query": "",
 					"scene": null
 				}

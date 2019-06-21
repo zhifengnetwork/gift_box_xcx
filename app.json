@@ -6,7 +6,11 @@
     "pages/classify/classify",
     "pages/my/my",
     "pages/home/xingxuan/xingxuan",
-    "pages/card/makecard/makecard"
+    "pages/card/makecard/makecard",
+    "pages/home/boss/boss",
+    "pages/home/lady/lady",
+    "pages/commodity/commodity",
+    "pages/commodity/detalis/detalis"
   ],
   "window": {
     "backgroundTextStyle": "light",

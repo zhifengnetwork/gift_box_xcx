@@ -1,4 +1,7 @@
 /* pages/home/xingxuan/xingxuan.wxss */
+.xingxuan_top{
+  height: 115rpx;
+}
 .xingxuan_t{
     height: 60rpx;
     text-align: center;
@@ -7,14 +10,14 @@
 .xingxuan_t text{
     height: 40rpx;
     line-height: 40rpx;
-    font-size: 30rpx;
+    font-size: 34rpx;
     border-bottom: 5rpx solid #000;
     padding-bottom: 10rpx;
 }
 .xingxuan_c{
   height: 40rpx;
   text-align: center;
-  font-size: 24rpx;
+  font-size: 28rpx;
   line-height: 40rpx;
 }
 .xingxuan_item{
@@ -32,10 +35,14 @@
   background: #f4f4f4;
 }
 .xingxuan_list_name{
-  font-size: 28rpx;
+  height: 56rpx;
+  font-size: 32rpx;
+  line-height: 56rpx;
   width: 330rpx;
+  display: block;
+  margin-top: 10rpx;
 }
 .xingxuan_list_price{
-  font-size: 24rpx;
+  font-size: 28rpx;
 }
 
