@@ -1,0 +1,40 @@
+.detalis_top {
+  height: 116rpx;
+}
+
+.detalis_img {
+  height: 868rpx;
+  background: pink;
+  border-bottom: 20rpx solid #F0F2F5;
+}
+
+.detalis_swipers {
+  height: 688rpx;
+}
+
+.detalis_swiper_image {
+  width: 100%;
+  height: 100%;
+}
+
+.detalis_top_connect {
+  text-align: center;
+  padding-top: 30rpx;
+}
+
+.detalis_top_connect_name {
+  font-size: 36rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+.detalis_top_connect_price{
+  font-size:28rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.detalis_top_connect_price>text {
+  color: #222222;
+  font-size: 44rpx;
+}
