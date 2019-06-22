@@ -1,4 +1,6 @@
-<view class="detalis_top"><component title='' show_bol='{{falsr}}'></component></view>
+<view class="detalis_top">
+  <component title='' show_bol='{{falsr}}'></component>
+</view>
 <view class="detalisbox">
   <view class="detalis_img">
     <swiper class='detalis_swipers' autoplay current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
@@ -10,7 +12,84 @@
     </swiper>
     <view class="detalis_top_connect">
       <view class="detalis_top_connect_name">LOUIS VUITTON手袋</view>
-      <view class="detalis_top_connect_price">HK$<text>7600</text></view>
+      <view class="detalis_top_connect_price">HK$
+        <text>7600</text>
+      </view>
+    </view>
+  </view>
+  <view class="detalis_c">
+    <view class="detalis_ct">赠送流程</view>
+    <view class="detalis_cc">
+      <view class="detalis_cc_img">
+        <image src="../../public/images/detalis/weixin_icon.png"></image>
+      </view>
+      <text>1微信赠送</text>
+      <image src="../../public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+    </view>
+    <view class="detalis_cc">
+      <view class="detalis_cc_img">
+        <image src="../../public/images/detalis/xiaolian_icon.png"></image>
+      </view>
+      <text>2好友领取</text>
+      <image src="../../public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+    </view>
+    <view class="detalis_cc">
+      <view class="detalis_cc_img">
+        <image src="../../public/images/detalis/dizhi_icon.png"></image>
+      </view>
+      <text>3兑换填地址</text>
+      <image src="../../public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+    </view>
+    <view class="detalis_cc">
+      <view class="detalis_cc_img">
+        <image src="../../public/images/detalis/shouhuo_icon.png"></image>
+      </view>
+      <text>4送货上门</text>
+    </view>
+  </view>
+  <view class="detalis_b">
+    <view class="swiper-tab">
+      <view class="detalis_tab">
+        <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">经典系列</view>
+      </view>
+      <view class="detalis_tab">
+        <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">为你星选</view>
+      </view>
+    </view>
+    <view class="{{currentTab == 0 ? 'show':'hidden'}}">
+      <scroll-view>
+        <view class="detalis_btext">
+          <view>品牌：dunhill</view>
+          <view>材质：本款雙扣僧侶鞋由黑色義大利小牛皮製作。鞋底採用布萊克針法以及橡膠工藝，增強抓地力。鞋身側面還飾有兩枚銀色鞋扣。</view>
+        </view>
+      </scroll-view>
+    </view>
+    <view class="{{currentTab == 1 ? 'show':'hidden'}}">
+      <scroll-view>
+        <view>为你星选</view>
+      </scroll-view>
+    </view>
+  </view>
+  <view class="detalis_f">
+    <view class="detalis_fl">
+      <view class="detalis_flbox">
+        <image src="../../public/images/detalis/home_icon.png"></image>
+        <view class="detalis_fl_text">首页</view>
+      </view>
+      <view class="detalis_flbox">
+        <image src="../../public/images/detalis/kefu_icon.png"></image>
+        <view class="detalis_fl_text">首页</view>
+      </view>
+      <view class="detalis_flbox">
+        <image src="../../public/images/detalis/gouwuche_icon.png"></image>
+        <view class="detalis_fl_text">首页</view>
+      </view>
+    </view>
+    <view class="detalis_fr">
+      <view class="detalis_frbox">
+        <view class="detalis_frl">犒劳自己</view>
+        <view class="detalis_frr">赠送他人</view>
+      </view>
     </view>
   </view>
 </view>
