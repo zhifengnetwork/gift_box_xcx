@@ -1,3 +1,4 @@
+var api5 = require('../../utils/api');
 var app = getApp();
 Page({
 
@@ -5,18 +6,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    advImage: [{
-      url: 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640'},
-    {
-      url: 'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640'
-    }
-    ],
+    advImage: [],
     currentSwiper: 0,
     indicatorColor: 'white',
     // indicatorActivecolor: 'red',
@@ -40,10 +30,16 @@ Page({
   
   },
   onLoad: function (options) {
-    this.setData({
-      advimg: this.data.advImage,
-    }),
-    
+    var that = this;
+    api5.getJSON('/api/index/index', function (res) {
+      if (res.data.status == 1) {
+          console.log(res.data.data.banner)
+          that.setData({
+            advimg: res.data.data.banner
+          })
+      }
+    })
+
     // 获取第二个轮播图的长度,显示到页面
       this.setData({ imgUrlslength: this.data.imgUrls.length})
   },
