@@ -3,7 +3,6 @@
 .swiper_box {
   height: auto;
   position: relative;
- 
 }
 .swipers {
   height: 767rpx;
@@ -34,25 +33,47 @@
   margin-right: 10rpx;
   background-color: gray;
 }
-/*选中以后的小圆点样式  */
+/*选中以后的小圆点样式 */
 .active {
   width: 40rpx;
   height: 15rpx;
   background-color: white;
 }
 /* 轮播图--e */
+.red_enpole{
+  width: 120rpx;
+  height: 120rpx;
+  position: absolute;
+  top: 548rpx;
+  right: 14rpx
+  }
 /* 选择栏--s */
 .selection_bar{
-width: 80%;
+  width: 92%;
+  margin: 0 auto;
+  /* border: 1px solid gray; */
+  height: 170rpx;
+}
+.selection_bar_box{
+  
+  width: 100%;
+  height: 180rpx;
+  position: relative;
+  top: -70rpx;
+  background: white;
+  box-shadow: 0 0 10rpx #DDDDDD; 
+  padding-bottom: 10rpx 
 }
 /* 选择栏--e */
 .jiali_title{
   display: inline-block;
-  padding-left: 14rpx;
+  padding-left: 21rpx;
+  padding-bottom: 48rpx;
   height: 80rpx;
   line-height:80rpx;
   font-size:40rpx;
   font-weight: bolder;
+  margin-top: 45rpx;
 }
 .english{
   display: inline-block;
@@ -64,35 +85,209 @@ width: 80%;
 .img_box{
   width: 90%;
   margin-left: 5%;
-  height: 168pt;
+  height: 335rpx;
   display: flex;
   overflow-x: scroll;
-  overflow-y: hidden;
-  margin-bottom: 80rpx
+ 
+ 
 }
 /* 隐藏滚动条 */
 ::-webkit-scrollbar {display:none}
 .img_item{
-  width: 85pt;
-  height: 168pt;
+  width: 170rpx;
+  height: inherit;
   border: 1px solid green;
   display: inline-block;
   flex-shrink:0;
-  margin-top: 20rpx;
   margin-right: 80rpx;
-  border-radius: 25rpx 
+  border-radius: 25rpx ;
+  box-sizing: border-box;
 }
 .dangimg_box{
   width: 100%;
   height: 400rpx;
-  border: 1px solid red
+  border: 1px solid red;
+  box-sizing: border-box
+}
+.fashion_ear{
+  width: 100%;
+  box-sizing: border-box;
+  padding:0 21rpx;
+  display: flex;
+  justify-content: space-around
 }
 .fashion_item{
-
-  width: 101pt;
-  height: 101pt;
+  width: 201rpx;
+  height: 201rpx;
   border: 1px solid red;
   display: inline-block;
+}
+/* 第二个轮播图样式 */
+.swiper_boxxxx{
+  width: 87%;
+  height: 370rpx!important;
+  margin-left: 21rpx;
+  /* border: 1px solid green; */
+}
+.swiper_boxxxx .slide-image{
+  width: 100%;
+  height: 100%;
+}
+.now_pic{
+  font-size: 40rpx;
+  font-weight: bolder
+}
+.zong_pic{
+  font-size: 30rpx
+}
+.feng_bi{
+  display: inline-block;
+  float: right;
+  padding-right: 21rpx;
+  padding-top: 60rpx;
+}
+.new_shop{
+  width: 100%;
+  padding:0 21rpx;
+  border: 1px solid green;
+  box-sizing: border-box;
+}
+.new_shop_item{
+  border: 1px solid green;
+  box-sizing: border-box;
+  width: 230rpx;
+  height: 230rpx;
+  display: inline-block;
+  margin-left: 11rpx  
+}
+.new_shop_item:nth-child(2n){
+  float: left;
+  margin-left: 0rpx 
+}
+.new_shop_item:nth-child(3n){
+  float: right;
+  margin-left: 0rpx 
+}
+.images_wu{
+  width: 695rpx;
+  height: 370rpx;
+  margin: 0 auto;
+  border: 1px solid green
+}
+.celine{
+  width: 100%;
+  padding: 0 21rpx;
+  font-size: 36rpx;
 
+}
+.jiansu{
+  display: block;
+  width: 100%;
+  padding-right: 21rpx;
+  font-size: 30rpx;
+  color: gray;
+}
+.love_ear{
+  width: 100%;
+  padding: 0 21rpx;
+  border: 1px solid green;
+  box-sizing: border-box
+}
+.love_item{
+  display: inline-block;
+  width: 330rpx;
+  height: 330rpx;
+  border: 1px solid red;
+  box-sizing: border-box;
+}
+.love_love{
+  display: inline-block;
+   margin-bottom: 26rpx
+}
+.love_love:nth-child(2n){
+  float: right;
+}
+.love_tile{
+  font-size: 32rpx;
+}
+.love_money{
+  font-size: 28rpx
+}
+.dsdsds{
 
+  width: 90%;
+  height: 100%;
+  margin: 0 auto;
+}
+.item1{
+  display: inline-block;
+  width: 23%;
+  height: 50%;
+  text-align: center;
+  position: relative;
+}
+.item1_text{
+  position: absolute;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  top: 15rpx;
+  font-size: 27rpx;
+  
+}
+.item1_icon{
+  position: absolute;
+  bottom: 15rpx;
+  left: 0;
+  right: 0;
+  margin: 0 auto;
+  width: 96rpx;
+  height: 20rpx;
+  
+}
+.xiegang{
+  vertical-align: top;
+  display: inline-block;
+  height: 90rpx;
+  line-height: 90rpx;
+  color: #DDDDDD
+}
+.xiegang:last-child{
+  display: none
+}
+.xiegang:nth-child(8){
+ display: none
+}
+.zaixian{
+
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0 21rpx;
+}
+.bu{
+  font-size: 32rpx
+}
+.jiansu{
+  font-size:25rpx
+}
+.bar-ear{
+  margin:0 21rpx;
+  box-sizing: border-box
+}
+.bar_ear_item{
+  width: 25%;
+  text-align: center;
+  display: inline-block;
+  box-sizing: border-box
+}
+.bar_pic{
+  width: 26rpx;
+  height: 26rpx
+}
+.bar_title{
+  font-size: 28rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(102,102,102,1);
+  padding-left: 10rpx
 }

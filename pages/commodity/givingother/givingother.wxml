@@ -1,0 +1,5 @@
+<view>
+<image src="../../../pages/public/images/givingother/back_pictrue.png" class="back_pictrue"></image>
+<view class="git_one">贈送單人</view>
+<view class="git_others">幸運群搶</view>
+</view>

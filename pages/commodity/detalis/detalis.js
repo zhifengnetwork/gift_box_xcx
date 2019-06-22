@@ -22,6 +22,9 @@ Page({
     currentSwiper: 0,
     indicatorColor: 'white',
     indicatorActivecolor: 'red',
+    currentTab: 0,
+    list: 3,
+    listdata: 8,
     // 头部导航栏的高度
     // statusBarHeight: app.globalData.statusBarHeight,
     height: app.globalData.height * 2 + 25,
@@ -29,7 +32,16 @@ Page({
       name: '我是标题'
     }
   },
-
+  clickTab: function (e) {
+    var that = this;
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current,
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

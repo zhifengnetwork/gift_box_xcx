@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 6,
 			"list": [
 				{
 					"id": 1,
@@ -74,6 +74,20 @@
 					"id": -1,
 					"name": "商品详情",
 					"pathName": "pages/commodity/detalis/detalis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "犒劳自己",
+					"pathName": "pages/commodity/detalis/payment/award/award",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "赠送他人",
+					"pathName": "pages/commodity/detalis/give/GiveOthers/GiveOthers",
 					"query": "",
 					"scene": null
 				}

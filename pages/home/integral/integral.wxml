@@ -1,0 +1,35 @@
+<component title='' show_bol='{{false}}'></component>
+
+<view class="bigger_box" style="background-image:url('../../../pages/public/images/home/integral/backgrond.png')">
+  <!-- 太陽城貴賓會提供完備的一站式尊貴服務，涵蓋澳門至海外地區，由預訂交通住宿、代辦旅遊簽證，到個 -->
+  <view class="global">全球尊貴娛樂體驗</view>
+
+  <view class="global_text">太陽城責賓合提供完備的一站式尊貴服務， 涵蓋澳門至海外地區，由預打交通住宿、代辦旅遊簽證，到個人化行程安排、美食娱樂、奢華購物、專車接送等一唐俱全。</view>
+
+  <view>
+    <image src="../../../pages/public/images/home/integral/pic1.png" class="pic1"></image>
+    <view class="global_text2">
+      尊貴會員只需前往任何一間太陽城貴賓會，就能立刻享受最貼心款待及投入精彩娛樂。從轉碼取碼、財務安排、匯款諮詢，以至貴賓房預訂，我們也有專業人員貼身跟進，務求為客人度身訂造最難忘的刺激娛樂體驗!
+    </view>
+    <image src="../../../pages/public/images/home/integral/pic2.png" class="pic2"></image>
+    <view class="global2">SGS Qualicert™ 國際服務認證</view>
+    <view class="global_text3">太陽城貴賓會自成立以來，一直致力發展博彩業務並透過尊贵的貴賓會服務，讓客人享用最質的娛樂設施及精彩項目。時至今日，太陽城貴賓會已於澳門多家五星級酒店及度假村開設貴賓會，其中多間更成功取得SGS國際服務認證。我們多間貴賓會陸續隆重開幕，為貴賓會業務揭開新一頁。
+   </view>
+   <view class="global_text55"> 继2013年開創業界先河，退過全球最具權威性的品質驗證組織SGS Qualicertm的國際服務認證後，太陽城貴賓會更於2018年7月成為全球首家榮更高級別的SGS QualicertTM r7星級服務詔證」的娱樂服務機構，代表本贵賓會服務水準達设置国際優質水平，領先世界。</view>
+  </view>
+   <image src="../../../pages/public/images/home/integral/pic3.png" class="pic2"></image>
+   <view class="global2">太陽城貴賓會業務分佈</view>
+   <view class="global_text66">
+  太陽城貴賓會除了致力發展澳門本地博彩業務，更在海外設立多個貴賓會，讓客人隨時隨地享受到最
+   </view>
+   <view class="global_text9">
+   7大城市高端博彩娱樂
+   <view>1.澳門: 18間貴賓會、1間撲克王俱樂部</view>
+   <view>2.韓國: 2間貴賓會</view>
+   <view>3.澳洲墨爾本: 1間貴賓會</view>
+   <view>4.澳洲悉尼:1間貴賓會</view>
+   <view>5.菲律賓7間贵賓會、1間撲克王俱業部</view>
+   <view>6.越南峴港: 1間貴賓含</view>
+   <view>7.柬埔寨: 1間貴賓</view>
+   </view>
+</view>

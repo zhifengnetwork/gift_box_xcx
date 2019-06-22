@@ -1,4 +1,5 @@
-<component title='澳门星选' show_bol='{{true}}'></component>
+<component title='澳门星选' show_bol='{{true}}'>
+</component>
 <!-- 轮播图 -->
 <view class='index_top'>
   <view class='swiper_box'>
@@ -16,25 +17,150 @@
     </view>
   </view>
 </view>
+<image src="../public/images/index/red_enpole.png" class="red_enpole" bindtap="zefeng"></image>
 <!-- 选择栏 -->
-<!-- <view class="selection_bar">
-</view> -->
-<text class="jiali_title">佳礼之供</text><text class="english">Selection Goods</text>
-<view class="img_box">
- <view class="img_item"></view>
- <view class="img_item"></view>
- <view class="img_item"></view>
- <view class="img_item"></view>
- <view class="img_item"></view>
- <view class="img_item"></view>
-</view>
-<text class="jiali_title">星供夏品</text><text class="english">Star Goods</text>
-<view class="dangimg_box">
-</view>
-<text class="jiali_title">时尚大牌</text><text class="english">Fashion Brands</text>
-<view class="fashion_ear">
-<view class="fashion_item"></view>
-<view class="fashion_item"></view>
-<view class="fashion_item"></view>
+<view class="selection_bar">
+  <view class="selection_bar_box">
+     <view class="dsdsds">
+          <view class="item1">
+            <view class="item1_text"><text>澳门星选</text></view>
+            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+          </view><text class="xiegang">/</text>
+          <view class="item1">
+            <view class="item1_text"><text>澳门星选</text></view>
+            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+          </view><text class="xiegang">/</text>
+          <view class="item1">
+            <view class="item1_text"><text>澳门星选</text></view>
+            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+          </view><text class="xiegang">/</text>
+          <view class="item1">
+            <view class="item1_text"><text>澳门星选</text></view>
+            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+          </view><text class="xiegang">/</text>
+          <view class="item1">
+            <view class="item1_text"><text>澳门星选</text></view>
+            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+          </view><text class="xiegang">/</text>
+          <view class="item1">
+            <view class="item1_text"><text>澳门星选</text></view>
+            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+          </view><text class="xiegang">/</text>
+           <view class="item1">
+            <view class="item1_text"><text>澳门星选</text></view>
+            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+          </view><text class="xiegang">/</text>
+           <view class="item1">
+            <view class="item1_text"><text>澳门星选</text></view>
+            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+          </view><text class="xiegang">/</text>       
+     </view>
+  </view>
 </view>
 
+<view class="bar-ear">
+<view class="bar_ear_item">
+<image src="../public/images/index/1.png" class="bar_pic"></image>
+<text class="bar_title">品質生活</text>
+</view>
+<view class="bar_ear_item">
+<image src="../public/images/index/2.png" class="bar_pic"></image>
+<text class="bar_title">全球直采</text>
+</view>
+<view class="bar_ear_item">
+<image src="../public/images/index/3.png" class="bar_pic"></image>
+<text class="bar_title">服務周到</text>
+</view>
+<view class="bar_ear_item">
+<image src="../public/images/index/4.png" class="bar_pic"></image>
+<text class="bar_title">售後無憂</text>
+</view>
+
+</view>
+
+
+<text class="jiali_title">佳礼之供</text>
+<text class="english">Selection Goods</text>
+<view class="img_box">
+  <view class="img_item"></view>
+  <view class="img_item"></view>
+  <view class="img_item"></view>
+  <view class="img_item"></view>
+  <view class="img_item"></view>
+  <view class="img_item"></view>
+</view>
+<text class="jiali_title">星供夏品</text>
+<text class="english">Star Goods</text>
+<view class="dangimg_box">
+</view>
+<text class="jiali_title">时尚大牌</text>
+<text class="english">Fashion Brands</text>
+<view class="fashion_ear">
+  <view class="fashion_item"></view>
+  <view class="fashion_item"></view>
+  <view class="fashion_item"></view>
+</view>
+
+<text class="jiali_title">时尚指南</text>
+<text class="english">Fashion Brands</text>
+<view class="feng_bi">
+  <text class="now_pic">{{swipernow}}</text>/
+  <text class="zong_pic">{{imgUrlslength}}</text>
+</view>
+<!-- 轮播图2 -->
+<swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" duration="{{duration}}" current="{{currentSwiper2}}" bindchange="swiperChange2">
+  <block wx:for="{{imgUrls}}">
+    <swiper-item class="swiper_boxxxx">
+      <image src="{{item}}" class="slide-image" width="695" height="370" />
+    </swiper-item>
+  </block>
+</swiper>
+<text class="jiali_title">新品上市</text>
+<text class="english">New Arrivals</text>
+<view class="new_shop">
+  <view class="new_shop_item"></view>
+  <view class="new_shop_item"></view>
+  <view class="new_shop_item"></view>
+  <view class="new_shop_item"></view>
+  <view class="new_shop_item"></view>
+  <view class="new_shop_item"></view>
+  <view class="new_shop_item"></view>
+  <view class="new_shop_item"></view>
+  <view class="new_shop_item"></view>
+</view>
+<text class="jiali_title">潮流導購</text>
+<text class="english">Fashion Guide</text>
+<view class="images_wu">
+</view>
+<view class="zaixian">
+  <text class="bu">Celine再現？不！這是全新的Bottega Veneta</text>
+</view>
+<view class="zaixian">
+  <text class="jiansu">為當代服飾設定了一個真實且更進階的標準；一個與生活息息相關的衣櫥.</text>
+</view>
+<text class="jiali_title">猜你喜歡</text>
+<text class="english">You May Also Like</text>
+<view class="love_ear">
+  <view class="love_love">
+    <view class="love_item"></view>
+    <view class="love_tile">Rolex</view>
+    <view class="love_money">HK$1999</view>
+  </view>
+  <view class="love_love">
+    <view class="love_item"></view>
+    <view class="love_tile">Rolex</view>
+    <view class="love_money">HK$1999</view>
+  </view>
+  <view class="love_love">
+    <view class="love_item"></view>
+    <view class="love_tile">Rolex</view>
+    <view class="love_money">HK$1999</view>
+  </view>
+  <view class="love_love">
+    <view class="love_item"></view>
+    <view class="love_tile">Rolex</view>
+    <view class="love_money">HK$1999</view>
+  </view>
+
+
+</view>
