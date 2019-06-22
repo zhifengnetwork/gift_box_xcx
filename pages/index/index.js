@@ -1,4 +1,4 @@
-var api5 = require('../../utils/api');
+var api = require('../../utils/api');
 var app = getApp();
 Page({
 
@@ -31,7 +31,7 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    api5.getJSON('/api/index/index', function (res) {
+    api.getJSON('/api/index/index', function (res) {
       if (res.data.status == 1) {
           console.log(res.data.data.banner)
           that.setData({
