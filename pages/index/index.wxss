@@ -144,7 +144,7 @@
   display: inline-block;
   float: right;
   padding-right: 21rpx;
-  padding-top: 21rpx
+  padding-top: 60rpx;
 }
 .new_shop{
   width: 100%;
