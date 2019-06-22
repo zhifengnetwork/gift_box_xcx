@@ -1,0 +1,53 @@
+/* pages/card/makecard/picture/picture.wxss */
+.boss_top{
+  height: 140rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+.picture_list{
+  margin-top: 70rpx;
+  padding: 0 30rpx;
+  display:-webkit-box;
+  display: -moz-box;
+  display: -ms-flexbox;
+  display: -webkit-flex;
+  display: flex;
+  -webkit-justify-content:space-around;
+  justify-content:space-around;
+  -moz-box-pack:space-around;
+  box-pack:space-around;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.picture_item{
+  width: 300rpx;
+  height: 300rpx;
+  line-height: 250rpx;
+  text-align: center;
+  font-size: 300rpx;
+  font-weight: 100;
+  border: 1rpx dashed #ccc;
+  box-sizing: border-box;
+}
+.picture_item_img{
+  width: 100%;
+  height: 100%;
+}
+.picture_btn{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 24rpx;
+  margin: auto;
+  width: 502rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 38rpx;
+  font-weight: 400;
+  font-family: SourceHanSansCN-Regular;
+  color: #fff;
+  background:#222;
+  border-radius: 40rpx;
+}

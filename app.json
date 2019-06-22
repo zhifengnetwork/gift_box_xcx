@@ -10,7 +10,10 @@
     "pages/home/boss/boss",
     "pages/home/lady/lady",
     "pages/commodity/commodity",
-    "pages/commodity/detalis/detalis"
+    "pages/commodity/detalis/detalis",
+    "pages/card/makecard/music/music",
+    "pages/card/makecard/picture/picture",
+    "pages/card/makecard/record/record"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,0 +1,83 @@
+/* pages/card/makecard/music/music.wxss */
+.boss_top{
+  height: 140rpx;
+  background: #fff;
+  border-bottom: 1rpx solid #eee;
+}
+.music_list{
+  padding: 55rpx 60rpx 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.music_item{
+  position: relative;
+  margin-bottom: 26rpx;
+  width: 100%;
+  height: 142rpx;
+  letter-spacing: 2rpx;
+  line-height: 50rpx;
+  padding: 20rpx 0 0 50rpx;
+  border-radius:8rpx;
+  background: #f7f7f7;
+  box-sizing: border-box; 
+  -moz-box-sizing: border-box; 
+  -webkit-box-sizing: border-box; 
+}
+.music_songName{
+  font-size:32rpx;
+  font-weight:bold;
+  color:#333;
+  font-family:SourceHanSansCN-Regular;
+}
+.music_singer{
+  font-size:24rpx;
+  font-weight:400;
+  color:#666;
+  font-family:SourceHanSansCN-Regular;
+}
+.music_radio{
+  position: absolute;
+  top: 55rpx;
+  right: 50rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.music_radio_img{
+  width: 100%;
+  height: 100%;
+}
+.right{
+  border: 2rpx solid #fe552f;
+}
+.right .music_radio{
+  border-radius: 50%; 
+  background: #fe552f;
+}
+.right .music_radio_img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 60%;
+  height: 60%;
+}
+.music_send{
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 24rpx;
+  margin: auto;
+  width: 502rpx;
+  height: 80rpx;
+  line-height: 80rpx;
+  text-align: center;
+  font-size: 38rpx;
+  font-weight: 400;
+  font-family: SourceHanSansCN-Regular;
+  color: #fff;
+  background:#222;
+  border-radius: 40rpx;
+}

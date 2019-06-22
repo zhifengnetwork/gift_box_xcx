@@ -1,0 +1,13 @@
+<!--pages/card/makecard/picture/picture.wxml-->
+<view class="boss_top"><component title='选择照片/视频' show_bol='{{fasle}}'></component></view>
+<view class="picture_list">
+  <view class="picture_item">
+    <image class="picture_item_img" src="../../../public/images/card/picture.png"></image>
+  </view>
+  <view class="picture_item">
+    +
+  </view>
+</view>
+<view class="picture_btn">
+  确认提交
+</view>
