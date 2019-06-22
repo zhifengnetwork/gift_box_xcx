@@ -11,7 +11,9 @@
     "pages/home/boss/boss",
     "pages/home/lady/lady",
     "pages/commodity/commodity",
-    "pages/commodity/detalis/detalis"
+    "pages/commodity/detalis/detalis",
+    "pages/commodity/givingother/givingother"
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
