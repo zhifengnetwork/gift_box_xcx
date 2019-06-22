@@ -1,3 +1,4 @@
 <view class="giveothers_top">
   <component title='选择电子礼盒' show_bol='{{falsr}}'></component>
 </view>
+<view></view>
