@@ -79,17 +79,17 @@
       </view>
       <view class="detalis_flbox">
         <image src="../../public/images/detalis/kefu_icon.png"></image>
-        <view class="detalis_fl_text">首页</view>
+        <view class="detalis_fl_text">客服</view>
       </view>
       <view class="detalis_flbox">
         <image src="../../public/images/detalis/gouwuche_icon.png"></image>
-        <view class="detalis_fl_text">首页</view>
+        <view class="detalis_fl_text">加入</view>
       </view>
     </view>
     <view class="detalis_fr">
       <view class="detalis_frbox">
         <view class="detalis_frl" bindtap="my_goods">犒劳自己</view>
-        <view class="detalis_frr">赠送他人</view>
+        <view class="detalis_frr" bindtap="GiveOthers">赠送他人</view>
       </view>
     </view>
   </view>

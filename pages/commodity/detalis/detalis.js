@@ -44,8 +44,15 @@ Page({
   },
   // 犒劳自己的商品选择事件
   my_goods:function(){
-    
+    wx.navigateTo({
+      url: 'payment/award/award',
+    })
 
+  },
+  GiveOthers: function () {
+    wx.navigateTo({
+      url: 'give/GiveOthers/GiveOthers',
+    })
   },
   preventTouchMove: function () {
   },

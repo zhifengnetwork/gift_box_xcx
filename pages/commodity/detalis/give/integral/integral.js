@@ -1,20 +1,18 @@
-// pages/commodity/detalis/give/GiveOthers/GiveOthers.js
+// pages/commodity/detalis/give/ integral/ integral.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    num: 1,
-  },
-  plus:function (e){
-    console.log(this.data.num++)
-    // this.data.num = this.data.num++
+    flag:true
   },
   show: function () {
-    wx.navigateTo({
-      url: '../cashgift/cashgift',
-    })
+    this.setData({ flag: false })
+  },
+  hide: function () {
+    console.log(666)
+    this.setData({ flag: true })
   },
   /**
    * 生命周期函数--监听页面加载

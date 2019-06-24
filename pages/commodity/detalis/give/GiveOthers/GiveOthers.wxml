@@ -1,4 +1,63 @@
 <view class="giveothers_top">
-  <component title='选择电子礼盒' show_bol='{{falsr}}'></component>
+  <component title='赠送他人' show_bol='{{falsr}}'></component>
 </view>
-<view></view>
+<view class="giveothers_t">
+  <view class="giveothers_tl">
+    <view></view>
+    <text>確定數量</text>
+    <view class="giveothers_border"></view>
+  </view>
+  <view class="giveothers_tc">
+    <view></view>
+    <text>完成支付</text>
+    <view class="giveothers_border"></view>
+  </view>
+  <view class="giveothers_tc">
+    <view></view>
+    <text>贈送禮包</text>
+  </view>
+</view>
+<view class="giveothers_give">
+  <view class="giveothers_give_l">
+    贈送 <text class="giveothers_anoumt">{{num}}</text> 份禮包 
+  </view>
+  <view class="giveothers_give_c">
+    <view class="giveothers_fuhao minus">-</view>
+    <view class="giveothers_give_number">{{num}}</view>
+    <view class="giveothers_fuhao plus" bindtap="plus">+</view>
+  </view>
+</view>
+<view class="giveothers_c">
+  <view class="giveothers_ctop">
+    <view class="giveothers_ctl">請選擇禮包類型</view>
+    <view class="giveothers_ctr">更多
+      <text>></text>
+    </view>
+  </view>
+  <view class="giveothers_cconter">
+    <view class="giveothers_cbox">
+      <view class="giveothers_imgbox">
+        <view class="giveothers_img"></view>
+        <text>女神節</text>
+      </view>
+       <view class="giveothers_imgbox">
+        <view class="giveothers_img"></view>
+        <text>真愛</text>
+      </view>
+       <view class="giveothers_imgbox">
+        <view class="giveothers_img"></view>
+        <text>遇見愛</text>
+      </view>
+      <text class="giveothers_more">></text>
+    </view>
+  </view>
+</view>
+<view class="giveothers_b">
+  <view class="giveothers_bt">贈言</view>
+  <view class="giveothers_textbox">
+    <input class="giveothers_input" placeholder="一點心意，希望你喜歡" />
+  </view>
+</view>
+<view class="giveothers_footer" bindtap="show">
+  下一步
+</view>

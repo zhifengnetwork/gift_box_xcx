@@ -70,6 +70,21 @@ Page({
     wx.navigateTo({
       url: '../home/integral/integral',
     })
+  },
+  xingxuan: function () {
+    wx.navigateTo({
+      url: '../home/xingxuan/xingxuan',
+    })
+  },
+  boss: function () {
+    wx.navigateTo({
+      url: '../home/boss/boss',
+    })
+  },
+  detalis: function () {
+    wx.navigateTo({
+      url: '../commodity/detalis/detalis',
+    })
   }
 
 })
