@@ -50,6 +50,7 @@
   margin-bottom: 60rpx;
   width: 576rpx;
   height: 170rpx;
+  letter-spacing: 2rpx;
   color: #fff;
   padding: 40rpx 0 0 130rpx;
   box-sizing: border-box;
@@ -68,6 +69,15 @@
   height: 100rpx;
   background: #2AC1E7;
   border-radius: 20rpx;
+}
+.select_item:nth-child(2) .select_imgwrap{
+  background: #8577f9;
+}
+.select_item:nth-child(3) .select_imgwrap{
+  background: #f293a1;
+}
+.select_item:nth-child(4) .select_imgwrap{
+  background: #eed9b5;
 }
 .select_img{
   width: 100%;
@@ -89,8 +99,8 @@
 }
 .select_icon{
   position: absolute;
-  top: 55rpx;
-  right: 77rpx;
+  top: 46rpx;
+  right: 76rpx;
   width:32rpx;
   height:32rpx;
 }

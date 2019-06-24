@@ -8,50 +8,14 @@
   <!-- 选择列表-s -->
   <view class="select_list">
     <!-- 列表项-s -->
-    <view class="select_item">
+    <view class="select_item" wx:for="{{list}}" wx:key="item.id" bindtap="skip" data-url="{{item.url}}">
       <view class="select_imgwrap">
-        <image class="select_img"></image>
+        <image class="select_img" src="{{item.img}}"></image>
       </view>
-      <view class="select_text">选择音乐</view>
-      <view class="select_tips">确认歌曲</view>
+      <view class="select_text">{{item.text}}</view>
+      <view class="select_tips">{{item.tips}}</view>
       <view class="select_icon">
-        <image class="select_icon_img" src="../../public/images/card/revision.png"></image>
-      </view>
-    </view>
-    <!-- 列表项-e -->
-    <!-- 列表项-s -->
-    <view class="select_item">
-      <view class="select_imgwrap">
-        <image class="select_img"></image>
-      </view>
-      <view class="select_text">选择音乐</view>
-      <view class="select_tips">确认歌曲</view>
-      <view class="select_icon">
-        <image class="select_icon_img" src="../../public/images/card/revision.png"></image>
-      </view>
-    </view>
-    <!-- 列表项-e -->
-    <!-- 列表项-s -->
-    <view class="select_item">
-      <view class="select_imgwrap">
-        <image class="select_img"></image>
-      </view>
-      <view class="select_text">选择音乐</view>
-      <view class="select_tips">确认歌曲</view>
-      <view class="select_icon">
-        <image class="select_icon_img" src="../../public/images/card/revision.png"></image>
-      </view>
-    </view>
-    <!-- 列表项-e -->
-    <!-- 列表项-s -->
-    <view class="select_item">
-      <view class="select_imgwrap">
-        <image class="select_img"></image>
-      </view>
-      <view class="select_text">选择音乐</view>
-      <view class="select_tips">确认歌曲</view>
-      <view class="select_icon">
-        <image class="select_icon_img" src="../../public/images/card/revision.png"></image>
+        <image class="select_icon_img" src="{{item.icon}}"></image>
       </view>
     </view>
     <!-- 列表项-e -->
