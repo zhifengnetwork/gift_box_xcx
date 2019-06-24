@@ -70,6 +70,7 @@
       </scroll-view>
     </view>
   </view>
+<view class="detail_x">  
   <view class="detalis_f">
     <view class="detalis_fl">
       <view class="detalis_flbox">
@@ -87,9 +88,26 @@
     </view>
     <view class="detalis_fr">
       <view class="detalis_frbox">
-        <view class="detalis_frl">犒劳自己</view>
+        <view class="detalis_frl" bindtap="my_goods">犒劳自己</view>
         <view class="detalis_frr">赠送他人</view>
       </view>
     </view>
   </view>
+  <!-- 商品规格选择蒙层 -->
+  <!-- catchtouchmove="preventTouchMove" 作用是出现蒙层是不能滑动的-->
+  <view class="shop_selection" catchtouchmove="preventTouchMove">
+  </view>
+  <view class="shop_ear" catchtouchmove="preventTouchMove">
+     <image src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640" class="store"></image>
+     <text class="jiage">￥6150</text>
+     <view class="selected">
+       <text>已选择</text>:
+       <text>黑色</text>,
+       <text class="mama">39码</text>
+     </view>
+    
+     
+  </view>
+   
+</view>  
 </view>

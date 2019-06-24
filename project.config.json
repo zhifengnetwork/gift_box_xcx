@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 3,
+			"current": 5,
 			"list": [
 				{
 					"id": 1,
@@ -75,6 +75,12 @@
 					"name": "商品详情",
 					"pathName": "pages/commodity/detalis/detalis",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "ds",
+					"pathName": "pages/commodity/commodity",
 					"scene": null
 				}
 			]

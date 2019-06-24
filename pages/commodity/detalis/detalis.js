@@ -42,6 +42,13 @@ Page({
       })
     }
   },
+  // 犒劳自己的商品选择事件
+  my_goods:function(){
+    
+
+  },
+  preventTouchMove: function () {
+  },
   /**
    * 生命周期函数--监听页面加载
    */
