@@ -2,12 +2,14 @@
 <view class="boss_top"><component title='选择照片/视频' show_bol='{{fasle}}'></component></view>
 <view class="picture_list">
   <view class="picture_item">
-    <image class="picture_item_img" src="../../../public/images/card/picture.png"></image>
+    <view class="picture_delete" bindtap="delete">X</view>
+    <image class="picture_item_img" src="../../../public/images/card/picture.png" wx:if="{{imglist==''}}"></image>
+    <image class="picture_item_img" src="{{imglist}}" wx:if="{{imglist!=''}}"></image>
   </view>
-  <view class="picture_item">
+  <view class="picture_item" bindtap="add">
     +
   </view>
 </view>
-<view class="picture_btn">
+<view class="picture_btn" bindtap="send">
   确认提交
 </view>

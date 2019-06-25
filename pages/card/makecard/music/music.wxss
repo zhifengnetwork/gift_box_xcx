@@ -48,7 +48,9 @@
   height: 100%;
 }
 .right{
+  background: #fff;
   border: 2rpx solid #fe552f;
+  box-shadow: 0rpx 5rpx 10rpx 0rpx rgba(0, 0, 0, 0.35);
 }
 .right .music_radio{
   border-radius: 50%; 
