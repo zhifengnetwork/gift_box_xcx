@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 8,
 			"list": [
 				{
 					"id": 1,
@@ -96,6 +96,20 @@
 					"id": -1,
 					"name": "赠送他人",
 					"pathName": "pages/commodity/detalis/give/GiveOthers/GiveOthers",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 7,
+					"name": "积分支付",
+					"pathName": "pages/commodity/detalis/give/integral/integral",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "赠送礼包",
+					"pathName": "pages/commodity/detalis/give/giftbag/giftbag",
 					"query": "",
 					"scene": null
 				}

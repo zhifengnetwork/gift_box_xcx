@@ -1,63 +1,100 @@
-.award_top {
-  height: 115rpx;
+.cashgift_top {
+  height: 116rpx;
+}
+.cashgift_t {
+  height: 173rpx;
+  padding: 52rpx 45rpx 0 45rpx;
+  display: flex;
+  text-align: center;
+  justify-content: space-between;
+  border-bottom: 15rpx solid #ebeced;
+  border-top: 2rpx solid #F3F4F7;
 }
 
-.xiahuanxian image {
-  height: 16rpx;
-  width: 100%;
-}
-
-.award_topbox {
-  height: 134rpx;
+.cashgift_tl {
+  float: left;
+  width: 100rpx;
   position: relative;
-  border-bottom: 10rpx solid #ebeced;
+  padding-top: 12rpx;
 }
 
-.award_dingwei {
-  height: 49rpx;
-  width: 40rpx;
-  position: absolute;
-  top: 35rpx;
-  left: 50rpx;
+.cashgift_tl>view {
+  width: 35rpx;
+  height: 35rpx;
+  background: #364c61;
+  border-radius: 50%;
+  margin-left: 35rpx;
+  margin-top: 1rpx;
 }
 
-.award_text {
-  font-size: 24rpx;
+.cashgift_tl>text {
+  font-size: 18rpx;
   font-family: SourceHanSansCN-Regular;
-  font-weight: bold;
-  color: rgba(51, 51, 51, 1);
-  position: absolute;
-  top: 46rpx;
-  left: 126rpx;
+  font-weight: 400;
+  color: rgba(7, 7, 7, 1);
 }
 
-.award_topbox .award_you {
-  width: 15rpx;
-  height: 23rpx;
+.cashgift_tl .cashgift_border {
+  width: 200rpx;
+  height: 3rpx;
+  background: rgba(54, 76, 97, 1);
   position: absolute;
-  top: 56rpx;
-  right: 50rpx;
+  top: 30rpx;
+  left: 55rpx;
 }
 
-.award_ct {
+.cashgift_tc {
+  float: left;
+  width: 100rpx;
+  margin-top: 23rpx;
+  position: relative;
+}
+
+.cashgift_tc>view {
+  width: 20rpx;
+  height: 20rpx;
+  background: #364c61;
+  border-radius: 50%;
+  margin-left: 35rpx;
+  margin-bottom: 5rpx;
+}
+
+.cashgift_tc>text {
+  font-size: 18rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.cashgift_tc .cashgift_border {
+  width: 200rpx;
+  height: 3rpx;
+  background: rgba(54, 76, 97, 1);
+  position: absolute;
+  top: 10rpx;
+  left: 40rpx;
+}
+
+/* 中间区域 */
+.cashgift_ct {
   height: 133rpx;
   border-bottom: 10rpx solid #ebeced;
   padding: 25rpx 50rpx;
 }
 
-.award_ct_l {
+.cashgift_ct_l {
   float: left;
   width: 133rpx;
   height: 133rpx;
   background: #e1e1e1;
 }
 
-.award_ct_r {
+.cashgift_ct_r {
   float: right;
   height: 133rpx;
 }
 
-.award_ct_rt {
+.cashgift_ct_rt {
   font-size: 22rpx;
   width: 384rpx;
   padding-top: 6rpx;
@@ -66,7 +103,7 @@
   color: rgba(34, 34, 34, 1);
 }
 
-.award_ct_rc {
+.cashgift_ct_rc {
   width: 500rpx;
   font-size: 22rpx;
   margin-top: 20rpx;
@@ -75,7 +112,7 @@
   color: rgba(153, 153, 153, 1);
 }
 
-.awrad_box {
+.cashgift_box {
   height: 75rpx;
   padding: 0 50rpx;
   border-bottom: 2rpx solid #f3f4f7;
@@ -86,25 +123,26 @@
   color: rgba(51, 51, 51, 1);
 }
 
-.awrad_box .awrad_cb_you {
+.cashgift_box .cashgift_cb_you {
   float: right;
   width: 15rpx;
   height: 23rpx;
   margin-top: 30rpx;
 }
 
-.awrad_box_text {
+.cashgift_box_text {
   float: right;
 }
 
-.awrad_textarea {
+.cashgift_textarea {
   height: 153rpx;
   border-bottom: 2rpx solid #f3f4f7;
   padding: 0 50rpx;
 }
 
-.awrad_textarea text {
+.cashgift_textarea text {
   float: left;
+  width: 100rpx;
   font-size: 24rpx;
   font-family: SourceHanSansCN-Regular;
   font-weight: 400;
@@ -112,7 +150,7 @@
   line-height: 100rpx;
 }
 
-.awrad_textarea input {
+.cashgift_textarea input {
   float: right;
   width: 500rpx;
   height: 100rpx;
@@ -120,11 +158,9 @@
   font-family: SourceHanSansCN-Regular;
   font-weight: 400;
   color: rgba(153, 153, 153, 1);
-  line-height: 100rpx;
-  z-index: 0;
 }
 
-.awrad_f {
+.cashgift_f {
   font-size: 24rpx;
   text-align: right;
   font-family: SourceHanSansCN-Regular;
@@ -132,16 +168,16 @@
   padding: 60rpx 50rpx;
 }
 
-.awrad_f .awrad_fl {
+.cashgift_f .awrad_fl {
   color: #999;
   margin-right: 20rpx;
 }
 
-.awrad_f .awrad_fr {
+.cashgift_f .awrad_fr {
   color: #333;
 }
 
-.award_button {
+.cashgift_button {
   position: fixed;
   bottom: 33rpx;
   left: 90rpx;
@@ -155,6 +191,7 @@
   font-size: 22rpx;
 }
 
+/* 底部 */
 .award_pop-upbox {
   position: fixed;
   top: 0;

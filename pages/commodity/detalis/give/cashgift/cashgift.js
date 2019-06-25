@@ -1,19 +1,22 @@
-// pages/commodity/detalis/give/GiveOthers/GiveOthers.js
+// pages/commodity/detalis/give/cashgift/cashgift.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    num: 1,
-  },
-  plus:function (e){
-    console.log(this.data.num++)
-    // this.data.num = this.data.num++
+    flag: true
   },
   show: function () {
+    this.setData({ flag: false })
+  },
+  hide: function () {
+    console.log(666)
+    this.setData({ flag: true })
+  },
+  integral: function () {
     wx.navigateTo({
-      url: '../cashgift/cashgift',
+      url: '../integral/integral',
     })
   },
   /**

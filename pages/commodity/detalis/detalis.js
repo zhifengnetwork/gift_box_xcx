@@ -42,6 +42,20 @@ Page({
       })
     }
   },
+  // 犒劳自己的商品选择事件
+  my_goods:function(){
+    wx.navigateTo({
+      url: 'payment/award/award',
+    })
+
+  },
+  GiveOthers: function () {
+    wx.navigateTo({
+      url: 'give/GiveOthers/GiveOthers',
+    })
+  },
+  preventTouchMove: function () {
+  },
   /**
    * 生命周期函数--监听页面加载
    */

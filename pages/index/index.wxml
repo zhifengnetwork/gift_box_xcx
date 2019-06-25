@@ -21,60 +21,85 @@
 <!-- 选择栏 -->
 <view class="selection_bar">
   <view class="selection_bar_box">
-     <view class="dsdsds">
-          <view class="item1">
-            <view class="item1_text"><text>澳门星选</text></view>
-            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
-          </view><text class="xiegang">/</text>
-          <view class="item1">
-            <view class="item1_text"><text>澳门星选</text></view>
-            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
-          </view><text class="xiegang">/</text>
-          <view class="item1">
-            <view class="item1_text"><text>澳门星选</text></view>
-            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
-          </view><text class="xiegang">/</text>
-          <view class="item1">
-            <view class="item1_text"><text>澳门星选</text></view>
-            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
-          </view><text class="xiegang">/</text>
-          <view class="item1">
-            <view class="item1_text"><text>澳门星选</text></view>
-            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
-          </view><text class="xiegang">/</text>
-          <view class="item1">
-            <view class="item1_text"><text>澳门星选</text></view>
-            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
-          </view><text class="xiegang">/</text>
-           <view class="item1">
-            <view class="item1_text"><text>澳门星选</text></view>
-            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
-          </view><text class="xiegang">/</text>
-           <view class="item1">
-            <view class="item1_text"><text>澳门星选</text></view>
-            <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
-          </view><text class="xiegang">/</text>       
-     </view>
+    <view class="dsdsds">
+      <view class="item1" bindtap="xingxuan">
+        <view class="item1_text">
+          <text>澳门星选</text>
+        </view>
+        <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+      </view>
+      <text class="xiegang">/</text>
+      <view class="item1" bindtap="boss">
+        <view class="item1_text">
+          <text>boss星选
+            </text>
+        </view>
+        <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+      </view>
+      <text class="xiegang">/</text>
+      <view class="item1">
+        <view class="item1_text">
+          <text>澳门星选</text>
+        </view>
+        <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+      </view>
+      <text class="xiegang">/</text>
+      <view class="item1">
+        <view class="item1_text">
+          <text>澳门星选</text>
+        </view>
+        <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+      </view>
+      <text class="xiegang">/</text>
+      <view class="item1">
+        <view class="item1_text">
+          <text>澳门星选</text>
+        </view>
+        <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+      </view>
+      <text class="xiegang">/</text>
+      <view class="item1">
+        <view class="item1_text">
+          <text>澳门星选</text>
+        </view>
+        <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+      </view>
+      <text class="xiegang">/</text>
+      <view class="item1">
+        <view class="item1_text">
+          <text>澳门星选</text>
+        </view>
+        <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+      </view>
+      <text class="xiegang">/</text>
+      <view class="item1">
+        <view class="item1_text">
+          <text>澳门星选</text>
+        </view>
+        <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+      </view>
+      <text class="xiegang">/</text>
+    </view>
   </view>
 </view>
 
 <view class="bar-ear">
-<view class="bar_ear_item">
-<image src="../public/images/index/1.png" class="bar_pic"></image>
-<text class="bar_title">品質生活</text>
-</view>
-<view class="bar_ear_item">
-<image src="../public/images/index/2.png" class="bar_pic"></image>
-<text class="bar_title">全球直采</text>
-</view>
-<view class="bar_ear_item">
-<image src="../public/images/index/3.png" class="bar_pic"></image>
-<text class="bar_title">服務周到</text>
-</view>
-<view class="bar_ear_item">
-<image src="../public/images/index/4.png" class="bar_pic"></image>
-<text class="bar_title">售後無憂</text>
-</view>
+  <view class="bar_ear_item">
+    <image src="../public/images/index/1.png" class="bar_pic"></image>
+    <text class="bar_title">品質生活</text>
+  </view>
+  <view class="bar_ear_item">
+    <image src="../public/images/index/2.png" class="bar_pic"></image>
+    <text class="bar_title">全球直采</text>
+  </view>
+  <view class="bar_ear_item">
+    <image src="../public/images/index/3.png" class="bar_pic"></image>
+    <text class="bar_title">服務周到</text>
+  </view>
+  <view class="bar_ear_item">
+    <image src="../public/images/index/4.png" class="bar_pic"></image>
+    <text class="bar_title">售後無憂</text>
+  </view>
 
 </view>
 
@@ -118,8 +143,8 @@
 <text class="jiali_title">新品上市</text>
 <text class="english">New Arrivals</text>
 <view class="new_shop">
-  <view class="new_shop_item"></view>
-  <view class="new_shop_item"></view>
+  <view class="new_shop_item" bindtap="detalis"></view>
+  <view class="new_shop_item" bindtap="detalis"></view>
   <view class="new_shop_item"></view>
   <view class="new_shop_item"></view>
   <view class="new_shop_item"></view>
