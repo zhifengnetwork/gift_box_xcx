@@ -1,21 +1,17 @@
 <!--pages/card/makecard/music/music.wxml-->
-<view class="boss_top"><component title='选择音乐' show_bol='{{fasle}}'></component></view>
+<view class="boss_top">
+  <component title='选择音乐' show_bol='{{fasle}}'></component>
+</view>
 <view class="music_list">
-  <view class="music_item">
-    <view class="music_songName">克罗地亚狂想曲</view>
-    <view class="music_singer">222</view>
+  <view  wx:for="{{music}}" wx:key="item" bindtap="right" data-ind="{{index}}" class="music_item {{item.radio=='true'?'right':''}}">
+    <view class="music_songName">{{item.songName}}</view>
+    <view class="music_singer">{{item.singer}}</view>
     <view class="music_radio">
-      <image class="music_radio_img" src="../../../public/images/card/circle.png"></image>
-    </view>
-  </view>
-  <view class="music_item right">
-    <view class="music_songName">克罗地亚狂想曲</view>
-    <view class="music_singer">222</view>
-    <view class="music_radio">
-      <image class="music_radio_img" src="../../../public/images/card/right.png"></image>
+      <image wx:if="{{item.radio!='true'}}" class="music_radio_img" src="../../../public/images/card/circle.png"></image>
+      <image wx:if="{{item.radio=='true'}}" class="music_radio_img" src="../../../public/images/card/right.png"></image>
     </view>
   </view>
 </view>
-<view class="music_send">
+<view class="music_send" bindtap="send">
   确认提交
 </view>

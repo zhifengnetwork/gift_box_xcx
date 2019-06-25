@@ -27,8 +27,26 @@
   text-align: center;
   font-size: 300rpx;
   font-weight: 100;
+  color: #ccc;
   border: 1rpx dashed #ccc;
   box-sizing: border-box;
+}
+.picture_item:nth-child(1){
+  position: relative;
+  border: 0;
+}
+.picture_delete{
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 60rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  font-size: 35rpx;
+  border-bottom-left-radius: 20rpx;
+  color: #fff;
+  background: rgba(0, 0, 0, .5);
 }
 .picture_item_img{
   width: 100%;

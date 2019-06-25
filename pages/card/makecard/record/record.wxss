@@ -4,13 +4,104 @@
   background: #fff;
   border-bottom: 1rpx solid #eee;
 }
-.record{
-  margin-top: -140rpx;
-  width: 100%;
+.record_bg{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
   height: 100vh;
   font-size: 0;
 }
-.record_img{
+.record_bgimg{
   width: 100%;
   height: 100%;
+}
+.record_content{
+  position: absolute;
+  top: 130rpx;
+  left: 0;
+  width: 100%;
+  height: 90%;
+  overflow: hidden;
+}
+.record_content_header{
+  width: 120%;
+  height: 160rpx;
+}
+.record_time{
+  position: relative;
+  margin: 0 auto;
+  width:352rpx;
+  height:352rpx;
+  line-height: 312rpx;
+  letter-spacing: 5rpx;
+  text-align: center;
+  color:#BB9D82;
+  font-size:90rpx;
+  font-weight:400;
+  font-family:ZHSRXT--GBK1-0;
+  border:20rpx solid #222127;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-shadow:0rpx 4rpx 6rpx 0rpx rgba(0, 0, 0, 0.35);
+  border-radius:50%;
+  z-index: 30;
+}
+.record_time_box{
+  position: absolute;
+  top: 440rpx;
+  left: 480rpx;
+  width:125rpx;
+  height:125rpx;
+  border:20rpx solid #222127;
+  box-shadow:0rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.35);
+  border-radius:50%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  z-index: 29;
+}
+.record_state{
+  margin: 238rpx auto 0;
+  width:143rpx;
+  height:143rpx;
+  border:8rpx solid rgba(187,157,130,1);
+  border-radius:50%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.record_state_bg{
+  width: 100%;
+  height: 100%;
+  border-radius:50%;
+  background: #FF0000;
+}
+.record_delete,.record_pause{
+  position: relative;
+  margin-top: 54rpx;
+  width:115rpx;
+  height:115rpx;
+  background:#2E3236;
+  box-shadow:6rpx 1rpx 18rpx 3rpx rgba(0, 0, 0, 0.41);
+  border-radius:50%;
+}
+.record_delete{
+  float: left;
+  margin-left: 100rpx;
+}
+.record_pause{
+  float: right;
+  margin-right: 100rpx;
+}
+.record_delete_img,.record_pause_img{
+  position: absolute;
+  left: 0;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  margin: auto;
+  width: 60%;
+  height: 60%;
 }
