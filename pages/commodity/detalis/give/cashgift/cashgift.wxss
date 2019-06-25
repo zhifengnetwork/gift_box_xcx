@@ -183,11 +183,11 @@
   left: 90rpx;
   border-radius: 50rpx;
   width: 570rpx;
-  height: 60rpx;
+  height: 80rpx;
   background: #000;
   color: #fff;
   text-align: center;
-  line-height: 60rpx;
+  line-height: 80rpx;
   font-size: 22rpx;
 }
 

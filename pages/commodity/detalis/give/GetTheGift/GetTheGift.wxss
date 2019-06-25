@@ -1,0 +1,237 @@
+.getthegift_box {
+  background: rgba(247, 247, 247, 1);
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+}
+
+.getthegift_top {
+  height: 115rpx;
+}
+
+.getthegift_t {
+  height: 600rpx;
+  background: #fff;
+  margin: 50rpx;
+}
+
+.getthegift_timg {
+  background: sandybrown;
+  width: 436rpx;
+  height: 436rpx;
+  margin-left: 50%;
+  transform: translate(-50%, 25%);
+}
+
+.getthegift_c {
+  text-align: center;
+}
+
+.getthegift_c>view {
+  font-size: 34rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(0, 0, 0, 1);
+  line-height: 80rpx;
+}
+
+.getthegift_c>text {
+  font-size: 28rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(119, 119, 119, 1);
+  line-height: 66rpx;
+}
+
+.getthegift_b {
+  text-align: center;
+  margin: 30rpx 167rpx;
+}
+
+.getthegift_b .getthegift_bt {
+  width: 414rpx;
+  height: 86rpx;
+  background: #000;
+  font-size: 26rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  line-height: 86rpx;
+  margin-bottom: 30rpx;
+  border-radius: 86rpx;
+}
+
+.getthegift_b .getthegift_bc {
+  width: 414rpx;
+  height: 86rpx;
+  background: #fff;
+  font-size: 26rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 86rpx;
+  margin-bottom: 30rpx;
+  border-radius: 86rpx;
+}
+
+.getthegift_f{
+  height: 48rpx;
+  text-align: center;
+  line-height:48rpx;
+  position: relative;
+}
+
+.getthegift_fimg{
+  width: 30rpx;
+  height: 22rpx;
+  position: absolute;
+  top: 20rpx;
+}
+.getthegift_ftext{
+  font-size:22rpx;
+font-family:SourceHanSansCN-Regular;
+font-weight:400;
+color:rgba(153,153,153,1);
+margin-left: 50rpx;
+}
+
+/* 遮罩 */
+.award_pop-upbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 4;
+}
+
+.award_pop-up {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+}
+
+.pop-up_box {
+  /* margin-left: -25%;
+  margin-top: 50%; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  background: #fff;
+  text-align: center;
+  z-index: 2;
+  width:594rpx;
+  height:481rpx;
+  background:rgba(255,255,255,1);
+  border-radius:12px;
+}
+
+.pop-up_box_t {
+font-size:36rpx;
+font-family:SourceHanSansCN-Regular;
+font-weight:400;
+color:rgba(51,51,51,1);
+line-height: 140rpx;
+}
+
+.pop-up_box_c {
+  font-size: 28rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: bold;
+  color: #999999;
+  background: #f7f7f7;
+  text-align: left;
+  padding-left: 30rpx;
+  border: 1rpx solid #ccc;
+  width: 534rpx;
+  height: 180rpx;
+  margin-left: 15rpx;
+}
+.pop-up_nosite{
+  line-height: 100rpx;
+}
+.pop-up_box_b {
+  font-size: 28rpx;
+  line-height: 70rpx;
+  text-align: center;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  border-radius:70px;
+  border: 2rpx solid #ccc;
+  width: 426rpx;
+  height: 70rpx;
+  margin: 50rpx 84rpx;
+}
+.close{
+  width: 90rpx;
+  height: 90rpx;
+  /* background: #000; */
+  border: 2rpx solid #fff;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 5;
+}
+/* 确认地址 */
+.pop-up_box_c .pop-up_box_c_name{
+  font-size:26rpx;
+  line-height: 78rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+}
+.pop-up_box_c .pop-up_box_c_num{
+  margin-left: 20rpx;
+  font-size:26rpx;
+  line-height: 78rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.pop-up_box_c .pop-up_box_c_site{
+  width:352rpx;
+  font-size:26rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height:36rpx;
+}
+.pop-up_b{
+  padding: 40rpx;
+}
+.pop-up_bl{
+  float: left;
+  width:243rpx;
+  height:68rpx;
+  font-size:26rpx;
+  border-radius: 68rpx;
+  line-height: 68rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(16,16,16,1);
+  background: #fff;
+  border: 1rpx solid #ccc;
+}
+.pop-up_br{
+  width: 245rpx;
+  height: 70rpx;
+  background: #000;
+  border-radius: 70rpx;
+  line-height: 70rpx;
+  float: right;
+  font-size:26rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}

@@ -19,7 +19,14 @@
     "pages/commodity/detalis/give/GiveOthers/GiveOthers",
     "pages/commodity/detalis/give/cashgift/cashgift",
     "pages/commodity/detalis/give/integral/integral",
-    "pages/commodity/detalis/give/giftbag/giftbag"
+    "pages/commodity/detalis/give/giftbag/giftbag",
+    "pages/commodity/detalis/give/envelope/envelope",
+    "pages/commodity/detalis/give/envelopetwo/envelopetwo",
+    "pages/commodity/detalis/give/envelopethree/envelopethree",
+    "pages/commodity/detalis/give/GetTheGift/GetTheGift",
+    "pages/commodity/detalis/give/envelopefour/envelopefour",
+    "pages/commodity/detalis/give/GetTheSuccess/success",
+    "pages/my/mydetalis/mydetalis"
   ],
   "window": {
     "backgroundTextStyle": "light",

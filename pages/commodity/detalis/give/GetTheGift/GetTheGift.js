@@ -1,11 +1,24 @@
-// pages/commodity/detalis/give/giftbag/giftbag.js
+// pages/commodity/detalis/give/GetTheGift/GetTheGift.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    flag: true
+  },
+  show: function () {
+    this.setData({ flag: false })
+  },
+  hide: function () {
+    console.log(666)
+    this.setData({ flag: true })
+  },
 
+  tiaozhuan: function () {
+    wx.navigateTo({
+      url: '../GetTheSuccess/success',
+    })
   },
 
   /**
@@ -61,11 +74,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    return {
-      title: 'zy送大家一份礼品',
-      // desc: '分享页面的内容',
-      imageUrl: "https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640",
-      path: 'pages/commodity/detalis/give/envelope/envelope'
-    }
+
   }
 })

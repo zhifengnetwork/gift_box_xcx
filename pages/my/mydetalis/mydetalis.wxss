@@ -1,0 +1,93 @@
+.mydetalis_top{
+  height: 115rpx;
+}
+.mydetalis_head{
+  height: 320rpx;
+  /* background: pink; */
+  margin-top: 100rpx;
+  padding: 0 277rpx;
+  text-align: center;
+}
+.mydetalis_headimg{
+  width:196rpx;
+  height:196rpx;
+  background:rgba(227,226,226,1);
+  border-radius:50%;
+  margin-bottom: 30rpx;
+}
+.mydetalis_headtext{
+  font-size:26rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+}
+.mydetalis_c{
+  padding: 0 100rpx;
+}
+.mydetalis_cname{
+  height: 90rpx;
+  border-bottom: 1rpx solid #F3F1F1;
+  margin-bottom: 30rpx;
+  padding-bottom: 10rpx;
+}
+.mydetalis_ctext{
+  float: left;
+  font-size:26rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  line-height: 90rpx;
+}
+.mydetalis_cinput{
+  float: left;
+  margin-top: 16rpx;
+  margin-left: 40rpx;
+  font-size:26rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.mydetalis_cintro{
+  height: 180rpx;
+  border-bottom: 1rpx solid #F3F1F1;
+  margin-bottom: 20rpx;
+}
+.mydetalis_cintrol{
+  font-size:26rpx;
+  /* line-height: 80rpx; */
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  float: left;
+}
+.mydetalis_cintror{
+  float: left;
+  width: 400rpx;
+  height: 120rpx;
+  margin-left: 40rpx;
+  font-size:26rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.mydetalis_cftext{
+  display: inline-block;
+  font-size:26rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  text-decoration:underline;
+  color:rgba(51,51,51,1);
+}
+.mydetalis_buttom{
+  margin: 60rpx 30rpx 0;
+  height:80rpx;
+  background:rgba(12,14,13,1);
+  border-radius:40px;
+  font-size:30rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 80rpx;
+}

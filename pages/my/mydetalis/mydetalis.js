@@ -1,4 +1,4 @@
-// pages/commodity/detalis/give/giftbag/giftbag.js
+// pages/my/mydetalis/mydetalis.js
 Page({
 
   /**
@@ -61,11 +61,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    return {
-      title: 'zy送大家一份礼品',
-      // desc: '分享页面的内容',
-      imageUrl: "https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640",
-      path: 'pages/commodity/detalis/give/envelope/envelope'
-    }
+
   }
 })

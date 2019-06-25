@@ -40,7 +40,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": -1,
 			"list": [
 				{
 					"id": 1,
@@ -92,16 +92,37 @@
 					"scene": null
 				},
 				{
-					"id": 7,
-					"name": "积分支付",
-					"pathName": "pages/commodity/detalis/give/integral/integral",
+					"id": -1,
+					"name": "赠送礼包",
+					"pathName": "pages/commodity/detalis/give/giftbag/giftbag",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 9,
+					"name": "信封3",
+					"pathName": "pages/commodity/detalis/give/envelopethree/envelopethree",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "赠送礼包",
-					"pathName": "pages/commodity/detalis/give/giftbag/giftbag",
+					"name": "领取成功",
+					"pathName": "pages/commodity/detalis/give/GetTheSuccess/success",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人中心",
+					"pathName": "pages/my/my",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "个人信息",
+					"pathName": "pages/my/mydetalis/mydetalis",
 					"query": "",
 					"scene": null
 				}

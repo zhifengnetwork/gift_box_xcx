@@ -1,2 +1,76 @@
-<!--pages/my/my.wxml-->
-<text>pages/my/my.wxml</text>
+<view class="my_top">
+  <component title='' show_bol='{{true}}'></component>
+</view>
+<view class="my_t">
+  <view class="my_tt">
+    <view class="my_HeadPortrait"></view>
+    <view class="my_ttr">
+      <view class="my_name">Hi，吴明智</view>
+      <view class="my_userid">NO.00101011</view>
+    </view>
+  </view>
+  <view class="my_tc">
+    <view class="my_detalis" bindtap="mydetalis">
+      <view class="my_tc_img"></view>
+      <text>個人信息</text>
+    </view>
+    <view class="my_giftcard">
+      <view class="my_tc_img"></view>
+      <text>禮品卡</text>
+    </view>
+    <view class="my_shoppingcard">
+      <view class="my_tc_img"></view>
+      <text>購物卡</text>
+    </view>
+  </view>
+</view>
+<view class="my_c">
+  <view class="my_cbox">
+    <view class="my_cbox_t">
+      <text class="my_cbox_tl">我的礼品</text>
+      <text class="my_cbox_tr">></text>
+    </view>
+    <view class="my_cbox_c">
+      <view class="my_cbox_cbox">
+        <view class="my_cbox_cboximg"></view>
+        <text>礼品库</text>
+      </view>
+      <view class="my_cbox_cbox">
+        <view class="my_cbox_cboximg"></view>
+        <text>犒勞自己</text>
+      </view>
+      <view class="my_cbox_cbox">
+        <view class="my_cbox_cboximg"></view>
+        <text>已送礼物</text>
+      </view>
+      <view class="my_cbox_cbox">
+        <view class="my_cbox_cboximg"></view>
+        <text>已收礼物</text>
+      </view>
+    </view>
+  </view>
+  <view class="my_cbox">
+    <view class="my_cbox_t">
+      <text class="my_cbox_tl">我的服务</text>
+      <!-- <text class="my_cbox_tr">></text> -->
+    </view>
+    <view class="my_cbox_c">
+      <view class="my_cbox_cbox">
+        <view class="my_cbox_cboximg"></view>
+        <text>電子发票</text>
+      </view>
+      <view class="my_cbox_cbox">
+        <view class="my_cbox_cboximg"></view>
+        <text>联系客服</text>
+      </view>
+      <view class="my_cbox_cbox">
+        <view class="my_cbox_cboximg"></view>
+        <text>常见问题</text>
+      </view>
+      <view class="my_cbox_cbox">
+        <view class="my_cbox_cboximg"></view>
+        <text>退換/售後</text>
+      </view>
+    </view>
+  </view>
+</view>
