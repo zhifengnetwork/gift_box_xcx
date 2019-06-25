@@ -1,0 +1,27 @@
+<view class="mydetalis_top">
+  <component title='個人信息' show_bol='{{false}}'></component>
+</view>
+<view class="mydetalis_head">
+  <view class="mydetalis_headimg"></view>
+  <text class="mydetalis_headtext">更換頭像</text>
+</view>
+<view class="mydetalis_c">
+  <view class="mydetalis_cname">
+    <text class="mydetalis_ctext">昵稱</text>
+    <input placeholder="请输入您的用户名" class="mydetalis_cinput" />
+  </view>
+  <view class="mydetalis_cname">
+    <text class="mydetalis_ctext">性別</text>
+    <input placeholder="请输入您的性别" class="mydetalis_cinput" />
+  </view>
+  <view class="mydetalis_cname">
+    <text class="mydetalis_ctext">生日</text>
+    <input placeholder="请输入您的生日" class="mydetalis_cinput" />
+  </view>
+  <view class="mydetalis_cintro">
+    <view class="mydetalis_cintrol">簡介</view>
+    <textarea class="mydetalis_cintror" placeholder="點擊輸入簡介（最多20個字）" maxlength="20"></textarea>
+  </view>
+  <text class="mydetalis_cftext">進入地址管理</text>
+</view>
+<view class="mydetalis_buttom">提交</view>
