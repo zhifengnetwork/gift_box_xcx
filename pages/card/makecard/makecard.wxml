@@ -21,6 +21,7 @@
     <!-- 列表项-e -->
   </view>
   <!-- 选择列表-e -->
+  <!-- 预览-s -->
   <view class="preview">
     <view class="preview_btn">
       预览
@@ -30,4 +31,20 @@
     </view>
   </view>
   <!-- 预览-e -->
+  <!-- 写下祝福-s -->
+  <view class="blessing_mask" wx:if="{{blessing}}">
+    <view class="blessing_content">
+      <view class="blessing_back" bindtap="back">X</view>
+      <view class="blessing_content_title">
+        写下祝福......
+      </view>
+      <view class="blessing_content_text">
+
+      </view>
+      <view class="blessing_content_btn">
+        完成
+      </view>
+    </view>
+  </view>
+  <!-- 写下祝福-e -->
 </view>

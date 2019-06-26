@@ -12,6 +12,7 @@
     </view>
   </view>
 </view>
+<audio src="{{src}}" id="myAudio"></audio>
 <view class="music_send" bindtap="send">
   确认提交
 </view>

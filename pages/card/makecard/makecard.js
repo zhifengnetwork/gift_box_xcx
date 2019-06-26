@@ -37,13 +37,25 @@ Page({
         img: '../../public/images/card/blessing.png',
         icon: '../../public/images/card/revision.png'
       },
-    ]
+    ],
+    blessing:false
   },
   skip: function(e) {
     console.log(e.currentTarget.dataset.url)
     let url = e.currentTarget.dataset.url;
+    if (url == 'blessing/blessing'){
+      this.setData({
+        blessing:true
+      })
+      return false;
+    }
     wx.navigateTo({
       url: url
+    })
+  },
+  back:function(){
+    this.setData({
+      blessing:false
     })
   },
   /**
