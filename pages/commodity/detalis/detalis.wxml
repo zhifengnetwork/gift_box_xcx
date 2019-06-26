@@ -70,44 +70,98 @@
       </scroll-view>
     </view>
   </view>
-<view class="detail_x">  
-  <view class="detalis_f">
-    <view class="detalis_fl">
-      <view class="detalis_flbox">
-        <image src="../../public/images/detalis/home_icon.png"></image>
-        <view class="detalis_fl_text">首页</view>
+  <view class="detail_x">
+    <view class="detalis_f">
+      <view class="detalis_fl">
+        <view class="detalis_flbox">
+          <image src="../../public/images/detalis/home_icon.png"></image>
+          <view class="detalis_fl_text">首页</view>
+        </view>
+        <view class="detalis_flbox">
+          <image src="../../public/images/detalis/kefu_icon.png"></image>
+          <view class="detalis_fl_text">首页</view>
+        </view>
+        <view class="detalis_flbox">
+          <image src="../../public/images/detalis/gouwuche_icon.png"></image>
+          <view class="detalis_fl_text">首页</view>
+        </view>
       </view>
-      <view class="detalis_flbox">
-        <image src="../../public/images/detalis/kefu_icon.png"></image>
-        <view class="detalis_fl_text">首页</view>
-      </view>
-      <view class="detalis_flbox">
-        <image src="../../public/images/detalis/gouwuche_icon.png"></image>
-        <view class="detalis_fl_text">首页</view>
+      <view class="detalis_fr">
+        <view class="detalis_frbox">
+          <view class="detalis_frl" bindtap="my_goods">犒劳自己</view>
+          <view class="detalis_frr">赠送他人</view>
+        </view>
       </view>
     </view>
-    <view class="detalis_fr">
-      <view class="detalis_frbox">
-        <view class="detalis_frl" bindtap="my_goods">犒劳自己</view>
-        <view class="detalis_frr">赠送他人</view>
-      </view>
+    <!-- 商品规格选择蒙层 -->
+    <!-- catchtouchmove="preventTouchMove" 作用是出现蒙层是不能滑动的-->
+    <view class="shop_selection" catchtouchmove="preventTouchMove">
     </view>
+    <view class="shop_ear" catchtouchmove="preventTouchMove">
+      <image src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640" class="store"></image>
+      <text class="jiage">￥6150</text>
+      <view class="selected">
+        <text>已选择</text>:
+        <text>黑色</text>,
+        <text class="mama">39码</text>
+      </view>
+      <!-- 正式的规格选择区块 -->
+      <view>
+        <scroll-view class='allConten' scroll-y="false">
+<!-- result.spec_goods_price.store_count==0 -->
+          <view wx:for="{{result.goods.goods_spec_list}}" wx:for-index="pos" wx:key>
+            <view class='ggfl'>{{item[0].spec_name}}</view>
+            <view class='ggList'>
+              <block wx:for="{{item}}" wx:key>   
+              <!-- item {{item.isClick==1?'isClick':''}} -->
+              <!-- item {{sort>0?(item.isClick==1?'isClick':''):'disabled'}} -->
+<!-- class="attr_value {{attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'attr_value_active':''):'attr_value_disabled'}}" -->
+<!-- {{spec_dss}} -->
+<!-- {{sort}} -->
+<!-- {{result.spec_goods_price}} -->
+                <view data-index="{{pos}}" data-pos="{{index}}" class="item {{sort==0&item.isClick==1?'disabled':(item.isClick==1?'isClick':'')}}" data-itemId='{{item.item_id}}' bindtap="propClick">{{item.item}}</view>   
+                {{result.spec_goods_price.store_count}}                                                  
+              </block>
+            </view>
+          </view>
+          <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
+            <view class='buyNum-box'>
+              <view class='buyNum'>购买数量</view>
+              <view class='jian' catchtap='reduceProduct'>-</view>
+              <view class='num'>{{productNum}}</view>
+              <view class='jia' catchtap='addProduct' data-sort="{{dataArr.goods.store_count}}">+</view>
+            </view>
+          </view>
+        </scroll-view>
+        <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
+          <view class='btn-box'>
+            <view class='btn-item'>
+              <view class='addCar' data-type='2' bindtap='addCar'>加入购物车</view>
+            </view>
+            <view class='btn-item'>
+              <view class='buyPro' catchtap='toBuy'>立即购买</view>
+            </view>
+          </view>
+        </view>
+        <view hidden='{{dataArr.goods.type==2?"":"true"}}'>
+          <view class='btn-box'>
+            <view class='pda-btn' catchtap='toPinDan'>
+              <view class='moneya'>HK$ {{price}}</view>
+              <view class='btn-worda' hidden='{{(order_id == "" && ptorder_id == "")?"":"true"}}'>发起拼单</view>
+              <view class='btn-worda' hidden='{{(order_id == "" && ptorder_id == "")?"true":""}}'>参与拼单</view>
+            </view>
+          </view>
+        </view>
+        <view hidden='{{dataArr.goods.type==1?"":"true"}}'>
+          <view class='btn-box'>
+            <text class='kj-btn' bindtap='toKanjia'>砍价优惠拿</text>
+          </view>
+        </view>
+      </view>
+
+
+
+    </view>
+
   </view>
-  <!-- 商品规格选择蒙层 -->
-  <!-- catchtouchmove="preventTouchMove" 作用是出现蒙层是不能滑动的-->
-  <view class="shop_selection" catchtouchmove="preventTouchMove">
-  </view>
-  <view class="shop_ear" catchtouchmove="preventTouchMove">
-     <image src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640" class="store"></image>
-     <text class="jiage">￥6150</text>
-     <view class="selected">
-       <text>已选择</text>:
-       <text>黑色</text>,
-       <text class="mama">39码</text>
-     </view>
-    
-     
-  </view>
-   
-</view>  
 </view>

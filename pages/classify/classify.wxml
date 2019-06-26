@@ -1,2 +1,56 @@
-<!--pages/classify/classify.wxml-->
-<text>pages/classify/classify.wxml</text>
+<view class="{{isIPX ? 'navi-bar-view-IPX' : 'navi-bar-view'}}">
+<component title='分类' show_bol='{{false}}'></component>
+</view>
+<view class="sousou_ear">
+  <input type="text" class="find" placeholder="ALEXANDER WANG"></input>
+  <image src="../public/images/classify/sousuo.png" class="sousou"></image>
+</view>
+<view class="container1">
+  <!--左侧栏-->
+  <scroll-view scroll-y="true"  class="{{isIPX ? 'leftview-IPX' : 'leftview'}}" style="height:{{tbodyHeight}}px">
+    <!--用数组填充左侧菜单页面-->
+    <block wx:for="{{navLeftItems}}" wx:key>
+      <!--index是默认的数组下标，点击菜单，把index传给selectMenuID，三元表达式判断selectMenuID是否是当前index，子菜单用不同样式-->
+      <view class=" tt {{selectMenuID == index ? 'activemenu' : 'normalmenu'}}" bindtap="switchToRight" data-id="{{item.cat_id}}" data-index="{{index}}">{{item.cat_name}}
+      </view>
+    </block>
+  </scroll-view>
+  <!--右侧栏-->
+  <view class="{{isIPX ? 'rightview-IPX' : 'rightview'}}">
+    <!--判断selectMenuID值显示不同页面-->
+    <view wx:if="{{selectMenuID==0}}">
+      <view class="searchLetter touchClass">
+        <view wx:for="{{result.goods.goods_spec_list}}" wx:for-index="groupindex"  wx:for-item="cell" style="color:#777777;font-size:25rpx;" wx:key="index" data-letter="{{cell[groupindex].key}}" 
+        catchtouchend="clickLetter"> {{cell[groupindex].key}}</view>
+      </view>
+      <block wx:if="{{isShowLetter}}">
+        <view class="showSlectedLetter">
+          {{showLetter}}
+        </view>
+      </block> 
+      <!-- style="height:{{tbodyHeight}}px" -->
+      <scroll-view scroll-y="true" class="{{isIPX ? 'scrolhei-IPX' : 'scrolhei'}}"  style="height:{{tbodyHeight}}px" bindscroll="bindScroll" scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}">
+        <view class="selection" wx:for="{{result.goods.goods_spec_list}}" wx:for-item="pingpai"  wx:key wx:for-index="groupindex">
+          <view class="item_letter" id="{{pingpai[groupindex].key}}">{{pingpai[groupindex].key}}</view>
+          <view class="item_city" wx:for="{{pingpai}}" wx:for-item="ct" wx:key data-city="{{ct.name}}" bindtap="bindCity">
+            <image src="{{ct.img}}" class="shengluo"></image> 
+            <text class="pingpai_name">{{ct.name}}</text>
+          </view>         
+        </view>
+        
+        
+       
+      </scroll-view>
+     
+    </view>
+    <view wx:if="{{selectMenuID==1}}">
+      2
+    </view>
+    <view wx:if="{{selectMenuID==2}}">
+      3
+    </view>
+    <view wx:if="{{selectMenuID==3}}">
+      4
+    </view>
+  </view>
+</view>

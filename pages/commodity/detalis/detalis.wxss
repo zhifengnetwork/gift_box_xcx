@@ -244,3 +244,156 @@ color:rgba(51,51,51,1);
   margin-top: 90rpx;
   margin-left: -130rpx
 }
+/* 商品规格详情选择 */
+.allConten{
+  max-height: 600rpx !important;
+  overflow: hidden;
+  width: 80%;
+  margin-left: 10%
+}
+.modeScroll{
+  height:674rpx !important;
+  overflow: hidden;
+}
+.ggfl{
+
+  font-size: 30rpx;
+  padding-top:40rpx;
+  margin-left: 10rpx
+}
+.item{
+  width: 120rpx;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 28rpx;
+  text-align: center;
+  margin: 10rpx;
+  display: inline-block;
+  border: 3rpx solid #ccc
+}
+.isClick{
+  color: black;
+  border: 1px solid black; 
+  text-align: center;
+  background: url("https://giftbox.zhifengwangluo.com/public/images/bg.png");
+  background-size: 100% 100%
+}
+.disabled{
+  color: #ccc
+}
+.bottomBox{
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  height: 110rpx;
+  width: 100%;
+  background: white;
+  z-index: 1000;
+}
+.bottomBox .conten-box{
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding-left: 24rpx;
+  box-sizing: border-box;
+}
+.bottomBox .kf-box{
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  width: 121rpx;
+  height: 110rpx;
+  align-items: center;
+  justify-content: center;
+}
+.bottomBox .kf-box .contact{
+  opacity: 0;
+  position: absolute;
+  left: 30rpx;
+  top: 26rpx;
+  z-index: 1000;
+}
+
+.bottomBox .kf-box .kf-icon{
+  width: 35rpx;
+  height: 36rpx;
+}
+.bottomBox .kf-box .kf-word{
+  font-size: 22rpx;
+}
+.bottomBox .pd-btn,.commodity_attr_box .btn-box .pda-btn{
+  height: 78rpx;
+  width: 210rpx;
+  background: rgb(249, 10, 6);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius:39rpx; 
+  align-items: center;
+  justify-content: center;
+  margin-left: 255rpx;
+}
+.bottomBox .gwc-btn,.bottomBox  .mai-btn{
+  height: 78rpx;
+  width: 210rpx;
+  color: white;
+  display: flex;
+  flex-direction: column;
+  border-radius:39rpx; 
+  align-items: center;
+  justify-content: center;
+  margin-left: 20rpx;
+  font-size: 32rpx;
+}
+.bottomBox .gwc-btn{
+  background: #861eff;
+}
+.bottomBox  .mai-btn{
+  background: #fe4e54;
+}
+.commodity_attr_box  .pda-btn .moneya{
+  font-size: 22rpx;
+  height: 40rpx;
+  line-height: 40rpx
+
+}
+.commodity_attr_box  .pda-btn .btn-worda{
+  font-size: 26rpx;
+  height: 40rpx;
+  line-height: 40rpx
+}
+.bottomBox .pd-btn .money{
+  font-size: 22rpx;
+}
+
+.bottomBox .pd-btn .btn-word{
+  font-size: 26rpx;
+}
+/* 砍价 */
+.kj-box{
+  display: flex;
+}
+.kj-box .btn-box{
+  width: 50%;
+  height: 110rpx;
+  line-height: 110rpx;
+  text-align: center;
+  color: white;
+  font-size: 32rpx;
+}
+.kj-box .btn-box .mode-btn,.kj-box .btn-box .kj-btn{
+  display: inline-block;
+  width: 210rpx;
+  height: 78rpx;
+  line-height: 78rpx;
+  border-radius: 39rpx;
+  margin-top: 19rpx;
+  font-size: 32rpx;
+}
+.kj-box .btn-box .mode-btn{
+  background: #861eff;
+}
+.kj-box .btn-box .kj-btn{
+  background: #fe4e54;
+}
+

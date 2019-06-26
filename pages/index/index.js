@@ -44,7 +44,7 @@ Page({
       this.setData({ imgUrlslength: this.data.imgUrls.length})
   },
   onShow: function () {
-
+  
   },
   // 第一个轮播图切换调动这个函数
   swiperChange: function (e) {

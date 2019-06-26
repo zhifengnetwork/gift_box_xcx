@@ -33,15 +33,42 @@ App({
         }
       }
     }),
+
+      // 判断设备是否为 iPhone X
+      this.checkIsIPhoneX();
+      
       //获取设备顶部窗口的高度（不同设备窗口高度不一样，根据这个来设置自定义导航栏的高度
       wx.getSystemInfo({
         success: (res) => {
           this.globalData.height = res.statusBarHeight
         }
       })
+      
 
   },
   globalData: {
     height: 0
+  },
+  
+  //判断设备是否为 iPhone X
+  checkIsIPhoneX: function () {
+    const self = this
+    wx.getSystemInfo({
+      success: function (res) {
+        // 根据 model 进行判断
+        if (res.model.search('iPhone X') != -1) {
+          self.globalData.isIPX = true;
+          console.log("5555555555555")
+        }
+        // 或者根据 screenHeight 进行判断
+        // if (res.screenHeight == 812) {
+        //   self.globalData.isIPX = true
+        // }
+      },
+
+      globalData: {
+        height: 0
+      }
+    })
   }
 })

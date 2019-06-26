@@ -1,20 +1,47 @@
-<!-- <view class="title">属性值联动选择</view>   -->
-<!--options-->
-<view class="commodity_attr_list">
-  <!--每组属性-->
-  <view class="attr_box" wx:for="{{attrValueList}}" wx:for-item="attrValueObj" wx:for-index="attrIndex">
-    <!--属性名-->
-    <view class="attr_name">{{attrValueObj.attrKey}}</view>
+<!-- hidden="{{guigeShow?'':'true'}}" -->
+<view >
 
-    <!--属性值-->
-    <view class="attr_value_box">
-      <!--每个属性值-->
-      <view class="attr_value {{attrIndex==firstIndex || attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'attr_value_active':''):'attr_value_disabled'}}" bindtap="selectAttrValue" data-status="{{attrValueObj.attrValueStatus[valueIndex]}}"
-        data-value="{{value}}" data-key="{{attrValueObj.attrKey}}" data-code="{{attrCode}}" data-index="{{attrIndex}}" data-selectedvalue="{{attrValueObj.selectedValue}}" wx:for="{{attrValueObj.attrValues}}" wx:for-item="value" wx:for-index="valueIndex">{{value}}</view>
+  <scroll-view class='allConten' scroll-y="false">
+    
+    <view wx:for="{{result.goods.goods_spec_list}}" wx:for-index="pos" wx:key>
+      <view class='ggfl'>{{item[0].spec_name}}</view>
+      <view class='ggList'>
+        <block wx:for="{{item}}" wx:key>
+          <view data-index="{{pos}}" data-pos="{{index}}" class="item {{item.isClick==1?'isClick':''}}" data-itemId='{{item.item_id}}' bindtap="propClick">{{item.item}}</view>
+        </block>
+      </view>
+    </view>
+    <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
+      <view class='buyNum-box'>
+        <view class='buyNum'>购买数量</view>
+        <view class='jian' catchtap='reduceProduct'>-</view>
+        <view class='num'>{{productNum}}</view>
+        <view class='jia' catchtap='addProduct' data-sort="{{dataArr.goods.store_count}}">+</view>
+      </view>
+    </view>
+  </scroll-view>
+  <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
+    <view class='btn-box'>
+      <view class='btn-item'>
+        <view class='addCar' data-type='2' bindtap='addCar'>加入购物车</view>
+      </view>
+      <view class='btn-item'>
+        <view class='buyPro' catchtap='toBuy'>立即购买</view>
+      </view>
     </view>
   </view>
-</view>
-<!--button-->
-<view class="weui-btn-area">
-  <button class="weui-btn" bindtap="submit">选好了</button>
+  <view hidden='{{dataArr.goods.type==2?"":"true"}}'>
+    <view class='btn-box'>
+      <view class='pda-btn' catchtap='toPinDan'>
+        <view class='moneya'>HK$ {{price}}</view>
+        <view class='btn-worda' hidden='{{(order_id == "" && ptorder_id == "")?"":"true"}}'>发起拼单</view>
+        <view class='btn-worda' hidden='{{(order_id == "" && ptorder_id == "")?"true":""}}'>参与拼单</view>
+      </view>
+    </view>
+  </view>
+  <view hidden='{{dataArr.goods.type==1?"":"true"}}'>
+    <view class='btn-box'>
+      <text class='kj-btn' bindtap='toKanjia'>砍价优惠拿</text>
+    </view>
+  </view>
 </view>

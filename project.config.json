@@ -9,8 +9,16 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
 		"autoAudits": false,
-		"coverView": true
+		"checkInvalidKey": true,
+		"checkSiteMap": true,
+		"uploadWithSourceMap": true,
+		"babelSetting": {
+			"ignore": [],
+			"disablePlugins": [],
+			"outputPath": ""
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.0.4",
@@ -40,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 6,
+			"current": 8,
 			"list": [
 				{
 					"id": 1,
@@ -79,8 +87,6 @@
 				},
 				{
 					"id": -1,
-					"name": "ds",
-					"pathName": "pages/commodity/commodity",
 					"name": "犒劳自己",
 					"pathName": "pages/commodity/detalis/payment/award/award",
 					"query": "",
@@ -91,6 +97,19 @@
 					"name": "赠送他人",
 					"pathName": "pages/commodity/detalis/give/GiveOthers/GiveOthers",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/classify/classify",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/commodity/commodity",
 					"scene": null
 				}
 			]

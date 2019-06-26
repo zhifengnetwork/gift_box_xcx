@@ -25,5 +25,41 @@
     "navigationBarTextStyle": "black",
     "navigationStyle": "custom"
   },
-  "sitemapLocation": "sitemap.json"
+  "sitemapLocation": "sitemap.json",
+  "tabBar": {
+    "color": "#666666",
+    "font-size":"40rpx",
+    "selectedColor":"#666666",
+    "borderStyle": "white",
+    
+    "list": [
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/public/images/index/zhuye.png",
+        "selectedIconPath": "pages/public/images/index/zhuye_x.png",
+        "text": "首页"
+      },
+      {
+        "pagePath": "pages/classify/classify",
+        "iconPath": "pages/public/images/index/fenglei.png",
+        "selectedIconPath": "pages/public/images/index/fenglei_x.png",
+        "text": "分类"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/public/images/index/shouye.png",
+        "selectedIconPath": "pages/public/images/index/gouwuche_x.png",
+        "text": "购物车"
+      },
+      {
+        "pagePath": "pages/index/index",
+        "iconPath": "pages/public/images/index/feren.png",
+        "selectedIconPath": "pages/public/images/index/wo_x.png",
+        "text": "个人中心"
+      }
+    ]
+  }
+
+ 
+
 }
