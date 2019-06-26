@@ -1,10 +1,12 @@
 /* pages/card/makecard/record/record.wxss */
-.boss_top{
+
+.boss_top {
   height: 140rpx;
   background: #fff;
   border-bottom: 1rpx solid #eee;
 }
-.record_bg{
+
+.record_bg {
   position: absolute;
   top: 0;
   left: 0;
@@ -12,11 +14,13 @@
   height: 100vh;
   font-size: 0;
 }
-.record_bgimg{
+
+.record_bgimg {
   width: 100%;
   height: 100%;
 }
-.record_content{
+
+.record_content {
   position: absolute;
   top: 130rpx;
   left: 0;
@@ -24,45 +28,49 @@
   height: 90%;
   overflow: hidden;
 }
-.record_content_header{
+
+.record_content_header {
   width: 120%;
   height: 160rpx;
 }
-.record_time{
+
+.record_time {
   position: relative;
   margin: 0 auto;
-  width:352rpx;
-  height:352rpx;
+  width: 352rpx;
+  height: 352rpx;
   line-height: 312rpx;
   letter-spacing: 5rpx;
   text-align: center;
-  color:#BB9D82;
-  font-size:90rpx;
-  font-weight:400;
-  font-family:ZHSRXT--GBK1-0;
-  border:20rpx solid #222127;
+  color: #bb9d82;
+  font-size: 90rpx;
+  font-weight: 400;
+  font-family: ZHSRXT--GBK1-0;
+  border: 20rpx solid #222127;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
-  box-shadow:0rpx 4rpx 6rpx 0rpx rgba(0, 0, 0, 0.35);
-  border-radius:50%;
+  box-shadow: 0rpx 4rpx 6rpx 0rpx rgba(0, 0, 0, 0.35);
+  border-radius: 50%;
   z-index: 30;
 }
-.record_pause{
+
+.record_pause {
   position: absolute;
   top: 440rpx;
   left: 480rpx;
-  width:125rpx;
-  height:125rpx;
-  border:20rpx solid #222127;
-  box-shadow:0rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.35);
-  border-radius:50%;
+  width: 125rpx;
+  height: 125rpx;
+  border: 20rpx solid #222127;
+  box-shadow: 0rpx 4rpx 8rpx 0rpx rgba(0, 0, 0, 0.35);
+  border-radius: 50%;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
   z-index: 29;
 }
-.record_pause_img{
+
+.record_pause_img {
   position: absolute;
   left: 10rpx;
   top: 0;
@@ -72,18 +80,20 @@
   height: 70%;
   margin: auto;
 }
-.record_state{
+
+.record_state {
   position: relative;
   margin: 238rpx auto 0;
-  width:143rpx;
-  height:143rpx;
-  border:8rpx solid rgba(187,157,130,1);
-  border-radius:50%;
+  width: 143rpx;
+  height: 143rpx;
+  border: 8rpx solid rgba(187, 157, 130, 1);
+  border-radius: 50%;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
 }
-.record_state_bg{
+
+.record_state_bg {
   position: absolute;
   left: 0;
   top: 0;
@@ -92,32 +102,37 @@
   margin: auto;
   width: 100%;
   height: 100%;
-  border-radius:50%;
-  background: #FF0000;
-  transition: .3s all;
+  border-radius: 50%;
+  background: #f00;
+  transition: 0.3s all;
 }
-.record_state .active{
+
+.record_state .active {
   width: 60%;
   height: 60%;
 }
-.record_delete,.record_send{
+
+.record_delete, .record_send {
   position: relative;
   margin-top: 54rpx;
-  width:115rpx;
-  height:115rpx;
-  background:#2E3236;
-  box-shadow:6rpx 1rpx 18rpx 3rpx rgba(0, 0, 0, 0.41);
-  border-radius:50%;
+  width: 115rpx;
+  height: 115rpx;
+  background: #2e3236;
+  box-shadow: 6rpx 1rpx 18rpx 3rpx rgba(0, 0, 0, 0.41);
+  border-radius: 50%;
 }
-.record_delete{
+
+.record_delete {
   float: left;
   margin-left: 100rpx;
 }
-.record_send{
+
+.record_send {
   float: right;
   margin-right: 100rpx;
 }
-.record_delete_img,.record_send_img{
+
+.record_delete_img, .record_send_img {
   position: absolute;
   left: 0;
   top: 0;
@@ -126,4 +141,49 @@
   margin: auto;
   width: 60%;
   height: 60%;
+}
+/* 进度条 */
+.circleProgress_wrapper {
+  position: absolute;
+  left: -20rpx;
+  top: -14rpx;
+  display: block;
+  width: 352rpx;
+  height: 352rpx;
+  margin: auto;
+}
+
+.wrapper {
+  width: 176rpx;
+  height: 360rpx;
+  position: absolute;
+  top: 0;
+  overflow: hidden;
+}
+
+.right {
+  right: 0;
+}
+
+.left {
+  left: 0;
+}
+.circleProgress {
+  width: 320rpx;
+  height: 320rpx;
+  border: 10rpx solid #222127;
+  border-radius: 50%;
+  position: absolute;
+  top: 0;
+  -webkit-transform: rotate(-135deg);
+}
+.rightcircle {
+  border-top: 10rpx solid #BB9D82;
+  border-right: 10rpx solid #BB9D82;
+  right: 10rpx;
+}
+.leftcircle {
+  border-bottom: 10rpx solid #BB9D82;
+  border-left: 10rpx solid #BB9D82;
+  left: 10rpx;
 }
