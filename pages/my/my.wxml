@@ -14,11 +14,11 @@
       <view class="my_tc_img"></view>
       <text>個人信息</text>
     </view>
-    <view class="my_giftcard">
+    <view class="my_giftcard" bindtap="giftcard">
       <view class="my_tc_img"></view>
       <text>禮品卡</text>
     </view>
-    <view class="my_shoppingcard">
+    <view class="my_shoppingcard" bindtap="shoppingcard">
       <view class="my_tc_img"></view>
       <text>購物卡</text>
     </view>
@@ -31,19 +31,19 @@
       <text class="my_cbox_tr">></text>
     </view>
     <view class="my_cbox_c">
-      <view class="my_cbox_cbox">
+      <view class="my_cbox_cbox" bindtap="giftbank">
         <view class="my_cbox_cboximg"></view>
         <text>礼品库</text>
       </view>
-      <view class="my_cbox_cbox">
+      <view class="my_cbox_cbox" bindtap="reward">
         <view class="my_cbox_cboximg"></view>
         <text>犒勞自己</text>
       </view>
-      <view class="my_cbox_cbox">
+      <view class="my_cbox_cbox" bindtap="sendgift">
         <view class="my_cbox_cboximg"></view>
         <text>已送礼物</text>
       </view>
-      <view class="my_cbox_cbox">
+      <view class="my_cbox_cbox" bindtap="collectgift">
         <view class="my_cbox_cboximg"></view>
         <text>已收礼物</text>
       </view>

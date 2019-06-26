@@ -18,7 +18,6 @@
     "pages/commodity/detalis/payment/award/award",
     "pages/commodity/detalis/give/GiveOthers/GiveOthers",
     "pages/commodity/detalis/give/cashgift/cashgift",
-    "pages/commodity/detalis/give/integral/integral",
     "pages/commodity/detalis/give/giftbag/giftbag",
     "pages/commodity/detalis/give/envelope/envelope",
     "pages/commodity/detalis/give/envelopetwo/envelopetwo",
@@ -26,7 +25,15 @@
     "pages/commodity/detalis/give/GetTheGift/GetTheGift",
     "pages/commodity/detalis/give/envelopefour/envelopefour",
     "pages/commodity/detalis/give/GetTheSuccess/success",
-    "pages/my/mydetalis/mydetalis"
+    "pages/my/mydetalis/mydetalis",
+    "pages/my/giftcard/giftcard",
+    "pages/my/shoppingcard/shoppingcard",
+    "pages/my/shoppingcard/recharge/recharge",
+    "pages/my/shoppingcard/detail/detail",
+    "pages/my/giftbank/giftbank",
+    "pages/my/reward/reward",
+    "pages/my/sendgift/sendgift",
+    "pages/my/collectgift/collectgift"
   ],
   "window": {
     "backgroundTextStyle": "light",

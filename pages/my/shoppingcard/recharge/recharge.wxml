@@ -1,0 +1,11 @@
+<view class="recharge_nav">
+  <component title='购物卡充值' show_bol='{{false}}'></component>
+</view>
+<view class="recharge_box">
+  <text class="recharge_top">充值金額</text>
+  <view class="recharge_conent">
+    <text>HK$</text>
+    <input class="recharge_input" />
+  </view>
+</view>
+<view class="recharge_submit">提交</view>

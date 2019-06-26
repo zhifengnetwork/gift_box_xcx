@@ -64,7 +64,7 @@
 .my_cbox{
   height: 250rpx;
   /* background: skyblue; */
-  border-bottom: 2rpx solid #ccc;
+  border-bottom: 2rpx solid rgba(243,241,241,1);
   margin-bottom: 20rpx;
 }
 .my_cbox_t{

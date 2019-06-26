@@ -1,0 +1,109 @@
+<view class="reward_nav">
+  <component title='犒勞自己' show_bol='{{false}}'></component>
+</view>
+<view class="reward">
+  <view class="reward_box">
+    <view class="reward_top">
+      <view class="reward_number">订单编号：20190314002</view>
+      <view class="reward_obligation">待付款</view>
+    </view>
+    <view class="reward_con">
+      <view class="reward_img"></view>
+      <view class="reward_conent">
+        <view class="reward_brand">Salvatore Ferragamo</view>
+        <view class="reward_standard">蓝色经典男士淡香水50ml</view>
+        <view class="reward_size"></view>
+      </view>
+      <view class="reward_r">
+        <view class="reward_price">HK$124.00</view>
+        <view class="reward_num">X 1</view>
+      </view>
+    </view>
+    <view class="reward_bott">
+      <view class="reward_bottnum">共1件商品</view>
+      <view class="reward_bottprice">合计：HK$124.00</view>
+    </view>
+    <view class="reward_button">
+      <view class="reward_cancel">查看物流</view>
+      <view class="reward_payment">確認收貨</view>
+    </view>
+  </view>
+   <view class="reward_box">
+    <view class="reward_top">
+      <view class="reward_number">订单编号：20190314002</view>
+      <view class="reward_obligation">待付款</view>
+    </view>
+    <view class="reward_con">
+      <view class="reward_img"></view>
+      <view class="reward_conent">
+        <view class="reward_brand">Salvatore Ferragamo</view>
+        <view class="reward_standard">蓝色经典男士淡香水50ml</view>
+        <view class="reward_size"></view>
+      </view>
+      <view class="reward_r">
+        <view class="reward_price">HK$124.00</view>
+        <view class="reward_num">X 1</view>
+      </view>
+    </view>
+    <view class="reward_bott">
+      <view class="reward_bottnum">共1件商品</view>
+      <view class="reward_bottprice">合计：HK$124.00</view>
+    </view>
+    <view class="reward_button">
+      <view class="reward_cancel">查看物流</view>
+      <view class="reward_payment">確認收貨</view>
+    </view>
+  </view>
+   <view class="reward_box">
+    <view class="reward_top">
+      <view class="reward_number">订单编号：20190314002</view>
+      <view class="reward_obligation">待付款</view>
+    </view>
+    <view class="reward_con">
+      <view class="reward_img"></view>
+      <view class="reward_conent">
+        <view class="reward_brand">Salvatore Ferragamo</view>
+        <view class="reward_standard">蓝色经典男士淡香水50ml</view>
+        <view class="reward_size"></view>
+      </view>
+      <view class="reward_r">
+        <view class="reward_price">HK$124.00</view>
+        <view class="reward_num">X 1</view>
+      </view>
+    </view>
+    <view class="reward_bott">
+      <view class="reward_bottnum">共1件商品</view>
+      <view class="reward_bottprice">合计：HK$124.00</view>
+    </view>
+    <view class="reward_button">
+      <view class="reward_cancel">查看物流</view>
+      <view class="reward_payment">確認收貨</view>
+    </view>
+  </view>
+  <view class="reward_box">
+    <view class="reward_top">
+      <view class="reward_number">订单编号：20190314002</view>
+      <view class="reward_obligation">待付款</view>
+    </view>
+    <view class="reward_con">
+      <view class="reward_img"></view>
+      <view class="reward_conent">
+        <view class="reward_brand">Salvatore Ferragamo</view>
+        <view class="reward_standard">蓝色经典男士淡香水50ml</view>
+        <view class="reward_size"></view>
+      </view>
+      <view class="reward_r">
+        <view class="reward_price">HK$124.00</view>
+        <view class="reward_num">X 1</view>
+      </view>
+    </view>
+    <view class="reward_bott">
+      <view class="reward_bottnum">共1件商品</view>
+      <view class="reward_bottprice">合计：HK$124.00</view>
+    </view>
+    <view class="reward_button">
+      <view class="reward_cancel">查看物流</view>
+      <view class="reward_payment">確認收貨</view>
+    </view>
+  </view>
+</view>

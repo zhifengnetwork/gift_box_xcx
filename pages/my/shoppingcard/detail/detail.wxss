@@ -1,0 +1,30 @@
+.detail_nav{
+  height: 115rpx;
+}
+.detali{
+  margin-top: 20rpx;
+}
+.detail_box{
+  height: 150rpx;
+  margin: 0 40rpx;
+  border-bottom: 2rpx solid #f3f1f1;
+}
+.detail_l{
+  float: left;
+  padding-top: 20rpx; 
+}
+.detail_l>view{
+  font-size: 28rpx;
+  /* line-height: 80rpx; */
+  color: #222;
+}
+.detail_l>text{
+  font-size: 26rpx;
+  color: #999999;
+}
+.detail_r{
+  float: right;
+  line-height: 150rpx;
+  color: #222;
+  font-size: 28rpx;
+}
