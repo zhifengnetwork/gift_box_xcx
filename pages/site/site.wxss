@@ -1,0 +1,33 @@
+.site_nav{
+  height: 115rpx;
+}
+.site{
+  text-align: center;
+}
+.site_wuimg{
+  width: 323rpx;
+  height: 247rpx;
+  background: skyblue;
+  margin-top: 169rpx;
+  margin-left: 50%;
+  transform: translate(-50%)
+}
+.site_wutext{
+  line-height: 200rpx;
+  font-size: 36rpx;
+}
+.site_wubutton{
+  position: absolute;
+  bottom: 200rpx;
+  left: 50%;
+  /* margin-left: -50%; */
+  transform: translate(-50%);
+  width: 585rpx;
+  height: 100rpx;
+  background: #000000;
+  color: #efecec;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 50rpx;
+}

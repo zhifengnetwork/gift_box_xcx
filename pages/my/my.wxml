@@ -55,15 +55,15 @@
       <!-- <text class="my_cbox_tr">></text> -->
     </view>
     <view class="my_cbox_c">
-      <view class="my_cbox_cbox">
+      <view class="my_cbox_cbox" bindtap="invoice">
         <view class="my_cbox_cboximg"></view>
         <text>電子发票</text>
       </view>
-      <view class="my_cbox_cbox">
+      <view class="my_cbox_cbox" bindtap="service">
         <view class="my_cbox_cboximg"></view>
         <text>联系客服</text>
       </view>
-      <view class="my_cbox_cbox">
+      <view class="my_cbox_cbox" bindtap="faq">
         <view class="my_cbox_cboximg"></view>
         <text>常见问题</text>
       </view>

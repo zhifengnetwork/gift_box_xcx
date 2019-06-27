@@ -1,0 +1,80 @@
+<view class="invoice_nav">
+  <component title='電子發票' show_bol='{{false}}'></component>
+</view>
+<view class="invoice">
+  <!-- 头部 -->
+  <view class="invoice_top">
+    <text class="invoice_tyoe">發票類型</text>
+    <view class="invoice_top_button">電子發票</view>
+  </view>
+  <!-- 发票抬头 -->
+  <view class="invoice_title">
+    <text class="invoice_title_top">發票擡頭</text>
+    <!-- 单选按钮 -->
+    <radio-group class="radio-group" bindchange="radioChange">
+      <label class="radio" wx:for="{{items}}">
+        <radio value="{{item.name}}" checked="{{item.checked}}" color="#000" />{{item.value}}
+      </label>
+    </radio-group>
+    <view class="unit_box" hidden="{{unit_show}}">
+      <input placeholder="請填寫單位名稱" class="unit_name" />
+      <view class="unit_num_box">
+        <input placeholder="在此填寫納稅人識別號" class="unit_num" />
+        <view class="unit_button_box">
+          <text class="unit_button" bindtap="show">i</text>
+        </view>
+      </view>
+    </view>
+  </view>
+  <!-- 收票人信息 -->
+  <view class="invoice_messege">
+    <text class="messege_top">收票人信息</text>
+    <!-- 收票人手机 -->
+    <view class="messege_con">
+      <text class="messege_con_text">收票人手機</text>
+      <input placeholder="請輸入收票人手機號碼" class="messege_phone" />
+    </view>
+    <!-- 收票人郵箱 -->
+    <view class="messege_footer">
+      <text class="messege_footer_text">收票人郵箱</text>
+      <input placeholder="用來接收電子發票郵件，可選填" class="messege_email" />
+    </view>
+  </view>
+  <!-- 发票内容 -->
+  <view class="invoice_content">
+    <view class="invoice_con_top">發票內容</view>
+    <view class="invoice_con_c">非圖書商品</view>
+    <radio-group class="radio-group">
+      <label class="invoice_content_radio">
+        <radio checked="true" color="#000" class="invoice_gift" />禮品卡
+        <view>\n</view>
+        <radio color="#000" class="invoice_shopping" />購物卡
+      </label>
+    </radio-group>
+  </view>
+  <!-- 发票须知 -->
+  <view class="invoice_notice">
+    <view class="notice_top">
+      <text class="notice_topl"></text>
+      <text class="notice_top_text">發票須知</text>
+      <text class="notice_topr"></text>
+    </view>
+    <view class="notice_content">
+      <text>1.訂單完成付款后, 24小時內自動開具電子發票,每月1-6號稅控系統升級訂單完成付款后48小時內開具</text>
+      <view>\n</view>
+      <text>2.開具電子發票,發票內容可以開具:禮品卡、購物卡。</text>
+      <view>\n</view>
+      <text>3.如遇到任何問題,請您第一時間撥打客服電話 <text class="notice_content_red">888888</text> ,由人工客服為您解答。</text>
+    </view>
+  </view>
+  <view class="invoice_button">提交</view>
+</view>
+<cover-view class="footer" hidden="{{footer_show}}">
+  <cover-view class="zhezhao"></cover-view>
+  <cover-view class="zhezhaobox">
+    <cover-view class="footer_nav">納稅人識別號說明</cover-view>
+    <cover-view class="footer_top">1什麼是納稅人識別號/統一社會信用代碼?</cover-view>
+    <cover-view class="footer_con">纳税人识别号是税登记证上的号码,通常简称为“税号” ,每个企业的税人识别号都是唯一的。这个属于每个人自己且终身不变的数字代码很可能成为我们的第二张“身份证”已领取组织机构代码的纳税人税务登记代码为:区域码+国家技术监督部门设定的组织视构代码。纳税人识别号,一律由15位、17位、18或者20位码(字符型)组成,已领取组织机构代码的纳税人税务登记代码为：区域码+国家技术监督部门设定的组织机构</cover-view>
+    <cover-view class="footer_f" bindtap="footer_hidden">我知道了</cover-view>
+  </cover-view>
+</cover-view>
