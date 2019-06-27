@@ -43,7 +43,7 @@
   </view>
   <view class="awrad_textarea">
     <text>訂單備註</text>
-    <textarea placeholder="選填，請先和商家協商一致"></textarea>
+    <input placeholder="選填，請先和商家協商一致" disabled="{{!flag}}" />
   </view>
 </view>
 <view class="awrad_f">
@@ -53,7 +53,7 @@
 <view class="award_button" bindtap="show">
   提交订单
 </view>
-<view class="award_pop-upbox" hidden="{{flag}}">
+<view class="award_pop-upbox" hidden="{{flag}}" catchtouchmove="preventTouchMove">
   <view class="award_pop-up"></view>
   <view class="pop-up_box">
     <view class="pop-up_box_t">选择支付方式</view>
@@ -61,4 +61,4 @@
     <view class="pop-up_box_b">微信支付</view>
   </view>
 </view>
- <view class="close" bindtap="hide" hidden="{{flag}}">X</view>
+<view class="close" bindtap="hide" hidden="{{flag}}">X</view>

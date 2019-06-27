@@ -1,3 +1,235 @@
 .giveothers_top {
   height: 116rpx;
 }
+
+.giveothers_t {
+  height: 173rpx;
+  padding: 52rpx 45rpx 0 45rpx;
+  display: flex;
+  text-align: center;
+  margin-top: 20rpx;
+  justify-content: space-between;
+  border-bottom: 15rpx solid #ebeced;
+  border-top: 2rpx solid #F3F4F7;
+}
+
+.giveothers_tl {
+  float: left;
+  width: 100rpx;
+  position: relative;
+  padding-top: 12rpx;
+}
+
+.giveothers_tl>view {
+  width: 35rpx;
+  height: 35rpx;
+  background: #364c61;
+  border-radius: 50%;
+  margin-left: 35rpx;
+  margin-top: 1rpx;
+}
+
+.giveothers_tl>text {
+  font-size: 18rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(7, 7, 7, 1);
+}
+
+.giveothers_tl .giveothers_border {
+  width: 200rpx;
+  height: 3rpx;
+  background: rgba(54, 76, 97, 1);
+  position: absolute;
+  top: 30rpx;
+  left: 55rpx;
+}
+
+.giveothers_tc {
+  float: left;
+  width: 100rpx;
+  margin-top: 23rpx;
+  position: relative;
+}
+
+.giveothers_tc>view {
+  width: 20rpx;
+  height: 20rpx;
+  background: #364c61;
+  border-radius: 50%;
+  margin-left: 35rpx;
+  margin-bottom: 5rpx;
+}
+
+.giveothers_tc>text {
+  font-size: 18rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.giveothers_tc .giveothers_border {
+  width: 200rpx;
+  height: 3rpx;
+  background: rgba(54, 76, 97, 1);
+  position: absolute;
+  top: 10rpx;
+  left: 40rpx;
+}
+
+.giveothers_give {
+  height: 90rpx;
+  border-bottom: 15rpx solid #ebeced;
+  padding: 0 45rpx;
+}
+
+.giveothers_give_l {
+  float: left;
+  /* width: 200rpx; */
+  font-size: 24rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 90rpx;
+}
+
+.giveothers_give_l .giveothers_anoumt {
+  font-size: 24rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+
+.giveothers_give_c {
+  float: right;
+  padding-top: 25rpx;
+}
+
+.giveothers_give_c .giveothers_fuhao {
+  width: 40rpx;
+  height: 40rpx;
+  border: 1px solid rgba(54, 76, 97, 1);
+  float: left;
+  text-align: center;
+  line-height: 40rpx;
+  font-size: 30rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.giveothers_give_c>.giveothers_give_number {
+  text-align: center;
+  padding: 0 10rpx;
+  float: left;
+  border: 1px solid rgba(54, 76, 97, 1);
+  line-height: 40rpx;
+  font-size: 30rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.giveothers_c {
+  height: 506rpx;
+  border-bottom: 2rpx solid #f3f4f7;
+  padding: 0 45rpx;
+}
+
+.giveothers_ctop {
+  height: 119rpx;
+}
+
+.giveothers_ctop .giveothers_ctl {
+  line-height: 119rpx;
+  font-size: 26rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  float: left;
+}
+
+.giveothers_ctr {
+  float: right;
+  line-height: 119rpx;
+  font-size: 26rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+}
+
+.giveothers_ctr>text {
+  color: #999;
+  margin-left: 10rpx;
+}
+
+.giveothers_cbox {
+  height: 388rpx;
+  text-align: center;
+}
+
+.giveothers_imgbox {
+  width: 190rpx;
+  height: 388rpx;
+  float: left;
+  margin-right: 20rpx;
+}
+
+.giveothers_img {
+  width: 190rpx;
+  height: 300rpx;
+  background: skyblue;
+}
+
+.giveothers_imgbox>text {
+  font-size: 24rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.giveothers_cbox .giveothers_more {
+  line-height: 300rpx;
+}
+
+.giveothers_b {
+  margin: 0 45rpx;
+}
+
+.giveothers_bt {
+  font-size: 24rpx;
+  line-height: 78rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.giveothers_textbox {
+  width: 608rpx;
+  height: 61rpx;
+}
+
+.giveothers_input {
+  width: 608rpx;
+  height: 61rpx;
+  padding-left: 20rpx;
+  background: rgba(235, 236, 237, 1);
+  font-size: 24rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.giveothers_footer{
+  position: fixed;
+  bottom: 33rpx;
+  left: 90rpx;
+  border-radius: 50rpx;
+  width: 570rpx;
+  height: 80rpx;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 22rpx;
+}

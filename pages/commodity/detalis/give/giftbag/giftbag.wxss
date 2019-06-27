@@ -1,0 +1,96 @@
+.giftbag_top{
+  height: 115rpx;
+}
+.giftbag_t {
+  height: 173rpx;
+  padding: 52rpx 45rpx 0 45rpx;
+  display: flex;
+  text-align: center;
+  margin-top: 20rpx;
+  justify-content: space-between;
+  border-top: 2rpx solid #F3F4F7;
+}
+
+.giftbag_tl {
+  float: left;
+  width: 100rpx;
+  position: relative;
+  padding-top: 12rpx;
+}
+
+.giftbag_tl>view {
+  width: 35rpx;
+  height: 35rpx;
+  background: #364c61;
+  border-radius: 50%;
+  margin-left: 35rpx;
+  margin-top: 1rpx;
+}
+
+.giftbag_tl>text {
+  font-size: 18rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(7, 7, 7, 1);
+}
+
+.giftbag_tl .giftbag_border {
+  width: 200rpx;
+  height: 3rpx;
+  background: rgba(54, 76, 97, 1);
+  position: absolute;
+  top: 30rpx;
+  left: 55rpx;
+}
+
+.giftbag_tc {
+  float: left;
+  width: 100rpx;
+  margin-top: 23rpx;
+  position: relative;
+}
+
+.giftbag_tc>view {
+  width: 20rpx;
+  height: 20rpx;
+  background: #364c61;
+  border-radius: 50%;
+  margin-left: 35rpx;
+  margin-bottom: 5rpx;
+}
+
+.giftbag_tc>text {
+  font-size: 18rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.giftbag_tc .giftbag_border {
+  width: 200rpx;
+  height: 3rpx;
+  background: rgba(54, 76, 97, 1);
+  position: absolute;
+  top: 10rpx;
+  left: 40rpx;
+}
+.giftbag_conter{
+  margin-top: 100rpx;
+  background: pink;
+  height: 563rpx;
+}
+.giftbag_button{
+  margin-top: 100rpx;
+  width:455rpx;
+height:60rpx;
+background:rgba(0,0,0,1);
+border:1px solid rgba(0,0,0,1);
+border-radius:30rpx;
+font-size:22rpx;
+font-family:SourceHanSansCN-Regular;
+font-weight:400;
+color:rgba(255,255,255,1);
+margin-left: 150rpx;
+text-align: center;
+line-height: 60rpx;
+}

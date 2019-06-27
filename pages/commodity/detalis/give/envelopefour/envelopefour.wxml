@@ -1,0 +1,4 @@
+<view class="envelopefour">
+  信封四
+  <view class="envelopefour_button">直接跳过></view>
+</view>

@@ -6,7 +6,7 @@ Page({
 
 
     navLeftItems: [],
-    selectMenuID: 0,
+    selectMenuID: 99,
     // 字母检索数据  --s
     searchLetter: [],
     showLetter: "",
@@ -19,6 +19,9 @@ Page({
     scrollTopId: '', //置顶id
     tbodyHeight:'',
     city: [],
+    vid: 8,
+    diyi:true,
+    dier:[],
     isIPX: app.globalData.isIPX,
     "result": {
       "goods": {
@@ -229,11 +232,18 @@ Page({
     this.setData({
       selectMenuID: index
     });
-    api.getJSON('/api/goods/categoryList?pid=' + id, function(res) {
+    this.setData({ diyi:false});
+    var that=this;
+    api.getJSON('/api/goods/categoryList?pid=' + id, function (res) {
       if (res.data.status == 1) {
-        console.log(res.data)
+        console.log('---------------')
+        console.log( res.data.data)
+        console.log('---------------')
+        that.setData({dier:res.data.data})
       }
     })
+
+
   },
   // 字母检索方法--s
   clickLetter: function(e) {
@@ -270,9 +280,14 @@ Page({
     this.setData({
       scrollTop: 0,
     })
-  }
+  },
   // 字母检索方法 --e
-
+  quchu:function(e){
+     var id = e.currentTarget.dataset.id;
+     this.setData({ selectMenuID: id });
+     this.setData({diyi:true})
+  }
+  
 
 
 })

@@ -1,0 +1,21 @@
+<view class="giftbag_top">
+  <component title='九點星選' show_bol='{{falsr}}'></component>
+</view>
+<view class="giftbag_t">
+  <view class="giftbag_tc">
+    <view></view>
+    <text>確定數量</text>
+    <view class="giftbag_border"></view>
+  </view>
+  <view class="giftbag_tc">
+    <view></view>
+    <text>完成支付</text>
+    <view class="giftbag_border"></view>
+  </view>
+  <view class="giftbag_tl">
+    <view></view>
+    <text>贈送禮包</text>
+  </view>
+</view>
+<view class="giftbag_conter"></view>
+<button class="giftbag_button" open-type="share">贈送TA</button>
