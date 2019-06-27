@@ -6,6 +6,14 @@
 <view class="record_content">
   <image class="record_content_header" src="../../../public/images/card/record_top.png"></image>
   <view class="record_time">
+    <view class="circleProgress_wrapper">
+      <view class="wrapper left">
+          <view class="circleProgress leftcircle" style="-webkit-transform:rotate({{lRotate}}deg)"></view>
+      </view>
+      <view class="wrapper right">
+          <view class="circleProgress rightcircle" style="-webkit-transform:rotate({{rRotate}}deg)"></view>
+      </view>
+    </view> 
    {{second}}:{{minute}}
   </view>
   <view class="record_pause" bindtap="pause">

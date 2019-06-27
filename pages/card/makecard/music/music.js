@@ -6,21 +6,25 @@ Page({
    */
   data: {
     music: [{
-      songName: '克罗地亚',
-      singer: '111',
-      radio: 'true'
+      songName: 'The Dawn (亡灵序曲完美钢琴版) [Cover Dreamtale]',
+      singer: 'Mike Zhou',
+      radio: 'true',
+      src:'http://music.163.com/song/media/outer/url?id=476592630.mp3'
     },
     {
-      songName: '克罗地亚狂想曲',
-      singer: '222',
-      radio: 'false'
+      songName: 'Croatian Rhapsody',
+      singer: 'Maksim Mrvica',
+      radio: 'false',
+      src: 'http://music.163.com/song/media/outer/url?id=1696373.mp3'
     },
     {
-      songName: '克',
-      singer: '333',
-      radio: 'false'
+      songName: 'Bad Apple!!',
+      singer: 'のみこ',
+      radio: 'false',
+      src: 'http://music.163.com/song/media/outer/url?id=22645196.mp3'
     },
-    ]
+    ],
+    src:''
   },
   right:function(e){
     let that = this;
@@ -30,8 +34,12 @@ Page({
     }
     this.data.music[ind].radio = 'true';
     that.setData({
-      music: this.data.music
+      music: this.data.music,
+      src: that.data.music[ind].src
     })
+    // 播放音乐
+    console.log(that.data.music[ind].src)
+    this.audioCtx.play()
   },
   send:function(){
     var that = this
@@ -57,7 +65,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    this.audioCtx = wx.createAudioContext('myAudio')
   },
 
   /**

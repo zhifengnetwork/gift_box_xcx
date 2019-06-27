@@ -1,0 +1,25 @@
+<view class="shoppingcard_nav">
+  <component title='购物卡' show_bol='{{false}}'></component>
+</view>
+<view class="shoppingcard_top">
+  <view class="shoppingcard_topt">
+    <view class="shoppingcard_border"></view>
+    <view class="shoppingcard_topttext">九月星选</view>
+    <view class="shoppingcard_border"></view>
+  </view>
+  <view class="shoppingcard_topimg">玖
+    <view class="shoppingcard_topjiu">九</view>
+  </view>
+  <view class="shoppingcard_top_bottom">
+    <text>電子購物卡</text>
+    <text class="shoppingcard_top_bottomr">NO.000001</text>
+  </view>
+</view>
+<view class="shoppingcard_money">HK$1234.00
+  <view class="shoppingcard_eye"></view>
+</view>
+<view class="shoppingcard_bottom">
+  <view class="shoppingcard_recharge" bindtap="recharge">充值</view>
+  <view>體現</view>
+  <view bindtap="detail">交易明細</view>
+</view>

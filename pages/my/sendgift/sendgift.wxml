@@ -1,0 +1,112 @@
+<view class="sendgift_nav">
+  <component title='已送礼物' show_bol='{{false}}'></component>
+</view>
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
+    好友未領
+    <text></text>
+    <view class="border-right"></view>
+  </view>
+  <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">
+    好友已領
+    <text></text>
+  </view>
+</view>
+<view class="{{currentTab == 0 ? 'show':'hidden'}}">
+  <scroll-view>
+    <view class="sendgift_box">
+      <view class="sendgift_top">
+        <view class="sendgift_number">订单编号：20190314002</view>
+        <view class="sendgift_obligation">待領取</view>
+      </view>
+      <view class="sendgift_con">
+        <view class="sendgift_img"></view>
+        <view class="sendgift_conent">
+          <view class="sendgift_brand">Salvatore Ferragamo</view>
+          <view class="sendgift_standard">蓝色经典男士淡香水50ml</view>
+          <view class="sendgift_size"></view>
+        </view>
+        <view class="sendgift_r">
+          <view class="sendgift_price">HK$124.00</view>
+          <view class="sendgift_num">X 1</view>
+        </view>
+      </view>
+      <view class="sendgift_bott">
+        <view class="sendgift_bottnum">共1件商品</view>
+        <view class="sendgift_bottprice">合计：HK$124.00</view>
+      </view>
+    </view>
+    <view class="sendgift_box">
+      <view class="sendgift_top">
+        <view class="sendgift_number">订单编号：20190314002</view>
+        <view class="sendgift_obligation">待領取</view>
+      </view>
+      <view class="sendgift_con">
+        <view class="sendgift_img"></view>
+        <view class="sendgift_conent">
+          <view class="sendgift_brand">Salvatore Ferragamo</view>
+          <view class="sendgift_standard">蓝色经典男士淡香水50ml</view>
+          <view class="sendgift_size">黑色 26*12*19cm</view>
+        </view>
+        <view class="sendgift_r">
+          <view class="sendgift_price">HK$124.00</view>
+          <view class="sendgift_num">X 1</view>
+        </view>
+      </view>
+      <view class="sendgift_bott">
+        <view class="sendgift_bottnum">共1件商品</view>
+        <view class="sendgift_bottprice">合计：HK$124.00</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="{{currentTab == 1 ? 'show':'hidden'}} abc">
+  <scroll-view>
+    <view class="sendgift_box">
+      <view class="sendgift_top">
+        <view class="sendgift_number">订单编号：20190314002</view>
+        <view class="sendgift_obligation">2019-06-04 10:02:54</view>
+      </view>
+      <view class="sendgift_con">
+        <view class="sendgift_img"></view>
+        <view class="sendgift_conent">
+          <view class="sendgift_brand">Salvatore Ferragamo</view>
+          <view class="sendgift_standard">蓝色经典男士淡香水50ml</view>
+          <view class="sendgift_size">香型：香型</view>
+        </view>
+        <view class="sendgift_r">
+          <view class="sendgift_price">HK$124.00</view>
+          <view class="sendgift_num">X 1</view>
+        </view>
+      </view>
+      <view class="sendgift_bott">
+        <view class="sendgift_bottnum">領取人：東紫</view>
+        <view class="sendgift_bottprice">合计：HK$124.00</view>
+        <view class="sendgift_payment">查看物流</view>
+      </view>
+    </view>
+    <view class="sendgift_box">
+      <view class="sendgift_top">
+        <view class="sendgift_number">订单编号：20190314002</view>
+        <view class="sendgift_obligation">2019-06-04 10:02:54</view>
+      </view>
+      <view class="sendgift_con">
+        <view class="sendgift_img"></view>
+        <view class="sendgift_conent">
+          <view class="sendgift_brand">Salvatore Ferragamo</view>
+          <view class="sendgift_standard">蓝色经典男士淡香水50ml</view>
+          <view class="sendgift_size">香型：香型</view>
+        </view>
+        <view class="sendgift_r">
+          <view class="sendgift_price">HK$124.00</view>
+          <view class="sendgift_num">X 1</view>
+        </view>
+      </view>
+      <view class="sendgift_bott">
+        <view class="sendgift_bottnum">領取人：東紫</view>
+        <view class="sendgift_bottprice">合计：HK$124.00</view>
+        <view class="sendgift_payment">查看物流</view>
+      </view>
+    </view>
+  </scroll-view>
+</view>

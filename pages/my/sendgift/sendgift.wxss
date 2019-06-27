@@ -1,0 +1,182 @@
+page {
+ background: #fff;
+}
+
+.sendgift_nav {
+  height: 115rpx;
+  background: #fff;
+}
+
+/* tab切换 */
+
+.swiper-tab {
+  background: #fff;
+  width: 100%;
+  border-bottom: 2rpx solid rgba(243, 241, 241, 1);
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.swiper-tab-item {
+  flex: 1;
+  text-align: center;
+  font-size: 25rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  position: relative;
+}
+
+.swiper-tab-item>.border-right {
+  position: absolute;
+  right: 0;
+  top: 40rpx;
+  transform: translateX(-50%);
+  display: block;
+  width: 3rpx;
+  height: 25rpx;
+  background: #aaa;
+}
+
+.active {
+  color: #000;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.active>text {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: block;
+  width: 35rpx;
+  height: 4rpx;
+  background: rgba(0, 0, 0, 1);
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 内容区域 */
+
+.sendgift_box{
+  padding: 0 50rpx;
+  height: 380rpx;
+  border-bottom: 2rpx solid #f3f1f1;
+}
+.sendgift_top{
+  height: 96rpx;
+}
+.sendgift_number{
+  float: left;
+  font-size:25rpx;
+  line-height: 96rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.sendgift_obligation{
+  font-size:25rpx;
+  line-height: 96rpx;
+  float: right;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.sendgift_con{
+  height: 155rpx;
+}
+.sendgift_img{
+  float: left;
+  width:130rpx;
+  height:155rpx;
+  background:rgba(227,226,226,1);
+}
+.sendgift_conent{
+  float: left;
+  margin-left: 20rpx;
+}
+.sendgift_brand{
+  font-size:25rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.sendgift_standard{
+  font-size:22rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+}
+.sendgift_size{
+  font-size:18rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.sendgift_r{
+  float: right;
+  text-align: right;
+}
+.sendgift_price{
+  font-size:24rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.sendgift_num{
+  line-height: 50rpx;
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.sendgift_bott{
+  height: 90rpx;
+  position: relative;
+}
+.sendgift_bottnum{
+  float: left;
+  line-height: 90rpx;
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.sendgift_bottprice{
+  float: right;
+  font-size:25rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.sendgift_payment{
+  width:160rpx;
+  float: left;
+  height:60rpx;
+  border-radius:30rpx;
+  text-align: center;
+  font-size:22rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:#fff;
+  line-height: 60rpx;
+  background:rgba(12,14,13,1);
+  margin-left: 20rpx;
+  position: absolute;
+  bottom: -20rpx;
+  right: 20rpx;
+}

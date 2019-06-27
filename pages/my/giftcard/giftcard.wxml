@@ -1,0 +1,138 @@
+<view class="gitcard_nav">
+  <component title='礼品卡' show_bol='{{false}}'></component>
+</view>
+<view class="swiper-tab">
+  <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
+    待使用
+    <text></text>
+  </view>
+  <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">
+    已使用
+    <text></text>
+  </view>
+  <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">
+    已過期
+    <text></text>
+  </view>
+</view>
+<view class="{{currentTab == 0 ? 'show':'hidden'}}">
+  <scroll-view>
+    <view class="gitcard_box">
+      <view class="gitcard_boxt">订单编号：20190314001</view>
+      <view class="gitcard_boxc">
+        <view class="gitcard_boxcl">
+          <view class="gitcard_boxcimg"></view>
+          <view class="gitcard_boxcltext">共1件商品</view>
+        </view>
+        <view class="gitcard_boxcc">
+          <view class="gitcard_name">九點禮品卡</view>
+          <view class="gitcard_price">HK$100,000</view>
+        </view>
+        <view class="gitcard_boxcr">
+          <view class="gitcard_boxcr_price">HK$100,000.00</view>
+          <view class="gitcard_boxcr_num">X 1</view>
+          <view class="gitcard_boxcr_amount">合计：HK$100,000.00</view>
+        </view>
+      </view>
+    </view>
+    <view class="gitcard_box">
+      <view class="gitcard_boxt">订单编号：20190314001</view>
+      <view class="gitcard_boxc">
+        <view class="gitcard_boxcl">
+          <view class="gitcard_boxcimg"></view>
+          <view class="gitcard_boxcltext">共1件商品</view>
+        </view>
+        <view class="gitcard_boxcc">
+          <view class="gitcard_name">九點禮品卡</view>
+          <view class="gitcard_price">HK$50,000</view>
+        </view>
+        <view class="gitcard_boxcr">
+          <view class="gitcard_boxcr_price">HK$50,000</view>
+          <view class="gitcard_boxcr_num">X 1</view>
+          <view class="gitcard_boxcr_amount">合计：HK$50,000</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="{{currentTab == 1 ? 'show':'hidden'}}">
+  <scroll-view>
+    <view class="gitcard_box">
+      <view class="gitcard_boxt">订单编号：20190314001</view>
+      <view class="gitcard_boxc">
+        <view class="gitcard_boxcl">
+          <view class="gitcard_boxcimg"></view>
+          <view class="gitcard_boxcltext">共1件商品</view>
+        </view>
+        <view class="gitcard_boxcc">
+          <view class="gitcard_name">九點禮品卡</view>
+          <view class="gitcard_price">HK$100,000</view>
+        </view>
+        <view class="gitcard_boxcr">
+          <view class="gitcard_boxcr_price">HK$100,000.00</view>
+          <view class="gitcard_boxcr_num">X 1</view>
+          <view class="gitcard_boxcr_amount">合计：HK$100,000.00</view>
+        </view>
+      </view>
+    </view>
+    <view class="gitcard_box">
+      <view class="gitcard_boxt">订单编号：20190314001</view>
+      <view class="gitcard_boxc">
+        <view class="gitcard_boxcl">
+          <view class="gitcard_boxcimg"></view>
+          <view class="gitcard_boxcltext">共1件商品</view>
+        </view>
+        <view class="gitcard_boxcc">
+          <view class="gitcard_name">九點禮品卡</view>
+          <view class="gitcard_price">HK$50,000</view>
+        </view>
+        <view class="gitcard_boxcr">
+          <view class="gitcard_boxcr_price">HK$50,000</view>
+          <view class="gitcard_boxcr_num">X 1</view>
+          <view class="gitcard_boxcr_amount">合计：HK$50,000</view>
+        </view>
+      </view>
+    </view>
+    <view class="gitcard_box">
+      <view class="gitcard_boxt">订单编号：20190314001</view>
+      <view class="gitcard_boxc">
+        <view class="gitcard_boxcl">
+          <view class="gitcard_boxcimg"></view>
+          <view class="gitcard_boxcltext">共1件商品</view>
+        </view>
+        <view class="gitcard_boxcc">
+          <view class="gitcard_name">九點禮品卡</view>
+          <view class="gitcard_price">HK$100,000</view>
+        </view>
+        <view class="gitcard_boxcr">
+          <view class="gitcard_boxcr_price">HK$100,000.00</view>
+          <view class="gitcard_boxcr_num">X 1</view>
+          <view class="gitcard_boxcr_amount">合计：HK$100,000.00</view>
+        </view>
+      </view>
+    </view>
+    <view class="gitcard_box">
+      <view class="gitcard_boxt">订单编号：20190314001</view>
+      <view class="gitcard_boxc">
+        <view class="gitcard_boxcl">
+          <view class="gitcard_boxcimg"></view>
+          <view class="gitcard_boxcltext">共1件商品</view>
+        </view>
+        <view class="gitcard_boxcc">
+          <view class="gitcard_name">九點禮品卡</view>
+          <view class="gitcard_price">HK$50,000</view>
+        </view>
+        <view class="gitcard_boxcr">
+          <view class="gitcard_boxcr_price">HK$50,000</view>
+          <view class="gitcard_boxcr_num">X 1</view>
+          <view class="gitcard_boxcr_amount">合计：HK$50,000</view>
+        </view>
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="{{currentTab == 2 ? 'show':'hidden'}}">
+  <scroll-view>
+    <view>暂无数据</view>
+  </scroll-view>
+</view>

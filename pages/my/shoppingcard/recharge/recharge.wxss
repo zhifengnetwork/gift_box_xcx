@@ -1,0 +1,49 @@
+page{
+  background: #f9f8f8;
+}
+.recharge_nav{
+  height: 115rpx;
+}
+.recharge_box{
+  margin: 120rpx 60rpx;
+  height: 150rpx;
+  background: #ffffff;
+  padding: 50rpx;
+}
+.recharge_top{
+  font-size: 28rpx;
+  line-height: 60rpx;
+  color: #333333;
+}
+.recharge_conent{
+  height: 100rpx;
+  border-bottom: 2rpx solid #f3f1f1;
+}
+.recharge_conent>text{
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #333;
+  float: left;
+  margin-left: 30rpx;
+}
+.recharge_input{
+  margin-top: 25rpx;
+  margin-left: 20rpx;
+  line-height: 100rpx;
+  font-size: 30rpx;
+  color: #333;
+  float: left;
+}
+.recharge_submit{
+  position: absolute;
+  bottom: 33rpx;
+  left: 90rpx;
+  height: 80rpx;
+  width: 570rpx;
+  font-size: 30rpx;
+  line-height: 80rpx;
+  text-align: center;
+  color: #fff;
+  background: #000;
+  border-radius: 50rpx;
+}
