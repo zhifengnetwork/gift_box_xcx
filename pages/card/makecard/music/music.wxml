@@ -7,8 +7,8 @@
     <view class="music_songName">{{item.songName}}</view>
     <view class="music_singer">{{item.singer}}</view>
     <view class="music_radio">
-      <image wx:if="{{item.radio!='true'}}" class="music_radio_img" src="../../../public/images/card/circle.png"></image>
-      <image wx:if="{{item.radio=='true'}}" class="music_radio_img" src="../../../public/images/card/right.png"></image>
+      <image wx:if="{{item.radio!='true'}}" class="music_radio_img" src="https://giftbox.zhifengwangluo.com/public/images/card/circle.png"></image>
+      <image wx:if="{{item.radio=='true'}}" class="music_radio_img" src="https://giftbox.zhifengwangluo.com/public/images/card/right.png"></image>
     </view>
   </view>
 </view>

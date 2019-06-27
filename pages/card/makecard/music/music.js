@@ -26,6 +26,7 @@ Page({
     ],
     src:''
   },
+  // 选择样式
   right:function(e){
     let that = this;
     let ind = e.currentTarget.dataset.ind;
@@ -41,6 +42,7 @@ Page({
     console.log(that.data.music[ind].src)
     this.audioCtx.play()
   },
+  // 提交数据&&返回上一页
   send:function(){
     var that = this
     wx.showToast({
@@ -49,6 +51,12 @@ Page({
       duration: 2000
     })
     setTimeout(function () {
+      var pages = getCurrentPages();
+      var prevPage = pages[pages.length - 2];  //上一个页面
+      //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+      prevPage.setData({
+        music: that.data.src
+      })
       wx.navigateBack({
         delta: 1
       })

@@ -10,42 +10,49 @@ Page({
         url: 'music/music',
         text: '选择音乐',
         tips: '确认歌曲',
-        img: '../../public/images/card/music.png',
-        icon: '../../public/images/card/revision.png'
+        img: 'https://giftbox.zhifengwangluo.com/public/images/card/music.png',
+        icon: 'https://giftbox.zhifengwangluo.com/public/images/card/revision.png'
       },
       {
         id: '2',
         url: 'picture/picture',
         text: '选择照片/视频',
         tips: '确认照片',
-        img: '../../public/images/card/picture.png',
-        icon: '../../public/images/card/revision.png'
+        img: 'https://giftbox.zhifengwangluo.com/public/images/card/picture.png',
+        icon: 'https://giftbox.zhifengwangluo.com/public/images/card/revision.png'
       },
       {
         id: '3',
         url: 'record/record',
         text: '录入语音',
         tips: '请录入',
-        img: '../../public/images/card/record.png',
-        icon: '../../public/images/card/revision.png'
+        img: 'https://giftbox.zhifengwangluo.com/public/images/card/record.png',
+        icon: 'https://giftbox.zhifengwangluo.com/public/images/card/revision.png'
       },
       {
         id: '4',
         url: 'blessing/blessing',
         text: '写下祝福',
         tips: '请填写',
-        img: '../../public/images/card/blessing.png',
-        icon: '../../public/images/card/revision.png'
+        img: 'https://giftbox.zhifengwangluo.com/public/images/card/blessing.png',
+        icon: 'https://giftbox.zhifengwangluo.com/public/images/card/revision.png'
       },
     ],
-    blessing:false
+    blessing: false,
+    blessText:'',
+    // 子页面返回值
+    music: '',
+    picture: '',
+    record: '',
+    bless: ''
   },
+  // 跳转子页面
   skip: function(e) {
     console.log(e.currentTarget.dataset.url)
     let url = e.currentTarget.dataset.url;
-    if (url == 'blessing/blessing'){
+    if (url == 'blessing/blessing') {
       this.setData({
-        blessing:true
+        blessing: true
       })
       return false;
     }
@@ -53,10 +60,61 @@ Page({
       url: url
     })
   },
-  back:function(){
+  // 关闭祝福弹出层
+  back: function() {
     this.setData({
-      blessing:false
+      blessing: false
     })
+  },
+  // 提交祝福
+  bleSend:function(){
+    wx.showToast({
+      title: '提交成功',
+      icon: 'success',
+      duration: 2000
+    })
+    this.setData({
+      blessing: false,
+      bless: this.data.blessText,
+      blessText: ''
+    })
+  },
+  // 监听祝福内容
+  blessText: function(e) {
+    this.setData({
+      blessText: e.detail.value
+    })
+  },
+  // 预览判断
+  preview: function() {
+    var str = '';
+    if (this.data.music == '') {
+      str = '音乐';
+    } else if (this.data.picture == '') {
+      str = '照片/视频';
+    } else if (this.data.record == '') {
+      str = '语音';
+    } else if (this.data.bless == '') {
+      str = '祝福语';
+    }
+    if (str != '') {
+      wx.showModal({
+        title: '提示',
+        content: '您未添加自己专属的' + str + '，继续浏览将展示默认内容;',
+        cancelText: '返回编辑',
+        confirmText: '任性预览',
+        success: function(res) {
+          if (res.confirm) {
+            console.log('用户点击确定')
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    } else {
+      // 跳转预览
+      console.log('跳转')
+    }
   },
   /**
    * 生命周期函数--监听页面加载
@@ -76,7 +134,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    console.log(this.data)
   },
 
   /**

@@ -2,7 +2,7 @@
 <view class="makecard">
   <!-- 头部导航 -->
   <view class="makecard_nav">
-    <image class="makecard_nav_img" src="../../public/images/index/back_white.png"></image>
+    <image class="makecard_nav_img" src="https://giftbox.zhifengwangluo.com/public/images/index/back_white.png"></image>
     <text>制作电子礼盒</text>
   </view>
   <!-- 选择列表-s -->
@@ -21,13 +21,14 @@
     <!-- 列表项-e -->
   </view>
   <!-- 选择列表-e -->
+  {{value.music}}
   <!-- 预览-s -->
   <view class="preview">
-    <view class="preview_btn">
+    <view class="preview_btn" bindtap="preview">
       预览
     </view>
     <view class="preview_succeed">
-      <image class="preview_succeed_img" src="../../public/images/card/succeed.png"></image>
+      <image class="preview_succeed_img" src="https://giftbox.zhifengwangluo.com/public/images/card/succeed.png"></image>
     </view>
   </view>
   <!-- 预览-e -->
@@ -39,9 +40,9 @@
         写下祝福......
       </view>
       <view class="blessing_content_text">
-
+        <textarea class="blessing_content_textarea" bindinput="blessText" maxlength="20" value="{{blessText}}" auto-focus></textarea>
       </view>
-      <view class="blessing_content_btn">
+      <view class="blessing_content_btn" bindtap="bleSend">
         完成
       </view>
     </view>
