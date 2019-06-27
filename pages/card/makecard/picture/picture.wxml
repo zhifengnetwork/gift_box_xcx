@@ -3,8 +3,9 @@
 <view class="picture_list">
   <view class="picture_item">
     <view class="picture_delete" bindtap="delete">X</view>
-    <image class="picture_item_img" src="../../../public/images/card/picture.png" wx:if="{{imglist==''}}"></image>
+    <image class="picture_item_img" src="../../../public/images/card/picture.png" wx:if="{{imglist==''||video==''}}"></image>
     <image class="picture_item_img" src="{{imglist}}" wx:if="{{imglist!=''}}"></image>
+    <video class="picture_item_video" src="{{video}}" wx:if="{{video!=''}}"></video>
   </view>
   <view class="picture_item" bindtap="add">
     +
