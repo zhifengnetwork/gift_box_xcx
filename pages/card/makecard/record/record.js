@@ -56,7 +56,13 @@ Page({
       // 播放音频失败的回调
     })
     this.innerAudioContext.src = this.data.src; // 这里可以是录音的临时路径
-    this.innerAudioContext.play()
+    this.innerAudioContext.play();
+    this.innerAudioContext.onPlay(function(){
+      console.log('开始播放')
+    })
+    this.innerAudioContext.onEnded(function(){
+      console.log('结束播放')
+    })
   },
   delete: function() {
     let that = this;

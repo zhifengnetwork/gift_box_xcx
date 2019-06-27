@@ -151,6 +151,8 @@
   width: 352rpx;
   height: 352rpx;
   margin: auto;
+  border-radius: 50%;
+  overflow: hidden;
 }
 
 .wrapper {
@@ -163,10 +165,14 @@
 
 .right {
   right: 0;
+  border-top-right-radius: 200rpx;
+  border-bottom-right-radius: 200rpx;
 }
 
 .left {
   left: 0;
+  border-top-left-radius: 200rpx;
+  border-bottom-left-radius: 200rpx;
 }
 .circleProgress {
   width: 320rpx;
