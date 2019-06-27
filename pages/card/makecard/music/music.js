@@ -23,6 +23,12 @@ Page({
       radio: 'false',
       src: 'http://music.163.com/song/media/outer/url?id=22645196.mp3'
     },
+    {
+      songName: 'Stronger Than You',
+      singer: 'Chara Parody',
+      radio: 'false',
+      src: 'http://music.163.com/song/media/outer/url?id=410519017.mp3'
+    },
     ],
     src:''
   },
