@@ -1,0 +1,9 @@
+<view class="site_nav">
+  <component title='地址管理' show_bol='{{false}}'></component>
+</view>
+<!-- 无地址 -->
+<view class="site">
+  <view class="site_wuimg"></view>
+  <text class="site_wutext">您還沒有地址，請添加地址</text>
+  <view class="site_wubutton">添加新地址</view>
+</view>

@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 11,
 			"list": [
 				{
 					"id": 1,
@@ -129,8 +129,8 @@
 				},
 				{
 					"id": 11,
-					"name": "已收礼物",
-					"pathName": "pages/my/collectgift/collectgift",
+					"name": "地址",
+					"pathName": "pages/site/site",
 					"query": "",
 					"scene": null
 				}

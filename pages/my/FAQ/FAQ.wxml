@@ -1,0 +1,23 @@
+<view class="faq_nav">
+  <component title='常見問題' show_bol='{{false}}'></component>
+</view>
+<view class="faq">
+  <view class="faq_box">
+    <view class="faq_top">1、賬戶相關</view>
+    <text class="faq_wen">Q:為什麼我總是登陸不成功?</text>
+    <view class="faq_da">A:檢查登錄名、密碼輸入是否有誤,鍵盤是否啟用了大寫鎖定。</view>
+    <text class="faq_wen">Q:如何變更個人資料信息?</text>
+    <view class="faq_da">A:登陸后進入個人中心,點擊頭像進入“個人信息”頁面,即可變更信息</view>
+    <text class="faq_wen">Q:會員註冊或完善信息時,必須得輸入真實信息嗎?</text>
+    <view class="faq_da">A:是的。會員註冊時必須輸入真實信息,請放心,九點星選會保證隱私安全,您提供的姓名、地址、電話等個人信息受到表彰安全措施的保護,任何未經授權的訪問將被拒絕。</view>
+  </view>
+   <view class="faq_box">
+    <view class="faq_top">2、商品訂購</view>
+    <text class="faq_wen">Q:為什麼一上線就有一些商品缺貨?</text>
+    <view class="faq_da">A:九點星選會員隊伍龐大,多數品牌的商品非常熱銷,您可以趕緊下單進行訂購,祝您購物愉快!</view>
+    <text class="faq_wen">Q:如何訂購商品?</text>
+    <view class="faq_da">A:您可以先註冊成為會員,再挑選商品放入購物車,最後結算,選擇支付方式,提交后會出現一個訂單號,進行結算。這樣就可以成功訂購商品了。</view>
+    <text class="faq_wen">Q:你們的商品是正品嗎?質量是否有保證?</text>
+    <view class="faq_da">A:九點星選所銷售的商品均為100%正品,接收權威部門質量檢測。</view>
+  </view>
+</view>
