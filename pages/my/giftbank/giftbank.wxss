@@ -1,0 +1,195 @@
+page {
+  background: #f8f8f8;
+}
+
+.giftbank_nav {
+  height: 115rpx;
+  background: #fff;
+}
+
+/* tab切换 */
+
+.swiper-tab {
+  background: #fff;
+  width: 100%;
+  border-bottom: 2rpx solid rgba(243, 241, 241, 1);
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.swiper-tab-item {
+  flex: 1;
+  text-align: center;
+  font-size: 25rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(34, 34, 34, 1);
+  position: relative;
+}
+
+.swiper-tab-item>.border-right {
+  position: absolute;
+  right: 0;
+  top: 40rpx;
+  transform: translateX(-50%);
+  display: block;
+  width: 3rpx;
+  height: 25rpx;
+  background: #aaa;
+}
+
+.active {
+  color: #000;
+  font-size: 26rpx;
+  font-weight: bold;
+}
+
+.active>text {
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: block;
+  width: 35rpx;
+  height: 4rpx;
+  background: rgba(0, 0, 0, 1);
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 内容区域 */
+
+.giftbank_box{
+  margin: 0 50rpx;
+  height: 450rpx;
+  border-bottom: 2rpx solid #f3f1f1;
+}
+.giftbank_top{
+  height: 96rpx;
+}
+.giftbank_number{
+  float: left;
+  font-size:25rpx;
+  line-height: 96rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.giftbank_obligation{
+  font-size:25rpx;
+  line-height: 96rpx;
+  float: right;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.giftbank_con{
+  height: 155rpx;
+}
+.giftbank_img{
+  float: left;
+  width:130rpx;
+  height:155rpx;
+  background:rgba(227,226,226,1);
+}
+.giftbank_conent{
+  float: left;
+  margin-left: 20rpx;
+}
+.giftbank_brand{
+  font-size:25rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.giftbank_standard{
+  font-size:22rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+}
+.giftbank_size{
+  font-size:18rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.giftbank_r{
+  float: right;
+  text-align: right;
+}
+.giftbank_price{
+  font-size:24rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.giftbank_num{
+  line-height: 50rpx;
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.giftbank_bott{
+  height: 90rpx;
+}
+.giftbank_bottnum{
+  float: left;
+  line-height: 90rpx;
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.giftbank_bottprice{
+  line-height: 90rpx;
+  float: right;
+  font-size:25rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.giftbank_button{
+  float: right;
+}
+.giftbank_cancel{
+  float: left;
+  width:160rpx;
+  height:60rpx;
+  border:1rpx solid rgba(169,167,167,1);
+  border-radius:30rpx;
+  text-align: center;
+  font-size:22rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+  line-height: 60rpx;
+}
+.giftbank_payment{
+  width:160rpx;
+  float: left;
+  height:60rpx;
+  border-radius:30rpx;
+  text-align: center;
+  font-size:22rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:#fff;
+  line-height: 60rpx;
+  background:rgba(12,14,13,1);
+  margin-left: 20rpx;
+}

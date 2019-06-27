@@ -1,18 +1,21 @@
-// pages/commodity/detalis/give/ integral/ integral.js
+// pages/my/giftcard/giftcard.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    flag:true
+    currentTab: 0,
   },
-  show: function () {
-    this.setData({ flag: false })
-  },
-  hide: function () {
-    console.log(666)
-    this.setData({ flag: true })
+  clickTab: function (e) {
+    var that=this
+    if(this.data.currentTab === e.target.dataset.current){
+      return false
+    }else{
+      that.setData({
+        currentTab: e.target.dataset.current
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面加载

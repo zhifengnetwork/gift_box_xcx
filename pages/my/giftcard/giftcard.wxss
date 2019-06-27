@@ -1,0 +1,118 @@
+.gitcard_nav{
+  height: 115rpx;
+}
+/* tab切换 */
+.swiper-tab{
+    width: 100%;
+    border-bottom: 2rpx solid rgba(243,241,241,1);
+    text-align: center;
+    height: 100rpx;
+    line-height: 100rpx;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+}
+.swiper-tab-item{
+  flex: 1;
+  text-align: center;
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+}
+.active{
+    color: #000;
+    font-size: 26rpx;
+    font-weight: bold;
+    position: relative;
+}
+.active>text{
+  position: absolute;
+  left: 50%;
+  bottom: 0;
+  transform: translateX(-50%);
+  display: block;
+  width:35rpx;
+  height:4rpx;
+  background:rgba(0,0,0,1);
+}
+.show{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+/* 内容区域 */
+.gitcard_box{
+  height: 318rpx;
+  padding: 0 40rpx;
+  border-bottom: 2rpx solid rgba(243,241,241,1);
+}
+.gitcard_boxt{
+  font-size:26rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+  line-height: 72rpx;
+}
+.gitcard_boxc{
+  height: 240rpx;
+  margin-top: 10rpx;
+}
+.gitcard_boxcl{
+  width: 150rpx;
+  float: left;
+}
+.gitcard_boxcimg{
+  float: left;
+  width: 130rpx;
+  height: 155rpx;
+  background: rgba(227,226,226,1);
+}
+.gitcard_boxcltext{
+  font-size:24rpx;
+  line-height: 80rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.gitcard_boxcc{
+  float: left;
+}
+.gitcard_name{
+  font-size:26rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+  line-height: 60rpx;
+}
+.gitcard_price{
+  font-size:24rpx;
+font-family:SourceHanSansCN-Regular;
+font-weight:400;
+color:rgba(34,34,34,1);
+}
+.gitcard_boxcr{
+  float: right;
+  text-align: right;
+}
+.gitcard_boxcr_price{
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height: 60rpx;
+}
+.gitcard_boxcr_num{
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.gitcard_boxcr_amount{
+  font-size:28rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+  margin-top: 80rpx;
+}

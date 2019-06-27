@@ -1,6 +1,7 @@
-.giftbag_top{
+.giftbag_top {
   height: 115rpx;
 }
+
 .giftbag_t {
   height: 173rpx;
   padding: 52rpx 45rpx 0 45rpx;
@@ -8,7 +9,7 @@
   text-align: center;
   margin-top: 20rpx;
   justify-content: space-between;
-  border-top: 2rpx solid #F3F4F7;
+  border-top: 2rpx solid #f3f4f7;
 }
 
 .giftbag_tl {
@@ -74,23 +75,25 @@
   top: 10rpx;
   left: 40rpx;
 }
-.giftbag_conter{
+
+.giftbag_conter {
   margin-top: 100rpx;
   background: pink;
   height: 563rpx;
 }
-.giftbag_button{
+
+.giftbag_button {
   margin-top: 100rpx;
-  width:455rpx;
-height:60rpx;
-background:rgba(0,0,0,1);
-border:1px solid rgba(0,0,0,1);
-border-radius:30rpx;
-font-size:22rpx;
-font-family:SourceHanSansCN-Regular;
-font-weight:400;
-color:rgba(255,255,255,1);
-margin-left: 150rpx;
-text-align: center;
-line-height: 60rpx;
+  width: 570rpx;
+  height: 80rpx;
+  background: rgba(0, 0, 0, 1);
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 30rpx;
+  font-size: 22rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-left: 90rpx;
+  text-align: center;
+  line-height: 80rpx;
 }

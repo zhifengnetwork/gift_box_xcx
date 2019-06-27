@@ -1,0 +1,116 @@
+.collectgift_nav{
+  height: 115rpx;
+}
+.collectgift_box{
+  padding: 20rpx 50rpx 0;
+  height: 360rpx;
+  border-bottom: 2rpx solid #f3f1f1;
+}
+.collectgift .collectgift_box:nth-child(2n){
+  background: #F7F7F7;
+}
+.collectgift_top{
+  height: 96rpx;
+}
+.collectgift_number{
+  float: left;
+  font-size:25rpx;
+  line-height: 96rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.collectgift_obligation{
+  font-size:25rpx;
+  line-height: 96rpx;
+  float: right;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.collectgift_con{
+  height: 155rpx;
+}
+.collectgift_img{
+  float: left;
+  width:130rpx;
+  height:155rpx;
+  background:rgba(227,226,226,1);
+}
+.collectgift_conent{
+  float: left;
+  margin-left: 20rpx;
+}
+.collectgift_brand{
+  font-size:25rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.collectgift_standard{
+  font-size:22rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+}
+.collectgift_size{
+  font-size:18rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.collectgift_r{
+  float: right;
+  text-align: right;
+}
+
+.collectgift_num{
+  line-height: 100rpx;
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.collectgift_bott{
+  height: 90rpx;
+}
+.collectgift_bottnum{
+  float: left;
+  line-height: 90rpx;
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.collectgift_button{
+  float: right;
+}
+.collectgift_cancel{
+  float: left;
+  width:160rpx;
+  height:60rpx;
+  border:1rpx solid rgba(169,167,167,1);
+  border-radius:30rpx;
+  text-align: center;
+  font-size:22rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+  line-height: 60rpx;
+}
+.collectgift_payment{
+  width:160rpx;
+  float: left;
+  height:60rpx;
+  border-radius:30rpx;
+  text-align: center;
+  font-size:22rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:#fff;
+  line-height: 60rpx;
+  background:rgba(12,14,13,1);
+  margin-left: 20rpx;
+}

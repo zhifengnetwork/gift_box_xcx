@@ -7,11 +7,7 @@ Page({
   data: {
 
   },
-  mydetalis: function () {
-    wx.navigateTo({
-      url: 'mydetalis/mydetalis',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
@@ -66,5 +62,48 @@ Page({
    */
   onShareAppMessage: function () {
 
-  }
+  },
+
+    // 跳转到个人信息
+  mydetalis: function () {
+    wx.navigateTo({
+      url: 'mydetalis/mydetalis',
+    })
+  },
+  // 跳转到礼品卡
+  giftcard: function () {
+    wx.navigateTo({
+      url: 'giftcard/giftcard',
+    })
+  },
+  // 跳转到购物卡
+  shoppingcard: function () {
+    wx.navigateTo({
+      url: 'shoppingcard/shoppingcard',
+    })
+  },
+  // 跳转到礼品库
+  giftbank: function () {
+    wx.navigateTo({
+      url: 'giftbank/giftbank',
+    })
+  },
+  // 跳转到犒劳自己
+  reward: function () {
+    wx.navigateTo({
+      url: 'reward/reward',
+    })
+  },
+  // 跳转到已送礼品
+  sendgift: function () {
+    wx.navigateTo({
+      url: 'sendgift/sendgift',
+    })
+  },
+  // 跳转到已收礼品
+  collectgift: function () {
+    wx.navigateTo({
+      url: 'collectgift/collectgift',
+    })
+  },
 })

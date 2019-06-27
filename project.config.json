@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 11,
 			"list": [
 				{
 					"id": 1,
@@ -128,9 +128,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "个人信息",
-					"pathName": "pages/my/mydetalis/mydetalis",
+					"id": 11,
+					"name": "已收礼物",
+					"pathName": "pages/my/collectgift/collectgift",
 					"query": "",
 					"scene": null
 				}
