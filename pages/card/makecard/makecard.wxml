@@ -2,7 +2,7 @@
 <view class="makecard">
   <!-- 头部导航 -->
   <view class="makecard_nav">
-    <image class="makecard_nav_img" src="https://giftbox.zhifengwangluo.com/public/images/index/back_white.png"></image>
+    <image class="makecard_nav_img" src="../../public/images/index/back_white.png"></image>
     <text>制作电子礼盒</text>
   </view>
   <!-- 选择列表-s -->
@@ -28,7 +28,7 @@
       预览
     </view>
     <view class="preview_succeed">
-      <image class="preview_succeed_img" src="https://giftbox.zhifengwangluo.com/public/images/card/succeed.png"></image>
+      <image class="preview_succeed_img" src="../../public/images/card/succeed.png"></image>
     </view>
   </view>
   <!-- 预览-e -->

@@ -10,32 +10,32 @@ Page({
         url: 'music/music',
         text: '选择音乐',
         tips: '确认歌曲',
-        img: 'https://giftbox.zhifengwangluo.com/public/images/card/music.png',
-        icon: 'https://giftbox.zhifengwangluo.com/public/images/card/revision.png'
+        img: '../../public/images/card/music.png',
+        icon: '../../public/images/card/revision.png'
       },
       {
         id: '2',
         url: 'picture/picture',
         text: '选择照片/视频',
         tips: '确认照片',
-        img: 'https://giftbox.zhifengwangluo.com/public/images/card/picture.png',
-        icon: 'https://giftbox.zhifengwangluo.com/public/images/card/revision.png'
+        img: '../../public/images/card/picture.png',
+        icon: '../../public/images/card/revision.png'
       },
       {
         id: '3',
         url: 'record/record',
         text: '录入语音',
         tips: '请录入',
-        img: 'https://giftbox.zhifengwangluo.com/public/images/card/record.png',
-        icon: 'https://giftbox.zhifengwangluo.com/public/images/card/revision.png'
+        img: '../../public/images/card/record.png',
+        icon: '../../public/images/card/revision.png'
       },
       {
         id: '4',
         url: 'blessing/blessing',
         text: '写下祝福',
         tips: '请填写',
-        img: 'https://giftbox.zhifengwangluo.com/public/images/card/blessing.png',
-        icon: 'https://giftbox.zhifengwangluo.com/public/images/card/revision.png'
+        img: '../../public/images/card/blessing.png',
+        icon: '../../public/images/card/revision.png'
       },
     ],
     blessing: false,
