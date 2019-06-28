@@ -37,7 +37,8 @@
     "pages/my/invoice/invoice",
     "pages/my/service/service",
     "pages/my/FAQ/FAQ",
-    "pages/site/site"
+    "pages/site/site",
+    "pages/turntable/turntable"
   ],
   "window": {
     "backgroundTextStyle": "light",
