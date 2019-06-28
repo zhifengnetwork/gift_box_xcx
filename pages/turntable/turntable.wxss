@@ -1,0 +1,47 @@
+/* pages/turntable/turntable.wxss */
+page{
+  padding-top: 170rpx;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.turntable_top{
+  position: fixed;
+  left: 0;
+  top: 0;
+  margin-top: 50rpx;
+  width: 100%;
+  height: 120rpx;
+  line-height: 120rpx;
+  text-align: center;
+  color: #fff;
+  background: #222;
+}
+.turntable_back{
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100rpx;
+  height: 100%;
+}
+.turntable_back_img{
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: auto;
+  width: 24rpx;
+  height: 30rpx;
+}
+/* 背景图 */
+.turntable_bg{
+  width: 100vw;
+  height: calc(100vh - 170rpx);
+  font-size: 0;
+}
+.turntable_bgImg{
+  width: 100%;
+  height: 100%;
+}
+/* 转盘 */

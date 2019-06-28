@@ -1,0 +1,14 @@
+<!--pages/turntable/turntable.wxml-->
+<view class="turntable_top">
+  <view class="turntable_back">
+    <image class="turntable_back_img" src="../public/images/index/back_white.png"></image>
+  </view>
+  <view class="turntable_title">
+    <text class="turntable_text">九点星选</text>
+  </view>
+</view>
+<!-- 背景图 -->
+<view class="turntable_bg">
+  <image class="turntable_bgImg" src="../public/images/turntable/turntable_bg.png"></image>
+</view>
+<!-- 转盘 -->

@@ -40,7 +40,8 @@
     "pages/my/FAQ/FAQ",
     "pages/site/site",
     "pages/site/newsite/newsite",
-    "pages/site/sitemanage/sitemanage"
+    "pages/site/sitemanage/sitemanage",
+    "pages/turntable/turntable"
   ],
   "window": {
     "backgroundTextStyle": "light",
