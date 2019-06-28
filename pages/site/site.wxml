@@ -2,8 +2,27 @@
   <component title='地址管理' show_bol='{{false}}'></component>
 </view>
 <!-- 无地址 -->
-<view class="site">
+<view class="site sitewu">
   <view class="site_wuimg"></view>
   <text class="site_wutext">您還沒有地址，請添加地址</text>
-  <view class="site_wubutton">添加新地址</view>
+</view>
+<view class="site_wubutton" bindtap="newsite">添加新地址</view>
+<!-- 有地址 -->
+<view class="site">
+  <view class="site_box">
+    <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dingwei_icon.png" class="site_dingwei"></image>
+    <view class="site_boxt">
+      <view class="site_name">MISTERYQU</view>
+      <text class="site_phone">13812345678</text>
+    </view>
+    <view class="site_tconent">上海市徐匯區林路487號寶石22號樓杉德大廈1樓</view>
+    <view class="site_tbottom">
+    <!-- 默认地址按钮 -->
+    <view class="radio">
+      <radio value="默認地址" color="#000" />默認地址
+    </view>
+    <view class="site_redact">編輯</view>
+    <view class="site_remove">刪除</view>
+    </view>
+  </view>
 </view>

@@ -25,13 +25,13 @@ Page({
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
-    setTimeout(function () {
-      wx.navigateTo({
-        url: '../envelopefour/envelopefour',
-      })
-    },2000)
-  },
+  // onShow: function () {
+  //   setTimeout(function () {
+  //     wx.navigateTo({
+  //       url: '../envelopefour/envelopefour',
+  //     })
+  //   },2000)
+  // },
 
   /**
    * 生命周期函数--监听页面隐藏

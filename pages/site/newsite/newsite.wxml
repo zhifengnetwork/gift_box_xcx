@@ -1,0 +1,56 @@
+<view class="newsite_nav">
+  <component title='添加地址' show_bol='{{false}}'></component>
+</view>
+<view class="newsite_box">
+  <view class="newsite_view">收貨人</view>
+  <input placeholder="林嘉欣" class="newsite_input" />
+</view>
+<view class="newsite_box">
+  <view class="newsite_view">聯繫電話</view>
+  <input placeholder="12345678901" class="newsite_input" />
+</view>
+<!-- 三级联动 -->
+<view class="newsite_box">
+  <!-- 所在地区点击按钮 -->
+  <view class="newsite_button" bindtap="selectDistrict">
+    <view class="newsite_view">所在地區</view>
+    <view class="newsite_city">{{areaInfo}} ></view>
+  </view>
+  <!-- 所有城市三级联动列表 -->
+  <view class="zhezhao" style="display:{{addressMenuIsShow ? 'block':'none'}}"></view>
+  <view class="picker-view" animation="{{animationAddressMenu}}" style="visibility:{{addressMenuIsShow ? 'visible':'hidden'}}">
+    <view style="height:10% ;width:95%;margin-top:10rpx">
+      <text catchtap="cityCancel">取消</text>
+      <text style="float: right" catchtap="citySure">确定</text>
+    </view>
+    <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
+      <picker-view-column>
+        <view wx:for="{{provinces}}" class="picker-item">
+          {{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{citys}}" class="picker-item" wx:key="">
+          {{item.name}}</view>
+      </picker-view-column>
+      <picker-view-column>
+        <view wx:for="{{areas}}" class="picker-item" wx:key="">
+          {{item.name}}</view>
+      </picker-view-column>
+    </picker-view>
+  </view>
+</view>
+<!-- 所在街道 -->
+<view class="street">
+  <textarea placeholder="請填寫詳細地址，不少於5個字" class="newsite_text"></textarea>
+</view>
+<!-- 设为默认按钮 -->
+<view class="default_box">
+  <text class="default_text">設為默認</text>
+  <view class="default_switch">
+    <switch bindchange="switchChange" />
+  </view>
+</view>
+<!-- 提交按钮 -->
+<view class="newsite_footer" bindtap="newsiteshow">保存地址</view>
+<!-- 保存成功 -->
+<cover-view class="newsite_save" hidden="{{site_show}}">保存成功</cover-view>
