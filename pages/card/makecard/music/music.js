@@ -18,12 +18,6 @@ Page({
       src: 'http://music.163.com/song/media/outer/url?id=1696373.mp3'
     },
     {
-      songName: 'Bad Apple!!',
-      singer: 'のみこ',
-      radio: 'false',
-      src: 'http://music.163.com/song/media/outer/url?id=22645196.mp3'
-    },
-    {
       songName: 'Stronger Than You',
       singer: 'Chara Parody',
       radio: 'false',
