@@ -21,28 +21,28 @@
     <view class="detalis_ct">赠送流程</view>
     <view class="detalis_cc">
       <view class="detalis_cc_img">
-        <image src="../../public/images/detalis/weixin_icon.png"></image>
+        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/weixin_icon.png"></image>
       </view>
       <text>1微信赠送</text>
-      <image src="../../public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+      <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
     </view>
     <view class="detalis_cc">
       <view class="detalis_cc_img">
-        <image src="../../public/images/detalis/xiaolian_icon.png"></image>
+        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/xiaolian_icon.png"></image>
       </view>
       <text>2好友领取</text>
-      <image src="../../public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+      <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
     </view>
     <view class="detalis_cc">
       <view class="detalis_cc_img">
-        <image src="../../public/images/detalis/dizhi_icon.png"></image>
+        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dizhi_icon.png"></image>
       </view>
       <text>3兑换填地址</text>
-      <image src="../../public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+      <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
     </view>
     <view class="detalis_cc">
       <view class="detalis_cc_img">
-        <image src="../../public/images/detalis/shouhuo_icon.png"></image>
+        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/shouhuo_icon.png"></image>
       </view>
       <text>4送货上门</text>
     </view>
@@ -74,15 +74,15 @@
     <view class="detalis_f">
       <view class="detalis_fl">
         <view class="detalis_flbox">
-          <image src="../../public/images/detalis/home_icon.png"></image>
+          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/home_icon.png"></image>
           <view class="detalis_fl_text">首页</view>
         </view>
         <view class="detalis_flbox">
-          <image src="../../public/images/detalis/kefu_icon.png"></image>
+          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/kefu_icon.png"></image>
           <view class="detalis_fl_text">首页</view>
         </view>
         <view class="detalis_flbox">
-          <image src="../../public/images/detalis/gouwuche_icon.png"></image>
+          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/gouwuche_icon.png"></image>
           <view class="detalis_fl_text">首页</view>
         </view>
       </view>

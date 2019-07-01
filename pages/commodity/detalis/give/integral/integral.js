@@ -1,4 +1,4 @@
-// pages/site/site.js
+// pages/commodity/detalis/give/integral/integral.js
 Page({
 
   /**
@@ -7,15 +7,6 @@ Page({
   data: {
 
   },
-  // 跳转到添加地址
-  newsite: function () {
-    wx.navigateTo({
-      url: 'newsite/newsite',
-    })
-  },
-
-  // 默认按钮
-
 
   /**
    * 生命周期函数--监听页面加载

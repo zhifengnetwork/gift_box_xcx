@@ -25,6 +25,7 @@
     "pages/commodity/detalis/give/GetTheGift/GetTheGift",
     "pages/commodity/detalis/give/envelopefour/envelopefour",
     "pages/commodity/detalis/give/GetTheSuccess/success",
+    "pages/commodity/detalis/give/integral/integral",
     "pages/my/mydetalis/mydetalis",
     "pages/my/giftcard/giftcard",
     "pages/my/shoppingcard/shoppingcard",
@@ -38,6 +39,8 @@
     "pages/my/service/service",
     "pages/my/FAQ/FAQ",
     "pages/site/site",
+    "pages/site/newsite/newsite",
+    "pages/site/sitemanage/sitemanage",
     "pages/turntable/turntable"
   ],
   "window": {
