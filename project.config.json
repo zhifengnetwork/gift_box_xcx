@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 14,
 			"list": [
 				{
 					"id": 1,
@@ -132,6 +132,26 @@
 					"name": "已收礼物",
 					"pathName": "pages/my/collectgift/collectgift",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品详情",
+					"pathName": "pages/classify/sousuo/sousuo",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索详情",
+					"pathName": "pages/classify/shop/shop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
 					"scene": null
 				}
 			]

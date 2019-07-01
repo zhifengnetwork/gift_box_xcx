@@ -22,7 +22,11 @@ Page({
     vid: 8,
     diyi:true,
     dier:[],
+    scroll_height: 0,
+    scroll_height1: 0,
+    scroll_height2:0,
     isIPX: app.globalData.isIPX,
+
     "result": {
       "goods": {
         "goods_spec_list": [
@@ -189,7 +193,7 @@ Page({
           })
         }
         else{
-          var scrollheight = res.windowHeight - 94
+          var scrollheight = res.windowHeight - 100
           that.setData({
             tbodyHeight: scrollheight
           })
@@ -198,6 +202,21 @@ Page({
   })
   },
   onLoad: function() {
+
+    let windowHeight = wx.getSystemInfoSync().windowHeight // 屏幕的高度
+    console.log("windowHeight" + windowHeight)
+    let windowWidth = wx.getSystemInfoSync().windowWidth // 屏幕的宽度
+    console.log("windowWidth" + windowWidth)
+    // 236
+    this.setData({
+      scroll_height: windowHeight * 750 / windowWidth - 250 - 30
+    })
+    this.setData({
+      scroll_height1: windowHeight * 750 / windowWidth - 250 - 30
+    })
+    this.setData({
+      scroll_height2: windowHeight * 750 / windowWidth - 325 - 30
+    })
     // 加载的使用进行网络访问，把需要的数据设置到data数据对象  
     var that = this
     api.getJSON('/api/goods/categoryList', function(res) {
@@ -242,8 +261,7 @@ Page({
         that.setData({dier:res.data.data})
       }
     })
-
-
+   
   },
   // 字母检索方法--s
   clickLetter: function(e) {
@@ -286,7 +304,23 @@ Page({
      var id = e.currentTarget.dataset.id;
      this.setData({ selectMenuID: id });
      this.setData({diyi:true})
+  },
+  sousuoyemian:function(){
+    wx:wx.navigateTo({
+      url: 'sousuo/sousuo'  
+    })
+  },
+  dsis:function(){
+    
+  },
+  binddetail:function(e){
+    // var id = e.currentTarget.dataset.id;
+    // console.log("sdddd"+id);
+    // wx: wx.navigateTo({
+    //   url: 'sousuo/sousuo'
+    // })
   }
+
   
 
 

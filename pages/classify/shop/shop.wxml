@@ -1,0 +1,50 @@
+<component title='' show_bol='{{false}}'></component>
+<view class="img_header">
+  <image src="../../public/images/classify/addidas.png" class="addidas"></image>
+</view>
+<view wx:if="{{zhanshi}}">
+  <view class="text_header">
+    在運動用品的世界中，adidas- 直代表著一種特别的地位象征，而這種象征有人稱之為「生理的三條線」。自1948年創立至今，adidas幫助過無數的運動選手締造佳績，成就了不少的豐功偉業。因此，adidas也可以說是集合了眾人信賴及尊敬的最佳典範。
+  </view>
+  <view class="centert_pic" bindtap="zhanchu">
+    <image src="../../public/images/classify/xia.png" class="cen_pic"></image>
+  </view>
+</view>
+<view wx:if="{{!zhanshi}}">
+  <view class="text_detail">
+    在運動用品的世界中，adidas- 直代表著一種特别的地位象征，而這種象征有人稱之為「生理的三條線」。自1948年創立至今，adidas幫助過無數的運動選手締造佳績，成就了不少的豐功偉業。因此，adidas也可以說是集合了眾人信賴及尊敬的最佳典範。
+  </view>
+  <view class="centert_pic" bindtap="shouhui">
+    <image src="../../public/images/classify/shang.png" class="cen_pic"></image>
+  </view>
+</view>
+<view class="paixu_ear" bindtap="xialakuang">
+  <view class="pai_ear">
+    <view class="pai" style="color:{{color}}">{{sort}}</view>
+    <image src="../../public/images/classify/san.png" class="san_pic"></image>
+  </view>
+</view>
+<view class="shop_ear">
+  <!-- <view class="didi" >
+    <image src="../../public/images/classify/shoot.png" class="shoot_pic"></image>
+    <view class="name">Adidas</view>
+    <view class="desc">CONTINENTAL 80 PRIDE 经典鞋</view>
+    <view class="price">HK$1099</view>
+  </view> -->
+   <view class="didi" wx:for="{{goods_list}}">
+    <image src="{{item.img}}" class="shoot_pic"></image>
+    <view class="name">{{item.goods_name}}</view>
+    <view class="desc">{{item.desc}}</view>
+    <view class="price">{{item.price}}</view>
+  </view>
+ 
+ 
+</view>
+<!-- 点击推荐,出现下拉框 -->
+<view class="xiala_ear" wx:if="{{zhanshidd}}">
+      <view class="xiala_ear_item" wx:for="{{checkboxArr}}" bindtap="xuanze" data-index="{{index}}" wx:key>
+        <view class="left_desc">{{item.name}}</view>
+          <view class="right_desc {{item.checked?'checkbox':''}}">        
+          </view>
+      </view>  
+</view>

@@ -1,10 +1,13 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/cart/cart",
     "pages/home/integral/integral",
     "pages/logs/logs",
     "pages/home/home",
     "pages/classify/classify",
+    "pages/classify/sousuo/sousuo",
+    "pages/classify/shop/shop",
     "pages/my/my",
     "pages/home/xingxuan/xingxuan",
     "pages/card/makecard/makecard",
@@ -34,6 +37,8 @@
     "pages/my/reward/reward",
     "pages/my/sendgift/sendgift",
     "pages/my/collectgift/collectgift"
+
+    
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -63,7 +68,7 @@
         "text": "分类"
       },
       {
-        "pagePath": "pages/index/index",
+        "pagePath": "pages/cart/cart",
         "iconPath": "pages/public/images/index/shouye.png",
         "selectedIconPath": "pages/public/images/index/gouwuche_x.png",
         "text": "购物车"

@@ -1,0 +1,20 @@
+<component title='购物车' show_bol='{{false}}'>
+</component>
+<view class="quanxuan_ear">
+<view class="{{check==true?'checkle':'check'}}"></view>
+<text class="check_text">全选</text>
+<text class="tip">提示：左滑可以删除商品</text>
+</view>
+
+
+<view class="dangxuan">
+   <view class="{{check==true?'checkle':'check'}}"></view>
+   <view class="tupian">
+    <image src="../public/images/cart/yifu.jpg" class="yifu"></image>
+   </view>
+   <view class="decs">
+        <view class="name">双扣僧侣衣服</view>
+        <view class="size">黑色 43码</view>
+        <view class="price">$2895<view class="jishu"><text>-</text><input type="text" class="inputds"></input><text>+</text></view></view>
+   </view>
+</view>

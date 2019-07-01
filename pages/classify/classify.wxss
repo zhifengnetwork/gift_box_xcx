@@ -1,19 +1,18 @@
+
 .navi-bar-view-IPX{
   margin-top: 180rpx;
+  /* border: 1px solid green */
 }
 .navi-bar-view{
   margin-top: 150rpx;
 }
 .sousou_ear{
-
   width: 85%;
   height: 56rpx;
   background: rgb(245,245,245);
   margin-left:35rpx;
   position: relative
- 
 }
-
 .sousou{
   position: absolute;
   width: 32rpx;
@@ -21,6 +20,14 @@
   margin-left: 40rpx;
   top: 13rpx;
   z-index: 2
+}
+.gundong{
+  /* border: 1px solid green */
+  display: inline-block;
+  width: 78%;
+  position: absolute;
+  left: 22%;
+  margin-top: 30rpx
 }
 .body{
   position: absolute;
@@ -45,11 +52,14 @@ width: 22%;
 display: inline-block;
 font-size: 28rpx;
 background: #f7f7fa;
+margin-top: 40rpx;
 position: absolute;
-top: 323rpx;
+top: 310rpx;
 /* bottom: 115rpx */
 }
 .teshu{
+  position: absolute;
+  top: 270rpx;
   width: 22%;
   border-bottom: 7rpx solid #222222;
   background: white;
@@ -58,9 +68,13 @@ top: 323rpx;
   font-size: 29rpx;
   font-weight: bolder;
   text-align: center;
+  display: inline-block;
+  vertical-align: top;
   box-sizing: border-box
 }
 .dj{
+  position: absolute;
+  top: 270rpx;
   width: 22%;
   background: white;
   height: 80rpx;
@@ -68,6 +82,8 @@ top: 323rpx;
   font-size: 29rpx;
   text-align: center;
   background: #f7f7fa;
+  display: inline-block;
+  vertical-align: top;
   box-sizing: border-box
 }
 .leftview-IPX{
@@ -84,10 +100,14 @@ top: 240rpx;
   overflow: hidden;
   display: inline-block;
   vertical-align: top;
-  position: absolute;
+  /* position: absolute;
   left: 22%;
   top: 220rpx;
-  bottom: 0rpx
+  bottom: 0rpx */
+  position: absolute;
+  left: 22%;
+  top: 250rpx;
+  bottom: 0rpx;
 }
 .rightview-IPX{
   width: 72%;
@@ -108,13 +128,15 @@ top: 240rpx;
   width: 70%;
   margin-left: 190rpx;
   position: absolute;
-  top:250rpx
+  top: 0rpx;
 }
 .scrolhei1{
-  width: 115%;
+  width: 78%;
   position: absolute;
-  border: 1px solid green;
-  
+  left: 22%;
+  top: 270rpx;
+  /* border: 1px solid green; */
+
 }
 .tt{
   height: 80rpx;
@@ -147,6 +169,10 @@ top: 240rpx;
 
 .searchLetter view {
   /* margin-top: 20rpx; */
+}
+.rongqi{
+  position: relative;
+ 
 }
 
 .touchClass {
@@ -264,5 +290,30 @@ top: 240rpx;
 }
 .nei{
   margin-top: 20rpx
+}
+.leifen{
+  width: 100%;
+  text-align: center;
+  font-size: 29rpx;
+  color: #666;
+ 
+}
+.center_shop{
+  width: 33.3333%;
+  margin: 0 auto;
+  display: inline-block;
+  text-align: center;
+  margin-top: 55rpx;
+}
+.img_item{
+  width: 100rpx;
+  height: 100rpx;
+}
+.text_item{
+  width: 100%;
+  height: 50rpx;
+  line-height: 50rpx;
+  font-size: 29rpx;
+  color: #666
 }
 
