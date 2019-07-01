@@ -7,6 +7,7 @@ Page({
    */
   data: {
     advImage: [],
+    jializhigong:[],
     currentSwiper: 0,
     indicatorColor: 'white',
     // indicatorActivecolor: 'red',
@@ -35,7 +36,8 @@ Page({
       if (res.data.status == 1) {
           console.log(res.data.data.banner)
           that.setData({
-            advimg: res.data.data.banner
+            advimg: res.data.data.banner,
+            jializhigong: res.data.data.jializhigong
           })
       }
     })

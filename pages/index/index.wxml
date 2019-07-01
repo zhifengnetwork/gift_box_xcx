@@ -106,13 +106,12 @@
 
 <text class="jiali_title">佳礼之供</text>
 <text class="english">Selection Goods</text>
-<view class="img_box">
-  <view class="img_item"></view>
-  <view class="img_item"></view>
-  <view class="img_item"></view>
-  <view class="img_item"></view>
-  <view class="img_item"></view>
-  <view class="img_item"></view>
+<view class="img_box" wx:for="{{jializhigong}}" wx:key>
+
+  <view class="img_item">
+    <image src="{{item.img}}"></image>
+  </view>
+ 
 </view>
 <text class="jiali_title">星供夏品</text>
 <text class="english">Star Goods</text>
