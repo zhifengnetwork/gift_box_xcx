@@ -45,3 +45,40 @@ page{
   height: 100%;
 }
 /* 转盘 */
+.container{
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  margin: auto;
+  padding-top: 35vh; 
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.turntable_btn{
+  position: absolute;
+  bottom: 80rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width:514rpx;
+  height: 68rpx;
+  line-height: 68rpx;
+  text-align: center;
+  color: #695532;
+  background: #c6a633;
+  border-radius: 20rpx;
+}
+.turntable_info{
+  position: absolute;
+  bottom: 80rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 190rpx;
+  line-height: 60rpx;
+  color: #fff;
+  text-align: center;
+  border-bottom: 2rpx solid #fff;
+}
