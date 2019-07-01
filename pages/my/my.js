@@ -11,99 +11,117 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function (options) {
+  onLoad: function(options) {
 
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
+  onReady: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
-  onShow: function () {
+  onShow: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function () {
+  onHide: function() {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function () {
+  onUnload: function() {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function () {
+  onPullDownRefresh: function() {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function () {
+  onReachBottom: function() {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function () {
+  onShareAppMessage: function() {
 
   },
 
-    // 跳转到个人信息
-  mydetalis: function () {
+  // 跳转到个人信息
+  mydetalis: function() {
     wx.navigateTo({
       url: 'mydetalis/mydetalis',
     })
   },
   // 跳转到礼品卡
-  giftcard: function () {
+  giftcard: function() {
     wx.navigateTo({
       url: 'giftcard/giftcard',
     })
   },
   // 跳转到购物卡
-  shoppingcard: function () {
+  shoppingcard: function() {
     wx.navigateTo({
       url: 'shoppingcard/shoppingcard',
     })
   },
   // 跳转到礼品库
-  giftbank: function () {
+  giftbank: function() {
     wx.navigateTo({
       url: 'giftbank/giftbank',
     })
   },
   // 跳转到犒劳自己
-  reward: function () {
+  reward: function() {
     wx.navigateTo({
       url: 'reward/reward',
     })
   },
   // 跳转到已送礼品
-  sendgift: function () {
+  sendgift: function() {
     wx.navigateTo({
       url: 'sendgift/sendgift',
     })
   },
   // 跳转到已收礼品
-  collectgift: function () {
+  collectgift: function() {
     wx.navigateTo({
       url: 'collectgift/collectgift',
+    })
+  },
+  //跳转到电子发票
+  invoice: function() {
+    wx.navigateTo({
+      url: 'invoice/invoice',
+    })
+  },
+  //跳转到联系客服
+  service: function() {
+    wx.navigateTo({
+      url: 'service/service',
+    })
+  },
+  //跳转到常见问题
+  faq: function (){
+    wx.navigateTo({
+      url: 'FAQ/FAQ',
     })
   },
 })

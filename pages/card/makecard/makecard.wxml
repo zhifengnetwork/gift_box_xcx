@@ -21,9 +21,10 @@
     <!-- 列表项-e -->
   </view>
   <!-- 选择列表-e -->
+  {{value.music}}
   <!-- 预览-s -->
   <view class="preview">
-    <view class="preview_btn">
+    <view class="preview_btn" bindtap="preview">
       预览
     </view>
     <view class="preview_succeed">
@@ -39,9 +40,9 @@
         写下祝福......
       </view>
       <view class="blessing_content_text">
-
+        <textarea class="blessing_content_textarea" bindinput="blessText" maxlength="20" value="{{blessText}}" auto-focus></textarea>
       </view>
-      <view class="blessing_content_btn">
+      <view class="blessing_content_btn" bindtap="bleSend">
         完成
       </view>
     </view>

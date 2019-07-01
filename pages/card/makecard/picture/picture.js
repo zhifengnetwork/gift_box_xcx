@@ -5,42 +5,75 @@ Page({
    * 页面的初始数据
    */
   data: {
-    imglist: ''
+    imglist: '',
+    video:''
   },
+  // 点击添加按钮
   add: function() {
-    var _this = this;
+    var that = this;
     wx.showActionSheet({
-      itemList: ['拍照/视频', '从手机相册选择'],
+      itemList: ['拍照', '视频', '从手机相册选择'],
       success: function(res) {
         console.log(res.tapIndex)
-        if (res.tapIndex==0){
+        if (res.tapIndex != 2) {
           var type = 'camera';
-        }else{
+        } else {
           var type = 'album';
         }
-        wx.chooseImage({
-          count: 1, 
-          sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
-          sourceType: [type], 
-          success: function(res) {
-            // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-            var tempFilePaths = res.tempFilePaths
-            _this.setData({
-              imglist: tempFilePaths
-            })
-          }
-        });
+        if (res.tapIndex == 0) {
+          wx.chooseImage({
+            count: 1,
+            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: [type],
+            success: function(res) {
+              // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+              var tempFilePaths = res.tempFilePaths
+              that.setData({
+                imglist: tempFilePaths
+              })
+            }
+          });
+        } else if (res.tapIndex == 1) {
+          wx.chooseVideo({
+            sourceType: [type],
+            maxDuration: 60,
+            camera: 'back',
+            success(res) {
+              console.log(res.tempFilePath)
+              that.setData({
+                video: res.tempFilePath
+              })
+            }
+          })
+        }else{
+          wx.chooseImage({
+            count: 1,
+            sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
+            sourceType: [type],
+            success: function (res) {
+              console.log(res)
+              // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
+              var tempFilePaths = res.tempFilePaths
+              that.setData({
+                imglist: tempFilePaths
+              })
+            }
+          });
+        }
       },
       fail: function(res) {
         console.log(res.errMsg)
       }
     })
   },
+  // 删除
   delete: function() {
     this.setData({
-      imglist: ''
+      imglist: '',
+      video: '',
     })
   },
+  // 提交
   send: function() {
     var that = this
     wx.showToast({
@@ -48,7 +81,19 @@ Page({
       icon: 'success',
       duration: 2000
     })
-    setTimeout(function() {
+    setTimeout(function () {
+      var pages = getCurrentPages();
+      var prevPage = pages[pages.length - 2];  //上一个页面
+      var value = '';
+      if (that.data.imglist==''){
+        value = that.data.video;
+      }else{
+        value = that.data.imglist;
+      }
+      //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+      prevPage.setData({
+        picture: value
+      })
       wx.navigateBack({
         delta: 1
       })

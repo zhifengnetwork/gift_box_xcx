@@ -1,0 +1,304 @@
+.invoice_nav {
+  height: 115rpx;
+}
+
+.invoice_top {
+  height: 200rpx;
+  background: #fff;
+  padding: 0 50rpx;
+}
+
+.invoice_tyoe {
+  line-height: 80rpx;
+  font-size: 30rpx;
+  color: #222;
+}
+
+.invoice_top_button {
+  font-size: 28rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #e93d43;
+  width: 150rpx;
+  height: 60rpx;
+  border: 2rpx solid #e93d43;
+  border-radius: 12rpx;
+}
+
+/* 发票抬头 */
+
+.invoice_title {
+  border-top: 20rpx solid #f0f2f5;
+  border-bottom: 20rpx solid #f0f2f5;
+  padding: 0 50rpx;
+}
+
+.invoice_title_top {
+  line-height: 80rpx;
+  font-size: 26rpx;
+  color: #333;
+}
+
+.radio {
+  line-height: 80rpx;
+  font-size: 28rpx;
+  margin-left: 40rpx;
+}
+
+.radio>radio {
+  transform: scale(0.8);
+  margin-right: 10rpx;
+}
+
+.unit_box {
+  height: 180rpx;
+  padding-bottom: 40rpx;
+  position: relative;
+}
+
+.unit_name {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 40rpx;
+  font-size: 28rpx;
+  background: #f0f2f5;
+  margin-bottom: 20rpx;
+  color: #777;
+}
+
+.unit_num_box {
+  position: relative;
+}
+
+.unit_num {
+  height: 80rpx;
+  line-height: 80rpx;
+  padding-left: 40rpx;
+  font-size: 28rpx;
+  background: #f0f2f5;
+  color: #777;
+}
+
+.unit_button_box {
+  position: absolute;
+  right: 10rpx;
+  top: 10rpx;
+  z-index: 2;
+}
+
+.unit_button {
+  display: inline-block;
+  width: 30rpx;
+  height: 30rpx;
+  border-radius: 30rpx;
+  line-height: 30rpx;
+  font-size: 20rpx;
+  text-align: center;
+  border: 1rpx solid #adaeae;
+  color: #adaeae;
+  margin-right: 20rpx;
+  margin-top: 10rpx;
+}
+
+/* 收票人信息 */
+
+.invoice_messege {
+  height: 288rpx;
+  border-bottom: 20rpx solid #f0f2f5;
+}
+
+.messege_top {
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+  margin: 0 40rpx;
+}
+
+/* 收票人手机 */
+
+.messege_con {
+  height: 100rpx;
+  border-bottom: 2rpx solid #f0f2f5;
+}
+
+.messege_con_text {
+  line-height: 100rpx;
+  font-size: 26rpx;
+  padding-left: 80rpx;
+  float: left;
+}
+
+.messege_phone {
+  margin-top: 25rpx;
+  margin-left: 40rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  float: left;
+  width: 400rpx;
+}
+
+/* 收票人郵箱 */
+
+.messege_footer_text {
+  line-height: 100rpx;
+  font-size: 26rpx;
+  padding-left: 80rpx;
+  float: left;
+}
+
+.messege_email {
+  float: left;
+  margin-top: 25rpx;
+  margin-left: 40rpx;
+  line-height: 100rpx;
+  font-size: 26rpx;
+  width: 400rpx;
+}
+
+/* 发票内容 */
+
+.invoice_content {
+  height: 300rpx;
+  border-bottom: 20rpx solid #f0f2f5;
+  padding-bottom: 20rpx;
+}
+
+.invoice_con_top {
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+  margin: 0 40rpx;
+}
+
+.invoice_con_c {
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #333;
+  margin: 0 80rpx;
+}
+
+.invoice_content_radio {
+  font-size: 28rpx;
+}
+
+.invoice_content_radio .invoice_gift {
+  margin-left: 100rpx;
+  transform: scale(0.8);
+  line-height: 80rpx;
+}
+
+.invoice_content_radio .invoice_shopping {
+  margin-left: 100rpx;
+  transform: scale(0.8);
+}
+
+/* 发票须知 */
+
+.notice_top {
+  text-align: center;
+  position: relative;
+}
+
+.notice_topl {
+  position: absolute;
+  top: 50rpx;
+  left: 25%;
+  background: #000;
+  width: 60rpx;
+  height: 2rpx;
+}
+
+.notice_top_text {
+  font-size: 28rpx;
+  line-height: 100rpx;
+}
+
+.notice_topr {
+  position: absolute;
+  top: 50rpx;
+  right: 25%;
+  background: #000;
+  width: 60rpx;
+  height: 2rpx;
+}
+
+/* 发票须知中间区域 */
+
+.notice_content {
+  padding: 0 40rpx 40rpx;
+  border-bottom: 20rpx solid #f0f2f5;
+}
+
+.notice_content>text {
+  font-size: 26rpx;
+  line-height: 80rpx;
+}
+
+.notice_content_red {
+  color: #f23030;
+}
+
+/* 提交按钮 */
+
+.invoice_button {
+  margin-top: 100rpx;
+  width: 570rpx;
+  height: 80rpx;
+  background: rgba(0, 0, 0, 1);
+  border: 1px solid rgba(0, 0, 0, 1);
+  border-radius: 30rpx;
+  font-size: 22rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(255, 255, 255, 1);
+  margin-left: 90rpx;
+  text-align: center;
+  line-height: 80rpx;
+  margin-bottom: 30rpx;
+}
+.footer{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+.zhezhao{
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+  z-index: 3;
+}
+.zhezhaobox{
+  position: absolute;
+  top: 30%;
+  left: 11%;
+  width: 568rpx;
+  background: #fff;
+}
+cover-view{
+  z-index: 999;
+}
+.footer_nav{
+  line-height: 100rpx;
+  font-size: 30rpx;
+  text-align: center;
+}
+.footer_top{
+  font-size: 28rpx;
+  line-height: 80rpx;
+  padding: 0 30rpx;
+}
+.footer_con{
+  margin: 0 30rpx;
+  font-size: 26rpx;
+  width: 500rpx;
+	white-space: pre-wrap;
+  line-height: 40rpx;
+}
+.footer_f{
+  text-align: center;
+  font-size: 30rpx;
+  line-height: 80rpx;
+}

@@ -1,0 +1,21 @@
+<!--pages/turntable/turntable.wxml-->
+<view class="turntable_top">
+  <view class="turntable_back">
+    <image class="turntable_back_img" src="../public/images/index/back_white.png"></image>
+  </view>
+  <view class="turntable_title">
+    <text class="turntable_text">九点星选</text>
+  </view>
+</view>
+<!-- 背景图 -->
+<view class="turntable_bg">
+  <image class="turntable_bgImg" src="https://giftbox.zhifengwangluo.com/public/images/turntable/turntable_bg.png"></image>
+</view>
+<!-- 转盘 -->
+<view class="container">
+  <!-- <view>剩余抽奖次数：{{lotteryNum}}次</view> -->
+  <roulette options="{{rouletteData}}" angel="{{angel}}" bind:getAngel="getAngel" bind:getPrize="getPrize" />
+</view>
+<view class="turntable_info">
+  查看中奖者
+</view>

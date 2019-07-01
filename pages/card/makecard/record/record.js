@@ -13,6 +13,7 @@ Page({
     lRotate: '',
     rRotate: '',
   },
+  // 开始录音
   start: function() {
     // 点击改变状态
     let that = this;
@@ -50,21 +51,31 @@ Page({
       this.recorderManager.stop();
     }
   },
+  // 播放录音
   pause: function() {
+    // 如果为播放状态则返回
+    if (this.data.start) {
+      return false;
+    }
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.onError((res) => {
       // 播放音频失败的回调
     })
     this.innerAudioContext.src = this.data.src; // 这里可以是录音的临时路径
     this.innerAudioContext.play();
-    this.innerAudioContext.onPlay(function(){
+    this.innerAudioContext.onPlay(function() {
       console.log('开始播放')
     })
-    this.innerAudioContext.onEnded(function(){
+    this.innerAudioContext.onEnded(function() {
       console.log('结束播放')
     })
   },
+  // 删除录音
   delete: function() {
+    // 如果为播放状态则返回
+    if(this.data.start){
+      return false;
+    }
     let that = this;
     that.data.minute = '00';
     that.data.second = '00';
@@ -73,6 +84,13 @@ Page({
       minute: that.data.minute,
       second: that.data.second,
       src: that.data.src,
+      lRotate: '',
+      rRotate: ''
+    });
+    wx.showToast({
+      title: '删除成功',
+      icon: 'success',
+      duration: 2000
     })
   },
   time(flag) {
@@ -104,6 +122,7 @@ Page({
       }
     }
   },
+  // 提交
   send: function() {
     var that = this
     wx.showToast({
@@ -112,6 +131,12 @@ Page({
       duration: 2000
     })
     setTimeout(function() {
+      var pages = getCurrentPages();
+      var prevPage = pages[pages.length - 2]; //上一个页面
+      //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+      prevPage.setData({
+        record: that.data.src
+      })
       wx.navigateBack({
         delta: 1
       })

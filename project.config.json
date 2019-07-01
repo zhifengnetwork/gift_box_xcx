@@ -129,8 +129,15 @@
 				},
 				{
 					"id": 11,
-					"name": "已收礼物",
-					"pathName": "pages/my/collectgift/collectgift",
+					"name": "地址",
+					"pathName": "pages/site/site",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "转盘",
+					"pathName": "pages/turntable/turntable",
 					"query": "",
 					"scene": null
 				},

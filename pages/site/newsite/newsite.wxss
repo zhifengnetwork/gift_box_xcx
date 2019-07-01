@@ -1,0 +1,142 @@
+page{
+  background: #EFEEF1;
+}
+.newsite_nav{
+  height: 115rpx;
+  border-bottom: 2rpx solid #D8D8D8;
+  background: #fff;
+}
+.newsite_box{
+  height: 70rpx;
+  padding: 50rpx 50rpx;
+  border-bottom: 2rpx solid #eee;
+  background: #fff;
+}
+.newsite_button{
+  height: 100rpx;
+}
+.newsite_view{
+  font-size:26rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  float: left;
+  line-height: 100rpx;
+  width: 120rpx;
+}
+.newsite_input{
+  float: left;
+  width: 500rpx;
+  font-size:28rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  margin-top: 22rpx;
+  margin-left: 20rpx;
+}
+.newsite_city{
+  float: right;
+  font-size:28rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height: 100rpx;
+}
+/* 三级联动 */
+
+.picker-view {
+  width: 100%;
+  display: flex;
+  z-index: 12;
+  background-color: #fff;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 40vh;
+}
+
+.picker-item {
+  line-height: 70rpx;
+  margin-left: 5rpx;
+  margin-right: 5rpx;
+  text-align: center;
+}
+.zhezhao{
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+  z-index: 9;
+}
+/* 所在地区 */
+.street{
+  height: 200rpx;
+  border-bottom: 20rpx solid rgba(238,238,238,1);
+  padding-left: 50rpx;
+  background: #fff;
+  }
+.newsite_text{
+  padding-top: 30rpx;
+  height: 170rpx;
+  font-size: 30rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.default_box{
+  height: 100rpx;
+  background: #fff;
+  padding: 0 40rpx;
+}
+.default_text{
+  font-size:30rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(51,51,51,1);
+  float: left;
+  line-height: 100rpx;
+}
+.default_switch{
+  float: right;
+  margin-top: 16rpx;
+}
+/* 底部、提交按钮 */
+.newsite_footer{
+  position: absolute;
+  bottom: 50rpx;
+  left: 50%;
+  transform: translate(-50%);
+  width:585rpx;
+  height:100rpx;
+  background:rgba(0,0,0,1);
+  border-radius:50rpx;
+  font-size:36rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(239,236,236,1);
+  line-height: 100rpx;
+  text-align: center;
+}
+.newsite_save{
+  z-index: 9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%);
+  font-size:36rpx;
+  line-height: 150rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  background:rgba(0,0,0,1);
+  border-radius:10rpx;
+  width:350rpx;
+  height:150rpx;
+  text-align: center;
+}

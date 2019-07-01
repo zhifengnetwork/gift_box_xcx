@@ -1,0 +1,35 @@
+page{
+  background: #f0f2f5;
+}
+.service_nav{
+  height: 115rpx;
+  background: #fff;
+}
+.service{
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  width: 90%;
+  height: 85%;
+  background: #fff;
+}
+.service_img{
+  margin-top: 100rpx;
+  width: 60rpx;
+  height: 65rpx;
+  background: #000;
+  float: left;
+  margin-left: 240rpx;
+}
+.service_text{
+  font-size: 30rpx;
+  float: left;
+  margin-top: 112rpx;
+  margin-left: 20rpx;
+}
+.service_phone{
+  font-size: 30rpx;
+  position: absolute;
+  top: 230rpx;
+  left: 230rpx;
+}

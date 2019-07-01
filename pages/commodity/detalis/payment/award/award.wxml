@@ -2,12 +2,12 @@
   <component title='确认支付' show_bol='{{falsr}}'></component>
 </view>
 <view class="xiahuanxian">
-  <image src="../../../../public/images/detalis/xiahuaxian_icon.png"></image>
+  <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/xiahuaxian_icon.png"></image>
 </view>
 <view class="award_topbox">
-  <image src="../../../../public/images/detalis/dingwei_icon.png" class="award_dingwei"></image>
+  <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dingwei_icon.png" class="award_dingwei"></image>
   <text class="award_text">请填写地址</text>
-  <image src="../../../../public/images/detalis/you_icon.png" class="award_you"></image>
+  <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/you_icon.png" class="award_you"></image>
 </view>
 <view class="award_ct">
   <view class="award_ct_l">
@@ -23,7 +23,7 @@
 <view class="awrad_cb">
   <view class="awrad_box">
     <text>开具发票</text>
-    <image src="../../../../public/images/detalis/you_icon.png" class="awrad_cb_you"></image>
+    <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/you_icon.png" class="awrad_cb_you"></image>
   </view>
   <view class="awrad_box">
     <text>商品金額</text>

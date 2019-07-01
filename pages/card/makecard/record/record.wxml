@@ -1,7 +1,7 @@
 <!--pages/card/makecard/record/record.wxml-->
 <view class="boss_top"><component title='录入语音' show_bol='{{fasle}}'></component></view>
 <view class="record_bg">
-  <image class="record_bgimg" src="../../../public/images/card/record_bg.png"></image>
+  <image class="record_bgimg" src="https://giftbox.zhifengwangluo.com/public/images/card/record_bg.png"></image>
 </view>
 <view class="record_content">
   <image class="record_content_header" src="../../../public/images/card/record_top.png"></image>
@@ -17,14 +17,16 @@
    {{second}}:{{minute}}
   </view>
   <view class="record_pause" bindtap="pause">
-    <image class="record_pause_img" src="../../../public/images/card/pause.png"></image>
+    <image class="record_pause_img" wx:if="{{start}}" src="../../../public/images/card/pause.png"></image>
+    <image class="record_pause_img" wx:if="{{!start}}" src="../../../public/images/card/pause-active.png"></image>
   </view>
   <!-- 录音按钮 -->
   <view class="record_state" bindtap="start">
     <view class="record_state_bg {{start?'active':''}}"></view>
   </view>
   <view class="record_delete" bindtap="delete">
-    <image class="record_delete_img" src="../../../public/images/card/delete.png"></image>
+    <image class="record_delete_img" wx:if="{{start}}" src="../../../public/images/card/delete.png"></image>
+    <image class="record_delete_img" wx:if="{{!start}}" src="../../../public/images/card/delete-active.png"></image>
   </view>
   <view class="record_send" bindtap="send">
     <image class="record_send_img" src="../../../public/images/card/send.png"></image>

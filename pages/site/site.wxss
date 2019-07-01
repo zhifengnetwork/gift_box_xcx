@@ -1,0 +1,114 @@
+page{
+  background: #F0F0F0FF;
+}
+.site_nav{
+  height: 115rpx;
+  background: #fff;
+}
+.site{
+  text-align: center;
+}
+.sitewu{
+  display: none;
+  background: #fff;
+}
+.site_wuimg{
+  width: 323rpx;
+  height: 247rpx;
+  background: skyblue;
+  margin-top: 169rpx;
+  margin-left: 50%;
+  transform: translate(-50%)
+}
+.site_wutext{
+  line-height: 200rpx;
+  font-size: 36rpx;
+}
+.site_wubutton{
+  position: absolute;
+  bottom: 200rpx;
+  left: 50%;
+  /* margin-left: -50%; */
+  transform: translate(-50%);
+  width: 585rpx;
+  height: 100rpx;
+  background: #000000;
+  color: #efecec;
+  line-height: 100rpx;
+  font-size: 32rpx;
+  text-align: center;
+  border-radius: 50rpx;
+}
+/* 有地址 */
+.site_box{
+  height: 245rpx;
+  margin-top: 20rpx;
+  background: #fff;
+  position: relative;
+  padding-left: 110rpx;
+  padding-right: 50rpx;
+}
+.site_dingwei{
+  height: 56rpx;
+  width: 46rpx;
+  position: absolute;
+  top: 35rpx;
+  left: 50rpx;
+}
+.site_boxt{
+  height: 100rpx;
+}
+.site_name{
+  font-size:32rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+ float: left;
+ line-height: 100rpx;
+}
+.site_phone{
+  float: right;
+  font-size:28rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  line-height: 100rpx;
+}
+.site_tconent{
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(102,102,102,1);
+  text-align: left;
+}
+.site_tbottom{
+  height: 80rpx;
+}
+.radio{
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+  float: left;
+  line-height: 80rpx;
+}
+.radio>radio{
+  transform: scale(0.6);
+}
+.site_redact{
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  float: left;
+  line-height: 80rpx;
+  margin-left: 50%;
+}
+.site_remove{
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  float: right;
+  line-height: 80rpx;
+}

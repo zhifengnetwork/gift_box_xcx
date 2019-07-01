@@ -1,0 +1,31 @@
+page{
+  background: #f0f2f5;
+}
+.faq_nav{
+  height: 115rpx;
+  background: #fff;
+}
+.faq{
+  position: absolute;
+  top: 10%;
+  left: 5%;
+  height: 87%;
+  width: 80%;
+  background: #fff;
+  padding: 0 5%;
+}
+.faq_top{
+  font-size: 30rpx;
+  line-height: 80rpx;
+  color: #222222;
+}
+.faq_wen{
+  font-size: 28rpx;
+  line-height: 60rpx;
+  color: #222222;
+}
+.faq_da{
+  font-size: 26rpx;
+  line-height: 40rpx;
+  color: #999999;
+}
