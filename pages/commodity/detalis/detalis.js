@@ -33,6 +33,14 @@ Page({
     },
     sort:0,   //商品的库存
     spec_dss:'',
+    	// 01.规格选择
+				selectArr: [], //存放被选中的值
+				shopItemInfo: {}, //存放要和选中的值进行匹配的数据
+				subIndex: [], //是否选中 因为不确定是多规格还是但规格，所以这里定义数组来判断
+				// 02.规格显示
+				skuShow: null,
+				guigedata: {},
+
     // 商品规格选择数据结构
     result: {
       "goods": {
@@ -279,7 +287,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
@@ -383,15 +391,18 @@ Page({
       var price = goods['spec_goods_price'][spec].price;
       var sort = goods['spec_goods_price'][spec].store_count;
       console.log("sort"+sort);
-      this.setData({sort:sort})
+      // this.setData({sort:sort})
       this.setData({
         price: price,
         sort: sort,
         spec: spec
       });
-
+      console.log(sort)
     }
 
   },
+  jiaoyan:function(){
+    this.checkPrice()
+  }
 
 })

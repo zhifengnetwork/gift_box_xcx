@@ -105,34 +105,32 @@
         <text>黑色</text>,
         <text class="mama">39码</text>
       </view>
-      <!-- 正式的规格选择区块 -->
+      <!-- 正式的规格选择区块--s -->
+      <view class="container">
+		<view class="skuBox" v-if="guigedata">
+			<view class="color" v-for="(specs, n) in guigedata.apec_attr" :key="n">
+				<view class="type_contnent_box">
+					<view class="title">
+						{{ specs.attr_name }}
+					</view>
+					<view class="color_item_container">
+						<view class="color_item" :class="[oItem.isShow ? '' : 'disable',subIndex[n] == index ? 'active' : '']"
+						 :data-id="index + '' + index" 
+						 :data-sku="oItem.attr_name" 
+						 :data-skucode="oItem.id" 
+						 v-for="(oItem, index) in specs.attrs"
+						 :key="index" bindtap="specificationBtn(oItem.id, n, $event, index)">
+							{{ oItem.attr_name }}
+						</view>
+					</view>
+				</view>
+			</view>
+		</view>
+	</view>
+<!-- 正式的规格选择区块--e -->
+
+
       <view>
-        <scroll-view class='allConten' scroll-y="false">
-<!-- result.spec_goods_price.store_count==0 -->
-          <view wx:for="{{result.goods.goods_spec_list}}" wx:for-index="pos" wx:key>
-            <view class='ggfl'>{{item[0].spec_name}}</view>
-            <view class='ggList'>
-              <block wx:for="{{item}}" wx:key>   
-              <!-- item {{item.isClick==1?'isClick':''}} -->
-              <!-- item {{sort>0?(item.isClick==1?'isClick':''):'disabled'}} -->
-<!-- class="attr_value {{attrValueObj.attrValueStatus[valueIndex]?(value==attrValueObj.selectedValue?'attr_value_active':''):'attr_value_disabled'}}" -->
-<!-- {{spec_dss}} -->
-<!-- {{sort}} -->
-<!-- {{result.spec_goods_price}} -->
-                <view data-index="{{pos}}" data-pos="{{index}}" class="item {{sort==0&item.isClick==1?'disabled':(item.isClick==1?'isClick':'')}}" data-itemId='{{item.item_id}}' bindtap="propClick">{{item.item}}</view>   
-                {{result.spec_goods_price.store_count}}                                                  
-              </block>
-            </view>
-          </view>
-          <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
-            <view class='buyNum-box'>
-              <view class='buyNum'>购买数量</view>
-              <view class='jian' catchtap='reduceProduct'>-</view>
-              <view class='num'>{{productNum}}</view>
-              <view class='jia' catchtap='addProduct' data-sort="{{dataArr.goods.store_count}}">+</view>
-            </view>
-          </view>
-        </scroll-view>
         <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
           <view class='btn-box'>
             <view class='btn-item'>

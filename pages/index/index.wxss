@@ -96,12 +96,15 @@
 .img_item{
   width: 170rpx;
   height: inherit;
-  border: 1px solid green;
   display: inline-block;
   flex-shrink:0;
   margin-right: 80rpx;
   border-radius: 25rpx ;
   box-sizing: border-box;
+}
+.huadon{
+  width: 100%;
+  height: 100%
 }
 .dangimg_box{
   width: 100%;
@@ -282,7 +285,8 @@
 }
 .bar_pic{
   width: 26rpx;
-  height: 26rpx
+  height: 26rpx;
+
 }
 .bar_title{
   font-size: 28rpx;

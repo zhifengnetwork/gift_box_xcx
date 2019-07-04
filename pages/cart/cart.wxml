@@ -1,4 +1,4 @@
-<component title='购物车' show_bol='{{false}}'>
+<!-- <component title='购物车' show_bol='{{false}}'>
 </component>
 <view class="quanxuan_ear">
 <view class="{{check==true?'checkle':'check'}}"></view>
@@ -17,4 +17,4 @@
         <view class="size">黑色 43码</view>
         <view class="price">$2895<view class="jishu"><text>-</text><input type="text" class="inputds"></input><text>+</text></view></view>
    </view>
-</view>
+</view> -->
