@@ -1,4 +1,4 @@
-//app.js
+var api = require('./utils/api');
 
 App({
   onLaunch: function () {
@@ -6,13 +6,24 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-    
+
     // 登录
     wx.login({
 
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-      console.log(res)
+        console.log(res)
+
+        api.getJSON('/api/login/index?code=' + res.code, function (res) {
+          console.log(res)
+
+          if (res.status == 1) {
+
+            console.log(res.data)
+
+          }
+        })
+
 
       }
     })
@@ -39,20 +50,20 @@ App({
 
       // 判断设备是否为 iPhone X
       this.checkIsIPhoneX();
-      
-      //获取设备顶部窗口的高度（不同设备窗口高度不一样，根据这个来设置自定义导航栏的高度
-      wx.getSystemInfo({
-        success: (res) => {
-          this.globalData.height = res.statusBarHeight
-        }
-      })
-      
+
+    //获取设备顶部窗口的高度（不同设备窗口高度不一样，根据这个来设置自定义导航栏的高度
+    wx.getSystemInfo({
+      success: (res) => {
+        this.globalData.height = res.statusBarHeight
+      }
+    })
+
 
   },
   globalData: {
     height: 0
   },
-  
+
   //判断设备是否为 iPhone X
   checkIsIPhoneX: function () {
     const self = this
