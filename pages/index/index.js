@@ -34,7 +34,7 @@ Page({
     var that = this;
     api.getJSON('/api/index/index', function (res) {
       if (res.data.status == 1) {
-          console.log(res.data.data.banner)
+         
           that.setData({
             advimg: res.data.data.banner,
             jializhigong: res.data.data.jializhigong

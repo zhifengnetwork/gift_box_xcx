@@ -55,7 +55,7 @@
     </block>
   </scroll-view>
 <view>
- <view wx:if="{{selectMenuID==index}}" class="nei" wx:for="{{navLeftItems}}">
+ <view wx:if="{{selectMenuID==index}}" class="nei" wx:for="{{navLeftItems}}" wx:key>
     <scroll-view scroll-y="true" class="scrolhei1" style='height:{{scroll_height1}}rpx;' bindscroll="bindScroll" scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}">
         <view class="leifen">全部分类</view>
        

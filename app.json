@@ -56,7 +56,6 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "color": "#666666",
-    "font-size": "40rpx",
     "selectedColor": "#666666",
     "borderStyle": "white",
     "list": [

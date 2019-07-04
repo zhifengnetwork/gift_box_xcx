@@ -131,7 +131,7 @@
 </view>
 <!-- 轮播图2 -->
 <swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" duration="{{duration}}" current="{{currentSwiper2}}" bindchange="swiperChange2">
-  <block wx:for="{{imgUrls}}">
+  <block wx:for="{{imgUrls}}" wx:key>
     <swiper-item class="swiper_boxxxx">
       <image src="{{item}}" class="slide-image" width="695" height="370" />
     </swiper-item>
