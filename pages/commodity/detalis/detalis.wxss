@@ -398,4 +398,54 @@ color:rgba(51,51,51,1);
 .kj-box .btn-box .kj-btn{
   background: #fe4e54;
 }
+/* 商品规格选择--s */
+.skuBox {
+		height: 800upx;
+		overflow-y: scroll;}
+
+		.color {
+			height: 200upx;
+			border-bottom: 1upx solid red;}
+
+    .title {
+      font-size: .8rem;
+    }
+
+			.color_item_container {
+				height: 100%;
+				display: flex;
+				flex-wrap: wrap;
+				flex-direction: row;
+				justify-content: start;
+				margin-top: 40upx;}
+
+				.color_item {
+					margin-right: 35upx;
+					margin-bottom: 20upx;
+					position: relative;
+					width: 120upx;
+					text-align: center;
+					border: 1upx solid #444444;
+					line-height: 1.1rem;
+					font-size: .7rem;
+					text-align: center;
+					border-radius: 10upx;
+
+				}
+
+				.active {
+					background: peachpuff;
+					border: 1upx solid #E94D68;
+				}
+
+				.disable {
+					pointer-events: none;
+					background: lightgray;
+					border: #444444;
+				}
+		
+		
+	
+
+/* 商品规格选择---e */
 

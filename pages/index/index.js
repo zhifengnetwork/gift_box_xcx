@@ -7,10 +7,15 @@ Page({
    */
   data: {
     advImage: [],
-    jializhigong:[],
-    guess_like:[],
+    jiali:[],
+    //guess_like:[],
     currentSwiper: 0,
     indicatorColor: 'white',
+    hot_category:[],
+    shishangdapai:[],
+    shishangzhinan:[],
+    xingxuanyoupin:[],
+    guess_like:[],
     // indicatorActivecolor: 'red',
     // 头部导航栏的高度
     // statusBarHeight: app.globalData.statusBarHeight,
@@ -36,19 +41,28 @@ Page({
     api.getJSON('api/index/index', function (res) {
       if (res.data.status == 1) {
           console.log(res.data)
+        console.log(res.data.data.cainixihuan)
           that.setData({
             advimg: res.data.data.banner,
-            jializhigong: res.data.data.jializhigong,
-            guess_like: res.data.data.guess_like,
+            hot_category: res.data.data.hot_category,
+            jiali: res.data.data.jializhixuan,
+            shishangdapai: res.data.data.shishangdapai,
+            shishangzhinan: res.data.data.shishangzhinan,
+            // guess_like: res.data.data.guess_like,
+            imgUrlslength: res.data.data.shishangzhinan.goods_list.length,
+            xinpinshangshi: res.data.data.xinpinshangshi,
+            xingxuanyoupin: res.data.data.xingxuanyoupin,
+            guess_like: res.data.data.cainixihuan
           })
       }
     })
-
-    // 获取第二个轮播图的长度,显示到页面
-      this.setData({ imgUrlslength: this.data.imgUrls.length})
+   
+   
+   
+   
   },
   onShow: function () {
-  
+   
   },
   // 第一个轮播图切换调动这个函数
   swiperChange: function (e) {

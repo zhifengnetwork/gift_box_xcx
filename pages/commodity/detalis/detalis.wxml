@@ -107,8 +107,8 @@
       </view>
       <!-- 正式的规格选择区块--s -->
       <view class="container">
-		<view class="skuBox" v-if="guigedata">
-			<view class="color" v-for="(specs, n) in guigedata.apec_attr" :key="n">
+		<view class="skuBox" wx-if="guigedata">
+			<view class="color" wx-for="(specs, n) in guigedata.apec_attr" :key="n">
 				<view class="type_contnent_box">
 					<view class="title">
 						{{ specs.attr_name }}

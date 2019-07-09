@@ -98,13 +98,14 @@
   height: inherit;
   display: inline-block;
   flex-shrink:0;
-  margin-right: 80rpx;
+  margin-right: 50rpx;
   border-radius: 25rpx ;
   box-sizing: border-box;
 }
 .huadon{
   width: 100%;
-  height: 100%
+  height: 100%;
+  border-radius: 25rpx
 }
 .dangimg_box{
   width: 100%;
@@ -124,6 +125,10 @@
   height: 201rpx;
   border: 1px solid red;
   display: inline-block;
+}
+.dapai{
+  width:100%;
+  height: 100%
 }
 /* 第二个轮播图样式 */
 .swiper_boxxxx{
@@ -152,16 +157,18 @@
 .new_shop{
   width: 100%;
   padding:0 21rpx;
-  border: 1px solid green;
   box-sizing: border-box;
 }
-.new_shop_item{
-  border: 1px solid green;
+.new_shop_item{ 
   box-sizing: border-box;
   width: 230rpx;
   height: 230rpx;
   display: inline-block;
-  margin-left: 11rpx  
+  margin-left: 12rpx  
+}
+.shagn{
+  width: 100%;
+  height: 100%
 }
 .new_shop_item:nth-child(2n){
   float: left;
@@ -192,15 +199,15 @@
 }
 .love_ear{
   width: 100%;
-  padding: 0 21rpx;
-  border: 1px solid green;
+  padding: 0 34rpx;
+  /* border: 1px solid green; */
   box-sizing: border-box
 }
 .love_item{
   display: inline-block;
   width: 330rpx;
   height: 330rpx;
-  border: 1px solid red;
+  /* border: 1px solid red; */
   box-sizing: border-box;
 }
 .love_love{
@@ -221,13 +228,18 @@
   width: 90%;
   height: 100%;
   margin: 0 auto;
+  text-align: center
 }
-.item1{
+.xiaode{
   display: inline-block;
-  width: 23%;
+  width: 25%;
   height: 50%;
   text-align: center;
   position: relative;
+}
+.item1{ 
+  width: 100%;
+  height: 100%;
 }
 .item1_text{
   position: absolute;
@@ -246,7 +258,6 @@
   margin: 0 auto;
   width: 96rpx;
   height: 20rpx;
-  
 }
 .xiegang{
   vertical-align: top;
@@ -294,4 +305,8 @@
   font-weight:bold;
   color:rgba(102,102,102,1);
   padding-left: 10rpx
+}
+.love_pic{
+  width: 100%;
+  height: 100%
 }
