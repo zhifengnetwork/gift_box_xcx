@@ -8,6 +8,7 @@ Page({
   data: {
     advImage: [],
     jializhigong:[],
+    guess_like:[],
     currentSwiper: 0,
     indicatorColor: 'white',
     // indicatorActivecolor: 'red',
@@ -32,12 +33,13 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    api.getJSON('/api/index/index', function (res) {
+    api.getJSON('api/index/index', function (res) {
       if (res.data.status == 1) {
-         
+          console.log(res.data)
           that.setData({
             advimg: res.data.data.banner,
-            jializhigong: res.data.data.jializhigong
+            jializhigong: res.data.data.jializhigong,
+            guess_like: res.data.data.guess_like,
           })
       }
     })

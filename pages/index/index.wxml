@@ -6,7 +6,7 @@
     <swiper class='swipers' autoplay current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
       <block wx:for="{{advimg}}" wx:key>
         <swiper-item>
-          <image class="swiper_image" src="{{item.url}}" lazy-load="true" />
+          <image class="swiper_image" src="{{item.picture}}" lazy-load="true" />
         </swiper-item>
       </block>
     </swiper>
@@ -162,25 +162,14 @@
 </view>
 <text class="jiali_title">猜你喜歡</text>
 <text class="english">You May Also Like</text>
-<view class="love_ear">
+<view class="love_ear" wx:for="{{guess_like}}" wx:key>
+
   <view class="love_love">
-    <view class="love_item"></view>
-    <view class="love_tile">Rolex</view>
-    <view class="love_money">HK$1999</view>
+    <view class="love_item">
+        <image src="{{item.picture}}" ></image>
+    </view>
+    <view class="love_tile">{{item.goods_name}}</view>
+    <view class="love_money">HK${{ittem.price}}</view>
   </view>
-  <view class="love_love">
-    <view class="love_item"></view>
-    <view class="love_tile">Rolex</view>
-    <view class="love_money">HK$1999</view>
-  </view>
-  <view class="love_love">
-    <view class="love_item"></view>
-    <view class="love_tile">Rolex</view>
-    <view class="love_money">HK$1999</view>
-  </view>
-  <view class="love_love">
-    <view class="love_item"></view>
-    <view class="love_tile">Rolex</view>
-    <view class="love_money">HK$1999</view>
-  </view>
+  
 </view>
