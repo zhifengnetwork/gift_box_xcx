@@ -105,31 +105,24 @@
         <text>黑色</text>,
         <text class="mama">39码</text>
       </view>
-      <!-- 正式的规格选择区块--s -->
-      <view class="container">
-		<view class="skuBox" wx-if="guigedata">
-			<view class="color" wx-for="(specs, n) in guigedata.apec_attr" :key="n">
-				<view class="type_contnent_box">
-					<view class="title">
-						{{ specs.attr_name }}
-					</view>
-					<view class="color_item_container">
-						<view class="color_item" :class="[oItem.isShow ? '' : 'disable',subIndex[n] == index ? 'active' : '']"
-						 :data-id="index + '' + index" 
-						 :data-sku="oItem.attr_name" 
-						 :data-skucode="oItem.id" 
-						 v-for="(oItem, index) in specs.attrs"
-						 :key="index" bindtap="specificationBtn(oItem.id, n, $event, index)">
-							{{ oItem.attr_name }}
-						</view>
-					</view>
-				</view>
-			</view>
-		</view>
-	</view>
-<!-- 正式的规格选择区块--e -->
+      <!-- 正式的规格选择区块 s -->
 
+      <view wx:for="{{attrList}}" wx:for-index="idx" wx:key="userInfoListId" class="outStyle">
+        <view class='outStyleText textStyle buttonPaddingStyle'>{{item.attrName}}</view>
+        <view class='typeStyle textStyle'>
+          <view wx:for="{{item.attr}}" data-item='{{item.attr[index]}}' data-index='{{index}}' data-idx='{{idx}}' wx:key="userInfoListId" bindtap="onChangeShowState" wx:for-item="items">
+            <view class="{{items.enable == true ?(items.select==true?'orange':'back') : 'white'}} textStyle buttonPaddingStyle">
+              {{items.attributeValue}}
+            </view>
+          </view>
+        </view>
+      </view>
+      <view class='textStyle buttonPaddingStyle shuru'>
+        <view>当前点击的信息:</view>
+        <view>{{infoText}}</view>
+      </view>
 
+      <!-- 正式的规格选择区块 e -->
       <view>
         <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
           <view class='btn-box'>
