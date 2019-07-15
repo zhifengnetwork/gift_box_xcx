@@ -107,7 +107,7 @@
       </view>
       <!-- 正式的规格选择区块 s -->
 
-      <view wx:for="{{attrList}}" wx:for-index="idx" wx:key="userInfoListId" class="outStyle">
+      <!-- <view wx:for="{{attrList}}" wx:for-index="idx" wx:key="userInfoListId" class="outStyle">
         <view class='outStyleText textStyle buttonPaddingStyle'>{{item.attrName}}</view>
         <view class='typeStyle textStyle'>
           <view wx:for="{{item.attr}}" data-item='{{item.attr[index]}}' data-index='{{index}}' data-idx='{{idx}}' wx:key="userInfoListId" bindtap="onChangeShowState" wx:for-item="items">
@@ -115,12 +115,23 @@
               {{items.attributeValue}}
             </view>
           </view>
+          
         </view>
       </view>
       <view class='textStyle buttonPaddingStyle shuru'>
         <view>当前点击的信息:</view>
         <view>{{infoText}}</view>
+      </view> -->
+      <view>
+
       </view>
+
+
+
+
+
+
+
 
       <!-- 正式的规格选择区块 e -->
       <view>

@@ -41,7 +41,7 @@ Page({
     api.getJSON('api/index/index', function (res) {
       if (res.data.status == 1) {
           console.log(res.data)
-        console.log(res.data.data.cainixihuan)
+          console.log(res.data.data.cainixihuan)
           that.setData({
             advimg: res.data.data.banner,
             hot_category: res.data.data.hot_category,

@@ -223,6 +223,7 @@ Page({
       if (res.data.status == 1) {
         that.setData({
           navLeftItems: res.data.data
+          
         })
         console.log(res.data.data)
         console.log("ss" + that.data.navLeftItems[0].cat_name)

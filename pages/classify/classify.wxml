@@ -1,7 +1,6 @@
 <!-- <view class="{{isIPX ? 'navi-bar-view-IPX' : 'navi-bar-view'}}">
   <component title='分类' show_bol='{{true}}'></component>
 </view> -->
-
 <!-- <view class="selection" wx:for="{{result.goods.goods_spec_list}}" wx:for-item="pingpai" wx:key wx:for-index="groupindex">
   <view class="item_letter" id="{{pingpai[groupindex].key}}">{{pingpai[groupindex].key}}</view>
   <view class="item_city" wx:for="{{pingpai}}" wx:for-item="ct" wx:key data-city="{{ct.name}}" bindtap="bindCity">
