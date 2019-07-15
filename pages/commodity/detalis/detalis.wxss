@@ -414,14 +414,6 @@ color:rgba(51,51,51,1);
   margin-right: 10px;
   color: #000;
 }
-
-.white {
-  border-radius: 10px;
-  background-color: #fff;
-  margin-right: 10px;
-  color: #999;
-}
-
 .typeStyle {
   display: flex;
   flex-direction: row;
@@ -449,4 +441,40 @@ color:rgba(51,51,51,1);
   bottom: 0rpx;
   _position: absolute;
 }
+/* 22222 */
+.diyi{
+  display: inline-block;
+  width: 90%;
+  margin-left: 5%;
+  margin-top: 3%
+}
+/* 不能选择 */
+.dier{
+  display: inline-block;
+  width: 20%;
+  text-align: center;  
+  border: 1px solid gray;
+  margin-left: 20px;
+  margin-top: 10px
+}
+.white {
+  border-radius: 10px;
+  background-color: #fff;
+  margin-right: 10px;
+  color: #999;
+}
+.classChoosed{
+  color:red
+}
+.justifyChoose{
+  display: inline-block;
+  width: 15%;
+  border: 1px solid black;
+  text-align: center;
+  margin-left: 30px;
+  border-radius: 15px;
+  margin-top:5px
+}
+
+
 /* 商品规格选择样式--e */
