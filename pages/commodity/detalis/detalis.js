@@ -143,16 +143,16 @@ Page({
        
 
         //商品选择--s
-  setData() {
-    let sku = this.guigedata.sku;
-    for (let i = 0, len = sku.length; i < len; i++) {
-      this.shopItemInfo[sku[i].attr_ids.replace(/\//g, ",")] = sku[i];
-      /* 
-      * 修改数据结构格式，用规格组成的id用逗号分割作属性名
-      *  */
-    }
-    this.checkItem();
-  },
+  // setData() {
+  //   let sku = this.guigedata.sku;
+  //   for (let i = 0, len = sku.length; i < len; i++) {
+  //     this.shopItemInfo[sku[i].attr_ids.replace(/\//g, ",")] = sku[i];
+  //     /* 
+  //     * 修改数据结构格式，用规格组成的id用逗号分割作属性名
+  //     *  */
+  //   }
+  //   this.checkItem();
+  // },
 
   // 01.规格选择
   specificationBtn(item, n, event, index) {
