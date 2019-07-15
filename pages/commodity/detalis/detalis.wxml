@@ -115,16 +115,32 @@
               {{items.attributeValue}}
             </view>
           </view>
-          
+
         </view>
       </view>
       <view class='textStyle buttonPaddingStyle shuru'>
         <view>当前点击的信息:</view>
-        <view>{{infoText}}</view>
+        <view>{{infoText}}</view> 
       </view> -->
-      <view>
 
-      </view>
+
+      
+      <!-- <view wx:for="{{spec_attr}}"  wx:for-item="items" class="diyi" wx:for-index="key">
+        <view>{{items.spec_name}}</view> -->
+         <!-- class="dier {{items.enable != 0 ?(items.select == 0?'orange':'back') : 'white'}}" -->
+        <!-- <view wx:for="{{items.res}}"  class="dier {{keyss==key ? 'orange':'back'}}" wx:for-index="key2"  bindtap="xuanze" data-key='{{key}}' data-key2='{{key2}}'>
+          {{item.attr_name}}
+        </view>
+      </view> -->
+       
+     <block wx:for="{{spec_attr}}" wx:key wx:for-index="findex" wx:for-item="items">
+   <view class="mainSection_input mainSection_input_justify">
+     <view class="mainSection_input_view">{{items.spec_name}}</view>
+         <block wx:for="{{items.res}}" wx:key >
+             <view  class="{{justifyAnswer[findex] == index ? 'classChoosed' : ''}} justifyChoose " catchtap="justifyAnswer" data-index="{{index}}"data-findex="{{findex}}">{{item.attr_name}}</view>
+        </block>
+   </view>
+   </block>
 
 
 
