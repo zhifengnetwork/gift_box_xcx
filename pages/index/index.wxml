@@ -66,17 +66,14 @@
 <text class="jiali_title">{{xingxuanyoupin.name}}</text>
 <text class="english">{{xingxuanyoupin.english}}</text>
 <view class="dangimg_box">
-<!-- <image src="xingx"></image> -->
+  <image class="dangimg_box_img" src="{{xingxuanyoupin.goods_info.picture}}"></image>
 </view>
 <text class="jiali_title">{{shishangdapai.name}}</text>
 <text class="english">{{shishangdapai.english}}</text>
 <view class="fashion_ear">
-  <!-- <view class="fashion_item" wx:for="{{shishangdapai.goods_list}}" wx:key> -->
-   <!-- <image src="{{item.picture}}" class="dapai"></image> -->
-      <!-- </view> -->
-  <view class="fashion_item"></view>
-  <view class="fashion_item"></view>
-  <view class="fashion_item"></view>
+<view class="fashion_item" wx:for="{{shishangdapai.goods_list}}" wx:key>
+  <image src="{{item.picture}}" class="dapai"></image>
+</view>
 </view>
 
 <text class="jiali_title">{{shishangzhinan.name}}</text>
@@ -100,9 +97,10 @@
         <image src="{{item.picture}}" class="shagn"></image>
   </view>
 </view>
-<text class="jiali_title">潮流導購</text>
-<text class="english">Fashion Guide</text>
+<text class="jiali_title">{{chaoliudaogou.name}}</text>
+<text class="english">{{chaoliudaogou.englist}}</text>
 <view class="images_wu">
+  <image class="images_wu_img" src="{{chaoliudaogou.goods_info.picture}}"></image>
 </view>
 <view class="zaixian">
   <text class="bu">Celine再現？不！這是全新的Bottega Veneta</text>

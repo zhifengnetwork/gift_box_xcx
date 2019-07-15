@@ -16,6 +16,7 @@ Page({
     shishangzhinan:[],
     xingxuanyoupin:[],
     guess_like:[],
+    chaoliudaogou:[],
     // indicatorActivecolor: 'red',
     // 头部导航栏的高度
     // statusBarHeight: app.globalData.statusBarHeight,
@@ -69,7 +70,8 @@ Page({
             imgUrlslength: res.data.data.shishangzhinan.goods_list.length,
             xinpinshangshi: res.data.data.xinpinshangshi,
             xingxuanyoupin: res.data.data.xingxuanyoupin,
-            guess_like: res.data.data.cainixihuan
+            guess_like: res.data.data.cainixihuan,
+            chaoliudaogou: res.data.data.chaoliudaogou,
           })
       }
     })
