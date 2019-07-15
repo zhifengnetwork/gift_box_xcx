@@ -1,3 +1,67 @@
+<view wx:if="{{empty}}" class="view-empty">
+
+<image src="/images/empty_cart.png"></image>
+<text class="hint">购物车还是空的</text>
+<text class="btn" bindtap="see" >马上逛逛</text>
+
+</view>
+<view wx:else>
+<scroll-view  scroll-y="true" style="width:100%;height:{{height}}px">
+
+<view class="container carts-list">
+  <view wx:for="{{carts}}" wx:key="index" class="carts-item">
+
+    <!-- 复选框图标 -->
+    <icon wx:if="{{item.selected}}" type="success_circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" />
+    <icon wx:else type="circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" />
+    <view>
+
+      <!-- 缩略图 -->
+      <image class="carts-image" src="{{item.goods_img}}" mode="aspectFill" />
+    </view>
+    <view class="carts-text">
+
+      <!-- 商品标题 -->
+      <text class="carts-title">{{item.goods_name}}</text>
+      <text class="carts-key-name">{{item.spec_key_name}}</text>
+      <view class="carts-subtitle">
+
+        <!-- 价格 -->
+        <!-- <text class="carts-price">{{item.goods_price}}</text> -->
+        <!-- 数量加减 -->
+        <view>
+          <view class="stepper">
+            <!-- 减号 -->
+            <text class="reduce {{minusStatuses[index]}}" data-index="{{index}}" bindtap="bindMinus">-</text>
+            <!-- 数值 -->
+            <input type="number" data-index="{{index}}" bindchange="bindManual" value="{{item.goods_num}}" />
+            <!-- 加号 -->
+            <text class="normal" data-index="{{index}}" bindtap="bindPlus">+</text>
+          </view>
+        </view>
+      </view>
+    </view>
+    <view class="carts-right">
+      <text class="text-price">${{item.market_price}}</text>
+      <text class="text-red">${{item.member_goods_price}}</text>
+      <image bindtap="deleteCart" data-index="{{index}}" class="image-delete" src="/images/icon_delete.png"></image>
+    </view>
+  </view>
+</view>
+</scroll-view>
+
+<view class="carts-footer">
+  <view class="carts-footer-left" bindtap="bindSelectAll">
+    <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20" />
+    <icon wx:else type="circle" size="20" />
+    <text>全选</text>
+    <text style="color:red;">￥: {{total}}(不含运费)</text>
+  </view>
+  <view class="button" bindtap="bindCheckout">立即结算</view>
+</view>
+</view>
+
+
 <!-- <component title='购物车' show_bol='{{false}}'>
 </component>
 <view class="quanxuan_ear">
