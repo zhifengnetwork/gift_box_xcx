@@ -18,6 +18,7 @@ function __args() {
     setting.url = config.api_url + setting.url;
 	}
 	return setting;
+  
 }
 
 function __json(method, setting) {

@@ -3,12 +3,12 @@
 </view>
 <view class="swiper-tab">
   <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
-    待使用
+    待付款
     <text></text>
     <view class="border-right"></view>
   </view>
   <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">
-    已使用
+    已付款
     <text></text>
   </view>
 </view>

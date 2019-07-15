@@ -1,4 +1,5 @@
 // pages/commodity/detalis/detalis.js
+var api = require('../../../utils/api');
 var app = getApp();
 Page({
 
@@ -153,6 +154,7 @@ Page({
       }
     ], // 存库列表
     infoText: "请点击获取属性，获取详细",
+    attrListjj:[]
   },
   clickTab: function (e) {
     var that = this;
@@ -187,7 +189,25 @@ Page({
       advimg: this.data.advImage,
     }),
     // sku算法初始化数据
-    this.onData();
+    // this.onData();
+   // jjjzzz
+    // api.getJSON('/api/goods/getGoodsAttrSpec?goods_id=57', function (res) {
+    //   this.attrListjj=res.data.data.spec_attr
+    //   console.log(res.data.data.spec_attr)
+    // })
+    // token= app.globalData.token
+   
+    // 请求数据,渲染商品页面
+    api.getJSON('/api/goods/goodsDetail/goods_id=57', function (res) {
+         console.log("sss")
+         console.log(res.data)
+     })
+
+
+
+
+
+
   },
 
   swiperChange: function (e) {
