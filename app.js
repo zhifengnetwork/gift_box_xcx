@@ -81,7 +81,7 @@ App({
   },
 
   globalData: {
-
+    userInfo:[],
     token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2MzE1NTUyMSwiZXhwIjoxNTYzMTkxNTIxLCJ1c2VyX2lkIjo4OX0.9bCLCxQnn_YPy58A2YVHSwOZ8sKq1f6w5jLEuez69Rs',
     
     height: 0

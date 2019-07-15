@@ -8,24 +8,24 @@ Page({
    */
   data: {
     music: [
-    // {
-    //   songName: 'The Dawn (亡灵序曲完美钢琴版) [Cover Dreamtale]',
-    //   singer: 'Mike Zhou',
-    //   radio: 'false',
-    //   src:'http://music.163.com/song/media/outer/url?id=476592630.mp3'
-    // },
-    // {
-    //   songName: 'Croatian Rhapsody',
-    //   singer: 'Maksim Mrvica',
-    //   radio: 'false',
-    //   src: 'http://music.163.com/song/media/outer/url?id=1696373.mp3'
-    // },
-    // {
-    //   songName: 'Stronger Than You',
-    //   singer: 'Chara Parody',
-    //   radio: 'false',
-    //   src: 'http://music.163.com/song/media/outer/url?id=410519017.mp3'
-    // },
+    {
+      songName: 'The Dawn (亡灵序曲完美钢琴版) [Cover Dreamtale]',
+      singer: 'Mike Zhou',
+      radio: 'false',
+      src:'http://music.163.com/song/media/outer/url?id=476592630.mp3'
+    },
+    {
+      songName: 'Croatian Rhapsody',
+      singer: 'Maksim Mrvica',
+      radio: 'false',
+      src: 'http://music.163.com/song/media/outer/url?id=1696373.mp3'
+    },
+    {
+      songName: 'Stronger Than You',
+      singer: 'Chara Parody',
+      radio: 'false',
+      src: 'http://music.163.com/song/media/outer/url?id=410519017.mp3'
+    },
     ],
     src:''
   },

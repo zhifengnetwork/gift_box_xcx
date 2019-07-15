@@ -44,7 +44,8 @@
     "pages/site/site",
     "pages/site/newsite/newsite",
     "pages/site/sitemanage/sitemanage",
-    "pages/turntable/turntable"
+    "pages/turntable/turntable",
+    "pages/authorize/authorize"
   ],
   "window": {
     "backgroundTextStyle": "light",
