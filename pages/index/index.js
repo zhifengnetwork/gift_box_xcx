@@ -38,7 +38,6 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    console.log(app.globalData.userInfo)
     // 判断是否已经授权
     wx.getSetting({
       success: (res) => {
