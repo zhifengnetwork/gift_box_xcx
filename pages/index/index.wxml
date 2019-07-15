@@ -93,7 +93,7 @@
 <text class="jiali_title">{{xinpinshangshi.name}}</text>
 <text class="english">{{xinpinshangshi.english}}</text>
 <view class="new_shop">
-  <view class="new_shop_item" bindtap="detalis" wx:for="{{xinpinshangshi.goods_list}}" wx:key>
+  <view class="new_shop_item" bindtap="details" data-id="{{item.goods_id}}" wx:for="{{xinpinshangshi.goods_list}}" wx:key>
         <image src="{{item.picture}}" class="shagn"></image>
   </view>
 </view>
@@ -112,7 +112,7 @@
 <text class="english">{{guess_like.english}}</text>
 <view class="love_ear">
 
-  <view class="love_love"  wx:for="{{guess_like.goods_list}}" wx:key>
+  <view class="love_love"  wx:for="{{guess_like.goods_list}}" wx:key bindtap='details' data-id='{{item.goods_id}}'>
     <view class="love_item">
       <image src="{{item.picture}}" class="love_pic"></image>
     </view>

@@ -123,9 +123,10 @@ Page({
       url: '../home/boss/boss',
     })
   },
-  detalis: function () {
+  details: function (e) {
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../commodity/detalis/detalis',
+      url: '../commodity/detalis/detalis?id='+id,
     })
   }
 

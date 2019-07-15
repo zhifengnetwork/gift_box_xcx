@@ -144,11 +144,6 @@
 
 
 
-
-
-
-
-
       <!-- 正式的规格选择区块 e -->
       <view>
         <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
