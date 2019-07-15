@@ -23,12 +23,10 @@ Page({
       api.postJSON('api/user/edit_user',{
         'token': app.globalData.token,
         'nickname': e.detail.userInfo.nickName,
-        'avatar': e.detail.userInfo.avatarUrl,
-        // 'sex': e.detail.userInfo.sex
-        'sex': 0
+        'avatar': e.detail.userInfo.avatarUrl
       },
       function (res) {
-        console.log(res)
+       
           app.globalData.userInfo = res.data.data;
           wx.switchTab({
             url: '../index/index',//返回首页

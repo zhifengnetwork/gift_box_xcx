@@ -4,11 +4,11 @@
 <view class="my_t">
   <view class="my_tt">
     <view class="my_HeadPortrait">
-      <image class="my_HeadPortrait_img" src="{{avatarUrl}}"></image>
+      <image class="my_HeadPortrait_img" src="{{avatar}}"></image>
     </view>
     <view class="my_ttr">
-      <view class="my_name">Hi，{{name}}</view>
-      <view class="my_userid">NO.00101011</view>
+      <view class="my_name">Hi，{{nickname}}</view>
+      <view class="my_userid">NO.{{id}}</view>
     </view>
   </view>
   <view class="my_tc">

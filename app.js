@@ -9,21 +9,14 @@ App({
     var that = this
     // 登录
     wx.login({
-
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-
         api.getJSON('api/login/index?code=' + res.code, function (res) {
-          console.log(res.data)
-
           if (res.data.status == 1) {
-
-            console.log(res.data.data.token)
+            that.globalData.userInfo = res.data.data
             that.globalData.token = res.data.data.token
           }
         })
-
-
       }
     })
     // 获取用户信息
@@ -53,7 +46,7 @@ App({
     //获取设备顶部窗口的高度（不同设备窗口高度不一样，根据这个来设置自定义导航栏的高度
     wx.getSystemInfo({
       success: (res) => {
-        console.log(res.statusBarHeight)
+       
         this.globalData.height = res.statusBarHeight
       }
     })

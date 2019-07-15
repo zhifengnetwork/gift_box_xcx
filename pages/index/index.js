@@ -38,27 +38,32 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    // 判断是否已经授权
-    wx.getSetting({
-      success: (res) => {
-        console.log(res)
-        if (res.authSetting['scope.userInfo']) {//授权了，可以获取用户信息了
-          wx.getUserInfo({
-            success: (res) => {
-              console.log(res)
-            }
-          })
-        } else {//未授权，跳到授权页面
-          wx.redirectTo({
-            url: '../authorize/authorize',//授权页面
-          })
+
+    //昵称、头像 不存在，跳转去授权
+    if (!app.globalData.userInfo.nickname && !app.globalData.userInfo.avatar){
+      // 判断是否已经授权
+      wx.getSetting({
+        success: (res) => {
+          console.log(res)
+          if (res.authSetting['scope.userInfo']) {//授权了，可以获取用户信息了
+            wx.getUserInfo({
+              success: (res) => {
+                console.log(res)
+              }
+            })
+          } else {//未授权，跳到授权页面
+            wx.redirectTo({
+              url: '../authorize/authorize',//授权页面
+            })
+          }
         }
-      }
-    })
+      })
+    }
+
+
     api.getJSON('api/index/index', function (res) {
       if (res.data.status == 1) {
-          
-         
+
           that.setData({
             advimg: res.data.data.banner,
             hot_category: res.data.data.hot_category,
@@ -79,9 +84,7 @@ Page({
    
   },
   onShow: function () {
-
-    console.log(app.globalData.token);
-
+    
   },
   // 第一个轮播图切换调动这个函数
   swiperChange: function (e) {
