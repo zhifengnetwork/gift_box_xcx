@@ -2,13 +2,15 @@
   <component title='個人信息' show_bol='{{false}}'></component>
 </view>
 <view class="mydetalis_head">
-  <view class="mydetalis_headimg"></view>
+  <view class="mydetalis_headimg">
+    <image class="mydetalis_headimg_img" src="{{avatarUrl}}"></image>
+  </view>
   <text class="mydetalis_headtext">更換頭像</text>
 </view>
 <view class="mydetalis_c">
   <view class="mydetalis_cname">
     <text class="mydetalis_ctext">昵稱</text>
-    <input placeholder="请输入您的用户名" class="mydetalis_cinput" />
+    <input placeholder="{{name}}" class="mydetalis_cinput" />
   </view>
   <view class="mydetalis_cname">
     <text class="mydetalis_ctext">性別</text>
