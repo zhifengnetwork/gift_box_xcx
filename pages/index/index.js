@@ -37,6 +37,9 @@ Page({
   
   },
   onLoad: function (options) {
+
+  
+
     var that = this;
     api.getJSON('api/index/index', function (res) {
       if (res.data.status == 1) {
@@ -62,7 +65,9 @@ Page({
    
   },
   onShow: function () {
-   
+
+    console.log(app.globalData.token);
+
   },
   // 第一个轮播图切换调动这个函数
   swiperChange: function (e) {
