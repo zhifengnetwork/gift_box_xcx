@@ -5,7 +5,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    name: '',
+    avatarUrl: ''
   },
 
   /**
@@ -19,7 +20,10 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-
+    this.setData({
+      name: getApp().globalData.userInfo.nickName,
+      avatarUrl: getApp().globalData.userInfo.avatarUrl
+    })
   },
 
   /**
