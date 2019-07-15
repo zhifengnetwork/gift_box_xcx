@@ -6,21 +6,20 @@ App({
     var logs = wx.getStorageSync('logs') || []
     logs.unshift(Date.now())
     wx.setStorageSync('logs', logs)
-
+    var that = this
     // 登录
     wx.login({
 
       success: res => {
         // 发送 res.code 到后台换取 openId, sessionKey, unionId
-        console.log(res)
 
-        api.getJSON('/api/login/index?code=' + res.code, function (res) {
-          console.log(res)
+        api.getJSON('api/login/index?code=' + res.code, function (res) {
+          console.log(res.data)
 
-          if (res.status == 1) {
+          if (res.data.status == 1) {
 
-            console.log(res.data)
-
+            console.log(res.data.data.token)
+            that.globalData.token = res.data.data.token
           }
         })
 
@@ -60,10 +59,7 @@ App({
 
 
   },
-  globalData: {
-    height: 0
-  },
-
+ 
   //判断设备是否为 iPhone X
   checkIsIPhoneX: function () {
     const self = this
@@ -78,11 +74,18 @@ App({
         // if (res.screenHeight == 812) {
         //   self.globalData.isIPX = true
         // }
-      },
-
-      globalData: {
-        height: 0
       }
+
+
     })
+  },
+
+  globalData: {
+
+    token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2MzE1NTUyMSwiZXhwIjoxNTYzMTkxNTIxLCJ1c2VyX2lkIjo4OX0.9bCLCxQnn_YPy58A2YVHSwOZ8sKq1f6w5jLEuez69Rs',
+    
+    height: 0
   }
+
+
 })

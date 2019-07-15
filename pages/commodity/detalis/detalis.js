@@ -148,6 +148,7 @@ Page({
             attributeId: 'e95a7777c08c41769d5207c075a25ddc',
             attributeValId: '236bbb1d5c654e9cb3a1493a2bb4785b',
           }
+
         ]
       }
     ], // 存库列表
@@ -168,6 +169,7 @@ Page({
     wx.navigateTo({
       url: 'payment/award/award',
     })
+
 
   },
   GiveOthers: function () {
