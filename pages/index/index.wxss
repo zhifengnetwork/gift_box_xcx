@@ -110,8 +110,11 @@
 .dangimg_box{
   width: 100%;
   height: 400rpx;
-  border: 1px solid red;
   box-sizing: border-box
+}
+.dangimg_box_img{
+  width: 100%;
+  height: 100%;
 }
 .fashion_ear{
   width: 100%;
@@ -123,7 +126,6 @@
 .fashion_item{
   width: 201rpx;
   height: 201rpx;
-  border: 1px solid red;
   display: inline-block;
 }
 .dapai{
@@ -182,7 +184,10 @@
   width: 695rpx;
   height: 370rpx;
   margin: 0 auto;
-  border: 1px solid green
+}
+.images_wu_img{
+  width: 100%;
+  height: 100%;
 }
 .celine{
   width: 100%;

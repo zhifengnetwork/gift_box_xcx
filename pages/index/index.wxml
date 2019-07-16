@@ -66,17 +66,14 @@
 <text class="jiali_title">{{xingxuanyoupin.name}}</text>
 <text class="english">{{xingxuanyoupin.english}}</text>
 <view class="dangimg_box">
-<!-- <image src="xingx"></image> -->
+  <image class="dangimg_box_img" src="{{xingxuanyoupin.goods_info.picture}}"></image>
 </view>
 <text class="jiali_title">{{shishangdapai.name}}</text>
 <text class="english">{{shishangdapai.english}}</text>
 <view class="fashion_ear">
-  <!-- <view class="fashion_item" wx:for="{{shishangdapai.goods_list}}" wx:key> -->
-   <!-- <image src="{{item.picture}}" class="dapai"></image> -->
-      <!-- </view> -->
-  <view class="fashion_item"></view>
-  <view class="fashion_item"></view>
-  <view class="fashion_item"></view>
+<view class="fashion_item" wx:for="{{shishangdapai.goods_list}}" wx:key>
+  <image src="{{item.picture}}" class="dapai"></image>
+</view>
 </view>
 
 <text class="jiali_title">{{shishangzhinan.name}}</text>
@@ -96,13 +93,14 @@
 <text class="jiali_title">{{xinpinshangshi.name}}</text>
 <text class="english">{{xinpinshangshi.english}}</text>
 <view class="new_shop">
-  <view class="new_shop_item" bindtap="detalis" wx:for="{{xinpinshangshi.goods_list}}" wx:key>
+  <view class="new_shop_item" bindtap="details" data-id="{{item.goods_id}}" wx:for="{{xinpinshangshi.goods_list}}" wx:key>
         <image src="{{item.picture}}" class="shagn"></image>
   </view>
 </view>
-<text class="jiali_title">潮流導購</text>
-<text class="english">Fashion Guide</text>
+<text class="jiali_title">{{chaoliudaogou.name}}</text>
+<text class="english">{{chaoliudaogou.englist}}</text>
 <view class="images_wu">
+  <image class="images_wu_img" src="{{chaoliudaogou.goods_info.picture}}"></image>
 </view>
 <view class="zaixian">
   <text class="bu">Celine再現？不！這是全新的Bottega Veneta</text>
@@ -114,7 +112,7 @@
 <text class="english">{{guess_like.english}}</text>
 <view class="love_ear">
 
-  <view class="love_love"  wx:for="{{guess_like.goods_list}}" wx:key>
+  <view class="love_love"  wx:for="{{guess_like.goods_list}}" wx:key bindtap='details' data-id='{{item.goods_id}}'>
     <view class="love_item">
       <image src="{{item.picture}}" class="love_pic"></image>
     </view>

@@ -16,6 +16,7 @@ Page({
     shishangzhinan:[],
     xingxuanyoupin:[],
     guess_like:[],
+    chaoliudaogou:[],
     // indicatorActivecolor: 'red',
     // 头部导航栏的高度
     // statusBarHeight: app.globalData.statusBarHeight,
@@ -38,27 +39,32 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    // 判断是否已经授权
-    wx.getSetting({
-      success: (res) => {
-        console.log(res)
-        if (res.authSetting['scope.userInfo']) {//授权了，可以获取用户信息了
-          wx.getUserInfo({
-            success: (res) => {
-              console.log(res)
-            }
-          })
-        } else {//未授权，跳到授权页面
-          wx.redirectTo({
-            url: '../authorize/authorize',//授权页面
-          })
+
+    //昵称、头像 不存在，跳转去授权
+    if (!app.globalData.userInfo.nickname && !app.globalData.userInfo.avatar){
+      // 判断是否已经授权
+      wx.getSetting({
+        success: (res) => {
+          console.log(res)
+          if (res.authSetting['scope.userInfo']) {//授权了，可以获取用户信息了
+            wx.getUserInfo({
+              success: (res) => {
+                console.log(res)
+              }
+            })
+          } else {//未授权，跳到授权页面
+            wx.redirectTo({
+              url: '../authorize/authorize',//授权页面
+            })
+          }
         }
-      }
-    })
+      })
+    }
+
+
     api.getJSON('api/index/index', function (res) {
       if (res.data.status == 1) {
-          console.log(res.data)
-          console.log(res.data.data.cainixihuan)
+
           that.setData({
             advimg: res.data.data.banner,
             hot_category: res.data.data.hot_category,
@@ -69,7 +75,8 @@ Page({
             imgUrlslength: res.data.data.shishangzhinan.goods_list.length,
             xinpinshangshi: res.data.data.xinpinshangshi,
             xingxuanyoupin: res.data.data.xingxuanyoupin,
-            guess_like: res.data.data.cainixihuan
+            guess_like: res.data.data.cainixihuan,
+            chaoliudaogou: res.data.data.chaoliudaogou,
           })
       }
     })
@@ -79,9 +86,7 @@ Page({
    
   },
   onShow: function () {
-
-    console.log(app.globalData.token);
-
+    
   },
   // 第一个轮播图切换调动这个函数
   swiperChange: function (e) {
@@ -118,9 +123,10 @@ Page({
       url: '../home/boss/boss',
     })
   },
-  detalis: function () {
+  details: function (e) {
+    var id = e.currentTarget.dataset.id;
     wx.navigateTo({
-      url: '../commodity/detalis/detalis',
+      url: '../commodity/detalis/detalis?id='+id,
     })
   }
 

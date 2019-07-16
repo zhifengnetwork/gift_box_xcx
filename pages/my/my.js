@@ -1,28 +1,31 @@
-// pages/my/my.js
+var app = getApp()
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    name: '',
-    avatarUrl: ''
+    nickname: '',
+    avatar: '',
+    id:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+   
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
+    console.log('888' + app.globalData.userInfo.nickname)
     this.setData({
-      name: getApp().globalData.userInfo.nickName,
-      avatarUrl: getApp().globalData.userInfo.avatarUrl
+      'nickname': app.globalData.userInfo.nickname,
+      'id': app.globalData.userInfo.id,
+      'avatar': app.globalData.userInfo.avatar
     })
   },
 
