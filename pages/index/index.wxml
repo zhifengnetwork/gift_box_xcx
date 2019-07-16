@@ -1,0 +1,125 @@
+<component title='澳门星选' show_bol='{{true}}'>
+</component>
+<!-- 轮播图 -->
+<view class='index_top'>
+  <view class='swiper_box'>
+    <swiper class='swipers' autoplay current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
+      <block wx:for="{{advimg}}" wx:key>
+        <swiper-item>
+          <image class="swiper_image" src="{{item.picture}}" lazy-load="true" />
+        </swiper-item>
+      </block>
+    </swiper>
+    <view class="dots">
+      <block wx:for="{{advimg}}" wx:key>
+        <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+      </block>
+    </view>
+  </view>
+</view>
+<image src="../public/images/index/red_enpole.png" class="red_enpole" bindtap="zefeng"></image>
+<!-- 选择栏 -->
+<view class="selection_bar">
+  <view class="selection_bar_box">
+    <view class="dsdsds">
+      <view class="xiaode" wx:for="{{hot_category}}" wx:key>
+        <view class="item1" bindtap="xingxuan">
+          <view class="item1_text">
+            <text>{{item.name}}</text>
+          </view>
+          <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+        </view>
+        <text class="xiegang">/</text>
+      </view>
+    </view>
+  </view>
+</view>
+
+<view class="bar-ear">
+  <view class="bar_ear_item">
+    <image src="../public/images/index/1.png" class="bar_pic"></image>
+    <text class="bar_title">品質生活</text>
+  </view>
+  <view class="bar_ear_item">
+    <image src="../public/images/index/2.png" class="bar_pic"></image>
+    <text class="bar_title">全球直采</text>
+  </view>
+  <view class="bar_ear_item">
+    <image src="../public/images/index/3.png" class="bar_pic"></image>
+    <text class="bar_title">服務周到</text>
+  </view>
+  <view class="bar_ear_item">
+    <image src="../public/images/index/4.png" class="bar_pic"></image>
+    <text class="bar_title">售後無憂</text>
+  </view>
+
+</view>
+
+
+<text class="jiali_title">{{jiali.name}}</text>
+<text class="english">{{jiali.english}}</text>
+<view class="img_box">
+  <view class="img_item" wx:for="{{jiali.goods_list}}" wx:key="" bindtap='details' data-id='{{item.goods_id}}'>
+    <image src="{{item.picture}}" class="huadon"></image>
+  </view>
+</view>
+<text class="jiali_title">{{xingxuanyoupin.name}}</text>
+<text class="english">{{xingxuanyoupin.english}}</text>
+<view class="dangimg_box">
+  <image class="dangimg_box_img" src="{{xingxuanyoupin.goods_info.picture}}" bindtap='details' data-id='{{xingxuanyoupin.goods_info.goods_id}}'></image>
+</view>
+<text class="jiali_title">{{shishangdapai.name}}</text>
+<text class="english">{{shishangdapai.english}}</text>
+<view class="fashion_ear">
+<view class="fashion_item" wx:for="{{shishangdapai.goods_list}}" wx:key="" bindtap='details' data-id='{{item.goods_id}}' >
+  <image src="{{item.picture}}" class="dapai"></image>
+</view>
+</view>
+
+<text class="jiali_title">{{shishangzhinan.name}}</text>
+<text class="english">{{shishangzhinan.english}}</text>
+<view class="feng_bi">
+  <text class="now_pic">{{swipernow}}</text>/
+  <text class="zong_pic">{{imgUrlslength}}</text>
+</view>
+
+<!-- 轮播图2 -->
+<swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" duration="{{duration}}" current="{{currentSwiper2}}" bindchange="swiperChange2">
+  <block wx:for="{{shishangzhinan.goods_list}}" wx:key="">
+    <swiper-item class="swiper_boxxxx"  bindtap='details' data-id='{{item.goods_id}}'>
+      <image src="{{item.picture}}" class="slide-image" width="695" height="370" />
+    </swiper-item>
+  </block>
+</swiper>
+
+<text class="jiali_title">{{xinpinshangshi.name}}</text>
+<text class="english">{{xinpinshangshi.english}}</text>
+<view class="new_shop">
+  <view class="new_shop_item" bindtap="details" data-id="{{item.goods_id}}" wx:for="{{xinpinshangshi.goods_list}}" wx:key="" bindtap='details' data-id='{{item.goods_id}}'>
+    <image src="{{item.picture}}" class="shagn"></image>
+  </view>
+</view>
+<text class="jiali_title">{{chaoliudaogou.name}}</text>
+<text class="english">{{chaoliudaogou.englist}}</text>
+<view class="images_wu" bindtap='details' data-id='{{chaoliudaogou.goods_info.goods_id}}'>
+  <image class="images_wu_img" src="{{chaoliudaogou.goods_info.picture}}"></image>
+</view>
+<view class="zaixian">
+  <text class="bu">Celine再現？不！這是全新的Bottega Veneta</text>
+</view>
+<view class="zaixian">
+  <text class="jiansu">為當代服飾設定了一個真實且更進階的標準；一個與生活息息相關的衣櫥.</text>
+</view>
+<text class="jiali_title">{{guess_like.name}}</text>
+<text class="english">{{guess_like.english}}</text>
+<view class="love_ear">
+
+  <view class="love_love"  wx:for="{{guess_like.goods_list}}" wx:key bindtap='details' data-id='{{item.goods_id}}'>
+    <view class="love_item">
+      <image src="{{item.picture}}" class="love_pic"></image>
+    </view>
+    <view class="love_tile">{{item.goods_name}}</view>
+    <view class="love_money">HK$ {{item.price}} </view>
+  </view>
+
+</view>

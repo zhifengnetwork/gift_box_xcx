@@ -44,7 +44,6 @@ Page({
   onShow: function () {
     var minusStatuses = [];
     var that = this
-    console.log(app.globalData.userInfo)
     
     api.getJSON('api/cart/cartlist?token='+app.globalData.token,function(res){
       

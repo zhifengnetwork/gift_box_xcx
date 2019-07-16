@@ -1,4 +1,6 @@
 // pages/my/mydetalis/mydetalis.js
+var app = getApp()
+var api = require('../../../utils/api');
 Page({
 
   /**
@@ -6,7 +8,11 @@ Page({
    */
   data: {
     name: '',
-    avatarUrl: ''
+    avatar: '',
+    nickname: '',
+    sex: '',
+    introduce: '',
+    date: '',
   },
 
   /**
@@ -14,11 +20,110 @@ Page({
    */
   onLoad: function (options) {
     this.setData({
-      name: getApp().globalData.userInfo.nickName,
-      avatarUrl: getApp().globalData.userInfo.avatarUrl
+      name: app.globalData.userInfo.nickname,
+      avatar: app.globalData.userInfo.avatar
     })
   },
-
+  bindDateChange: function (e) {
+    console.log('picker发送选择改变，携带值为', e.detail.value)
+    this.setData({
+      date: e.detail.value
+    })
+  },
+  send:function(){
+    let that = this;
+    let sex = null;
+    if (that.data.nickname==''){
+      wx.showModal({
+        title: '提示',
+        content: '请输入昵稱',
+        showCancel: false
+      })
+      return false;
+    } else if (that.data.sex==''){
+      wx.showModal({
+        title: '提示',
+        content: '请输入性别',
+        showCancel: false
+      })
+      return false;
+    } else if (that.data.date == '') {
+      wx.showModal({
+        title: '提示',
+        content: '请输入生日',
+        showCancel: false
+      })
+      return false;
+    }
+    if (that.data.sex=='男'){
+      sex = 1;
+    } else if (that.data.sex == '女'){
+      sex = 2;
+    }
+    api.postJSON('api/user/edit_user',
+    {
+      'token': app.globalData.token,
+      'nickname': that.data.nickname,
+      'sex': sex,
+      'birthday': that.data.date,
+      'introduce': that.data.introduce,
+      'avatar': that.data.avatar
+    },
+    function(res){
+      if(res.data.status==1){
+        wx.showToast({
+          title: '修改成功',
+          icon: 'success',
+          duration: 2000//持续的时间
+        })
+      }
+      console.log(res)
+    })
+  },
+  detalis:function(){
+    let that = this;
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        that.setData({
+          avatar: tempFilePaths
+        })
+      }
+    })
+  },
+  nickname:function(e){
+    this.setData({
+      nickname: e.detail.value
+    })
+  },
+  sex: function (e) {
+    let that = this;
+    wx.showActionSheet({
+      itemList: ['男', '女'],
+      success: function (res) {
+        if (!res.cancel) {
+          if (res.tapIndex==0){
+            that.setData({
+              sex:'男'
+            })
+          }else{
+            that.setData({
+              sex:'女'
+            })
+          }
+        }
+      }
+    })
+  },
+  introduce: function (e) {
+    this.setData({
+      introduce: e.detail.value
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
