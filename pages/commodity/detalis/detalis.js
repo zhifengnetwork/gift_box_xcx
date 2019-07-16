@@ -147,20 +147,31 @@ Page({
 
  
   justifyAnswer: function (e) {
+
+    let enable = e.currentTarget.dataset.enable;
+    if(enable == 0){
+      wx.showToast({
+        title: '没有库存',
+      })
+    }
+
     let findex = e.currentTarget.dataset.findex;
     let index2 = e.currentTarget.dataset.index;
     let index = "justifyAnswer[" + findex + "]";
-    console.log(e.currentTarget.dataset.findex)
-    console.log(e.currentTarget.dataset.index)
+
+    console.log(findex)
+    console.log(index)
+
     this.setData({
       [index]: e.currentTarget.dataset.index
     });
+
     console.log(this.data.spec.spec_attr[findex].res[index2].attr_name);
     //值
     var xuangui=this.data.spec.spec_attr[findex].res[index2].attr_name;
     var xuangui_id = this.data.spec.spec_attr[findex].res[index2].attr_id
     var that=this;
-    console.log("sss")
+  
     // 将选择的规格 具体的值  赋值在xuan这个数组里面
     console.log(that.data.xuan[findex])
     var attr_id=0
@@ -193,8 +204,18 @@ Page({
 
   //请求接口,渲染出来,设计库存
     api.getJSON('/api/goods/getGoodsAttrSpec?goods_id=57&spec_id=' + spec_idla + '&attr_id=' + attr_idla +'&token='+ app.globalData.token, function (res) {
+
+
+      
+
+
+
+
+
+      /*
       console.log(res.data.data)
       console.log(res.data.data[0].attributes.length)
+
       var changdu=res.data.data[0].attributes.length
       console.log("xixi")
 
@@ -220,7 +241,9 @@ Page({
       for(var u=0;u<idji.length;u++){
          console.log(idji[3*u])
       }
-     
+     */
+
+
     })
 
   },
