@@ -26,11 +26,13 @@ Page({
         'avatar': e.detail.userInfo.avatarUrl
       },
       function (res) {
-       
+        console.log(res)
+        // if(res.data.status==1){
           app.globalData.userInfo = res.data.data;
           wx.switchTab({
             url: '../index/index',//返回首页
           })
+        // }
       })
     }
   },
