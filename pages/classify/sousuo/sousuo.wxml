@@ -1,5 +1,5 @@
 <component title='分类' show_bol='{{false}}'></component>
-<view class="sousou_ear" bindtap="sousuoyemian">
+<view class="sousou_ear">
   <input type="text" class="find" placeholder="ALEXANDER WANG" focus="false" bindconfirm="huiche" bindinput ="userNameInput"></input>
   <image src="../../public/images/classify/sousuo.png" class="sousou"></image>
 </view>
