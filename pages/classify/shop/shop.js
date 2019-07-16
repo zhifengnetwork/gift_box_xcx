@@ -1,4 +1,5 @@
 var api = require('../../../utils/api')
+var app = getApp();
 Page({
 
   /**
@@ -39,15 +40,16 @@ Page({
     console.log(options.keywords)
     this.setData({ guanjian: options.keywords});
     var that = this;
-    api.getJSON('/api/search/search?keywords='+this.data.guanjian , function (res) {
+    api.getJSON(
+      '/api/Category/search_goods?keyword=' + this.data.guanjian + '&token=' + app.globalData.token
+      , function (res) {
       if (res.data.status == 1) {
-        console.log(res.data.data.goods_list)
-        var goodlist = res.data.data.goods_list
-        that.setData({goods_list:goodlist})
+        console.log("55")
+        console.log(res.data.data)
+        // var goodlist = res.data.data.goods_list
+        // that.setData({goods_list:goodlist})
       }
-    })
-    
-
+    })  
   },
 
   /**

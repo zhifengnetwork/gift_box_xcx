@@ -31,7 +31,7 @@
     <view class="desc">CONTINENTAL 80 PRIDE 经典鞋</view>
     <view class="price">HK$1099</view>
   </view> -->
-   <view class="didi" wx:for="{{goods_list}}">
+   <view class="didi" wx:for="{{goods_list}}" wx:key>
     <image src="{{item.img}}" class="shoot_pic"></image>
     <view class="name">{{item.goods_name}}</view>
     <view class="desc">{{item.desc}}</view>

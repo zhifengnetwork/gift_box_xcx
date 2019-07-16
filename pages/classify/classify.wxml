@@ -15,7 +15,7 @@
 
 
 <view class="sousou_ear" bindtap="sousuoyemian">
-<!-- focus="false" bindconfirm="dsis" -->
+  <!-- focus="false" bindconfirm="dsis" -->
   <input type="text" class="find" placeholder="ALEXANDER WANG" disabled></input>
   <image src="../public/images/classify/sousuo.png" class="sousou"></image>
 </view>
@@ -23,18 +23,19 @@
 <view class="zhuang">
   <view class="{{'99' == selectMenuID? 'teshu' : 'dj'}}" bindtap="quchu" data-id='99'>精品大牌</view>
   <view class="searchLetter touchClass" wx:if="{{diyi}}">
-    <view wx:for="{{result.goods.goods_spec_list}}" wx:for-index="groupindex" wx:for-item="cell" style="color:#777777;font-size:25rpx;" wx:key="index" data-letter="{{cell[groupindex].key}}" catchtouchend="clickLetter"> {{cell[groupindex].key}}</view>
-  </view>
+    <view wx:for="{{city}}" wx:for-index="groupindex" wx:for-item="cell" style="color:#777777;font-size:25rpx;" wx:key="index" data-letter="{{cell[0].key}}" catchtouchend="clickLetter">{{cell[0].key}}</view>
+  
+  </view> 
   <block wx:if="{{isShowLetter}}">
     <view class="showSlectedLetter">
       {{showLetter}}
     </view>
   </block>
   <scroll-view scroll-y style='height:{{scroll_height}}rpx;' class="gundong" bindscroll="bindScroll" scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}" wx:if="{{diyi}}">
-    <view class="selection" wx:for="{{result.goods.goods_spec_list}}" wx:for-item="pingpai" wx:key wx:for-index="groupindex">
-      <view class="item_letter" id="{{pingpai[groupindex].key}}">{{pingpai[groupindex].key}}</view>
+    <view class="selection" wx:for="{{city}}" wx:for-item="pingpai" wx:key wx:for-index="groupindex">
+      <view class="item_letter" id="{{pingpai[0].key}}">{{pingpai[0].key}}</view>
       <view class="item_city" wx:for="{{pingpai}}" wx:for-item="ct" wx:key data-city="{{ct.name}}" bindtap="binddetail" data-id="2">
-        <image src="{{ct.img}}" class="shengluo"></image>
+        <image src="{{ct.priture}}" class="shengluo"></image>
         <text class="pingpai_name">{{ct.name}}</text>
       </view>
     </view>
@@ -53,17 +54,17 @@
       </view>
     </block>
   </scroll-view>
-<view>
- <view wx:if="{{selectMenuID==index}}" class="nei" wx:for="{{navLeftItems}}" wx:key>
-    <scroll-view scroll-y="true" class="scrolhei1" style='height:{{scroll_height1}}rpx;' bindscroll="bindScroll" scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}">
+  <view>
+    <view wx:if="{{selectMenuID==index}}" class="nei" wx:for="{{navLeftItems}}" wx:key>
+      <scroll-view scroll-y="true" class="scrolhei1" style='height:{{scroll_height1}}rpx;' bindscroll="bindScroll" scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}">
         <view class="leifen">全部分类</view>
-       
-         <view class="center_shop" wx:for="{{dier}}">
-              <image src="{{item.img}}" class="img_item"></image>
-              <view class="text_item">{{item.cat_name}}</view>
-         </view>       
-         
-    </scroll-view>
+
+        <view class="center_shop" wx:for="{{dier}}" wx:key>
+          <image src="{{item.img}}" class="img_item"></image>
+          <view class="text_item">{{item.cat_name}}</view>
+        </view>
+
+      </scroll-view>
+    </view>
   </view>
-</view>
 </view>
