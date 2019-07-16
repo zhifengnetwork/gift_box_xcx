@@ -21,7 +21,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function() {
-    console.log('888' + app.globalData.userInfo.nickname)
+  
     this.setData({
       'nickname': app.globalData.userInfo.nickname,
       'id': app.globalData.userInfo.id,
