@@ -105,10 +105,10 @@
   <image class="images_wu_img" src="{{chaoliudaogou.goods_info.picture}}"></image>
 </view>
 <view class="zaixian">
-  <text class="bu">Celine再現？不！這是全新的Bottega Veneta</text>
+  <text class="bu">{{chaoliudaogou.goods_info.goods_name}}</text>
 </view>
 <view class="zaixian">
-  <text class="jiansu">為當代服飾設定了一個真實且更進階的標準；一個與生活息息相關的衣櫥.</text>
+  <text class="jiansu">{{chaoliudaogou.goods_info.desc}}</text>
 </view>
 <text class="jiali_title">{{guess_like.name}}</text>
 <text class="english">{{guess_like.english}}</text>

@@ -17,7 +17,7 @@ page{
   margin-top: 100rpx;
   width: 60rpx;
   height: 65rpx;
-  background: #000;
+  background: red;
   float: left;
   margin-left: 240rpx;
 }

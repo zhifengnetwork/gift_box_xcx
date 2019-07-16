@@ -3,14 +3,12 @@ var api = require('./utils/api');
 App({
   onLaunch: function () {
 
-
     // 判断设备是否为 iPhone X
     this.checkIsIPhoneX();
 
     //获取设备顶部窗口的高度（不同设备窗口高度不一样，根据这个来设置自定义导航栏的高度
     wx.getSystemInfo({
       success: (res) => {
-
         this.globalData.height = res.statusBarHeight
       }
     })
@@ -47,7 +45,6 @@ App({
 
       console.log('已登录')
       cb && cb(this.globalData.userInfo)
-      return true;
 
     }
   },
