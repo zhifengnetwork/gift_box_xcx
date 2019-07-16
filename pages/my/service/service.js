@@ -1,18 +1,26 @@
-// pages/my/service/service.js
+var api = require('../../../utils/api');
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    'phone':''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this
+    api.getJSON('/api/index/getPhone', function (res) {
+      if (res.data.status == 1) {
+        that.setData({
+          phone: res.data.data,
+        })
+      }
+    })
   },
 
   /**

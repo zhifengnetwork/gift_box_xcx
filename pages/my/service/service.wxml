@@ -5,6 +5,6 @@
   <view class="service_top">
     <view class="service_img"></view>
     <text class="service_text">客服電話</text>
-    <view class="service_phone">400-4001-1234</view>
+    <view class="service_phone">{{phone}}</view>
   </view>
 </view>
