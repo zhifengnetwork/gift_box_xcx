@@ -2,10 +2,30 @@ var api = require('./utils/api');
 
 App({
   onLaunch: function () {
-    // 展示本地存储能力
-    var logs = wx.getStorageSync('logs') || []
-    logs.unshift(Date.now())
-    wx.setStorageSync('logs', logs)
+
+
+
+    // 判断设备是否为 iPhone X
+    this.checkIsIPhoneX();
+
+    //获取设备顶部窗口的高度（不同设备窗口高度不一样，根据这个来设置自定义导航栏的高度
+    wx.getSystemInfo({
+      success: (res) => {
+
+        this.globalData.height = res.statusBarHeight
+      }
+    })
+
+
+  },
+
+  // 获取用户信息
+  getUserInfo: function (cb) {
+
+    if (this.globalData.userInfo) {
+      cb && cb(this.globalData.userInfo)
+    }
+
     var that = this
     // 登录
     wx.login({
@@ -15,45 +35,16 @@ App({
           if (res.data.status == 1) {
             that.globalData.userInfo = res.data.data
             that.globalData.token = res.data.data.token
+            //回调
+            cb && cb(that.globalData.userInfo)
+
           }
         })
       }
     })
-    // 获取用户信息
-    wx.getSetting({
-      success: res => {
-        if (res.authSetting['scope.userInfo']) {
-          // 已经授权，可以直接调用 getUserInfo 获取头像昵称，不会弹框
-          wx.getUserInfo({
-            success: res => {
-              // 可以将 res 发送给后台解码出 unionId
-              this.globalData.userInfo = res.userInfo
-
-              // 由于 getUserInfo 是网络请求，可能会在 Page.onLoad 之后才返回
-              // 所以此处加入 callback 以防止这种情况
-              if (this.userInfoReadyCallback) {
-                this.userInfoReadyCallback(res)
-              }
-            }
-          })
-        }
-      }
-    }),
-
-      // 判断设备是否为 iPhone X
-      this.checkIsIPhoneX();
-
-    //获取设备顶部窗口的高度（不同设备窗口高度不一样，根据这个来设置自定义导航栏的高度
-    wx.getSystemInfo({
-      success: (res) => {
-       
-        this.globalData.height = res.statusBarHeight
-      }
-    })
-
 
   },
- 
+
   //判断设备是否为 iPhone X
   checkIsIPhoneX: function () {
     const self = this
@@ -75,9 +66,9 @@ App({
   },
 
   globalData: {
-    userInfo:[],
+    userInfo: [],
     token: 'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2MzE1NTUyMSwiZXhwIjoxNTYzMTkxNTIxLCJ1c2VyX2lkIjo4OX0.9bCLCxQnn_YPy58A2YVHSwOZ8sKq1f6w5jLEuez69Rs',
-    
+
     height: 0
   }
 
