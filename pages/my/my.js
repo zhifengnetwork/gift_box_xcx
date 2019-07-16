@@ -15,6 +15,11 @@ Page({
    */
   onLoad: function(options) {
    
+    app.getUserInfo( userinfo => {
+        console.log(userinfo);
+    });
+    
+
   },
 
   /**

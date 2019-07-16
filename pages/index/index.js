@@ -110,6 +110,7 @@ Page({
   },
   details: function (e) {
     var id = e.currentTarget.dataset.id;
+    console.log('商品'+id)
     wx.navigateTo({
       url: '../commodity/detalis/detalis?id=' + id,
     })

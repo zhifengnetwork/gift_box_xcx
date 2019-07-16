@@ -20,14 +20,15 @@ page {
 
 .text_header {
   background: white;
-  font-size: 31rpx;
-  padding: 20rpx 40rpx 0 40rpx;
+  font-size: 27rpx;
+  padding: 80rpx 40rpx 0 40rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
   -webkit-box-orient: vertical;
   color: #333;
+  line-height: 18px
 }
 
 .centert_pic {
@@ -38,15 +39,16 @@ page {
 }
 
 .cen_pic {
-  width: 50rpx;
-  height: 35rpx;
+  width: 40rpx;
+  height: 25rpx;
 }
 
 .text_detail {
   background: white;
-  font-size: 31rpx;
-  padding: 20rpx 40rpx 0 40rpx;
+  font-size: 27rpx;
+  padding: 80rpx 40rpx 0 40rpx;
   color: #333;
+  line-height: 18px
 }
 
 .paixu_ear {
