@@ -17,9 +17,12 @@ page{
   margin-top: 100rpx;
   width: 60rpx;
   height: 65rpx;
-  background: #000;
   float: left;
   margin-left: 240rpx;
+}
+.service_img image{
+  width: 100%;
+  height: 100%;
 }
 .service_text{
   font-size: 30rpx;

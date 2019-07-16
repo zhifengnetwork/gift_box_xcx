@@ -74,8 +74,13 @@ Page({
         wx.showToast({
           title: '修改成功',
           icon: 'success',
-          duration: 2000//持续的时间
+          duration: 2000
         })
+        setTimeout(function(){
+          wx.switchTab({
+            url: '../my',
+          });
+        },2000)
       }
       console.log(res)
     })
@@ -90,7 +95,7 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
         that.setData({
-          avatar: tempFilePaths
+          avatar: tempFilePaths[0]
         })
       }
     })
@@ -122,6 +127,11 @@ Page({
   introduce: function (e) {
     this.setData({
       introduce: e.detail.value
+    })
+  },
+  address:function(){
+    wx.navigateTo({
+      url: '../../site/site',
     })
   },
   /**

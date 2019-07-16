@@ -90,7 +90,9 @@
         <text>常见问题</text>
       </view>
       <view class="my_cbox_cbox">
-        <view class="my_cbox_cboximg"></view>
+        <view class="my_cbox_cboximg">
+          <image src="../public/images/my/alteration.png"></image>
+        </view>
         <text>退換/售後</text>
       </view>
     </view>
