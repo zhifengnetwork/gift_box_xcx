@@ -1,18 +1,32 @@
 // pages/my/FAQ/FAQ.js
+var app = getApp()
+var api = require('../../../utils/api');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    list:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    api.postJSON('api/index/getProblem',{
+      token: app.globalData.token
+    },
+    function(res){
+      for(let i=0;i<res.data.data.length;i++){
+        that.list = res.data.data
+      }
+      that.setData({
+        list:that.list
+      })
+      console.log(res,that.list)
+    })
   },
 
   /**

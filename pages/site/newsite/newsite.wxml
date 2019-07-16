@@ -3,11 +3,11 @@
 </view>
 <view class="newsite_box">
   <view class="newsite_view">收貨人</view>
-  <input placeholder="林嘉欣" class="newsite_input" />
+  <input placeholder="请填写收货人姓名" bindinput="consignee"  class="newsite_input" />
 </view>
 <view class="newsite_box">
   <view class="newsite_view">聯繫電話</view>
-  <input placeholder="12345678901" class="newsite_input" />
+  <input placeholder="请填写联系电话" bindinput="mobile" class="newsite_input" />
 </view>
 <!-- 三级联动 -->
 <view class="newsite_box">
@@ -26,22 +26,22 @@
     <picker-view style="width: 100%; height: 300px;" bindchange="cityChange" value="{{value}}" wx:key="">
       <picker-view-column>
         <view wx:for="{{provinces}}" class="picker-item">
-          {{item.name}}</view>
+          {{item.area_name}}</view>
       </picker-view-column>
       <picker-view-column>
         <view wx:for="{{citys}}" class="picker-item" wx:key="">
-          {{item.name}}</view>
+          {{item.area_name}}</view>
       </picker-view-column>
       <picker-view-column>
         <view wx:for="{{areas}}" class="picker-item" wx:key="">
-          {{item.name}}</view>
+          {{item.area_name}}</view>
       </picker-view-column>
     </picker-view>
   </view>
 </view>
 <!-- 所在街道 -->
 <view class="street">
-  <textarea placeholder="請填寫詳細地址，不少於5個字" class="newsite_text"></textarea>
+  <textarea placeholder="請填寫詳細地址，不少於5個字" bindinput="address" class="newsite_text"></textarea>
 </view>
 <!-- 设为默认按钮 -->
 <view class="default_box">
@@ -53,4 +53,4 @@
 <!-- 提交按钮 -->
 <view class="newsite_footer" bindtap="newsiteshow">保存地址</view>
 <!-- 保存成功 -->
-<cover-view class="newsite_save" hidden="{{site_show}}">保存成功</cover-view>
+<!-- <cover-view class="newsite_save" hidden="{{site_show}}">保存成功</cover-view> -->

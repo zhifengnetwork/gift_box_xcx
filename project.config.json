@@ -48,13 +48,33 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 22,
 			"list": [
 				{
 					"id": -1,
 					"name": "详情",
 					"pathName": "pages/detail/index",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "品牌详情",
+					"pathName": "pages/classify/shop/shop",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类",
+					"pathName": "pages/classify/classify",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索详情",
+					"pathName": "pages/classify/sousuoxiang/sousuoxiang",
 					"scene": null
 				}
 			]

@@ -3,8 +3,10 @@
 </view>
 <view class="service">
   <view class="service_top">
-    <view class="service_img"></view>
+    <view class="service_img">
+      <image src="../../public/images/my/service.png"></image>
+    </view>
     <text class="service_text">客服電話</text>
-    <view class="service_phone">{{phone}}</view>
+    <view class="service_phone">{{moble}}</view>
   </view>
 </view>

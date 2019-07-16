@@ -32,9 +32,9 @@
     </view>
   </block>
   <scroll-view scroll-y style='height:{{scroll_height}}rpx;' class="gundong" bindscroll="bindScroll" scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}" wx:if="{{diyi}}">
-    <view class="selection" wx:for="{{city}}" wx:for-item="pingpai" wx:key wx:for-index="groupindex">
+    <view class="selection" wx:for="{{city}}" wx:for-item="pingpai" wx:key wx:for-index="groupindex" bindtap="xiang">
       <view class="item_letter" id="{{pingpai[0].key}}">{{pingpai[0].key}}</view>
-      <view class="item_city" wx:for="{{pingpai}}" wx:for-item="ct" wx:key data-city="{{ct.name}}" bindtap="binddetail" data-id="2">
+      <view class="item_city" wx:for="{{pingpai}}" wx:for-item="ct" wx:key data-city="{{ct.name}}" bindtap="binddetail" data-id="{{ct.id}}">
         <image src="{{ct.priture}}" class="shengluo"></image>
         <text class="pingpai_name">{{ct.name}}</text>
       </view>

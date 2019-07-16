@@ -1,5 +1,6 @@
 // pages/site/newsite/newsite.js
-var address = require("../../../utils/cityArray.js")
+var app = getApp()
+var api = require('../../../utils/api');
 Page({
 
   /**
@@ -15,28 +16,132 @@ Page({
     province: '',
     city: '',
     area: '',
-    site_show: true
+    site_show: true,
+    // 发送的数据
+    consignee:'',
+    address:'',
+    mobile:'',
+    is_default:0
   },
   //默认按钮选中取消事件
   switchChange: function (e) {
     console.log('switch1 发生 change 事件，携带值为', e.detail.value)
     if(e.detail.value){
+      this.setData({
+        is_default: 1
+      })
       console.log('选中',e.detail.value)
     }else{
+      this.setData({
+        is_default: 0
+      })
       console.log("取消",e.detail.value)
     }
   },
   newsiteshow:function () {
-    console.log(this.data.site_show)
-    this.setData({
-      site_show : !this.data.site_show
+    let that = this;
+    if (that.data.consignee==''){
+      wx.showModal({
+        title: '提示',
+        content: '请输入收货人姓名',
+        showCancel: false
+      })
+      return false;
+    } else if (that.data.mobile==''){
+      wx.showModal({
+        title: '提示',
+        content: '请输入联系电话',
+        showCancel: false
+      })
+      return false;
+    } else if (that.data.address == '') {
+      wx.showModal({
+        title: '提示',
+        content: '请输入详细地址',
+        showCancel: false
+      })
+      return false;
+    }
+    api.postJSON('api/user/add_address',{
+      token: app.globalData.token,
+      consignee: that.data.consignee,
+      address: that.data.address,
+      mobile: that.data.mobile,
+      is_default: that.data.is_default,
+      province: that.data.province.code,
+      city: that.data.city.code,
+      district: that.data.area.code
+    },
+    function(res){
+      if(res.data.status==1){
+        wx.showToast({
+          title: '添加成功',
+          icon: 'success',
+          duration: 2000
+        })
+        setTimeout(function () {
+          wx.reLaunch({
+            url: '../site',
+          });
+        }, 2000)
+      }
+      console.log(res)
     })
   },
   // 三级联动
+  provinces:function(code,index){
+    let that = this
+    api.postJSON('api/user/get_address', {
+      token: app.globalData.token
+    },
+    function (res) {
+      that.setData({
+        provinces: res.data.data,
+        province: res.data.data[that.data.value[0]]
+      })
+      that.citys(res.data.data[code].code,index);
+    })
+  },
+  citys: function (code,index){
+    let that = this
+    api.postJSON('api/user/get_address', {
+      token: app.globalData.token,
+      parent_id:code
+    },
+    function (res) {
+      if(res.data.data.length==0){
+        that.setData({
+          areas: '',
+          citys: ''
+        })
+        return false;
+      }
+      that.setData({
+        citys: res.data.data,
+        city: res.data.data[that.data.value[1]]
+      })
+      that.areas(res.data.data[index].code);
+    })
+  },
+  areas: function (code) {
+    let that = this
+    api.postJSON('api/user/get_address', {
+      token: app.globalData.token,
+      parent_id: code
+    },
+      function (res) {
+        that.setData({
+          areas: res.data.data,
+          area: res.data.data[that.data.value[2]]
+        })
+      })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+
+    this.provinces(0,0);
     // 初始化动画变量
     var animation = wx.createAnimation({
       duration: 500,
@@ -44,17 +149,6 @@ Page({
       timingFunction: 'ease',
     })
     this.animation = animation;
-    // 默认联动显示浙江省
-    var id = address.provinces[18].id
-    this.setData({
-      provinces: address.provinces,
-      citys: address.citys[id],
-      areas: address.areas[address.citys[id][0].id],
-    })
-    // 表示选中省、市、区
-    this.setData({
-      value: [18, 0, 0]
-    })
   },
   // 点击所在地区弹出选择框
   selectDistrict: function (e) {
@@ -88,19 +182,12 @@ Page({
   // 点击地区选择确定按钮
   citySure: function (e) {
     var that = this
-    var city = that.data.city
     var value = that.data.value
     that.startAddressAnimation(false)
     // 将选择的城市信息显示到输入框
-    var areaInfo = that.data.provinces[value[0]].name + ', ' + that.data.citys[value[1]].name + ', ' + that.data.areas[value[2]].name
-    var province = that.data.provinces[value[0]].name;
-    var city = that.data.citys[value[1]].name;
-    var area = that.data.areas[value[2]].name;
+    let areaInfo = that.data.province.area_name + ',' + that.data.city.area_name + ',' + that.data.area.area_name
     that.setData({
-      areaInfo: areaInfo,
-      province: province,
-      city: city,
-      area: area
+      areaInfo: areaInfo
     })
   },
 
@@ -115,24 +202,37 @@ Page({
     var cityNum = value[1]
     var countyNum = value[2]
     if (this.data.value[0] != provinceNum) {
-      var id = provinces[provinceNum].id
+      this.provinces(provinceNum,0);
       this.setData({
-        value: [provinceNum, 0, 0],
-        citys: address.citys[id],
-        areas: address.areas[address.citys[id][0].id],
+        value: [provinceNum, 0, 0]
       })
     } else if (this.data.value[1] != cityNum) {
-      var id = citys[cityNum].id
+      this.provinces(provinceNum,cityNum);
       this.setData({
-        value: [provinceNum, cityNum, 0],
-        areas: address.areas[citys[cityNum].id],
+        value: [provinceNum, cityNum, 0]
       })
     } else {
+      this.provinces(provinceNum, cityNum);
       this.setData({
         value: [provinceNum, cityNum, countyNum]
       })
     }
     console.log(this.data)
+  },
+  consignee:function(e){
+    this.setData({
+      consignee: e.detail.value
+    })
+  },
+  mobile: function (e) {
+    this.setData({
+      mobile: e.detail.value
+    })
+  },
+  address: function (e) {
+    this.setData({
+      address: e.detail.value
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
