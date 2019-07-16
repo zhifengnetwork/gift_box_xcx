@@ -71,13 +71,14 @@ Page({
     },
     function(res){
       if(res.data.status==1){
+        app.globalData.userInfo = res.data.data;
         wx.showToast({
-          title: '修改成功',
+          title: '修改成功',  
           icon: 'success',
           duration: 2000
         })
         setTimeout(function(){
-          wx.switchTab({
+          wx.reLaunch({
             url: '../my',
           });
         },2000)

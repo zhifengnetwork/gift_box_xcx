@@ -1,4 +1,6 @@
 // pages/my/giftbank/giftbank.js
+var app = getApp()
+var api = require('../../../utils/api');
 Page({
 
   /**
@@ -23,7 +25,12 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    api.postJSON('api/order/order_list', {
+      token: app.globalData.token
+    }, function (res) {
+      console.log(res)
+    })
   },
 
   /**

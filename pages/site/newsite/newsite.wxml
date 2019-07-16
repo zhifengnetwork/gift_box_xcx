@@ -3,11 +3,11 @@
 </view>
 <view class="newsite_box">
   <view class="newsite_view">收貨人</view>
-  <input placeholder="请填写收货人姓名" class="newsite_input" />
+  <input placeholder="请填写收货人姓名" bindinput="consignee"  class="newsite_input" />
 </view>
 <view class="newsite_box">
   <view class="newsite_view">聯繫電話</view>
-  <input placeholder="请填写联系电话" class="newsite_input" />
+  <input placeholder="请填写联系电话" bindinput="mobile" class="newsite_input" />
 </view>
 <!-- 三级联动 -->
 <view class="newsite_box">
@@ -41,7 +41,7 @@
 </view>
 <!-- 所在街道 -->
 <view class="street">
-  <textarea placeholder="請填寫詳細地址，不少於5個字" class="newsite_text"></textarea>
+  <textarea placeholder="請填寫詳細地址，不少於5個字" bindinput="address" class="newsite_text"></textarea>
 </view>
 <!-- 设为默认按钮 -->
 <view class="default_box">

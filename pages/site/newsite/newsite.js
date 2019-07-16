@@ -16,28 +16,77 @@ Page({
     province: '',
     city: '',
     area: '',
-    site_show: true
+    site_show: true,
+    // 发送的数据
+    consignee:'',
+    address:'',
+    mobile:'',
+    is_default:0
   },
   //默认按钮选中取消事件
   switchChange: function (e) {
     console.log('switch1 发生 change 事件，携带值为', e.detail.value)
     if(e.detail.value){
+      this.setData({
+        is_default: 1
+      })
       console.log('选中',e.detail.value)
     }else{
+      this.setData({
+        is_default: 0
+      })
       console.log("取消",e.detail.value)
     }
   },
   newsiteshow:function () {
+    let that = this;
+    if (that.data.consignee==''){
+      wx.showModal({
+        title: '提示',
+        content: '请输入收货人姓名',
+        showCancel: false
+      })
+      return false;
+    } else if (that.data.mobile==''){
+      wx.showModal({
+        title: '提示',
+        content: '请输入联系电话',
+        showCancel: false
+      })
+      return false;
+    } else if (that.data.address == '') {
+      wx.showModal({
+        title: '提示',
+        content: '请输入详细地址',
+        showCancel: false
+      })
+      return false;
+    }
     api.postJSON('api/user/add_address',{
       token: app.globalData.token,
+      consignee: that.data.consignee,
+      address: that.data.address,
+      mobile: that.data.mobile,
+      is_default: that.data.is_default,
+      province: that.data.province.code,
+      city: that.data.city.code,
+      district: that.data.area.code
     },
     function(res){
+      if(res.data.status==1){
+        wx.showToast({
+          title: '添加成功',
+          icon: 'success',
+          duration: 2000
+        })
+        setTimeout(function () {
+          wx.reLaunch({
+            url: '../site',
+          });
+        }, 2000)
+      }
       console.log(res)
     })
-    // console.log(this.data.site_show)
-    // this.setData({
-    //   site_show : !this.data.site_show
-    // })
   },
   // 三级联动
   provinces:function(code,index){
@@ -157,7 +206,6 @@ Page({
       this.setData({
         value: [provinceNum, 0, 0]
       })
-      console.log(this.data.value[0], provinceNum)
     } else if (this.data.value[1] != cityNum) {
       this.provinces(provinceNum,cityNum);
       this.setData({
@@ -170,6 +218,21 @@ Page({
       })
     }
     console.log(this.data)
+  },
+  consignee:function(e){
+    this.setData({
+      consignee: e.detail.value
+    })
+  },
+  mobile: function (e) {
+    this.setData({
+      mobile: e.detail.value
+    })
+  },
+  address: function (e) {
+    this.setData({
+      address: e.detail.value
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
