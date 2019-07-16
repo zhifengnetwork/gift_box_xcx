@@ -26,6 +26,7 @@ Page({
     scroll_height1: 0,
     scroll_height2:0,
     isIPX: app.globalData.isIPX,
+    shopId:0,
 
     "result": {
       "goods": {
@@ -249,12 +250,6 @@ Page({
       })
 
 
-
-
-
-
-
-
       
     // 侧边索引表
     var sysInfo = wx.getSystemInfoSync();
@@ -276,12 +271,10 @@ Page({
     var that=this;
     api.getJSON('/api/Category/getCategoryList?cat_id=' + id, function (res) {
       if (res.data.status == 1) {
-       
         console.log( res.data.data)
         that.setData({dier:res.data.data})
       }
     })
-   
   },
   // 字母检索方法--s
   clickLetter: function(e) {
@@ -314,11 +307,16 @@ Page({
     
   },
   binddetail:function(e){
-    // var id = e.currentTarget.dataset.id;
-    // console.log("sdddd"+id);
-    // wx: wx.navigateTo({
-    //   url: 'sousuo/sousuo'
-    // })
+    var id = e.currentTarget.dataset.id;
+    this.setData({shopId:id})
+  },
+  //品牌详情页面,携带的参数,在另外的一个页面中的onload来获取参数
+  xiang:function(){
+   console.log("点击的id的值")
+    console.log(this.data.shopId)
+   wx.navigateTo({
+     url: './shop/shop?id=' + this.data.shopId
+   })
   }
 
   
