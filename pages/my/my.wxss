@@ -114,8 +114,8 @@
   text-align: center;
 }
 .my_cbox_cboximg{
-  width: 60rpx;
-  height: 60rpx;
+  width: 50rpx;
+  height: 50rpx;
   margin-left: 30rpx;
   border-radius: 50%;
 }

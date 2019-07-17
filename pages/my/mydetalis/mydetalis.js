@@ -1,6 +1,7 @@
 // pages/my/mydetalis/mydetalis.js
 var app = getApp()
 var api = require('../../../utils/api');
+var util = require('../../../utils/util');
 Page({
 
   /**
@@ -13,15 +14,29 @@ Page({
     sex: '',
     introduce: '',
     date: '',
+    time:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var t = new Date();
+    var a = "-";
+    var e = t.getFullYear();
+    var i = t.getMonth() + 1;
+    var s = t.getDate();
+    if (i >= 1 && i <= 9) {
+      i = "0" + i;
+    }
+    if (s >= 0 && s <= 9) {
+      s = "0" + s;
+    }
+    var n = e + a + i + a + s;
     this.setData({
       name: app.globalData.userInfo.nickname,
-      avatar: app.globalData.userInfo.avatar
+      avatar: app.globalData.userInfo.avatar,
+      time: n
     })
   },
   bindDateChange: function (e) {

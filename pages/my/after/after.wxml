@@ -1,0 +1,47 @@
+<view class="after_nav">
+  <component title='退換/售後' show_bol='{{false}}'></component>
+</view>
+<view class="after_box">
+  <view class="after_top">
+    <view class="after_number">订单编号：20190314001</view>
+  </view>
+  <view class="after_con">
+    <view class="after_img"></view>
+    <view class="after_conent">
+      <view class="after_brand">Salvatore Ferragamo</view>
+      <view class="after_standard">藍色經典男士淡香水50ml</view>
+      <!-- <view class="after_size">香型：香型</view> -->
+    </view>
+    <view class="after_r">
+      <view class="after_price">HK$124.00</view>
+      <view class="after_num">X 1</view>
+    </view>
+  </view>
+  <view class="after_bott">
+    <view class="after_bottnum">仅退款 退款成功</view>
+    <!-- <view class="after_bottprice">合计：HK$124.00</view> -->
+    <view class="after_payment">查看詳情</view>
+  </view>
+</view>
+<view class="after_box">
+  <view class="after_top">
+    <view class="after_number">订单编号：20190314001</view>
+  </view>
+  <view class="after_con">
+    <view class="after_img"></view>
+    <view class="after_conent">
+      <view class="after_brand">FENDI</view>
+      <view class="after_standard">女士黑色牛皮手提單肩斜挎包</view>
+      <!-- <view class="after_size">香型：香型</view> -->
+    </view>
+    <view class="after_r">
+      <view class="after_price">HK$124.00</view>
+      <view class="after_num">X 1</view>
+    </view>
+  </view>
+  <view class="after_bott">
+    <view class="after_bottnum">等待簽收退貨</view>
+    <!-- <view class="after_bottprice">合计：HK$124.00</view> -->
+    <view class="after_payment">查看詳情</view>
+  </view>
+</view>

@@ -1,7 +1,6 @@
 {
   "pages": [
     "pages/index/index",
-    "pages/detail/index",
     "pages/cart/cart",
     "pages/home/integral/integral",
     "pages/logs/logs",
@@ -47,7 +46,9 @@
     "pages/site/newsite/newsite",
     "pages/site/sitemanage/sitemanage",
     "pages/turntable/turntable",
-    "pages/authorize/authorize"
+    "pages/authorize/authorize",
+    "pages/my/after/after",
+    "pages/my/after/refund/refund"
   ],
   "window": {
     "backgroundTextStyle": "light",

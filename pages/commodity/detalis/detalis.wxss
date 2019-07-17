@@ -450,4 +450,16 @@ color:rgba(51,51,51,1);
 }
 
 
+.body{
+  padding-bottom: 120rpx;
+}
+
+.contact{
+  opacity: 0;
+  position: absolute;
+  left: 160rpx;
+  top: 20rpx;
+  z-index: 1000;
+}
+
 /* 商品规格选择样式--e */

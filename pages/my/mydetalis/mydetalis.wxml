@@ -18,8 +18,8 @@
   </view>
   <view class="mydetalis_cname">
     <text class="mydetalis_ctext">生日</text>
-    <picker mode="date" value="{{date}}" bindchange="bindDateChange">
-      <input placeholder="请输入您的生日" value="{{date}}" class="mydetalis_cinput" />
+    <picker mode="date" value="{{date}}" bindchange="bindDateChange" end='{{time}}'>
+      <input placeholder="请输入您的生日" disabled="disabled" value="{{date}}" class="mydetalis_cinput" />
     </picker>
   </view>
   <view class="mydetalis_cintro">

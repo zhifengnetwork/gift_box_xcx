@@ -1,0 +1,72 @@
+<view class="refund_nav">
+  <component title='退款詳情' show_bol='{{false}}'></component>
+</view>
+<view class="refund_top">
+  <view>請退貨並填寫物流信息</view>
+  <text>還剩6天23時46分</text>
+</view>
+<!-- 提醒 -->
+<view class="refund_remind">商家已同意退貨申請，請盡早退貨</view>
+<!-- 收货人信息 -->
+<view class="refund_consignee">
+  <view class="refund_consigneet">
+    <text class="refund_consigneel">收貨人：家居專營店</text>
+    <text class="refund_consigneer">13012345678</text>
+  </view>
+  <view class="refund_consigneef">
+    江苏省连云港市海洲区瀛洲路38号盛世嘉缘西门2号楼1单元402飞利浦售后（电话联系验货再签收，拒收快递柜
+  </view>
+</view>
+<!-- 退货说明 -->
+<view class="refund_explain">
+  退貨說明：親請務必將我們的貨包裝好（包括商品本身的原包裝），以免運輸途中碰壞，帶來不必要的麻煩，謝謝！親在寄回的包裹中留壹個紙條，寫上旺旺號，訂單號，退貨原因，方便我們處理。
+</view>
+<!-- 退货备注 -->
+<view class="refund_remark">
+  瑩韻家居專營店，13056099851，江蘇省連雲港市海州區瀛州路38號盛世嘉園2號樓1單元402飛利浦，註意：請備註到貨後電話聯系本人簽收，拒收快遞櫃。 \n （註：不接受任何到付件和平郵）
+</view>
+<!-- 说明 -->
+<view class="refund_declare">
+  <view>
+    <text class="diandian"></text> 未與商家協商壹致，請勿使用到付或平郵，以免商家拒簽貨物
+  </view>
+  <view>
+    <text class="diandian"></text> 交易的錢款還在天貓中間賬戶，確保妳資金安全
+  </view>
+  <view>
+    <text class="diandian"></text> 請填寫真實退貨物流信息，逾期未填寫，退貨申請將關閉
+  </view>
+</view>
+<!-- 撤销 -->
+<view class="refund_repeal">
+  <view class="repeal">客服介入</view>
+  <view class="repeal">撤銷申請</view>
+  <view class="repealb">
+    <view class="repeal_view">我已寄出</view>
+    <text class="repeal_text">點擊填寫物流單號</text>
+  </view>
+</view>
+<!-- 商品信息 -->
+<view class="detalis_con">
+  <view class="detalis_img"></view>
+  <view class="detalis_conent">
+    <view class="detalis_brand">Salvatore Ferragamo</view>
+    <view class="detalis_standard">藍色經典男士淡香水50ml</view>
+    <!-- <view class="detalis_size">香型：香型</view> -->
+  </view>
+  <view class="detalis_r">
+    <view class="detalis_price">HK$124.00</view>
+    <view class="detalis_num">X 1</view>
+  </view>
+</view>
+<!-- 退款信息 -->
+<view class="refund_reimburse">
+  <view>退款原因：七天無理由退換貨</view>
+  <view>退款金額：HK$124.00</view>
+  <view>申請件數：1</view>
+  <view>申請時間：2019-04-10 19：52</view>
+  <view>退款編號：236339331632832665</view>
+</view>
+<!-- 拨打电话 -->
+<view class="refund_phone">撥打電話</view>
+

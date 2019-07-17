@@ -32,11 +32,19 @@ Page({
   onShow: function () {
     var that = this;
     // 获取热门搜索关键字
+<<<<<<< HEAD
     api.getJSON('/api/Category/hot_search?token=' + app.globalData.token, function (res) {
       console.log(res.data.data)
       that.setData({ hotworld: res.data.data.hot})
       that.setData({ hisworld: res.data.data.history})
     }) 
+=======
+    api.getJSON('/api/Category/hot_search', function (res) {
+      console.log(res.data.data)
+      that.setData({ hotworld: res.data.data })
+    }) 
+
+>>>>>>> 5d181c02d15c95aa63374dbeed25cdc5f08e0f19
   },
 
   /**
