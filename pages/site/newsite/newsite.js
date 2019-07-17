@@ -17,6 +17,7 @@ Page({
     city: '',
     area: '',
     site_show: true,
+    item:'',
     // 发送的数据
     consignee:'',
     address:'',
@@ -40,6 +41,8 @@ Page({
   },
   newsiteshow:function () {
     let that = this;
+    let title = null;
+    let url = null;
     if (that.data.consignee==''){
       wx.showModal({
         title: '提示',
@@ -62,25 +65,33 @@ Page({
       })
       return false;
     }
-    api.postJSON('api/user/add_address',{
+    if(that.data.item==''){
+      url = 'api/user/add_address';
+      title = '添加成功';
+    }else{
+      url = 'api/user/edit_address';
+      title = '修改成功';
+    }
+    api.postJSON(url,{
       token: app.globalData.token,
+      address_id: that.data.address_id,
       consignee: that.data.consignee,
       address: that.data.address,
       mobile: that.data.mobile,
       is_default: that.data.is_default,
-      province: that.data.province.code,
-      city: that.data.city.code,
-      district: that.data.area.code
+      province: that.data.province.area_id,
+      city: that.data.city.area_id,
+      district: that.data.area.area_id
     },
     function(res){
       if(res.data.status==1){
         wx.showToast({
-          title: '添加成功',
+          title: title,
           icon: 'success',
           duration: 2000
         })
         setTimeout(function () {
-          wx.reLaunch({
+          wx.redirectTo({
             url: '../site',
           });
         }, 2000)
@@ -140,7 +151,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
     this.provinces(0,0);
     // 初始化动画变量
     var animation = wx.createAnimation({
@@ -149,6 +159,18 @@ Page({
       timingFunction: 'ease',
     })
     this.animation = animation;
+    if (!options.item){
+      return false;
+    }
+    let item = JSON.parse(options.item);
+    this.setData({
+      item: item,
+      consignee: item.consignee,
+      mobile: item.mobile,
+      address: item.address,
+      address_id: item.address_id
+    });
+    console.log(item)
   },
   // 点击所在地区弹出选择框
   selectDistrict: function (e) {

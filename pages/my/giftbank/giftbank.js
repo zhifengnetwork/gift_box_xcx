@@ -27,7 +27,8 @@ Page({
   onLoad: function (options) {
     let that = this;
     api.postJSON('api/order/order_list', {
-      token: app.globalData.token
+      token: app.globalData.token,
+      type:1
     }, function (res) {
       console.log(res)
     })

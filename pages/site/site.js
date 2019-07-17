@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    site:''
   },
   // 跳转到添加地址
   newsite: function () {
@@ -23,16 +23,47 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this;
     api.postJSON('api/user/address_list',
     {
-      token: app.globalData.token,
-      parent_id: 636
+      token: app.globalData.token
     },
     function(res){
+      if(res.data.status==1){
+        that.setData({
+          site:res.data.data
+        })
+      }
       console.log(res)
     })
   },
-
+  remove: function (e){
+    let that = this;
+    api.postJSON('api/user/del_address',
+    {
+      token: app.globalData.token,
+      address_id: e.currentTarget.dataset.address_id
+    },
+    function (res) {
+      if (res.data.status == 1) {
+        wx.showToast({
+          title: '删除成功',
+          icon: 'success',
+          duration: 2000
+        })
+        setTimeout(function () {
+          that.onLoad()
+        }, 2000)
+      }
+      console.log(res)
+    })
+  },
+  redact: function (e){
+    let item = e.currentTarget.dataset.item;
+    wx.navigateTo({
+      url: 'newsite/newsite?item=' + JSON.stringify(item),
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

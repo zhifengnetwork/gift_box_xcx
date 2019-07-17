@@ -95,20 +95,24 @@ page{
 .radio>radio{
   transform: scale(0.6);
 }
+.site_btn{
+  float: right;
+}
 .site_redact{
+  float: left;
+  margin-right: 30rpx;
   font-size:24rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
   color:rgba(153,153,153,1);
-  float: left;
   line-height: 80rpx;
-  margin-left: 50%;
 }
 .site_remove{
+  float: left;
+  margin-right: 30rpx;
   font-size:24rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
   color:rgba(153,153,153,1);
-  float: right;
   line-height: 80rpx;
 }
