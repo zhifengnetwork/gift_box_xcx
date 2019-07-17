@@ -1,0 +1,172 @@
+.refund_nav {
+  height: 115rpx;
+  background: #fff;
+}
+.refund_top{
+  height: 170rpx;
+  background: #364c61;
+  padding: 0 40rpx;
+  padding-top: 30rpx;
+  color: #fff;
+  font-size: 30rpx;
+  line-height: 60rpx;
+}
+/* 提醒 */
+.refund_remind{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 30rpx;
+  margin: 0 40rpx;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+/* 收货人信息 */
+.refund_consignee{
+  margin: 0 40rpx;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+.refund_consigneet{
+  line-height: 80rpx;
+  font-size: 28rpx;
+  overflow: hidden;
+}
+.refund_consigneel{
+  float: left;
+}
+.refund_consigneer{
+  float: right;
+}
+.refund_consigneef{
+  font-size: 26rpx;
+  line-height: 60rpx;
+}
+/* 退货说明 */
+.refund_explain{
+  font-size: 25rpx;
+  line-height: 60rpx;
+  margin: 0 40rpx;
+  margin-top: 20rpx;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+/* 退货备注 */
+.refund_remark{
+  font-size: 25rpx;
+  line-height: 60rpx;
+  margin: 0 40rpx;
+  margin-top: 20rpx;
+  border-bottom: 2rpx soliod #f6f6f6;
+}
+/* 说明 */
+.refund_declare{
+  margin: 0 40rpx;
+   margin-top: 20rpx;
+   font-size: 20rpx;
+   line-height: 40rpx;
+   color: #acacac;
+}
+.diandian{
+  width: 8rpx;
+  height: 8rpx;
+  background: #acacac;
+  display: inline-block;
+  margin-right: 10rpx;
+}
+/* 撤销 */
+.refund_repeal{
+  padding-left: 150rpx;
+  overflow: hidden;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+.repeal{
+  float: left;
+  width: 150rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  line-height: 70rpx;
+  border: 1rpx solid #ccc;
+  text-align: center;
+  margin: 20rpx;
+}
+.repealb{
+   float: left;
+  width: 150rpx;
+  height: 70rpx;
+  font-size: 28rpx;
+  border: 1rpx solid #ccc;
+  text-align: center;
+  margin: 20rpx;
+  position: relative;
+}
+.repeal_text{
+  font-size: 16rpx;
+  position: absolute;
+  top: 40rpx;
+  left: 12rpx;
+}
+/* 商品 */
+.detalis_con{
+  height: 155rpx;
+  margin: 40rpx;
+}
+.detalis_img{
+  float: left;
+  width:130rpx;
+  height:155rpx;
+  background:rgba(227,226,226,1);
+}
+.detalis_conent{
+  float: left;
+  margin-left: 20rpx;
+}
+.detalis_brand{
+  font-size:25rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(34,34,34,1);
+}
+.detalis_standard{
+  font-size:22rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(34,34,34,1);
+}
+/* .detalis_size{
+  font-size:18rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+} */
+.detalis_r{
+  float: right;
+  text-align: right;
+}
+.detalis_price{
+  font-size:24rpx;
+  line-height: 50rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.detalis_num{
+  line-height: 50rpx;
+  font-size:24rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+/* 退款信息 */
+.refund_reimburse{
+  margin: 0 40rpx;
+  font-size: 26rpx;
+  line-height: 80rpx;
+  color: #acacac;
+  border-bottom: 2rpx solid #f6f6f6;
+}
+/* 拨打电话 */
+.refund_phone{
+  height: 80rpx;
+  line-height: 80rpx;
+  font-size: 28rpx;
+  text-align: center;
+}

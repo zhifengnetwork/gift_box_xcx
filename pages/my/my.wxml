@@ -39,24 +39,28 @@
       <text class="my_cbox_tr">></text>
     </view>
     <view class="my_cbox_c">
+    <!-- 礼品库 -->
       <view class="my_cbox_cbox" bindtap="giftbank">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/giftbank.png"></image>
         </view>
         <text>礼品库</text>
       </view>
+      <!-- 犒劳自己 -->
       <view class="my_cbox_cbox" bindtap="reward">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/reward.png"></image>
         </view>
         <text>犒勞自己</text>
       </view>
+      <!-- 已送礼物 -->
       <view class="my_cbox_cbox" bindtap="sendgift">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/sendgift.png"></image>
         </view>
         <text>已送礼物</text>
       </view>
+      <!-- 已收礼物 -->
       <view class="my_cbox_cbox" bindtap="collectgift">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/collectgift.png"></image>
@@ -71,25 +75,29 @@
       <!-- <text class="my_cbox_tr">></text> -->
     </view>
     <view class="my_cbox_c">
+    <!-- 电子发票 -->
       <view class="my_cbox_cbox" bindtap="invoice">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/invoice.png"></image>
         </view>
         <text>電子发票</text>
       </view>
+      <!-- 联系客服 -->
       <view class="my_cbox_cbox" bindtap="service">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/service.png"></image>
         </view>
         <text>联系客服</text>
       </view>
+      <!-- 常见问题 -->
       <view class="my_cbox_cbox" bindtap="faq">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/faq.png"></image>
         </view>
         <text>常见问题</text>
       </view>
-      <view class="my_cbox_cbox">
+      <!-- 退換/售後 -->
+      <view class="my_cbox_cbox" bindtap="after">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/alteration.png"></image>
         </view>

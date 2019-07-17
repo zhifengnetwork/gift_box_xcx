@@ -136,4 +136,10 @@ Page({
       url: 'FAQ/FAQ',
     })
   },
+  //跳转到退換/售後
+  after: function () {
+    wx.navigateTo({
+      url: 'after/after',
+    })
+  },
 })

@@ -47,7 +47,9 @@
     "pages/site/newsite/newsite",
     "pages/site/sitemanage/sitemanage",
     "pages/turntable/turntable",
-    "pages/authorize/authorize"
+    "pages/authorize/authorize",
+    "pages/my/after/after",
+    "pages/my/after/refund/refund"
   ],
   "window": {
     "backgroundTextStyle": "light",

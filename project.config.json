@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 22,
+			"current": 6,
 			"list": [
 				{
 					"id": -1,
@@ -75,6 +75,28 @@
 					"id": -1,
 					"name": "搜索详情",
 					"pathName": "pages/classify/sousuoxiang/sousuoxiang",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "退换",
+					"pathName": "pages/my/after/after",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "退款详情",
+					"pathName": "pages/my/after/refund/refund",
+					"query": "",
 					"scene": null
 				}
 			]
