@@ -88,15 +88,33 @@ page{
   border: 1px solid red;
 }
 .jishu{
-  display: inline-block;
-  width: 150rpx;
-  border: 1px solid red;
-  float:right;
- 
+  /* display: inline-block; */
+  width: 160rpx;
+  float: right;
+  height: 44rpx;
+  overflow: hidden;
+  margin-right: 20rpx;
+  background: pink;
+}
+.jian{
+  float: left;
+  width: 44rpx;
+  height: 44rpx;
+  text-align: center;
+  line-height: 44rpx;
+  background: skyblue;
+}
+.jia{
+  float: right;
+  width: 44rpx;
+  height: 44rpx;
+  text-align: center;
+  line-height: 44rpx;
+  background: skyblue;
 }
 .inputds{
   display: inline-block;
+  height: 44rpx;
   width: 60rpx;
-  border: 1px solid green;
- 
+  line-height: 44rpx;
 }
