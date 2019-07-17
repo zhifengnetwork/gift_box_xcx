@@ -1,4 +1,6 @@
 // pages/site/site.js
+var app = getApp()
+var api = require('../../utils/api');
 Page({
 
   /**
@@ -21,7 +23,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    api.postJSON('api/user/address_list',
+    {
+      token: app.globalData.token,
+      parent_id: 636
+    },
+    function(res){
+      console.log(res)
+    })
   },
 
   /**

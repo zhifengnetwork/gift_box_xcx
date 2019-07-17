@@ -1,14 +1,17 @@
 // pages/card/makecard/music/music.js
+var api = require('../../../../utils/api');
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    music: [{
+    music: [
+    {
       songName: 'The Dawn (亡灵序曲完美钢琴版) [Cover Dreamtale]',
       singer: 'Mike Zhou',
-      radio: 'true',
+      radio: 'false',
       src:'http://music.163.com/song/media/outer/url?id=476592630.mp3'
     },
     {
@@ -44,6 +47,14 @@ Page({
   },
   // 提交数据&&返回上一页
   send:function(){
+    if(this.data.src==''){
+      wx.showModal({
+        title: '选择音乐',
+        content: '请选择音乐',
+        showCancel: false
+      })
+      return false;
+    }
     var that = this
     wx.showToast({
       title: '提交成功',
@@ -80,7 +91,24 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-
+    let that = this;
+    api.postJSON('api/box/get_music_list', function (res) {
+      console.log(res.data.data)
+      if (res.data.status==1){
+        for(let i = 0;i<res.data.data.length;i++){
+          that.data.music.push({
+            id: res.data.data[i].id,
+            songName: res.data.data[i].name,
+            singer: res.data.data[i].musician,
+            src: res.data.data[i].music_url,
+            radio: false
+          })
+        }
+        that.setData({
+          music: that.data.music
+        })
+      }
+    })
   },
 
   /**

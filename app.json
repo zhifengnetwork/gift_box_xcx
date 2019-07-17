@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/detail/index",
     "pages/cart/cart",
     "pages/home/integral/integral",
     "pages/logs/logs",
@@ -8,6 +9,7 @@
     "pages/classify/classify",
     "pages/classify/sousuo/sousuo",
     "pages/classify/shop/shop",
+    "pages/classify/sousuoxiang/sousuoxiang",
     "pages/my/my",
     "pages/home/xingxuan/xingxuan",
     "pages/card/makecard/makecard",
@@ -44,7 +46,8 @@
     "pages/site/site",
     "pages/site/newsite/newsite",
     "pages/site/sitemanage/sitemanage",
-    "pages/turntable/turntable"
+    "pages/turntable/turntable",
+    "pages/authorize/authorize"
   ],
   "window": {
     "backgroundTextStyle": "light",

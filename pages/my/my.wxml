@@ -3,23 +3,31 @@
 </view>
 <view class="my_t">
   <view class="my_tt">
-    <view class="my_HeadPortrait"></view>
+    <view class="my_HeadPortrait">
+      <image class="my_HeadPortrait_img" src="{{avatar}}"></image>
+    </view>
     <view class="my_ttr">
-      <view class="my_name">Hi，吴明智</view>
-      <view class="my_userid">NO.00101011</view>
+      <view class="my_name">Hi，{{nickname}}</view>
+      <view class="my_userid">NO.{{id}}</view>
     </view>
   </view>
   <view class="my_tc">
     <view class="my_detalis" bindtap="mydetalis">
-      <view class="my_tc_img"></view>
+      <view class="my_tc_img">
+        <image src="../public/images/my/mydetalis.png"></image>
+      </view>
       <text>個人信息</text>
     </view>
     <view class="my_giftcard" bindtap="giftcard">
-      <view class="my_tc_img"></view>
+      <view class="my_tc_img">
+        <image src="../public/images/my/giftcard.png"></image>
+      </view>
       <text>禮品卡</text>
     </view>
     <view class="my_shoppingcard" bindtap="shoppingcard">
-      <view class="my_tc_img"></view>
+      <view class="my_tc_img">
+        <image src="../public/images/my/shoppingcard.png"></image>
+      </view>
       <text>購物卡</text>
     </view>
   </view>
@@ -32,19 +40,27 @@
     </view>
     <view class="my_cbox_c">
       <view class="my_cbox_cbox" bindtap="giftbank">
-        <view class="my_cbox_cboximg"></view>
+        <view class="my_cbox_cboximg">
+          <image src="../public/images/my/giftbank.png"></image>
+        </view>
         <text>礼品库</text>
       </view>
       <view class="my_cbox_cbox" bindtap="reward">
-        <view class="my_cbox_cboximg"></view>
+        <view class="my_cbox_cboximg">
+          <image src="../public/images/my/reward.png"></image>
+        </view>
         <text>犒勞自己</text>
       </view>
       <view class="my_cbox_cbox" bindtap="sendgift">
-        <view class="my_cbox_cboximg"></view>
+        <view class="my_cbox_cboximg">
+          <image src="../public/images/my/sendgift.png"></image>
+        </view>
         <text>已送礼物</text>
       </view>
       <view class="my_cbox_cbox" bindtap="collectgift">
-        <view class="my_cbox_cboximg"></view>
+        <view class="my_cbox_cboximg">
+          <image src="../public/images/my/collectgift.png"></image>
+        </view>
         <text>已收礼物</text>
       </view>
     </view>
@@ -56,19 +72,27 @@
     </view>
     <view class="my_cbox_c">
       <view class="my_cbox_cbox" bindtap="invoice">
-        <view class="my_cbox_cboximg"></view>
+        <view class="my_cbox_cboximg">
+          <image src="../public/images/my/invoice.png"></image>
+        </view>
         <text>電子发票</text>
       </view>
       <view class="my_cbox_cbox" bindtap="service">
-        <view class="my_cbox_cboximg"></view>
+        <view class="my_cbox_cboximg">
+          <image src="../public/images/my/service.png"></image>
+        </view>
         <text>联系客服</text>
       </view>
       <view class="my_cbox_cbox" bindtap="faq">
-        <view class="my_cbox_cboximg"></view>
+        <view class="my_cbox_cboximg">
+          <image src="../public/images/my/faq.png"></image>
+        </view>
         <text>常见问题</text>
       </view>
       <view class="my_cbox_cbox">
-        <view class="my_cbox_cboximg"></view>
+        <view class="my_cbox_cboximg">
+          <image src="../public/images/my/alteration.png"></image>
+        </view>
         <text>退換/售後</text>
       </view>
     </view>

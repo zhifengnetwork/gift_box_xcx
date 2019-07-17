@@ -48,132 +48,33 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 17,
+			"current": 22,
 			"list": [
 				{
-					"id": 1,
-					"name": "星选",
-					"pathName": "pages/home/xingxuan/xingxuan",
+					"id": -1,
+					"name": "详情",
+					"pathName": "pages/detail/index",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "女士礼品",
-					"pathName": "pages/home/lady/lady",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "电子礼盒",
-					"pathName": "pages/card/makecard/makecard",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "Boss",
-					"pathName": "pages/home/boss/boss",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 4,
-					"name": "商品详情",
-					"pathName": "pages/commodity/detalis/detalis",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "犒劳自己",
-					"pathName": "pages/commodity/detalis/payment/award/award",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "赠送他人",
-					"pathName": "pages/commodity/detalis/give/GiveOthers/GiveOthers",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "赠送礼包",
-					"pathName": "pages/commodity/detalis/give/giftbag/giftbag",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 9,
-					"name": "信封3",
-					"pathName": "pages/commodity/detalis/give/envelopethree/envelopethree",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "领取成功",
-					"pathName": "pages/commodity/detalis/give/GetTheSuccess/success",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "个人中心",
-					"pathName": "pages/my/my",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": 11,
-					"name": "地址",
-					"pathName": "pages/site/site",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "转盘",
-					"pathName": "pages/turntable/turntable",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "商品详情",
-					"pathName": "pages/classify/sousuo/sousuo",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "搜索详情",
+					"name": "品牌详情",
 					"pathName": "pages/classify/shop/shop",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "购物车",
-					"pathName": "pages/cart/cart",
+					"name": "分类",
+					"pathName": "pages/classify/classify",
 					"query": "",
 					"scene": null
 				},
 				{
 					"id": -1,
-					"name": "商品详情2",
-					"pathName": "pages/commodity/commodity",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "商品详情1",
-					"pathName": "pages/commodity/detalis/detalis",
-					"query": "",
+					"name": "搜索详情",
+					"pathName": "pages/classify/sousuoxiang/sousuoxiang",
 					"scene": null
 				}
 			]

@@ -26,6 +26,7 @@ Page({
     scroll_height1: 0,
     scroll_height2:0,
     isIPX: app.globalData.isIPX,
+    shopId:0,
 
     "result": {
       "goods": {
@@ -219,25 +220,40 @@ Page({
     })
     // 加载的使用进行网络访问，把需要的数据设置到data数据对象  
     var that = this
-    api.getJSON('/api/goods/categoryList', function(res) {
-      if (res.data.status == 1) {
-        that.setData({
-          navLeftItems: res.data.data
-        })
-        console.log(res.data.data)
-        console.log("ss" + that.data.navLeftItems[0].cat_name)
+    // api.getJSON('/api/goods/categoryList', function(res) {
+    //   if (res.data.status == 1) {
+    //     that.setData({
+    //       navLeftItems: res.data.data
+    //     })
+    //     console.log(res.data.data)
+    //     console.log("ss" + that.data.navLeftItems[0].cat_name)
+    //   }
+    // }),
+      
+      // api.getJSON('/api/goods/brand', function (res) {
+      //   if (res.data.status == 1) {
+      //    console.log("--------+++");
+      //    console.log(res.data.data);
+      //     console.log("--------+++");
+      //    that.setData({city:res.data.data})
 
-      }
-    }),
-      api.getJSON('/api/goods/brand', function (res) {
+      //   }
+      // })
+
+    api.getJSON('/api/Brand/getGoodsBrand', function (res) {
         if (res.data.status == 1) {
          console.log(res.data.data);
-         that.setData({city:res.data.data})
+         that.setData({ city: res.data.data.brand_list})
+          that.setData({navLeftItems: res.data.data.category_list})
 
         }
       })
+
+
+      
     // 侧边索引表
     var sysInfo = wx.getSystemInfoSync();
+
     var winHeight = sysInfo.windowHeight;
     var tempObj = [];
     this.setData({
@@ -253,15 +269,12 @@ Page({
     });
     this.setData({ diyi:false});
     var that=this;
-    api.getJSON('/api/goods/categoryList?pid=' + id, function (res) {
+    api.getJSON('/api/Category/getCategoryList?cat_id=' + id, function (res) {
       if (res.data.status == 1) {
-        console.log('---------------')
         console.log( res.data.data)
-        console.log('---------------')
         that.setData({dier:res.data.data})
       }
     })
-   
   },
   // 字母检索方法--s
   clickLetter: function(e) {
@@ -279,26 +292,6 @@ Page({
       })
     }, 1000)
   },
-  //选择城市
-  bindCity: function (e) {
-    console.log("bindCity")
-    this.setData({
-      city: e.currentTarget.dataset.city
-    })
-  },
-  //选择热门城市
-  bindHotCity: function (e) {
-    console.log("bindHotCity")
-    this.setData({
-      city: e.currentTarget.dataset.city
-    })
-  },
-  //点击热门城市回到顶部
-  hotCity: function () {
-    this.setData({
-      scrollTop: 0,
-    })
-  },
   // 字母检索方法 --e
   quchu:function(e){
      var id = e.currentTarget.dataset.id;
@@ -314,11 +307,16 @@ Page({
     
   },
   binddetail:function(e){
-    // var id = e.currentTarget.dataset.id;
-    // console.log("sdddd"+id);
-    // wx: wx.navigateTo({
-    //   url: 'sousuo/sousuo'
-    // })
+    var id = e.currentTarget.dataset.id;
+    this.setData({shopId:id})
+  },
+  //品牌详情页面,携带的参数,在另外的一个页面中的onload来获取参数
+  xiang:function(){
+   console.log("点击的id的值")
+    console.log(this.data.shopId)
+   wx.navigateTo({
+     url: './shop/shop?id=' + this.data.shopId
+   })
   }
 
   

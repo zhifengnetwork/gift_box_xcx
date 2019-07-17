@@ -124,6 +124,10 @@ Page({
   },
   // 提交
   send: function() {
+    // 如果为播放状态则返回
+    if (this.data.start) {
+      return false;
+    }
     var that = this
     wx.showToast({
       title: '提交成功',
