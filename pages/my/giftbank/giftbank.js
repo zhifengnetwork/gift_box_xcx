@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    currentTab: 0
+    currentTab: 0,
+    item:''
   },
 
   clickTab: function (e) {
@@ -28,8 +29,13 @@ Page({
     let that = this;
     api.postJSON('api/order/order_list', {
       token: app.globalData.token,
-      type:1
+      type:0
     }, function (res) {
+      if(res.data.status==1){
+        that.setData({
+          item:res.data.data
+        })
+      }
       console.log(res)
     })
   },

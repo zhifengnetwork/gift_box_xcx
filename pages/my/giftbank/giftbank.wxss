@@ -102,6 +102,10 @@ page {
   height:155rpx;
   background:rgba(227,226,226,1);
 }
+.giftbank_img image{
+  width: 100%;
+  height: 100%;
+}
 .giftbank_conent{
   float: left;
   margin-left: 20rpx;
