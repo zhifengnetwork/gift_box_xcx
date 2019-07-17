@@ -6,7 +6,10 @@
 </view>
 
 <view class="hot_word">搜索热词</view>
+
 <view class="tag" wx:for="{{hot}}" wx:key='' bindtap="search" data-keyword="{{item.keyword}}">{{item.keyword}}</view>
 
 <view class="history">历史搜索</view>
 <view class="tag" wx:for="{{history}}" wx:key='' bindtap="search" data-keyword="{{item.keyword}}">{{item.keyword}}</view>
+
+

@@ -9,9 +9,9 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
-		"coverView": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
 		"babelSetting": {
@@ -96,6 +96,13 @@
 					"id": -1,
 					"name": "退款详情",
 					"pathName": "pages/my/after/refund/refund",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类ya",
+					"pathName": "pages/classify/classify",
 					"query": "",
 					"scene": null
 				}

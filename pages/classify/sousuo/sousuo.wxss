@@ -35,9 +35,11 @@
   width: 100%;
   font-size: 33rpx;
 }
+
 .history{
   padding-left: 40rpx;
   padding-top: 60rpx;
+
   width: 100%;
   font-size: 33rpx;
 }

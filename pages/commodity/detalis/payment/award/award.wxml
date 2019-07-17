@@ -4,7 +4,7 @@
 <view class="xiahuanxian">
   <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/xiahuaxian_icon.png"></image>
 </view>
-<view class="award_topbox">
+<view class="award_topbox" bindtap="site">
   <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dingwei_icon.png" class="award_dingwei"></image>
   <text class="award_text">请填写地址</text>
   <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/you_icon.png" class="award_you"></image>

@@ -32,14 +32,15 @@ Page({
   onShow: function () {
     var that = this;
     // 获取热门搜索关键字
+
     api.getJSON('/api/Category/hot_search?token=' + app.globalData.userInfo.token, function (res) {
     
       that.setData({ 
         hot: res.data.data.hot ,
         history: res.data.data.history
       })
-    }) 
 
+    }) 
   },
 
   /**
@@ -93,5 +94,14 @@ Page({
     console.log("sssss")
     console.log(e.detail.value)
     this.setData({key: e.detail.value})
+  },
+  dianji:function(e){
+    var xixi = e.currentTarget.dataset.xixi;
+    // 获取点击的文本
+    console.log(xixi);
+    wx.navigateTo({
+      url: '../sousuoxiang/sousuoxiang?keywords=' + xixi
+    });
   }
+  
 })
