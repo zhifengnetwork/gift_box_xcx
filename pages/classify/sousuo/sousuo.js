@@ -8,20 +8,15 @@ Page({
    */
   data: {
     key:'',
-    hotworld:[]
+    hotworld:[],
+    hisworld:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
-    // 获取热门搜索关键字
-    api.getJSON('/api/Category/hot_search', function (res) {
-       console.log(res.data.data)
-       that.setData({hotworld:res.data.data})
-      }) 
-
+   
   },
 
   /**
@@ -35,7 +30,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    var that = this;
+    // 获取热门搜索关键字
+    api.getJSON('/api/Category/hot_search?token=' + app.globalData.token, function (res) {
+      console.log(res.data.data)
+      that.setData({ hotworld: res.data.data.hot})
+      that.setData({ hisworld: res.data.data.history})
+    }) 
   },
 
   /**
@@ -83,5 +84,14 @@ Page({
     console.log("sssss")
     console.log(e.detail.value)
     this.setData({key: e.detail.value})
+  },
+  dianji:function(e){
+    var xixi = e.currentTarget.dataset.xixi;
+    // 获取点击的文本
+    console.log(xixi);
+    wx.navigateTo({
+      url: '../sousuoxiang/sousuoxiang?keywords=' + xixi
+    });
   }
+  
 })

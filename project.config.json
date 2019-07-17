@@ -9,9 +9,9 @@
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
+		"coverView": true,
 		"autoAudits": false,
 		"checkInvalidKey": true,
-		"coverView": true,
 		"checkSiteMap": true,
 		"uploadWithSourceMap": true,
 		"babelSetting": {
@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 5,
 			"list": [
 				{
 					"id": -1,
@@ -82,6 +82,13 @@
 					"id": -1,
 					"name": "搜索详情",
 					"pathName": "pages/classify/sousuoxiang/sousuoxiang",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "分类ya",
+					"pathName": "pages/classify/classify",
 					"query": "",
 					"scene": null
 				}

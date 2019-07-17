@@ -5,5 +5,10 @@
 </view>
 <view class="hot_word">搜索热词</view>
 <view>
-<view class="tag" wx:for="{{hotworld}}" wx:key>{{item.keyword}}</view>
+<view class="tag" wx:for="{{hotworld}}" wx:key bindtap="dianji" data-xixi="{{item.keyword}}">{{item.keyword}}</view>
+</view>
+
+<view class="his_word">搜索记录</view>
+<view>
+<view class="tag" wx:for="{{hisworld}}" wx:key>111</view>
 </view>
