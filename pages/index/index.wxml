@@ -58,7 +58,7 @@
 
 <text class="jiali_title">{{jiali.name}}</text>
 <text class="english">{{jiali.english}}</text>
-<view class="img_box">
+<view class="img_box">         
   <view class="img_item" wx:for="{{jiali.goods_list}}" wx:key="" bindtap='details' data-id='{{item.goods_id}}'>
     <image src="{{item.picture}}" class="huadon"></image>
   </view>

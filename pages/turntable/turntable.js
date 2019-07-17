@@ -34,7 +34,7 @@ Page({
         },
       ],/**奖项内容 */
       fontColor: '#e21b58',/**文字颜色 */
-      font: '18px Arial',
+      font: '14px Arial',
       bgOut: '#ffe774',/**外层 */
       bgMiddle: '#ffc046',/**中间层 */
       bgInner: ['#fff2ca', '#fdd890', '#fff2ca', '#fdd890', '#fff2ca', '#fdd890'],

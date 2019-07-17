@@ -1,0 +1,25 @@
+<component title='{{headtitle}}' show_bol='{{false}}'></component>
+<view class="paixu_ear" bindtap="xialakuang" >
+  <view class="pai_ear">
+    <view class="pai" style="color:{{color}}">{{sort}}</view>
+    <image src="../../public/images/classify/san.png" class="san_pic"></image>
+  </view>
+</view>
+<!-- 点击推荐,出现下拉框 -->
+<view class="xiala_ear" wx:if="{{zhanshidd}}">
+  <view class="xiala_ear_item" wx:for="{{checkboxArr}}" bindtap="xuanze" data-index="{{index}}" wx:key data-sortfangshi="{{item.sortting}}">
+    <view class="left_desc">{{item.name}}</view>
+    <view class="right_desc {{item.checked?'checkbox':''}}">
+    </view>
+  </view>
+</view>
+<!-- 商品区域 -->
+<view class="shop_ear" wx:if="{{shopzu.length>0}}">
+   <view class="didi" wx:for="{{shopzu}}" wx:key>
+    <image src="{{item.picture}}" class="shoot_pic"></image>
+    <view class="name">{{item.brand_name}}</view>
+    <view class="desc">{{item.goods_name}}</view>
+    <view class="price">{{item.price}}</view>
+  </view>
+</view>
+<view  class="baoqian" wx:if="{{shopzu.length==0}}">抱歉! 没有搜索到相应的商品~</view>
