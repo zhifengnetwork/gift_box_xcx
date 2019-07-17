@@ -1,4 +1,4 @@
-// pages/commodity/detalis/detalis.js
+var WxParse = require('../../../wxParse/wxParse.js');
 var api = require('../../../utils/api');
 var app = getApp();
 Page({
@@ -7,19 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    advImage: [{
-      url: 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    },
-    {
-      url: 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640'
-    }
-    ],
+    goods_data:[],//商品数据
     currentSwiper: 0,
     indicatorColor: 'white',
     indicatorActivecolor: 'red',
@@ -36,10 +24,7 @@ Page({
     attrList:[],
     //库存列表
     skuBeanList:[],
-    infoText: "请点击获取属性，获取详细"
-
   
-
   },
   clickTab: function (e) {
     var that = this;
@@ -70,25 +55,27 @@ Page({
   onLoad: function (options) {
   
     var that=this;
-    that.setData({
-      advimg: this.data.advImage,
-    });
-    var id = 57;
+   
+    var id = options.id
     // 请求数据,渲染商品页面
-    api.getJSON('api/goods/detail?goods_id=' + id + '&token=' + app.globalData.token, function (res) {
+    api.getJSON('api/goods/goodsDetail?goods_id=' + id + '&token=' + app.globalData.token, function (res) {
     
-      if (res.data.status===1){
-        var list = res.data.data.attrList
-        var sku = res.data.data.skuBeanList
+      if (res.data.status == 1){
+      
+       // var list = res.data.data.attrList
+       // var sku = res.data.data.skuBeanList
      
-        that.setData({ attrList: list })
-        that.setData({ skuBeanList: sku })
-        that.onData();
+        that.setData({ 
+        //  attrList: list,
+         // skuBeanList: sku,
+          goods_data: res.data.data
+        })
+      
+        WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
+
+        //that.onData();
       }
     })
-
-   
-   
   },
 
   swiperChange: function (e) {
