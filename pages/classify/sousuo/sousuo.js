@@ -15,13 +15,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that=this;
-    // 获取热门搜索关键字
-    api.getJSON('/api/Category/hot_search', function (res) {
-       console.log(res.data.data)
-       that.setData({hotworld:res.data.data})
-      }) 
-
+   
   },
 
   /**
@@ -35,7 +29,13 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    
+    var that = this;
+    // 获取热门搜索关键字
+    api.getJSON('/api/Category/hot_search', function (res) {
+      console.log(res.data.data)
+      that.setData({ hotworld: res.data.data })
+    }) 
+
   },
 
   /**
