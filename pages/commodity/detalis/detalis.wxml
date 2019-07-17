@@ -1,89 +1,103 @@
-<view class="detalis_top">
-  <component title='' show_bol='{{falsr}}'></component>
-</view>
-<view class="detalisbox">
-  <view class="detalis_img">
-    <swiper class='detalis_swipers' autoplay current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
-      <block wx:for="{{advimg}}" wx:key>
-        <swiper-item>
-          <image class="detalis_swiper_image" src="{{item.url}}" lazy-load="true" />
-        </swiper-item>
-      </block>
-    </swiper>
-    <view class="detalis_top_connect">
-      <view class="detalis_top_connect_name">LOUIS VUITTON手袋</view>
-      <view class="detalis_top_connect_price">HK$
-        <text>7600</text>
-      </view>
-    </view>
+<import src="../../../wxParse/wxParse.wxml" />
+
+<view class="body">
+  <view class="detalis_top">
+    <component title='' show_bol='{{falsr}}'></component>
   </view>
-  <view class="detalis_c">
-    <view class="detalis_ct">赠送流程</view>
-    <view class="detalis_cc">
-      <view class="detalis_cc_img">
-        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/weixin_icon.png"></image>
-      </view>
-      <text>1微信赠送</text>
-      <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
-    </view>
-    <view class="detalis_cc">
-      <view class="detalis_cc_img">
-        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/xiaolian_icon.png"></image>
-      </view>
-      <text>2好友领取</text>
-      <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
-    </view>
-    <view class="detalis_cc">
-      <view class="detalis_cc_img">
-        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dizhi_icon.png"></image>
-      </view>
-      <text>3兑换填地址</text>
-      <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
-    </view>
-    <view class="detalis_cc">
-      <view class="detalis_cc_img">
-        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/shouhuo_icon.png"></image>
-      </view>
-      <text>4送货上门</text>
-    </view>
-  </view>
-  <view class="detalis_b">
-    <view class="swiper-tab">
-      <view class="detalis_tab">
-        <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">经典系列</view>
-      </view>
-      <view class="detalis_tab">
-        <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">为你星选</view>
+
+  <view class="detalisbox">
+    <view class="detalis_img">
+      <swiper class='detalis_swipers' autoplay current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
+        <block wx:for="{{goods_data.img}}" wx:key>
+          <swiper-item>
+            <image class="detalis_swiper_image" src="{{item.picture}}" lazy-load="true" />
+          </swiper-item>
+        </block>
+      </swiper>
+      <view class="detalis_top_connect">
+        <view class="detalis_top_connect_name">{{goods_data.goods_name}}</view>
+        <view class="detalis_top_connect_price">HK$
+          <text>{{goods_data.price}}</text>
+        </view>
       </view>
     </view>
-    <view class="{{currentTab == 0 ? 'show':'hidden'}}">
-      <scroll-view>
+    <view class="detalis_c">
+      <view class="detalis_ct">赠送流程</view>
+      <view class="detalis_cc">
+        <view class="detalis_cc_img">
+          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/weixin_icon.png"></image>
+        </view>
+        <text>1微信赠送</text>
+        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+      </view>
+      <view class="detalis_cc">
+        <view class="detalis_cc_img">
+          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/xiaolian_icon.png"></image>
+        </view>
+        <text>2好友领取</text>
+        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+      </view>
+      <view class="detalis_cc">
+        <view class="detalis_cc_img">
+          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dizhi_icon.png"></image>
+        </view>
+        <text>3兑换填地址</text>
+        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+      </view>
+      <view class="detalis_cc">
+        <view class="detalis_cc_img">
+          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/shouhuo_icon.png"></image>
+        </view>
+        <text>4送货上门</text>
+      </view>
+    </view>
+    <view class="detalis_b">
+      <view class="swiper-tab">
+        <view class="detalis_tab">
+          <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">商品介绍</view>
+        </view>
+        <view class="detalis_tab">
+          <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">为你星选</view>
+        </view>
+      </view>
+      <view class="{{currentTab == 0 ? 'show':'hidden'}}">
+        <!-- <scroll-view>
         <view class="detalis_btext">
           <view>品牌：dunhill</view>
           <view>材质：本款雙扣僧侶鞋由黑色義大利小牛皮製作。鞋底採用布萊克針法以及橡膠工藝，增強抓地力。鞋身側面還飾有兩枚銀色鞋扣。</view>
         </view>
-      </scroll-view>
+      </scroll-view> -->
+
+         <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+       
+
+      </view>
+      <view class="{{currentTab == 1 ? 'show':'hidden'}}">
+        <scroll-view>
+          <view style="font-size:32rpx;padding:0 20rpx;">为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选</view>
+        </scroll-view>
+      </view>
     </view>
-    <view class="{{currentTab == 1 ? 'show':'hidden'}}">
-      <scroll-view>
-        <view>为你星选</view>
-      </scroll-view>
-    </view>
+
   </view>
+
   <view class="detail_x">
     <view class="detalis_f">
       <view class="detalis_fl">
         <view class="detalis_flbox">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/home_icon.png"></image>
-          <view class="detalis_fl_text">首页</view>
+          <view class="detalis_fl_text" bindtap="shouye">首页</view>
         </view>
         <view class="detalis_flbox">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/kefu_icon.png"></image>
-          <view class="detalis_fl_text">首页</view>
+          <view class="detalis_fl_text">客服
+          <contact-button class='contact' size='27' session-from="weapp"></contact-button>
+          </view>
+          
         </view>
         <view class="detalis_flbox">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/gouwuche_icon.png"></image>
-          <view class="detalis_fl_text">首页</view>
+          <view class="detalis_fl_text" bindtap="cart">加入</view>
         </view>
       </view>
       <view class="detalis_fr">
@@ -96,19 +110,20 @@
 
     <!-- 商品规格选择蒙层 -->
     <!-- catchtouchmove="preventTouchMove" 作用是出现蒙层是不能滑动的-->
-    <view class="shop_selection" catchtouchmove="preventTouchMove">
+
+    <!-- <view class="shop_selection" catchtouchmove="preventTouchMove">
     </view>
     <view class="shop_ear" catchtouchmove="preventTouchMove">
       <image src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640" class="store"></image>
-      <text class="jiage">￥6150</text>
+      <text class="jiage">￥615</text>
       <view class="selected">
         <text>已选择</text>:
         <text>黑色</text>,
         <text class="mama">39码</text>
-      </view>
-      <!-- 正式的规格选择区块 s -->
+      </view> -->
+    <!-- 正式的规格选择区块 s -->
 
-      <!-- <view wx:for="{{attrList}}" wx:for-index="idx" wx:key="userInfoListId" class="outStyle">
+    <!-- <view wx:for="{{attrList}}" wx:for-index="idx" wx:key="userInfoListId" class="outStyle">
         <view class='outStyleText textStyle buttonPaddingStyle'>{{item.attrName}}</view>
         <view class='typeStyle textStyle'>
           <view wx:for="{{item.attr}}" data-item='{{item.attr[index]}}' data-index='{{index}}' data-idx='{{idx}}' wx:key="userInfoListId" bindtap="onChangeShowState" wx:for-item="items">
@@ -116,41 +131,17 @@
               {{items.attributeValue}}
             </view>
           </view>
-
         </view>
-      </view>
-      <view class='textStyle buttonPaddingStyle shuru'>
+      </view> -->
+
+    <!-- <view class='textStyle buttonPaddingStyle shuru'>
         <view>当前点击的信息:</view>
-        <view>{{infoText}}</view> 
+        <view>{{infoText}}</view>
       </view> -->
 
 
-
-      <!-- <view wx:for="{{spec_attr}}"  wx:for-item="items" class="diyi" wx:for-index="key">
-        <view>{{items.spec_name}}</view> -->
-      <!-- class="dier {{items.enable != 0 ?(items.select == 0?'orange':'back') : 'white'}}" -->
-      <!-- <view wx:for="{{items.res}}"  class="dier {{keyss==key ? 'orange':'back'}}" wx:for-index="key2"  bindtap="xuanze" data-key='{{key}}' data-key2='{{key2}}'>
-          {{item.attr_name}}
-        </view>
-      </view> -->
-
-
-        <!-- {{justifyAnswer[findex] == index ? 'classChoosed' : ''}} justifyChoose   -->
-
-      <block wx:for="{{spec_attr}}" wx:key wx:for-index="findex" wx:for-item="items">
-        <view class="mainSection_input mainSection_input_justify">
-          <view class="mainSection_input_view">{{items.spec_name}}</view>
-          <block wx:for="{{items.res}}" wx:key>
-            <view class="{{item.select == 1 ? 'classChoosed' : '' }} justifyChoose {{item.enable == 0 ? 'noChoosed' : '' }}" 
-            catchtap="justifyAnswer" data-index="{{index}}" data-enable="{{item.enable}}" data-findex="{{findex}}" data-attr_id="{{item.attr_id}}" >{{item.attr_name}}</view>
-          </block>
-        </view>
-      </block>
-
-
-
-      <!-- 正式的规格选择区块 e -->
-      <view>
+    <!-- 正式的规格选择区块 e -->
+    <!-- <view>
         <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
           <view class='btn-box'>
             <view class='btn-item'>
@@ -176,10 +167,7 @@
           </view>
         </view>
       </view>
-
-
-
-    </view>
+    </view> -->
 
   </view>
 </view>

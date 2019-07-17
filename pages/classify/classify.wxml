@@ -63,7 +63,6 @@
           <image src="{{item.img}}" class="img_item"></image>
           <view class="text_item">{{item.cat_name}}</view>
         </view>
-
       </scroll-view>
     </view>
   </view>

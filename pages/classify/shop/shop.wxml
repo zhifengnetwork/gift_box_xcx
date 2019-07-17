@@ -4,7 +4,7 @@
 </view>
 <view wx:if="{{zhanshi}}">
   <view class="text_header">
-   {{info.introduce}}
+    {{info.introduce}}
   </view>
   <view class="centert_pic" bindtap="zhanchu">
     <image src="../../public/images/classify/xia.png" class="cen_pic"></image>
@@ -18,7 +18,7 @@
     <image src="../../public/images/classify/shang.png" class="cen_pic"></image>
   </view>
 </view>
-<view class="paixu_ear" bindtap="xialakuang" >
+<view class="paixu_ear" bindtap="xialakuang">
   <view class="pai_ear">
     <view class="pai" style="color:{{color}}">{{sort}}</view>
     <image src="../../public/images/classify/san.png" class="san_pic"></image>
@@ -31,19 +31,19 @@
     <view class="desc">CONTINENTAL 80 PRIDE 经典鞋</view>
     <view class="price">HK$1099</view>
   </view> -->
-   <view class="didi" wx:for="{{goods_list}}" wx:key>
+  <view class="didi" wx:for="{{goods_list}}" wx:key>
     <image src="{{item.picture}}" class="shoot_pic"></image>
     <view class="name">{{item.brand_name}}</view>
     <view class="desc">{{item.goods_name}}</view>
     <view class="price">{{item.price}}</view>
-  </view> 
+  </view>
 
 </view>
 <!-- 点击推荐,出现下拉框 -->
 <view class="xiala_ear" wx:if="{{zhanshidd}}">
-      <view class="xiala_ear_item" wx:for="{{checkboxArr}}" bindtap="xuanze" data-index="{{index}}" wx:key data-sortfangshi="{{item.sortting}}">
-        <view class="left_desc">{{item.name}}</view>
-          <view class="right_desc {{item.checked?'checkbox':''}}">        
-          </view>
-      </view>  
+  <view class="xiala_ear_item" wx:for="{{checkboxArr}}" bindtap="xuanze" data-index="{{index}}" wx:key data-sortfangshi="{{item.sortting}}">
+    <view class="left_desc">{{item.name}}</view>
+    <view class="right_desc {{item.checked?'checkbox':''}}">
+    </view>
+  </view>
 </view>
