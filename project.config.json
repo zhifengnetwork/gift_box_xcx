@@ -48,11 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-<<<<<<< HEAD
 			"current": 6,
-=======
-			"current": -1,
->>>>>>> 3f285d7948794b01ca1f854048229099de4f3430
 			"list": [
 				{
 					"id": -1,
@@ -84,7 +80,6 @@
 				},
 				{
 					"id": -1,
-<<<<<<< HEAD
 					"name": "购物车",
 					"pathName": "pages/cart/cart",
 					"query": "",
@@ -101,10 +96,6 @@
 					"id": -1,
 					"name": "退款详情",
 					"pathName": "pages/my/after/refund/refund",
-=======
-					"name": "搜索详情",
-					"pathName": "pages/classify/sousuoxiang/sousuoxiang",
->>>>>>> 3f285d7948794b01ca1f854048229099de4f3430
 					"query": "",
 					"scene": null
 				}

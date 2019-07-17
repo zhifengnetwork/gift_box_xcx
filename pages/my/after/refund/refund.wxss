@@ -37,12 +37,12 @@
 }
 .refund_consigneef{
   font-size: 26rpx;
-  line-height: 60rpx;
+  line-height: 50rpx;
 }
 /* 退货说明 */
 .refund_explain{
   font-size: 25rpx;
-  line-height: 60rpx;
+  line-height: 50rpx;
   margin: 0 40rpx;
   margin-top: 20rpx;
   border-bottom: 2rpx solid #f6f6f6;
@@ -50,7 +50,7 @@
 /* 退货备注 */
 .refund_remark{
   font-size: 25rpx;
-  line-height: 60rpx;
+  line-height: 50rpx;
   margin: 0 40rpx;
   margin-top: 20rpx;
   border-bottom: 2rpx soliod #f6f6f6;
@@ -159,7 +159,7 @@
 .refund_reimburse{
   margin: 0 40rpx;
   font-size: 26rpx;
-  line-height: 80rpx;
+  line-height: 60rpx;
   color: #acacac;
   border-bottom: 2rpx solid #f6f6f6;
 }
