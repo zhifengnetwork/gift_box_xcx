@@ -42,6 +42,16 @@ Page({
       url: 'payment/award/award',
     })
   },
+  cart: function () {
+    wx.switchTab({
+      url: '/pages/cart/cart',
+    })
+  },
+  shouye: function () {
+    wx.switchTab({
+      url: '/pages/index/index',
+    })
+  },
   GiveOthers: function () {
     wx.navigateTo({
       url: 'give/GiveOthers/GiveOthers',

@@ -7,8 +7,9 @@ Page({
    * 页面的初始数据
    */
   data: {
-    key:'',
-    hotworld:[]
+    history:[],
+    hot:[],
+    key:''
   },
 
   /**
@@ -31,9 +32,12 @@ Page({
   onShow: function () {
     var that = this;
     // 获取热门搜索关键字
-    api.getJSON('/api/Category/hot_search', function (res) {
-      console.log(res.data.data)
-      that.setData({ hotworld: res.data.data })
+    api.getJSON('/api/Category/hot_search?token=' + app.globalData.userInfo.token, function (res) {
+    
+      that.setData({ 
+        hot: res.data.data.hot ,
+        history: res.data.data.history
+      })
     }) 
 
   },
@@ -77,6 +81,12 @@ Page({
     wx.navigateTo({
       url: '../sousuoxiang/sousuoxiang?keywords=' + this.data.key
    });
+  },
+  search: function (e) {
+    var keyword = e.currentTarget.dataset.keyword; 
+    wx.navigateTo({
+      url: '../sousuoxiang/sousuoxiang?keywords=' + keyword
+    });
   },
   // 实时获取input框的值
   userNameInput:function(e){
