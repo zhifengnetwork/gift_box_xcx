@@ -1,18 +1,27 @@
 var api = require('../../../utils/api')
+var app=getApp();
+
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    key:''
+    key:'',
+    hotworld:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that=this;
+    // 获取热门搜索关键字
+    api.getJSON('/api/Category/hot_search', function (res) {
+       console.log(res.data.data)
+       that.setData({hotworld:res.data.data})
+      }) 
+
   },
 
   /**
@@ -66,7 +75,7 @@ Page({
   //获取搜索的文本内容,携带到另外一个页面,并且在别的页面的onload方法中的options获取到该值
   huiche:function(){
     wx.navigateTo({
-      url: '../shop/shop?keywords=' + this.data.key
+      url: '../sousuoxiang/sousuoxiang?keywords=' + this.data.key
    });
   },
   // 实时获取input框的值

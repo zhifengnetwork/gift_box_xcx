@@ -4,10 +4,6 @@
   <image src="../../public/images/classify/sousuo.png" class="sousou"></image>
 </view>
 <view class="hot_word">搜索热词</view>
-<view class="tag">男士新季短袖T恤</view>
-<view class="tag">保濕</view>
-<view class="tag">topshop</view>
-<view class="tag">豆豆鞋</view>
-<view class="tag">GUCCI</view>
-<view class="tag">男士新季短袖T恤</view>
-<view class="tag">ALICE+OLIVIA</view>
+<view>
+<view class="tag" wx:for="{{hotworld}}" wx:key>{{item.keyword}}</view>
+</view>

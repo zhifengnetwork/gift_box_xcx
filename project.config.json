@@ -48,22 +48,8 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 22,
+			"current": -1,
 			"list": [
-				{
-					"id": 1,
-					"name": "星选",
-					"pathName": "pages/home/xingxuan/xingxuan",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "女士礼品",
-					"pathName": "pages/home/lady/lady",
-					"query": "",
-					"scene": null
-				},
 				{
 					"id": -1,
 					"name": "电子礼盒",
@@ -208,6 +194,14 @@
 					"id": -1,
 					"name": "搜索详情",
 					"pathName": "pages/classify/sousuoxiang/sousuoxiang",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜索详情",
+					"pathName": "pages/classify/sousuoxiang/sousuoxiang",
+					"query": "",
 					"scene": null
 				}
 			]
