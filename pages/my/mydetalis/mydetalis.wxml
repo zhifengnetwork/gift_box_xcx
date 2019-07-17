@@ -14,7 +14,7 @@
   </view>
   <view class="mydetalis_cname">
     <text class="mydetalis_ctext">性別</text>
-    <input placeholder="请输入您的性别(只能输入汉字)" value="{{sex}}" bindtap="sex" class="mydetalis_cinput" />
+    <input placeholder="请输入您的性别" value="{{sex}}" bindtap="sex" class="mydetalis_cinput" />
   </view>
   <view class="mydetalis_cname">
     <text class="mydetalis_ctext">生日</text>
@@ -26,6 +26,6 @@
     <view class="mydetalis_cintrol">簡介</view>
     <textarea class="mydetalis_cintror" value="{{introduce}}" bindinput="introduce" placeholder="點擊輸入簡介（最多20個字）" maxlength="20"></textarea>
   </view>
-  <text class="mydetalis_cftext">進入地址管理</text>
+  <text class="mydetalis_cftext" bindtap="address">進入地址管理</text>
 </view>
 <view class="mydetalis_buttom" bindtap="send">提交</view>

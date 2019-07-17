@@ -1,25 +1,27 @@
+// pages/my/service/service.js
+var app = getApp()
 var api = require('../../../utils/api');
-
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    'phone':''
+    moble:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    api.getJSON('/api/index/getPhone', function (res) {
-      if (res.data.status == 1) {
-        that.setData({
-          phone: res.data.data,
-        })
-      }
+    let that = this;
+    api.postJSON('api/index/getPhone',{
+      token: app.globalData.token
+    },function(res){
+      console.log(res)
+      that.setData({
+        moble:res.data.data
+      })
     })
   },
 
