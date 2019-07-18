@@ -1,0 +1,54 @@
+<view class="applyrefund_nav">
+  <component title='申請退款' show_bol='{{false}}'></component>
+</view>
+<!-- 商品信息 -->
+<view class="detalis_con">
+  <view class="detalis_img"></view>
+  <view class="detalis_conent">
+    <view class="detalis_brand">FENDI</view>
+    <view class="detalis_standard">黑色牛皮手提單肩斜挎包</view>
+    <view class="detalis_size">黑色：26*12*19cm</view>
+  </view>
+  <view class="detalis_r">
+    <view class="detalis_price">HK$124.00</view>
+    <view class="detalis_num">X 1</view>
+  </view>
+</view>
+<!-- 商品小计 -->
+<view class="subtotal">
+  <view class="subtotal_box">
+    <text class="subtotal_boxl">商品小計</text>
+    <text class="subtotal_boxr">hk$124.00</text>
+  </view>
+   <view class="subtotal_box">
+    <text class="subtotal_boxl">積分</text>
+    <text class="subtotal_boxr">-124</text>
+  </view>
+  <view class="subtotal_box">
+    <text class="subtotal_boxl">優惠</text>
+    <text class="subtotal_boxr">-hk$0.00</text>
+  </view>
+</view>
+<!-- 实付金额 -->
+<view class="pocket">
+  <text class="pocket_l">實付金額</text>
+  <text class="pocket_r">hk$0.00</text>
+</view>
+<!-- 退款金额 -->
+<view class="refundmoney">
+  <text class="refundmoney_l">退款金額</text>
+  <text class="refundmoney_r">hk$120.00</text>
+</view>
+<!-- 退款原因 -->
+<view class="refundcause" bindtap="dianji">
+  <text class="refundcause_l">退款原因</text>
+  <view class="refundcause_r" wx:if="{{!ss}}">
+    請選擇
+    <text>></text>
+  </view>
+  <view class="refundcause_r" wx:if="{{ss}}">{{ss}}</view>
+</view>
+<!-- 提醒 -->
+<view class="remind">
+  最多hk$120.00，含發貨運費hk$0.00
+</view>

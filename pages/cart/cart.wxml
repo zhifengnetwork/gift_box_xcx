@@ -1,89 +1,83 @@
-<view wx:if="{{empty}}" class="view-empty">
-
-<image src="/images/empty_cart.png"></image>
-<text class="hint">购物车还是空的</text>
-<text class="btn" bindtap="see" >马上逛逛</text>
-
+ 
+<!-- 全选 -->
+<view class="selectquan">
+    <!-- wx:if 是否全选显示不同图标 -->
+    <icon wx:if="{{selectAllStatus}}" type="success" color="#0C0E0D" bindtap="selectAll" size="20" class="dagoude"/>
+    <icon wx:else type="circle" color="#ccc" bindtap="selectAll" size="20" class="dagoude"/>
+    <view>全选</view>
+    <!-- 总价 -->
+    <!-- <view>￥{{totalPrice}}</view>-->
+    <view class="tips">提示：左滑可以删除商品</view>
+    <!-- hhhh -->
 </view>
-<view wx:else>
-<scroll-view  scroll-y="true" style="width:100%;height:{{height}}px">
+ 
+ <view class="container">
 
-<view class="container carts-list">
-  <view wx:for="{{carts}}" wx:key="index" class="carts-item">
-
-    <!-- 复选框图标 -->
-    <icon wx:if="{{item.selected}}" type="success_circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" />
-    <icon wx:else type="circle" size="20" bindtap="bindCheckbox" data-index="{{index}}" />
-    <view>
-
-      <!-- 缩略图 -->
-      <image class="carts-image" src="{{item.goods_img}}" mode="aspectFill" />
-    </view>
-    <view class="carts-text">
-
-      <!-- 商品标题 -->
-      <text class="carts-title">{{item.goods_name}}</text>
-      <text class="carts-key-name">{{item.spec_key_name}}</text>
-      <view class="carts-subtitle">
-
-        <!-- 价格 -->
-        <!-- <text class="carts-price">{{item.goods_price}}</text> -->
-        <!-- 数量加减 -->
+ <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key>
+  <view class="xiang content">
+    <!-- wx:if 是否选择显示不同图标 -->
+        <icon wx:if="{{item.selected}}" type="success" color="#0C0E0D" bindtap="selectList" data-index="{{index}}" class="dagou" size="20" data-goodid="{{item.id}}"/>
+        <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" class="dagou" size="20" data-goodid="{{item.id}}"/>
+        
+        <!-- 点击商品图片可跳转到商品详情 -->
+        <navigator url="../commodity/detalis/detalis?id={{item.id}}">
+            <image class="cart-thumb" src="{{item.goods_img}}"></image>
+            
+        </navigator>
+      
+        <!-- 增加减少数量按钮 -->
         <view>
-          <view class="stepper">
-            <!-- 减号 -->
-            <text class="reduce {{minusStatuses[index]}}" data-index="{{index}}" bindtap="bindMinus">-</text>
-            <!-- 数值 -->
-            <input type="number" data-index="{{index}}" bindchange="bindManual" value="{{item.goods_num}}" />
-            <!-- 加号 -->
-            <text class="normal" data-index="{{index}}" bindtap="bindPlus">+</text>
-          </view>
+            <view class="item_tile">{{item.goods_name}}</view>
+            <view class="item_mashu">{{item.spec_key_name}}</view>
+            <view class="text1 jiage">￥{{item.goods_price}}</view>
+            <view bindtap="minusCount" data-index="{{index}}" class="text1 jian" data-id="{{item.sku_id}}">-</view>
+            <view class="text1 textnum">{{item.goods_num}}</view>
+            <view bindtap="addCount" data-index="{{index}}" class="text1 jia" data-id="{{item.sku_id}}">+</view>
+            <text bindtap="deleteList" data-index="{{index}}"> × </text>
         </view>
-      </view>
-    </view>
-    <view class="carts-right">
-      <text class="text-price">${{item.market_price}}</text>
-      <text class="text-red">${{item.member_goods_price}}</text>
-      <image bindtap="deleteCart" data-index="{{index}}" class="image-delete" src="/images/icon_delete.png"></image>
-    </view>
+         <image class="cart-thumb" src="{{item.goods_img}}"></image>    
+  
   </view>
-</view>
-</scroll-view>
-
-<view class="carts-footer">
-  <view class="carts-footer-left" bindtap="bindSelectAll">
-    <icon wx:if="{{selectedAllStatus}}" type="success_circle" size="20" />
-    <icon wx:else type="circle" size="20" />
-    <text>全选</text>
-    <text style="color:red;">￥: {{total}}(不含运费)</text>
-  </view>
-  <view class="button" bindtap="bindCheckout">立即结算</view>
-</view>
+  <view class="del" bindtap="del" data-index="{{index}}">删除</view>
+ </view>
 </view>
 
 
-<!-- <component title='购物车' show_bol='{{false}}'>
-</component>
-<view class="quanxuan_ear">
-  <view class="{{check==true?'checkle':'check'}}"></view>
-  <text class="check_text">全选</text>
-  <text class="tip">提示：左滑可以删除商品</text>
+
+
+<view class="dibu">
+<text class="hejiqian">合计: HK${{totalPrice}}</text>
+<view class="right_view">
+<view class="caolao">犒劳自己</view>
+<view class="zeng">赠送他人</view>
 </view>
 
-<view class="dangxuan">
-  <view class="{{check==true?'checkle':'check'}}"></view>
-  <view class="tupian">
-    <image src="../public/images/cart/yifu.jpg" class="yifu"></image>
-  </view>
-  <view class="decs">
-    <view class="name">双扣僧侣衣服</view>
-    <view class="size">黑色 43码</view>
-    <view class="price">$2895
-      <view class="jishu">
-        <text class="jian">-</text>
-        <input type="text" class="inputds"></input>
-        <text class="jia">+</text>
-      </view>
-    </view>
-  </view>
 </view>
+
+
+
+
+ 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

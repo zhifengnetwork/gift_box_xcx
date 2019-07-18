@@ -93,9 +93,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "退款详情",
-					"pathName": "pages/my/after/refund/refund",
+					"id": 6,
+					"name": "申請退款",
+					"pathName": "pages/my/after/applyrefund/applyrefund",
 					"query": "",
 					"scene": null
 				},
@@ -108,8 +108,15 @@
 				},
 				{
 					"id": -1,
-					"name": "礼盒",
-					"pathName": "pages/card/makecard/makecard",
+					"name": "申請退款",
+					"pathName": "pages/my/after/refund/refund",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "购物车",
+					"pathName": "pages/cart/cart",
 					"query": "",
 					"scene": null
 				}

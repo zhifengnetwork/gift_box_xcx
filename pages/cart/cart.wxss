@@ -1,365 +1,195 @@
-page{
-  width: 100%;
-  height: 100%;
-  background:rgba(249,250,252,1);
+.container{
+  padding:0
 }
-.quanxuan_ear{
-  padding:70px 50rpx 40rpx 50rpx;
-  width: 100%;
-  box-sizing: border-box;
+.cart-box{
+  margin-top: 200rpx
+}
+.selectquan{
+  margin-top: 140rpx;
   display: flex;
-  align-items: center;
-  font-size: 32rpx;
-  background: white
-}
-.check{
-  border: 1px solid #ccc;
-  width: 0rpx;
-  height: 30rpx;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  padding-left: 30rpx;
-  float: left;
-}
-.checkle{
-
-  border: 1px solid #ccc;
-  width: 0rpx;
-  height: 30rpx;
-  border-radius: 50%;
-  display: inline-block;
-  vertical-align: top;
-  padding-left: 30rpx;
-  background: url('https://giftbox.zhifengwangluo.com/public/images/111.png') no-repeat;
-  background-size: 100% 100%; 
-  float: left;
-}
-.check_text{
-  padding-left: 20rpx;
-}
-.tip{
-  color: #666666;
   font-size: 30rpx;
-  margin-left: 30rpx;
+  height: 53rpx;
+  line-height: 53rpx;
 }
-.dangxuan{
-  margin-top: 40rpx;
-  /* padding:0px 50rpx 40rpx 50rpx; */
-  padding: 0rpx 20rpx;
-  width: 100%;
-  box-sizing: border-box;
+.tips{
+  font-size: 28rpx;
+  color: #ccc;
+  padding-left: 40rpx
+}
+.xiang{
+  display: flex;
+  height: 200rpx;
+  position: relative;
+}
+.cart-thumb{
+  width: 200rpx;
+  height: 200rpx;
+}
+.dagou{
+  height: 200rpx;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
   display: flex;
   align-items: center;
-  font-size: 32rpx ;
-  background: white;
-  height: 217rpx;
+  justify-content: center;
+  padding: 0 10rpx;
 }
-.tupian{
-  float: left; 
-  margin-left: 20rpx
-}
-.yifu{
-  width: 155rpx;
-  height: 155rpx;
-  margin-bottom:0rpx; 
-}
-.name{
-  display: inline-block;
-  vertical-align: top;
-  width: 500rpx;
-  padding-left: 30rpx;
-  font-size: 31rpx
-}
-.size{
-  display: inline-block;
-  vertical-align: top;
-  padding: 10rpx 0 0 30rpx;
-  color: #B0B0B0;
-  font-size: 26rpx;
-}
-.price{
-  padding-left: 30rpx;
-  box-sizing: border-box;
-}
-.jishu{
-  /* display: inline-block; */
-  width: 160rpx;
-  float: right;
-  height: 44rpx;
-  overflow: hidden;
-  margin-right: 20rpx;
-  border:2px solid rgba(246,246,246,1);
-}
-.jian{
-  float: left;
-  width: 44rpx;
-  height: 44rpx;
+.dagoude{
+  height: 50rpx;
+  width: 80rpx;
   text-align: center;
-  line-height: 44rpx;
+  display: inline-block;
+  vertical-align: top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.cart-thumb{
+  vertical-align: top;
+  display: inline-block;
+}
+.item_tile{
+  padding-top: 10rpx;
+  padding-left: 25rpx;
+  font-size:30rpx;
+}
+.item_mashu{
+  padding-top: 1rpx;
+  padding-left: 25rpx;
+  font-size: 25rpx;
+  color: #ccc;
+}
+.text1{
+  display: inline-block;
+  vertical-align: top;
+  padding-top: 50rpx;
+  padding-left: 25rpx
+}
+
+.textnum{
+  height: 45rpx;
+  line-height: 45rpx;
+  margin-top: 21px;
+  width: 107rpx;
+  padding-top: 0px;
+  padding-left: 0px;
+  border: 1px solid #ccc;
+  text-align: center;
+  position: absolute;
+  right: 80rpx;
+  bottom: 0rpx;
 }
 .jia{
-  float: right;
-  width: 44rpx;
-  height: 44rpx;
+  margin-top: 21px;
+  width: 50rpx;
+  padding-top: 0px;
+  padding-left: 0px;
+  border: 1px solid #ccc;
   text-align: center;
-  line-height: 44rpx;
+  border-left: none;
+  border-top-right-radius: 25rpx;
+  border-bottom-right-radius: 25rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  position: absolute;
+  bottom: 0px;
+  right: 30rpx
 }
-.inputds{
-  height: 44rpx;
-  float: left;
-  width: 60rpx;
-  line-height: 44rpx;
-  text-align: ;
+.jian{
+  margin-left: 18rpx;
+  margin-top: 21px;
+  width: 50rpx;
+  padding-top: 0px;
+  padding-left: 0px;
+  border: 1px solid #ccc;
+  text-align: center;
+  border-right: none;
+  border-top-left-radius: 25rpx;
+  border-bottom-left-radius: 25rpx;
+  height: 45rpx;
+  line-height: 45rpx;
+  position: absolute;
+  bottom: 0px;
+  right: 190rpx
 }
-
-
-
-
-/* 新的  */
-/*外部容器*/
-.container {
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: space-between;
-	box-sizing: border-box;
-	
-} 
-.view-empty{
-	width: 750rpx;
-	height: 750rpx;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
+.jiage{
+  position: absolute;
+  bottom: -8rpx;
+  width: 190rpx;
+  
 }
-
-.view-empty image{
-	width: 200rpx;
-	height: 200rpx;
+.touch-item {
+ font-size: 14px;
+ display: flex;
+ justify-content: space-between;
+ /* border:1px solid #ccc; */
+ width: 100%;
+ overflow: hidden;
+ margin-top: 80rpx
 }
-
-.hint{
-	font-size: 32rpx;
-	color: #999999;
+.content {
+ width: 100%;
+ line-height: 22px;
+ margin-right:0;
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ margin-left: -90px;
 }
-
-.btn{
-	font-size: 29rpx;
-	color: #fff;
-	background: red;
-	margin-top: 100rpx;
-	border-radius: 9rpx;
-	padding: 20rpx 200rpx 20rpx 200rpx;
+.del {
+ background-color: orangered;
+ width: 70px;
+ display: flex;
+ flex-direction: column;
+ align-items: center;
+ justify-content: center;
+ color: #fff;
+ -webkit-transform: translateX(90px);
+ transform: translateX(90px);
+ -webkit-transition: all 0.4s;
+ transition: all 0.4s;
 }
-
-/*整体列表*/
-.carts-list {
-	display: flex;
-	flex-direction: column;
-	padding: 0 20rpx;
-	margin-bottom: 100rpx;
+.touch-move-active .content,
+.touch-move-active .del {
+ -webkit-transform: translateX(0);
+ transform: translateX(0);
 }
-
-/*每行单元格*/
-.carts-item {
-	display: flex;
-	flex-direction: row;
-	height:200rpx;
-	/*width属性解决标题文字太短而缩略图偏移*/
-	width:100%;
-	border-bottom: 1px solid #eee;
-	padding: 20rpx 0;
-  align-items: center;
-	justify-content: center;
+.hejiqian{
+  padding-left: 20rpx
 }
-
-/*左部图片*/
-.carts-image {
-	width:147rpx;
-	height:170rpx;
-	border-width: 3rpx;
-	border-style: solid;
-	border-color: #ccc;
-    /* margin: 0 auto;
-    margin-top: 25rpx; */
+.dibu{
+  font-size: 31rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0rpx;
+  background: white
 }
-
-
-/*右部描述*/
-.carts-text {
-	margin: 0 5rpx;
-	width: 370rpx;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-between;
+.right_view{
+  height: 70rpx;
+  line-height: 70rpx;
+  position: absolute;
+  bottom:12rpx;
+  right: 40rpx;
+  border: 1px solid #0C0E0D;
+  border-radius: 40rpx
 }
-.carts-right{
-	width: 90rpx;
-	display: flex;
-	flex-direction: column;
-	justify-content: space-around;
-	align-items: flex-end;
-  height: 160rpx
+.caolao{
+  display: inline-block;
+  padding: 0 30rpx
 }
-
-/*右上部分标题*/
-.carts-title {
-	font-size: 27rpx;
-	color: #444;
-	flex-shrink: 0;
-	display: -webkit-box;
-    text-overflow: ellipsis;
-    height: 60rpx;
-    line-height: 30rpx;
-  overflow: hidden;
-  -webkit-box-orient: vertical;
-  -webkit-line-clamp:2;
-
+.zeng{
+ display: inline-block;
+ padding: 0 30rpx;
+ height: 100%;
+ background: #0C0E0D;
+ color: white;
+ border-top-right-radius: 40rpx;
+ border-bottom-right-radius: 40rpx
 }
-.carts-key-name{
-	margin-top: 10rpx;
-	font-size: 27rpx;
-	color: #999999;
-	flex-shrink: 0;
-	display: -webkit-box;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    height: 60rpx;
-    line-height: 30rpx;
-    -webkit-box-orient: vertical;
-    -webkit-line-clamp:2;
-	
-}
-/*右下部分价格与数量*/
-.carts-subtitle {
-	font-size: 25rpx;
-	color:darkgray;
-	padding: 0 20rpx;
-	display: flex;
-	flex-direction: row;
-	justify-content:space-between;
-
-}
-
-/*价格*/
-.carts-price {
-	color: #f60;
-	font-size:14px;
-	line-height: 22px;
-}
-
-/*商品加减按钮*/
-/*stepper容器*/
-.stepper {
-	border: 1px solid #ccc;
-	border-radius: 3px;
-	width: 160rpx;
-	height: 44rpx;
-	margin:0 auto;
-}
-
-
-/*加号与减号*/
-.stepper text {
-	width: 44rpx;
-	line-height: 44rpx;
-	text-align: center;
-	float: left;
- 
-}
-
-/*数值*/
-.stepper input {
-	color: black;
-	float: left;
-	width: 70rpx;
-	text-align: center;
-	font-size: 30rpx;
-}
-
-/*普通样式*/
-.stepper .normal{
-	color: black;
-   border-left: 1px solid #ccc;
-}
-.stepper .reduce{
-    border-right: 1px solid #ccc;
-}
-
-/*禁用样式*/
-.stepper .disabled{
-	color: #ccc;
-}
-
-/*复选框样式*/
-.carts-list icon {
-	margin-right: 20rpx;
-}
-
-/*底部按钮*/
-.carts-footer {
-	width: 100%;
-	height: 80rpx;
-	display: flex;
-	flex-direction: row;
-	justify-content: space-between;
-	align-items: center;
-	position: fixed;
-	bottom: 0;
-	border-top: 1px solid #eee;
-	background: white;
-}
-
-/*复选框*/
-.carts-footer icon {
-	margin-left: 20rpx;
-	margin-top: 20rpx;
-}
-
-/*全选字样*/
-.carts-footer text {
-	font-size: 30rpx;
-	margin-left: 8rpx;
-	line-height: 10rpx;
-}
-
-/*立即结算按钮*/
-.carts-footer .button {
-	line-height: 80rpx;
-	text-align: center;
-	width:220rpx;
-	height: 80rpx;
-	background-color: #f60;
-	color: white;
-	font-size: 36rpx;
-	border-radius: 0;
-	border: 0;
-}
-.carts-footer-left{
-	display: flex;
-	flex-direction: row;
-	align-items: center;
-}
-
-.carts-footer-left text{
-	margin-top: 20rpx;
-}
-
-
-.text-price{
-	font-size: 27rpx;
-	color: #999999;
-  background-size:160% 100%;
-	text-decoration-line:line-through; 
-}
-.text-red{
-	font-size: 27rpx;
-	color: orangered;
-}
-.image-delete{
-	width: 35rpx;
-	height: 40.6rpx;
-    margin-right: 20rpx;
+.touch-item:last-child{
+  margin-bottom: 200rpx
 }
