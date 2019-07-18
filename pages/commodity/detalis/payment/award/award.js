@@ -1,4 +1,6 @@
 // pages/commodity/detalis/payment/award/award.js
+var api = require('../../../../../utils/api');
+var app = getApp();
 Page({
 
   /**
@@ -19,9 +21,21 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    var that = this;
+    // 请求数据,渲染商品页面
+    api.getJSON('api/order/temporary',{
+      token: app.globalData.token
+    },
+    function (res) {
+      console.log(res)
+    })
+    console.log(options.address_id)
   },
-
+  site:function(){
+    wx.navigateTo({
+      url: '../../../../site/site?award=true',
+    });
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

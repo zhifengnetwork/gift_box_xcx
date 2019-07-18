@@ -8,7 +8,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    name: '',
     avatar: '',
     nickname: '',
     sex: '',
@@ -33,9 +32,18 @@ Page({
       s = "0" + s;
     }
     var n = e + a + i + a + s;
+    let sex = null;
+    if (app.globalData.userInfo.sex == 1){
+      sex = '男';
+    } else if (app.globalData.userInfo.sex == 2){
+      sex = '女';
+    }
     this.setData({
-      name: app.globalData.userInfo.nickname,
+      nickname: app.globalData.userInfo.nickname,
       avatar: app.globalData.userInfo.avatar,
+      sex:sex,
+      date: app.globalData.userInfo.birthday,
+      introduce: app.globalData.userInfo.introduce,
       time: n
     })
   },
@@ -105,14 +113,27 @@ Page({
     let that = this;
     wx.chooseImage({
       count: 1,
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
       success(res) {
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
-        that.setData({
-          avatar: tempFilePaths[0]
+        wx.uploadFile({
+          url: 'https://giftbox.zhifengwangluo.com/api/user/upload_file',
+          filePath: tempFilePaths[0],
+          name: 'file',
+          header:{
+            'content-type':'multipart/form-data'
+          },
+          formData:{
+            'token' : app.globalData.token,
+            'name':'111'
+          },
+          success: function (res) {
+            console.log(res)
+          }
         })
+        // that.setData({
+        //   avatar: tempFilePaths[0]
+        // })
       }
     })
   },

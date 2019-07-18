@@ -8,7 +8,7 @@
 </view>
 <view class="site_wubutton" bindtap="newsite">添加新地址</view>
 <!-- 有地址 -->
-<view class="site" wx:for="{{site}}">
+<view class="site" wx:for="{{site}}" wx:key="{{index}}" data-address_id="{{item.address_id}}" bindtap="award">
   <view class="site_box">
     <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dingwei_icon.png" class="site_dingwei"></image>
     <view class="site_boxt">
@@ -21,7 +21,7 @@
       <view class="radio" wx:if="{{item.is_default==1}}">
         <radio value="默認地址" color="#000" checked />默認地址
       </view>
-      <view class="site_btn">
+      <view class="site_btn" wx:if="{{!award}}">
         <view class="site_redact" data-item="{{item}}" bindtap="redact">編輯</view>
         <view class="site_remove" data-address_id="{{item.address_id}}" bindtap="remove">刪除</view>
       </view>
