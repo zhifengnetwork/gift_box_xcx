@@ -10,7 +10,7 @@
 <view class="mydetalis_c">
   <view class="mydetalis_cname">
     <text class="mydetalis_ctext">昵稱</text>
-    <input placeholder="{{name}}" value="{{nickname}}" bindinput="nickname" class="mydetalis_cinput" />
+    <input placeholder="请输入您的性别昵稱" value="{{nickname}}" bindinput="nickname" class="mydetalis_cinput" />
   </view>
   <view class="mydetalis_cname">
     <text class="mydetalis_ctext">性別</text>

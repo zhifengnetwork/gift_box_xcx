@@ -52,49 +52,7 @@ Page({
     this.setData({
       guanjian: options.id
     });
-    var that = this;
-    // 根据传过来的品牌的id来做一个商品的品牌列表
-    //默认先加载第一页的数据,如果触碰到底部,再调用GetList()方法加载下一页
-    api.getJSON(
-        '/api/Brand/brand_info?id=' + this.data.guanjian + '&page=1',
-        function(res) {
-          if (res.data.status == 1) {
-            console.log("55")
-            console.log(res.data.data)
-            var goodlist2 = res.data.data.goods_list
-            var infopaizi = res.data.data.info
-            that.setData({diyiye: goodlist2})
-            console.log(that.data.diyiye)
-            that.setData({
-              goods_list: goodlist2
-            })
-            that.setData({
-              info: infopaizi
-            })
-
-
-            //分页代码:定义了一个全局的goodslist目的是为了存分页加载的数据,数据增加就往里面push
-            for (var i = 0; i < res.data.data.goods_list.length; i++) {
-              goodslist.push(res.data.data.goods_list[i])
-            }
-
-          }
-        }),
-      //分页代码:页面一加载进来进行缓冲提醒
-      wx.showToast({
-        title: '加载中',
-        icon: 'loading',
-        duration: 400
-      })
-    //分页代码:获取系统的参数，scrollHeight数值,微信必须要设置style:height才能监听滚动事件
-    wx.getSystemInfo({
-      success: function(res) {
-        console.info(res.windowHeight)
-        that.setData({
-          scrollHeight: res.windowHeight
-        })
-      }
-    });
+   
   },
   // 获取数据的方法，具体怎么获取列表数据大家自行发挥
   //分页代码
@@ -141,13 +99,59 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    var that = this;
+    // 根据传过来的品牌的id来做一个商品的品牌列表
+    //默认先加载第一页的数据,如果触碰到底部,再调用GetList()方法加载下一页
+    api.getJSON(
+      '/api/Brand/brand_info?id=' + this.data.guanjian + '&page=1',
+      function (res) {
+        if (res.data.status == 1) {
+          console.log("55")
+          console.log(res.data.data)
+          var goodlist2 = res.data.data.goods_list
+          var infopaizi = res.data.data.info
+          that.setData({ diyiye: goodlist2 })
+          console.log(that.data.diyiye)
+          that.setData({
+            goods_list: goodlist2
+          })
+          that.setData({
+            info: infopaizi
+          })
+
+
+          //分页代码:定义了一个全局的goodslist目的是为了存分页加载的数据,数据增加就往里面push
+          for (var i = 0; i < res.data.data.goods_list.length; i++) {
+            goodslist.push(res.data.data.goods_list[i])
+          }
+          page=2
+          that.setData({bujia: true})
+          
+        }
+      }),
+      //分页代码:页面一加载进来进行缓冲提醒
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 400
+      })
+    //分页代码:获取系统的参数，scrollHeight数值,微信必须要设置style:height才能监听滚动事件
+    wx.getSystemInfo({
+      success: function (res) {
+        console.info(res.windowHeight)
+        that.setData({
+          scrollHeight: res.windowHeight
+        })
+      }
+    });
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+   
+  
   },
 
   /**
@@ -217,7 +221,7 @@ Page({
       color: 'red'
     });
     var that = this;
-    // 在品牌详情中选择排序方式
+    //在品牌详情中选择排序方式
     api.getJSON('/api/Brand/brand_info?page=1&id=' + this.data.guanjian + '&order=' + sortfangshi, function(res) {
       goodslist=[]
       if (res.data.status == 1) {
@@ -246,6 +250,8 @@ Page({
     }
   },
   bindDownLoad: function() {
+    // console.log("666666666")
+    console.log(this.data.bujia)
     //该方法绑定了页面滑动到底部的事件,下拉一次请求一次数据
     var that = this;
     // that.data.bujia这个是上一次如果它没有数据,它就会false
