@@ -1,14 +1,15 @@
 <component title='分类' show_bol='{{false}}'></component>
+
 <view class="sousou_ear">
-  <input type="text" class="find" placeholder="ALEXANDER WANG" focus="false" bindconfirm="huiche" bindinput ="userNameInput"></input>
+  <input type="text" class="find" placeholder="ALEXANDER WANG" focus="false" bindconfirm="huiche" bindinput="userNameInput"></input>
   <image src="../../public/images/classify/sousuo.png" class="sousou"></image>
 </view>
-<view class="hot_word">搜索热词</view>
-<view>
-<view class="tag" wx:for="{{hotworld}}" wx:key bindtap="dianji" data-xixi="{{item.keyword}}">{{item.keyword}}</view>
-</view>
 
-<view class="his_word">搜索记录</view>
-<view>
-<view class="tag" wx:for="{{hisworld}}" wx:key>111</view>
-</view>
+<view class="hot_word">搜索热词</view>
+
+<view class="tag" wx:for="{{hot}}" wx:key='' bindtap="search" data-keyword="{{item.keyword}}">{{item.keyword}}</view>
+
+<view class="history">历史搜索</view>
+<view class="tag" wx:for="{{history}}" wx:key='' bindtap="search" data-keyword="{{item.keyword}}">{{item.keyword}}</view>
+
+

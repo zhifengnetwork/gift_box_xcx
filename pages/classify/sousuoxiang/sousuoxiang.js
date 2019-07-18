@@ -36,7 +36,7 @@ Page({
         sortting: 'price'
       }
     ],
-    headtitle:''
+    headtitle:'搜索'
   },
 
   /**
