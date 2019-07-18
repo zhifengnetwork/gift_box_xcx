@@ -55,7 +55,7 @@
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "wechat",
     "navigationBarTextStyle": "black",
-    "navigationStyle": "custom"
+     "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

@@ -8,7 +8,7 @@
 <view class="tag" wx:for="{{hotworld}}" wx:key bindtap="dianji" data-xixi="{{item.keyword}}">{{item.keyword}}</view>
 </view>
 
-<view class="his_word">搜索记录</view>
+<view class="his_word">历史记录</view>
 <view>
-<view class="tag" wx:for="{{hisworld}}" wx:key>111</view>
+<view class="tag" wx:for="{{hisworld}}" wx:key bindtap="dianji">{{item.keyword}}</view>
 </view>
