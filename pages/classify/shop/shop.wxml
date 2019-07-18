@@ -1,3 +1,4 @@
+<scroll-view class="scroll-container" upper-threshold="{{sortPanelDist}}"  scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad">
 <component title='' show_bol='{{false}}'></component>
 <view class="img_header">
   <image src="{{info.priture}}" class="addidas"></image>
@@ -47,3 +48,4 @@
     </view>
   </view>
 </view>
+</scroll-view>

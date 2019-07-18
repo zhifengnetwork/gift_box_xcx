@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    site:''
+    site:'',
+    award:false
   },
   // 跳转到添加地址
   newsite: function () {
@@ -15,7 +16,14 @@ Page({
       url: 'newsite/newsite',
     })
   },
-
+  award:function(e){
+    let addid = e.currentTarget.dataset.address_id
+    if(this.data.award){
+      wx.redirectTo({
+        url: '../commodity/detalis/payment/award/award?address_id=' + addid,
+      })
+    }
+  },
   // 默认按钮
 
 
@@ -36,6 +44,11 @@ Page({
       }
       console.log(res)
     })
+    if (options.award){
+      this.setData({
+        award:true
+      })
+    }
   },
   remove: function (e){
     let that = this;

@@ -84,9 +84,9 @@
   <view class="detail_x">
     <view class="detalis_f">
       <view class="detalis_fl">
-        <view class="detalis_flbox">
+        <view class="detalis_flbox" bindtap="shouye">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/home_icon.png"></image>
-          <view class="detalis_fl_text" bindtap="shouye">首页</view>
+          <view class="detalis_fl_text">首页</view>
         </view>
         <view class="detalis_flbox">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/kefu_icon.png"></image>
@@ -95,9 +95,9 @@
           </view>
           
         </view>
-        <view class="detalis_flbox">
+        <view class="detalis_flbox" bindtap="cart">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/gouwuche_icon.png"></image>
-          <view class="detalis_fl_text" bindtap="cart">加入</view>
+          <view class="detalis_fl_text">加入</view>
         </view>
       </view>
       <view class="detalis_fr">
