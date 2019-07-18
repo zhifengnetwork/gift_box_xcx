@@ -5,7 +5,16 @@
   margin-top: 200rpx
 }
 .selectquan{
-  margin-top: 100rpx
+  margin-top: 140rpx;
+  display: flex;
+  font-size: 30rpx;
+  height: 53rpx;
+  line-height: 53rpx;
+}
+.tips{
+  font-size: 28rpx;
+  color: #ccc;
+  padding-left: 40rpx
 }
 .xiang{
   display: flex;
@@ -25,6 +34,16 @@
   align-items: center;
   justify-content: center;
   padding: 0 10rpx;
+}
+.dagoude{
+  height: 50rpx;
+  width: 80rpx;
+  text-align: center;
+  display: inline-block;
+  vertical-align: top;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 .cart-thumb{
   vertical-align: top;
