@@ -48,7 +48,9 @@
     "pages/turntable/turntable",
     "pages/authorize/authorize",
     "pages/my/after/after",
-    "pages/my/after/refund/refund"
+    "pages/my/after/refund/refund",
+    "pages/my/after/SelectorMode/SelectorMode",
+    "pages/my/after/applyrefund/applyrefund"
   ],
   "window": {
     "backgroundTextStyle": "light",
