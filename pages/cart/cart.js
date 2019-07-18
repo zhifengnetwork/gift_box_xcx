@@ -46,9 +46,6 @@ Page({
           that.setData({ selectAllStatus:true})
         }
 
-
-
-
         that.getTotalPrice();
 
       }
