@@ -110,11 +110,20 @@ Page({
   angle: function(start, end) {
     var _X = end.X - start.X,
       _Y = end.Y - start.Y
+      
     //返回角度 /Math.atan()返回数字的反正切值
     return 360 * Math.atan(_Y / _X) / (2 * Math.PI);
   },
   //删除事件
   del: function(e) {
+
+    // api.getJSON('/api/Cart/delCart?token=' + app.globalData.token + '&cart_id=' + goodid, function (res) {
+    //   if (res.data.status == 1) {
+    //     console.log("成功lage")
+    //   }
+    // })
+
+
     let carts = this.data.carts;
     carts[e.currentTarget.dataset.index].selected = false;
     this.setData({
