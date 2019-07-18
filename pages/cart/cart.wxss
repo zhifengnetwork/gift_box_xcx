@@ -52,12 +52,12 @@
 .item_tile{
   padding-top: 10rpx;
   padding-left: 25rpx;
-  font-size:35rpx;
+  font-size:30rpx;
 }
 .item_mashu{
-  padding-top: 10rpx;
+  padding-top: 1rpx;
   padding-left: 25rpx;
-  font-size: 30rpx;
+  font-size: 25rpx;
   color: #ccc;
 }
 .text1{
@@ -155,4 +155,41 @@
 .touch-move-active .del {
  -webkit-transform: translateX(0);
  transform: translateX(0);
+}
+.hejiqian{
+  padding-left: 20rpx
+}
+.dibu{
+  font-size: 31rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  width: 100%;
+  position: fixed;
+  bottom: 0rpx;
+  background: white
+}
+.right_view{
+  height: 70rpx;
+  line-height: 70rpx;
+  position: absolute;
+  bottom:12rpx;
+  right: 40rpx;
+  border: 1px solid #0C0E0D;
+  border-radius: 40rpx
+}
+.caolao{
+  display: inline-block;
+  padding: 0 30rpx
+}
+.zeng{
+ display: inline-block;
+ padding: 0 30rpx;
+ height: 100%;
+ background: #0C0E0D;
+ color: white;
+ border-top-right-radius: 40rpx;
+ border-bottom-right-radius: 40rpx
+}
+.touch-item:last-child{
+  margin-bottom: 200rpx
 }
