@@ -24,6 +24,7 @@
       <view class="reward_bottprice">合计：HK$124.00</view>
     </view>
     <view class="reward_button">
+      <view class="reward_cancel">申請退款</view>
       <view class="reward_cancel">查看物流</view>
       <view class="reward_payment">確認收貨</view>
     </view>
@@ -50,6 +51,7 @@
       <view class="reward_bottprice">合计：HK$124.00</view>
     </view>
     <view class="reward_button">
+      <view class="reward_cancel">申請退款</view>
       <view class="reward_cancel">查看物流</view>
       <view class="reward_payment">確認收貨</view>
     </view>
@@ -76,6 +78,7 @@
       <view class="reward_bottprice">合计：HK$124.00</view>
     </view>
     <view class="reward_button">
+      <view class="reward_cancel">申請退款</view>
       <view class="reward_cancel">查看物流</view>
       <view class="reward_payment">確認收貨</view>
     </view>
@@ -102,6 +105,7 @@
       <view class="reward_bottprice">合计：HK$124.00</view>
     </view>
     <view class="reward_button">
+      <view class="reward_cancel">申請退款</view>
       <view class="reward_cancel">查看物流</view>
       <view class="reward_payment">確認收貨</view>
     </view>

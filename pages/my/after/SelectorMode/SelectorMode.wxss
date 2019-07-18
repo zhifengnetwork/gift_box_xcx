@@ -1,0 +1,48 @@
+page{
+  background:rgba(239,238,241,1);
+}
+.selectormode_nav{
+  height: 120rpx;
+  background: #fff;
+}
+.selectormode_box{
+  margin-top: 40rpx;
+}
+.radio_view{
+  font-size: 28rpx;
+  line-height: 100rpx;
+  border-bottom: 2rpx solid #f6f6f6;
+  margin: 0 20rpx;
+  padding: 0 20rpx;
+  text-align: left;
+  position: relative;
+  background: #fff;
+}
+.radio_text{
+  color: #acacac;
+  text-align: center;
+  position: absolute;
+  font-size: 26rpx;
+  top: 0%;
+  left: 23%;
+  /* transform: translate(-55%); */
+}
+.radio_radio{
+  float: right;
+  transform: scale(0.8);
+}
+.selectormode_button{
+  height:80rpx;
+  width: 90%;
+  position: absolute;
+  bottom: 50rpx;
+  left: 5%;
+  background:rgba(12,14,13,1);
+  border-radius:40px;
+  font-size:30rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  text-align: center;
+  line-height: 80rpx;
+}

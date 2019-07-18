@@ -113,6 +113,7 @@
   font-weight:400;
   color:rgba(34,34,34,1);
   line-height: 60rpx;
+  margin-left: 20rpx;
 }
 .reward_payment{
   width:160rpx;
