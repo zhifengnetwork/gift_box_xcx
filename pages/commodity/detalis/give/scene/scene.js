@@ -1,40 +1,18 @@
-// pages/commodity/detalis/give/GiveOthers/GiveOthers.js
-var api = require('../../../../../utils/api');
-var app = getApp();
+// pages/commodity/detalis/give/scene/scene.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    num: 1,
-    scene: ''
+
   },
-  plus:function (e){
-    console.log(this.data.num++)
-    // this.data.num = this.data.num++
-  },
-  show: function () {
-    wx.navigateTo({
-      url: '../../../../card/makecard/makecard',
-    })
-  },
-  scene:function(){
-    wx.navigateTo({
-      url: '../scene/scene',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this;
-    api.postJSON('api/box/box_cate_list',function(res){
-      console.log(res);
-      that.setData({
-        scene:res.data.data
-      })
-    })
+
   },
 
   /**

@@ -1,0 +1,18 @@
+<!--pages/commodity/detalis/give/scene/scene.wxml-->
+<view class="giftbag_top">
+  <component title='场景应用' show_bol='{{falsr}}'></component>
+</view>
+<view class="tabBar">
+  <view class="tabBar_item">
+    <image class="tabBar_icon" src="../../../../public/images/card/blessing.png"></image>
+    <text>666</text>
+  </view>
+  <view class="tabBar_item">
+    <image class="tabBar_icon" src="../../../../public/images/card/blessing.png"></image>
+    <text>666</text>
+  </view>
+  <view class="tabBar_item">
+    <image class="tabBar_icon" src="../../../../public/images/card/blessing.png"></image>
+    <text>666</text>
+  </view>
+</view>

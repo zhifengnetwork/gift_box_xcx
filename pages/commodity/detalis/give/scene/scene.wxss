@@ -1,0 +1,29 @@
+/* pages/commodity/detalis/give/scene/scene.wxss */
+page{
+  padding-top: 140rpx
+}
+.tabBar{
+  margin: 20rpx 0 120rpx 100rpx;
+}
+.tabBar_item{
+  position: relative;
+  float: left;
+  margin-left: 10rpx;
+  width: 200rpx;
+  height: 120rpx;
+  line-height: 160rpx;
+  background: #e5e5e5;
+  border-radius: 10rpx;
+  font-size: 36rpx;
+  padding-left: 40rpx;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+.tabBar_icon{
+  position: absolute;
+  top: 4rpx;
+  left: 28rpx;
+  width: 60rpx;
+  height: 60rpx;
+}

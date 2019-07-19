@@ -51,14 +51,15 @@
     "pages/my/after/after",
     "pages/my/after/refund/refund",
     "pages/my/after/SelectorMode/SelectorMode",
-    "pages/my/after/applyrefund/applyrefund"
+    "pages/my/after/applyrefund/applyrefund",
+    "pages/commodity/detalis/give/scene/scene"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "wechat",
     "navigationBarTextStyle": "black",
-     "navigationStyle": "custom"
+    "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

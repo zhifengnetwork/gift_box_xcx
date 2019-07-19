@@ -43,10 +43,12 @@ Page({
             maxDuration: 60,
             camera: 'back',
             success(res) {
-              var tempFilePaths = res.tempFilePaths;
+              var tempFilePaths = [];
+              var tempFilePath = res.tempFilePath;
+              tempFilePaths.push(tempFilePath)
               that.upload(tempFilePaths);
               that.setData({
-                video: tempFilePaths
+                video: tempFilePath
               })
             }
           })

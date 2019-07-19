@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 10,
 			"list": [
 				{
 					"id": -1,
@@ -117,6 +117,13 @@
 					"id": -1,
 					"name": "购物车",
 					"pathName": "pages/cart/cart",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/commodity/detalis/give/scene/scene",
+					"pathName": "pages/commodity/detalis/give/scene/scene",
 					"query": "",
 					"scene": null
 				}
