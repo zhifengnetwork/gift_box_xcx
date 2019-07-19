@@ -89,6 +89,11 @@ Page({
           bless: that.data.blessText,
           blessText: ''
         })
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: res.data.msg
+        })
       }
     })
   },

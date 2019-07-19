@@ -1,4 +1,6 @@
 // pages/commodity/detalis/give/GiveOthers/GiveOthers.js
+var api = require('../../../../../utils/api');
+var app = getApp();
 Page({
 
   /**
@@ -6,6 +8,7 @@ Page({
    */
   data: {
     num: 1,
+    scene: ''
   },
   plus:function (e){
     console.log(this.data.num++)
@@ -20,7 +23,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    api.postJSON('api/box/box_cate_list',function(res){
+      console.log(res);
+      that.setData({
+        scene:res.data.data
+      })
+    })
   },
 
   /**

@@ -141,6 +141,11 @@ Page({
             delta: 1
           })
         }, 1000)
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: res.data.msg
+        })
       }
     })
   },
