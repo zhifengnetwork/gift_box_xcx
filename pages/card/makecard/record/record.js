@@ -12,7 +12,8 @@ Page({
     // 进度条进度
     lRotate: '',
     rRotate: '',
-    status: 1
+    status: 1,
+    flag:false
   },
   // 开始录音
   start: function() {
@@ -62,6 +63,17 @@ Page({
     if (this.data.start) {
       return false;
     }
+    if (!this.data.src){
+      wx.showModal({
+        title: '提示',
+        content: '请添加录音',
+        showCancel: false
+      })
+      return false;
+    }
+    this.setData({
+      flag:true
+    })
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.onError((res) => {
       // 播放音频失败的回调
@@ -71,8 +83,18 @@ Page({
     this.innerAudioContext.onPlay(function() {
       console.log('开始播放')
     })
+    let that = this;
     this.innerAudioContext.onEnded(function() {
       console.log('结束播放')
+      that.setData({
+        flag: false
+      })
+    })
+  },
+  stop:function(){
+    this.innerAudioContext.pause()
+    this.setData({
+      flag: false
     })
   },
   // 删除录音
@@ -131,6 +153,14 @@ Page({
   send: function() {
     // 如果为播放状态则返回
     if (this.data.start) {
+      return false;
+    }
+    if (!this.data.src) {
+      wx.showModal({
+        title: '提示',
+        content: '请添加录音',
+        showCancel: false
+      })
       return false;
     }
     var that = this

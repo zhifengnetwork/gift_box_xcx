@@ -13,7 +13,7 @@ Page({
   },
   show: function () {
     wx.navigateTo({
-      url: '../cashgift/cashgift',
+      url: '../../../../card/makecard/makecard',
     })
   },
   /**

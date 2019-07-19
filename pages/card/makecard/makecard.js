@@ -1,4 +1,6 @@
 // pages/card/makecard.js
+var api = require('../../../utils/api');
+var app = getApp();
 Page({
 
   /**
@@ -116,11 +118,23 @@ Page({
       console.log('跳转')
     }
   },
+  succeed:function(){
+    wx.navigateTo({
+      url: '../../commodity/detalis/give/cashgift/cashgift'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let that = this;
+    api.postJSON('api/box/get_box',{
+      'token': app.globalData.token,
+      'cate_id': 9
+    },
+    function (res) {
+      console.log(res.data)
+    })
   },
 
   /**
