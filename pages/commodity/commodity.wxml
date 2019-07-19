@@ -1,8 +1,6 @@
 <!-- hidden="{{guigeShow?'':'true'}}" -->
 <view >
-
-  <scroll-view class='allConten' scroll-y="false">
-    
+  <scroll-view class='allConten' scroll-y="false"> 
     <view wx:for="{{result.goods.goods_spec_list}}" wx:for-index="pos" wx:key>
       <view class='ggfl'>{{item[0].spec_name}}</view>
       <view class='ggList'>

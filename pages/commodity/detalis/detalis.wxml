@@ -1,12 +1,17 @@
 <import src="../../../wxParse/wxParse.wxml" />
 
 <view class="body">
-  <view class="detalis_top">
-    <component title='' show_bol='{{falsr}}'></component>
-  </view>
+  
+    <!-- <component title='' show_bol='{{false}}' ></component> -->
+    <view class="goBack" bindtap='goBack' style="padding-top:{{bar_Height+40}}rpx;">
+      <view class="baozhebai">
+         <image src='../../public/images/index/back.png' class="back_back22"></image>
+      </view>			
+    </view>
+ 
 
   <view class="detalisbox">
-    <view class="detalis_img">
+    <view class="detalis_img2">
       <swiper class='detalis_swipers' autoplay current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
         <block wx:for="{{goods_data.img}}" wx:key>
           <swiper-item>
@@ -68,9 +73,7 @@
         </view>
       </scroll-view> -->
 
-         <template is="wxParse" data="{{wxParseData:content.nodes}}" />
-       
-
+        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
       </view>
       <view class="{{currentTab == 1 ? 'show':'hidden'}}">
         <scroll-view>
@@ -91,9 +94,9 @@
         <view class="detalis_flbox">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/kefu_icon.png"></image>
           <view class="detalis_fl_text">客服
-          <contact-button class='contact' size='27' session-from="weapp"></contact-button>
+            <contact-button class='contact' size='27' session-from="weapp"></contact-button>
           </view>
-          
+
         </view>
         <view class="detalis_flbox" bindtap="cart">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/gouwuche_icon.png"></image>
@@ -110,38 +113,39 @@
 
     <!-- 商品规格选择蒙层 -->
     <!-- catchtouchmove="preventTouchMove" 作用是出现蒙层是不能滑动的-->
-
-    <!-- <view class="shop_selection" catchtouchmove="preventTouchMove">
+    <view class="shop_selection" catchtouchmove="preventTouchMove" wx:if="{{statussxianshi}}">
     </view>
-    <view class="shop_ear" catchtouchmove="preventTouchMove">
+    <view class="shop_ear" catchtouchmove="preventTouchMove" wx:if="{{statussxianshi}}">
       <image src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640" class="store"></image>
       <text class="jiage">￥615</text>
       <view class="selected">
-        <text>已选择</text>:
+        <text style="padding-left:20rpx">已选择</text>:
         <text>黑色</text>,
         <text class="mama">39码</text>
-      </view> -->
-    <!-- 正式的规格选择区块 s -->
-
-    <!-- <view wx:for="{{attrList}}" wx:for-index="idx" wx:key="userInfoListId" class="outStyle">
-        <view class='outStyleText textStyle buttonPaddingStyle'>{{item.attrName}}</view>
-        <view class='typeStyle textStyle'>
-          <view wx:for="{{item.attr}}" data-item='{{item.attr[index]}}' data-index='{{index}}' data-idx='{{idx}}' wx:key="userInfoListId" bindtap="onChangeShowState" wx:for-item="items">
-            <view class="{{items.enable == true ?(items.select==true?'orange':'back') : 'white'}} textStyle buttonPaddingStyle">
-              {{items.attributeValue}}
-            </view>
+        <view style="padding-left:20rpx">库存:0</view>
+      </view>
+      <!-- 正式的规格选择区块 s -->
+      <scroll-view class='allConten' scroll-y="false">
+        <view wx:for="{{goods_spec_list}}" wx:for-index="pos" wx:key>
+          <view class='ggfl'>{{item[0].spec_name}}</view>
+          <view class='ggList'>
+            <block wx:for="{{item}}" wx:key>
+              <view data-index="{{pos}}" data-pos="{{index}}" class="item {{item.isClick==1?'isClick':''}}" data-itemId='{{item.item_id}}' bindtap="propClick">{{item.item}}</view>
+            </block>
           </view>
         </view>
-      </view> -->
-
-    <!-- <view class='textStyle buttonPaddingStyle shuru'>
-        <view>当前点击的信息:</view>
-        <view>{{infoText}}</view>
-      </view> -->
-
-
-    <!-- 正式的规格选择区块 e -->
-    <!-- <view>
+        <view>
+          <view class='buyNum-box'>
+            <view class='buyNum'>购买数量</view>
+            <view class='jian' catchtap='reduceProduct'>-</view>
+            <view class='num'>{{productNum}}</view>
+            <view class='jia' catchtap='addProduct' data-sort="{{dataArr.goods.store_count}}">+</view>
+          </view>
+        </view>
+      </scroll-view>
+      <view class="next" bindtap="jiele">下一步</view>
+      <!-- 正式的规格选择区块 e -->
+      <view>
         <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
           <view class='btn-box'>
             <view class='btn-item'>
@@ -167,7 +171,7 @@
           </view>
         </view>
       </view>
-    </view> -->
+    </view>
 
   </view>
 </view>

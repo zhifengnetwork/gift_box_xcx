@@ -1,6 +1,6 @@
-<view class="boss_top"><component title='Boss星选' show_bol='{{false}}'></component></view>
+<component title='Boss星选' show_bol='{{false}}' side="{{true}}"></component>
 <view class="bossbox">
-  <view class="boss_img"></view>
+  <view class="boss_img" style="margin-top:{{bar_Height+140}}rpx"></view>
   <view class="swiper-tab">
     <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
       经典系列
