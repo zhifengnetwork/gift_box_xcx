@@ -5,6 +5,12 @@
   position: absolute;
   top: 0;
 }
+.dingwei{
+  width: 100%;
+  z-index: 99999;
+  position: fixed;
+  top: 0;
+}
 .goBack{
   position: absolute;
   top: 15rpx;

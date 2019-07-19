@@ -1,4 +1,4 @@
-<component title='澳门星选' show_bol='{{true}}'>
+<component title='澳门星选' show_bol='{{true}}' side='{{false}}'>
 </component>
 <!-- 轮播图 -->
 <view class='index_top'>

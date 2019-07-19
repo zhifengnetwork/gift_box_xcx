@@ -12,6 +12,10 @@ Component({
     my_class: {			// 控制样式
       type: Boolean,
       value: false
+    },
+    side:{        //控制头部的定位问题
+        type:Boolean,
+        value:false
     }
   },
   /* 组件的初始数据 */

@@ -39,7 +39,7 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-
+    
     app.getUserInfo(userinfo => {
     
       //昵称、头像 不存在，跳转去授权
@@ -68,10 +68,9 @@ Page({
         })
       }
     })
-
   },
   onShow: function () {
-
+    wx.showTabBar()
   },
   // 第一个轮播图切换调动这个函数
   swiperChange: function (e) {
