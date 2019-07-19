@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/card/go",
     "pages/cart/cart",
     "pages/home/integral/integral",
     "pages/logs/logs",
