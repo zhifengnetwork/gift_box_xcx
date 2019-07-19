@@ -1,7 +1,7 @@
 <!--pages/card/makecard.wxml-->
 <view class="makecard">
   <!-- 头部导航 -->
-  <view class="makecard_nav">
+  <view class="makecard_nav" bindtap="back_white">
     <image class="makecard_nav_img" src="../../public/images/index/back_white.png"></image>
     <text>制作电子礼盒</text>
   </view>

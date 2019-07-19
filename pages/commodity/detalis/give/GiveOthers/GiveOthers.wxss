@@ -178,9 +178,11 @@
 .giveothers_img {
   width: 190rpx;
   height: 300rpx;
-  background: skyblue;
 }
-
+.giveothers_i{
+  width: 100%;
+  height: 100%;
+}
 .giveothers_imgbox>text {
   font-size: 24rpx;
   font-family: SourceHanSansCN-Regular;

@@ -21,7 +21,7 @@
     <image class="record_pause_img" wx:if="{{!start}}" src="../../../public/images/card/pause-active.png"></image>
   </view>
   <view class="record_pause" bindtap="stop" wx:if="{{flag}}">
-    <image class="record_pause_img" src="../../../public/images/card/stop.png"></image>
+    <image class="record_pause_img" style="left:0;" src="../../../public/images/card/stop.png"></image>
   </view>
   <!-- 录音按钮 -->
   <view class="record_state" bindtap="start">

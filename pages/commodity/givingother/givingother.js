@@ -14,12 +14,12 @@ Page({
     
   },
   git_one:function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../detalis/give/GiveOthers/GiveOthers',
     })
   },
   git_others:function(){
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../detalis/give/GiveOthers/GiveOthers',
     })
   },

@@ -1,7 +1,7 @@
 <view class="my_top">
   <component title='' show_bol='{{true}}'></component>
 </view>
-<view class="my_t">
+<view class="my_t" bindtap="mydetalis">
   <view class="my_tt">
     <view class="my_HeadPortrait">
       <image class="my_HeadPortrait_img" src="{{avatar}}"></image>

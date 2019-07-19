@@ -1,4 +1,6 @@
 // pages/card/makecard/picture/picture.js
+var api = require('../../../../utils/api');
+var app = getApp();
 Page({
 
   /**
@@ -6,7 +8,8 @@ Page({
    */
   data: {
     imglist: '',
-    video:''
+    video:'',
+    picture:''
   },
   // 点击添加按钮
   add: function() {
@@ -27,7 +30,8 @@ Page({
             sourceType: [type],
             success: function(res) {
               // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-              var tempFilePaths = res.tempFilePaths
+              var tempFilePaths = res.tempFilePaths;
+              that.upload(tempFilePaths);
               that.setData({
                 imglist: tempFilePaths
               })
@@ -39,9 +43,10 @@ Page({
             maxDuration: 60,
             camera: 'back',
             success(res) {
-              console.log(res.tempFilePath)
+              var tempFilePaths = res.tempFilePaths;
+              that.upload(tempFilePaths);
               that.setData({
-                video: res.tempFilePath
+                video: tempFilePaths
               })
             }
           })
@@ -53,7 +58,8 @@ Page({
             success: function (res) {
               console.log(res)
               // 返回选定照片的本地文件路径列表，tempFilePath可以作为img标签的src属性显示图片
-              var tempFilePaths = res.tempFilePaths
+              var tempFilePaths = res.tempFilePaths;
+              that.upload(tempFilePaths);
               that.setData({
                 imglist: tempFilePaths
               })
@@ -63,6 +69,27 @@ Page({
       },
       fail: function(res) {
         console.log(res.errMsg)
+      }
+    })
+  },
+  upload: function (tempFilePaths){
+    let that = this;
+    wx.uploadFile({
+      url: 'https://giftbox.zhifengwangluo.com/api/box/upload_file',
+      filePath: tempFilePaths[0],
+      name: 'file',
+      header: {
+        'content-type': 'multipart/form-data'
+      },
+      formData: {
+        'token': app.globalData.token
+      },
+      success: function (res) {
+        let picture = JSON.parse(res.data)
+        console.log(picture)
+        that.setData({
+          picture: picture.data
+        })
       }
     })
   },
@@ -84,28 +111,43 @@ Page({
       return false;
     }
     var that = this
-    wx.showToast({
-      title: '提交成功',
-      icon: 'success',
-      duration: 2000
-    })
-    setTimeout(function () {
-      var pages = getCurrentPages();
-      var prevPage = pages[pages.length - 2];  //上一个页面
-      var value = '';
-      if (that.data.imglist==''){
-        value = that.data.video;
+    api.postJSON('api/box/set_box', {
+      'token': app.globalData.token,
+      'id': app.globalData.makecard,
+      'photo_url': that.data.picture
+    },
+    function (res) {
+      console.log(res)
+      if(res.data.status==1){
+        wx.showToast({
+          title: '提交成功',
+          icon: 'success',
+          duration: 2000
+        })
+        setTimeout(function () {
+          var pages = getCurrentPages();
+          var prevPage = pages[pages.length - 2];  //上一个页面
+          var value = '';
+          if (that.data.imglist == '') {
+            value = that.data.video;
+          } else {
+            value = that.data.imglist;
+          }
+          //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+          prevPage.setData({
+            picture: value
+          })
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 1000)
       }else{
-        value = that.data.imglist;
+        wx.showModal({
+          title: '提示',
+          content: res.data.msg
+        })
       }
-      //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
-      prevPage.setData({
-        picture: value
-      })
-      wx.navigateBack({
-        delta: 1
-      })
-    }, 1000)
+    })
   },
   /**
    * 生命周期函数--监听页面加载
