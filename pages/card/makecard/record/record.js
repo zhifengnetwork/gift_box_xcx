@@ -12,9 +12,14 @@ Page({
     // 进度条进度
     lRotate: '',
     rRotate: '',
+    status: 1
   },
   // 开始录音
   start: function() {
+    if (this.data.status == 1){
+      this.onLoad();
+      return false;
+    }
     // 点击改变状态
     let that = this;
     that.data.start = !this.data.start;
@@ -153,7 +158,64 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    let that = this;
+    //调取小程序新版授权页面
+    wx.authorize({
+      scope: 'scope.record',
+      success() {
+        console.log("录音授权成功");
+        //第一次成功授权后 状态切换为2
+        that.setData({
+          status: 2,
+        })
+      },
+      fail() {
+        console.log("第一次录音授权失败");
+        wx.showModal({
+          title: '提示',
+          content: '您未授权录音，功能将无法使用',
+          showCancel: true,
+          confirmText: "授权",
+          confirmColor: "#52a2d8",
+          success: function (res) {
+            if (res.confirm) {
+              //确认则打开设置页面（重点）
+              wx.openSetting({
+                success: (res) => {
+                  console.log(res.authSetting);
+                  if (!res.authSetting['scope.record']) {
+                    //未设置录音授权
+                    console.log("未设置录音授权");
+                    wx.showModal({
+                      title: '提示',
+                      content: '您未授权录音，功能将无法使用',
+                      showCancel: false,
+                      success: function (res) {
 
+                      },
+                    })
+                  } else {
+                    //第二次才成功授权
+                    console.log("设置录音授权成功");
+                    that.setData({
+                      status: 2,
+                    })
+                  }
+                },
+                fail: function () {
+                  console.log("授权设置录音失败");
+                }
+              })
+            } else if (res.cancel) {
+              console.log("cancel");
+            }
+          },
+          fail: function () {
+            console.log("openfail");
+          }
+        })
+      }
+    })
   },
 
   /**

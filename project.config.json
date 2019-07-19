@@ -108,14 +108,16 @@
 				},
 				{
 					"id": -1,
-<<<<<<< HEAD
 					"name": "申請退款",
 					"pathName": "pages/my/after/refund/refund",
 					"query": "",
-=======
+					"scene": null
+				},
+				{
+					"id": -1,
 					"name": "购物车",
 					"pathName": "pages/cart/cart",
->>>>>>> 4614c5980cbd019f2d6fb14d79607666f1605a4f
+					"query": "",
 					"scene": null
 				}
 			]

@@ -92,9 +92,10 @@ Page({
       'introduce': that.data.introduce,
       'avatar': that.data.avatar
     },
-    function(res){
+    function(res){            
       if(res.data.status==1){
         app.globalData.userInfo = res.data.data;
+        console.log(res.data.data)
         wx.showToast({
           title: '修改成功',  
           icon: 'success',
@@ -117,23 +118,23 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'https://giftbox.zhifengwangluo.com/api/user/upload_file',
+          url: 'https://giftbox.zhifengwangluo.com/api/box/upload_file',
           filePath: tempFilePaths[0],
           name: 'file',
           header:{
             'content-type':'multipart/form-data'
           },
           formData:{
-            'token' : app.globalData.token,
-            'name':'111'
+            'token' : app.globalData.token
           },
           success: function (res) {
-            console.log(res)
+            let avatar = JSON.parse(res.data)
+            that.setData({
+              avatar: avatar.data
+            })
+            console.log(that.data.avatar)
           }
         })
-        // that.setData({
-        //   avatar: tempFilePaths[0]
-        // })
       }
     })
   },

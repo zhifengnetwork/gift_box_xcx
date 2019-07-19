@@ -95,6 +95,12 @@ Page({
             url: '../site',
           });
         }, 2000)
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: res.data.msg,
+          showCancel: false
+        })
       }
       console.log(res)
     })
