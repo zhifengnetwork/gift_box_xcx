@@ -16,6 +16,10 @@ Component({
     side:{        //控制头部的定位问题
         type:Boolean,
         value:false
+    },
+    quan:{       //控制返回按钮是有白色圆圈的底色背景
+      type: Boolean, 
+      value: false
     }
   },
   /* 组件的初始数据 */

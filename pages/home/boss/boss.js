@@ -1,3 +1,4 @@
+var api = require('../../../utils/api');
 // pages/home/boss/boss.js
 Page({
 
@@ -7,7 +8,8 @@ Page({
   data: {
     currentTab: 0,
     list: 3,
-    listdata: 8
+    listdata: 8,
+    bar_Height: wx.getSystemInfoSync().statusBarHeight		// 获取手机状态栏高度
   },
   clickTab: function (e) {
     var that = this;
@@ -37,7 +39,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    api.getJSON('/api/index/get_attr', function (res) {
+      if (res.data.status == 1) {
+           console.log(res.data)
+        
+      }
+    })
   },
 
   /**
