@@ -1,18 +1,24 @@
 // pages/my/after/after.js
+var app = getApp()
+var api = require('../../../utils/api');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    after:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    api.postJSON('api/order/get_refund_info',{
+      'token': app.globalData.token,
+    },function(res){
+      console.log(res)
+    })
   },
 
   /**

@@ -2,36 +2,40 @@
 <!-- 全选 -->
 <view class="selectquan">
     <!-- wx:if 是否全选显示不同图标 -->
-    <icon wx:if="{{selectAllStatus}}" type="success" color="#0C0E0D" bindtap="selectAll" size="20"/>
-    <icon wx:else type="circle" color="#ccc" bindtap="selectAll" size="20"/>
-    <text>全选</text>
+    <icon wx:if="{{selectAllStatus}}" type="success" color="#0C0E0D" bindtap="selectAll" size="20" class="dagoude"/>
+    <icon wx:else type="circle" color="#ccc" bindtap="selectAll" size="20" class="dagoude"/>
+    <view>全选</view>
     <!-- 总价 -->
-    <text>￥{{totalPrice}}</text>   
+    <!-- <view>￥{{totalPrice}}</view>-->
+    <view class="tips">提示：左滑可以删除商品</view>
     <!-- hhhh -->
 </view>
  
  <view class="container">
+
  <view class="touch-item {{item.isTouchMove ? 'touch-move-active' : ''}}" data-index="{{index}}" bindtouchstart="touchstart" bindtouchmove="touchmove" wx:for="{{items}}" wx:key>
   <view class="xiang content">
     <!-- wx:if 是否选择显示不同图标 -->
-        <icon wx:if="{{item.selected}}" type="success" color="#0C0E0D" bindtap="selectList" data-index="{{index}}" class="dagou" size="20"/>
-        <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" class="dagou" size="20"/>
+        <icon wx:if="{{item.selected}}" type="success" color="#0C0E0D" bindtap="selectList" data-index="{{index}}" class="dagou" size="20" data-goodid="{{item.id}}"/>
+        <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" class="dagou" size="20" data-goodid="{{item.id}}"/>
         
         <!-- 点击商品图片可跳转到商品详情 -->
-        <navigator url="../details/details?id={{item.id}}" >
-            <image class="cart-thumb" src="{{item.image}}"></image>
+        <navigator url="../commodity/detalis/detalis?id={{item.id}}">
+            <image class="cart-thumb" src="{{item.goods_img}}"></image>
+            
         </navigator>
-       
+      
         <!-- 增加减少数量按钮 -->
         <view>
-            <view class="item_tile">{{item.title}}</view>
-            <view class="item_mashu">{{item.title}}</view>
-            <view class="text1 jiage">￥{{item.price}}</view>
-            <view bindtap="minusCount" data-index="{{index}}" class="text1 jian">-</view>
-            <view class="text1 textnum">{{item.num}}</view>
-            <view bindtap="addCount" data-index="{{index}}" class="text1 jia">+</view>
+            <view class="item_tile">{{item.goods_name}}</view>
+            <view class="item_mashu">{{item.spec_key_name}}</view>
+            <view class="text1 jiage">￥{{item.goods_price}}</view>
+            <view bindtap="minusCount" data-index="{{index}}" class="text1 jian" data-id="{{item.sku_id}}">-</view>
+            <view class="text1 textnum">{{item.goods_num}}</view>
+            <view bindtap="addCount" data-index="{{index}}" class="text1 jia" data-id="{{item.sku_id}}">+</view>
             <text bindtap="deleteList" data-index="{{index}}"> × </text>
-        </view>    
+        </view>
+         <image class="cart-thumb" src="{{item.goods_img}}"></image>    
   
   </view>
   <view class="del" bindtap="del" data-index="{{index}}">删除</view>
@@ -41,7 +45,14 @@
 
 
 
+<view class="dibu">
+<text class="hejiqian">合计: HK${{totalPrice}}</text>
+<view class="right_view">
+<view class="caolao">犒劳自己</view>
+<view class="zeng">赠送他人</view>
+</view>
 
+</view>
 
 
 
