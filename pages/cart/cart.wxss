@@ -1,3 +1,26 @@
+
+.goBack{
+  position: absolute;
+  top: 15rpx;
+  font-size:12pt;
+}
+.goBack image{
+  width: 21rpx;
+  height: 40rpx;
+  padding: 12rpx 20px 0 30rpx;
+}
+.tabar {
+  display: flex;
+  justify-content: center;
+  /* background-color: rgba(255, 255,255, .3); */
+}
+.tabar text {
+  padding: 20rpx 30rpx;
+  color: #353535;
+  font-size: 37rpx;
+  font-weight: bold;
+}
+
 .container{
   padding:0
 }
@@ -5,7 +28,7 @@
   margin-top: 200rpx
 }
 .selectquan{
-  margin-top: 140rpx;
+  margin-top:30rpx;
   display: flex;
   font-size: 30rpx;
   height: 53rpx;
@@ -36,14 +59,14 @@
   padding: 0 10rpx;
 }
 .dagoude{
-  height: 50rpx;
-  width: 80rpx;
+  height: 58rpx;
+  width: 50rpx;
   text-align: center;
   display: inline-block;
   vertical-align: top;
   display: flex;
   align-items: center;
-  justify-content: center;
+  margin-left: 12rpx;
 }
 .cart-thumb{
   vertical-align: top;

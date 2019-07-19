@@ -12,9 +12,15 @@ Page({
     selectAllStatus: false, // 全选状态，默认全选
     items: [],
     startX: 0, //开始坐标
-    startY: 0
+    startY: 0,
+    bar_Height: wx.getSystemInfoSync().statusBarHeight		// 获取手机状态栏高度
   },
-
+  //  点击返回键
+  goBack:function(){
+    wx.switchTab({
+      url: '../index/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -138,29 +144,6 @@ Page({
     });
     console.log('sssaaa')
     console.log(this.data.items)
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

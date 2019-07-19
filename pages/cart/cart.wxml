@@ -1,4 +1,13 @@
- 
+ <!-- 标题 -->
+<view> 
+   <view class='goBack' bindtap='goBack' style="padding-top:{{bar_Height+40}}rpx;">			
+      <image src='../public/images/index/back.png' class="back_back22"></image>
+    </view>
+    <view class="tabar" style="padding-top:{{bar_Height+40}}rpx;">
+      <text class="red">购物车</text>
+    </view>
+
+ </view>
 <!-- 全选 -->
 <view class="selectquan">
     <!-- wx:if 是否全选显示不同图标 -->
