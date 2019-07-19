@@ -55,7 +55,7 @@ Page({
       })
       return false;
     }
-    var that = this
+    var that = this;
     wx.showToast({
       title: '提交成功',
       icon: 'success',

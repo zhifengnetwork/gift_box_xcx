@@ -35,6 +35,7 @@
   <!-- 写下祝福-s -->
   <view class="blessing_mask" wx:if="{{blessing}}">
     <view class="blessing_content">
+      <image class="blessing_content_bg" src="../../public/images/card/blessing_bg.png"></image>
       <view class="blessing_back" bindtap="back">X</view>
       <view class="blessing_content_title">
         写下祝福......
@@ -42,6 +43,8 @@
       <view class="blessing_content_text">
         <textarea class="blessing_content_textarea" bindinput="blessText" maxlength="20" value="{{blessText}}" auto-focus></textarea>
       </view>
+      <view class="blessing_border"></view>
+      <view class="blessing_border"></view>
       <view class="blessing_content_btn" bindtap="bleSend">
         完成
       </view>
