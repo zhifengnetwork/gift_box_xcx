@@ -27,7 +27,7 @@
     <view class="preview_btn" bindtap="preview">
       预览
     </view>
-    <view class="preview_succeed">
+    <view class="preview_succeed" bindtap="succeed">
       <image class="preview_succeed_img" src="../../public/images/card/succeed.png"></image>
     </view>
   </view>

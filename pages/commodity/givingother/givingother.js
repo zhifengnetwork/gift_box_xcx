@@ -13,7 +13,16 @@ Page({
   onLoad: function (options) {
     
   },
-
+  git_one:function(){
+    wx.navigateTo({
+      url: '../detalis/give/GiveOthers/GiveOthers',
+    })
+  },
+  git_others:function(){
+    wx.navigateTo({
+      url: '../detalis/give/GiveOthers/GiveOthers',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

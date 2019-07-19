@@ -103,7 +103,7 @@
       <view class="detalis_fr">
         <view class="detalis_frbox">
           <view class="detalis_frl" bindtap="my_goods">犒劳自己</view>
-          <view class="detalis_frr">赠送他人</view>
+          <view class="detalis_frr" bindtap="give_goods">赠送他人</view>
         </view>
       </view>
     </view>
