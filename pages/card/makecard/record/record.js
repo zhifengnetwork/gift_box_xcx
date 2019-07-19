@@ -1,4 +1,6 @@
 // pages/card/makecard/record/record.js
+var api = require('../../../../utils/api');
+var app = getApp();
 Page({
 
   /**
@@ -13,7 +15,8 @@ Page({
     lRotate: '',
     rRotate: '',
     status: 1,
-    flag:false
+    flag:false,
+    record:''
   },
   // 开始录音
   start: function() {
@@ -163,23 +166,51 @@ Page({
       })
       return false;
     }
-    var that = this
-    wx.showToast({
-      title: '提交成功',
-      icon: 'success',
-      duration: 2000
+    var that = this;
+    wx.uploadFile({
+      url: 'https://giftbox.zhifengwangluo.com/api/box/upload_file',
+      filePath: that.data.src,
+      name: 'file',
+      header: {
+        'content-type': 'multipart/form-data'
+      },
+      formData: {
+        'token': app.globalData.token
+      },
+      success: function (res) {
+        let record = JSON.parse(res.data)
+        console.log(record)
+        that.setData({
+          record: record.data
+        })
+        api.postJSON('api/box/set_box', {
+          'token': app.globalData.token,
+          'id': app.globalData.makecard,
+          'voice_url': that.data.record
+        },
+        function (res) {
+          console.log(res);
+          if (res.data.status == 1) {
+            wx.showToast({
+              title: '提交成功',
+              icon: 'success',
+              duration: 2000
+            })
+            setTimeout(function () {
+              var pages = getCurrentPages();
+              var prevPage = pages[pages.length - 2]; //上一个页面
+              //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+              prevPage.setData({
+                record: that.data.src
+              })
+              wx.navigateBack({
+                delta: 1
+              })
+            }, 1000)
+          }
+        })
+      }
     })
-    setTimeout(function() {
-      var pages = getCurrentPages();
-      var prevPage = pages[pages.length - 2]; //上一个页面
-      //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
-      prevPage.setData({
-        record: that.data.src
-      })
-      wx.navigateBack({
-        delta: 1
-      })
-    }, 1000)
   },
   drawCircle: function() {
 

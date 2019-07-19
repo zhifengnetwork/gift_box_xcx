@@ -27,7 +27,8 @@ Page({
     //   src: 'http://music.163.com/song/media/outer/url?id=410519017.mp3'
     // },
     ],
-    src:''
+    src:'',
+    music_id:''
   },
   // 选择样式
   right:function(e){
@@ -39,10 +40,11 @@ Page({
     this.data.music[ind].radio = 'true';
     that.setData({
       music: this.data.music,
-      src: that.data.music[ind].src
+      src: that.data.music[ind].src,
+      music_id: that.data.music[ind].id
     })
     // 播放音乐
-    console.log(that.data.music[ind].src)
+    console.log(that.data.music[ind].id)
     this.audioCtx.play()
   },
   // 提交数据&&返回上一页
@@ -56,22 +58,32 @@ Page({
       return false;
     }
     var that = this;
-    wx.showToast({
-      title: '提交成功',
-      icon: 'success',
-      duration: 2000
+    api.postJSON('api/box/set_box',{
+      'token': app.globalData.token,
+      'id': app.globalData.makecard,
+      'music_id': that.data.music_id
+    },
+    function (res) {
+      console.log(res)
+      if(res.data.status==1){
+        wx.showToast({
+          title: '提交成功',
+          icon: 'success',
+          duration: 2000
+        })
+        setTimeout(function () {
+          var pages = getCurrentPages();
+          var prevPage = pages[pages.length - 2];  //上一个页面
+          //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+          prevPage.setData({
+            music: that.data.src
+          })
+          wx.navigateBack({
+            delta: 1
+          })
+        }, 1000)
+      }
     })
-    setTimeout(function () {
-      var pages = getCurrentPages();
-      var prevPage = pages[pages.length - 2];  //上一个页面
-      //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
-      prevPage.setData({
-        music: that.data.src
-      })
-      wx.navigateBack({
-        delta: 1
-      })
-    }, 1000)
   },
   /**
    * 生命周期函数--监听页面加载
