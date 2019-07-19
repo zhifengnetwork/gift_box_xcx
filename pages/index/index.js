@@ -119,6 +119,7 @@ Page({
     console.log(nickname)
     return {
       title: nickname + '为你准备了一份惊喜,请火速查收!',
+      imageUrl:'https://giftbox.zhifengwangluo.com/image/back.png',
       path: '/pages/card/go',
       success:function(res){
         console.log(res)
