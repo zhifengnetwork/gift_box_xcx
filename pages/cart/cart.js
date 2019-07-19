@@ -117,11 +117,12 @@ Page({
   //删除事件
   del: function(e) {
 
-    // api.getJSON('/api/Cart/delCart?token=' + app.globalData.token + '&cart_id=' + goodid, function (res) {
-    //   if (res.data.status == 1) {
-    //     console.log("成功lage")
-    //   }
-    // })
+    var idde = e.currentTarget.dataset.idde
+    api.getJSON('/api/Cart/delCart?token=' + app.globalData.token + '&cart_id=' + idde, function (res) {
+      if (res.data.status == 1) {
+        console.log("成功laya")
+      }
+    })
 
 
     let carts = this.data.carts;
@@ -130,12 +131,34 @@ Page({
       items: carts
     });
     this.getTotalPrice()
-
     this.data.items.splice(e.currentTarget.dataset.index, 1)
     console.log("sss")
     this.setData({
       items: this.data.items
     });
+    console.log('sssaaa')
+    console.log(this.data.items)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
   },
@@ -293,17 +316,17 @@ Page({
   // 减少数量
   minusCount(e) {
     const id = e.currentTarget.dataset.id;
-    api.getJSON('/api/Cart/addCart?token=' + app.globalData.token + '&sku_id=' + id + '&cart_number=-1', function (res) {
-      if (res.data.status == 1) {
-        console.log("商品数量减少成功")
-      }
-    })
     const index = e.currentTarget.dataset.index;
     let carts = this.data.carts;
     let goods_num = carts[index].goods_num;
     if (goods_num <= 1) {
       return false;
     }
+    api.getJSON('/api/Cart/addCart?token=' + app.globalData.token + '&sku_id=' + id + '&cart_number=-1', function (res) {
+      if (res.data.status == 1) {
+        console.log("商品数量减少成功")
+      }
+    })
     goods_num = goods_num - 1;
     carts[index].goods_num = goods_num;
     console.log(carts)
@@ -312,22 +335,6 @@ Page({
     });
     console.log(this.data.carts)
     this.getTotalPrice();
-  },
-  // 删除商品
-  deleteList(e) {
-    const index = e.currentTarget.dataset.index;
-    let carts = this.data.carts;
-    carts.splice(index, 1); // 删除购物车列表里这个商品
-    this.setData({
-      items: carts
-    });
-    if (!carts.length) { // 如果购物车为空
-      this.setData({
-        hasList: false // 修改标识为false，显示购物车为空页面
-      });
-    } else { // 如果不为空
-      this.getTotalPrice(); // 重新计算总价格
-    }
   }
 
 })

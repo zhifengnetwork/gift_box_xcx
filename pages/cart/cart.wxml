@@ -33,12 +33,10 @@
             <view bindtap="minusCount" data-index="{{index}}" class="text1 jian" data-id="{{item.sku_id}}">-</view>
             <view class="text1 textnum">{{item.goods_num}}</view>
             <view bindtap="addCount" data-index="{{index}}" class="text1 jia" data-id="{{item.sku_id}}">+</view>
-            <text bindtap="deleteList" data-index="{{index}}"> × </text>
         </view>
-         <image class="cart-thumb" src="{{item.goods_img}}"></image>    
-  
+         
   </view>
-  <view class="del" bindtap="del" data-index="{{index}}">删除</view>
+  <view class="del" bindtap="del" data-index="{{index}}" data-idde="{{item.id}}">删除</view>
  </view>
 </view>
 
