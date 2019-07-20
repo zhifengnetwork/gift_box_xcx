@@ -16,6 +16,11 @@ Page({
   },
   show: function () {
     wx.navigateTo({
+      url: '../../../../card/makecard/makecard',
+    })
+  },
+  more:function(){
+    wx.navigateTo({
       url: '../scene/scene',
     })
   },

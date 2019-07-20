@@ -53,6 +53,7 @@ page{
   height: 80%;
   border-radius: 20rpx;
   overflow: hidden;
+  transition: .3s all;
   box-shadow: 0 5rpx 20rpx rgba(0, 0, 0, 0.5);
 }
 .tabCont_img{
@@ -60,7 +61,7 @@ page{
   height: 100%;
 }
 .tabCont .active{
-  width: 500rpx;
+  width: 450rpx;
   height: 90%;
 }
 .btn{

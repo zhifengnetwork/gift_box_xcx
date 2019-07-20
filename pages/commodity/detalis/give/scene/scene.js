@@ -9,11 +9,14 @@ Page({
   data: {
     scene:'',
     get_scene:'',
-    tabBar:[]
+    tabBar:[],
+    tabCont:[],
+    array:'',
+    id:''
   },
   send:function(){
     wx.navigateTo({
-      url: '../../../../card/makecard/makecard',
+      url: '../GiveOthers/GiveOthers',
     })
   },
   /**
@@ -21,7 +24,7 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
-    let array = []
+    let array = [];
     api.postJSON('api/box/box_scene_list',function(res){
       that.get_scene(res.data.data[0].id);
       for (let i = 0; i < res.data.data.length; i++) { 
@@ -51,13 +54,35 @@ Page({
       tabBar: that.data.tabBar
     })
   },
+  tabCont:function(e){
+    let that = this;
+    let index = e.currentTarget.dataset.index;
+    let id = e.currentTarget.dataset.id;
+    for (let i = 0; i < that.data.tabCont.length; i++) {
+      that.data.tabCont[i] = false;
+    }
+    that.data.tabCont[index] = true;
+    that.setData({
+      tabCont: that.data.tabCont,
+      id: id
+    })
+  },
   get_scene:function(id){
     let that = this;
+    let array = [];
     api.postJSON('api/box/get_scene', {
       id: id
     }, function (res) {
+      for (let i = 0; i < res.data.data.length; i++) {
+        if (i == 0) {
+          array.push(true);
+        } else {
+          array.push(false)
+        }
+      }
       that.setData({
-        get_scene:res.data.data
+        get_scene:res.data.data,
+        tabCont: array
       })
       console.log(res)
     })

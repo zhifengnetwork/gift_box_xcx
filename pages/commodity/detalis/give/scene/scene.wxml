@@ -9,7 +9,7 @@
   </view>
 </view>
 <view class="tabCont">
-  <view class="tabCont_item active" wx:for="{{get_scene}}" wx:key="{{index}}">
+  <view class="tabCont_item {{tabCont[index]?'active':''}}" wx:for="{{get_scene}}" wx:key="{{index}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="tabCont">
     <image class="tabCont_img" src="{{item.picture}}"></image>
   </view>
 </view>
