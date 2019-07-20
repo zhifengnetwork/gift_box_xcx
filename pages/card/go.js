@@ -1,40 +1,25 @@
-// pages/commodity/detalis/give/GiveOthers/GiveOthers.js
-var api = require('../../../../../utils/api');
-var app = getApp();
+// pages/card/go.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    num: 1,
-    scene: ''
+    url:'https://giftbox.zhifengwangluo.com/card'
   },
-  plus:function (e){
-    console.log(this.data.num++)
-    // this.data.num = this.data.num++
-  },
-  show: function () {
-    wx.navigateTo({
-      url: '../../../../card/makecard/makecard',
-    })
-  },
-  more:function(){
-    wx.navigateTo({
-      url: '../scene/scene',
-    })
-  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this;
-    api.postJSON('api/box/box_cate_list',function(res){
-      console.log(res);
-      that.setData({
-        scene:res.data.data
+    var id = options.id;
+    if(id){
+      this.setData({
+        url: this.data.url + '?card_id=' + id
       })
-    })
+    }
+
+    console.log(this.data.url)
   },
 
   /**

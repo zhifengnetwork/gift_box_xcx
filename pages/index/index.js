@@ -94,9 +94,7 @@ Page({
   onReachBottom: function () {
 
   },
-  onShareAppMessage: function () {
-
-  },
+ 
   zefeng: function () {
     wx.navigateTo({
       url: '../home/integral/integral',
@@ -118,6 +116,30 @@ Page({
     wx.navigateTo({
       url: '../commodity/detalis/detalis?id=' + id,
     })
+  },
+  onShareAppMessage: function () {
+    console.log('share')
+    var nickname = app.globalData.userInfo.nickname;
+    nickname = nickname == undefined ? '' : nickname;
+    console.log(nickname)
+    return {
+      title: nickname + '为你准备了一份惊喜,请火速查收!',
+      imageUrl:'https://giftbox.zhifengwangluo.com/image/back.png',
+      path: '/pages/card/go',
+      success:function(res){
+        console.log(res)
+        wx.showModal({
+          title: '分享成功',
+          content: '分享成功',
+        })
+      },
+      fail:function(res){
+        console.log(res)
+        wx.showModal({
+          title: '分享失败',
+          content: '分享失败',
+        })
+      }
+    }
   }
-
 })

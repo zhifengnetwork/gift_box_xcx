@@ -201,7 +201,7 @@ Page({
               var prevPage = pages[pages.length - 2]; //上一个页面
               //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
               prevPage.setData({
-                record: that.data.src
+                record: that.data.record
               })
               wx.navigateBack({
                 delta: 1

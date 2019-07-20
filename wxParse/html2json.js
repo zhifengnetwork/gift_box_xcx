@@ -47,6 +47,21 @@ function q(v) {
 }
 
 function removeDOCTYPE(html) {
+  if(html == null || html == ''){
+    return html
+  }
+  console.log(html)
+    //判断一下，有才移除，没有就直接返回
+  if(html.indexOf("xml") != -1){
+    return html
+  } 
+  if (html.indexOf("doctype") != -1) {
+    return html
+  } 
+  if (html.indexOf("DOCTYPE") != -1) {
+    return html
+  }
+
     return html
         .replace(/<\?xml.*\?>\n/, '')
         .replace(/<.*!doctype.*\>\n/, '')
@@ -54,6 +69,9 @@ function removeDOCTYPE(html) {
 }
 
 function trimHtml(html) {
+  if (html == null || html == '') {
+    return html
+  }
   return html
         .replace(/\r?\n+/g, '')
         .replace(/<!--.*?-->/ig, '')

@@ -124,6 +124,9 @@ Page({
         success: function(res) {
           if (res.confirm) {
             console.log('用户点击确定')
+            wx.navigateTo({
+              url: '../go?id=' + app.globalData.makecard
+            })
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
@@ -132,6 +135,9 @@ Page({
     } else {
       // 跳转预览
       console.log('跳转')
+      wx.navigateTo({
+        url: '../go?id=' + app.globalData.makecard
+      })
     }
   },
   succeed:function(){
@@ -143,7 +149,7 @@ Page({
     wx.navigateBack({
       delta: 1,
     })
-  },
+  }, 
   /**
    * 生命周期函数--监听页面加载
    */
