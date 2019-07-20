@@ -39,7 +39,7 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    
+    console.log("xixi") 
     app.getUserInfo(userinfo => {
     
       //昵称、头像 不存在，跳转去授权
@@ -70,13 +70,18 @@ Page({
     })
   },
   onShow: function () {
-    wx.showTabBar()
+    wx.showTabBar();
+    // this.setData({
+    //   currentSwiper: 0
+    // })
+    console.log("899898")
   },
   // 第一个轮播图切换调动这个函数
   swiperChange: function (e) {
     this.setData({
       currentSwiper: e.detail.current
-    })
+    });
+   
   },
   swiperChange2: function (e) {
     console.log("首先" + e.detail.current)

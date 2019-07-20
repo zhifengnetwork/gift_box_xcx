@@ -25,43 +25,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var that = this;
-    var shuliang=0
-    api.getJSON('/api/Cart/cartlist?page=1&num=300&token=' + app.globalData.token, function(res) {
-      if (res.data.status == 1) {
-        console.log(res.data.data)
-        that.setData({
-          carts: res.data.data
-        });
-        that.data.items.push({
-          content: that.data.carts,
-          isTouchMove: false //默认全隐藏删除
-        })
-        console.log(that.data.items[0].content)
-        that.setData({
-          items: that.data.carts
-        });
-        for(var i=0;i<that.data.items.length;i++){
-            
-          if (that.data.items[i].selected===1){
-            shuliang++
-          }
-          
-        }
-        if(shuliang===that.data.items.length){
-          that.setData({ selectAllStatus:true})
-        }
-
-        that.getTotalPrice();
-
-      }
-      
-    })
-    console.log(that.data.carts)
-
-
-
-
+   
   },
   //手指触摸动作开始 记录起点X坐标
   touchstart: function(e) {
@@ -122,7 +86,8 @@ Page({
   },
   //删除事件
   del: function(e) {
-
+    var that=this;
+    var shuliang = 0
     var idde = e.currentTarget.dataset.idde
     api.getJSON('/api/Cart/delCart?token=' + app.globalData.token + '&cart_id=' + idde, function (res) {
       if (res.data.status == 1) {
@@ -130,20 +95,29 @@ Page({
       }
     })
 
-
     let carts = this.data.carts;
     carts[e.currentTarget.dataset.index].selected = false;
     this.setData({
       items: carts
     });
     this.getTotalPrice()
+    console.log("lalalallallalall")
+    console.log(e.currentTarget.dataset.index)
     this.data.items.splice(e.currentTarget.dataset.index, 1)
-    console.log("sss")
+    console.log("ssslalala")
+    console.log(this.data.items)
     this.setData({
       items: this.data.items
     });
     console.log('sssaaa')
     console.log(this.data.items)
+   
+    
+
+
+
+
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
@@ -156,6 +130,39 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    var that = this;
+    var shuliang = 0
+    api.getJSON('/api/Cart/cartlist?page=1&num=300&token=' + app.globalData.token, function (res) {
+      if (res.data.status == 1) {
+        console.log(res.data.data)
+        that.setData({
+          carts: res.data.data
+        });
+        that.data.items.push({
+          content: that.data.carts,
+          isTouchMove: false //默认全隐藏删除
+        })
+        console.log(that.data.items[0].content)
+        that.setData({
+          items: that.data.carts
+        });
+        for (var i = 0; i < that.data.items.length; i++) {
+
+          if (that.data.items[i].selected === 1) {
+            shuliang++
+          }
+
+        }
+        if (shuliang === that.data.items.length) {
+          that.setData({ selectAllStatus: true })
+        }
+
+        that.getTotalPrice();
+
+      }
+
+    })
+    console.log(that.data.carts)
     // 隐藏底部导航条
     wx.hideTabBar()
     this.setData({
