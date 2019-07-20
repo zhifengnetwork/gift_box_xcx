@@ -15,7 +15,7 @@
       <swiper class='detalis_swipers' autoplay current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
         <block wx:for="{{goods_data.img}}" wx:key>
           <swiper-item>
-            <image class="detalis_swiper_image" src="{{item.picture}}" lazy-load="true" />
+            <image class="detalis_swiper_image" src="{{item}}" lazy-load="true" />
           </swiper-item>
         </block>
       </swiper>
@@ -98,14 +98,14 @@
           </view>
 
         </view>
-        <view class="detalis_flbox" bindtap="cart">
+        <view class="detalis_flbox" bindtap="my_goods">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/gouwuche_icon.png"></image>
           <view class="detalis_fl_text">加入</view>
         </view>
       </view>
       <view class="detalis_fr">
         <view class="detalis_frbox">
-          <view class="detalis_frl" bindtap="my_goods">犒劳自己</view>
+          <view class="detalis_frl" bindtap="kaolao">犒劳自己</view>
           <view class="detalis_frr" bindtap="give_goods">赠送他人</view>
         </view>
       </view>
@@ -116,13 +116,16 @@
     <view class="shop_selection" catchtouchmove="preventTouchMove" wx:if="{{statussxianshi}}">
     </view>
     <view class="shop_ear" catchtouchmove="preventTouchMove" wx:if="{{statussxianshi}}">
-      <image src="https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640" class="store"></image>
-      <text class="jiage">￥615</text>
+    <!-- https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640 -->
+    <!-- goods_data.img[0] -->
+   
+      <image src="{{goods_data.img[0]}}" class="store" hidden="{{imgimg.length}}"></image>
+      <image src="{{imgimg}}" class="store" wx:if="{{imgimg.length}}"></image>
+      <text class="jiage">￥{{price}}</text>
       <view class="selected">
-        <text style="padding-left:20rpx">已选择</text>:
-        <text>黑色</text>,
-        <text class="mama">39码</text>
-        <view style="padding-left:20rpx">库存:0</view>
+        <text style="padding-left:10rpx"  wx:if="{{imgimg.length}}">已选择: {{name}}</text>
+        <!-- <text class="mama">{{title}}</text> -->
+        <view style="padding-left:10rpx" wx:if="{{imgimg.length}}">库存:{{store_count}}</view>
       </view>
       <!-- 正式的规格选择区块 s -->
       <scroll-view class='allConten' scroll-y="false">
@@ -143,7 +146,8 @@
           </view>
         </view>
       </scroll-view>
-      <view class="next" bindtap="jiele">下一步</view>
+      <view class="next" bindtap="jiele" wx:if="{{anniu}}">确定</view>
+      <view class="next" bindtap="nextshi" wx:if="{{!anniu}}">下一步</view>
       <!-- 正式的规格选择区块 e -->
       <view>
         <view hidden='{{dataArr.goods.type==0?"":"true"}}'>

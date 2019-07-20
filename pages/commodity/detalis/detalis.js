@@ -1,3 +1,4 @@
+
 var WxParse = require('../../../wxParse/wxParse.js');
 var api = require('../../../utils/api');
 var app = getApp();
@@ -6,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    goods_data:[],//商品数据
+    goods_data: [], //商品数据
     currentSwiper: 0,
     indicatorColor: 'white',
     indicatorActivecolor: 'red',
@@ -14,16 +15,16 @@ Page({
     list: 3,
     listdata: 8,
     // 头部导航栏的高度
-    bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
+    bar_Height: wx.getSystemInfoSync().statusBarHeight, // 获取手机状态栏高度
     height: app.globalData.height * 2 + 25,
     navbarData: {
       name: '我是标题'
     },
-    attrList:[],
-    skuBeanList:[],
+    attrList: [],
+    skuBeanList: [],
     //商品规格
-    goods_spec_list:[],
-    goodssss:[],
+    goods_spec_list: [],
+    goodssss: [],
     showModalStatus: false,
     pintuanArr: "",
     googsId: "",
@@ -49,9 +50,14 @@ Page({
     pintuan_num: "",
     ptorder_id: "",
     leader: "",
-    statussxianshi:false
-
-  
+    statussxianshi: false,
+    price: "0.00",
+    title: "",
+    name:"",
+    sku_id:0,
+    imgimg:'',
+    store_count:0,
+    anniu:true
   },
   clickTab: function (e) {
     var that = this;
@@ -68,20 +74,66 @@ Page({
     // wx.navigateTo({
     //   url: 'payment/award/award',
     // })
-    this.setData({statussxianshi:true})
+    this.setData({
+      statussxianshi: true
+    });
+    this.setData({anniu:true})
   },
-  goBack:function(){
-    this.setData({ statussxianshi: false });
+  goBack: function () {
+    this.setData({
+      statussxianshi: false
+    });
     wx.navigateBack({
       delta: 1,
     })
   },
-  jiele:function(){
-    this.setData({ statussxianshi: false })
+  jiele: function () {
+    this.setData({
+      statussxianshi: false
+    }), 
+      api.getJSON('/api/order/immediatelyOrder?sku_id=' + this.data.sku_id + '&cart_number=' + this.data.productNum+"&token="+app.globalData.token, function (res) {
+      if (res.data.status == -1){
+        wx.showToast({
+          icon: 'none',
+          title: "改商品不存在",
+          duration: 500
+        })
+      }
+      if (res.data.status == 1) {
+        wx.showToast({
+          icon: 'none',
+          title: "加入购物车成功",
+          duration: 1000
+        })
+      }
+      if (res.data.status == -2) {
+        wx.showToast({
+          icon: 'none',
+          title: "该商品库存不足！",
+          duration: 500
+        })
+      }
+
+    })
   },
-  give_goods:function(){
-    wx.navigateTo({
-      url: '../givingother/givingother',
+  kaolao:function(){
+    this.setData({
+      statussxianshi: true
+    });
+    this.setData({
+      anniu:false
+    })
+
+  },
+  give_goods: function () {
+    // wx.navigateTo({
+    //   url: '../givingother/givingother',
+    // })
+    this.setData({
+      statussxianshi: true
+    })
+    this.setData({
+      anniu: false
     })
   },
   cart: function () {
@@ -99,37 +151,49 @@ Page({
       url: 'give/GiveOthers/GiveOthers',
     })
   },
-  preventTouchMove: function () {
-  },
+  preventTouchMove: function () { },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-    var that=this;
-   
+
+    var that = this;
     var id = options.id
     // 请求数据,渲染商品页面
-    api.getJSON('api/goods/goodsDetail?goods_id=' + id + '&token=' + app.globalData.token, function (res) {
-      if (res.data.status == 1){  
-        that.setData({ 
-          goods_data: res.data.data
-        })
-          WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
-      
-        
-      }
-    });
-    api.getJSON('/api/goods/goodsinfo?goods_id='+id, function (res) {
+    // api.getJSON('api/goods/goodsDetail?goods_id=' + id + '&token=' + app.globalData.token, function (res) {
+    //   if (res.data.status == 1) {
+    //     that.setData({
+    //       goods_data: res.data.data
+    //     })
+    //     WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
+    //   }
+    // });
+    api.getJSON('/api/goods/goodsinfo?goods_id=' + id, function (res) {
       if (res.data.status == 1) {
         console.log(res.data.data.goods_spec_list)
-        that.setData({ goods_spec_list: res.data.data.goods_spec_list})
-        that.setData({ goodssss: res.data.data.spec_goods_price})     
+        that.setData({
+          goods_spec_list: res.data.data.goods_spec_list, 
+          goodssss: res.data.data.spec_goods_price,
+          goods_data: res.data.data
+        })
+        
+        var zuhe=[];
+        for (var st in that.data.goodssss) {
+          zuhe.push(st)
+        }
+        console.log(zuhe);
+        // 默认取第一个的sku_id
+        var xiabiao=zuhe[0];
+        console.log("niuniu")
+        console.log(xiabiao)
+        that.data.sku_id = res.data.data.spec_goods_price[xiabiao].sku_id
+        WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
       }
     })
+   
+   
 
-
-  },
+  }, 
 
   swiperChange: function (e) {
     this.setData({
@@ -141,7 +205,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -222,8 +286,7 @@ Page({
           }
         }
       }
-      
-      
+
       var specs = spec.split("_");
       for (var i = 0; i < specs.length; i++) {
         specs[i] = parseInt(specs[i])
@@ -235,40 +298,48 @@ Page({
       for (var i = 0; i < specs.length; i++) {
         if (spec == "")
           spec = specs[i]
-        else
+        else {
           spec = spec + "_" + specs[i];
-        console.log("hh" + spec)
+          console.log("hh" + spec);
+
+        }
       }
+     
       // 收藏组合
-      var zuhe=[]; 
-      var ss=0;
+      var zuhe = [];
+      var ss = 0;
       for (var st in this.data.goodssss) {
         zuhe.push(st)
       }
       console.log(zuhe)
-      for(var i=0;i<zuhe.length;i++){
-        if(zuhe[i]===spec){
-            var price = this.data.goodssss[spec].price;
-            var sort = this.data.goodssss[spec].store_count;
-            this.setData({
-              price: price,
-              sort: sort,
-              spec: spec
-            });
-        }
-        else{
-            ss++
+      for (var i = 0; i < zuhe.length; i++) {
+        //有该组合的时候
+        if (zuhe[i] === spec) {
+          var price = this.data.goodssss[spec].price;
+          var name = this.data.goodssss[spec].name;
+          var sku_id = this.data.goodssss[spec].sku_id;
+          var imgimg = this.data.goodssss[spec].img;
+          var store_count = this.data.goodssss[spec].store_count
+          this.setData({
+            price: price,
+            name: name,
+            sku_id: sku_id,
+            imgimg: imgimg,
+            store_count: store_count
+          });
+        } else {
+          ss++
         }
       }
       console.log(ss)
-      if (ss === zuhe.length){
-          wx.showToast({
-            icon:'none',
-            title: "没有该组合",
-            duration: 500
-          })
+      if (ss === zuhe.length) {
+        wx.showToast({
+          icon: 'none',
+          title: "没有该组合",
+          duration: 500
+        })
       }
-    
+
     }
   },
   //加减商品数量
@@ -296,6 +367,8 @@ Page({
         productNum: proNum
       })
     }
-  },
+  }
+
+
 
 })
