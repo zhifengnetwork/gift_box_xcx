@@ -15,7 +15,7 @@ Page({
     var id = options.id;
     if(id){
       this.setData({
-        url: this.data.url + '?id=' + id
+        url: this.data.url + '?card_id=' + id
       })
     }
 
