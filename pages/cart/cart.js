@@ -86,7 +86,8 @@ Page({
   },
   //删除事件
   del: function(e) {
-
+    var that=this;
+    var shuliang = 0
     var idde = e.currentTarget.dataset.idde
     api.getJSON('/api/Cart/delCart?token=' + app.globalData.token + '&cart_id=' + idde, function (res) {
       if (res.data.status == 1) {
@@ -94,13 +95,14 @@ Page({
       }
     })
 
-
     let carts = this.data.carts;
     carts[e.currentTarget.dataset.index].selected = false;
     this.setData({
       items: carts
     });
     this.getTotalPrice()
+    console.log("lalalallallalall")
+    console.log(e.currentTarget.dataset.index)
     this.data.items.splice(e.currentTarget.dataset.index, 1)
     console.log("ssslalala")
     console.log(this.data.items)
@@ -109,6 +111,13 @@ Page({
     });
     console.log('sssaaa')
     console.log(this.data.items)
+   
+    
+
+
+
+
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
