@@ -1,13 +1,36 @@
 // pages/my/shoppingcard/recharge/recharge.js
+var app = getApp()
+var api = require('../../../../utils/api');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    value:''
   },
-
+  value:function(e){
+    this.setData({
+      value: e.detail.value
+    })
+  },
+  send:function(){
+    let that = this;
+    if(this.data.value){
+      api.postJSON('api/pay/shopping_pay',{
+        'token': app.globalData.token,
+        'money': that.data.value
+      },function(res){
+        console.log(res)
+      })
+    }else{
+      wx.showModal({
+        title: '提示',
+        content: '请输入充值金额',
+        showCancel: false
+      })
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */

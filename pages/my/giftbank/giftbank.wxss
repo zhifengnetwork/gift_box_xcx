@@ -197,3 +197,7 @@ page {
   background:rgba(12,14,13,1);
   margin-left: 20rpx;
 }
+.tips{
+  line-height: 200rpx;
+  text-align: center;
+}
