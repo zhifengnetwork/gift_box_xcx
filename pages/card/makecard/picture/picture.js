@@ -129,15 +129,9 @@ Page({
         setTimeout(function () {
           var pages = getCurrentPages();
           var prevPage = pages[pages.length - 2];  //上一个页面
-          var value = '';
-          if (that.data.imglist == '') {
-            value = that.data.video;
-          } else {
-            value = that.data.imglist;
-          }
           //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
           prevPage.setData({
-            picture: value
+            picture: that.data.picture
           })
           wx.navigateBack({
             delta: 1

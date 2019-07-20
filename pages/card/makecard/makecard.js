@@ -106,6 +106,12 @@ Page({
   // 预览判断
   preview: function() {
     var str = '';
+    var makecard = {
+      music: this.data.music,
+      picture: this.data.picture,
+      record: this.data.record,
+      bless: this.data.bless
+    };
     if (this.data.music == '') {
       str = '音乐';
     } else if (this.data.picture == '') {
@@ -124,6 +130,9 @@ Page({
         success: function(res) {
           if (res.confirm) {
             console.log('用户点击确定')
+            wx.navigateTo({
+              url: '../go?makecard' + JSON.stringify(makecard)
+            })
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
@@ -132,6 +141,9 @@ Page({
     } else {
       // 跳转预览
       console.log('跳转')
+      wx.navigateTo({
+        url: '../go?makecard' + JSON.stringify(makecard)
+      })
     }
   },
   succeed:function(){

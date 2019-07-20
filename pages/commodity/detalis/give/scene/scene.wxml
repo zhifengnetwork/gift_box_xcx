@@ -3,16 +3,16 @@
   <component title='场景应用' show_bol='{{falsr}}'></component>
 </view>
 <view class="tabBar">
-  <view class="tabBar_item">
-    <image class="tabBar_icon" src="../../../../public/images/card/blessing.png"></image>
-    <text>666</text>
+  <view class="tabBar_item {{tabBar[index]?'active':''}}" wx:for="{{scene}}" wx:key="{{index}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="tabBar">
+    <image class="tabBar_icon" src="{{item.list[0].picture}}"></image>
+    <text>{{item.name}}</text>
   </view>
-  <view class="tabBar_item">
-    <image class="tabBar_icon" src="../../../../public/images/card/blessing.png"></image>
-    <text>666</text>
+</view>
+<view class="tabCont">
+  <view class="tabCont_item active" wx:for="{{get_scene}}" wx:key="{{index}}">
+    <image class="tabCont_img" src="{{item.picture}}"></image>
   </view>
-  <view class="tabBar_item">
-    <image class="tabBar_icon" src="../../../../public/images/card/blessing.png"></image>
-    <text>666</text>
-  </view>
+</view>
+<view class="btn" bindtap="send">
+ 使用它
 </view>

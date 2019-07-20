@@ -36,7 +36,7 @@
   </view>
   <view class="giveothers_cconter">
     <view class="giveothers_cbox">
-      <view class="giveothers_imgbox" wx:for="{{scene}}" data-id="{{item.id}}" bindtap="scene">
+      <view class="giveothers_imgbox" wx:for="{{scene}}" wx:key="{{index}}" data-id="{{item.id}}">
         <view class="giveothers_img">
           <image class="giveothers_i" src="{{item.picture}}"></image>
         </view>
