@@ -12,11 +12,22 @@ Page({
     tabBar:[],
     tabCont:[],
     array:'',
-    id:''
+    id:'',
+    name:'',
+    picture:''
   },
   send:function(){
-    wx.navigateTo({
-      url: '../GiveOthers/GiveOthers',
+    if (!this.data.name){
+      this.data.name = this.data.scene[0].name;
+    }
+    if (!this.data.picture) {
+      this.data.picture = this.data.get_scene[0].picture;
+    }
+    if (!this.data.id) {
+      this.data.id = this.data.get_scene[0].id;
+    }
+    wx.redirectTo({
+      url: '../GiveOthers/GiveOthers?name=' + this.data.name + '&picture=' + this.data.picture + '&id=' + this.data.id,
     })
   },
   /**
@@ -51,7 +62,8 @@ Page({
     that.data.tabBar[index] = true;
     that.get_scene(id);
     that.setData({
-      tabBar: that.data.tabBar
+      tabBar: that.data.tabBar,
+      name: that.data.scene[index].name
     })
   },
   tabCont:function(e){
@@ -64,7 +76,8 @@ Page({
     that.data.tabCont[index] = true;
     that.setData({
       tabCont: that.data.tabCont,
-      id: id
+      id: id,
+      picture: that.data.get_scene[index].picture
     })
   },
   get_scene:function(id){

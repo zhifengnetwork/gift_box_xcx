@@ -1,26 +1,33 @@
+var api = require('../../../utils/api');
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    
+    sku_id:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
-  },
-  git_one:function(){
-    wx.redirectTo({
-      url: '../detalis/give/GiveOthers/GiveOthers?order_type=1',
+    this.setData({
+      sku_id: options.sku_id
     })
   },
+  git_one:function(){
+    this.getOrder_id(1);
+  },
   git_others:function(){
+    this.getOrder_id(2);
+  },
+  getOrder_id: function (order_type){
+    app.globalData.give.sku_id = this.data.sku_id;
+    app.globalData.give.order_type = order_type;
     wx.redirectTo({
-      url: '../detalis/give/GiveOthers/GiveOthers?order_type=2',
+      url: '../detalis/give/GiveOthers/GiveOthers'
     })
   },
   /**
