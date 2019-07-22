@@ -50,7 +50,6 @@ function removeDOCTYPE(html) {
   if(html == null || html == ''){
     return html
   }
-  console.log(html)
     //判断一下，有才移除，没有就直接返回
   if(html.indexOf("xml") != -1){
     return html
