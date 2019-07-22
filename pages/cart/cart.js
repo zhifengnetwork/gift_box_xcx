@@ -124,10 +124,6 @@ Page({
     }
 
 
-
-
-
-
     this.getTotalPrice()
 
  
@@ -223,6 +219,9 @@ Page({
           if (shuliang === that.data.items.length) {
             that.setData({ selectAllStatus: true })
           }else{
+            that.setData({ selectAllStatus: false })
+          }
+          if (that.data.items.length == 0) {
             that.setData({ selectAllStatus: false })
           }
           that.getTotalPrice();
