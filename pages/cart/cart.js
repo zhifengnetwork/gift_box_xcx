@@ -132,34 +132,34 @@ Page({
   onShow: function() {
     var that = this;
     var shuliang = 0
-    api.getJSON('/api/Cart/cartlist?page=1&num=300&token=' + app.globalData.token, function (res) {
-      if (res.data.status == 1) {
-        console.log(res.data.data)
-        that.setData({
-          carts: res.data.data
-        });
-        that.data.items.push({
-          content: that.data.carts,
-          isTouchMove: false //默认全隐藏删除
-        })
-        console.log(that.data.items[0].content)
-        that.setData({
-          items: that.data.carts
-        });
-        for (var i = 0; i < that.data.items.length; i++) {
 
-          if (that.data.items[i].selected === 1) {
-            shuliang++
+    //先获取用户信息
+    app.getUserInfo(userinfo => {
+      api.getJSON('/api/Cart/cartlist?page=1&num=300&token=' + app.globalData.token, function (res) {
+        if (res.data.status == 1) {
+          console.log(res.data.data)
+          that.setData({
+            carts: res.data.data
+          });
+          that.data.items.push({
+            content: that.data.carts,
+            isTouchMove: false //默认全隐藏删除
+          })
+          console.log(that.data.items[0].content)
+          that.setData({
+            items: that.data.carts
+          });
+          for (var i = 0; i < that.data.items.length; i++) {
+            if (that.data.items[i].selected === 1) {
+              shuliang++
+            }
           }
-
+          if (shuliang === that.data.items.length) {
+            that.setData({ selectAllStatus: true })
+          }
+          that.getTotalPrice();
         }
-        if (shuliang === that.data.items.length) {
-          that.setData({ selectAllStatus: true })
-        }
-
-        that.getTotalPrice();
-
-      }
+      })
 
     })
     console.log(that.data.carts)
