@@ -13,7 +13,13 @@ Page({
       url: 'recharge/recharge',
     })
   },
-
+  fetch:function(){
+    wx.showModal({
+      title: '提示',
+      content: '暂未开通',
+      showCancel: false
+    })
+  },
   detail:function () {
     wx.navigateTo({
       url: 'detail/detail',

@@ -15,12 +15,12 @@ Page({
   },
   git_one:function(){
     wx.redirectTo({
-      url: '../detalis/give/GiveOthers/GiveOthers',
+      url: '../detalis/give/GiveOthers/GiveOthers?order_type=1',
     })
   },
   git_others:function(){
     wx.redirectTo({
-      url: '../detalis/give/GiveOthers/GiveOthers',
+      url: '../detalis/give/GiveOthers/GiveOthers?order_type=2',
     })
   },
   /**

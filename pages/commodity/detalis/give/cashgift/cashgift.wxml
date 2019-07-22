@@ -65,7 +65,7 @@
   <view class="award_pop-up"></view>
   <view class="pop-up_box">
     <view class="pop-up_box_t">选择支付方式</view>
-    <view class="pop-up_box_c" bindtap="integral">积分支付</view>
+    <button class="pop-up_box_c" bindtap="integral" open-type="share">积分支付</button>
     <view class="pop-up_box_b">微信支付</view>
   </view>
 </view>

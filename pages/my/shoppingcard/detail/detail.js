@@ -7,17 +7,22 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    list:'',
+    money:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this;
     api.postJSON('api/Shopping/get_order_list', {
-      'token': app.globalData.token
+      'token': app.globalData.token,
+      'num': 200
     }, function (res) {
-      console.log(res)
+      that.setData({
+        list:res.data.data
+      })
     })
   },
 

@@ -1,15 +1,20 @@
 // pages/my/sendgift/sendgift.js
+var app = getApp()
+var api = require('../../../utils/api');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    currentTab: 0
+    currentTab: 0,
+    item:'',
+    type:1,
   },
 
   clickTab: function (e) {
-    var that = this
+    var that = this;
+    var type = null;
     if (this.data.currentTab === e.target.dataset.current) {
       return false
     } else {
@@ -17,15 +22,39 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
+    if (e.target.dataset.current == 0) {
+      type = 1;
+    } else if (e.target.dataset.current == 1) {
+      type = 2;
+    }
+    this.setData({
+      type: type
+    })
+    this.getdata();
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getdata();
   },
-
+  getdata:function(){
+    let that = this;
+    api.postJSON('api/order/order_list', {
+      token: app.globalData.token,
+      order_type:1,
+      gift_type: that.data.type,
+      num: 200
+    }, function (res) {
+      if (res.data.status == 1) {
+        that.setData({
+          item: res.data.data
+        })
+      }
+      console.log(res)
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

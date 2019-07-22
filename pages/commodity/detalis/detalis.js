@@ -57,7 +57,8 @@ Page({
     sku_id:0,
     imgimg:'',
     store_count:0,
-    anniu:true
+    anniu:true,
+    order_type:false
   },
   clickTab: function (e) {
     var that = this;
@@ -122,7 +123,8 @@ Page({
       statussxianshi: true
     });
     this.setData({
-      anniu:false
+      anniu:false,
+      order_type: false
     })
 
   },
@@ -131,13 +133,16 @@ Page({
       statussxianshi: true
     })
     this.setData({
-      anniu: false
+      anniu: false,
+      order_type: true
     })
   },
   nextshi:function(){
-    wx.navigateTo({
-      url: '../givingother/givingother',
-    })
+    if (this.data.order_type){
+      wx.navigateTo({
+        url: '../givingother/givingother',
+      })
+    }
   },
   cart: function () {
     wx.switchTab({
