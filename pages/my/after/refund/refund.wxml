@@ -1,7 +1,7 @@
 <view class="refund_nav">
   <component title='退款詳情' show_bol='{{false}}'></component>
 </view>
-<view class="refund_top">
+<view class="refund_top" bindtap="logistics">
   <view>請退貨並填寫物流信息</view>
   <text>還剩6天23時46分</text>
 </view>
@@ -39,9 +39,9 @@
 </view>
 <!-- 撤销 -->
 <view class="refund_repeal">
-  <view class="repeal">客服介入</view>
-  <view class="repeal">撤銷申請</view>
-  <view class="repealb">
+  <view class="repeal" bindtap="kefu">客服介入</view>
+  <view class="repeal" bindtap="chexiao">撤銷申請</view>
+  <view class="repealb" bindtap="logistics">
     <view class="repeal_view">我已寄出</view>
     <text class="repeal_text">點擊填寫物流單號</text>
   </view>

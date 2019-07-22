@@ -5,15 +5,28 @@ Page({
    * 页面的初始数据
    */
   data: {
+    bar_Height: wx.getSystemInfoSync().statusBarHeight,
     items: [
       { name: '1', value: '僅退款', text: '（未收到貨，或賣家協商同意前提下）'},
-      { name: '2', value: '退貨退款', text: '（已收到貨，需要退換已收到的貨物）', checked: 'true' },
+      { name: '2', value: '退貨退款', text: '（已收到貨，需要退換已收到的貨物）'},
       { name: '3', value: '換貨', text: '（已收到貨，需要更換已收到的貨物）' },
-    ]
+    ],
+    value_index: '',
   },
 
   radioChange: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value)
+    this.setData({
+      value_index : e.detail.value
+    })
+  },
+
+  dianji: function () {
+    if(this.data.value_index == 2){
+      wx.navigateTo({
+        url: '../applyrefund/applyrefund',
+      })
+    }
   },
 
   /**

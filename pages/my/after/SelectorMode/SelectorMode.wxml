@@ -1,7 +1,5 @@
-<view class="selectormode_nav">
-  <component title='選擇服務類型' show_bol='{{false}}'></component>
-</view>
-<view class="selectormode_box">
+<component title='選擇服務類型' show_bol='{{false}}'></component>
+<view class="selectormode_box" style="margin-top:{{bar_Height+140}}rpx">
   <radio-group class="radio-group" bindchange="radioChange">
     <label class="radio" wx:for="{{items}}">
       <view class="radio_view">{{item.value}}
@@ -11,4 +9,4 @@
     </label>
   </radio-group>
 </view>
-<view class="selectormode_button">下壹步</view>
+<view class="selectormode_button" bindtap="dianji">下壹步</view>

@@ -73,7 +73,8 @@ App({
     userInfo: [],
     token: '',
     height: 0,
-    makecard: ''
+    makecard: '',
+    give:{}
   }
 
 
