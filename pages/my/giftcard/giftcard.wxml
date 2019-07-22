@@ -133,6 +133,6 @@
 </view>
 <view class="{{currentTab == 2 ? 'show':'hidden'}}">
   <scroll-view>
-    <view>暂无数据</view>
+    <view class="not">暂无数据</view>
   </scroll-view>
 </view>

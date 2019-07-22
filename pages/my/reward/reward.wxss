@@ -37,6 +37,10 @@
   height:155rpx;
   background:rgba(227,226,226,1);
 }
+.reward_i{
+  width: 100%;
+  height: 100%;
+}
 .reward_conent{
   float: left;
   margin-left: 20rpx;
@@ -128,4 +132,8 @@
   line-height: 60rpx;
   background:rgba(12,14,13,1);
   margin-left: 20rpx;
+}
+.tips{
+  line-height: 200rpx;
+  text-align: center;
 }

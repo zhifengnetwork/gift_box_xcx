@@ -229,7 +229,9 @@
   line-height: 105rpx;
   border-bottom: 1rpx solid #ccc;
 }
-
+button::after{
+  border: none;
+}
 .pop-up_box_c {
   font-size: 28rpx;
   line-height: 100rpx;
@@ -238,6 +240,7 @@
   color: rgba(51, 51, 51, 1);
   border-bottom: 1rpx solid #ccc;
   margin: 0 50rpx;
+  background: #fff;
 }
 
 .pop-up_box_b {

@@ -20,6 +20,6 @@
 </view>
 <view class="shoppingcard_bottom">
   <view class="shoppingcard_recharge" bindtap="recharge">充值</view>
-  <view>體現</view>
+  <view bindtap="fetch">體現</view>
   <view bindtap="detail">交易明細</view>
 </view>

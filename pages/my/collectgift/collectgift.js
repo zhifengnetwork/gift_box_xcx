@@ -1,20 +1,36 @@
 // pages/my/collectgift/collectgift.js
+var app = getApp()
+var api = require('../../../utils/api');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    item:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.getdata();
   },
-
+  getdata: function () {
+    let that = this;
+    api.postJSON('api/order/order_list', {
+      token: app.globalData.token,
+      type: 5,
+      num: 200
+    }, function (res) {
+      if (res.data.status == 1) {
+        that.setData({
+          item: res.data.data
+        })
+      }
+      console.log(res)
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

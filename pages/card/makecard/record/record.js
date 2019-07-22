@@ -51,6 +51,9 @@ Page({
     }, 100)
     if (this.data.start) {
       that.time(true);
+      this.setData({
+        minute:'00'
+      })
       this.recorderManager.start({
         format: 'mp3' // 如果录制acc类型音频则改成aac
       });

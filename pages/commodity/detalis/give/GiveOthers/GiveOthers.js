@@ -11,8 +11,27 @@ Page({
     scene: ''
   },
   plus:function (e){
-    console.log(this.data.num++)
+    console.log(this.data.num)
+    this.data.num++;
+    this.setData({
+      num: this.data.num
+    })
     // this.data.num = this.data.num++
+  },
+  minus:function(){
+    console.log(this.data.num)
+    if (this.data.num<=1){
+      wx.showToast({
+        icon: 'none',
+        title: "至少选择一件礼物",
+        duration: 1500
+      })
+      return false;
+    }
+    this.data.num--;
+    this.setData({
+      num: this.data.num
+    })
   },
   show: function () {
     wx.navigateTo({
