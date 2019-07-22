@@ -42,7 +42,8 @@
       </view>
       <view class="giftbank_button">
         <view class="giftbank_cancel">取消訂單</view>
-        <view class="giftbank_payment">去付款</view>
+        <view class="giftbank_payment" wx:if="{{type==2}}">去付款</view>
+        <view class="giftbank_payment" wx:else >确认收货</view>
       </view>
     </view>
   </scroll-view>
