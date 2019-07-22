@@ -18,20 +18,23 @@
       商务礼品
     </view> -->
   </view>
-  <view class="{{currentTab == 0 ? 'show':'hidden'}}">
+  <!-- class="{{currentTab == 0 ? 'show':'hidden'}}" -->
+  <view >
     <scroll-view>
-      <view class="boss_c" wx:for="{{list}}" wx:key>
+      <view class="boss_c" wx:for="{{tabtitleneirong}}" wx:key="index" wx:for-item="items">
         <view class="boss_cbox">
-          <view class="boss_cbox_box" wx:for="{{listdata}}" wx:key>
-            <view class="boss_cbox_img"></view>
-            <text class="boss_cbox_name">MONOGRAM ANTIPODE 長圍巾</text>
-            <text class="boss_cbox_price">HK$4800</text>
+          <view class="boss_cbox_box" wx:for="{{items}}"  wx:key>
+            <view class="boss_cbox_img">
+            <image src="{{item. picture}}" class="imgimgimg2"></image>
+            </view>
+            <view class="boss_cbox_name">{{item. goods_name}}</view>
+            <view class="boss_cbox_price">HK${{item.price}}</view>
           </view>
         </view>
       </view>
     </scroll-view>
   </view>
-  <view class="{{currentTab == 1 ? 'show':'hidden'}}">
+  <!-- <view class="{{currentTab == 1 ? 'show':'hidden'}}">
     <scroll-view>
       <view>为你星选</view>
     </scroll-view>
@@ -45,5 +48,5 @@
     <scroll-view>
       <view>商务礼品</view>
     </scroll-view>
-  </view>
+  </view> -->
 </view>

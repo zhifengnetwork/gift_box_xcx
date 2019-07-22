@@ -11,20 +11,22 @@ Page({
     listdata: 8,
     bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
     xingxuanderen:[],
-    tablist:[]
+    tablist:[],
+    tabtitleneirong:[],
+    chagdu:4
   },
   clickTab: function (e) {
     var that = this;
     var id = e.target.dataset.id;
-    api.getJSON('/api/index/getGoodsList?page=1&num=600&id=' + id, function (res) {
+    api.getJSON('/api/index/getGoodsList2?num=8&id=' + id, function (res) {
       if (res.data.status == 1) {
+        console.log("biaoti")
         console.log(res.data.data);
+        that.setData({tabtitleneirong:res.data.data})
       }
     })
 
      
-
-
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
@@ -44,8 +46,28 @@ Page({
         console.log(res.data.data);
         that.setData({ xingxuanderen: res.data.data.info});
         that.setData({ tablist: res.data.data.list})
+        var id = that.data.tablist[0].id
+        console.log(id)
+        api.getJSON('/api/index/getGoodsList2?num=8&id=' + id, function (res) {
+          if (res.data.status == 1) {
+            console.log("biaoti")
+            console.log(res.data.data);
+            that.setData({ tabtitleneirong: res.data.data })
+          }
+        })
+
+
       }
     })
+   
+    
+   
+
+
+
+
+
+
     
   },
 
@@ -60,6 +82,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    
   },
 
   /**
