@@ -46,15 +46,18 @@ Page({
         console.log(res.data.data);
         that.setData({ xingxuanderen: res.data.data.info});
         that.setData({ tablist: res.data.data.list})
-        var id = that.data.tablist[0].id
-        console.log(id)
-        api.getJSON('/api/index/getGoodsList2?num=8&id=' + id, function (res) {
-          if (res.data.status == 1) {
-            console.log("biaoti")
-            console.log(res.data.data);
-            that.setData({ tabtitleneirong: res.data.data })
-          }
-        })
+        if (that.data.tablist.length>0){
+          var id = that.data.tablist[0].id
+          console.log(id)
+          api.getJSON('/api/index/getGoodsList2?num=8&id=' + id, function (res) {
+            if (res.data.status == 1) {
+              console.log("biaoti")
+              console.log(res.data.data);
+              that.setData({ tabtitleneirong: res.data.data })
+            }
+          })
+        }
+        
 
 
       }

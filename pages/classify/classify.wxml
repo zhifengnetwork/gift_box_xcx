@@ -24,7 +24,6 @@
   <view class="{{'99' == selectMenuID? 'teshu' : 'dj'}}" bindtap="quchu" data-id='99'>精品大牌</view>
   <view class="searchLetter touchClass" wx:if="{{diyi}}">
     <view wx:for="{{city}}" wx:for-index="groupindex" wx:for-item="cell" style="color:#777777;font-size:25rpx;" wx:key="index" data-letter="{{cell[0].key}}" catchtouchend="clickLetter">{{cell[0].key}}</view>
-  
   </view> 
   <block wx:if="{{isShowLetter}}">
     <view class="showSlectedLetter">

@@ -42,14 +42,8 @@ Page({
       'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
 
     ],
-
     // currentSwiper: 0,
     autoplay: true
-
-
-
-
-
 
   },
   onLoad: function (options) {
@@ -91,7 +85,8 @@ Page({
     // this.setData({
     //   currentSwiper: 0
     // })
-    console.log("899898")
+    console.log("899898");
+    this.setData({ autoplay: true})
   },
   // 第一个轮播图切换调动这个函数
   swiperChange: function (e) {
@@ -124,14 +119,11 @@ Page({
     //       url: '../home/xingxuan/xingxuan?id='+id,
     //     })
     //  }
-    if (id == 22) {
+    // if (id == 22) {
       wx.navigateTo({
           url: '../home/boss/boss?id='+id
         })
-    }
-
-
-
+    // }
 
   },
   boss: function () {
@@ -170,5 +162,15 @@ Page({
         })
       }
     }
+  },
+  // 轮播图卡死问题
+  changeGoodsSwip: function (e) {
+    this.setData({
+      currentSwiper: e.detail.current
+    });
+  },
+  onHide:function(){
+    this.setData({autoplay:false})
   }
+
 })

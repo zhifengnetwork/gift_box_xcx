@@ -27,7 +27,13 @@ Page({
     scroll_height2:0,
     isIPX: app.globalData.isIPX,
     shopId:0,
-
+    createArr:[],
+    key:[],
+    test: "",
+    scrollTop: {
+      scroll_top: 0,
+      goTop_show: false
+    } , 
     "result": {
       "goods": {
         "goods_spec_list": [
@@ -243,8 +249,27 @@ Page({
     api.getJSON('/api/Brand/getGoodsBrand', function (res) {
         if (res.data.status == 1) {
          console.log(res.data.data);
-         that.setData({ city: res.data.data.brand_list})
-          that.setData({navLeftItems: res.data.data.category_list})
+         console.log("brand_list")
+         console.log(res.data.data.brand_list)
+         that.setData({city: res.data.data.brand_list})
+         that.setData({navLeftItems: res.data.data.category_list})
+         for (let i in that.data.city) {
+            // 将后台给的字母表换成另外的一种形式,也就是改变结构
+            that.data.createArr.push(that.data.city[i]);
+          }
+          console.log(that.data.createArr)
+          var key=[];
+          for (var i = 0; i < that.data.createArr.length;i++){
+            var ss = that.data.createArr[i][0].key
+            key.push(ss);
+          }
+          console.log("sss")
+          console.log(key)
+          that.setData({key:key})
+          // var ss=that.data.createArr[0][0].key
+         
+          // console.log(ss)
+
 
         }
       })
@@ -280,11 +305,25 @@ Page({
   clickLetter: function(e) {
     console.log(e.currentTarget.dataset.letter)
     var showLetter = e.currentTarget.dataset.letter;
-    this.setData({
-      showLetter: showLetter,
-      isShowLetter: true,
-      scrollTopId: showLetter,
-    })
+    if(showLetter=="#"){
+      var _top = this.data.scrollTop.scroll_top;//发现设置scroll-top值不能和上一次的值一样，否则无效，所以这里加了个判断  
+      if (_top == 1) {
+        _top = 0;
+      } else {
+        _top = 1;
+      }
+      this.setData({
+        'scrollTop.scroll_top': _top
+      });
+      console.log("----");
+      console.log(this.data.scrollTop)
+    }else{
+      this.setData({
+        showLetter: showLetter,
+        isShowLetter: true,
+        scrollTopId: showLetter,
+      })
+    }
     var that = this;
     setTimeout(function() {
       that.setData({
