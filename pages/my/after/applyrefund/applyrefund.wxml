@@ -52,3 +52,17 @@
 <view class="remind">
   最多hk$120.00，含發貨運費hk$0.00
 </view>
+<!-- 退款說明 -->
+<view class="refundstate">
+  <text class="refundstate_text">退款說明:</text><input placeholder="選填" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" />
+</view>
+<!-- 上傳憑證 -->
+<view class="voucher">上傳憑證</view>
+<!-- 相机 -->
+<view class="camera">
+  <view class="camera_box">
+    <view class="xiangjibox"><image src="../../../public/images/xiangji.jpg" class="xiangjiimg"></image></view>
+    <view class="xiangjiviewt">上傳憑證</view>
+    <view class="xiangjiviewf">（最多三張）</view>
+  </view>
+</view>

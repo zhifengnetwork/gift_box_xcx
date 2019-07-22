@@ -114,13 +114,6 @@
 					"scene": null
 				},
 				{
-					"id": -1,
-					"name": "购物车",
-					"pathName": "pages/cart/cart",
-					"query": "",
-					"scene": null
-				},
-				{
 					"id": 10,
 					"name": "商品详情2",
 					"pathName": "pages/commodity/commodity",
