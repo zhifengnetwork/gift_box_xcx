@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 13,
+			"current": 8,
 			"list": [
 				{
 					"id": -1,
@@ -107,7 +107,7 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 8,
 					"name": "申請退款",
 					"pathName": "pages/my/after/refund/refund",
 					"query": "",
@@ -138,6 +138,7 @@
 					"id": -1,
 					"name": "pages/turntable/turntable",
 					"pathName": "pages/turntable/turntable",
+					"query": "",
 					"scene": null
 				}
 			]

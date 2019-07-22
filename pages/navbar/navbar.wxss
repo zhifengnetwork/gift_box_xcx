@@ -13,8 +13,7 @@
   background: white
 }
 .goBack{
-  position: absolute;
-  top: 15rpx;
+  position: relative;
   font-size:12pt;
 }
 .goBack image{
@@ -23,8 +22,14 @@
   padding: 12rpx 20px 0 30rpx;
 }
 .tabar {
-  display: flex;
-  justify-content: center;
+  /* display: flex;
+  justify-content: center; */
+  position: absolute;
+  bottom: 0%;
+  transform: translate(0,-25%);
+  left: 0;
+  width: 100%;
+  text-align: center;
   /* background-color: rgba(255, 255,255, .3); */
 }
 .tabar2{
@@ -35,9 +40,8 @@
   font-weight: lighter !important;
 }
 .tabar text {
-  padding: 20rpx 30rpx;
   color: #353535;
-  font-size: 37rpx;
+  font-size: 30rpx;
   font-weight: bold;
 }
 .tabar .active {

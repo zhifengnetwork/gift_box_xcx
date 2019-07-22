@@ -1,13 +1,6 @@
 page{
   background:rgba(239,238,241,1);
 }
-.selectormode_nav{
-  height: 120rpx;
-  background: #fff;
-}
-.selectormode_box{
-  margin-top: 40rpx;
-}
 .radio_view{
   font-size: 28rpx;
   line-height: 100rpx;

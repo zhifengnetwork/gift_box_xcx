@@ -10,6 +10,13 @@ Page({
     after:''
   },
 
+  refund: function () {
+    wx.navigateTo({
+      url: 'refund/refund',
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面加载
    */

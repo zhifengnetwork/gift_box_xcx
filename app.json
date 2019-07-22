@@ -53,7 +53,8 @@
     "pages/my/after/refund/refund",
     "pages/my/after/SelectorMode/SelectorMode",
     "pages/my/after/applyrefund/applyrefund",
-    "pages/commodity/detalis/give/scene/scene"
+    "pages/commodity/detalis/give/scene/scene",
+    "pages/my/after/logistics/logistics"
   ],
   "window": {
     "backgroundTextStyle": "light",

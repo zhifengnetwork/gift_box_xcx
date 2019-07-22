@@ -20,7 +20,7 @@
   <view class="after_bott">
     <view class="after_bottnum">仅退款 退款成功</view>
     <!-- <view class="after_bottprice">合计：HK$124.00</view> -->
-    <view class="after_payment">查看詳情</view>
+    <view class="after_payment" bindtap="refund">查看詳情</view>
   </view>
 </view>
 <view class="after_box">
@@ -42,6 +42,6 @@
   <view class="after_bott">
     <view class="after_bottnum">等待簽收退貨</view>
     <!-- <view class="after_bottprice">合计：HK$124.00</view> -->
-    <view class="after_payment">查看詳情</view>
+    <view class="after_payment" bindtap="refund">查看詳情</view>
   </view>
 </view>

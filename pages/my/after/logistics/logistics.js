@@ -1,50 +1,51 @@
-// pages/my/after/applyrefund/applyrefund.js
+// pages/my/after/logistics/logistics.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    ss:"",
+    bar_Height: wx.getSystemInfoSync().statusBarHeight,
+    ss: "",
     tupian: [],
-    itemList: ['七天無理由退換貨', '退運費', '少件/漏發', '質量問題', '商品信息描述不符', '包裝/商品破損/汙漬']
+    itemList: ['顺丰快递', '中通快递', '圆通快递', '申通快递']
   },
 
   dianji: function () {
-    var that=this
+    var that = this
     wx.showActionSheet({
       itemList: that.data.itemList,
       success(res) {
         // console.log(res.tapIndex);
         // console.log(that.data.itemList[res.tapIndex])
         that.setData({
-          ss : that.data.itemList[res.tapIndex]
+          ss: that.data.itemList[res.tapIndex]
         })
       },
       fail(res) {
         console.log(res.errMsg)
       }
     })
-    
-  },
 
+  },
 
   camera: function () {
     var that = this
-        wx.chooseImage({
-          count: 3,
-          sizeType: ['original', 'compressed'],
-          sourceType: ['album', 'camera'],
-          success(res) {
-            // tempFilePath可以作为img标签的src属性显示图片
-            // const tempFilePaths = res.tempFilePaths
-            // console.log(tempFilePaths)
-            that.setData({
-              tupian : res.tempFilePaths
-            })
-          }
+    wx.chooseImage({
+      count: 3,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        // const tempFilePaths = res.tempFilePaths
+        // console.log(tempFilePaths)
+        that.setData({
+          tupian: res.tempFilePaths
         })
+      }
+    })
   },
+
   /**
    * 生命周期函数--监听页面加载
    */
