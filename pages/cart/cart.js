@@ -220,17 +220,14 @@ Page({
               shuliang++
             }
           }
-
+          if (shuliang === that.data.items.length) {
+            that.setData({ selectAllStatus: true })
+          }else{
+            that.setData({ selectAllStatus: false })
+          }
+          that.getTotalPrice();
         }
-        if (shuliang === that.data.items.length) {
-          that.setData({ selectAllStatus: true })
-        }else{
-          that.setData({ selectAllStatus: false})
-        } 
-
-        that.getTotalPrice();
-
-      }
+      })
 
     })
     console.log(that.data.carts)
