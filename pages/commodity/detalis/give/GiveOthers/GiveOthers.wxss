@@ -169,12 +169,23 @@
 }
 
 .giveothers_imgbox {
+  position: relative;
   width: 190rpx;
   height: 388rpx;
   float: left;
   margin-right: 20rpx;
 }
-
+.radio{
+  position: absolute;
+  display: block;
+  width: 40rpx;
+  height: 40rpx;
+  top:0rpx;
+  right:20rpx;
+}
+.radio>radio{
+  transform: scale(0.6);
+}
 .giveothers_img {
   width: 190rpx;
   height: 300rpx;

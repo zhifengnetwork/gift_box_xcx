@@ -18,7 +18,6 @@ Page({
     app.getUserInfo( userinfo => {
         console.log(userinfo);
     });
-    
 
   },
 

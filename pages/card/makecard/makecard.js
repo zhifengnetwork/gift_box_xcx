@@ -142,7 +142,7 @@ Page({
   },
   succeed:function(){
     wx.navigateTo({
-      url: '../../commodity/detalis/give/cashgift/cashgift'
+      url: '../../commodity/detalis/give/cashgift/cashgift?box_id=' + app.globalData.makecard
     })
   },
   back_white:function(){
@@ -154,6 +154,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    console.log(options)
     let that = this;
     let cate_id = null;
     if (!app.globalData.makecard){

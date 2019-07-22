@@ -138,15 +138,29 @@ Page({
     })
   },
   nextshi:function(){
-
+    let that = this;
     this.setData({
       statussxianshi: false
     })
-    console.log("sku_id")
     console.log(this.data.sku_id)
-    if (this.data.order_type){
-      wx.navigateTo({
-        url: '../givingother/givingother',
+    if (this.data.order_type) {
+      api.postJSON('api/order/immediatelyOrder',{
+        'token': app.globalData.token,
+        'sku_id': that.data.sku_id,
+        'cart_number':1
+      },
+      function(res){
+        if(res.data.status==1){
+          wx.navigateTo({
+            url: '../givingother/givingother?sku_id=' + that.data.sku_id
+          })
+        }else{
+          wx.showToast({
+            icon: 'none',
+            title: res.data.msg,
+            duration: 2500
+          })
+        }
       })
     }
   },
