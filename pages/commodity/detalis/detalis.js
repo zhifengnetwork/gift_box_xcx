@@ -127,14 +127,16 @@ Page({
 
   },
   give_goods: function () {
-    // wx.navigateTo({
-    //   url: '../givingother/givingother',
-    // })
     this.setData({
       statussxianshi: true
     })
     this.setData({
       anniu: false
+    })
+  },
+  nextshi:function(){
+    wx.navigateTo({
+      url: '../givingother/givingother',
     })
   },
   cart: function () {
