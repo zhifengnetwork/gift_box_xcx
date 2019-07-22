@@ -335,9 +335,7 @@ swiper-item image{
 }
 
 /*用来包裹所有的小圆点 */
-
 .dots{
-
 width: 400rpx;
 height: 36rpx;
 line-height: 36rpx;

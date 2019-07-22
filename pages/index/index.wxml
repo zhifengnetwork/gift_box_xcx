@@ -36,23 +36,6 @@
 </block>
 </view>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 <image src="../public/images/index/red_enpole.png" class="red_enpole" bindtap="zefeng"></image>
 <!-- 选择栏 -->
 <view class="selection_bar">

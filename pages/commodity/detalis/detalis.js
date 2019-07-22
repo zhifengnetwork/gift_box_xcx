@@ -138,6 +138,12 @@ Page({
     })
   },
   nextshi:function(){
+
+    this.setData({
+      statussxianshi: false
+    })
+    console.log("sku_id")
+    console.log(this.data.sku_id)
     if (this.data.order_type){
       wx.navigateTo({
         url: '../givingother/givingother',
