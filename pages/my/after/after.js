@@ -16,6 +16,7 @@ Page({
   onLoad: function (options) {
     api.postJSON('api/order/get_refund_info',{
       'token': app.globalData.token,
+      'type': 5
     },function(res){
       console.log(res)
     })

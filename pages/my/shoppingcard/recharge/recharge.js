@@ -21,6 +21,21 @@ Page({
         'token': app.globalData.token,
         'money': that.data.value
       },function(res){
+        if(res.data.status==1){
+          wx.requestPayment({
+            timeStamp: res.data.data.timeStamp,
+            nonceStr: res.data.data.nonceStr,
+            package: res.data.data.package,
+            signType: 'MD5',
+            paySign: res.data.data.paySign,
+            success(res) {
+              console.log(res);
+            },
+            fail(res) {
+              console.log(res)
+            }
+          })
+        }
         console.log(res)
       })
     }else{

@@ -57,7 +57,8 @@ Page({
     sku_id:0,
     imgimg:'',
     store_count:0,
-    anniu:true
+    anniu:true,
+    order_type:false
   },
   clickTab: function (e) {
     var that = this;
@@ -92,25 +93,26 @@ Page({
       statussxianshi: false
     }), 
       api.getJSON('/api/order/immediatelyOrder?sku_id=' + this.data.sku_id + '&cart_number=' + this.data.productNum+"&token="+app.globalData.token, function (res) {
+       
       if (res.data.status == -1){
         wx.showToast({
           icon: 'none',
-          title: "改商品不存在",
-          duration: 500
+          title: "该商品不存在",
+          duration: 1500
         })
       }
       if (res.data.status == 1) {
         wx.showToast({
           icon: 'none',
           title: "加入购物车成功",
-          duration: 1000
+          duration: 1500
         })
       }
       if (res.data.status == -2) {
         wx.showToast({
           icon: 'none',
           title: "该商品库存不足！",
-          duration: 500
+          duration: 2500
         })
       }
 
@@ -121,20 +123,32 @@ Page({
       statussxianshi: true
     });
     this.setData({
-      anniu:false
+      anniu:false,
+      order_type: false
     })
 
   },
   give_goods: function () {
-    // wx.navigateTo({
-    //   url: '../givingother/givingother',
-    // })
     this.setData({
       statussxianshi: true
     })
     this.setData({
-      anniu: false
+      anniu: false,
+      order_type: true
     })
+  },
+  nextshi:function(){
+
+    this.setData({
+      statussxianshi: false
+    })
+    console.log("sku_id")
+    console.log(this.data.sku_id)
+    if (this.data.order_type){
+      wx.navigateTo({
+        url: '../givingother/givingother',
+      })
+    }
   },
   cart: function () {
     wx.switchTab({

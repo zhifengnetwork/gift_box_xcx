@@ -180,3 +180,7 @@ page {
   bottom: -20rpx;
   right: 20rpx;
 }
+.{
+  line-height: 200rpx;
+  text-align: center;
+}

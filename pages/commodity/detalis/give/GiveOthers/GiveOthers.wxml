@@ -22,7 +22,7 @@
     贈送 <text class="giveothers_anoumt">{{num}}</text> 份禮包 
   </view>
   <view class="giveothers_give_c">
-    <view class="giveothers_fuhao minus">-</view>
+    <view class="giveothers_fuhao minus" bindtap="minus">-</view>
     <view class="giveothers_give_number">{{num}}</view>
     <view class="giveothers_fuhao plus" bindtap="plus">+</view>
   </view>

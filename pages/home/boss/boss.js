@@ -9,10 +9,22 @@ Page({
     currentTab: 0,
     list: 3,
     listdata: 8,
-    bar_Height: wx.getSystemInfoSync().statusBarHeight		// 获取手机状态栏高度
+    bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
+    xingxuanderen:[],
+    tablist:[]
   },
   clickTab: function (e) {
     var that = this;
+    var id = e.target.dataset.id;
+    api.getJSON('/api/index/getGoodsList?page=1&num=600&id=' + id, function (res) {
+      if (res.data.status == 1) {
+        console.log(res.data.data);
+      }
+    })
+
+     
+
+
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
@@ -25,6 +37,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var that = this;
+    var id = options.id;
+    api.getJSON('/api/index/get_attr?id=' + id, function (res) {
+      if (res.data.status == 1) {
+        console.log(res.data.data);
+        that.setData({ xingxuanderen: res.data.data.info});
+        that.setData({ tablist: res.data.data.list})
+      }
+    })
     
   },
 
@@ -39,12 +60,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    api.getJSON('/api/index/get_attr', function (res) {
-      if (res.data.status == 1) {
-           console.log(res.data)
-        
-      }
-    })
   },
 
   /**

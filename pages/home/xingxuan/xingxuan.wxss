@@ -23,7 +23,6 @@
 .xingxuan_item{
   width: 330rpx;
   height: 500rpx;
-  background: pink;
   margin-left: 30rpx;
   /* display: inline-block; */
   float: left;
@@ -34,6 +33,10 @@
   height: 330rpx;
   background: #f4f4f4;
 }
+.imgimg{
+  width: 100%;
+  height: 100%
+}
 .xingxuan_list_name{
   height: 56rpx;
   font-size: 32rpx;
@@ -41,6 +44,9 @@
   width: 330rpx;
   display: block;
   margin-top: 10rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+   white-space: nowrap;
 }
 .xingxuan_list_price{
   font-size: 28rpx;

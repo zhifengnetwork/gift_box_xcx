@@ -116,3 +116,7 @@ color:rgba(34,34,34,1);
   color:rgba(34,34,34,1);
   margin-top: 80rpx;
 }
+.not{
+  line-height: 200rpx;
+  text-align: center;
+}

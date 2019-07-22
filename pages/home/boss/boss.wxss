@@ -3,7 +3,10 @@
 }
 .boss_img{
   height: 460rpx;
-  background: pink;
+}
+.imgimgimg{
+  width: 100%;
+  height: 100%;
 }
 .about_page{
   margin: 0 10px;

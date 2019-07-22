@@ -2,32 +2,11 @@
   <component title='交易明細' show_bol='{{false}}'></component>
 </view>
 <view class="detali">
-  <view class="detail_box">
+  <view class="detail_box" wx:for="{{list}}" wx:key="{{index}}">
     <view class="detail_l">
-      <view>九點禮品卡</view>
-      <text>2019-03-29 11:22:00</text>
+      <view>{{item.shop_name}}</view>
+      <text>{{item.addtime}}</text>
     </view>
-    <view class="detail_r">-HK$100,000.00</view>
-  </view>
-  <view class="detail_box">
-    <view class="detail_l">
-      <view>九點禮品卡</view>
-      <text>2019-03-29 11:22:00</text>
-    </view>
-    <view class="detail_r">-HK$100,000.00</view>
-  </view>
-  <view class="detail_box">
-    <view class="detail_l">
-      <view>九點禮品卡</view>
-      <text>2019-03-29 11:22:00</text>
-    </view>
-    <view class="detail_r">-HK$100,000.00</view>
-  </view>
-  <view class="detail_box">
-    <view class="detail_l">
-      <view>九點禮品卡</view>
-      <text>2019-03-29 11:22:00</text>
-    </view>
-    <view class="detail_r">-HK$100,000.00</view>
+    <view class="detail_r">+HK${{item.money}}</view>
   </view>
 </view>

@@ -50,7 +50,6 @@ function removeDOCTYPE(html) {
   if(html == null || html == ''){
     return html
   }
-  console.log(html)
     //判断一下，有才移除，没有就直接返回
   if(html.indexOf("xml") != -1){
     return html
@@ -164,16 +163,21 @@ function html2json(html, bindName) {
 
             //对img添加额外数据
             if (node.tag === 'img') {
+
+              if (node.attr.src.indexOf("http") == -1){
+              
                 node.imgIndex = results.images.length;
-              var imgUrl = "https://giftbox.zhifengwangluo.com/"+node.attr.src;
+                var imgUrl = "https://giftbox.zhifengwangluo.com/" + node.attr.src;
                 if (imgUrl[0] == '') {
-                    imgUrl.splice(0, 1);
+                  imgUrl.splice(0, 1);
                 }
                 imgUrl = wxDiscode.urlToHttpUrl(imgUrl, __placeImgeUrlHttps);
+              
                 node.attr.src = imgUrl;
                 node.from = bindName;
                 results.images.push(node);
                 results.imageUrls.push(imgUrl);
+              }
             }
             
             // 处理font标签样式属性

@@ -8,8 +8,10 @@
   </view>
   <view class="xingxuan_b">
     <view class="xingxuan_item" wx:for="{{list}}" wx:key>
-      <view class="xingxuan_list_img"></view>
-      <text class="xingxuan_list_name">{{item.name}}</text>
+      <view class="xingxuan_list_img">
+      <image src="{{item.picture}}" class="imgimg"></image>
+      </view>
+      <text class="xingxuan_list_name">{{item.goods_name}}</text>
       <text class="xingxuan_list_price">{{item.price}}</text>
     </view>
   </view>

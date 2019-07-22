@@ -37,7 +37,8 @@ Page({
     let that = this;
     api.postJSON('api/order/order_list', {
       token: app.globalData.token,
-      type: that.data.type
+      type: that.data.type,
+      num: 200
     }, function (res) {
       if (res.data.status == 1) {
         that.setData({
