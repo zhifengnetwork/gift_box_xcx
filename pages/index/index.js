@@ -39,7 +39,7 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-
+    console.log("xixi") 
     app.getUserInfo(userinfo => {
     
       //昵称、头像 不存在，跳转去授权
@@ -68,16 +68,20 @@ Page({
         })
       }
     })
-
   },
   onShow: function () {
-
+    wx.showTabBar();
+    // this.setData({
+    //   currentSwiper: 0
+    // })
+    console.log("899898")
   },
   // 第一个轮播图切换调动这个函数
   swiperChange: function (e) {
     this.setData({
       currentSwiper: e.detail.current
-    })
+    });
+   
   },
   swiperChange2: function (e) {
     console.log("首先" + e.detail.current)
@@ -90,9 +94,7 @@ Page({
   onReachBottom: function () {
 
   },
-  onShareAppMessage: function () {
-
-  },
+ 
   zefeng: function () {
     wx.navigateTo({
       url: '../home/integral/integral',
@@ -114,6 +116,30 @@ Page({
     wx.navigateTo({
       url: '../commodity/detalis/detalis?id=' + id,
     })
+  },
+  onShareAppMessage: function () {
+    console.log('share')
+    var nickname = app.globalData.userInfo.nickname;
+    nickname = nickname == undefined ? '' : nickname;
+    console.log(nickname)
+    return {
+      title: nickname + '为你准备了一份惊喜,请火速查收!',
+      imageUrl:'https://giftbox.zhifengwangluo.com/image/back.png',
+      path: '/pages/card/go',
+      success:function(res){
+        console.log(res)
+        wx.showModal({
+          title: '分享成功',
+          content: '分享成功',
+        })
+      },
+      fail:function(res){
+        console.log(res)
+        wx.showModal({
+          title: '分享失败',
+          content: '分享失败',
+        })
+      }
+    }
   }
-
 })

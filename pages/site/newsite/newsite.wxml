@@ -48,7 +48,7 @@
 <view class="default_box">
   <text class="default_text">設為默認</text>
   <view class="default_switch">
-    <switch bindchange="switchChange" />
+    <switch checked="{{is_default==1?'checked':''}}" bindchange="switchChange" />
   </view>
 </view>
 <!-- 提交按钮 -->

@@ -1,4 +1,6 @@
 // pages/card/makecard/record/record.js
+var api = require('../../../../utils/api');
+var app = getApp();
 Page({
 
   /**
@@ -12,7 +14,9 @@ Page({
     // 进度条进度
     lRotate: '',
     rRotate: '',
-    status: 1
+    status: 1,
+    flag:false,
+    record:''
   },
   // 开始录音
   start: function() {
@@ -62,6 +66,17 @@ Page({
     if (this.data.start) {
       return false;
     }
+    if (!this.data.src){
+      wx.showModal({
+        title: '提示',
+        content: '请添加录音',
+        showCancel: false
+      })
+      return false;
+    }
+    this.setData({
+      flag:true
+    })
     this.innerAudioContext = wx.createInnerAudioContext();
     this.innerAudioContext.onError((res) => {
       // 播放音频失败的回调
@@ -71,8 +86,18 @@ Page({
     this.innerAudioContext.onPlay(function() {
       console.log('开始播放')
     })
+    let that = this;
     this.innerAudioContext.onEnded(function() {
       console.log('结束播放')
+      that.setData({
+        flag: false
+      })
+    })
+  },
+  stop:function(){
+    this.innerAudioContext.pause()
+    this.setData({
+      flag: false
     })
   },
   // 删除录音
@@ -133,23 +158,64 @@ Page({
     if (this.data.start) {
       return false;
     }
-    var that = this
-    wx.showToast({
-      title: '提交成功',
-      icon: 'success',
-      duration: 2000
+    if (!this.data.src) {
+      wx.showModal({
+        title: '提示',
+        content: '请添加录音',
+        showCancel: false
+      })
+      return false;
+    }
+    var that = this;
+    wx.uploadFile({
+      url: 'https://giftbox.zhifengwangluo.com/api/box/upload_file',
+      filePath: that.data.src,
+      name: 'file',
+      header: {
+        'content-type': 'multipart/form-data'
+      },
+      formData: {
+        'token': app.globalData.token
+      },
+      success: function (res) {
+        let record = JSON.parse(res.data)
+        console.log(record)
+        that.setData({
+          record: record.data
+        })
+        api.postJSON('api/box/set_box', {
+          'token': app.globalData.token,
+          'id': app.globalData.makecard,
+          'voice_url': that.data.record
+        },
+        function (res) {
+          console.log(res);
+          if (res.data.status == 1) {
+            wx.showToast({
+              title: '提交成功',
+              icon: 'success',
+              duration: 2000
+            })
+            setTimeout(function () {
+              var pages = getCurrentPages();
+              var prevPage = pages[pages.length - 2]; //上一个页面
+              //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+              prevPage.setData({
+                record: that.data.record
+              })
+              wx.navigateBack({
+                delta: 1
+              })
+            }, 1000)
+          }else{
+            wx.showModal({
+              title: '提示',
+              content: res.data.msg
+            })
+          }
+        })
+      }
     })
-    setTimeout(function() {
-      var pages = getCurrentPages();
-      var prevPage = pages[pages.length - 2]; //上一个页面
-      //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
-      prevPage.setData({
-        record: that.data.src
-      })
-      wx.navigateBack({
-        delta: 1
-      })
-    }, 1000)
   },
   drawCircle: function() {
 

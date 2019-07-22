@@ -1,10 +1,11 @@
- <view class='status-bar'>
+ <view class="status-bar {{side ? 'dingwei':''}}">
    <!-- 返回按钮 -->
-    <view class='goBack' bindtap='goBack' style="padding-top:{{bar_Height}}px;"  hidden='{{show_bol}}'>			
+   <!-- 我们在用这个组件的时候,我们用属性名它的属性名(show_bol)来给它值,从而控制它的样式 -->
+    <view class="goBack {{quan ? 'bai':''}}" bindtap='goBack' style="padding-top:{{bar_Height+40}}rpx;"  hidden='{{show_bol}}'>			
       <image src='../public/images/index/back.png' class="back_back22"></image>
     </view>
     <!-- 标题 -->
-    <view class="tabar {{my_class ? 'tabar2':''}}" style="padding-top:{{bar_Height}}px;">
+    <view class="tabar {{my_class ? 'tabar2':''}}" style="padding-top:{{bar_Height+40}}rpx;">
       <text class="red">{{title}}</text>
     </view>
   </view>

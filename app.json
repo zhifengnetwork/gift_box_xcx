@@ -1,6 +1,7 @@
 {
   "pages": [
     "pages/index/index",
+    "pages/card/go",
     "pages/cart/cart",
     "pages/home/integral/integral",
     "pages/logs/logs",
@@ -30,6 +31,7 @@
     "pages/commodity/detalis/give/envelopefour/envelopefour",
     "pages/commodity/detalis/give/GetTheSuccess/success",
     "pages/commodity/detalis/give/integral/integral",
+    "pages/commodity/givingother/givingother",
     "pages/my/mydetalis/mydetalis",
     "pages/my/giftcard/giftcard",
     "pages/my/shoppingcard/shoppingcard",
@@ -50,14 +52,15 @@
     "pages/my/after/after",
     "pages/my/after/refund/refund",
     "pages/my/after/SelectorMode/SelectorMode",
-    "pages/my/after/applyrefund/applyrefund"
+    "pages/my/after/applyrefund/applyrefund",
+    "pages/commodity/detalis/give/scene/scene"
   ],
   "window": {
     "backgroundTextStyle": "light",
     "navigationBarBackgroundColor": "#fff",
     "navigationBarTitleText": "wechat",
     "navigationBarTextStyle": "black",
-     "navigationStyle": "custom"
+    "navigationStyle": "custom"
   },
   "sitemapLocation": "sitemap.json",
   "tabBar": {

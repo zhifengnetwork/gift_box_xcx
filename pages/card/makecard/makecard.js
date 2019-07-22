@@ -1,4 +1,6 @@
 // pages/card/makecard.js
+var api = require('../../../utils/api');
+var app = getApp();
 Page({
 
   /**
@@ -68,15 +70,31 @@ Page({
   },
   // 提交祝福
   bleSend:function(){
-    wx.showToast({
-      title: '提交成功',
-      icon: 'success',
-      duration: 2000
-    })
-    this.setData({
-      blessing: false,
-      bless: this.data.blessText,
-      blessText: ''
+    let that = this;
+    api.postJSON('api/box/set_box', {
+      'token': app.globalData.token,
+      'id': app.globalData.makecard,
+      'content': that.data.blessText
+    },
+    function(res){
+      console.log(res)
+      if(res.data.status==1){
+        wx.showToast({
+          title: '提交成功',
+          icon: 'success',
+          duration: 2000
+        })
+        that.setData({
+          blessing: false,
+          bless: that.data.blessText,
+          blessText: ''
+        })
+      }else{
+        wx.showModal({
+          title: '提示',
+          content: res.data.msg
+        })
+      }
     })
   },
   // 监听祝福内容
@@ -106,6 +124,9 @@ Page({
         success: function(res) {
           if (res.confirm) {
             console.log('用户点击确定')
+            wx.navigateTo({
+              url: '../go?id=' + app.globalData.makecard
+            })
           } else if (res.cancel) {
             console.log('用户点击取消')
           }
@@ -114,13 +135,45 @@ Page({
     } else {
       // 跳转预览
       console.log('跳转')
+      wx.navigateTo({
+        url: '../go?id=' + app.globalData.makecard
+      })
     }
   },
+  succeed:function(){
+    wx.navigateTo({
+      url: '../../commodity/detalis/give/cashgift/cashgift'
+    })
+  },
+  back_white:function(){
+    wx.navigateBack({
+      delta: 1,
+    })
+  }, 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    let that = this;
+    let cate_id = null;
+    if (!app.globalData.makecard){
+      cate_id = 1;
+    }else{
+      cate_id = '';
+    }
+    api.postJSON('api/box/get_box',{
+      'token': app.globalData.token,
+      'cate_id': cate_id,
+      'id': app.globalData.makecard
+    },
+    function (res) {
+      console.log(res.data)
+      if (!app.globalData.makecard){
+        app.globalData.makecard = res.data.data.id;
+      }else{
+        return false;
+      }
+    })
   },
 
   /**

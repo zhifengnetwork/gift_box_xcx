@@ -8,11 +8,14 @@ Page({
    */
   data: {
     currentTab: 0,
-    item:''
+    item:'',
+    type:2
   },
 
   clickTab: function (e) {
-    var that = this
+    var that = this;
+    var type = null;
+    console.log(e.target.dataset.current)
     if (this.data.currentTab === e.target.dataset.current) {
       return false
     } else {
@@ -20,24 +23,35 @@ Page({
         currentTab: e.target.dataset.current
       })
     }
+    if (e.target.dataset.current==0){
+      type = 2;
+    } else if (e.target.dataset.current == 1){
+      type = 3;
+    }
+    this.setData({
+      type:type
+    })
+    this.getdata();
   },
-
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function (options) {
+  getdata:function(){
     let that = this;
     api.postJSON('api/order/order_list', {
       token: app.globalData.token,
-      type:0
+      type: that.data.type
     }, function (res) {
-      if(res.data.status==1){
+      if (res.data.status == 1) {
         that.setData({
-          item:res.data.data
+          item: res.data.data
         })
       }
       console.log(res)
     })
+  },
+  /**
+   * 生命周期函数--监听页面加载
+   */
+  onLoad: function (options) {
+    this.getdata();
   },
 
   /**

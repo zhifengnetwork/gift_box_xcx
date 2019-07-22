@@ -72,7 +72,8 @@ App({
   globalData: {
     userInfo: [],
     token: '',
-    height: 0
+    height: 0,
+    makecard: ''
   }
 
 

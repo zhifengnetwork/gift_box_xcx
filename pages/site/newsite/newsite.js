@@ -174,7 +174,8 @@ Page({
       consignee: item.consignee,
       mobile: item.mobile,
       address: item.address,
-      address_id: item.address_id
+      address_id: item.address_id,
+      is_default: item.is_default
     });
     console.log(item)
   },

@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
@@ -110,6 +110,27 @@
 					"id": -1,
 					"name": "申請退款",
 					"pathName": "pages/my/after/refund/refund",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 10,
+					"name": "商品详情2",
+					"pathName": "pages/commodity/commodity",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "boss",
+					"pathName": "pages/home/boss/boss",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "商品详情1",
+					"pathName": "pages/commodity/detalis/detalis",
 					"query": "",
 					"scene": null
 				}

@@ -16,9 +16,12 @@
     </view> 
    {{second}}:{{minute}}
   </view>
-  <view class="record_pause" bindtap="pause">
+  <view class="record_pause" bindtap="pause" wx:if="{{!flag}}">
     <image class="record_pause_img" wx:if="{{start}}" src="../../../public/images/card/pause.png"></image>
     <image class="record_pause_img" wx:if="{{!start}}" src="../../../public/images/card/pause-active.png"></image>
+  </view>
+  <view class="record_pause" bindtap="stop" wx:if="{{flag}}">
+    <image class="record_pause_img" style="left:0;" src="../../../public/images/card/stop.png"></image>
   </view>
   <!-- 录音按钮 -->
   <view class="record_state" bindtap="start">
@@ -29,6 +32,7 @@
     <image class="record_delete_img" wx:if="{{!start}}" src="../../../public/images/card/delete-active.png"></image>
   </view>
   <view class="record_send" bindtap="send">
-    <image class="record_send_img" src="../../../public/images/card/send.png"></image>
+    <image class="record_send_img" wx:if="{{start}}" src="../../../public/images/card/send.png"></image>
+    <image class="record_send_img" wx:if="{{!start}}" src="../../../public/images/card/send-active.png"></image>
   </view>
 </view>

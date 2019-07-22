@@ -28,7 +28,7 @@
   </view>
 </view>
 <view class="giveothers_c">
-  <view class="giveothers_ctop">
+  <view class="giveothers_ctop" bindtap="more">
     <view class="giveothers_ctl">請選擇禮包類型</view>
     <view class="giveothers_ctr">更多
       <text>></text>
@@ -36,19 +36,13 @@
   </view>
   <view class="giveothers_cconter">
     <view class="giveothers_cbox">
-      <view class="giveothers_imgbox">
-        <view class="giveothers_img"></view>
-        <text>女神節</text>
+      <view class="giveothers_imgbox" wx:for="{{scene}}" wx:key="{{index}}" data-id="{{item.id}}">
+        <view class="giveothers_img">
+          <image class="giveothers_i" src="{{item.picture}}"></image>
+        </view>
+        <text>{{item.name}}</text>
       </view>
-       <view class="giveothers_imgbox">
-        <view class="giveothers_img"></view>
-        <text>真愛</text>
-      </view>
-       <view class="giveothers_imgbox">
-        <view class="giveothers_img"></view>
-        <text>遇見愛</text>
-      </view>
-      <text class="giveothers_more">></text>
+      <!-- <text class="giveothers_more">></text> -->
     </view>
   </view>
 </view>

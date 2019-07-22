@@ -63,7 +63,7 @@ Page({
         showCancel: false
       })
       return false;
-    } else if (that.data.sex==''){
+    } else if (that.data.sex==null){
       wx.showModal({
         title: '提示',
         content: '请输入性别',

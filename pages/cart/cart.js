@@ -12,50 +12,20 @@ Page({
     selectAllStatus: false, // 全选状态，默认全选
     items: [],
     startX: 0, //开始坐标
-    startY: 0
+    startY: 0,
+    bar_Height: wx.getSystemInfoSync().statusBarHeight		// 获取手机状态栏高度
   },
-
+  //  点击返回键
+  goBack:function(){
+    wx.switchTab({
+      url: '../index/index'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    var that = this;
-    var shuliang=0
-    api.getJSON('/api/Cart/cartlist?page=1&num=300&token=' + app.globalData.token, function(res) {
-      if (res.data.status == 1) {
-        console.log(res.data.data)
-        that.setData({
-          carts: res.data.data
-        });
-        that.data.items.push({
-          content: that.data.carts,
-          isTouchMove: false //默认全隐藏删除
-        })
-        console.log(that.data.items[0].content)
-        that.setData({
-          items: that.data.carts
-        });
-        for(var i=0;i<that.data.items.length;i++){
-            
-          if (that.data.items[i].selected===1){
-            shuliang++
-          }
-          
-        }
-        if(shuliang===that.data.items.length){
-          that.setData({ selectAllStatus:true})
-        }
-
-        that.getTotalPrice();
-
-      }
-      
-    })
-    console.log(that.data.carts)
-
-
-
-
+   
   },
   //手指触摸动作开始 记录起点X坐标
   touchstart: function(e) {
@@ -116,13 +86,14 @@ Page({
   },
   //删除事件
   del: function(e) {
-
-    // api.getJSON('/api/Cart/delCart?token=' + app.globalData.token + '&cart_id=' + goodid, function (res) {
-    //   if (res.data.status == 1) {
-    //     console.log("成功lage")
-    //   }
-    // })
-
+    var that=this;
+    var shuliang = 0
+    var idde = e.currentTarget.dataset.idde
+    api.getJSON('/api/Cart/delCart?token=' + app.globalData.token + '&cart_id=' + idde, function (res) {
+      if (res.data.status == 1) {
+        console.log("成功laya")
+      }
+    })
 
     let carts = this.data.carts;
     carts[e.currentTarget.dataset.index].selected = false;
@@ -130,12 +101,21 @@ Page({
       items: carts
     });
     this.getTotalPrice()
-
+    console.log("lalalallallalall")
+    console.log(e.currentTarget.dataset.index)
     this.data.items.splice(e.currentTarget.dataset.index, 1)
-    console.log("sss")
+    console.log("ssslalala")
+    console.log(this.data.items)
     this.setData({
       items: this.data.items
     });
+    console.log('sssaaa')
+    console.log(this.data.items)
+   
+    
+
+
+
 
 
   },
@@ -150,6 +130,39 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    var that = this;
+    var shuliang = 0
+    api.getJSON('/api/Cart/cartlist?page=1&num=300&token=' + app.globalData.token, function (res) {
+      if (res.data.status == 1) {
+        console.log(res.data.data)
+        that.setData({
+          carts: res.data.data
+        });
+        that.data.items.push({
+          content: that.data.carts,
+          isTouchMove: false //默认全隐藏删除
+        })
+        console.log(that.data.items[0].content)
+        that.setData({
+          items: that.data.carts
+        });
+        for (var i = 0; i < that.data.items.length; i++) {
+
+          if (that.data.items[i].selected === 1) {
+            shuliang++
+          }
+
+        }
+        if (shuliang === that.data.items.length) {
+          that.setData({ selectAllStatus: true })
+        }
+
+        that.getTotalPrice();
+
+      }
+
+    })
+    console.log(that.data.carts)
     // 隐藏底部导航条
     wx.hideTabBar()
     this.setData({
@@ -293,17 +306,17 @@ Page({
   // 减少数量
   minusCount(e) {
     const id = e.currentTarget.dataset.id;
-    api.getJSON('/api/Cart/addCart?token=' + app.globalData.token + '&sku_id=' + id + '&cart_number=-1', function (res) {
-      if (res.data.status == 1) {
-        console.log("商品数量减少成功")
-      }
-    })
     const index = e.currentTarget.dataset.index;
     let carts = this.data.carts;
     let goods_num = carts[index].goods_num;
     if (goods_num <= 1) {
       return false;
     }
+    api.getJSON('/api/Cart/addCart?token=' + app.globalData.token + '&sku_id=' + id + '&cart_number=-1', function (res) {
+      if (res.data.status == 1) {
+        console.log("商品数量减少成功")
+      }
+    })
     goods_num = goods_num - 1;
     carts[index].goods_num = goods_num;
     console.log(carts)
@@ -312,22 +325,6 @@ Page({
     });
     console.log(this.data.carts)
     this.getTotalPrice();
-  },
-  // 删除商品
-  deleteList(e) {
-    const index = e.currentTarget.dataset.index;
-    let carts = this.data.carts;
-    carts.splice(index, 1); // 删除购物车列表里这个商品
-    this.setData({
-      items: carts
-    });
-    if (!carts.length) { // 如果购物车为空
-      this.setData({
-        hasList: false // 修改标识为false，显示购物车为空页面
-      });
-    } else { // 如果不为空
-      this.getTotalPrice(); // 重新计算总价格
-    }
   }
 
 })

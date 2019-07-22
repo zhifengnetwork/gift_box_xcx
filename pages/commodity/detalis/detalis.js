@@ -1,13 +1,13 @@
+
 var WxParse = require('../../../wxParse/wxParse.js');
 var api = require('../../../utils/api');
 var app = getApp();
 Page({
-
   /**
    * 页面的初始数据
    */
   data: {
-    goods_data:[],//商品数据
+    goods_data: [], //商品数据
     currentSwiper: 0,
     indicatorColor: 'white',
     indicatorActivecolor: 'red',
@@ -15,16 +15,49 @@ Page({
     list: 3,
     listdata: 8,
     // 头部导航栏的高度
-    // statusBarHeight: app.globalData.statusBarHeight,
+    bar_Height: wx.getSystemInfoSync().statusBarHeight, // 获取手机状态栏高度
     height: app.globalData.height * 2 + 25,
     navbarData: {
       name: '我是标题'
     },
-     // 清单列表
-    attrList:[],
-    //库存列表
-    skuBeanList:[],
-  
+    attrList: [],
+    skuBeanList: [],
+    //商品规格
+    goods_spec_list: [],
+    goodssss: [],
+    showModalStatus: false,
+    pintuanArr: "",
+    googsId: "",
+    goods_spec: "",
+    wuliuShow: false,
+    guigeShow: false,
+    pinyouImg: false,
+    zhiyouImg: false,
+    dataArr: [],
+    productNum: 1,
+    wuliuType: "请选择物流方式",
+    wuliuTypeId: "",
+    pinyoushow: false,
+    zhiyoushow: false,
+    shipper: "",
+    tax: "",
+    spec: "",
+    winHeight: 0,
+    isSC: "",
+    showPdbox: false,
+    modePdData: [],
+    order_id: "",
+    pintuan_num: "",
+    ptorder_id: "",
+    leader: "",
+    statussxianshi: false,
+    price: "0.00",
+    title: "",
+    name:"",
+    sku_id:0,
+    imgimg:'',
+    store_count:0,
+    anniu:true
   },
   clickTab: function (e) {
     var that = this;
@@ -38,8 +71,69 @@ Page({
   },
   // 犒劳自己的商品选择事件
   my_goods: function () {
-    wx.navigateTo({
-      url: 'payment/award/award',
+    // wx.navigateTo({
+    //   url: 'payment/award/award',
+    // })
+    this.setData({
+      statussxianshi: true
+    });
+    this.setData({anniu:true})
+  },
+  goBack: function () {
+    this.setData({
+      statussxianshi: false
+    });
+    wx.navigateBack({
+      delta: 1,
+    })
+  },
+  jiele: function () {
+    this.setData({
+      statussxianshi: false
+    }), 
+      api.getJSON('/api/order/immediatelyOrder?sku_id=' + this.data.sku_id + '&cart_number=' + this.data.productNum+"&token="+app.globalData.token, function (res) {
+      if (res.data.status == -1){
+        wx.showToast({
+          icon: 'none',
+          title: "改商品不存在",
+          duration: 500
+        })
+      }
+      if (res.data.status == 1) {
+        wx.showToast({
+          icon: 'none',
+          title: "加入购物车成功",
+          duration: 1000
+        })
+      }
+      if (res.data.status == -2) {
+        wx.showToast({
+          icon: 'none',
+          title: "该商品库存不足！",
+          duration: 500
+        })
+      }
+
+    })
+  },
+  kaolao:function(){
+    this.setData({
+      statussxianshi: true
+    });
+    this.setData({
+      anniu:false
+    })
+
+  },
+  give_goods: function () {
+    // wx.navigateTo({
+    //   url: '../givingother/givingother',
+    // })
+    this.setData({
+      statussxianshi: true
+    })
+    this.setData({
+      anniu: false
     })
   },
   cart: function () {
@@ -57,36 +151,49 @@ Page({
       url: 'give/GiveOthers/GiveOthers',
     })
   },
-  preventTouchMove: function () {
-  },
+  preventTouchMove: function () { },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-    var that=this;
-   
+
+    var that = this;
     var id = options.id
     // 请求数据,渲染商品页面
-    api.getJSON('api/goods/goodsDetail?goods_id=' + id + '&token=' + app.globalData.token, function (res) {
-    
-      if (res.data.status == 1){
-      
-       // var list = res.data.data.attrList
-       // var sku = res.data.data.skuBeanList
-     
-        that.setData({ 
-        //  attrList: list,
-         // skuBeanList: sku,
+    // api.getJSON('api/goods/goodsDetail?goods_id=' + id + '&token=' + app.globalData.token, function (res) {
+    //   if (res.data.status == 1) {
+    //     that.setData({
+    //       goods_data: res.data.data
+    //     })
+    //     WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
+    //   }
+    // });
+    api.getJSON('/api/goods/goodsinfo?goods_id=' + id, function (res) {
+      if (res.data.status == 1) {
+        console.log(res.data.data.goods_spec_list)
+        that.setData({
+          goods_spec_list: res.data.data.goods_spec_list, 
+          goodssss: res.data.data.spec_goods_price,
           goods_data: res.data.data
         })
-      
+        
+        var zuhe=[];
+        for (var st in that.data.goodssss) {
+          zuhe.push(st)
+        }
+        console.log(zuhe);
+        // 默认取第一个的sku_id
+        var xiabiao=zuhe[0];
+        console.log("niuniu")
+        console.log(xiabiao)
+        that.data.sku_id = res.data.data.spec_goods_price[xiabiao].sku_id
         WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
-
-        //that.onData();
       }
     })
-  },
+   
+   
+
+  }, 
 
   swiperChange: function (e) {
     this.setData({
@@ -98,7 +205,7 @@ Page({
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+
   },
 
   /**
@@ -142,246 +249,126 @@ Page({
   onShareAppMessage: function () {
 
   },
-  //商品选择开始 --s
-  /**
-  * Sku核心算法
-  * 根据所有出当前类别之外的选择 判断按钮的enable ？ false or true
-  */
-  onData: function () {
-    var attrListIn = this.data.attrList;
-   // console.log(this.data.attrList, "待扫描 列表清单");
-   // console.log(this.data.skuBeanList, "待扫描 库存清单");
-    for (var i = 0; i < attrListIn.length; i++) {
-      var attrListBig = attrListIn[i];
-      //console.log("1111111")
-     // console.log(attrListBig)
-      //当前类别之外的选择列表
-      var attrsOtherSelect = [];
-
-      for (var j = 0; j < attrListIn.length; j++) {
-        var attrListSmall = attrListIn[j];
-  
-        if (attrListSmall.id != attrListBig.id) {
-        
-          for (var k = 0; k < attrListSmall.attr.length; k++) {
-            var attrListSmallAttr = attrListSmall.attr[k];
-          
-            if (attrListSmallAttr.enable && attrListSmallAttr.select) {
-              attrsOtherSelect.push(attrListSmallAttr);
-            }
-          }
-        }
-      }
-      var enableIds = [];
-      var skuBeanListIn = this.data.skuBeanList;
-     
-      for (var z = 0; z < skuBeanListIn.length; z++) {
-        var ism = true;
-        var skuBean = skuBeanListIn[z];
-
-        for (var j = 0; j < attrsOtherSelect.length; j++) {
-          var enable = false;
-          for (var k = 0; k < skuBean.attributes.length; k++) {
-            var goodAttrBean = skuBean.attributes[k];
-            if (attrsOtherSelect[j].attributeId == goodAttrBean.attributeId
-              && attrsOtherSelect[j].id == goodAttrBean.attributeValId) {
-              enable = true;
-              break;
-            }
-          }
-          ism = enable && ism;
-        }
-
-        if (ism) {
-         
-          for (var o = 0; o < skuBean.attributes.length; o++) {
-            var goodAttrBean = skuBean.attributes[o];
-            // console.log("goodAttrBean", goodAttrBean)
-            // console.log('----')
-            // console.log('attrListBig.id', attrListBig.id)
-
-            if (attrListBig.id == goodAttrBean.attributeId) {
-              enableIds.push(goodAttrBean.attributeValId);
-            }
-          }
-        }
-      }
-      
-     
-     // console.log(enableIds, "sku算法 扫描结果");
-      var integers = enableIds;
-     // console.log('attrListBig.attr', attrListBig.attr)
-      for (var s = 0; s < attrListBig.attr.length; s++) {
-        var attrItem = attrListBig.attr[s];
-       // console.log('attrItem', attrItem)
-       // console.log('ididid',integers.indexOf(attrItem.id))
-        attrItem.enable = integers.indexOf(attrItem.id) != -1;
-
-        console.log(attrItem.enable)
-
-      }
-    }
-
-    console.log(attrListIn)
-    console.log(skuBeanListIn)
-
-
-    // 重新赋值
-    this.setData({
-      attrList: attrListIn,
-      skuBeanList: skuBeanListIn
-    })
-    
-  },
-
-
-
-
-
-
-
-
-
-
-  /**
-   * 规格属性点击事件
-   */
-  onChangeShowState: function (event) {
-    var listItem = this.data.attrList;
-    var items = listItem[event.currentTarget.dataset.idx];
-    var item = items.attr[event.currentTarget.dataset.index];
-
-    if (!item.enable) {
-      return;
-    }
-
-    var select = !item.select;
-
-    for (var i = 0; i < items.attr.length; i++) {
-      items.attr[i].select = false;
-    }
-
-    item.select = select;
-
-    // 获取点击属性列表
-    var canGetInfo = [];
-    for (var skuIndex = 0; skuIndex < listItem.length; skuIndex++) {
-      for (var skuIndexIn = 0; skuIndexIn < listItem[skuIndex].attr.length; skuIndexIn++) {
-        if (listItem[skuIndex].attr[skuIndexIn].enable && listItem[skuIndex].attr[skuIndexIn].select) {
-          canGetInfo.push(listItem[skuIndex].attr[skuIndexIn]);
-        }
-      }
-    }
-
-    console.log(canGetInfo, "目前点击的属性");
-
-    var canGetInfoLog = "";
-
-    var skuBeanList = this.data.skuBeanList;
-
-    var haveSkuBean = [];
-    // 对应库存清单扫描
-    for (var skuBeanIndex = 0; skuBeanIndex < skuBeanList.length; skuBeanIndex++) {
-      var iListCount = 0;
-      for (var skuBeanIndexIn = 0; skuBeanIndexIn < skuBeanList[skuBeanIndex].attributes.length; skuBeanIndexIn++) {
-        if (canGetInfo.length == skuBeanList[skuBeanIndex].attributes.length) {
-          if (skuBeanList[skuBeanIndex].attributes[skuBeanIndexIn].attributeValId == canGetInfo[skuBeanIndexIn].id) {
-            iListCount++;
-          }
+  // 选择规格
+  propClick: function (e) {
+    var pos = e.currentTarget.dataset.pos;
+    var index = e.currentTarget.dataset.index;
+    var gsl = this.data.goods_spec_list;
+    if (gsl[index].length > 0) {
+      for (let i = 0; i < gsl[index].length; i++) {
+        if (i == pos) {
+          gsl[index][pos].isClick = 1
         } else {
-          canGetInfoLog = "库存清单不存在此属性" + " ";
+          gsl[index][i].isClick = 0
         }
       }
-      if (iListCount == skuBeanList[skuBeanIndex].attributes.length) {
-        haveSkuBean.push(skuBeanList[skuBeanIndex]);
+      this.setData({
+        goods_spec_list: gsl
+      });
+      this.checkPrice();
+    }
+  },
+  checkPrice: function () {
+    var goods = this.data.goods_spec_list;
+    var spec = ""
+    // this.setData({
+    //   price: goods.goods.shop_price
+    // });
+
+    if (goods) {
+      for (var i = 0; i < goods.length; i++) {
+        for (var j = 0; j < goods[i].length; j++) {
+          if (goods[i][j].isClick == 1) {
+            if (spec == "")
+              spec = goods[i][j].item_id
+            else
+              spec = spec + "_" + goods[i][j].item_id
+          }
+        }
       }
+
+      var specs = spec.split("_");
+      for (var i = 0; i < specs.length; i++) {
+        specs[i] = parseInt(specs[i])
+      }
+      specs.sort(function (a, b) {
+        return a - b
+      });
+      spec = ""
+      for (var i = 0; i < specs.length; i++) {
+        if (spec == "")
+          spec = specs[i]
+        else {
+          spec = spec + "_" + specs[i];
+          console.log("hh" + spec);
+
+        }
+      }
+     
+      // 收藏组合
+      var zuhe = [];
+      var ss = 0;
+      for (var st in this.data.goodssss) {
+        zuhe.push(st)
+      }
+      console.log(zuhe)
+      for (var i = 0; i < zuhe.length; i++) {
+        //有该组合的时候
+        if (zuhe[i] === spec) {
+          var price = this.data.goodssss[spec].price;
+          var name = this.data.goodssss[spec].name;
+          var sku_id = this.data.goodssss[spec].sku_id;
+          var imgimg = this.data.goodssss[spec].img;
+          var store_count = this.data.goodssss[spec].store_count
+          this.setData({
+            price: price,
+            name: name,
+            sku_id: sku_id,
+            imgimg: imgimg,
+            store_count: store_count
+          });
+        } else {
+          ss++
+        }
+      }
+      console.log(ss)
+      if (ss === zuhe.length) {
+        wx.showToast({
+          icon: 'none',
+          title: "没有该组合",
+          duration: 500
+        })
+      }
+
     }
-
-    console.log(haveSkuBean, "存在于库存清单");
-
-    for (var iox = 0; iox < canGetInfo.length; iox++) {
-      canGetInfoLog += canGetInfo[iox].attributeValue + " ";
+  },
+  //加减商品数量
+  reduceProduct: function () {
+    var proNum = this.data.productNum - 1
+    if (proNum < 1) {
+      this.setData({
+        productNum: 1
+      })
+    } else {
+      this.setData({
+        productNum: proNum
+      })
     }
-
-    if (haveSkuBean.length != 0) {
-      canGetInfoLog += "价钱:" + haveSkuBean[0].price + " 库存量:" + haveSkuBean[0].count;
+  },
+  addProduct: function (e) {
+    var sort = e.target.dataset.sort;
+    var proNum = this.data.productNum + 1
+    if (proNum > sort) {
+      this.setData({
+        productNum: sort
+      })
+    } else {
+      this.setData({
+        productNum: proNum
+      })
     }
-
-    // 重新赋值
-    this.setData({
-      attrList: listItem,
-      infoText: canGetInfoLog,
-    })
-
-    //重新sku运算
-    this.onData();
   }
-  // 商品规格选择 --e
+
+
 
 })
-
-
-// if (res.data.status === 1) {
-//   var attrListIn = that.data.attrList;
-//   console.log(that.data.attrList, "待扫描 列表清单");
-//   console.log(that.data.skuBeanList, "待扫描 库存清单");
-//   for (var i = 0; i < attrListIn.length; i++) {
-//     var attrListBig = attrListIn[i];
-//     //当前类别之外的选择列表
-//     var attrsOtherSelect = [];
-//     for (var j = 0; j < attrListIn.length; j++) {
-//       var attrListSmall = attrListIn[j];
-//       if (attrListSmall.id != attrListBig.id) {
-//         for (var k = 0; k < attrListSmall.attr.length; k++) {
-//           var attrListSmallAttr = attrListSmall.attr[k];
-//           if (attrListSmallAttr.enable && attrListSmallAttr.select) {
-//             attrsOtherSelect.push(attrListSmallAttr);
-//           }
-//         }
-//       }
-//     }
-//     var enableIds = [];
-
-//     var skuBeanListIn = that.data.skuBeanList;
-
-//     for (var z = 0; z < skuBeanListIn.length; z++) {
-//       var ism = true;
-//       var skuBean = skuBeanListIn[z];
-
-//       for (var j = 0; j < attrsOtherSelect.length; j++) {
-//         var enable = false;
-//         for (var k = 0; k < skuBean.attributes.length; k++) {
-//           var goodAttrBean = skuBean.attributes[k];
-//           if (attrsOtherSelect[j].attributeId == goodAttrBean.attributeId
-//             && attrsOtherSelect[j].id == goodAttrBean.attributeValId) {
-//             enable = true;
-//             break;
-//           }
-//         }
-//         ism = enable && ism;
-//       }
-//       if (ism) {
-//         for (var o = 0; o < skuBean.attributes.length; o++) {
-//           var goodAttrBean = skuBean.attributes[o];
-
-//           if (attrListBig.id == goodAttrBean.attributeId) {
-//             enableIds.push(goodAttrBean.attributeValId);
-//           }
-//         }
-//       }
-//     }
-//     console.log(enableIds, "sku算法 扫描结果");
-//     var integers = enableIds;
-//     for (var s = 0; s < attrListBig.attr.length; s++) {
-//       var attrItem = attrListBig.attr[s];
-//       attrItem.enable = integers.indexOf(attrItem.id) != -1;
-//     }
-//   }
-
-//   // 重新赋值
-//   that.setData({
-//     attrList: attrListIn,
-//     skuBeanList: skuBeanListIn
-//   })
-
-// }

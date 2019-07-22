@@ -12,7 +12,7 @@
     <text></text>
   </view>
 </view>
-<view class="{{currentTab == 0 ? 'show':'hidden'}}">
+<view>
   <scroll-view>
     <view class="giftbank_box" wx:for="{{item}}">
       <view class="giftbank_top">
@@ -46,60 +46,5 @@
       </view>
     </view>
   </scroll-view>
-</view>
-<view class="{{currentTab == 1 ? 'show':'hidden'}}">
-  <scroll-view>
-    <view class="giftbank_box">
-      <view class="giftbank_top">
-        <view class="giftbank_number">订单编号：20190314002</view>
-        <view class="giftbank_obligation">已完成</view>
-      </view>
-      <view class="giftbank_con">
-        <view class="giftbank_img"></view>
-        <view class="giftbank_conent">
-          <view class="giftbank_brand">Salvatore Ferragamo</view>
-          <view class="giftbank_standard">蓝色经典男士淡香水50ml</view>
-          <view class="giftbank_size"></view>
-        </view>
-        <view class="giftbank_r">
-          <view class="giftbank_price">HK$124.00</view>
-          <view class="giftbank_num">X 1</view>
-        </view>
-      </view>
-      <view class="giftbank_bott">
-        <view class="giftbank_bottnum">共1件商品</view>
-        <view class="giftbank_bottprice">合计：HK$124.00</view>
-      </view>
-      <view class="giftbank_button">
-        <view class="giftbank_cancel">犒勞自己</view>
-        <view class="giftbank_payment">贈送他人</view>
-      </view>
-    </view>
-    <view class="giftbank_box">
-      <view class="giftbank_top">
-        <view class="giftbank_number">订单编号：20190314002</view>
-        <view class="giftbank_obligation">已完成</view>
-      </view>
-      <view class="giftbank_con">
-        <view class="giftbank_img"></view>
-        <view class="giftbank_conent">
-          <view class="giftbank_brand">Salvatore Ferragamo</view>
-          <view class="giftbank_standard">蓝色经典男士淡香水50ml</view>
-          <view class="giftbank_size">黑色  26*12*19cm</view>
-        </view>
-        <view class="giftbank_r">
-          <view class="giftbank_price">HK$124.00</view>
-          <view class="giftbank_num">X 1</view>
-        </view>
-      </view>
-      <view class="giftbank_bott">
-        <view class="giftbank_bottnum">共1件商品</view>
-        <view class="giftbank_bottprice">合计：HK$124.00</view>
-      </view>
-      <view class="giftbank_button">
-        <view class="giftbank_cancel">犒勞自己</view>
-        <view class="giftbank_payment">贈送他人</view>
-      </view>
-    </view>
-  </scroll-view>
+  <view class="tips" wx:if="{{!item}}">暂无数据哦!</view>
 </view>
