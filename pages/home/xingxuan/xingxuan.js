@@ -1,41 +1,21 @@
+
 // pages/home/xingxuan/xingxuan.js
+var api = require('../../../utils/api');
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    list: [{
-      name: '祖马龙礼盒香水香薰',
-      price: '￥1,700'
-    }, {
-      name: 'Dyson戴森 吹风机',
-      price: '￥2,950'
-    }, {
-      name: 'Dyson戴森 吹风机',
-      price: '￥2,950'
-    }, {
-      name: 'Dyson戴森 吹风机',
-      price: '￥2,950'
-    }, {
-      name: 'Dyson戴森 吹风机',
-      price: '￥2,950'
-    }, {
-      name: 'Dyson戴森 吹风机',
-      price: '￥2,950'
-    }, {
-      name: 'Dyson戴森 吹风机',
-      price: '￥2,950'
-    }, {
-      name: 'Dyson戴森 吹风机',
-      price: '￥2,950'
-    }]
+    list: []
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+   
 
   },
 

@@ -66,6 +66,8 @@ Page({
           guess_like: res.data.data.cainixihuan,
           chaoliudaogou: res.data.data.chaoliudaogou,
         })
+        console.log("hot_category");
+        console.log(that.data.hot_category)
       }
     })
   },
@@ -100,10 +102,22 @@ Page({
       url: '../home/integral/integral',
     })
   },
-  xingxuan: function () {
-    wx.navigateTo({
-      url: '../home/xingxuan/xingxuan',
-    })
+  xingxuan: function (e) {
+     var id=e.currentTarget.dataset.id;
+    //  if(id==19){
+    //       wx.navigateTo({
+    //       url: '../home/xingxuan/xingxuan?id='+id,
+    //     })
+    //  }
+    if (id == 22) {
+      wx.navigateTo({
+          url: '../home/boss/boss?id='+id
+        })
+    }
+
+
+
+
   },
   boss: function () {
     wx.navigateTo({
