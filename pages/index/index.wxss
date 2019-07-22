@@ -1,6 +1,6 @@
 
 /* 轮播图--s */
-.swiper_box {
+/* .swiper_box {
   height: auto;
   position: relative;
 }
@@ -11,10 +11,10 @@
   width: 100%;
   height: 100%;
   /* border-radius: 100% 100% 100% 100% /0% 0% 30% 30%; */
-}
+/* }  */
 /*用来包裹所有的小圆点  */
  
-.dots {
+/* .dots {
   width: 210rpx;
   height: 20rpx;
   display: flex;
@@ -24,27 +24,27 @@
   left: 50%;
   transform: translateX(-50%);
   bottom: 80rpx;
-}
+} */
 /*未选中时的小圆点样式 */
-.dot {
+/* .dot {
   width: 15rpx;
   height: 15rpx;
   border-radius: 14rpx;
   margin-right: 10rpx;
   background-color: gray;
-}
+} */
 /*选中以后的小圆点样式 */
-.active {
+/* .active {
   width: 40rpx;
   height: 15rpx;
   background-color: white;
-}
+} */
 /* 轮播图--e */
 .red_enpole{
   width: 120rpx;
   height: 120rpx;
   position: absolute;
-  top: 548rpx;
+  top: 518rpx;
   right: 14rpx
   }
 /* 选择栏--s */
@@ -59,7 +59,7 @@
   width: 100%;
   height: 180rpx;
   position: relative;
-  top: -70rpx;
+  top: -100rpx;
   background: white;
   box-shadow: 0 0 10rpx #DDDDDD; 
   padding-bottom: 10rpx 
@@ -315,3 +315,64 @@
   width: 100%;
   height: 100%
 }
+
+/* 轮播图样式 */
+.wrap{
+
+height: 800rpx;
+/* border: 1px solid red; */
+position: relative;
+}
+.swipers {
+  height: 767rpx;
+}
+swiper-item{
+  height: 800rpx;
+}
+swiper-item image{
+  width: 100%;
+  height: 800rpx;
+}
+
+/*用来包裹所有的小圆点 */
+
+.dots{
+
+width: 400rpx;
+height: 36rpx;
+line-height: 36rpx;
+margin-top: 50rpx;
+position: absolute;
+top: 600rpx;
+left: 50%;
+transform: translate(-50%,0);
+/* border: 1px solid red; */
+display: flex;
+justify-content: center;
+}
+
+/*未选中时的小圆点样式 */
+
+.dot{
+
+width: 15rpx;
+height: 15rpx;
+border-radius: 50%;
+margin-right: 26rpx;
+background-color: white;
+opacity:0.3;
+float: left;
+
+}
+
+/*选中以后的小圆点样式 */
+
+.active{
+width: 40rpx;
+height: 15rpx;
+border-radius: 20rpx;
+background-color: white;
+opacity:1;
+
+}
+
