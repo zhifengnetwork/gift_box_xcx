@@ -83,17 +83,17 @@ Page({
     })
   },
 
-  // 确认收货
-  shouhuo: function (e) {
-    let that = this;
-    api.postJSON('api/order/edit_status', {
-      token: app.globalData.token,
-      order_id: e.target.dataset.id,
-      status: 2,
-    }, function (res) {
-      console.log(res)
-    })
-  },
+  // // 确认收货
+  // shouhuo: function (e) {
+  //   let that = this;
+  //   api.postJSON('api/order/edit_status', {
+  //     token: app.globalData.token,
+  //     order_id: e.target.dataset.id,
+  //     status: 2,
+  //   }, function (res) {
+  //     console.log(res)
+  //   })
+  // },
 
 
   kaolao:function () {
@@ -103,11 +103,26 @@ Page({
   // 去付款
   fukuan: function (e) {
     let that = this;
+    console.log(e.target.dataset.id)
     api.postJSON('api/pay/order_wx_pay', {
       token: app.globalData.token,
       order_id: e.target.dataset.id,
     }, function (res) {
-      console.log(res)
+      if (res.data.status == 1){
+        wx.requestPayment({
+          timeStamp: res.data.data.timeStamp,
+          nonceStr: res.data.data.nonceStr,
+          package: res.data.data.package,
+          signType: 'MD5',
+          paySign: res.data.data.paySign,
+          success(res) {
+            console.log(res);
+          },
+          fail(res) {
+            console.log(res)
+          }
+        })
+      }
     })
   },
 

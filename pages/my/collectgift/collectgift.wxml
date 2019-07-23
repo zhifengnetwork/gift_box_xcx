@@ -2,20 +2,20 @@
   <component title='已收礼物' show_bol='{{false}}'></component>
 </view>
 <view class="collectgift">
-  <view class="collectgift_box">
+  <view class="collectgift_box" wx:for="{{item}}">
     <view class="collectgift_top">
-      <view class="collectgift_number">订单编号：20190314002</view>
-      <view class="collectgift_obligation">2019-06-05 12:32:17</view>
+      <view class="collectgift_number">订单编号：{{item.order_sn}}</view>
+      <view class="collectgift_obligation">{{item.add_time}}</view>
     </view>
     <view class="collectgift_con">
       <view class="collectgift_img"></view>
       <view class="collectgift_conent">
-        <view class="collectgift_brand">Salvatore Ferragamo</view>
-        <view class="collectgift_standard">蓝色经典男士淡香水50ml</view>
+        <view class="collectgift_brand">{{item.goods_name}}</view>
+        <view class="collectgift_standard">{{item.spec_key_name}}</view>
         <view class="collectgift_size"></view>
       </view>
       <view class="collectgift_r">
-        <view class="collectgift_num">X 1</view>
+        <view class="collectgift_num">X {{item.goods_num}}</view>
       </view>
     </view>
     <view class="collectgift_bott">
@@ -23,78 +23,6 @@
       <view class="collectgift_button">
         <view class="collectgift_cancel">查看物流</view>
         <view class="collectgift_payment" bindtap="shouhuo">確認收貨</view>
-      </view>
-    </view>
-  </view>
-  <view class="collectgift_box">
-    <view class="collectgift_top">
-      <view class="collectgift_number">订单编号：20190314002</view>
-      <view class="collectgift_obligation">2019-06-05 12:32:17</view>
-    </view>
-    <view class="collectgift_con">
-      <view class="collectgift_img"></view>
-      <view class="collectgift_conent">
-        <view class="collectgift_brand">Salvatore Ferragamo</view>
-        <view class="collectgift_standard">蓝色经典男士淡香水50ml</view>
-        <view class="collectgift_size"></view>
-      </view>
-      <view class="collectgift_r">
-        <view class="collectgift_num">X 1</view>
-      </view>
-    </view>
-    <view class="collectgift_bott">
-      <view class="collectgift_bottnum">贈送人：東紫</view>
-      <view class="collectgift_button">
-        <view class="collectgift_cancel">查看物流</view>
-        <view class="collectgift_payment">確認收貨</view>
-      </view>
-    </view>
-  </view>
-  <view class="collectgift_box">
-    <view class="collectgift_top">
-      <view class="collectgift_number">订单编号：20190314002</view>
-      <view class="collectgift_obligation">2019-06-05 12:32:17</view>
-    </view>
-    <view class="collectgift_con">
-      <view class="collectgift_img"></view>
-      <view class="collectgift_conent">
-        <view class="collectgift_brand">Salvatore Ferragamo</view>
-        <view class="collectgift_standard">蓝色经典男士淡香水50ml</view>
-        <view class="collectgift_size"></view>
-      </view>
-      <view class="collectgift_r">
-        <view class="collectgift_num">X 1</view>
-      </view>
-    </view>
-    <view class="collectgift_bott">
-      <view class="collectgift_bottnum">贈送人：東紫</view>
-      <view class="collectgift_button">
-        <view class="collectgift_cancel">查看物流</view>
-        <view class="collectgift_payment">確認收貨</view>
-      </view>
-    </view>
-  </view>
-  <view class="collectgift_box">
-    <view class="collectgift_top">
-      <view class="collectgift_number">订单编号：20190314002</view>
-      <view class="collectgift_obligation">2019-06-05 12:32:17</view>
-    </view>
-    <view class="collectgift_con">
-      <view class="collectgift_img"></view>
-      <view class="collectgift_conent">
-        <view class="collectgift_brand">Salvatore Ferragamo</view>
-        <view class="collectgift_standard">蓝色经典男士淡香水50ml</view>
-        <view class="collectgift_size"></view>
-      </view>
-      <view class="collectgift_r">
-        <view class="collectgift_num">X 1</view>
-      </view>
-    </view>
-    <view class="collectgift_bott">
-      <view class="collectgift_bottnum">贈送人：東紫</view>
-      <view class="collectgift_button">
-        <view class="collectgift_cancel">查看物流</view>
-        <view class="collectgift_payment">確認收貨</view>
       </view>
     </view>
   </view>
