@@ -1,0 +1,50 @@
+<component title='填寫退貨物流' show_bol='{{false}}'></component>
+<!-- 商品信息 -->
+<view class="detalis_con" style="margin-top:{{bar_Height+140}}rpx">
+  <view class="detalis_img"></view>
+  <view class="detalis_conent">
+    <view class="detalis_brand">Salvatore Ferragamo</view>
+    <view class="detalis_standard">藍色經典男士淡香水50ml</view>
+    <!-- <view class="detalis_size">香型：香型</view> -->
+  </view>
+  <view class="detalis_r">
+    <view class="detalis_price">HK$124.00</view>
+    <view class="detalis_num">X 1</view>
+  </view>
+</view>
+<!-- 物流公司 -->
+<view class="refundcause" bindtap="dianji">
+  <text class="refundcause_l">物流公司</text>
+  <view class="refundcause_r" wx:if="{{!ss}}">
+    請選擇物流公司
+    <text>></text>
+  </view>
+  <view class="refundcause_r" wx:if="{{ss}}">{{ss}}</view>
+</view>
+<!-- 物流单号 -->
+<view class="refundstate">
+  <text class="refundstate_text">物流单号:</text><input placeholder="請填寫物流單號" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" />
+</view>
+<!-- 聯系電話 -->
+<view class="refundstate" style="margin-top: 20rpx;">
+  <text class="refundstate_text">聯系電話:</text><input placeholder="請填寫手機號碼" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" />
+</view>
+<!-- 退貨說明 -->
+<view class="refundstate" style="margin-top: 20rpx;">
+  <text class="refundstate_text">退貨說明:</text><input placeholder="選填" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" />
+</view>
+<!-- 上傳憑證 -->
+<view class="voucher">上傳憑證</view>
+<!-- 相机 -->
+<view class="camera">
+  <view wx:for="{{tupian}}" class="tupian_box">
+    <image src="{{item}}" class="tupian"></image>
+  </view>
+  <view class="camera_box" bindtap="camera">
+    <view class="xiangjibox"><image src="../../../public/images/xiangji.jpg" class="xiangjiimg"></image></view>
+    <view class="xiangjiviewt">上傳憑證</view>
+    <view class="xiangjiviewf">（最多三張）</view>
+  </view>
+</view>
+<!-- 提交 -->
+<view class="mydetalis_buttom" bindtap="send">提交</view>

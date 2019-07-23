@@ -32,6 +32,12 @@ Page({
       console.log(res)
     })
   },
+
+  selectormode:function () {
+    wx.navigateTo({
+      url: '../after/SelectorMode/SelectorMode',
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

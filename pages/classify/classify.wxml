@@ -24,7 +24,6 @@
   <view class="{{'99' == selectMenuID? 'teshu' : 'dj'}}" bindtap="quchu" data-id='99'>精品大牌</view>
   <view class="searchLetter touchClass" wx:if="{{diyi}}">
     <view wx:for="{{city}}" wx:for-index="groupindex" wx:for-item="cell" style="color:#777777;font-size:25rpx;" wx:key="index" data-letter="{{cell[0].key}}" catchtouchend="clickLetter">{{cell[0].key}}</view>
-  
   </view> 
   <block wx:if="{{isShowLetter}}">
     <view class="showSlectedLetter">
@@ -58,8 +57,7 @@
     <view wx:if="{{selectMenuID==index}}" class="nei" wx:for="{{navLeftItems}}" wx:key>
       <scroll-view scroll-y="true" class="scrolhei1" style='height:{{scroll_height1}}rpx;' bindscroll="bindScroll" scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}">
         <view class="leifen">全部分类</view>
-
-        <view class="center_shop" wx:for="{{dier}}" wx:key>
+        <view class="center_shop" wx:for="{{dier}}" wx:key bindtap="shangpxing" data-id="{{item.cat_id}}">
           <image src="{{item.img}}" class="img_item"></image>
           <view class="text_item">{{item.cat_name}}</view>
         </view>
