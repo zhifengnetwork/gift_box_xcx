@@ -94,6 +94,7 @@ Component({
         ctx.fillStyle = options.fontColor,
         ctx.textAlign = "center";
         ctx.fillText(awardTitle[i].level, 0, -90);
+        ctx.fillText(awardTitle[i].prize, 0, -70);
         startAngel += angel
         ctx.restore();
       }

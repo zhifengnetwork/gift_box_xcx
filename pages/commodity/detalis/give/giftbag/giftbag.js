@@ -1,4 +1,6 @@
 // pages/commodity/detalis/give/giftbag/giftbag.js
+var api = require('../../../../../utils/api');
+var app = getApp();
 Page({
 
   /**
@@ -61,11 +63,33 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+    let url = null;
+    if (app.globalData.give.order_type == 1) {
+      url = '/pages/card/go';
+    } else {
+      url = '/pages/turntable/turntable';
+    }
+    var nickname = app.globalData.userInfo.nickname;
+    nickname = nickname == undefined ? '' : nickname;
+    console.log(nickname)
     return {
-      title: 'zy送大家一份礼品',
-      // desc: '分享页面的内容',
-      imageUrl: "https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640",
-      path: 'pages/commodity/detalis/give/envelope/envelope'
+      title: nickname + '为你准备了一份惊喜,请火速查收!',
+      imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',
+      path: url,
+      success: function (res) {
+        console.log(res)
+        wx.showModal({
+          title: '分享成功',
+          content: '分享成功',
+        })
+      },
+      fail: function (res) {
+        console.log(res)
+        wx.showModal({
+          title: '分享失败',
+          content: '分享失败',
+        })
+      }
     }
   }
 })

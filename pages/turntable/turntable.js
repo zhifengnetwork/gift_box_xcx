@@ -11,28 +11,28 @@ Page({
       speed: 10,/**转盘速度 */
       award: [
         {
-          level: '特等奖',
+          level: '礼品',
           prize: '奖品1'
         },
         {
-          level: '一等奖',
-          prize: '奖品2'
+          level: '霸气侧漏',
+          prize: '跺跺脚'
         },
         {
-          level: '二等奖',
-          prize: '奖品4'
+          level: '才华横溢',
+          prize: ' 贯江东'
         },
         {
-          level: '三等奖',
-          prize: '奖品3'
+          level: '纵横驰骋',
+          prize: '乘烈风'
         },
         {
-          level: '四等奖',
-          prize: '奖品5'
+          level: '镶金土豪',
+          prize: '不差钱'
         },
         {
-          level: '五等奖',
-          prize: '奖品6'
+          level: ' 江枫渔火',
+          prize: '对眠愁'
         },
       ],/**奖项内容 */
       fontColor: '#e21b58',/**文字颜色 */

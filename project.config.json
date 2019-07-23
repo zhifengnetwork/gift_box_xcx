@@ -24,12 +24,11 @@
 	"libVersion": "2.0.4",
 	"appid": "wxe7d1d050fd8dc078",
 	"projectname": "xingxuan",
+	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {
 		"hidedInDevtools": []
 	},
-	"isGameTourist": false,
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
+	"scripts": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -44,11 +43,10 @@
 			"list": []
 		},
 		"game": {
-			"currentL": -1,
 			"list": []
 		},
 		"miniprogram": {
-			"current": 8,
+			"current": -1,
 			"list": [
 				{
 					"id": -1,
@@ -107,7 +105,7 @@
 					"scene": null
 				},
 				{
-					"id": 8,
+					"id": -1,
 					"name": "申請退款",
 					"pathName": "pages/my/after/refund/refund",
 					"query": "",
@@ -131,13 +129,6 @@
 					"id": -1,
 					"name": "商品详情1",
 					"pathName": "pages/commodity/detalis/detalis",
-					"query": "",
-					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "pages/turntable/turntable",
-					"pathName": "pages/turntable/turntable",
 					"query": "",
 					"scene": null
 				}

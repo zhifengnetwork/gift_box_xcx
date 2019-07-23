@@ -1,2 +1,29 @@
 <!--pages/commodity/detalis/give/integral/integral.wxml-->
-<text>pages/commodity/detalis/give/integral/integral.wxml</text>
+<component title='积分支付' show_bol='{{false}}' side="{{true}}"></component>
+<view class="integral">
+  <view class="integral_item">
+    <view class="integral_title">
+      VIP卡号:
+    </view>
+    <view class="integral_inp">
+      <input type="text" class="integral_input"></input>
+    </view>
+  </view>
+  <view class="integral_item">
+    <view class="integral_title">
+      会员姓名:
+    </view>
+    <view class="integral_inp">
+      <input type="text" class="integral_input"></input>
+    </view>
+  </view>
+  <view class="integral_item">
+    <view class="integral_title">
+      手机号码:
+    </view>
+    <view class="integral_inp">
+      <input type="text" class="integral_input"></input>
+    </view>
+  </view>
+  <view class="send">提交</view>
+</view>

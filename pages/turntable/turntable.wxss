@@ -82,3 +82,154 @@ page{
   text-align: center;
   border-bottom: 2rpx solid #fff;
 }
+/* 获得礼物 */
+.mask{
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 30;
+  background: rgba(0,0,0,0.8)
+}
+.win_img{
+  position: absolute;
+  top: 390rpx;
+  left: 40rpx;
+  width: 660rpx;
+  height: 500rpx;
+}
+.win_btn{
+  position: absolute;
+  left: 180rpx;
+  bottom: 270rpx;
+  width: 410rpx;
+  height: 90rpx;
+  color: #fff;
+  text-align: center;
+  line-height: 90rpx;
+  border-radius: 100rpx;
+  background: #d7a868;
+}
+/* 俏皮话 */
+.wisecrack_bg{
+  position: absolute;
+  top: 400rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 450rpx;
+  height: 550rpx;
+}
+.wisecrack_icon{
+  position: absolute;
+  left: 250rpx;
+  top: 490rpx;
+  width: 270rpx;
+  height: 240rpx;
+}
+.wisecrack_info{
+  position: absolute;
+  left: 200rpx;
+  bottom: 420rpx;
+  font-size: 32rpx;
+  font-weight: bold;
+  color: #9B5D2B;
+}
+/* 未中奖 */
+.miss_img{
+  position: absolute;
+  top: 508rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 640rpx;
+  height: 366rpx;
+}
+.miss_btn{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 300rpx;
+  margin: auto;
+  width: 400rpx;
+  height: 90rpx;
+  color: #fff;
+  font-weight: bold;
+  font-style:italic;
+  line-height: 74rpx;
+  padding-left: 80rpx;
+  box-sizing: border-box;
+  border: 8rpx solid #000;
+  border-radius: 100rpx;
+  background: #d7a868;
+}
+.miss_btn text{
+  position: absolute;
+  width: 40rpx;
+  height: 40rpx;
+  font-size: 50rpx;
+  font-weight: 400;
+  font-style:normal;
+  font-family:'Courier New', Courier, monospace;
+}
+.miss_btn text:nth-last-of-type(1){
+  right: 50rpx;
+}
+.miss_btn text:nth-last-of-type(2){
+  right: 35rpx;
+  opacity: .7;
+}
+.miss_btn text:nth-last-of-type(3){
+  right: 20rpx;
+  opacity: .5;
+}
+/* 开奖时间 */
+.start_img{
+  position: absolute;
+  top: 320rpx;
+  left: 0;
+  right: 0;
+  margin: auto; 
+  width: 530rpx;
+  height: 600rpx;
+}
+.start_info{
+  position: absolute;
+  left: 160rpx;
+  bottom: 440rpx;
+  font-size: 30rpx;
+}
+/* 中奖者 */
+.win_id_img{
+  position: absolute;
+  top: 340rpx;
+  left: 0;
+  right: 0;
+  margin: auto;
+  width: 500rpx;
+  height: 560rpx;
+}
+.win_id{
+  position: absolute;
+  left: 200rpx;
+  top: 580rpx;
+  width: 360rpx;
+  font-size: 36rpx;
+}
+.mask_back{
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 120rpx;
+  margin: auto;
+  width: 90rpx;
+  height: 90rpx;
+  text-align: center;
+  line-height: 90rpx;
+  font-size: 60rpx;
+  color: #000;
+  border-radius: 50%;
+  background: #fff;
+}
