@@ -1,11 +1,13 @@
-// pages/my/shoppingcard/shoppingcard.js
+var api = require('../../../utils/api')
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    shop_card_balance:'',
+    user_no:'',
   },
 
   recharge:function (){
@@ -43,7 +45,17 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    var that = this;
+    // 获取热门搜索关键字
 
+    api.getJSON('/api/Shopping/get_card_info?token=' + app.globalData.userInfo.token, function (res) {
+      console.log(res.data)
+      that.setData({
+        shop_card_balance: res.data.data.shop_card_balance,
+        user_no: res.data.data.user_no
+      })
+
+    }) 
   },
 
   /**

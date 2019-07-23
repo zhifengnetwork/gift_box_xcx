@@ -1,4 +1,6 @@
 // pages/my/after/applyrefund/applyrefund.js
+var app = getApp()
+var api = require('../../../../utils/api');
 Page({
 
   /**
@@ -7,6 +9,8 @@ Page({
   data: {
     ss:"",
     tupian: [],
+    id:'',
+    order_id:'',
     itemList: ['七天無理由退換貨', '退運費', '少件/漏發', '質量問題', '商品信息描述不符', '包裝/商品破損/汙漬']
   },
 
@@ -49,6 +53,22 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      id: options.id,
+      order_id: options.order_id
+    })
+    console.log(this.data.id,this.data.order_id)
+
+    var that = this
+    api.postJSON('api/order/order_detail', {
+      'token': app.globalData.token,
+      order_id: that.data.order_id,
+    }, function (res) {
+      console.log(res.data.data)
+      that.setData({
+        after: res.data.data,
+      })
+    })
 
   },
 
