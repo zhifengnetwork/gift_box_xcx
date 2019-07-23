@@ -162,6 +162,10 @@ Page({
           })
         }
       })
+    }else{
+      wx.navigateTo({
+        url: '../detalis/payment/award/award'
+      })
     }
   },
   cart: function () {
