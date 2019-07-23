@@ -33,11 +33,14 @@ Page({
     console.log(app.globalData.give)
     api.postJSON('api/pay/order_wx_pay',{
       'token': app.globalData.token,
-      'order_id': that.data.order_id
+      'order_id': app.globalData.give.order_id
     },
     function(res){
       console.log(res)
       if(res.data.status==1){
+        // wx.redirectTo({
+        //   url: '../giftbag/giftbag'
+        // })
         wx.requestPayment({
           timeStamp: res.data.data.timeStamp,
           nonceStr: res.data.data.nonceStr,

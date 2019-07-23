@@ -88,15 +88,23 @@ Component({
       var awardTitle = options.award;
       startAngel = angel / 2
       for (var i = 0; i < num; i++) {
-        ctx.save();
-        ctx.rotate(startAngel);
-        ctx.font = options.font;
-        ctx.fillStyle = options.fontColor,
-        ctx.textAlign = "center";
-        ctx.fillText(awardTitle[i].level, 0, -90);
-        ctx.fillText(awardTitle[i].prize, 0, -70);
-        startAngel += angel
-        ctx.restore();
+        if(i==0){
+          ctx.save();
+          ctx.rotate(startAngel);
+          ctx.drawImage(awardTitle[i].img,-30,-110,60,50);
+          startAngel += angel
+          ctx.restore();
+        }else{
+          ctx.save();
+          ctx.rotate(startAngel);
+          ctx.font = options.font;
+          ctx.fillStyle = options.fontColor,
+          ctx.textAlign = "center";
+          ctx.fillText(awardTitle[i].level, 0, -90);
+          ctx.fillText(awardTitle[i].prize, 0, -70);
+          startAngel += angel
+          ctx.restore();
+        }
       }
       ctx.draw()
     },
