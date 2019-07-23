@@ -147,7 +147,7 @@ Page({
   },
   back_white:function(){
     wx.navigateBack({
-      delta: 1,
+      delta: 2,
     })
   }, 
   /**
