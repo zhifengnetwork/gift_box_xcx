@@ -1,14 +1,15 @@
-<view class="site_nav">
+
   <component title='地址管理' show_bol='{{false}}'></component>
-</view>
+
 <!-- 无地址 -->
-<view class="site sitewu" wx:if="{{site==''}}">
+<view class="site sitewu" wx:if="{{site==''}}" >
   <view class="site_wuimg"></view>
   <text class="site_wutext">您還沒有地址，請添加地址</text>
 </view>
 <view class="site_wubutton" bindtap="newsite">添加新地址</view>
 <!-- 有地址 -->
-<view class="site" wx:for="{{site}}" wx:key="{{index}}" data-address_id="{{item.address_id}}" bindtap="award">
+<view style="margin-top:{{bar_Height+140}}rpx">
+<view class="site" wx:for="{{site}}" wx:key="{{index}}" data-address_id="{{item.address_id}}" bindtap="award" >
   <view class="site_box">
     <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dingwei_icon.png" class="site_dingwei"></image>
     <view class="site_boxt">
@@ -27,4 +28,5 @@
       </view>
     </view>
   </view>
+</view>
 </view>

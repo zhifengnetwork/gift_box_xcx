@@ -1,4 +1,6 @@
 // pages/my/invoice/invoice.js
+var app = getApp()
+var api = require('../../../utils/api');
 Page({
 
   /**
@@ -101,5 +103,13 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  tijiaofa:function(){
+    // api.getJSON('/api/order/edit_invoice?token=' + app.globalData.token+'&', function (res) {
+    //   if (res.data.status == 1) {
+
+
+    //   }
+    // }) 
   }
 })
