@@ -161,10 +161,11 @@ Page({
             duration: 2500
           })
         }
+        // sss
       })
     }else{
       wx.navigateTo({
-        url: '../detalis/payment/award/award'
+        url: '../detalis/payment/award/award?sku_id=' + that.data.sku_id + '&num='+that.data.productNum
       })
     }
   },

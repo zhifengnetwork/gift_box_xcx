@@ -67,7 +67,7 @@
       <text>3.如遇到任何問題,請您第一時間撥打客服電話 <text class="notice_content_red">888888</text> ,由人工客服為您解答。</text>
     </view>
   </view>
-  <view class="invoice_button">提交</view>
+  <view class="invoice_button" bindtap="tijiaofa">提交</view>
 </view>
 <cover-view class="footer" hidden="{{footer_show}}">
   <cover-view class="zhezhao"></cover-view>

@@ -8,7 +8,8 @@ Page({
    */
   data: {
     site:'',
-    award:false
+    award:false,
+    bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
   },
   // 跳转到添加地址
   newsite: function () {
