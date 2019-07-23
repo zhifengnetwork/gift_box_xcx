@@ -23,6 +23,7 @@ Page({
     // height: app.globalData.height * 2 + 25,
     // navbarData: {
     //   name: '我是标题'
+    // 嘻嘻嘻
     // }
     imgUrls: [
       'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
