@@ -1,4 +1,6 @@
 // pages/commodity/detalis/give/integral/integral.js
+var api = require('../../../../../utils/api');
+var app = getApp();
 Page({
 
   /**

@@ -17,5 +17,7 @@
     <text>贈送禮包</text>
   </view>
 </view>
-<view class="giftbag_conter"></view>
+<view class="giftbag_conter">
+  <image class="giftbag_conter_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/giftbag.png"></image>
+</view>
 <button class="giftbag_button" open-type="share">贈送TA</button>

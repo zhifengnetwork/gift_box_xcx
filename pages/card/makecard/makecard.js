@@ -142,7 +142,7 @@ Page({
   },
   succeed:function(){
     wx.navigateTo({
-      url: '../../commodity/detalis/give/cashgift/cashgift?box_id=' + app.globalData.makecard
+      url: '../../commodity/detalis/give/cashgift/cashgift'
     })
   },
   back_white:function(){

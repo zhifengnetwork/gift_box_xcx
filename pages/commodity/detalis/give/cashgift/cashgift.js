@@ -9,50 +9,124 @@ Page({
   data: {
     flag: true,
     order:'',
-    goods_res:''
+    goods_res:'',
+    order_id:''
   },
   show: function () {
     this.setData({ flag: false })
   },
   hide: function () {
-    console.log(666)
     this.setData({ flag: true })
   },
   integral: function () {
+    wx.showToast({
+      icon: 'none',
+      title: "暂未开通",
+      duration: 2500
+    })
     // wx.navigateTo({
     //   url: '../integral/integral',
     // })
+  },
+  wxpay:function(){
+    let that = this;
+    console.log(app.globalData.give)
+    api.postJSON('api/pay/order_wx_pay',{
+      'token': app.globalData.token,
+      'order_id': that.data.order_id
+    },
+    function(res){
+      console.log(res)
+      if(res.data.status==1){
+        wx.requestPayment({
+          timeStamp: res.data.data.timeStamp,
+          nonceStr: res.data.data.nonceStr,
+          package: res.data.data.package,
+          signType: 'MD5',
+          paySign: res.data.data.paySign,
+          success(res) {
+            wx.showToast({
+              icon: 'none',
+              title: "支付成功",
+              duration: 2500
+            })
+            app.globalData.makecard = '';
+            app.globalData.give.sku_id = '';
+            app.globalData.give.order_id = '';
+            wx.redirectTo({
+              url: '../giftbag/giftbag'
+            })
+          },
+          fail(res) {
+            wx.showToast({
+              icon: 'none',
+              title: "支付失败",
+              duration: 2500
+            })
+          }
+        })
+      }else{
+        wx.showToast({
+          icon: 'none',
+          title: res.data.msg,
+          duration: 2500
+        })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let that = this;
-    api.postJSON('api/order/submitOrder',{
-      'token': app.globalData.token,
-      'order_type': app.globalData.give.order_type,
-      'box_id': options.box_id
-    },
-    function(res){
-      if(res.data.status==1){
-        api.postJSON('api/order/order_detail',{
-          'token': app.globalData.token,
-          'order_id':res.data.data
-        },
-        function(res){
-          console.log(res)
-          if(res.data.status==1){
-            that.setData({
-              order: res.data.data,
-              goods_res: res.data.data.goods_res
+    if (!app.globalData.give.order_id){
+      api.postJSON('api/order/submitOrder', {
+        'token': app.globalData.token,
+        'order_type': app.globalData.give.order_type,
+        'box_id': app.globalData.makecard
+      },
+        function (res) {
+          that.setData({
+            order_id: res.data.data
+          })
+          if (res.data.status == 1) {
+            app.globalData.give.order_id = res.data.data;
+            that.order_detail(res.data.data);
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: res.data.msg,
+              duration: 2500
             })
-            console.log(that.data.goods_res)
           }
         })
-      }
-    })
+    }else{
+      that.order_detail(app.globalData.give.order_id);
+    }
   },
-
+  order_detail: function (order_id){
+    let that = this;
+    api.postJSON('api/order/order_detail', {
+      'token': app.globalData.token,
+      'order_id': order_id
+    },
+      function (res) {
+        console.log(res)
+        if (res.data.status == 1) {
+          that.setData({
+            order: res.data.data,
+            goods_res: res.data.data.goods_res
+          })
+          console.log(that.data.goods_res)
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: res.data.msg,
+            duration: 2500
+          })
+        }
+      })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -99,33 +173,6 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-    let url = null;
-    if (app.globalData.give.order_type==1){
-      url = '/pages/card/go';
-    }else{
-      url = '/pages/turntable/turntable';
-    }
-    var nickname = app.globalData.userInfo.nickname;
-    nickname = nickname == undefined ? '' : nickname;
-    console.log(nickname)
-    return {
-      title: nickname + '为你准备了一份惊喜,请火速查收!',
-      imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',
-      path: url,
-      success: function (res) {
-        console.log(res)
-        wx.showModal({
-          title: '分享成功',
-          content: '分享成功',
-        })
-      },
-      fail: function (res) {
-        console.log(res)
-        wx.showModal({
-          title: '分享失败',
-          content: '分享失败',
-        })
-      }
-    }
+    
   }
 })
