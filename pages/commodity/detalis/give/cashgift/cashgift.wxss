@@ -232,9 +232,7 @@
   line-height: 105rpx;
   border-bottom: 1rpx solid #ccc;
 }
-button::after{
-  border: none;
-}
+
 .pop-up_box_c {
   font-size: 28rpx;
   line-height: 100rpx;

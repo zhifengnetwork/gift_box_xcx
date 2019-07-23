@@ -296,6 +296,7 @@ Page({
     var that=this;
     api.getJSON('/api/Category/getCategoryList?cat_id=' + id, function (res) {
       if (res.data.status == 1) {
+        console.log("sssssss")
         console.log( res.data.data)
         that.setData({dier:res.data.data})
       }
@@ -352,13 +353,16 @@ Page({
   //品牌详情页面,携带的参数,在另外的一个页面中的onload来获取参数
   xiang:function(){
    console.log("点击的id的值")
-    console.log(this.data.shopId)
+   console.log(this.data.shopId)
    wx.navigateTo({
      url: './shop/shop?id=' + this.data.shopId
    })
+  },
+  shangpxing:function(e){
+    var id = e.currentTarget.dataset.id;
+    wx.navigateTo({
+      url: '../commodity/detalis/detalis?id=' + id,
+    })
   }
-
-  
-
 
 })

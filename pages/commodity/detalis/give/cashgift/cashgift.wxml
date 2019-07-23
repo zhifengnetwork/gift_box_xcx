@@ -56,8 +56,8 @@
   </view>
 </view>
 <view class="cashgift_f">
-  <text class="cashgift_fl">共1件</text>
-  <text class="cashgift_fr">合計：HK${{order.goods_total_amount}}</text>
+  <text class="cashgift_fl">共{{order.total_num}}件</text>
+  <text class="cashgift_fr">合計：HK${{order.order_amount}}</text>
 </view>
 <view class="cashgift_button" bindtap="show">
   提交
@@ -66,8 +66,9 @@
   <view class="award_pop-up"></view>
   <view class="pop-up_box">
     <view class="pop-up_box_t">选择支付方式</view>
-    <button class="pop-up_box_c" bindtap="integral" open-type="share">积分支付</button>
-    <view class="pop-up_box_b">微信支付</view>
+    <!-- <button class="pop-up_box_c" bindtap="integral" open-type="share">积分支付</button> -->
+    <view class="pop-up_box_c" bindtap="integral" >积分支付</view>
+    <view class="pop-up_box_b" bindtap="wxpay">微信支付</view>
   </view>
 </view>
  <view class="close" bindtap="hide" hidden="{{flag}}">X</view>

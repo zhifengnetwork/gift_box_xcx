@@ -76,6 +76,7 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    app.globalData.give.order_id = '';
     let that = this;
     api.postJSON('api/box/box_cate_list',function(res){
       console.log(res);

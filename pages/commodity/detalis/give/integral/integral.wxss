@@ -1,1 +1,48 @@
 /* pages/commodity/detalis/give/integral/integral.wxss */
+page{
+  padding-top: 160rpx;
+}
+.integral_item{
+  margin-left: 100rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  margin: 100rpx 100rpx;
+}
+.integral_item::after{
+  content: '';
+  display: block;
+  clear: both;
+}
+.integral_title{
+  float: left;
+  width: 34%;
+  text-align: center;
+}
+.integral_inp{
+  display: block;
+  float: left;
+  margin-left: 20rpx;
+  margin-top: 20rpx;
+  width: 340rpx;
+  height: 70rpx;
+}
+.integral_input{
+  display: block;
+  height: 100%;
+  padding-left: 10rpx;
+  border-radius: 20rpx;
+  background: #F0F2F5;
+}
+.send{
+  position: absolute;
+  left: 100rpx;
+  right: 100rpx;
+  bottom: 40rpx;
+  margin: auto;
+  line-height: 60rpx;
+  font-size: 30rpx;
+  color:#fff;
+  text-align: center;
+  border-radius: 100rpx;
+  background: #000;
+}

@@ -16,6 +16,46 @@
   <!-- <view>剩余抽奖次数：{{lotteryNum}}次</view> -->
   <roulette options="{{rouletteData}}" angel="{{angel}}" bind:getAngel="getAngel" bind:getPrize="getPrize" />
 </view>
+<!-- 弹窗 -->
+<view class="mask">
+  <!-- 获取礼物 -->
+  <view style="display:none;">
+    <image class="win_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/win.png"></image>
+    <view class="win_btn">点击领取</view>
+  </view>
+  <!-- 俏皮话 -->
+  <view style="display:none;">
+    <image class="wisecrack_bg" src="https://giftbox.zhifengwangluo.com/public/images/gift/greeting_bg.png"></image>
+    <image class="wisecrack_icon" src="https://giftbox.zhifengwangluo.com/public/images/gift/greeting.png"></image>
+    <view class="wisecrack_info">
+      <view class="wisecrack_text">才华横溢的订单</view>
+      <view class="wisecrack_text">今天可能会捡到钱哦!</view>
+    </view>
+  </view>
+  <!--  中奖者 -->
+  <view style="display:none;">
+    <image class="win_id_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/win_id.png"></image>
+    <view class="win_id">
+      锵唴、锵唴、锵唴、锵唴、锵唴、锵唴、锵唴、锵唴、
+    </view>
+  </view>
+  <!-- 未中奖 -->
+  <view style="display:none;">
+    <image class="miss_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/miss.png"></image>
+    <view class="miss_btn">
+      查看中奖者<text>></text><text>></text><text>></text>
+    </view>
+  </view>
+  <!-- 开奖时间 -->
+  <view style="display:none;">
+    <image class="start_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/gift.png"></image>
+    <view class="start_info">
+      <view>开奖时间:</view>
+      <view>2019-06-01 12:00:00</view>
+    </view>
+  </view>
+  <view class="mask_back">X</view>
+</view>
 <view class="turntable_info">
   查看中奖者
 </view>

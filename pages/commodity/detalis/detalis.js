@@ -161,6 +161,11 @@ Page({
             duration: 2500
           })
         }
+        // sss
+      })
+    }else{
+      wx.navigateTo({
+        url: '../detalis/payment/award/award'
       })
     }
   },
