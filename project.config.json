@@ -135,26 +135,14 @@
 					"scene": null
 				},
 				{
-<<<<<<< HEAD
+
 					"id": -1,
 					"name": "发票",
 					"pathName": "pages/my/invoice/invoice",
 					"query": "",
 					"scene": null
-				},
-				{
-					"id": -1,
-					"name": "发票2",
-					"pathName": "pages/commodity/detalis/payment/award/award",
-					"scene": null
-=======
-					"id": 12,
-					"name": "123",
-					"pathName": "pages/commodity/detalis/give/giftbag/giftbag",
-					"query": "",
-					"scene": null
->>>>>>> 37c1aaf5556ff7a76cb563f5d5098b99e678e63e
 				}
+			
 			]
 		}
 	}

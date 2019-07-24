@@ -22,6 +22,6 @@
   <view class="after_bott">
     <view class="after_bottnum">{{item.goods_list[0].type}}</view>
     <!-- <view class="after_bottprice">合计：HK$124.00</view> -->
-    <view class="after_payment" bindtap="refund">查看詳情</view>
+    <view class="after_payment" bindtap="refund" id="{{item.refund_id}}" >查看詳情</view>
   </view>
 </view>
