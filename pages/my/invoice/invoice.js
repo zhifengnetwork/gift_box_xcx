@@ -32,7 +32,9 @@ Page({
     unit_num:'',
     unit_name:'',
     pingguoipnum:'',
-    youxiangna:''
+    youxiangna:'',
+    xuan:true,
+    buxuan:false
   },
 
   show: function () {
@@ -85,7 +87,19 @@ Page({
   // 第二个单选框
   radioChangela: function (e) {
     console.log('radio发生change事件，携带value值为：', e.detail.value);
-    this.setData({dierge: e.detail.value})
+    this.setData({dierge: e.detail.value});
+    if(this.data.dierge==='购物卡'){
+      this.setData({buxuan:true})
+      console.log("aaa")
+      this.setData({xuan:false})
+    }
+    if(this.data.dierge === '礼品卡'){
+      this.setData({buxuan:false})
+      console.log("bbb")
+      this.setData({xuan:true}) 
+    }
+    console.log(this.data.buxuan)
+    console.log(this.data.xuan);
   },
   /**
    * 生命周期函数--监听页面加载
@@ -110,7 +124,8 @@ Page({
             that.setData({ gerren: "个人" });
             that.setData({
               unit_show: true
-            });    
+            });  
+
           }
           else{
             that.setData({ gerren: "单位" });
@@ -126,10 +141,14 @@ Page({
             that.setData({ unit_num: res.data.data.taxpayer })
             that.setData({ youxiangna: res.data.data.invoice_email }) 
             that.setData({ pingguoipnum: res.data.data.mobile})
-
-
-
-
+          }
+          if (res.data.data.invoice_desc==="购物卡"){
+            that.setData({ xuan: false })
+            that.setData({ buxuan: true })
+          }
+          if (res.data.data.invoice_desc === "礼品卡"){
+            that.setData({ xuan: true })
+            that.setData({ buxuan: false })
           }
         }
       })
@@ -215,40 +234,62 @@ Page({
 
     //  api.getJSON('/api/order/edit_invoice?token=' + app.globalData.token+'&', function (res) {
     //   if (res.data.status == 1) {
-
-
     //   }
     // })
-
     // console.log(this.data.unit_show)
+
+    
     var that=this  
     if (that.data.unit_show===false){
 
-      if (that.data.namevalue == "" || that.data.bianvalue == ""){
-        wx.showToast({
-          title: '请填写纳税人识别号和单位名称',
-          icon: 'none',
-          duration: 2000
-        })
-      }else{
-        console.log("ssssss")
-        api.postJSON('/api/order/edit_invoice?order_id=' + app.globalData.dingdang_id + '&token=' + app.globalData.token + '&invoice_title=' + that.data.namevalue + '&taxpayer=' + that.data.bianvalue + '&invoice_mobile=' + that.data.iphone + '&invoice_email=' + that.data.email + '&invoice_desc=' + that.data.dierge,
-          function (res) {
-            if (res.data.status == 1) {
-              wx.showToast({
-                title: '提交成功',
-                icon: 'success',
-                duration: 2000
-              })
-              wx.navigateTo({
-                url: '../../commodity/detalis/payment/award/award'
-              })
-              app.globalData.jizhu = 1
-            }
-          })
-      }
+        if (that.data.namevalue == "" || that.data.bianvalue == ""){
+                if (that.data.unit_num=='' || that.data.unit_name==''){
+                  wx.showToast({
+                    title: '请填写纳税人识别号和单位名称',
+                    icon: 'none',
+                    duration: 2000
+                  })
+                }
+                else{
+                  api.postJSON('/api/order/edit_invoice?order_id=' + app.globalData.dingdang_id + '&token=' + app.globalData.token + '&invoice_title=' + that.data.namevalue + '&taxpayer=' + that.data.bianvalue + '&invoice_mobile=' + that.data.iphone + '&invoice_email=' + that.data.email + '&invoice_desc=' + that.data.dierge,
+                    function (res) {
+                      if (res.data.status == 1) {
+                        wx.showToast({
+                          title: '提交成功',
+                          icon: 'success',
+                          duration: 2000
+                        })
+                        wx.navigateTo({
+                          url: '../../commodity/detalis/payment/award/award'
+                        })
+                        app.globalData.jizhu = 1
+                      }
+                    })
+                }
 
-      }
+        }
+        else{
+          console.log("ssssss")
+          api.postJSON('/api/order/edit_invoice?order_id=' + app.globalData.dingdang_id + '&token=' + app.globalData.token + '&invoice_title=' + that.data.namevalue + '&taxpayer=' + that.data.bianvalue + '&invoice_mobile=' + that.data.iphone + '&invoice_email=' + that.data.email + '&invoice_desc=' + that.data.dierge,
+            function (res) {
+              if (res.data.status == 1) {
+                wx.showToast({
+                  title: '提交成功',
+                  icon: 'success',
+                  duration: 2000
+                })
+                wx.navigateTo({
+                  url: '../../commodity/detalis/payment/award/award'
+                })
+                app.globalData.jizhu = 1
+              }
+            })
+        }
+
+        }
+
+
+
 
 
 

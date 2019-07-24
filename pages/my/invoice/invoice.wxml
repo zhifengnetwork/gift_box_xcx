@@ -46,11 +46,12 @@
     <view class="invoice_con_c">非圖書商品</view>
     <radio-group class="radio-group"  bindchange="radioChangela">
       <label class="invoice_content_radio">
-        <radio checked="true" color="#000" class="invoice_gift" value="禮品卡"/>礼品卡
+        <radio checked="{{xuan}}" color="#000" class="invoice_gift" value="礼品卡"/>礼品卡
         <view>\n</view>
-        <radio color="#000" class="invoice_shopping"  value="購物卡"/>购物卡
+        <radio checked="{{buxuan}}" color="#000" class="invoice_shopping"  value="购物卡"/>购物卡
       </label>
     </radio-group>
+    
   </view>
   <!-- 发票须知 -->
   <view class="invoice_notice">

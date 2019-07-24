@@ -13,12 +13,34 @@ Page({
     items: [],
     startX: 0, //开始坐标
     startY: 0,
-    bar_Height: wx.getSystemInfoSync().statusBarHeight		// 获取手机状态栏高度
+    bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
+    sku_id:[]
   },
   //  点击返回键
   goBack:function(){
     wx.switchTab({
       url: '../index/index'
+    })
+  },
+  give_goods:function(){
+    console.log(this.data.sku_id)
+    if (this.data.sku_id.length>1){
+      wx.showToast({
+        icon: 'none',
+        title: "只能选择一件商品!",
+        duration: 2500
+      })
+      return false;
+    } else if (this.data.sku_id.length < 1){
+      wx.showToast({
+        icon: 'none',
+        title: "请选择一件商品!",
+        duration: 2500
+      })
+      return false;
+    }
+    wx.navigateTo({
+      url: '../commodity/givingother/givingother?sku_id=' + this.data.sku_id[0]
     })
   },
   /**
@@ -192,16 +214,23 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    // 隐藏底部导航条
+    wx.hideTabBar()
     var that = this;
     var shuliang = 0
-
     //先获取用户信息
     app.getUserInfo(userinfo => {
       api.getJSON('/api/Cart/cartlist?page=1&num=300&token=' + app.globalData.token, function (res) {
         if (res.data.status == 1) {
           console.log(res.data.data)
+          for (let i = 0; i < res.data.data.length;i++){
+            if (res.data.data[i].selected==1){
+              that.data.sku_id.push(res.data.data[i].sku_id);
+            }
+          }
           that.setData({
-            carts: res.data.data
+            carts: res.data.data,
+            sku_id: that.data.sku_id
           });
           that.data.items.push({
             content: that.data.carts,
@@ -230,8 +259,7 @@ Page({
 
     })
     console.log(that.data.carts)
-    // 隐藏底部导航条
-    wx.hideTabBar()
+  
     this.setData({
       hasList: true, // 既然有数据了，那设为true吧
     });
@@ -241,7 +269,10 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function() {
-
+    this.data.sku_id=[];
+    this.setData({
+      sku_id: this.data.sku_id
+    })
   },
 
   /**
@@ -297,9 +328,16 @@ Page({
     let carts = this.data.carts; // 获取购物车列表
     const selected = carts[index].selected; // 获取当前商品的选中状态
     carts[index].selected = !selected; // 改变状态
+    if (e.currentTarget.dataset.sku_id){
+      this.data.sku_id.push(e.currentTarget.dataset.sku_id);
+    }else{
+      this.data.sku_id.pop();
+    }
     this.setData({
-      items: carts
+      items: carts,
+      sku_id: this.data.sku_id
     });
+    console.log(this.data.sku_id)
     this.getTotalPrice(); // 重新获取总价
     var that = this;
     for (var i = 0; i < that.data.items.length; i++) {
@@ -341,13 +379,21 @@ Page({
     let selectAllStatus = this.data.selectAllStatus; // 是否全选状态
     selectAllStatus = !selectAllStatus;
     let carts = this.data.carts;
+    if (selectAllStatus){
+      for (let i = 0; i < carts.length; i++) {
+        this.data.sku_id.push(i)
+      }
+    }else{
+      this.data.sku_id = [];
+    }
 
     for (let i = 0; i < carts.length; i++) {
       carts[i].selected = selectAllStatus; // 改变所有商品状态
     }
     this.setData({
       selectAllStatus: selectAllStatus,
-      items: carts
+      items: carts,
+      sku_id: this.data.sku_id
     });
     this.getTotalPrice(); // 重新获取总价
   },
