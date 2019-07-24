@@ -12,7 +12,9 @@ Page({
     order_id: '',
     dingdang_id: '',
     order_detail:[],
-    goods:[]
+    goods:[],
+    sku_id:0,
+    productNum:0
   },
 
   show: function () {
@@ -31,39 +33,66 @@ Page({
    */
   onLoad: function (options) {
     var that = this;
-    var sku_id = options.sku_id;
-    var productNum = options.num
-    console.log(sku_id, productNum)
+    // var sku_id = options.sku_id;
+    // var productNum = options.num;
+    // app.globalData.sku_id = sku_id;
+    // app.globalData.productNum = productNum;
+    console.log("ffffffff");
+    console.log(that.data.goods)
+    console.log(options.type)
+   if(options.type==="1"){
+     // 该商品加入购物车
+     api.getJSON('/api/order/immediatelyOrder?sku_id=' + app.globalData.sku_id + '&cart_number=' + app.globalData.productNum + '&token=' + app.globalData.token, function (res) {
+       if (res.data.status == 1) {
+         console.log("加入购物车成功啦")
+         console.log(res.data.data);
+         that.setData({
+           order_id: res.data.data
+         })
+         // 请求接口,获取order_id
+         api.getJSON('/api/order/submitOrder?token=' + app.globalData.token,
+           function (res) {
+             if (res.data.status == 1) {
+               console.log("生成订单成功了")
+               console.log(res.data.data);
+               app.globalData.dingdang_id = res.data.data;
+               console.log("订单id为", app.globalData.dingdang_id)
+               // that.setData({ dingdang_id: res.data.data })
+               //渲染页面数据
+               api.getJSON('/api/order/order_detail?order_id=' + app.globalData.dingdang_id + "&token=" + app.globalData.token, function (res) {
 
-    // 该商品加入购物车
-    api.getJSON('/api/order/immediatelyOrder?sku_id=' + sku_id + '&cart_number=' + productNum + '&token=' + app.globalData.token, function (res) {
-      if (res.data.status == 1) {
-        console.log("加入购物车成功啦")
-        console.log(res.data.data);
-        that.setData({
-          order_id: res.data.data
-        })
-        // 请求接口,获取order_id
-        api.getJSON('/api/order/submitOrder?token=' + app.globalData.token,
-          function (res) {
-            if (res.data.status == 1) {
-              console.log("生成订单成功了")
-              console.log(res.data.data);
-              that.setData({ dingdang_id: res.data.data })
-              //渲染页面数据
-              api.getJSON('/api/order/order_detail?order_id=' + that.data.dingdang_id + "&token=" + app.globalData.token, function (res) {
+                 if (res.data.status == 1) {
+                   console.log("订单列表")
+                   console.log(res.data.data)
+                   that.setData({ order_detail: res.data.data })
+                   that.setData({ goods: res.data.data.goods_res })
+                   console.log(that.data.goods)
+                 }
+               })
+             }
+           })
+       }
+     })
+   }else{
 
-                if (res.data.status == 1) {
-                  console.log("订单列表")
-                  console.log(res.data.data)
-                  that.setData({order_detail:res.data.data})
-                  that.setData({goods: res.data.data.goods_res})       
-                }
-              })
-            }
-          })
-      }
-    })
+     api.getJSON('/api/order/order_detail?order_id=' + app.globalData.dingdang_id + "&token=" + app.globalData.token, function (res) {
+
+       if (res.data.status == 1) {
+         console.log("订单列表")
+         console.log(res.data.data)
+         that.setData({ order_detail: res.data.data })
+         that.setData({ goods: res.data.data.goods_res })
+         console.log(that.data.goods)
+       }
+     })
+
+   }
+
+
+
+  
+
+
     var address_id = options.address_id;
     console.log(options.address_id);
     var dizhi = ""
@@ -102,6 +131,25 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+    // var that=this;
+
+    // console.log("that.data.dingdang_id")
+    // console.log(that.data.dingdang_id)
+
+    //   api.getJSON('/api/order/order_detail?order_id=' + that.data.dingdang_id + "&token=" + app.globalData.token, function (res) {
+
+    //     if (res.data.status == 1) {
+    //       console.log("订单列表")
+    //       console.log(res.data.data)
+    //       that.setData({ order_detail: res.data.data })
+    //       that.setData({ goods: res.data.data.goods_res })
+    //       console.log("ffffffffsssssssssss");
+    //       console.log(that.data.goods)
+    //     }
+    //   })
+
+    
+    
 
   },
 
@@ -140,8 +188,9 @@ Page({
 
   },
   tiaofapiao: function () {
+    var that=this
     wx.navigateTo({
-      url: '../../../../my/invoice/invoice',
+      url: '../../../../my/invoice/invoice'
     });
   }
 })

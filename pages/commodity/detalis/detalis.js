@@ -151,6 +151,11 @@ Page({
       statussxianshi: false
     })
     console.log(this.data.sku_id)
+    app.globalData.sku_id=this.data.sku_id
+    app.globalData.productNum = this.data.productNum
+    console.log("全局变量哦")
+    console.log(app.globalData.sku_id)
+    console.log(app.globalData.productNum)
     if (this.data.order_type) {
       api.postJSON('api/order/immediatelyOrder',{
         'token': app.globalData.token,
@@ -160,7 +165,7 @@ Page({
       function(res){
         if(res.data.status==1){
           wx.navigateTo({
-            url: '../givingother/givingother?sku_id=' + that.data.sku_id
+            url: '../givingother/givingother?sku_id=' + app.globalData.sku_id
           })
         }else{
           wx.showToast({
@@ -173,7 +178,8 @@ Page({
       })
     }else{
       wx.navigateTo({
-        url: '../detalis/payment/award/award?sku_id=' + that.data.sku_id + '&num='+that.data.productNum
+        // url: '../detalis/payment/award/award?sku_id=' + app.globalData.sku_id + '&num=' + app.globalData.productNum
+        url:'../detalis/payment/award/award?type=1'
       })
     }
   },

@@ -17,9 +17,9 @@
       </label>
     </radio-group>
     <view class="unit_box" hidden="{{unit_show}}">
-      <input placeholder="請填寫單位名稱" class="unit_name" />
+      <input placeholder="請填寫單位名稱" class="unit_name"  bindinput="getInput_name" value="{{unit_name}}"/>
       <view class="unit_num_box">
-        <input placeholder="在此填寫納稅人識別號" class="unit_num" />
+        <input placeholder="在此填寫納稅人識別號" class="unit_num"  bindinput="getInput_num" value="{{unit_num}}"/>
         <view class="unit_button_box">
           <text class="unit_button" bindtap="show">i</text>
         </view>
@@ -32,23 +32,23 @@
     <!-- 收票人手机 -->
     <view class="messege_con">
       <text class="messege_con_text">收票人手機</text>
-      <input placeholder="請輸入收票人手機號碼" class="messege_phone" />
+      <input placeholder="請輸入收票人手機號碼" class="messege_phone" bindinput="getiphone" value="{{pingguoipnum}}"/>
     </view>
     <!-- 收票人郵箱 -->
     <view class="messege_footer">
       <text class="messege_footer_text">收票人郵箱</text>
-      <input placeholder="用來接收電子發票郵件，可選填" class="messege_email" />
+      <input placeholder="用來接收電子發票郵件，可選填" class="messege_email" bindinput="getemail" value="{{youxiangna}}"/>
     </view>
   </view>
   <!-- 发票内容 -->
   <view class="invoice_content">
     <view class="invoice_con_top">發票內容</view>
     <view class="invoice_con_c">非圖書商品</view>
-    <radio-group class="radio-group">
+    <radio-group class="radio-group"  bindchange="radioChangela">
       <label class="invoice_content_radio">
-        <radio checked="true" color="#000" class="invoice_gift" />禮品卡
+        <radio checked="true" color="#000" class="invoice_gift" value="禮品卡"/>礼品卡
         <view>\n</view>
-        <radio color="#000" class="invoice_shopping" />購物卡
+        <radio color="#000" class="invoice_shopping"  value="購物卡"/>购物卡
       </label>
     </radio-group>
   </view>

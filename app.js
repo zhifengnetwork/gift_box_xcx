@@ -84,7 +84,12 @@ App({
     token: '',
     height: 0,
     makecard: '',
-    give:{}
+    give:{},
+    sku_id:0,
+    productNum: 0,
+    dingdang_id:0,
+    jizhu:0
+
   }
 
 
