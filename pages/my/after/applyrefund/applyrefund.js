@@ -14,7 +14,8 @@ Page({
     item:'',
     goods_num:'',
     inputValue:'',
-    itemList: ['七天無理由退換貨', '退運費', '少件/漏發', '質量問題', '商品信息描述不符', '包裝/商品破損/汙漬']
+    reason:'',
+    itemList: ['7天无理由', '退运费', '少件/漏发', '质量问题', '商品信息描述不符', '包装/商品破损/污渍']
   },
 
   dianji: function () {
@@ -25,7 +26,8 @@ Page({
         // console.log(res.tapIndex);
         // console.log(that.data.itemList[res.tapIndex])
         that.setData({
-          ss : that.data.itemList[res.tapIndex]
+          ss : that.data.itemList[res.tapIndex],
+          reason: res.tapIndex
         })
       },
       fail(res) {
@@ -51,7 +53,7 @@ Page({
       goods_num: that.data.goods_num,
       rec_id: that.data.item.rec_id,
       msg: that.data.inputValue,
-      reason: that.data.ss,
+      reason: that.data.reason,
       prine_way: 1,
       pic: that.data.tupian
     }, function (res) {

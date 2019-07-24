@@ -51,6 +51,16 @@ Page({
               console.log(res.data.data);
               that.setData({dingdang_id: res.data.data}) 
               //渲染页面数据
+              api.getJSON('/api/order/order_detail?order_id=' + that.data.dingdang_id + "&token=" + app.globalData.token, function (res) {
+
+                if (res.data.status == 1) {
+                  console.log("订单列表")
+                  console.log(res.data.data)
+                  that.setData({ order_detail: res.data.data })
+                }
+
+
+              })
 
 
 
