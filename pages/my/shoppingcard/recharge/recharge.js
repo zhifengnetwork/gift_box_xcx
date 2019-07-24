@@ -22,6 +22,7 @@ Page({
         'money': that.data.value
       },function(res){
         if(res.data.status==1){
+          console.log(666)
           wx.requestPayment({
             timeStamp: res.data.data.timeStamp,
             nonceStr: res.data.data.nonceStr,

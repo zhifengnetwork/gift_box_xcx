@@ -65,9 +65,9 @@ Page({
   onShareAppMessage: function () {
     let url = null;
     if (app.globalData.give.order_type == 1) {
-      url = '/pages/card/go';
+      url = '/pages/card/go?order_id='+app.globalData.give.order_id;
     } else {
-      url = '/pages/turntable/turntable';
+      url = '/pages/turntable/turntable?order_id='+app.globalData.give.order_id;
     }
     var nickname = app.globalData.userInfo.nickname;
     nickname = nickname == undefined ? '' : nickname;

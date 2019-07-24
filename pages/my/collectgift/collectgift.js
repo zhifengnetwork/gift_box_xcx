@@ -20,7 +20,7 @@ Page({
     let that = this;
     api.postJSON('api/order/order_list', {
       token: app.globalData.token,
-      type: 5,
+      gift_type: 1,
       num: 200
     }, function (res) {
       if (res.data.status == 1) {
@@ -31,6 +31,21 @@ Page({
       console.log(res)
     })
   },
+
+
+  // 确认收货
+  shouhuo: function (e) {
+    let that = this;
+    api.postJSON('api/order/edit_status', {
+      token: app.globalData.token,
+      order_id: e.target.dataset.id,
+      status: 2,
+    }, function (res) {
+      console.log(res)
+    })
+  },
+
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

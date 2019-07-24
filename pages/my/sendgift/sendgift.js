@@ -9,7 +9,7 @@ Page({
   data: {
     currentTab: 0,
     item:'',
-    type:1,
+    list:'',
   },
 
   clickTab: function (e) {
@@ -23,14 +23,10 @@ Page({
       })
     }
     if (e.target.dataset.current == 0) {
-      type = 1;
+      this.getdata()
     } else if (e.target.dataset.current == 1) {
-      type = 2;
+      this.getlist()
     }
-    this.setData({
-      type: type
-    })
-    this.getdata();
   },
 
   /**
@@ -41,11 +37,9 @@ Page({
   },
   getdata:function(){
     let that = this;
-    api.postJSON('api/order/order_list', {
+    api.postJSON('api/gift/get_send_gift', {
       token: app.globalData.token,
-      order_type:1,
-      gift_type: that.data.type,
-      num: 200
+      type: 2,
     }, function (res) {
       if (res.data.status == 1) {
         that.setData({
@@ -55,6 +49,22 @@ Page({
       console.log(res)
     })
   },
+
+  getlist: function () {
+    let that = this;
+    api.postJSON('api/gift/get_send_gift', {
+      token: app.globalData.token,
+      type: 1,
+    }, function (res) {
+      if (res.data.status == 1) {
+        that.setData({
+          list: res.data.data
+        })
+      }
+      console.log(res)
+    })
+  },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

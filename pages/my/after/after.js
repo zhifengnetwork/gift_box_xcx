@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    after:''
+    after:'',
+    listtype:[],
   },
 
   refund: function () {
@@ -21,11 +22,15 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    api.postJSON('api/order/get_refund_info',{
+    var that = this
+    api.postJSON('api/order/order_list',{
       'token': app.globalData.token,
-      'type': 5
+      'type': 5,
     },function(res){
-      console.log(res)
+      console.log(res.data.data)
+      that.setData({
+        after: res.data.data,
+      })
     })
   },
 

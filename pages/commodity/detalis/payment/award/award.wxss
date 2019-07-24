@@ -1,0 +1,228 @@
+.award_top {
+  height: 115rpx;
+}
+
+.xiahuanxian image {
+  height: 16rpx;
+  width: 100%;
+}
+
+.award_topbox {
+  height: 134rpx;
+  position: relative;
+  border-bottom: 10rpx solid #ebeced;
+}
+
+.award_dingwei {
+  height: 49rpx;
+  width: 40rpx;
+  position: absolute;
+  top: 35rpx;
+  left: 50rpx;
+}
+
+.award_text {
+  font-size: 24rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  position: absolute;
+  top: 46rpx;
+  left: 126rpx;
+}
+
+.award_topbox .award_you {
+  width: 15rpx;
+  height: 23rpx;
+  position: absolute;
+  top: 56rpx;
+  right: 50rpx;
+}
+
+.award_ct {
+  height: 133rpx;
+  border-bottom: 10rpx solid #ebeced;
+  padding: 25rpx 50rpx;
+}
+
+.award_ct_l {
+  float: left;
+  width: 133rpx;
+  height: 133rpx;
+  background: #e1e1e1;
+}
+
+.award_ct_r {
+  float: right;
+  height: 133rpx;
+}
+
+.award_ct_rt {
+  font-size: 22rpx;
+  width: 384rpx;
+  padding-top: 6rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: bold;
+  color: rgba(34, 34, 34, 1);
+}
+
+.award_ct_rc {
+  width: 500rpx;
+  font-size: 22rpx;
+  margin-top: 20rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+}
+
+.awrad_box {
+  height: 75rpx;
+  padding: 0 50rpx;
+  border-bottom: 2rpx solid #f3f4f7;
+  font-size: 24rpx;
+  line-height: 75rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+}
+
+.awrad_box .awrad_cb_you {
+  float: right;
+  width: 15rpx;
+  height: 23rpx;
+  margin-top: 30rpx;
+}
+
+.awrad_box_text {
+  float: right;
+}
+
+.awrad_textarea {
+  height: 153rpx;
+  border-bottom: 2rpx solid #f3f4f7;
+  padding: 0 50rpx;
+}
+
+.awrad_textarea text {
+  float: left;
+  font-size: 24rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(51, 51, 51, 1);
+  line-height: 100rpx;
+}
+
+.awrad_textarea input {
+  float: right;
+  width: 500rpx;
+  height: 100rpx;
+  font-size: 24rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(153, 153, 153, 1);
+  line-height: 100rpx;
+  z-index: 0;
+}
+
+.awrad_f {
+  font-size: 24rpx;
+  text-align: right;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  padding: 60rpx 50rpx;
+}
+
+.awrad_f .awrad_fl {
+  color: #999;
+  margin-right: 20rpx;
+}
+
+.awrad_f .awrad_fr {
+  color: #333;
+}
+
+.award_button {
+  position: fixed;
+  bottom: 33rpx;
+  left: 90rpx;
+  border-radius: 50rpx;
+  width: 570rpx;
+  height: 80rpx;
+  background: #000;
+  color: #fff;
+  text-align: center;
+  line-height: 80rpx;
+  font-size: 22rpx;
+}
+
+.award_pop-upbox {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.award_pop-up {
+  width: 100%;
+  height: 100%;
+  background: #000;
+  opacity: 0.4;
+}
+
+.pop-up_box {
+  /* margin-left: -25%;
+  margin-top: 50%; */
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 512rpx;
+  height: 393rpx;
+  background: #fff;
+  text-align: center;
+  z-index: 2;
+}
+
+.pop-up_box_t {
+  font-size: 35rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(102, 102, 102, 1);
+  line-height: 105rpx;
+  border-bottom: 1rpx solid #ccc;
+}
+
+.pop-up_box_c {
+  font-size: 28rpx;
+  line-height: 100rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  border-bottom: 1rpx solid #ccc;
+  margin: 0 50rpx;
+}
+
+.pop-up_box_b {
+  font-size: 28rpx;
+  line-height: 100rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: bold;
+  color: rgba(51, 51, 51, 1);
+  border-bottom: 1rpx solid #ccc;
+  margin: 0 50rpx;
+}
+.close{
+  width: 90rpx;
+  height: 90rpx;
+  background: #000;
+  border-radius: 50%;
+  text-align: center;
+  line-height: 90rpx;
+  color: #fff;
+  position: absolute;
+  top: 70%;
+  left: 50%;
+  transform: translate(-50%);
+  z-index: 3;
+}

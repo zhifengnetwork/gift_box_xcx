@@ -20,7 +20,6 @@ Page({
     let that = this;
     api.postJSON('api/order/order_list', {
       'token': app.globalData.token,
-      'type': 0,
       'order_type': 0,
       'num': 200
     }, function (res) {
@@ -33,9 +32,29 @@ Page({
     })
   },
 
-  selectormode:function () {
+
+  // 确认收货
+  shouhuo: function (e) {
+    let that = this;
+    console.log(e.target.dataset.id)
+    api.postJSON('api/order/edit_status', {
+      token: app.globalData.token,
+      order_id: e.target.dataset.id,
+      status: 2,
+    }, function (res) {
+      console.log(res)
+    })
+  },
+
+
+
+
+  selectormode:function (e) {
+    // console.log(e.target.dataset.id)
+    var id = e.target.dataset.id
+    // console.log(id)
     wx.navigateTo({
-      url: '../after/SelectorMode/SelectorMode',
+      url: '../after/SelectorMode/SelectorMode?id=' + id,
     })
   },
   /**

@@ -14,92 +14,55 @@
 </view>
 <view class="{{currentTab == 0 ? 'show':'hidden'}}">
   <scroll-view>
-    <view class="sendgift_box">
+    <view class="sendgift_box" wx:for="{{item}}">
       <view class="sendgift_top">
-        <view class="sendgift_number">订单编号：20190314002</view>
-        <view class="sendgift_obligation">待領取</view>
+        <view class="sendgift_number">订单编号：{{item.order_sn}}</view>
+        <!-- <view class="sendgift_obligation">待領取</view> -->
+        <view class="sendgift_obligation" wx:if="{{item.status==1}}" >待付款</view>
+      <view class="sendgift_obligation" wx:elif="{{item.status==2}}" >待发货</view>
+      <view class="sendgift_obligation" wx:elif="{{item.status==3}}" >待收货</view>
+      <view class="sendgift_obligation" wx:elif="{{item.status==4}}" >待评价</view>
       </view>
       <view class="sendgift_con">
-        <view class="sendgift_img"></view>
+        <view class="sendgift_img">
+          <image class="reward_i" src="{{item.img}}"></image>  
+        </view>
         <view class="sendgift_conent">
-          <view class="sendgift_brand">Salvatore Ferragamo</view>
-          <view class="sendgift_standard">蓝色经典男士淡香水50ml</view>
+          <view class="sendgift_brand">{{item.goods_name}}</view>
+          <view class="sendgift_standard">{{item.spec_key_name}}</view>
           <view class="sendgift_size"></view>
         </view>
         <view class="sendgift_r">
-          <view class="sendgift_price">HK$124.00</view>
-          <view class="sendgift_num">X 1</view>
+          <view class="sendgift_price">HK${{item.goods_price}}</view>
+          <view class="sendgift_num">X {{item.goods_num}}</view>
         </view>
       </view>
       <view class="sendgift_bott">
-        <view class="sendgift_bottnum">共1件商品</view>
-        <view class="sendgift_bottprice">合计：HK$124.00</view>
-      </view>
-    </view>
-    <view class="sendgift_box">
-      <view class="sendgift_top">
-        <view class="sendgift_number">订单编号：20190314002</view>
-        <view class="sendgift_obligation">待領取</view>
-      </view>
-      <view class="sendgift_con">
-        <view class="sendgift_img"></view>
-        <view class="sendgift_conent">
-          <view class="sendgift_brand">Salvatore Ferragamo</view>
-          <view class="sendgift_standard">蓝色经典男士淡香水50ml</view>
-          <view class="sendgift_size">黑色 26*12*19cm</view>
-        </view>
-        <view class="sendgift_r">
-          <view class="sendgift_price">HK$124.00</view>
-          <view class="sendgift_num">X 1</view>
-        </view>
-      </view>
-      <view class="sendgift_bott">
-        <view class="sendgift_bottnum">共1件商品</view>
-        <view class="sendgift_bottprice">合计：HK$124.00</view>
+        <view class="sendgift_bottnum">共{{item.goods_num}}件商品</view>
+        <view class="sendgift_bottprice">合计：HK${{item.goods_price*item.goods_num}}</view>
       </view>
     </view>
   </scroll-view>
 </view>
 <view class="{{currentTab == 1 ? 'show':'hidden'}} abc">
   <scroll-view>
-    <view class="sendgift_box">
+    <view class="sendgift_box" wx:for="{{list}}">
       <view class="sendgift_top">
-        <view class="sendgift_number">订单编号：20190314002</view>
-        <view class="sendgift_obligation">2019-06-04 10:02:54</view>
+        <view class="sendgift_number">订单编号：{{item.order_sn}}</view>
+        <!-- <view class="sendgift_obligation">{{item.add_time}}</view> -->
       </view>
       <view class="sendgift_con">
-        <view class="sendgift_img"></view>
+        <view class="sendgift_img">
+          <image class="reward_i" src="{{item.img}}"></image>
+        </view>
         <view class="sendgift_conent">
-          <view class="sendgift_brand">Salvatore Ferragamo</view>
-          <view class="sendgift_standard">蓝色经典男士淡香水50ml</view>
+          <view class="sendgift_brand">{{item.goods_name}}</view>
+          <view class="sendgift_standard">{{item.spec_key_name}}</view>
           <view class="sendgift_size">香型：香型</view>
         </view>
         <view class="sendgift_r">
-          <view class="sendgift_price">HK$124.00</view>
-          <view class="sendgift_num">X 1</view>
-        </view>
-      </view>
-      <view class="sendgift_bott">
-        <view class="sendgift_bottnum">領取人：東紫</view>
-        <view class="sendgift_bottprice">合计：HK$124.00</view>
-        <view class="sendgift_payment">查看物流</view>
-      </view>
-    </view>
-    <view class="sendgift_box">
-      <view class="sendgift_top">
-        <view class="sendgift_number">订单编号：20190314002</view>
-        <view class="sendgift_obligation">2019-06-04 10:02:54</view>
-      </view>
-      <view class="sendgift_con">
-        <view class="sendgift_img"></view>
-        <view class="sendgift_conent">
-          <view class="sendgift_brand">Salvatore Ferragamo</view>
-          <view class="sendgift_standard">蓝色经典男士淡香水50ml</view>
-          <view class="sendgift_size">香型：香型</view>
-        </view>
-        <view class="sendgift_r">
-          <view class="sendgift_price">HK$124.00</view>
-          <view class="sendgift_num">X 1</view>
+          <view class="sendgift_price">HK${{item.goods_price}}</view>
+          <view class="sendgift_num">X {{item.goods_num}}</view>
         </view>
       </view>
       <view class="sendgift_bott">

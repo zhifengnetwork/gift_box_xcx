@@ -6,6 +6,7 @@ Page({
    */
   data: {
     bar_Height: wx.getSystemInfoSync().statusBarHeight,
+    order_id:'',
     items: [
       { name: '1', value: '僅退款', text: '（未收到貨，或賣家協商同意前提下）'},
       { name: '2', value: '退貨退款', text: '（已收到貨，需要退換已收到的貨物）'},
@@ -22,18 +23,19 @@ Page({
   },
 
   dianji: function () {
-    if(this.data.value_index == 2){
+    // console.log(this.data.order_id)
       wx.navigateTo({
-        url: '../applyrefund/applyrefund',
+        url: '../applyrefund/applyrefund?id=' + this.data.value_index + '&order_id=' + this.data.order_id,
       })
-    }
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    this.setData({
+      order_id: options.id
+    })
   },
 
   /**
