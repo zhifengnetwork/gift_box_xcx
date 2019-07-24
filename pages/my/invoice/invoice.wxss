@@ -44,7 +44,6 @@
   font-size: 28rpx;
   margin-left: 40rpx;
 }
-
 .radio>radio {
   transform: scale(0.8);
   margin-right: 10rpx;
@@ -185,6 +184,10 @@
   margin-left: 100rpx;
   transform: scale(0.8);
   line-height: 80rpx;
+}
+.invoice_gifthh{
+  font-size: 20rpx;
+  margin-left: 80rpx
 }
 
 .invoice_content_radio .invoice_shopping {
