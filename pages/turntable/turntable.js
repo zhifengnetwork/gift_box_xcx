@@ -11,28 +11,8 @@ Page({
       speed: 10,/**转盘速度 */
       award: [
         {
-          img:'https://giftbox.zhifengwangluo.com/public/images/turntable/turntable.png'
-        },
-        {
-          level: '霸气侧漏',
-          prize: '跺跺脚'
-        },
-        {
-          level: '才华横溢',
-          prize: '贯江东'
-        },
-        {
-          level: '纵横驰骋',
-          prize: '乘烈风'
-        },
-        {
-          level: '镶金土豪',
-          prize: '不差钱'
-        },
-        {
-          level: '江枫渔火',
-          prize: '对眠愁'
-        },
+          img:'https://giftbox.zhifengwangluo.com/public/images/turntable/turntable_small.png'
+        }
       ],/**奖项内容 */
       fontColor: '#e21b58',/**文字颜色 */
       font: '14px Arial',
@@ -127,25 +107,26 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
-    this.setData({
-      // order_id: options.order_id
-      award:['111','222'],
-      speed:2
+    // 获取转盘数据
+    api.postJSON('api/index/get_lucky',function(res){
+      console.log(res)
+      console.log('order_id:'+options.order_id)
+      for(let i = 0;i<res.data.data.length;i++){
+        that.data.rouletteData.award.push({
+          level: res.data.data[i].level,
+          prize: res.data.data[i].prize
+        })
+      }
+      that.setData({
+        order_id: options.order_id,
+        award: that.data.rouletteData.award
+      })
+      that.selectComponent('#roulette').award(that.data.rouletteData);
     })
-    console.log(this.data.award, this.data.speed)
-    // api.postJSON('api/index/get_lucky',function(res){
-    //   console.log(res)
-    //   for(let i = 0;i<res.data.data.length;i++){
-    //     that.data.rouletteData.award.push({
-    //       level: res.data.data[i].level,
-    //       prize: res.data.data[i].prize
-    //     })
-    //   }
-    //   that.setData({
-    //     order_id: options.order_id,
-    //     award: that.data.rouletteData.award
-    //   })
-    // })
+    // 获取俏皮话
+    api.postJSON('api/index/getJoke',function(res){
+      console.log(res)
+    })
   },
 
   /**

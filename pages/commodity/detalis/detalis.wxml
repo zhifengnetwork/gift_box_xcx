@@ -105,8 +105,12 @@
       </view>
       <view class="detalis_fr">
         <view class="detalis_frbox">
-          <view class="detalis_frl" bindtap="kaolao">犒劳自己</view>
-          <view class="detalis_frr" bindtap="give_goods">赠送他人</view>
+          <form report-submit="true" bindsubmit="kaolao">
+            <button class="detalis_frl" form-type="submit">犒劳自己</button>
+          </form>
+          <form report-submit="true" bindsubmit="give_goods">
+            <button class="detalis_frr" form-type="submit">赠送他人</button>
+          </form>
         </view>
       </view>
     </view>
@@ -116,7 +120,7 @@
     <view class="shop_selection" catchtouchmove="preventTouchMove" wx:if="{{statussxianshi}}">
     </view>
     <view class="shop_ear" catchtouchmove="preventTouchMove" wx:if="{{statussxianshi}}">
-    <!-- https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640 -->
+   
     <!-- goods_data.img[0] -->
    
       <image src="{{goods_data.img[0]}}" class="store" hidden="{{imgimg.length}}"></image>

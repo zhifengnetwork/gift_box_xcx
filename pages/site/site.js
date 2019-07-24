@@ -13,7 +13,7 @@ Page({
   },
   // 跳转到添加地址
   newsite: function () {
-    wx.navigateTo({
+    wx.redirectTo({
       url: 'newsite/newsite',
     })
   },
@@ -79,7 +79,7 @@ Page({
   },
   redact: function (e){
     let item = e.currentTarget.dataset.item;
-    wx.navigateTo({
+    wx.redirectTo({
       url: 'newsite/newsite?item=' + JSON.stringify(item),
     });
   },
