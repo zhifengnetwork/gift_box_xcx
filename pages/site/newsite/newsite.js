@@ -57,10 +57,10 @@ Page({
         showCancel: false
       })
       return false;
-    } else if (that.data.address == '') {
+    } else if (that.data.address.length < 5) {
       wx.showModal({
         title: '提示',
-        content: '请输入详细地址',
+        content: '详细地址至少输入5个字',
         showCancel: false
       })
       return false;
