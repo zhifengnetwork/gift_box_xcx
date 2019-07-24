@@ -20,9 +20,12 @@ Page({
   award:function(e){
     var that=this
     let addid = e.currentTarget.dataset.address_id
+    console.log("全局")
+    console.log(app.globalData.productNum)
+    console.log(app.globalData.sku_id)
     if(this.data.award){
       wx.redirectTo({
-        url: '../commodity/detalis/payment/award/award?address_id=' + addid+"&firstadd="+that.data.site[0],
+        url: '../commodity/detalis/payment/award/award?address_id=' + addid + "&sku_id=" + app.globalData.sku_id + '&productNum=' + app.globalData.productNum,
       })
     }
   },

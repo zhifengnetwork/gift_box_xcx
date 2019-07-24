@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 13,
 			"list": [
 				{
 					"id": -1,
@@ -132,6 +132,19 @@
 					"name": "商品详情1",
 					"pathName": "pages/commodity/detalis/detalis",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发票",
+					"pathName": "pages/my/invoice/invoice",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "发票2",
+					"pathName": "pages/commodity/detalis/payment/award/award",
 					"scene": null
 				}
 			]
