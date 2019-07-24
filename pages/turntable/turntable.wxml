@@ -12,9 +12,9 @@
   <image class="turntable_bgImg" src="https://giftbox.zhifengwangluo.com/public/images/turntable/turntable_bg.png"></image>
 </view>
 <!-- 转盘 -->
-<view class="container">
+<view class="container" style="{{mask?'display:none':''}}">
   <!-- <view>剩余抽奖次数：{{lotteryNum}}次</view> -->
-  <roulette options="{{rouletteData}}" angel="{{angel}}" bind:getAngel="getAngel" bind:getPrize="getPrize" />
+  <roulette id="roulette" options="{{rouletteData}}" angel="{{angel}}" bind:getAngel="getAngel" bind:getPrize="getPrize" />
 </view>
 <!-- 弹窗 -->
 <view class="mask" wx:if="{{mask}}">

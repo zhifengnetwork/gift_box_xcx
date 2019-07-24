@@ -5,7 +5,9 @@ Component({
     options: {
       type: Object,
       value: {},
-      observer: function (newVal, oldVal) { }
+      observer: function (newVal, oldVal) {
+        this.drawCanvas(); 
+      }
     },
     angel:{
       type:Number,
@@ -31,6 +33,19 @@ Component({
     that.dotStart();
   },
   methods: {
+    award(options) {
+      let image = this.data.options.award[0].img;
+      wx.getImageInfo({ // 或者用wx.downloadFile
+        src: image,
+        success: res => {
+          let tempPath = res.path
+          this.setData({
+            options: options,
+            awardImg: tempPath
+          })
+        }
+      })
+    },
     drawCanvas: function (){
       const ctx = wx.createCanvasContext('roulette', this);
       let options=this.data.options;
@@ -86,12 +101,13 @@ Component({
       }
 
       var awardTitle = options.award;
-      startAngel = angel / 2
+      var awardImg = this.data.awardImg;
+      startAngel = angel / 2;
       for (var i = 0; i < num; i++) {
         if(i==0){
           ctx.save();
           ctx.rotate(startAngel);
-          ctx.drawImage(awardTitle[i].img,-30,-110,60,50);
+          ctx.drawImage(awardImg,-30,-110,60,50);
           startAngel += angel
           ctx.restore();
         }else{
