@@ -192,9 +192,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    // 隐藏底部导航条
+    wx.hideTabBar()
     var that = this;
     var shuliang = 0
-
     //先获取用户信息
     app.getUserInfo(userinfo => {
       api.getJSON('/api/Cart/cartlist?page=1&num=300&token=' + app.globalData.token, function (res) {
@@ -230,8 +231,7 @@ Page({
 
     })
     console.log(that.data.carts)
-    // 隐藏底部导航条
-    wx.hideTabBar()
+  
     this.setData({
       hasList: true, // 既然有数据了，那设为true吧
     });

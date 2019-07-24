@@ -125,7 +125,6 @@ Page({
             that.setData({
               unit_show: true
             });  
-            
 
           }
           else{
@@ -235,12 +234,11 @@ Page({
 
     //  api.getJSON('/api/order/edit_invoice?token=' + app.globalData.token+'&', function (res) {
     //   if (res.data.status == 1) {
-
-
     //   }
     // })
-
     // console.log(this.data.unit_show)
+
+    
     var that=this  
     if (that.data.unit_show===false){
 
