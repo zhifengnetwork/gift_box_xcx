@@ -41,7 +41,7 @@ Page({
     api.postJSON('api/order/order_list', {
       token: app.globalData.token,
       type: 7,
-      num: 200
+      num: 100,
     }, function (res) {
       if (res.data.status == 1) {
         that.setData({
@@ -79,7 +79,14 @@ Page({
       order_id: e.target.dataset.id,
       status: 1,
     }, function (res) {
-      console.log(res)
+      if(res.data.status == 1){
+        // wx.showToast({
+        //   title: '取消订单成功',
+        //   // icon: 'success',
+        //   duration: 1000
+        // })
+        that.onLoad();
+      }
     })
   },
 
@@ -130,14 +137,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    this.getdata();
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    this.getdata();
+    
   },
 
   /**
