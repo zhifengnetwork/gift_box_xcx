@@ -10,14 +10,18 @@
   <text class="award_text" wx:else>请填写地址</text>
   <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/you_icon.png" class="award_you"></image>
 </view>
+
+
+<view class="detailshop" wx:for="{{goods}}">
 <view class="award_ct">
   <view class="award_ct_l">
+  <image src="{{item.img}}" class="shop_img"></image>
   </view>
   <view class="award_ct_r">
-    <view class="award_ct_rt">諾梵喵愛一生可可脂純黑巧克力禮盒裝聖誕節送女友</view>
+    <view class="award_ct_rt">{{item.goods_name}}</view>
     <view class="award_ct_rc">
-      <text style="float:left;">巧克力礼盒</text>
-      <text style="float:right;">X1</text>
+      <text style="float:left;">{{item.spec_key_name}}</text>
+      <text style="float:right;">X{{item.goods_num}}</text>
     </view>
   </view>
 </view>
@@ -47,6 +51,11 @@
     <input placeholder="選填，請先和商家協商一致" disabled="{{!flag}}" />
   </view>
 </view>
+</view>
+
+
+
+
 <view class="awrad_f">
   <text class="awrad_fl">共1件</text>
   <text class="awrad_fr">合計：HK$172.00 </text>
