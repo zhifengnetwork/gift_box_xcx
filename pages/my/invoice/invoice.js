@@ -18,7 +18,8 @@ Page({
       },
     ],
     unit_show: true,
-    footer_show: true
+    footer_show: true,
+    yedingdang_id:""
   },
 
   show: function () {
@@ -53,7 +54,9 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-
+    console.log("dingdang_id")
+    console.log(options.dingdang_id)
+    this.setData({yedingdang_id: options.dingdang_id})
   },
 
   /**
@@ -67,6 +70,19 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    var that=this
+    api.postJSON('/api/order/edit_invoice?order_id=' + that.data.yedingdang_id+'&token='+app.globalData.token,
+      {
+        token: app.globalData.token
+      },
+      function (res) {
+        if (res.data.status == 1) {
+         
+        }
+
+      })
+
+
 
   },
 
