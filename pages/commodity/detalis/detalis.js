@@ -118,7 +118,11 @@ Page({
 
     })
   },
-  kaolao:function(){
+
+  /**犒劳自己 */
+  kaolao:function(e){
+    app.save_form_id(e.detail.formId)
+
     this.setData({
       statussxianshi: true
     });
@@ -128,7 +132,11 @@ Page({
     })
 
   },
-  give_goods: function () {
+
+  /**赠送他人 */
+  give_goods: function (e) {
+    app.save_form_id(e.detail.formId)
+
     this.setData({
       statussxianshi: true
     })

@@ -131,7 +131,7 @@ page{
 .wisecrack_info{
   position: absolute;
   left: 200rpx;
-  bottom: 420rpx;
+  top: 820rpx;
   font-size: 32rpx;
   font-weight: bold;
   color: #9B5D2B;
