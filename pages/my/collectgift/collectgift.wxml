@@ -5,7 +5,7 @@
   <view class="collectgift_box" wx:for="{{item}}">
     <view class="collectgift_top">
       <view class="collectgift_number">订单编号：{{item.order_sn}}</view>
-      <view class="collectgift_obligation">{{item.add_time}}</view>
+      <!-- <view class="collectgift_obligation">{{item.add_time}}</view> -->
     </view>
     <view class="collectgift_con">
       <view class="collectgift_img"></view>
