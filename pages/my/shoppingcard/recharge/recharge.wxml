@@ -5,7 +5,7 @@
   <text class="recharge_top">充值金額</text>
   <view class="recharge_conent">
     <text>HK$</text>
-    <input class="recharge_input" bindinput="value" />
+    <input class="recharge_input" bindinput="value" type="digit" />
   </view>
 </view>
 <view class="recharge_submit" bindtap="send">提交</view>

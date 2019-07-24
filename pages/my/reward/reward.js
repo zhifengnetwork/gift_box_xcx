@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    item:''
+    item:'',
+    hide: true,
   },
 
   /**
@@ -42,7 +43,10 @@ Page({
       order_id: e.target.dataset.id,
       status: 3,
     }, function (res) {
-      console.log(res)
+      // console.log(res)
+      if(res.data.status == 1){
+        that.onLoad()
+      }
     })
   },
 
