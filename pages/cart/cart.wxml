@@ -26,7 +26,7 @@
   <view class="xiang content">
     <!-- wx:if 是否选择显示不同图标 -->
         <icon wx:if="{{item.selected}}" type="success" color="#0C0E0D" bindtap="selectList" data-index="{{index}}" class="dagou" size="20" data-goodid="{{item.id}}"/>
-        <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" class="dagou" size="20" data-goodid="{{item.id}}"/>
+        <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" class="dagou" size="20" data-goodid="{{item.id}}" data-sku_id="{{item.sku_id}}"/>
         
         <!-- 点击商品图片可跳转到商品详情 -->
         <navigator url="../commodity/detalis/detalis?id={{item.id}}">
@@ -56,7 +56,7 @@
 <text class="hejiqian">合计: HK${{totalPrice}}</text>
 <view class="right_view">
 <view class="caolao">犒劳自己</view>
-<view class="zeng">赠送他人</view>
+<view class="zeng" bindtap="give_goods">赠送他人</view>
 </view>
 
 </view>
