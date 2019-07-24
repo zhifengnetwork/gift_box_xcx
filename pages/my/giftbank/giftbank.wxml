@@ -43,7 +43,7 @@
       <view class="giftbank_button">
         <view class="giftbank_cancel" data-id="{{item.order_id}}" bindtap="quxiao">取消訂單</view>
         <!-- <view class="giftbank_cancel" data-id="{{item.order_id}}" wx:else bindtap="kaolao" >犒劳自己</view> -->
-        <view class="giftbank_payment" data-id="{{item.order_id}}" bindtap="fukuan" >去付款</view>
+        <view class="giftbank_payment" data-id="{{item.order_id}}" id="{{item.order_type}}" bindtap="fukuan" >去付款</view>
         <!-- <view class="giftbank_payment" wx:else bindtap="shouhuo" >赠送他人</view> -->
       </view>
     </view>
@@ -80,7 +80,7 @@
       </view>
       <view class="giftbank_button">
         <view class="giftbank_cancel" data-id="{{item.order_id}}" bindtap="kaolao">犒劳自己</view>
-        <view class="giftbank_payment" >赠送他人</view>
+        <view class="giftbank_payment" bindtap="zengsong" >赠送他人</view>
       </view>
     </view>
   </scroll-view>

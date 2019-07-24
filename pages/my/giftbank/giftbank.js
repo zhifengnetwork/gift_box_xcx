@@ -11,6 +11,7 @@ Page({
     item:'',
     list:'',
     type:2,
+    order_type:'',
   },
 
   clickTab: function (e) {
@@ -48,7 +49,7 @@ Page({
           item: res.data.data
         })
       }
-      console.log(res)
+      // console.log(res.data.data.order_type)
     })
   },
 
@@ -91,6 +92,46 @@ Page({
     })
   },
 
+
+  // 去付款
+  fukuan: function (e) {
+    let that = this;
+    console.log(e.target.dataset.id)
+    api.postJSON('api/pay/order_wx_pay', {
+      token: app.globalData.token,
+      order_id: e.target.dataset.id,
+    }, function (res) {
+      if (res.data.status == 1) {
+        wx.requestPayment({
+          timeStamp: res.data.data.timeStamp,
+          nonceStr: res.data.data.nonceStr,
+          package: res.data.data.package,
+          signType: 'MD5',
+          paySign: res.data.data.paySign,
+          success(res) {
+            console.log(res);
+            // order_type为0的时候，跳转到犒劳自己页面，否则切换到已付款页面
+            if (e.target.id == 0) {
+              wx.navigateTo({
+                url: '../reward/reward',
+              })
+            } else {
+              that.setData({
+                currentTab: 1,
+              })
+            }
+          },
+          fail(res) {
+            console.log(res)
+          }
+        })
+      }
+    })
+  },
+
+
+
+
   // // 确认收货
   // shouhuo: function (e) {
   //   let that = this;
@@ -119,32 +160,16 @@ Page({
     })
   },
 
-  // 去付款
-  fukuan: function (e) {
-    let that = this;
-    console.log(e.target.dataset.id)
-    api.postJSON('api/pay/order_wx_pay', {
-      token: app.globalData.token,
-      order_id: e.target.dataset.id,
 
-    }, function (res) {
-      if (res.data.status == 1){
-        wx.requestPayment({
-          timeStamp: res.data.data.timeStamp,
-          nonceStr: res.data.data.nonceStr,
-          package: res.data.data.package,
-          signType: 'MD5',
-          paySign: res.data.data.paySign,
-          success(res) {
-            console.log(res);
-          },
-          fail(res) {
-            console.log(res)
-          }
-        })
-      }
+
+
+  // 赠送他人
+  zengsong: function () {
+    wx.navigateTo({
+      url: '../zengsong/zengsong',
     })
   },
+
 
   /**
    * 生命周期函数--监听页面加载

@@ -54,7 +54,8 @@
     "pages/my/after/SelectorMode/SelectorMode",
     "pages/my/after/applyrefund/applyrefund",
     "pages/commodity/detalis/give/scene/scene",
-    "pages/my/after/logistics/logistics"
+    "pages/my/after/logistics/logistics",
+    "pages/my/zengsong/zengsong"
   ],
   "window": {
     "backgroundTextStyle": "light",
