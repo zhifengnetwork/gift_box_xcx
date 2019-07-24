@@ -1,0 +1,5 @@
+<view>
+<image src="https://giftbox.zhifengwangluo.com/public/images/givingother/back_pictrue.png" class="back_pictrue"></image>
+<view class="git_one" bindtap="git_one" >贈送單人</view>
+<view class="git_others" bindtap="git_others" >幸運群搶</view>
+</view>

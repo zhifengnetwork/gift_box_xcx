@@ -140,6 +140,13 @@
 					"pathName": "pages/commodity/detalis/give/giftbag/giftbag",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "1234",
+					"pathName": "pages/commodity/givingother/givingother",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
