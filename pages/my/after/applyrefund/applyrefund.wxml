@@ -3,22 +3,24 @@
 </view>
 <!-- 商品信息 -->
 <view class="detalis_con">
-  <view class="detalis_img"></view>
+  <view class="detalis_img">
+    <image src="{{item.img}}"></image>
+  </view>
   <view class="detalis_conent">
-    <view class="detalis_brand">FENDI</view>
-    <view class="detalis_standard">黑色牛皮手提單肩斜挎包</view>
+    <view class="detalis_brand">{{item.goods_name}}</view>
+    <view class="detalis_standard">{{item.spec_key_name}}</view>
     <view class="detalis_size">黑色：26*12*19cm</view>
   </view>
   <view class="detalis_r">
-    <view class="detalis_price">HK$124.00</view>
-    <view class="detalis_num">X 1</view>
+    <view class="detalis_price">HK${{item.goods_price}}</view>
+    <view class="detalis_num">X {{item.goods_num}}</view>
   </view>
 </view>
 <!-- 商品小计 -->
 <view class="subtotal">
   <view class="subtotal_box">
     <text class="subtotal_boxl">商品小計</text>
-    <text class="subtotal_boxr">hk$124.00</text>
+    <text class="subtotal_boxr">hk${{item.goods_price}}</text>
   </view>
    <view class="subtotal_box">
     <text class="subtotal_boxl">積分</text>
@@ -32,7 +34,7 @@
 <!-- 实付金额 -->
 <view class="pocket">
   <text class="pocket_l">實付金額</text>
-  <text class="pocket_r">hk$0.00</text>
+  <text class="pocket_r">hk${{after.order_amount}}</text>
 </view>
 <!-- 退款金额 -->
 <view class="refundmoney">
@@ -54,7 +56,7 @@
 </view>
 <!-- 退款說明 -->
 <view class="refundstate">
-  <text class="refundstate_text">退款說明:</text><input placeholder="選填" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" />
+  <text class="refundstate_text">退款說明:</text><input placeholder="選填" bindinput="bindKeyInput" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" value="{{msg}}" />
 </view>
 <!-- 上傳憑證 -->
 <view class="voucher">上傳憑證</view>

@@ -12,11 +12,11 @@
   </view>
   <view class="shoppingcard_top_bottom">
     <text>電子購物卡</text>
-    <text class="shoppingcard_top_bottomr">NO.000001</text>
+    <text class="shoppingcard_top_bottomr">{{user_no}}</text>
   </view>
 </view>
-<view class="shoppingcard_money">HK$1234.00
-  <view class="shoppingcard_eye"></view>
+<view class="shoppingcard_money">HK$ {{shop_card_balance}}
+  <!-- <view class="shoppingcard_eye"></view> -->
 </view>
 <view class="shoppingcard_bottom">
   <view class="shoppingcard_recharge" bindtap="recharge">充值</view>

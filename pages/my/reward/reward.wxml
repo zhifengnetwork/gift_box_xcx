@@ -29,9 +29,9 @@
       <view class="reward_bottprice">合计：HK${{item.goods_price*item.goods_num}}</view>
     </view>
     <view class="reward_button">
-      <view class="reward_cancel" bindtap="selectormode">申請退款</view>
+      <view class="reward_cancel" data-id="{{item.order_id}}" bindtap="selectormode">申請退款</view>
       <view class="reward_cancel">查看物流</view>
-      <view class="reward_payment">確認收貨</view>
+      <view class="reward_payment" bindtap="shouhuo">確認收貨</view>
     </view>
   </view>
   <view class="tips" wx:if="{{!item}}">暂无数据哦!</view>

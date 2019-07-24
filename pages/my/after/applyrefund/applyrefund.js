@@ -1,4 +1,6 @@
 // pages/my/after/applyrefund/applyrefund.js
+var app = getApp()
+var api = require('../../../../utils/api');
 Page({
 
   /**
@@ -7,7 +9,13 @@ Page({
   data: {
     ss:"",
     tupian: [],
-    itemList: ['七天無理由退換貨', '退運費', '少件/漏發', '質量問題', '商品信息描述不符', '包裝/商品破損/汙漬']
+    id:'',
+    order_id:'',
+    item:'',
+    goods_num:'',
+    inputValue:'',
+    reason:'',
+    itemList: ['7天无理由', '退运费', '少件/漏发', '质量问题', '商品信息描述不符', '包装/商品破损/污渍']
   },
 
   dianji: function () {
@@ -18,7 +26,8 @@ Page({
         // console.log(res.tapIndex);
         // console.log(that.data.itemList[res.tapIndex])
         that.setData({
-          ss : that.data.itemList[res.tapIndex]
+          ss : that.data.itemList[res.tapIndex],
+          reason: res.tapIndex
         })
       },
       fail(res) {
@@ -26,6 +35,33 @@ Page({
       }
     })
     
+  },
+
+
+  bindKeyInput: function (e) {
+    this.setData({
+      inputValue: e.detail.value
+    })
+  },
+
+  send:function () {
+    var that = this
+    api.postJSON('api/order/refund_apply', {
+      'token': app.globalData.token,
+      order_id: that.data.order_id,
+      type: that.data.id,
+      goods_num: that.data.goods_num,
+      rec_id: that.data.item.rec_id,
+      msg: that.data.inputValue,
+      reason: that.data.reason,
+      prine_way: 1,
+      pic: that.data.tupian
+    }, function (res) {
+      console.log(res.data.data)
+      // that.setData({
+      //   after: res.data.data
+      // })
+    })
   },
 
 
@@ -49,9 +85,25 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({
+      id: options.id,
+      order_id: options.order_id
+    })
+    console.log(this.data.id,this.data.order_id)
 
+    var that = this
+    api.postJSON('api/order/order_detail', {
+      'token': app.globalData.token,
+      order_id: that.data.order_id,
+    }, function (res) {
+      console.log(res.data.data)
+      that.setData({
+        after: res.data.data,
+        item: res.data.data.goods_res[0],
+        goods_num: res.data.data.goods_res[0].goods_num
+      })
+    })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

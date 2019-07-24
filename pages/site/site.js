@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    site:'',
+    site:[],
     award:false,
     bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
   },
@@ -18,10 +18,11 @@ Page({
     })
   },
   award:function(e){
+    var that=this
     let addid = e.currentTarget.dataset.address_id
     if(this.data.award){
       wx.redirectTo({
-        url: '../commodity/detalis/payment/award/award?address_id=' + addid,
+        url: '../commodity/detalis/payment/award/award?address_id=' + addid+"&firstadd="+that.data.site[0],
       })
     }
   },
@@ -42,8 +43,9 @@ Page({
         that.setData({
           site:res.data.data
         })
+        console.log(that.data.site)
       }
-      console.log(res)
+     
     })
     if (options.award){
       this.setData({
