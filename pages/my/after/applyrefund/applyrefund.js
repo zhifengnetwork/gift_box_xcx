@@ -53,7 +53,7 @@ Page({
       goods_num: that.data.goods_num,
       rec_id: that.data.item.rec_id,
       msg: that.data.inputValue,
-      reason: that.data.reason,
+      reason: that.data.reason + 1,
       prine_way: 1,
       pic: that.data.tupian
     }, function (res) {

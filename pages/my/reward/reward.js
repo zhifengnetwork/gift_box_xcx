@@ -40,7 +40,7 @@ Page({
     api.postJSON('api/order/edit_status', {
       token: app.globalData.token,
       order_id: e.target.dataset.id,
-      status: 2,
+      status: 3,
     }, function (res) {
       console.log(res)
     })
@@ -52,7 +52,7 @@ Page({
   selectormode:function (e) {
     // console.log(e.target.dataset.id)
     var id = e.target.dataset.id
-    // console.log(id)
+    console.log(e)
     wx.navigateTo({
       url: '../after/SelectorMode/SelectorMode?id=' + id,
     })

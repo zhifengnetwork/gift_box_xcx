@@ -20,7 +20,7 @@ Page({
     let that = this;
     api.postJSON('api/order/order_list', {
       token: app.globalData.token,
-      gift_type: 1,
+      gift_type: 3,
       num: 200
     }, function (res) {
       if (res.data.status == 1) {
