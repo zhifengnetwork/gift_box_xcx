@@ -110,6 +110,7 @@ Page({
     // 获取转盘数据
     api.postJSON('api/index/get_lucky',function(res){
       console.log(res)
+      console.log('order_id:'+options.order_id)
       for(let i = 0;i<res.data.data.length;i++){
         that.data.rouletteData.award.push({
           level: res.data.data[i].level,

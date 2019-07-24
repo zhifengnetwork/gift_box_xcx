@@ -9,7 +9,43 @@ Page({
   data: {
 
   },
-
+  give:function(){
+    let that = this;
+    // 判断是否可分享
+    api.postJSON('api/gift/share_callback', {
+      token: app.globalData.token,
+      order_id: app.globalData.give.order_id,
+      act: 1
+    }, function (res) {
+      if (res.data.status == 1) {
+        // 分享
+        api.postJSON('api/gift/share_callback', {
+          token: app.globalData.token,
+          order_id: app.globalData.give.order_id,
+          act: 0
+        }, function (res) {
+          if (res.data.status == 1) {
+            // wx.redirectTo({
+            //   url: '../../../../my/sendgift/sendgift'
+            // })
+            that.onShareAppMessage();
+          } else {
+            wx.showModal({
+              content: res.data.msg,
+            })
+            return false;
+          }
+          console.log(res)
+        })
+      } else {
+        wx.showModal({
+          content: res.data.msg,
+        })
+        return false;
+      }
+      console.log(res)
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -82,6 +118,9 @@ Page({
           title: '分享成功',
           content: '分享成功',
         })
+        // wx.redirectTo({
+        //   url: '../../../../my/giftbank/giftbank'
+        // })
       },
       fail: function (res) {
         console.log(res)
@@ -89,6 +128,9 @@ Page({
           title: '分享失败',
           content: '分享失败',
         })
+      },
+      complete:function(res){
+        console.log('complete')
       }
     }
   }
