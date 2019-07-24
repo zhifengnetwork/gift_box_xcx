@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 12,
 			"list": [
 				{
 					"id": -1,
@@ -131,6 +131,13 @@
 					"id": -1,
 					"name": "商品详情1",
 					"pathName": "pages/commodity/detalis/detalis",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 12,
+					"name": "123",
+					"pathName": "pages/commodity/detalis/give/giftbag/giftbag",
 					"query": "",
 					"scene": null
 				}

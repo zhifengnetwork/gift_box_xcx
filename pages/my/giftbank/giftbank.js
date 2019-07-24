@@ -10,7 +10,7 @@ Page({
     currentTab: 0,
     item:'',
     list:'',
-    type:2
+    type:2,
   },
 
   clickTab: function (e) {
@@ -40,7 +40,7 @@ Page({
     let that = this;
     api.postJSON('api/order/order_list', {
       token: app.globalData.token,
-      type: 7,
+      pay_status: 1,
       num: 100,
     }, function (res) {
       if (res.data.status == 1) {
@@ -56,12 +56,13 @@ Page({
     let that = this;
     api.postJSON('api/order/order_list', {
       token: app.globalData.token,
-      type: 4,
+      pay_status: 2,
+      order_type: '1' + ',' +'2',
       num: 200
     }, function (res) {
       if (res.data.status == 1) {
         that.setData({
-          list: res.data.data
+          list: res.data.data,
         })
       }
       console.log(res)
@@ -103,8 +104,19 @@ Page({
   // },
 
 
-  kaolao:function () {
-    console.log(123)
+  kaolao:function (e) {
+    // wx.navigateTo({
+    //   url: '../reward/reward',
+    // })
+    let that = this;
+    api.postJSON('api/order/edit_order_type', {
+      token: app.globalData.token,
+      order_id: e.target.dataset.id,
+    }, function (res) {
+      if(res.data.status == 1){
+        that.onLoad();
+      }
+    })
   },
 
   // 去付款
@@ -114,6 +126,7 @@ Page({
     api.postJSON('api/pay/order_wx_pay', {
       token: app.globalData.token,
       order_id: e.target.dataset.id,
+
     }, function (res) {
       if (res.data.status == 1){
         wx.requestPayment({
@@ -138,6 +151,7 @@ Page({
    */
   onLoad: function (options) {
     this.getdata();
+    this.getlist()
   },
 
   /**
