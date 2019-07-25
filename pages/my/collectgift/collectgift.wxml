@@ -27,5 +27,7 @@
         <view class="collectgift_payment" bindtap="shouhuo">確認收貨</view>
       </view>
     </view>
+    <view>
+    </view>
   </view>
 </view>

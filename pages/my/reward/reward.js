@@ -38,16 +38,28 @@ Page({
   shouhuo: function (e) {
     let that = this;
     console.log(e.target.dataset.id)
-    api.postJSON('api/order/edit_status', {
-      token: app.globalData.token,
-      order_id: e.target.dataset.id,
-      status: 3,
-    }, function (res) {
-      // console.log(res)
-      if(res.data.status == 1){
-        that.onLoad()
+
+    wx.showModal({
+      title: '提示',
+      content: '确认收货吗？',
+      success(res) {
+        if (res.confirm) {
+          api.postJSON('api/order/edit_status', {
+            token: app.globalData.token,
+            order_id: e.target.dataset.id,
+            status: 3,
+          }, function (res) {
+            // console.log(res)
+            if (res.data.status == 1) {
+              that.onLoad()
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
       }
     })
+
   },
 
 

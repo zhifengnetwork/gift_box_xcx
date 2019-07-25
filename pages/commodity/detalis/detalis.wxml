@@ -12,6 +12,9 @@
 
   <view class="detalisbox">
     <view class="detalis_img2">
+      <button class="qiuliwu" open-type='share'>
+        <image src="../../../images/qiuliwu.png" />
+      </button>
       <swiper class='detalis_swipers' autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
         <block wx:for="{{goods_data.img}}" wx:key>
           <swiper-item>
