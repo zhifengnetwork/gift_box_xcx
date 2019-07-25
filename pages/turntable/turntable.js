@@ -27,11 +27,15 @@ Page({
     },
     mask: false,            /**遮罩层 */
     win_id: false,          /**中奖者 */
+    win_Name:[],
     win: false,             /**礼物 */
     wisecrack: false,       /**俏皮话 */
+    wisecrack_t1: '',
+    wisecrack_t2:'',
     lotteryNum: 3,
     flag: true,
   },
+  // 获取中奖id
   win_id:function(){
     if (!this.data.flag) {
       return false;
@@ -43,6 +47,20 @@ Page({
     },
     function (res) {
       console.log(res)
+      if(res.data.status==1){
+        that.data.win_Name = [];
+        for(let i=0;i<res.data.data.length;i++){
+          that.data.win_Name.push(res.data.data[i]);
+        }
+        that.setData({
+          win_Name: that.data.win_Name
+        })
+      }else{
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none'
+        })
+      }
     })
     this.setData({
       mask:true,
@@ -57,25 +75,60 @@ Page({
       wisecrack: false,
     })
   },
+  getWisecrack:function(){
+    let that = this;
+    // 获取俏皮话
+    api.postJSON('api/index/getJoke', function (res) {
+      if (res.data.status == 1) {
+        let str = res.data.data.content.split('，');
+        that.setData({
+          wisecrack_t1: str[0],
+          wisecrack_t2: str[1],
+        })
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none'
+        })
+      }
+    })
+  },
   getAngel(e) {
     if (!this.data.flag) {
       return false;
     }
-    this.setData({
-      flag: false
-    })
     var that = this;
-    let lotteryNum = that.data.lotteryNum;
-    if (lotteryNum > 0) {
-      this.setData({
-        angel: Math.floor(Math.random(1) * 360) /**传入的角度 */
-      })
-    } else {
-      wx.showToast({
-        title: '暂无抽奖机会啦~',
-        icon: 'none'
-      })
-    }
+    // 转动转盘
+    api.postJSON('api/gift/turn_the_wheel',{
+      'token': app.globalData.token,
+      'order_id': that.data.order_id,
+      'user_id': app.globalData.userInfo.id
+    },
+    function(res){
+      console.log(res)
+      if(res.data.status==1){
+        that.setData({
+          flag: false
+        })
+        that.getWisecrack();
+        let lotteryNum = that.data.lotteryNum;
+        if (lotteryNum > 0) {
+          that.setData({
+            angel: Math.floor(Math.random(1) * 360) /**传入的角度 */
+          })
+        } else {
+          wx.showToast({
+            title: '暂无抽奖机会啦~',
+            icon: 'none'
+          })
+        }
+      }else{
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none'
+        })
+      }
+    })
   },
   getPrize(e) {
     var that = this;
@@ -107,25 +160,36 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
-    // 获取转盘数据
-    api.postJSON('api/index/get_lucky',function(res){
-      console.log(res)
-      console.log('order_id:'+options.order_id)
-      for(let i = 0;i<res.data.data.length;i++){
-        that.data.rouletteData.award.push({
-          level: res.data.data[i].level,
-          prize: res.data.data[i].prize
+    app.getUserInfo(userinfo => {
+      //昵称、头像 不存在，跳转去授权
+      if (userinfo.nickname == '' && userinfo.avatar == '') {
+        wx.redirectTo({
+          url: '../authorize/authorize',//授权页面
         })
       }
-      that.setData({
-        order_id: options.order_id,
-        award: that.data.rouletteData.award
-      })
-      that.selectComponent('#roulette').award(that.data.rouletteData);
     })
-    // 获取俏皮话
-    api.postJSON('api/index/getJoke',function(res){
-      console.log(res)
+    // 获取转盘数据
+    api.postJSON('api/index/get_lucky',function(res){
+      console.log('order_id:'+options.order_id)
+      if(res.data.status==1){
+        for(let i = 0;i<res.data.data.length;i++){
+          that.data.rouletteData.award.push({
+            level: res.data.data[i].level,
+            prize: res.data.data[i].prize
+          })
+        }
+        that.setData({
+          // order_id: options.order_id,
+          order_id: 2519,
+          award: that.data.rouletteData.award
+        })
+        that.selectComponent('#roulette').award(that.data.rouletteData);
+      } else {
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none'
+        })
+      }
     })
   },
 

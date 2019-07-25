@@ -12,7 +12,7 @@
 
   <view class="detalisbox">
     <view class="detalis_img2">
-      <swiper class='detalis_swipers' autoplay current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
+      <swiper class='detalis_swipers' autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
         <block wx:for="{{goods_data.img}}" wx:key>
           <swiper-item>
             <image class="detalis_swiper_image" src="{{item}}" lazy-load="true" />
@@ -126,10 +126,17 @@
       <image src="{{goods_data.img[0]}}" class="store" hidden="{{imgimg.length}}"></image>
       <image src="{{imgimg}}" class="store" wx:if="{{imgimg.length}}"></image>
       <text class="jiage">￥{{price}}</text>
-      <view class="selected">
-        <text style="padding-left:10rpx"  wx:if="{{imgimg.length}}">已选择: {{name}}</text>
+        <view class="selected"  wx:if="!{{imgimg.length}}">
+        <text style="padding-left:10rpx">已选择: {{name}}</text>
         <!-- <text class="mama">{{title}}</text> -->
-        <view style="padding-left:10rpx" wx:if="{{imgimg.length}}">库存:{{store_count}}</view>
+        <view style="padding-left:10rpx">库存:{{count}}</view>
+      </view> 
+
+
+      <view class="selected"  wx:if="{{imgimg.length}}">
+        <text style="padding-left:10rpx">已选择: {{name}}</text>
+        <!-- <text class="mama">{{title}}</text> -->
+        <view style="padding-left:10rpx">库存:{{store_count}}</view>
       </view>
       <!-- 正式的规格选择区块 s -->
       <scroll-view class='allConten' scroll-y="false">
