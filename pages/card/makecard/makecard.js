@@ -11,7 +11,7 @@ Page({
         id: '1',
         url: 'music/music',
         text: '选择音乐',
-        tips: '确认歌曲',
+        tips: '请选择歌曲',
         img: '../../public/images/card/music.png',
         icon: '../../public/images/card/revision.png'
       },
@@ -19,7 +19,7 @@ Page({
         id: '2',
         url: 'picture/picture',
         text: '选择照片',
-        tips: '确认照片',
+        tips: '请选择照片',
         img: '../../public/images/card/picture.png',
         icon: '../../public/images/card/revision.png'
       },
@@ -27,7 +27,7 @@ Page({
         id: '3',
         url: 'record/record',
         text: '录入语音',
-        tips: '请录入',
+        tips: '请录入语音',
         img: '../../public/images/card/record.png',
         icon: '../../public/images/card/revision.png'
       },
@@ -35,7 +35,7 @@ Page({
         id: '4',
         url: 'blessing/blessing',
         text: '写下祝福',
-        tips: '请填写',
+        tips: '请填写祝福',
         img: '../../public/images/card/blessing.png',
         icon: '../../public/images/card/revision.png'
       },
@@ -84,10 +84,14 @@ Page({
           icon: 'success',
           duration: 2000
         })
+        if (that.data.blessText != '') {
+          that.data.list[3].tips = that.data.blessText;
+        }
         that.setData({
           blessing: false,
           bless: that.data.blessText,
-          blessText: ''
+          blessText: '',
+          list: that.data.list
         })
       }else{
         wx.showModal({
@@ -158,13 +162,14 @@ Page({
     let that = this;
     let cate_id = null;
     if (!app.globalData.makecard){
-      cate_id = 1;
+      cate_id = options.type_id;
     }else{
       cate_id = '';
     }
     api.postJSON('api/box/get_box',{
       'token': app.globalData.token,
       'cate_id': cate_id,
+      'advice': options.giveothers,
       'id': app.globalData.makecard
     },
     function (res) {
@@ -188,6 +193,20 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    if(this.data.music!=''){
+      this.data.list[0].tips = this.data.music;
+    }
+    if (this.data.picture!=''){
+      // this.data.list[1].tips = this.data.picture;
+      this.data.list[1].tips = '已选择照片';
+    }
+    if (this.data.record!='') {
+      // this.data.list[2].tips = this.data.record;
+      this.data.list[2].tips = '已录入语音';
+    }
+    this.setData({
+      list:this.data.list
+    })
     console.log(this.data)
   },
 

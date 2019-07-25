@@ -9,10 +9,12 @@ Page({
   data: {
     num: 1,
     scene: '',
-    radio:0,
+    radio:-1,
     backName:'',
     backPicture:'',
-    backId:''
+    backId:'',
+    giveothers:'',
+    type_id:''
   },
   plus:function (e){
     let that = this;
@@ -31,6 +33,11 @@ Page({
       num: this.data.num
     })
     // this.data.num = this.data.num++
+  },
+  giveothers: function (e){
+    this.setData({
+      giveothers: e.detail.value
+    })
   },
   minus:function(){
     let that = this;
@@ -57,8 +64,16 @@ Page({
     })
   },
   show: function () {
+    if (this.data.type_id==''){
+      wx.showToast({
+        icon: 'none',
+        title: "请选择礼包类型",
+        duration: 2500
+      })
+      return false;
+    }
     wx.navigateTo({
-      url: '../../../../card/makecard/makecard',
+      url: '../../../../card/makecard/makecard?type_id=' + this.data.type_id + '&giveothers=' + this.data.giveothers,
     })
   },
   more:function(){
@@ -68,7 +83,8 @@ Page({
   },
   radioChange: function (e) {
     this.setData({
-      radio: e.detail.value
+      radio: e.detail.value,
+      type_id: e.currentTarget.dataset.id
     })
   },
   /**
@@ -86,7 +102,7 @@ Page({
     })
     if (options.name && options.picture){
       this.setData({
-        radio:0,
+        radio:-1,
         backName: options.name,
         backPicture: options.picture,
         backId: options.id

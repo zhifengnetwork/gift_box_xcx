@@ -9,7 +9,8 @@ Page({
   data: {
     music: [],
     src:'',
-    music_id:''
+    music_id:'',
+    songName:''
   },
   // 选择样式
   right:function(e){
@@ -22,6 +23,7 @@ Page({
     that.setData({
       music: this.data.music,
       src: that.data.music[ind].src,
+      songName: that.data.music[ind].songName,
       music_id: that.data.music[ind].id
     })
     // 播放音乐
@@ -57,7 +59,7 @@ Page({
           var prevPage = pages[pages.length - 2];  //上一个页面
           //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
           prevPage.setData({
-            music: that.data.src
+            music: that.data.songName
           })
           wx.navigateBack({
             delta: 1
