@@ -83,17 +83,52 @@ Page({
   // 提交
   send: function (){
     let that = this
-    api.postJSON('api/order/set_refund_kuaidi', {
-      'token': app.globalData.token,
-      refund_apply_id: that.data.id,
-      kuaidi_com: that.data.ss,
-      kuaidi_number: that.data.danhao,
-      tel: that.data.haoma,
-      kuaidi_msg: that.data.shuom,
-      kuaidi_pic: that.data.tupian
-    },function (res) {
-      console.log(res)
-    })
+    // 判断是否有填写快递公司、快递单号、手机号码
+    if (that.data.ss && that.data.danhao && that.data.haoma){
+      api.postJSON('api/order/set_refund_kuaidi', {
+        'token': app.globalData.token,
+        refund_apply_id: that.data.id,
+        kuaidi_com: that.data.ss,
+        kuaidi_number: that.data.danhao,
+        tel: that.data.haoma,
+        kuaidi_msg: that.data.shuom,
+        kuaidi_pic: that.data.tupian
+      }, function (res) {
+        // console.log(res)
+        // 当status为1的时候，显示设置成功
+        if(res.data.status == 1){
+          wx.showModal({
+            title: '提示',
+            content: '设置成功',
+            showCancel: false,
+            success(res) {
+              // 当点击了提示框的确定之后，返回退款详情
+              if (res.confirm) {
+                wx.navigateTo({
+                  url: '../refund/refund',
+                })
+                }
+            }
+          })
+        }
+        // 当status不等于1的时候，提示msg的内容
+        else{
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
+            showCancel: false
+          })
+        }
+      })
+    }
+    // 当物流公司、物流单号、手机号码没有填写的时候，提示
+    else{
+      wx.showModal({
+        title: '提示',
+        content: '请填写完整的物流信息',
+        showCancel: false
+      })
+    }
   },
 
   /**
