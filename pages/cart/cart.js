@@ -45,7 +45,7 @@ Page({
   },
   kaolao:function(){
     wx.navigateTo({
-      url: '../commodity/detalis/payment/award/award'
+      url: '../commodity/detalis/payment/award/award?buyao=0'
     })
   },
   /**

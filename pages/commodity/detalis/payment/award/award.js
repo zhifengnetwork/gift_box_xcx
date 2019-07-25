@@ -16,8 +16,8 @@ Page({
     sku_id:0,
     productNum:0,
     context:"",
-    addrid:''
-   
+    addrid:'',
+    buyao:5
    
   },
 
@@ -101,7 +101,8 @@ Page({
     // app.globalData.productNum = productNum;
     console.log("ffffffff");
     console.log(that.data.goods)
-    console.log(options.type)
+    console.log(options.type);
+    that.setData({buyao: options.buyao})
    if(options.type==="1"){
      // 该商品加入购物车
      api.getJSON('/api/order/immediatelyOrder?sku_id=' + app.globalData.sku_id + '&cart_number=' + app.globalData.productNum + '&token=' + app.globalData.token, function (res) {
@@ -137,8 +138,8 @@ Page({
      })
    }else{
 
-     api.getJSON('/api/order/order_detail?order_id=' + app.globalData.dingdang_id + "&token=" + app.globalData.token, function (res) {
-
+     api.getJSON('/api/order/order_detail&token='+ app.globalData.token, function (res) {
+        
        if (res.data.status == 1) {
          console.log("订单列表")
          console.log(res.data.data)
@@ -149,11 +150,6 @@ Page({
      })
 
    }
-
-
-
-  
-
 
     var address_id = options.address_id;
     // that.setData({addrid:address_id})

@@ -15,7 +15,7 @@
 </view>
 <!-- 商品区域 -->
 <view class="shop_ear" wx:if="{{shopzu.length>0}}">
-   <view class="didi" wx:for="{{shopzu}}" wx:key>
+   <view class="didi" wx:for="{{shopzu}}" wx:key bindtap="detail" data-id="{{item.goods_id}}">
     <image src="{{item.picture}}" class="shoot_pic"></image>
     <view class="name">{{item.brand_name}}</view>
     <view class="desc">{{item.goods_name}}</view>
