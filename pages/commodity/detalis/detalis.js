@@ -58,7 +58,12 @@ Page({
     imgimg:'',
     store_count:0,
     anniu:true,
-    order_type:false
+    order_type:false,
+    autoplay:true,
+    name:'',
+    jige:'',
+    count:''
+
   },
   clickTab: function (e) {
     var that = this;
@@ -235,6 +240,25 @@ Page({
         console.log(xiabiao)
         that.data.sku_id = res.data.data.spec_goods_price[xiabiao].sku_id
         WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
+
+        //进来商品详情的时候,默认显示的商品价格和库存
+        // for (var i = 0; i < that.data.goods_spec_list.length;i++){
+        //   if(that.data.goods_spec_list[i].isClick==='1'){
+        //     console.log("默认的规格id")
+        //     console.log(that.data.goods_spec_list.item_id)
+        //   }
+        // }
+        var name=res.data.data.spec_goods_price[xiabiao].name
+        var jige = res.data.data.spec_goods_price[xiabiao].price
+        var count = res.data.data.spec_goods_price[xiabiao].store_count;
+        that.setData({ name:name,price:jige,count:count})
+
+        
+
+
+
+
+
       }
     })
    
@@ -259,14 +283,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({ autoplay: true })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.setData({ autoplay: false})
   },
 
   /**
