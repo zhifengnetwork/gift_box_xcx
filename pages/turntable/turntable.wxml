@@ -28,15 +28,15 @@
     <image class="wisecrack_bg" src="https://giftbox.zhifengwangluo.com/public/images/gift/greeting_bg.png"></image>
     <image class="wisecrack_icon" src="https://giftbox.zhifengwangluo.com/public/images/gift/greeting.png"></image>
     <view class="wisecrack_info">
-      <view class="wisecrack_text">才华横溢的你</view>
-      <view class="wisecrack_text">今天可能会捡到一本书哦!</view>
+      <view class="wisecrack_text">{{wisecrack_t1}}</view>
+      <view class="wisecrack_text">{{wisecrack_t2}}</view>
     </view>
   </view>
   <!--  中奖者 -->
   <view wx:if="{{win_id}}">
     <image class="win_id_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/win_id.png"></image>
     <view class="win_id">
-      锵唴、锵唴、锵唴、锵唴、锵唴、锵唴、锵唴、锵唴、
+      <text wx:for="{{win_Name}}">{{item}}、</text>
     </view>
   </view>
   <!-- 未中奖 -->

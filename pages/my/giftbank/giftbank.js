@@ -149,24 +149,32 @@ Page({
     // wx.navigateTo({
     //   url: '../reward/reward',
     // })
-    let that = this;
-    api.postJSON('api/order/edit_order_type', {
-      token: app.globalData.token,
-      order_id: e.target.dataset.id,
-    }, function (res) {
-      if(res.data.status == 1){
-        that.onLoad();
-      }
-    })
+    // let that = this;
+    // api.postJSON('api/order/edit_order_type', {
+    //   token: app.globalData.token,
+    //   order_id: e.target.dataset.id,
+    // }, function (res) {
+    //   if(res.data.status == 1){
+    //     that.onLoad();
+    //   }
+    // })
   },
 
 
 
 
   // 赠送他人
-  zengsong: function () {
+  zengsong: function (e) {
+    var order_id = e.currentTarget.dataset.id
+    if(!order_id){
+      wx.showModal({
+        title: '订单ID不存在',
+        content: '',
+      })
+    }
+    console.log('ooooooooooo')
     wx.navigateTo({
-      url: '../zengsong/zengsong',
+      url: '../../commodity/detalis/give/giftbag/giftbag?order_id=' + order_id,
     })
   },
 

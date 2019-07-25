@@ -19,11 +19,14 @@ Page({
       itemList: ['拍照', '从手机相册选择'],
       success: function(res) {
         console.log(res.tapIndex)
-        if (res.tapIndex != 2) {
+        if (res.tapIndex == 0) {
           var type = 'camera';
-        } else {
+        }
+
+        if (res.tapIndex == 1) {
           var type = 'album';
         }
+        
         if (res.tapIndex == 0) {
           wx.chooseImage({
             count: 1,

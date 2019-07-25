@@ -7,21 +7,23 @@ Page({
    * 页面的初始数据
    */
   data: {
-
+    order_id:''
   },
   give:function(){
     let that = this;
     // 判断是否可分享
     api.postJSON('api/gift/share_callback', {
       token: app.globalData.token,
-      order_id: app.globalData.give.order_id,
+      order_id: that.data.order_id,
       act: 1
     }, function (res) {
+      console.log(res.data)
+      console.log('==========================')
       if (res.data.status == 1) {
         // 分享
         api.postJSON('api/gift/share_callback', {
           token: app.globalData.token,
-          order_id: app.globalData.give.order_id,
+          order_id: that.data.order_id,
           act: 0
         }, function (res) {
           if (res.data.status == 1) {
@@ -50,7 +52,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    console.log(options)
+    var order_id = options.order_id;
+    if(!order_id){
+      wx.showModal({
+        title: '订单ID不存在',
+        content: '',
+      })
+    }
+    this.setData({
+      order_id:order_id
+    })
   },
 
   /**
@@ -101,9 +113,9 @@ Page({
   onShareAppMessage: function () {
     let url = null;
     if (app.globalData.give.order_type == 1) {
-      url = '/pages/card/go?order_id='+app.globalData.give.order_id;
+      url = '/pages/card/go?order_id='+this.data.order_id;
     } else {
-      url = '/pages/turntable/turntable?order_id='+app.globalData.give.order_id;
+      url = '/pages/turntable/turntable?order_id=' + this.data.order_id;
     }
     var nickname = app.globalData.userInfo.nickname;
     nickname = nickname == undefined ? '' : nickname;
