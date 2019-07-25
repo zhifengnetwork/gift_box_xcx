@@ -28,6 +28,11 @@ Page({
     //   url: '../integral/integral',
     // })
   },
+  invoice:function(){
+    wx.navigateTo({
+      url: '../../../../my/invoice/invoice?order_id=' + app.globalData.give.order_id,
+    })
+  },
   wxpay:function(){
     let that = this;
     console.log(app.globalData.give)
