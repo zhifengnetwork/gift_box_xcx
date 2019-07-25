@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    order_id:''
+    order_id:'',
+    flag:true
   },
   give:function(){
     let that = this;
@@ -30,7 +31,6 @@ Page({
             // wx.redirectTo({
             //   url: '../../../../my/sendgift/sendgift'
             // })
-            that.onShareAppMessage();
           } else {
             wx.showModal({
               content: res.data.msg,
@@ -45,7 +45,6 @@ Page({
         })
         return false;
       }
-      console.log(res)
     })
   },
   /**
@@ -125,7 +124,7 @@ Page({
       imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',
       path: url,
       success: function (res) {
-        console.log(res)
+        console.log(res, 111)
         wx.showModal({
           title: '分享成功',
           content: '分享成功',
