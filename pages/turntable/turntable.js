@@ -25,7 +25,8 @@ Page({
       dotColor_2: ['#b1ffdd', '#ffffff'],
       angel: 0,               /**选择角度 */
     },
-    mask: false,            /**遮罩层 */
+    start: true,             /**参与抽奖 */
+    mask: true,            /**遮罩层 */
     win_id: false,          /**中奖者 */
     win_Name:[],
     win: false,             /**礼物 */
@@ -64,7 +65,37 @@ Page({
     })
     this.setData({
       mask:true,
-      win_id:true
+      win_id:true,
+      start: false
+    })
+  },
+  start_time:function(){
+    let that = this;
+    api.postJSON('api/gift/receive_join',{
+      'token': app.globalData.token,
+      'order_id': that.data.order_id,
+      'join_type': 2,
+      'pwdstr':''
+    },
+    function(res){
+      if (res.data.status==1){
+        console.log(res.data.data.type)
+        if (res.data.data.type==1){
+          that.setData({mask:false})
+        }else{
+          wx.showToast({
+            title: '参与成功',
+            icon: 'none'
+          })
+          that.setData({mask:false})
+        }
+      }else{
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none'
+        })
+      }
+      console.log(res);
     })
   },
   back:function(){
@@ -190,7 +221,7 @@ Page({
         }
         that.setData({
           // order_id: options.order_id,
-          order_id: 2519,
+          order_id: 2673,
           award: that.data.rouletteData.award
         })
         that.selectComponent('#roulette').award(that.data.rouletteData);

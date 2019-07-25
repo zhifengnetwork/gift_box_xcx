@@ -165,7 +165,6 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.provinces(0,0);
     // 初始化动画变量
     var animation = wx.createAnimation({
       duration: 500,
@@ -193,6 +192,7 @@ Page({
   },
   // 点击所在地区弹出选择框
   selectDistrict: function (e) {
+    this.provinces(0, 0);
     var that = this
     if (that.data.addressMenuIsShow) {
       return
