@@ -48,7 +48,12 @@ Page({
     imgimg:'',
     store_count:0,
     anniu:true,
-    order_type:false
+    order_type:false,
+    autoplay:true,
+    name:'',
+    jige:'',
+    count:''
+
   },
   clickTab: function (e) {
     var that = this;
@@ -247,14 +252,14 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    this.setData({ autoplay: true })
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    this.setData({ autoplay: false})
   },
 
   /**

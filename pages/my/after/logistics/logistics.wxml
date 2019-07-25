@@ -30,7 +30,7 @@
 </view>
 <!-- 聯系電話 -->
 <view class="refundstate" style="margin-top: 20rpx;">
-  <text class="refundstate_text">聯系電話:</text><input placeholder="請填寫手機號碼" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" bindinput="haoma" />
+  <text class="refundstate_text">聯系電話:</text><input placeholder="請填寫手機號碼" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" bindinput="haoma" type="number" />
 </view>
 <!-- 退貨說明 -->
 <view class="refundstate" style="margin-top: 20rpx;">

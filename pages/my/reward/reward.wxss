@@ -2,8 +2,8 @@
   height: 115rpx;
 }
 .reward_box{
-  padding: 0 50rpx;
-  height: 450rpx;
+  padding: 0 50rpx 20rpx;
+  overflow: hidden;
   border-bottom: 2rpx solid #f3f1f1;
 }
 .reward .reward_box:nth-child(2n){

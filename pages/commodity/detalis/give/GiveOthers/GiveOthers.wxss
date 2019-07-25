@@ -177,18 +177,22 @@
 }
 .radio{
   position: absolute;
-  display: block;
+  top: 10rpx;
+  right: 10rpx;
   width: 40rpx;
   height: 40rpx;
-  top:0rpx;
-  right:20rpx;
-}
-.radio>radio{
-  transform: scale(0.6);
+  line-height: 40rpx;
+  text-align: center;
+  border-radius: 50%;
+  color: #fff;
+  background: #fff;
 }
 .giveothers_img {
   width: 190rpx;
   height: 300rpx;
+}
+.giveothers_img .active{
+  background: #000;
 }
 .giveothers_i{
   width: 100%;

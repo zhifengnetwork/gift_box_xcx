@@ -10,25 +10,25 @@
 <!-- 收货人信息 -->
 <view class="refund_consignee">
   <view class="refund_consigneet">
-    <text class="refund_consigneel">收貨人：家居專營店</text>
-    <text class="refund_consigneer">13012345678</text>
+    <text class="refund_consigneel">收貨人：{{item.return_name}}</text>
+    <text class="refund_consigneer">{{item.return_phone}}</text>
   </view>
   <view class="refund_consigneef">
-    江苏省连云港市海洲区瀛洲路38号盛世嘉缘西门2号楼1单元402飞利浦售后（电话联系验货再签收，拒收快递柜
+    {{item.return_address}}
   </view>
 </view>
 <!-- 退货说明 -->
 <view class="refund_explain">
-  退貨說明：親請務必將我們的貨包裝好（包括商品本身的原包裝），以免運輸途中碰壞，帶來不必要的麻煩，謝謝！親在寄回的包裹中留壹個紙條，寫上旺旺號，訂單號，退貨原因，方便我們處理。
+  退貨說明：{{item.return_desc}}
 </view>
 <!-- 退货备注 -->
 <view class="refund_remark">
-  瑩韻家居專營店，13056099851，江蘇省連雲港市海州區瀛州路38號盛世嘉園2號樓1單元402飛利浦，註意：請備註到貨後電話聯系本人簽收，拒收快遞櫃。 \n （註：不接受任何到付件和平郵）
+  {{item.return_remarks}} \n （註：不接受任何到付件和平郵）
 </view>
 <!-- 说明 -->
 <view class="refund_declare">
   <view>
-    <text class="diandian"></text> 未與商家協商壹致，請勿使用到付或平郵，以免商家拒簽貨物
+    <text class="diandian"></text> {{item.return_remarks2}}
   </view>
   <view>
     <text class="diandian"></text> 交易的錢款還在天貓中間賬戶，確保妳資金安全

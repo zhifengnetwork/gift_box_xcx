@@ -8,7 +8,9 @@
       <!-- <view class="collectgift_obligation">{{item.add_time}}</view> -->
     </view>
     <view class="collectgift_con">
-      <view class="collectgift_img"></view>
+      <view class="collectgift_img">
+        <img src="{{item.img}}" />
+      </view>
       <view class="collectgift_conent">
         <view class="collectgift_brand">{{item.goods_name}}</view>
         <view class="collectgift_standard">{{item.spec_key_name}}</view>

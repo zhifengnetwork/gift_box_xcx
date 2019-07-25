@@ -36,11 +36,11 @@
   </view>
   <view class="giveothers_cconter">
     <view class="giveothers_cbox">
-      <view class="giveothers_imgbox" wx:for="{{scene}}" wx:key="{{index}}">
+      <view class="giveothers_imgbox" wx:for="{{scene}}" wx:key="{{index}}" bindtap="radioChange" data-index="{{index}}" data-id="{{backId&&index==0?backId:item.id}}">
         <view class="giveothers_img">
-          <radio-group class="radio" bindchange="radioChange" data-id="{{backId&&index==0?backId:item.id}}">
-            <radio color="#000" value="{{index}}" checked="{{index==radio}}" />{{item.value}}
-          </radio-group>
+          <view class="radio {{radio==index?'active':''}}">
+            <text>√</text>
+          </view>
           <image class="giveothers_i" wx:if="{{backPicture&&index==0}}" src="{{backPicture}}"></image>
           <image class="giveothers_i" wx:else src="{{item.picture}}"></image>
         </view>
