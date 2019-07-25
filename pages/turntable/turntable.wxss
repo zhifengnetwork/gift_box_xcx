@@ -198,7 +198,18 @@ page{
   position: absolute;
   left: 160rpx;
   bottom: 440rpx;
+  width: 440rpx;
   font-size: 30rpx;
+}
+.start_Btn{
+  margin: 0 auto;
+  width:200rpx;
+  height: 60rpx;
+  line-height: 60rpx;
+  text-align: center;
+  color: #fff;
+  border-radius: 100rpx;
+  background: #ffbf00;
 }
 /* 中奖者 */
 .win_id_img{
