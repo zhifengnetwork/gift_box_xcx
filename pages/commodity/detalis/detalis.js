@@ -17,23 +17,13 @@ Page({
     // 头部导航栏的高度
     bar_Height: wx.getSystemInfoSync().statusBarHeight, // 获取手机状态栏高度
     height: app.globalData.height * 2 + 25,
-    navbarData: {
-      name: '我是标题'
-    },
     attrList: [],
-    skuBeanList: [],
-    //商品规格
     goods_spec_list: [],
     goodssss: [],
     showModalStatus: false,
     pintuanArr: "",
     googsId: "",
     goods_spec: "",
-    wuliuShow: false,
-    guigeShow: false,
-    pinyouImg: false,
-    zhiyouImg: false,
-    dataArr: [],
     productNum: 1,
     wuliuType: "请选择物流方式",
     wuliuTypeId: "",
@@ -231,15 +221,13 @@ Page({
         console.log(zuhe);
         // 默认取第一个的sku_id
         var xiabiao=zuhe[0];
-        console.log("niuniu")
-        console.log(xiabiao)
+     
         that.data.sku_id = res.data.data.spec_goods_price[xiabiao].sku_id
         WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
+        that.checkPrice();//首次需要调用，首次的规格
       }
     })
    
-   
-
   }, 
 
   swiperChange: function (e) {
@@ -318,10 +306,7 @@ Page({
   checkPrice: function () {
     var goods = this.data.goods_spec_list;
     var spec = ""
-    // this.setData({
-    //   price: goods.goods.shop_price
-    // });
-
+  
     if (goods) {
       for (var i = 0; i < goods.length; i++) {
         for (var j = 0; j < goods[i].length; j++) {
@@ -347,8 +332,7 @@ Page({
           spec = specs[i]
         else {
           spec = spec + "_" + specs[i];
-          console.log("hh" + spec);
-
+         
         }
       }
      
@@ -358,7 +342,9 @@ Page({
       for (var st in this.data.goodssss) {
         zuhe.push(st)
       }
-      console.log(zuhe)
+      console.log('-----')
+      console.log(spec)
+      console.log('-----')
       for (var i = 0; i < zuhe.length; i++) {
         //有该组合的时候
         if (zuhe[i] === spec) {

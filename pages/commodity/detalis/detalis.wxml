@@ -122,14 +122,13 @@
     <view class="shop_ear" catchtouchmove="preventTouchMove" wx:if="{{statussxianshi}}">
    
     <!-- goods_data.img[0] -->
-   
       <image src="{{goods_data.img[0]}}" class="store" hidden="{{imgimg.length}}"></image>
       <image src="{{imgimg}}" class="store" wx:if="{{imgimg.length}}"></image>
       <text class="jiage">￥{{price}}</text>
       <view class="selected">
-        <text style="padding-left:10rpx"  wx:if="{{imgimg.length}}">已选择: {{name}}</text>
+        <text style="padding-left:10rpx"  wx:if="{{name}}">已选择: {{name}}</text>
         <!-- <text class="mama">{{title}}</text> -->
-        <view style="padding-left:10rpx" wx:if="{{imgimg.length}}">库存:{{store_count}}</view>
+        <view style="padding-left:10rpx" wx:if="{{store_count}}">库存:{{store_count}}</view>
       </view>
       <!-- 正式的规格选择区块 s -->
       <scroll-view class='allConten' scroll-y="false">
