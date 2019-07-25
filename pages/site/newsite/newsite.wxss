@@ -35,7 +35,8 @@ page{
   margin-left: 20rpx;
 }
 .newsite_city{
-  float: right;
+  float: left;
+  margin-left: 20rpx;
   font-size:28rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
