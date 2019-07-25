@@ -28,7 +28,7 @@
 <!-- 说明 -->
 <view class="refund_declare">
   <view>
-    <text class="diandian"></text> {{item.return_remarks2}}
+    <text class="diandian"></text> 未與商家協商壹致，請勿使用平郵或到付，以免商家拒簽收貨物
   </view>
   <view>
     <text class="diandian"></text> 交易的錢款還在天貓中間賬戶，確保妳資金安全

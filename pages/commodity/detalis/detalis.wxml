@@ -27,42 +27,42 @@
       </view>
     </view>
     <view class="detalis_c">
-      <view class="detalis_ct">赠送流程</view>
+      <view class="detalis_ct">贈送流程</view>
       <view class="detalis_cc">
         <view class="detalis_cc_img">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/weixin_icon.png"></image>
         </view>
-        <text>1微信赠送</text>
+        <text>1微信贈送</text>
         <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
       </view>
       <view class="detalis_cc">
         <view class="detalis_cc_img">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/xiaolian_icon.png"></image>
         </view>
-        <text>2好友领取</text>
+        <text>2好友領取</text>
         <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
       </view>
       <view class="detalis_cc">
         <view class="detalis_cc_img">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dizhi_icon.png"></image>
         </view>
-        <text>3兑换填地址</text>
+        <text>3兌換填地址</text>
         <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
       </view>
       <view class="detalis_cc">
         <view class="detalis_cc_img">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/shouhuo_icon.png"></image>
         </view>
-        <text>4送货上门</text>
+        <text>4送貨上門</text>
       </view>
     </view>
     <view class="detalis_b">
       <view class="swiper-tab">
         <view class="detalis_tab">
-          <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">商品介绍</view>
+          <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">商品介紹</view>
         </view>
         <view class="detalis_tab">
-          <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">为你星选</view>
+          <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">為妳星選</view>
         </view>
       </view>
       <view class="{{currentTab == 0 ? 'show':'hidden'}}">
@@ -77,7 +77,7 @@
       </view>
       <view class="{{currentTab == 1 ? 'show':'hidden'}}">
         <scroll-view>
-          <view style="font-size:32rpx;padding:0 20rpx;">为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选为你星选</view>
+          <view style="font-size:32rpx;padding:0 20rpx;">為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選為妳星選</view>
         </scroll-view>
       </view>
     </view>
@@ -89,7 +89,7 @@
       <view class="detalis_fl">
         <view class="detalis_flbox" bindtap="shouye">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/home_icon.png"></image>
-          <view class="detalis_fl_text">首页</view>
+          <view class="detalis_fl_text">首頁</view>
         </view>
         <view class="detalis_flbox">
           <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/kefu_icon.png"></image>
@@ -106,10 +106,10 @@
       <view class="detalis_fr">
         <view class="detalis_frbox">
           <form report-submit="true" bindsubmit="kaolao">
-            <button class="detalis_frl" form-type="submit">犒劳自己</button>
+            <button class="detalis_frl" form-type="submit">犒勞自己</button>
           </form>
           <form report-submit="true" bindsubmit="give_goods">
-            <button class="detalis_frr" form-type="submit">赠送他人</button>
+            <button class="detalis_frr" form-type="submit">贈送他人</button>
           </form>
         </view>
       </view>
@@ -127,16 +127,16 @@
       <image src="{{imgimg}}" class="store" wx:if="{{imgimg.length}}"></image>
       <text class="jiage">￥{{price}}</text>
         <view class="selected"  wx:if="{{!imgimg.length}}">
-        <text style="padding-left:10rpx">已选择: {{name}}</text>
+        <text style="padding-left:10rpx">已選擇: {{name}}</text>
         <!-- <text class="mama">{{title}}</text> -->
-        <view style="padding-left:10rpx">库存:{{count}}</view>
+        <view style="padding-left:10rpx">庫存:{{count}}</view>
       </view> 
 
 
       <view class="selected"  wx:if="{{imgimg.length}}">
-        <text style="padding-left:10rpx">已选择: {{name}}</text>
+        <text style="padding-left:10rpx">已選擇: {{name}}</text>
         <!-- <text class="mama">{{title}}</text> -->
-        <view style="padding-left:10rpx">库存:{{store_count}}</view>
+        <view style="padding-left:10rpx">庫存:{{store_count}}</view>
       </view>
       <!-- 正式的规格选择区块 s -->
       <scroll-view class='allConten' scroll-y="false">
@@ -151,24 +151,24 @@
         <view>
         <!-- wx:if="{{!order_type}}" -->
           <view class='buyNum-box' >
-            <view class='buyNum'>购买数量</view>
+            <view class='buyNum'>購買數量</view>
             <view class='jian' catchtap='reduceProduct'>-</view>
             <view class='num'>{{productNum}}</view>
             <view class='jia' catchtap='addProduct' data-sort="{{dataArr.goods.store_count}}">+</view>
           </view>
         </view>
       </scroll-view>
-      <view class="next" bindtap="jiele" wx:if="{{anniu}}">确定</view>
-      <view class="next" bindtap="nextshi" wx:if="{{!anniu}}">下一步</view>
+      <view class="next" bindtap="jiele" wx:if="{{anniu}}">確定</view>
+      <view class="next" bindtap="nextshi" wx:if="{{!anniu}}">下壹步</view>
       <!-- 正式的规格选择区块 e -->
       <view>
         <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
           <view class='btn-box'>
             <view class='btn-item'>
-              <view class='addCar' data-type='2' bindtap='addCar'>加入购物车</view>
+              <view class='addCar' data-type='2' bindtap='addCar'>加入購物車</view>
             </view>
             <view class='btn-item'>
-              <view class='buyPro' catchtap='toBuy'>立即购买</view>
+              <view class='buyPro' catchtap='toBuy'>立即購買</view>
             </view>
           </view>
         </view>
@@ -176,14 +176,14 @@
           <view class='btn-box'>
             <view class='pda-btn' catchtap='toPinDan'>
               <view class='moneya'>HK$ {{price}}</view>
-              <view class='btn-worda' hidden='{{(order_id == "" && ptorder_id == "")?"":"true"}}'>发起拼单</view>
-              <view class='btn-worda' hidden='{{(order_id == "" && ptorder_id == "")?"true":""}}'>参与拼单</view>
+              <view class='btn-worda' hidden='{{(order_id == "" && ptorder_id == "")?"":"true"}}'>發起拼單</view>
+              <view class='btn-worda' hidden='{{(order_id == "" && ptorder_id == "")?"true":""}}'>參與拼單</view>
             </view>
           </view>
         </view>
         <view hidden='{{dataArr.goods.type==1?"":"true"}}'>
           <view class='btn-box'>
-            <text class='kj-btn' bindtap='toKanjia'>砍价优惠拿</text>
+            <text class='kj-btn' bindtap='toKanjia'>砍價優惠拿</text>
           </view>
         </view>
       </view>

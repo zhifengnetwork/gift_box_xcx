@@ -24,7 +24,7 @@
   </view>
    <view class="subtotal_box">
     <text class="subtotal_boxl">積分</text>
-    <text class="subtotal_boxr">-124</text>
+    <text class="subtotal_boxr">{{integral}}</text>
   </view>
   <view class="subtotal_box">
     <text class="subtotal_boxl">優惠</text>
