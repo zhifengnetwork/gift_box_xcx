@@ -24,7 +24,7 @@
   </view>
    <view class="subtotal_box">
     <text class="subtotal_boxl">積分</text>
-    <text class="subtotal_boxr">-124</text>
+    <text class="subtotal_boxr">{{item.integral}}</text>
   </view>
   <view class="subtotal_box">
     <text class="subtotal_boxl">優惠</text>
@@ -39,7 +39,7 @@
 <!-- 退款金额 -->
 <view class="refundmoney">
   <text class="refundmoney_l">退款金額</text>
-  <text class="refundmoney_r">HK$120.00</text>
+  <text class="refundmoney_r">HK${{item.price}}</text>
 </view>
 <!-- 退款原因 -->
 <view class="refundcause" bindtap="dianji">

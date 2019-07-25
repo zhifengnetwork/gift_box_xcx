@@ -114,6 +114,7 @@ Page({
     this.setData({ zhanshidd: false })
     var index = e.currentTarget.dataset.index;//获取当前点击的下标
     var sortfangshi = e.currentTarget.dataset.sortfangshi; //获取当前点击的项的排列方式
+    console.log("排序方式", sortfangshi)
     var checkboxArr = this.data.checkboxArr;//选项集合
     if (checkboxArr[index].checked) return;//如果点击的当前已选中则返回
     checkboxArr.forEach(item => {
@@ -126,15 +127,27 @@ Page({
     this.setData({ sort: checkboxArr[index].name })
     this.setData({ color: 'red' });
     var that = this;
-    // 在品牌详情中选择排序方式
-    // api.getJSON('/api/Brand/brand_info?id=' + this.data.guanjian + '&order=' + sortfangshi, function (res) {
-    //   if (res.data.status == 1) {
-    //     console.log("ssss");
-    //     console.log(res.data.data.goods_list)
-    //     var goods = res.data.data.goods_list;
-    //     that.setData({ goods_list: goods })
-    //   }
-    // })
+    api.getJSON(
+      '/api/Category/search_goods?keyword=' + this.data.headtitle + "&token=" + app.globalData.token + '&num=1000000000000' + '&page=1' + '&order=' + sortfangshi, function (res) {
+        if (res.data.status == 1) {
+          console.log(res.data.data)
+          that.setData({ shopzu: res.data.data })
+          if (that.data.shopzu.length > 0) {
+            that.setData({ xianshi: true })
+          } else {
+            that.setData({ xianshi: false })
+          }
+
+        }
+      }) 
+
+
+
+
+
+
+
+
   },
   //排序的方式---区块的显示和隐藏
   xialakuang: function () {

@@ -102,7 +102,9 @@ Page({
     // }
     var nickname = app.globalData.userInfo.nickname;
     nickname = nickname == undefined ? '' : nickname;
+    console.log('===========')
     console.log(nickname)
+    console.log('===========')
     return {
       title: nickname + '为你准备了一份惊喜,请火速查收!',
       imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',

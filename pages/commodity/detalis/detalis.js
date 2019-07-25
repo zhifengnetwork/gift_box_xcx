@@ -17,23 +17,13 @@ Page({
     // 头部导航栏的高度
     bar_Height: wx.getSystemInfoSync().statusBarHeight, // 获取手机状态栏高度
     height: app.globalData.height * 2 + 25,
-    navbarData: {
-      name: '我是标题'
-    },
     attrList: [],
-    skuBeanList: [],
-    //商品规格
     goods_spec_list: [],
     goodssss: [],
     showModalStatus: false,
     pintuanArr: "",
     googsId: "",
     goods_spec: "",
-    wuliuShow: false,
-    guigeShow: false,
-    pinyouImg: false,
-    zhiyouImg: false,
-    dataArr: [],
     productNum: 1,
     wuliuType: "请选择物流方式",
     wuliuTypeId: "",
@@ -97,7 +87,7 @@ Page({
     this.setData({
       statussxianshi: false
     }), 
-      api.getJSON('/api/order/immediatelyOrder?sku_id=' + this.data.sku_id + '&cart_number=' + this.data.productNum+"&token="+app.globalData.token, function (res) {
+      api.getJSON('/api/Cart/addCart?sku_id=' + this.data.sku_id + '&cart_number=' + this.data.productNum+"&token="+app.globalData.token, function (res) {
        
       if (res.data.status == -1){
         wx.showToast({
@@ -236,34 +226,13 @@ Page({
         console.log(zuhe);
         // 默认取第一个的sku_id
         var xiabiao=zuhe[0];
-        console.log("niuniu")
-        console.log(xiabiao)
+     
         that.data.sku_id = res.data.data.spec_goods_price[xiabiao].sku_id
         WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
-
-        //进来商品详情的时候,默认显示的商品价格和库存
-        // for (var i = 0; i < that.data.goods_spec_list.length;i++){
-        //   if(that.data.goods_spec_list[i].isClick==='1'){
-        //     console.log("默认的规格id")
-        //     console.log(that.data.goods_spec_list.item_id)
-        //   }
-        // }
-        var name=res.data.data.spec_goods_price[xiabiao].name
-        var jige = res.data.data.spec_goods_price[xiabiao].price
-        var count = res.data.data.spec_goods_price[xiabiao].store_count;
-        that.setData({ name:name,price:jige,count:count})
-
-        
-
-
-
-
-
+        that.checkPrice();//首次需要调用，首次的规格
       }
     })
    
-   
-
   }, 
 
   swiperChange: function (e) {
@@ -342,10 +311,7 @@ Page({
   checkPrice: function () {
     var goods = this.data.goods_spec_list;
     var spec = ""
-    // this.setData({
-    //   price: goods.goods.shop_price
-    // });
-
+  
     if (goods) {
       for (var i = 0; i < goods.length; i++) {
         for (var j = 0; j < goods[i].length; j++) {
@@ -357,7 +323,7 @@ Page({
           }
         }
       }
-
+  
       var specs = spec.split("_");
       for (var i = 0; i < specs.length; i++) {
         specs[i] = parseInt(specs[i])
@@ -371,8 +337,7 @@ Page({
           spec = specs[i]
         else {
           spec = spec + "_" + specs[i];
-          console.log("hh" + spec);
-
+         
         }
       }
      
@@ -382,7 +347,9 @@ Page({
       for (var st in this.data.goodssss) {
         zuhe.push(st)
       }
-      console.log(zuhe)
+      console.log('-----')
+      console.log(spec)
+      console.log('-----')
       for (var i = 0; i < zuhe.length; i++) {
         //有该组合的时候
         if (zuhe[i] === spec) {
@@ -415,6 +382,7 @@ Page({
   },
   //加减商品数量
   reduceProduct: function () {
+    var that=this
     var proNum = this.data.productNum - 1
     if (proNum < 1) {
       this.setData({
@@ -425,8 +393,14 @@ Page({
         productNum: proNum
       })
     }
+   
+
+
+
+
   },
   addProduct: function (e) {
+    var that=this
     var sort = e.target.dataset.sort;
     var proNum = this.data.productNum + 1
     if (proNum > sort) {
@@ -438,6 +412,11 @@ Page({
         productNum: proNum
       })
     }
+    
+
+
+
+
   }
 
 
