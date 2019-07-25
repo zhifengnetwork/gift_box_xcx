@@ -101,19 +101,16 @@ Page({
    */
   onLoad: function(options) {
    
-    if (options) {
-      var address_id = options.address_id
-      this.setData({
-        address_id: address_id
-      })
-    } else {
-      var address_id = ''
-    }
+    this.setData({
+      address_id: options.address_id == undefined ? "" : options.address_id,
+      invoice_id: options.invoice_id == undefined ? "" : options.invoice_id
+    })
+
     console.log('=========')
     console.log(options)
     console.log("-----------")
 
-    this.loadData(address_id);
+    this.loadData(this.data.address_id);
 
     // var sku_id = options.sku_id;
     // var productNum = options.num;
@@ -213,7 +210,7 @@ Page({
   },
   site: function() {
     wx.navigateTo({
-      url: '../../../../site/site?award=true',
+      url: '../../../../site/site?award=true&invoice_id=' + this.data.invoice_id,
     });
   },
   /**

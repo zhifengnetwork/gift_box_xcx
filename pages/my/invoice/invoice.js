@@ -22,27 +22,13 @@ Page({
     footer_show: true,
     award: '',
     gerren: "",
-
-    bianvalue: "",
- 
-
-    email: "",
-
-    unit_num: '',
-    unit_name: '',
-
-    youxiangna: '',
     address_id: '',
     source: '',
-
-
     invoice_desc: "礼品卡",
     invoice_email: "",
     invoice_mobile: "",
     invoice_title: "",
     taxpayer: "",
-
-
     is_lipinka: '',
     is_gouwuka: ''
   },
@@ -150,7 +136,6 @@ Page({
 
   },
 
-
   /**
    * 获取发票内容
    */
@@ -217,7 +202,6 @@ Page({
 
   },
 
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -230,8 +214,6 @@ Page({
    */
   onShow: function () {
     var that = this
-
-
 
   },
 
@@ -274,13 +256,14 @@ Page({
    */
   save_invoice: function () {
     var that = this
-   
-    if ((that.data.unit_show == false && that.data.unit_name == '') || (that.data.unit_show == false && that.data.taxpayer == '') ) {
+
+    if ((that.data.unit_show == false && that.data.invoice_title == '') || (that.data.unit_show == false && that.data.taxpayer == '')) {
       wx.showToast({
         title: '请填写纳税人识别号和单位名称',
         icon: 'none',
         duration: 2000
       })
+      return false;
     }
 
     api.postJSON('/api/order/edit_invoice?token=' + app.globalData.token + '&invoice_title=' + this.data.invoice_title + '&taxpayer=' + this.data.taxpayer + '&invoice_mobile=' + this.data.invoice_mobile + '&invoice_email=' + this.data.invoice_email + '&invoice_desc=' + this.data.invoice_desc,
@@ -292,7 +275,7 @@ Page({
             duration: 2000
           })
           wx.navigateTo({
-            url: '../../commodity/detalis/payment/award/award?address_id=' + that.data.address_id
+            url: '../../commodity/detalis/payment/award/award?address_id=' + that.data.address_id + '&invoice_id=' + res.data.data
           })
 
         } else {
