@@ -73,7 +73,7 @@
         </view>
       </scroll-view> -->
 
-        <template is="wxParse" data="{{wxParseData:content.nodes}}" />
+        <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
       </view>
       <view class="{{currentTab == 1 ? 'show':'hidden'}}">
         <scroll-view>
