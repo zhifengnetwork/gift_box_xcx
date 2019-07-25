@@ -149,7 +149,8 @@
           </view>
         </view>
         <view>
-          <view class='buyNum-box' wx:if="{{!order_type}}">
+        <!-- wx:if="{{!order_type}}" -->
+          <view class='buyNum-box' >
             <view class='buyNum'>购买数量</view>
             <view class='jian' catchtap='reduceProduct'>-</view>
             <view class='num'>{{productNum}}</view>
