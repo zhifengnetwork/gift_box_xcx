@@ -30,6 +30,8 @@ Page({
     console.log(app.globalData.productNum)
     console.log(app.globalData.sku_id)
     if(this.data.award){
+      console.log('++++++++++')
+      console.log(addid)
       wx.redirectTo({
         url: '../commodity/detalis/payment/award/award?address_id=' + addid + "&sku_id=" + app.globalData.sku_id + '&productNum=' + app.globalData.productNum,
       })

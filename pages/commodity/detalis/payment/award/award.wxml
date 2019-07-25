@@ -6,8 +6,8 @@
 </view>
 <view class="award_topbox" bindtap="site">
   <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dingwei_icon.png" class="award_dingwei"></image>
-  <text class="award_text" wx:if="{{dizhi.length}}">{{dizhi}}</text>
-  <text class="award_text" wx:else>{{order_detail.address}}</text>
+  <text class="award_text" wx:if="{{c_cn}}">{{p_cn}}{{c_cn}}{{d_cn}}</text>
+  <text class="award_text" wx:else>请添加地址</text>
   <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/you_icon.png" class="award_you"></image>
 </view>
 
@@ -67,7 +67,7 @@
 </view>
 <view class="awrad_f">
   <text class="awrad_fl">共1件</text>
-  <text class="awrad_fr">合計：HK$172.00  (含邮费:HK$40.00)</text>
+  <text class="awrad_fr">合計：HK$  <view wx:if="{{shipping_price}}">(含邮费:HK${{shipping_price}})</view></text>
 </view>
 <view class="award_button" bindtap="show">
   提交订单

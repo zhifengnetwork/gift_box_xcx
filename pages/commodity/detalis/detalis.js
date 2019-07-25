@@ -172,10 +172,32 @@ Page({
         // sss
       })
     }else{
-      wx.navigateTo({
-        // url: '../detalis/payment/award/award?sku_id=' + app.globalData.sku_id + '&num=' + app.globalData.productNum
-        url:'../detalis/payment/award/award?type=1'
-      })
+      //犒劳自己
+
+      api.postJSON('api/order/immediatelyOrder', {
+        'token': app.globalData.token,
+        'sku_id': that.data.sku_id,
+        'cart_number': 1
+      },
+        function (res) {
+          if (res.data.status == 1) {
+
+            
+            wx.navigateTo({
+              // url: '../detalis/payment/award/award?sku_id=' + app.globalData.sku_id + '&num=' + app.globalData.productNum
+              url:'../detalis/payment/award/award?type=1'
+            })
+
+          } else {
+            wx.showToast({
+              icon: 'none',
+              title: res.data.msg,
+              duration: 2500
+            })
+          }
+          // sss
+        })
+
     }
   },
   cart: function () {
