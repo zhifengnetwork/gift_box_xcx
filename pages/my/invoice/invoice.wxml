@@ -17,9 +17,9 @@
       </label>
     </radio-group>
     <view class="unit_box" hidden="{{unit_show}}">
-      <input placeholder="請填寫單位名稱" class="unit_name"  bindinput="getInput_name" value="{{unit_name}}"/>
+      <input placeholder="請填寫單位名稱" class="unit_name"  bindinput="getInput_name" value="{{invoice_title}}"/>
       <view class="unit_num_box">
-        <input placeholder="在此填寫納稅人識別號" class="unit_num"  bindinput="getInput_num" value="{{unit_num}}"/>
+        <input placeholder="在此填寫納稅人識別號" class="unit_num"  bindinput="getInput_num" value="{{taxpayer}}"/>
         <view class="unit_button_box">
           <text class="unit_button" bindtap="show">i</text>
         </view>
@@ -32,12 +32,12 @@
     <!-- 收票人手机 -->
     <view class="messege_con">
       <text class="messege_con_text">收票人手機</text>
-      <input placeholder="請輸入收票人手機號碼" class="messege_phone" bindinput="getiphone" value="{{pingguoipnum}}"/>
+      <input placeholder="請輸入收票人手機號碼" class="messege_phone" bindinput="getiphone" value="{{invoice_mobile}}"/>
     </view>
     <!-- 收票人郵箱 -->
     <view class="messege_footer">
       <text class="messege_footer_text">收票人郵箱</text>
-      <input placeholder="用來接收電子發票郵件，可選填" class="messege_email" bindinput="getemail" value="{{youxiangna}}"/>
+      <input placeholder="用來接收電子發票郵件，可選填" class="messege_email" bindinput="getemail" value="{{invoice_email}}"/>
     </view>
   </view>
   <!-- 发票内容 -->
@@ -46,9 +46,9 @@
     <view class="invoice_con_c">非圖書商品</view>
     <radio-group class="radio-group"  bindchange="radioChangela">
       <label class="invoice_content_radio">
-        <radio checked="{{xuan}}" color="#000" class="invoice_gift" value="礼品卡"/>礼品卡
+        <radio checked="{{is_lipinka}}" color="#000" class="invoice_gift" value="礼品卡"/>礼品卡
         <view>\n</view>
-        <radio checked="{{buxuan}}" color="#000" class="invoice_shopping"  value="购物卡"/>购物卡
+        <radio checked="{{is_gouwuka}}" color="#000" class="invoice_shopping"  value="购物卡"/>购物卡
       </label>
     </radio-group>
     
@@ -69,7 +69,7 @@
     </view>
   </view>
 
-  <view class="invoice_button black" bindtap="tijiaofa" wx:if="{{source != 'my' }}">提交{{source}}</view>
+  <view class="invoice_button black" bindtap="save_invoice" wx:if="{{source != 'my' }}">提交{{source}}</view>
 
 </view>
 <cover-view class="footer" hidden="{{footer_show}}">

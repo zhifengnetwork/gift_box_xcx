@@ -22,7 +22,8 @@ Page({
     d_cn:'',
     p_cn:'',
     address_id:'',
-    shipping_price:''
+    shipping_price:'',
+    order_num:''
   },
 
   show: function() {
@@ -258,7 +259,9 @@ Page({
         d_cn: res.data.data.addr_res.d_cn,
         p_cn: res.data.data.addr_res.p_cn,
         goods: res.data.data.goods,
-        shipping_price: res.data.data.shipping_price
+        shipping_price: res.data.data.shipping_price,
+        order_num: res.data.data.order_num,
+        order_amount: res.data.data.order_amount
 
 
 
@@ -308,7 +311,7 @@ Page({
   tiaofapiao: function() {
     var that = this
     wx.navigateTo({
-      url: '../../../../my/invoice/invoice?address_id=' + this.data.address_id
+      url: '../../../../my/invoice/invoice?award=true&address_id=' + this.data.address_id
     });
   },
   // 文本域失去焦点
