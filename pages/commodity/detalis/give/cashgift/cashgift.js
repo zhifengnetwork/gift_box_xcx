@@ -29,8 +29,9 @@ Page({
     // })
   },
   invoice:function(){
+    app.globalData.dingdang_id = app.globalData.give.order_id
     wx.navigateTo({
-      url: '../../../../my/invoice/invoice?order_id=' + app.globalData.give.order_id,
+      url: '../../../../my/invoice/invoice',
     })
   },
   wxpay:function(){
