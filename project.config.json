@@ -135,14 +135,12 @@
 					"scene": null
 				},
 				{
-
 					"id": -1,
 					"name": "发票",
 					"pathName": "pages/my/invoice/invoice",
 					"query": "",
 					"scene": null
 				}
-			
 			]
 		}
 	}

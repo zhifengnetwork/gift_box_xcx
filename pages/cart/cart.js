@@ -43,11 +43,16 @@ Page({
       url: '../commodity/givingother/givingother?sku_id=' + this.data.sku_id[0]
     })
   },
+  kaolao:function(){
+    wx.navigateTo({
+      url: '../commodity/detalis/payment/award/award'
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-   
+
   },
   //手指触摸动作开始 记录起点X坐标
   touchstart: function(e) {

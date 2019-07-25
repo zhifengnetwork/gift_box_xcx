@@ -28,6 +28,57 @@ Page({
       flag: true
     })
   },
+  integral:function(){
+    wx.showToast({
+      icon: 'none',
+      title: "暂未开通",
+      duration: 2500
+    })
+  },
+  wxpay: function () {
+    let that = this;
+    console.log(app.globalData.give)
+    api.postJSON('api/pay/order_wx_pay', {
+      'token': app.globalData.token,
+      'order_id': app.globalData.dingdang_id
+    },
+    function (res) {
+      console.log(res)
+      if (res.data.status == 1) {
+        wx.requestPayment({
+          timeStamp: res.data.data.timeStamp,
+          nonceStr: res.data.data.nonceStr,
+          package: res.data.data.package,
+          signType: 'MD5',
+          paySign: res.data.data.paySign,
+          success(res) {
+            wx.showToast({
+              icon: 'none',
+              title: "支付成功",
+              duration: 2500
+            })
+            app.globalData.dingdang_id = '';
+            wx.redirectTo({
+              url: '../../../../my/reward/reward'
+            })
+          },
+          fail(res) {
+            wx.showToast({
+              icon: 'none',
+              title: "支付失败",
+              duration: 2500
+            })
+          }
+        })
+      } else {
+        wx.showToast({
+          icon: 'none',
+          title: res.data.msg,
+          duration: 2500
+        })
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
