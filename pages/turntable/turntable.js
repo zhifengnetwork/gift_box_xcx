@@ -81,6 +81,9 @@ Page({
     api.postJSON('api/index/getJoke', function (res) {
       if (res.data.status == 1) {
         let str = res.data.data.content.split('，');
+        if (!str[1]){
+          str[1] = '';
+        }
         that.setData({
           wisecrack_t1: str[0],
           wisecrack_t2: str[1],
@@ -111,11 +114,17 @@ Page({
           flag: false
         })
         that.getWisecrack();
-        let lotteryNum = that.data.lotteryNum;
-        if (lotteryNum > 0) {
-          that.setData({
-            angel: Math.floor(Math.random(1) * 360) /**传入的角度 */
-          })
+        // let lotteryNum = that.data.lotteryNum;
+        if (res.data.data.join_status == 0) {
+          if (res.data.data.status == 1){
+            that.setData({
+              angel: Math.floor(Math.random(1) * 59) /**传入的角度 */
+            })
+          } else if (res.data.data.status == 2){
+            that.setData({
+              angel: Math.floor(Math.random(1) * 300 + 60) /**传入的角度 */
+            })
+          }
         } else {
           wx.showToast({
             title: '暂无抽奖机会啦~',
@@ -137,6 +146,7 @@ Page({
     let index = parseInt(that.data.angel / 60);
     let lotteryNum = that.data.lotteryNum;
     lotteryNum--;
+    console.log(that.data.angel)
     if (index==0){
       this.setData({
         mask: true,

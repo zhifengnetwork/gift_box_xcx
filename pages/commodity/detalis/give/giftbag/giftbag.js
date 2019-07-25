@@ -7,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    order_id:''
+    order_id:'',
+    flag:true
   },
   give:function(){
     let that = this;
@@ -30,7 +31,6 @@ Page({
             // wx.redirectTo({
             //   url: '../../../../my/sendgift/sendgift'
             // })
-            that.onShareAppMessage();
           } else {
             wx.showModal({
               content: res.data.msg,
@@ -45,7 +45,6 @@ Page({
         })
         return false;
       }
-      console.log(res)
     })
   },
   /**
@@ -119,13 +118,15 @@ Page({
     }
     var nickname = app.globalData.userInfo.nickname;
     nickname = nickname == undefined ? '' : nickname;
+    console.log('===========')
     console.log(nickname)
+    console.log('===========')
     return {
       title: nickname + '为你准备了一份惊喜,请火速查收!',
       imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',
       path: url,
       success: function (res) {
-        console.log(res)
+        console.log(res, 111)
         wx.showModal({
           title: '分享成功',
           content: '分享成功',

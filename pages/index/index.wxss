@@ -151,7 +151,6 @@
   font-size: 30rpx
 }
 .feng_bi{
-  display: inline-block;
   float: right;
   padding-right: 21rpx;
   padding-top: 60rpx;
