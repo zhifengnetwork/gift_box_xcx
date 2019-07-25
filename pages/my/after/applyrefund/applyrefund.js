@@ -15,6 +15,7 @@ Page({
     goods_num:'',
     inputValue:'',
     reason:'',
+    datamsg:'',
     itemList: ['7天无理由', '退运费', '少件/漏发', '质量问题', '商品信息描述不符', '包装/商品破损/污渍']
   },
 
@@ -57,10 +58,22 @@ Page({
       prine_way: 1,
       pic: that.data.tupian
     }, function (res) {
-      console.log(res.data.data)
-      // that.setData({
-      //   after: res.data.data
-      // })
+      // console.log(res.data.data)
+      that.setData({
+        datamsg: res.data.msg
+      })
+      if (res.data.status == 1){
+        wx.switchTab({
+          url: '../../my'
+        })
+      }else{
+        // console.log(666)
+        wx.showModal({
+          title: '提示',
+          content: that.data.datamsg,
+          showCancel: false
+        })
+      }
     })
   },
 

@@ -85,7 +85,17 @@ App({
     sku_id:0,
     productNum: 0,
     dingdang_id:0,
-    jizhu:0
+    jizhu:0,
+    namevalue:"",
+    bianvalue:"",
+    dierge:"礼品卡",
+    iphone:"",
+    email:"",
+    buxuan:'',
+    xuan:''
+
+
+
 
   }
 

@@ -140,6 +140,12 @@
 					"pathName": "pages/my/invoice/invoice",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/turntable/turntable",
+					"pathName": "pages/turntable/turntable",
+					"scene": null
 				}
 			]
 		}

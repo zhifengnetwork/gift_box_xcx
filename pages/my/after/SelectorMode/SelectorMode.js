@@ -23,10 +23,19 @@ Page({
   },
 
   dianji: function () {
-    // console.log(this.data.order_id)
+    console.log(this.data.value_index)
+    if (this.data.value_index){
       wx.navigateTo({
         url: '../applyrefund/applyrefund?id=' + this.data.value_index + '&order_id=' + this.data.order_id,
       })
+    }else{
+
+      wx.showModal({
+        title: '提示',
+        content: '请输入服务类型',
+        showCancel: false
+      })
+    }
   },
 
   /**
