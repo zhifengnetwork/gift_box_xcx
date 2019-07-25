@@ -323,7 +323,7 @@ Page({
           }
         }
       }
-
+  
       var specs = spec.split("_");
       for (var i = 0; i < specs.length; i++) {
         specs[i] = parseInt(specs[i])
