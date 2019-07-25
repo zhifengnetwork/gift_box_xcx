@@ -247,18 +247,29 @@
   margin-top: 100rpx;
   width: 570rpx;
   height: 80rpx;
-  background: rgba(0, 0, 0, 1);
+ 
   border: 1px solid rgba(0, 0, 0, 1);
   border-radius: 30rpx;
   font-size: 22rpx;
   font-family: SourceHanSansCN-Regular;
   font-weight: 400;
-  color: rgba(255, 255, 255, 1);
+ 
   margin-left: 90rpx;
   text-align: center;
   line-height: 80rpx;
   margin-bottom: 30rpx;
 }
+
+.black{
+  background: rgba(0, 0, 0, 1);
+  color: rgba(255, 255, 255, 1);
+}
+
+.white{
+  color: rgba(0, 0, 0, 1);
+  background: rgba(255, 255, 255, 1);
+}
+
 .footer{
   position: fixed;
   top: 0;

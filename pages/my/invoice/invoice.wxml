@@ -12,7 +12,7 @@
     <text class="invoice_title_top">發票擡頭</text>
     <!-- 单选按钮 -->
     <radio-group class="radio-group" bindchange="radioChange">
-      <label class="radio" wx:for="{{items}}">
+      <label class="radio" wx:for="{{items}}" wx:key="">
         <radio value="{{item.name}}" checked="{{item.checked}}" color="#000" />{{item.value}}
       </label>
     </radio-group>
@@ -68,7 +68,9 @@
       <text>3.如遇到任何問題,請您第一時間撥打客服電話 <text class="notice_content_red">888888</text> ,由人工客服為您解答。</text>
     </view>
   </view>
-  <view class="invoice_button" bindtap="tijiaofa">提交</view>
+
+  <view class="invoice_button black" bindtap="tijiaofa" wx:if="{{source != 'my' }}">提交{{source}}</view>
+
 </view>
 <cover-view class="footer" hidden="{{footer_show}}">
   <cover-view class="zhezhao"></cover-view>

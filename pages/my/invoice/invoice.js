@@ -35,7 +35,33 @@ Page({
     youxiangna: '',
     xuan: true,
     buxuan: false,
-    address_id: ''
+    address_id: '',
+    source:''
+  },
+  /**
+    * 生命周期函数--监听页面加载
+    */
+  onLoad: function (options) {
+    var that = this
+
+    this.setData({
+      yedingdang_id: app.globalData.dingdang_id,
+    });
+
+   
+   
+    this.setData({
+      address_id: options.address_id == undefined ? "" : options.address_id,
+      source: options.source == undefined ? "" : options.source,
+    });
+  
+
+    if (app.globalData.jizhu === 1) {
+
+    }
+
+
+
   },
 
   show: function() {
@@ -132,26 +158,7 @@ Page({
     console.log(this.data.buxuan)
     console.log(this.data.xuan);
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-    var that = this
-
-    this.setData({
-      yedingdang_id: app.globalData.dingdang_id,
-      address_id: options.address_id
-    });
-
-
-
-    if (app.globalData.jizhu === 1) {
-
-    }
-
-
-
-  },
+ 
 
   /**
    * 获取发票
