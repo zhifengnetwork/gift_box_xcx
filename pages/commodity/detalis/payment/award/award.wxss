@@ -23,7 +23,10 @@
   top: 35rpx;
   left: 50rpx;
 }
-
+.weui-textarea{
+  font-size: 28rpx;
+  padding-top: 100rpx;
+}
 .award_text {
   font-size: 24rpx;
   font-family: SourceHanSansCN-Regular;
@@ -101,7 +104,7 @@
 }
 
 .awrad_textarea {
-  height: 153rpx;
+  height: 240rpx;
   border-bottom: 2rpx solid #f3f4f7;
   padding: 0 50rpx;
 }
