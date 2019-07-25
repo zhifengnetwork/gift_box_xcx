@@ -1,3 +1,5 @@
+var app = getApp()
+var api = require('../../../../utils/api');
 // pages/my/after/logistics/logistics.js
 Page({
 
@@ -8,9 +10,17 @@ Page({
     bar_Height: wx.getSystemInfoSync().statusBarHeight,
     ss: "",
     tupian: [],
-    itemList: ['顺丰快递', '中通快递', '圆通快递', '申通快递']
+    itemList: ['顺丰快递', '中通快递', '圆通快递', '申通快递'],
+    goods_name: '',
+    goods_num: '',
+    goods_price: '',
+    spec_key_name: '',
+    img: '',
+    kuaidi_number:'',
+    danhao:'',
   },
 
+  // 选择物流
   dianji: function () {
     var that = this
     wx.showActionSheet({
@@ -29,6 +39,30 @@ Page({
 
   },
 
+  // 物流单号
+  danhao: function (e) {
+    let that = this
+    that.setData({
+      danhao: e.detail.value
+    })
+  },
+
+  // 手机号码
+  haoma: function (e) {
+    let that = this
+    that.setData({
+      haoma: e.detail.value
+    })
+  },
+
+  //退款说明
+  shuom: function (e) {
+    let that = this
+    that.setData({
+      shuom: e.detail.value
+    })
+  },
+  // 图片
   camera: function () {
     var that = this
     wx.chooseImage({
@@ -46,11 +80,35 @@ Page({
     })
   },
 
+  // 提交
+  send: function (){
+    let that = this
+    api.postJSON('api/order/set_refund_kuaidi', {
+      'token': app.globalData.token,
+      refund_apply_id: that.data.id,
+      kuaidi_com: that.data.ss,
+      kuaidi_number: that.data.danhao,
+      tel: that.data.haoma,
+      kuaidi_msg: that.data.shuom,
+      kuaidi_pic: that.data.tupian
+    },function (res) {
+      console.log(res)
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this
+    that.setData({
+      goods_name: options.goods_name,
+      goods_num: options.goods_num,
+      goods_price: options.goods_price,
+      spec_key_name: options.spec_key_name,
+      img: options.img,
+      id: options.id
+    })
   },
 
   /**

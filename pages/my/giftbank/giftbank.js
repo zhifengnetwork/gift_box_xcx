@@ -39,7 +39,7 @@ Page({
   
   getdata:function(){
     let that = this;
-    api.postJSON('api/order/order_list', {
+    api.postJSON('api/order/order/gift_list', {
       token: app.globalData.token,
       pay_status: 1,
       num: 100,
@@ -55,11 +55,11 @@ Page({
 
   getlist: function () {
     let that = this;
-    api.postJSON('api/order/order_list', {
+    api.postJSON('api/order/gift_list', {
       token: app.globalData.token,
       pay_status: 2,
-      order_type: '1' + ',' +'2',
-      num: 200
+      // order_type: '1' + ',' +'2',
+      // num: 200
     }, function (res) {
       if (res.data.status == 1) {
         that.setData({
