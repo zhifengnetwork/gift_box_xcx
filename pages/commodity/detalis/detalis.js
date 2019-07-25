@@ -97,7 +97,7 @@ Page({
     this.setData({
       statussxianshi: false
     }), 
-      api.getJSON('/api/order/immediatelyOrder?sku_id=' + this.data.sku_id + '&cart_number=' + this.data.productNum+"&token="+app.globalData.token, function (res) {
+      api.getJSON('/api/Cart/addCart?sku_id=' + this.data.sku_id + '&cart_number=' + this.data.productNum+"&token="+app.globalData.token, function (res) {
        
       if (res.data.status == -1){
         wx.showToast({
@@ -415,6 +415,7 @@ Page({
   },
   //加减商品数量
   reduceProduct: function () {
+    var that=this
     var proNum = this.data.productNum - 1
     if (proNum < 1) {
       this.setData({
@@ -425,8 +426,14 @@ Page({
         productNum: proNum
       })
     }
+   
+
+
+
+
   },
   addProduct: function (e) {
+    var that=this
     var sort = e.target.dataset.sort;
     var proNum = this.data.productNum + 1
     if (proNum > sort) {
@@ -438,6 +445,11 @@ Page({
         productNum: proNum
       })
     }
+    
+
+
+
+
   }
 
 
