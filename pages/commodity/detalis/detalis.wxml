@@ -125,7 +125,6 @@
       <image src="{{goods_data.img[0]}}" class="store" hidden="{{imgimg.length}}"></image>
       <image src="{{imgimg}}" class="store" wx:if="{{imgimg.length}}"></image>
       <text class="jiage">￥{{price}}</text>
-<<<<<<< HEAD
         <view class="selected"  wx:if="{{!imgimg.length}}">
         <text style="padding-left:10rpx">已選擇: {{name}}</text>
         <!-- <text class="mama">{{title}}</text> -->
@@ -137,13 +136,6 @@
         <text style="padding-left:10rpx">已選擇: {{name}}</text>
         <!-- <text class="mama">{{title}}</text> -->
         <view style="padding-left:10rpx">庫存:{{store_count}}</view>
-=======
-
-      <view class="selected">
-        <text style="padding-left:10rpx"  wx:if="{{name}}">已选择: {{name}}</text>
-        <!-- <text class="mama">{{title}}</text> -->
-        <view style="padding-left:10rpx" wx:if="{{store_count}}">库存:{{store_count}}</view>
->>>>>>> 2d8dd92b11f770d9e78e1892e45113f4957821d7
       </view>
       
       <!-- 正式的规格选择区块 s -->
