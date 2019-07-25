@@ -35,7 +35,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(options)
+    console.log(app.globalData.makecard)
     var order_id = options.order_id;
     if(!order_id){
       wx.showModal({
@@ -96,7 +96,7 @@ Page({
   onShareAppMessage: function () {
     let url = null;
     // if (app.globalData.give.order_type == 1) {
-      url = '/pages/card/go?order_id='+this.data.order_id;
+    url = '/pages/card/go?id=' + app.globalData.makecard;
     // } else {
     //   url = '/pages/turntable/turntable?order_id=' + this.data.order_id;
     // }
