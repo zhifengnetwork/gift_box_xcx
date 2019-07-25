@@ -96,7 +96,7 @@ Page({
   onShareAppMessage: function () {
     let url = null;
     // if (app.globalData.give.order_type == 1) {
-    url = '/pages/card/go?id=' + app.globalData.makecard;
+    url = '/pages/card/go?id=' + app.globalData.makecard + '&type=' + app.globalData.give.order_type;
     // } else {
     //   url = '/pages/turntable/turntable?order_id=' + this.data.order_id;
     // }
