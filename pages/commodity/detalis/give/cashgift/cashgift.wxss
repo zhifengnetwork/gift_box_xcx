@@ -127,6 +127,7 @@
 }
 
 .cashgift_box .cashgift_cb_you {
+  transform: rotate(180deg);
   float: right;
   width: 15rpx;
   height: 23rpx;

@@ -13,9 +13,15 @@ Page({
   },
   // 跳转到添加地址
   newsite: function () {
-    wx.redirectTo({
-      url: 'newsite/newsite',
-    })
+    if (this.data.award) {
+      wx.redirectTo({
+        url: 'newsite/newsite?award='+true,
+      })
+    }else{
+      wx.redirectTo({
+        url: 'newsite/newsite',
+      })
+    }
   },
   award:function(e){
     var that=this
@@ -36,6 +42,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     let that = this;
     api.postJSON('api/user/address_list',
     {

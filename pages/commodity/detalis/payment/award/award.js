@@ -14,18 +14,80 @@ Page({
     order_detail:[],
     goods:[],
     sku_id:0,
-    productNum:0
+    productNum:0,
+    context:"",
+    addrid:''
+   
+   
   },
 
   show: function () {
     this.setData({
       flag: false
+    });
+    api.getJSON('/api/order/submitOrder?token=' + app.globalData.token +'&order_type=0', function (res) {
+      if (res.data.status == 1) {
+        console.log("已经生成订单了")
+      }
     })
+
+  
   },
   hide: function () {
     console.log(666)
     this.setData({
       flag: true
+    })
+  },
+  integral:function(){
+    wx.showToast({
+      icon: 'none',
+      title: "暂未开通",
+      duration: 2500
+    })
+  },
+  wxpay: function () {
+    let that = this;
+    console.log(app.globalData.give)
+    api.postJSON('api/pay/order_wx_pay', {
+      'token': app.globalData.token,
+      'order_id': app.globalData.dingdang_id
+    },
+    function (res) {
+      console.log(res)
+      if (res.data.status == 1) {
+        wx.requestPayment({
+          timeStamp: res.data.data.timeStamp,
+          nonceStr: res.data.data.nonceStr,
+          package: res.data.data.package,
+          signType: 'MD5',
+          paySign: res.data.data.paySign,
+          success(res) {
+            wx.showToast({
+              icon: 'none',
+              title: "支付成功",
+              duration: 2500
+            })
+            app.globalData.dingdang_id = '';
+            wx.redirectTo({
+              url: '../../../../my/reward/reward'
+            })
+          },
+          fail(res) {
+            wx.showToast({
+              icon: 'none',
+              title: "支付失败",
+              duration: 2500
+            })
+          }
+        })
+      } else {
+        wx.showToast({
+          icon: 'none',
+          title: res.data.msg,
+          duration: 2500
+        })
+      }
     })
   },
   /**
@@ -65,7 +127,7 @@ Page({
                    console.log("订单列表")
                    console.log(res.data.data)
                    that.setData({ order_detail: res.data.data })
-                   that.setData({ goods: res.data.data.goods_res })
+                   that.setData({ goods: res.data.data.goods_res})
                    console.log(that.data.goods)
                  }
                })
@@ -94,7 +156,8 @@ Page({
 
 
     var address_id = options.address_id;
-    console.log(options.address_id);
+    // that.setData({addrid:address_id})
+    console.log("地址id为:"+options.address_id);
     var dizhi = ""
     var sheng = ""
     var shi = ""
@@ -192,5 +255,64 @@ Page({
     wx.navigateTo({
       url: '../../../../my/invoice/invoice'
     });
+  },
+  // 文本域失去焦点
+  changeContext:function(e){
+   console.log(e.detail.value);
+    this.setData({context: e.detail.value})
+  },
+  jifen:function(){
+    this.setData({
+      flag: true
+    });
+    wx.showToast({
+      title: '暂时不能用积分支付',
+      icon: 'none',
+      duration: 2000
+    })
+  },
+  weixin:function(){
+    this.setData({
+      flag: true
+    });
+    api.getJSON('/api/pay/order_wx_pay?order_id=' + app.globalData.dingdang_id + '&user_note=' + this.data.context + '&token=' + app.globalData.token, function (res) {
+
+      if (res.data.status == 1) {
+        wx.requestPayment({
+          timeStamp: res.data.data.timeStamp,
+          nonceStr: res.data.data.nonceStr,
+          package: res.data.data.package,
+          signType: 'MD5',
+          paySign: res.data.data.paySign,
+          success(res) {
+            console.log(res);
+            // order_type为0的时候，跳转到犒劳自己页面，否则切换到已付款页面
+            // if (e.target.id == 0) {
+            //   wx.navigateTo({
+            //     url: '../reward/reward',
+            //   })
+            // } else {
+            //   that.setData({
+            //     currentTab: 1,
+            //   })
+            // }
+          },
+          fail(res) {
+            console.log(res)
+          }
+        })
+
+       
+      }
+
+
+
+    })
+
+
+
+
+
+
   }
 })

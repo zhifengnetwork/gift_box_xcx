@@ -34,7 +34,7 @@ App({
 
               //回调
               cb && cb(that.globalData.userInfo)
-              console.log('登录成功')
+            
               console.log(that.globalData.userInfo)
             }
           })
@@ -71,13 +71,10 @@ App({
 
   /** 上传 formid */
   save_form_id:function(formid){
-    console.log(formid)
     var that = this
     api.getJSON('api/index/get_form_id?formid='+ formid +'&token=' + that.globalData.token, function (res) {
-        console.log(res.data)
     })
   },
-
 
   globalData: {
     userInfo: [],
@@ -88,7 +85,17 @@ App({
     sku_id:0,
     productNum: 0,
     dingdang_id:0,
-    jizhu:0
+    jizhu:0,
+    namevalue:"",
+    bianvalue:"",
+    dierge:"礼品卡",
+    iphone:"",
+    email:"",
+    buxuan:'',
+    xuan:''
+
+
+
 
   }
 

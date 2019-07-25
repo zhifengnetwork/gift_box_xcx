@@ -49,7 +49,6 @@ Page({
   },
   onLoad: function (options) {
     var that = this;
-    console.log("xixi") 
     app.getUserInfo(userinfo => {
     
       //昵称、头像 不存在，跳转去授权
@@ -76,8 +75,6 @@ Page({
           guess_like: res.data.data.cainixihuan,
           chaoliudaogou: res.data.data.chaoliudaogou,
         })
-        console.log("hot_category");
-        console.log(that.data.hot_category)
       }
     })
   },
@@ -86,7 +83,6 @@ Page({
     // this.setData({
     //   currentSwiper: 0
     // })
-    console.log("899898");
     this.setData({ autoplay: true})
   },
   // 第一个轮播图切换调动这个函数

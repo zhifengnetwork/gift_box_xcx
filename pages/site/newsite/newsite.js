@@ -22,7 +22,8 @@ Page({
     consignee:'',
     address:'',
     mobile:'',
-    is_default:0
+    is_default:0,
+    flag:''
   },
   //默认按钮选中取消事件
   switchChange: function (e) {
@@ -91,9 +92,16 @@ Page({
           duration: 2000
         })
         setTimeout(function () {
-          wx.redirectTo({
-            url: '../site',
-          });
+          console.log(that.data.flag)
+          if(that.data.flag){
+            wx.redirectTo({
+              url: '../site?award=' + true,
+            });
+          }else{
+            wx.redirectTo({
+              url: '../site',
+            });
+          }
         }, 2000)
       }else{
         wx.showModal({
@@ -164,6 +172,10 @@ Page({
       transformOrigin: "50% 50%",
       timingFunction: 'ease',
     })
+    if (options.award){
+      this.data.flag=true;
+    }
+    this.setData({flag: this.data.flag})
     this.animation = animation;
     if (!options.item){
       return false;
