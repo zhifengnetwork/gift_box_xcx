@@ -29,7 +29,6 @@ Page({
         url: '../applyrefund/applyrefund?id=' + this.data.value_index + '&order_id=' + this.data.order_id,
       })
     }else{
-
       wx.showModal({
         title: '提示',
         content: '请输入服务类型',
