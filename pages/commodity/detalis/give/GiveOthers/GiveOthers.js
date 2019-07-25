@@ -82,8 +82,9 @@ Page({
     })
   },
   radioChange: function (e) {
+    console.log(e);
     this.setData({
-      radio: e.detail.value,
+      radio: e.currentTarget.dataset.index,
       type_id: e.currentTarget.dataset.id
     })
   },
