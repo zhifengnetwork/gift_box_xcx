@@ -18,7 +18,7 @@ Page({
       {
         id: '2',
         url: 'picture/picture',
-        text: '选择照片/视频',
+        text: '选择照片',
         tips: '确认照片',
         img: '../../public/images/card/picture.png',
         icon: '../../public/images/card/revision.png'

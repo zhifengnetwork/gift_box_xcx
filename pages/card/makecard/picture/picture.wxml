@@ -1,5 +1,5 @@
 <!--pages/card/makecard/picture/picture.wxml-->
-<view class="boss_top"><component title='选择照片/视频' show_bol='{{fasle}}'></component></view>
+<view class="boss_top"><component title='选择照片' show_bol='{{fasle}}'></component></view>
 <view class="picture_list">
   <view class="picture_item">
     <view class="picture_delete" bindtap="delete">X</view>

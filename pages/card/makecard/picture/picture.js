@@ -15,7 +15,8 @@ Page({
   add: function() {
     var that = this;
     wx.showActionSheet({
-      itemList: ['拍照', '视频', '从手机相册选择'],
+      // itemList: ['拍照', '视频', '从手机相册选择'],
+      itemList: ['拍照', '从手机相册选择'],
       success: function(res) {
         console.log(res.tapIndex)
         if (res.tapIndex != 2) {
@@ -37,22 +38,24 @@ Page({
               })
             }
           });
-        } else if (res.tapIndex == 1) {
-          wx.chooseVideo({
-            sourceType: [type],
-            maxDuration: 60,
-            camera: 'back',
-            success(res) {
-              var tempFilePaths = [];
-              var tempFilePath = res.tempFilePath;
-              tempFilePaths.push(tempFilePath)
-              that.upload(tempFilePaths);
-              that.setData({
-                video: tempFilePath
-              })
-            }
-          })
-        }else{
+        } else
+        // if (res.tapIndex == 1) {
+        //   wx.chooseVideo({
+        //     sourceType: [type],
+        //     maxDuration: 60,
+        //     camera: 'back',
+        //     success(res) {
+        //       var tempFilePaths = [];
+        //       var tempFilePath = res.tempFilePath;
+        //       tempFilePaths.push(tempFilePath)
+        //       that.upload(tempFilePaths);
+        //       that.setData({
+        //         video: tempFilePath
+        //       })
+        //     }
+        //   })
+        // }else
+        {
           wx.chooseImage({
             count: 1,
             sizeType: ['original', 'compressed'], // 可以指定是原图还是压缩图，默认二者都有
