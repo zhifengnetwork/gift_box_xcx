@@ -22,6 +22,7 @@ Page({
     d_cn:'',
     p_cn:'',
     address_id:'',
+    invoice_id:'',
     shipping_price:'',
     order_num:''
   },

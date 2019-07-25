@@ -1,6 +1,9 @@
 <view class="award_top">
   <component title='确认支付' show_bol='{{falsr}}'></component>
 </view>
+
+<view class="body">
+
 <view class="xiahuanxian">
   <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/xiahuaxian_icon.png"></image>
 </view>
@@ -65,6 +68,10 @@
 <view class="award_button" bindtap="show">
   提交订单
 </view>
+
+
+</view>
+
 <view class="award_pop-upbox" hidden="{{flag}}" catchtouchmove="preventTouchMove">
   <cover-view class="award_pop-up"></cover-view>
   <cover-view class="pop-up_box">
