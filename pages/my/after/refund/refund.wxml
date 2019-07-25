@@ -61,10 +61,10 @@
 </view>
 <!-- 退款信息 -->
 <view class="refund_reimburse">
-  <view>退款原因：七天無理由退換貨</view>
-  <view>退款金額：HK$124.00</view>
-  <view>申請件數：1</view>
-  <view>申請時間：2019-04-10 19：52</view>
+  <view>退款原因：{{reason}}</view>
+  <view>退款金額：HK$ {{item.price}}</view>
+  <view>申請件數：{{item.goods_num}}</view>
+  <view>申請時間：{{item.addtime}}</view>
   <view>退款編號：236339331632832665</view>
 </view>
 <!-- 拨打电话 -->

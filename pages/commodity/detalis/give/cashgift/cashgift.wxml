@@ -31,10 +31,6 @@
 </view>
 <view class="cashgift_cb">
   <view class="cashgift_box">
-    <text>开具发票</text>
-    <image src="../../../../public/images/detalis/you_icon.png" class="cashgift_cb_you"></image>
-  </view>
-  <view class="cashgift_box">
     <text>商品金額</text>
     <text class="cashgift_box_text">HK${{goods_res[0].goods_price}}</text>
   </view>
@@ -49,6 +45,10 @@
   <view class="cashgift_box">
     <text>稅金</text>
     <text class="cashgift_box_text">{{goods_res[0].taxes}}%</text>
+  </view>
+  <view class="cashgift_box" bindtap="invoice">
+    <text>开具发票</text>
+    <image src="../../../../public/images/index/back.png" class="cashgift_cb_you"></image>
   </view>
   <view class="cashgift_textarea">
     <text>訂單備註</text>

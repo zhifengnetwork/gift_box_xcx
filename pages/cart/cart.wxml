@@ -55,7 +55,7 @@
 <view class="dibu">
 <text class="hejiqian">合计: HK${{totalPrice}}</text>
 <view class="right_view">
-<view class="caolao">犒劳自己</view>
+<view class="caolao" bindtap="kaolao">犒劳自己</view>
 <view class="zeng" bindtap="give_goods">赠送他人</view>
 </view>
 

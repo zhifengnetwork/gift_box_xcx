@@ -1,12 +1,16 @@
 // pages/my/after/refund/refund.js
+var app = getApp()
+var api = require('../../../../utils/api');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    itemList: ['7天无理由', '退运费', '少件/漏发', '质量问题', '商品信息描述不符', '包装/商品破损/污渍'],
+    reason:'',
   },
+
 
 
 
@@ -53,13 +57,25 @@ Page({
    */
   onLoad: function (options) {
     console.log(options.refund_apply_id)
+    var that = this
+    api.postJSON('api/order/get_refund_info', {
+      'token': app.globalData.token,
+      refund_apply_id: options.refund_apply_id,
+    }, function (res) {
+      console.log(res)
+      if(res.data.status == 1){
+        that.setData({
+          item: res.data.data,
+          reason: that.data.itemList[res.data.data.reason]
+        })
+      }
+    })
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
   },
 
   /**

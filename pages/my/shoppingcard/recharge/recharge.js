@@ -16,7 +16,7 @@ Page({
   },
   send:function(){
     let that = this;
-    if(this.data.value){
+    if(this.data.value>=0.01){
       api.postJSON('api/pay/shopping_pay',{
         'token': app.globalData.token,
         'money': that.data.value
@@ -36,8 +36,20 @@ Page({
               console.log(res)
             }
           })
+        }else{
+          wx.showToast({
+            icon: 'none',
+            title: res.data.msg,
+            duration: 2500
+          })
         }
         console.log(res)
+      })
+    } else if (0<this.data.value && this.data.value<0.01){
+      wx.showModal({
+        title: '提示',
+        content: '充值金额不能小于0.01',
+        showCancel: false
       })
     }else{
       wx.showModal({

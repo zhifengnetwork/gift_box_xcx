@@ -36,9 +36,9 @@
   </view>
   <view class="giveothers_cconter">
     <view class="giveothers_cbox">
-      <view class="giveothers_imgbox" wx:for="{{scene}}" wx:key="{{index}}" data-id="{{backId&&index==0?backId:item.id}}">
+      <view class="giveothers_imgbox" wx:for="{{scene}}" wx:key="{{index}}">
         <view class="giveothers_img">
-          <radio-group class="radio" bindchange="radioChange">
+          <radio-group class="radio" bindchange="radioChange" data-id="{{backId&&index==0?backId:item.id}}">
             <radio color="#000" value="{{index}}" checked="{{index==radio}}" />{{item.value}}
           </radio-group>
           <image class="giveothers_i" wx:if="{{backPicture&&index==0}}" src="{{backPicture}}"></image>
@@ -54,7 +54,7 @@
 <view class="giveothers_b">
   <view class="giveothers_bt">贈言</view>
   <view class="giveothers_textbox">
-    <input class="giveothers_input" placeholder="一點心意，希望你喜歡" />
+    <input class="giveothers_input" bindinput="giveothers" placeholder="一點心意，希望你喜歡" />
   </view>
 </view>
 <view class="giveothers_footer" bindtap="show">

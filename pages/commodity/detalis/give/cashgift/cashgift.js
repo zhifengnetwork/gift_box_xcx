@@ -28,6 +28,12 @@ Page({
     //   url: '../integral/integral',
     // })
   },
+  invoice:function(){
+    app.globalData.dingdang_id = app.globalData.give.order_id
+    wx.navigateTo({
+      url: '../../../../my/invoice/invoice',
+    })
+  },
   wxpay:function(){
     let that = this;
     console.log(app.globalData.give)
@@ -39,7 +45,7 @@ Page({
       console.log(res)
       if(res.data.status==1){
         // wx.redirectTo({
-        //   url: '../giftbag/giftbag'
+        //   url: '../giftbag/giftbag?order_id=' + app.globalData.give.order_id
         // })
         wx.requestPayment({
           timeStamp: res.data.data.timeStamp,
@@ -53,12 +59,12 @@ Page({
               title: "支付成功",
               duration: 2500
             })
+            wx.redirectTo({
+              url: '../giftbag/giftbag?order_id=' + app.globalData.give.order_id
+            })
             app.globalData.makecard = '';
             app.globalData.give.sku_id = '';
             app.globalData.give.order_id = '';
-            wx.redirectTo({
-              url: '../giftbag/giftbag'
-            })
           },
           fail(res) {
             wx.showToast({
