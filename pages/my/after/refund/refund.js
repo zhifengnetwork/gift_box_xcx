@@ -9,14 +9,17 @@ Page({
   data: {
     itemList: ['7天无理由', '退运费', '少件/漏发', '质量问题', '商品信息描述不符', '包装/商品破损/污渍'],
     reason:'',
+    goods_name:'',
+    goods_num:'',
+    goods_price:'',
+    spec_key_name:'',
+    img:'',
   },
 
-
-
-
   logistics: function (){
+    let that = this
     wx.navigateTo({
-      url: '../logistics/logistics',
+      url: '../logistics/logistics?goods_name=' + that.data.goods_name + '&goods_num=' + that.data.goods_num + '&goods_price=' + that.data.goods_price + '&spec_key_name=' + that.data.spec_key_name + '&img=' + that.data.img + '&id=' + that.data.id,
     })
   },
 
@@ -66,7 +69,13 @@ Page({
       if(res.data.status == 1){
         that.setData({
           item: res.data.data,
-          reason: that.data.itemList[res.data.data.reason]
+          reason: that.data.itemList[res.data.data.reason],
+          goods_name: res.data.data.goods_name,
+          goods_num: res.data.data.goods_num,
+          goods_price: res.data.data.goods_price,
+          spec_key_name: res.data.data.spec_key_name,
+          img: res.data.data.img,
+          id: res.data.data.id
         })
       }
     })

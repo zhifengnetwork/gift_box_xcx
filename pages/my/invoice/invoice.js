@@ -64,24 +64,26 @@ Page({
       this.setData({
         unit_show: true
       });
-
-      
     }
   },
   // 获取单位的名称
   getInput_name: function (e) {
+    app.globalData.namevalue = e.detail.value
     this.setData({ namevalue: e.detail.value })
   },
   // 获取纳税人的别号
   getInput_num: function (e) {
+    app.globalData.bianvalue = e.detail.value
     this.setData({ bianvalue: e.detail.value })
   },
   // 获取手机号
   getiphone: function (e) {
+    app.globalData.iphone = e.detail.value
     this.setData({ iphone: e.detail.value })
   },
   // 获取邮箱
   getemail:function(e){
+    app.globalData.email = e.detail.value
     this.setData({ email: e.detail.value })
   },
   // 第二个单选框
@@ -89,14 +91,16 @@ Page({
     console.log('radio发生change事件，携带value值为：', e.detail.value);
     this.setData({dierge: e.detail.value});
     if(this.data.dierge==='购物卡'){
-      this.setData({buxuan:true})
+      this.setData({buxuan:true});
       console.log("aaa")
-      this.setData({xuan:false})
+      this.setData({xuan:false});
+      app.globalData.dierge = '购物卡'
     }
     if(this.data.dierge === '礼品卡'){
       this.setData({buxuan:false})
       console.log("bbb")
       this.setData({xuan:true}) 
+      app.globalData.dierge = '礼品卡'
     }
     console.log(this.data.buxuan)
     console.log(this.data.xuan);
@@ -116,15 +120,20 @@ Page({
 
       api.getJSON('/api/order/order_detail?order_id=' + app.globalData.dingdang_id + '&token=' + app.globalData.token, function (res) {
         if (res.data.status == 1) {
-            console.log("电子发票渲染原来的数据");
+          console.log("电子发票渲染原来的数据");
           console.log(res.data.data)
+        
             // 发票title
           that.setData({ invoice_title: res.data.data.invoice_title})
           if (that.data.invoice_title===""){
             that.setData({ gerren: "个人" });
             that.setData({
               unit_show: true
-            });  
+            }); 
+            console.log("电话为")
+            console.log(res.data.data.invoice_mobile)
+            that.setData({ youxiangna: res.data.data.invoice_email })
+            that.setData({ pingguoipnum: res.data.data.invoice_mobile }) 
 
           }
           else{
@@ -140,7 +149,7 @@ Page({
             that.setData({ unit_name: res.data.data.invoice_title}) 
             that.setData({ unit_num: res.data.data.taxpayer })
             that.setData({ youxiangna: res.data.data.invoice_email }) 
-            that.setData({ pingguoipnum: res.data.data.mobile})
+            that.setData({ pingguoipnum: res.data.data.invoice_mobile})
           }
           if (res.data.data.invoice_desc==="购物卡"){
             that.setData({ xuan: false })
@@ -225,11 +234,18 @@ Page({
   },
   tijiaofa:function(){
     
-    console.log(this.data.dierge)
-    console.log(this.data.iphone)
-    console.log(this.data.email)
-    console.log(this.data.namevalue)
-    console.log(this.data.bianvalue);
+    // console.log(this.data.dierge)
+    // console.log(this.data.iphone)
+    // console.log(this.data.email)
+    // console.log(this.data.namevalue)
+    // console.log(this.data.bianvalue);
+    console.log("sss")
+    console.log(app.globalData.dierge)
+    console.log(app.globalData.iphone)
+    console.log(app.globalData.email)
+    console.log(app.globalData.namevalue)
+    console.log(app.globalData.bianvalue);
+
     
 
     //  api.getJSON('/api/order/edit_invoice?token=' + app.globalData.token+'&', function (res) {
@@ -251,7 +267,7 @@ Page({
                   })
                 }
                 else{
-                  api.postJSON('/api/order/edit_invoice?order_id=' + app.globalData.dingdang_id + '&token=' + app.globalData.token + '&invoice_title=' + that.data.namevalue + '&taxpayer=' + that.data.bianvalue + '&invoice_mobile=' + that.data.iphone + '&invoice_email=' + that.data.email + '&invoice_desc=' + that.data.dierge,
+                  api.postJSON('/api/order/edit_invoice?order_id=' + app.globalData.dingdang_id + '&token=' + app.globalData.token + '&invoice_title=' + app.globalData.namevalue + '&taxpayer=' + app.globalData.bianvalue + '&invoice_mobile=' + app.globalData.iphone + '&invoice_email=' + app.globalData.email + '&invoice_desc=' + app.globalData.dierge,
                     function (res) {
                       if (res.data.status == 1) {
                         wx.showToast({
@@ -270,7 +286,7 @@ Page({
         }
         else{
           console.log("ssssss")
-          api.postJSON('/api/order/edit_invoice?order_id=' + app.globalData.dingdang_id + '&token=' + app.globalData.token + '&invoice_title=' + that.data.namevalue + '&taxpayer=' + that.data.bianvalue + '&invoice_mobile=' + that.data.iphone + '&invoice_email=' + that.data.email + '&invoice_desc=' + that.data.dierge,
+          api.postJSON('/api/order/edit_invoice?order_id=' + app.globalData.dingdang_id + '&token=' + app.globalData.token + '&invoice_title=' + app.globalData.namevalue + '&taxpayer=' + app.globalData.bianvalue + '&invoice_mobile=' + app.globalData.iphone + '&invoice_email=' + app.globalData.email + '&invoice_desc=' + app.globalData.dierge,
             function (res) {
               if (res.data.status == 1) {
                 wx.showToast({
@@ -289,25 +305,19 @@ Page({
         }
 
 
-
-
-
-
-
-
-
     else{
-      api.postJSON('/api/order/edit_invoice?order_id=' + app.globalData.dingdang_id + '&token=' + app.globalData.token + '&invoice_mobile=' + that.data.iphone + '&invoice_email=' + that.data.email + '&invoice_desc=' + that.data.dierge,
+      api.postJSON('/api/order/edit_invoice?order_id=' + app.globalData.dingdang_id + '&token=' + app.globalData.token + '&invoice_mobile=' + app.globalData.iphone + '&invoice_email=' + app.globalData.email + '&invoice_desc=' + app.globalData.dierge,
         function (res) {
           if (res.data.status == 1) {
+            wx.navigateTo({
+              url: '../../commodity/detalis/payment/award/award'
+            })
             wx.showToast({
               title: '提交成功',
               icon: 'success',
               duration: 2000
             })
-            wx.navigateTo({
-              url: '../../commodity/detalis/payment/award/award'
-            })
+            console.log("333333333333333")
             app.globalData.jizhu = 1
           }
 

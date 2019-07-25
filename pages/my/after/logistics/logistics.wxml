@@ -1,15 +1,17 @@
 <component title='填寫退貨物流' show_bol='{{false}}'></component>
 <!-- 商品信息 -->
 <view class="detalis_con" style="margin-top:{{bar_Height+140}}rpx">
-  <view class="detalis_img"></view>
+  <view class="detalis_img">
+    <img src="{{img}}" />
+  </view>
   <view class="detalis_conent">
-    <view class="detalis_brand">Salvatore Ferragamo</view>
-    <view class="detalis_standard">藍色經典男士淡香水50ml</view>
+    <view class="detalis_brand">{{goods_name}}</view>
+    <view class="detalis_standard">{{spec_key_name}}</view>
     <!-- <view class="detalis_size">香型：香型</view> -->
   </view>
   <view class="detalis_r">
-    <view class="detalis_price">HK$124.00</view>
-    <view class="detalis_num">X 1</view>
+    <view class="detalis_price">HK${{goods_price}}</view>
+    <view class="detalis_num">X {{goods_num}}</view>
   </view>
 </view>
 <!-- 物流公司 -->
@@ -20,18 +22,19 @@
     <text>></text>
   </view>
   <view class="refundcause_r" wx:if="{{ss}}">{{ss}}</view>
+   <text>></text>
 </view>
 <!-- 物流单号 -->
 <view class="refundstate">
-  <text class="refundstate_text">物流单号:</text><input placeholder="請填寫物流單號" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" />
+  <text class="refundstate_text">物流单号:</text><input placeholder="請填寫物流單號" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" bindinput="danhao"/>
 </view>
 <!-- 聯系電話 -->
 <view class="refundstate" style="margin-top: 20rpx;">
-  <text class="refundstate_text">聯系電話:</text><input placeholder="請填寫手機號碼" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" />
+  <text class="refundstate_text">聯系電話:</text><input placeholder="請填寫手機號碼" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" bindinput="haoma" />
 </view>
 <!-- 退貨說明 -->
 <view class="refundstate" style="margin-top: 20rpx;">
-  <text class="refundstate_text">退貨說明:</text><input placeholder="選填" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" />
+  <text class="refundstate_text">退貨說明:</text><input placeholder="選填" class="refundstate_input" placeholder-style="line-height: 100rpx;color:rgba(153,153,153,1);" bindinput="shuom" />
 </view>
 <!-- 上傳憑證 -->
 <view class="voucher">上傳憑證</view>

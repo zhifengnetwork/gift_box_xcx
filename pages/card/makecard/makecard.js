@@ -46,7 +46,8 @@ Page({
     music: '',
     picture: '',
     record: '',
-    bless: ''
+    bless: '',
+    box_id:0
   },
   // 跳转子页面
   skip: function(e) {
@@ -173,9 +174,11 @@ Page({
       'id': app.globalData.makecard
     },
     function (res) {
-      console.log(res.data)
       if (!app.globalData.makecard){
-        app.globalData.makecard = res.data.data.id;
+        app.globalData.makecard = res.data.id;
+        that.setData({
+          box_id: res.data.id
+        })
       }else{
         return false;
       }

@@ -58,24 +58,25 @@
 
 <view class="awrad_textarea">
     <text>訂單備註</text>
-    <input placeholder="選填，請先和商家協商一致" disabled="{{!flag}}" />
+    <!-- <input placeholder="選填，請先和商家協商一致" disabled="{{!flag}}" /> -->
+    <textarea class="weui-textarea" placeholder="選填，請先和商家協商一致" bindblur="changeContext" style="height:140rpx"/>
 </view>
 <view>
 <text bindtap="tiaofapiao" class="fapiaotext">开具发票</text>
 </view>
 <view class="awrad_f">
   <text class="awrad_fl">共1件</text>
-  <text class="awrad_fr">合計：HK$172.00  (含邮费:HK$40.00) </text>
+  <text class="awrad_fr">合計：HK$172.00  (含邮费:HK$40.00)</text>
 </view>
 <view class="award_button" bindtap="show">
   提交订单
 </view>
 <view class="award_pop-upbox" hidden="{{flag}}" catchtouchmove="preventTouchMove">
-  <view class="award_pop-up"></view>
-  <view class="pop-up_box">
-    <view class="pop-up_box_t">选择支付方式</view>
-    <view class="pop-up_box_c" bindtap="integral">积分支付</view>
-    <view class="pop-up_box_b" bindtap="wxpay">微信支付</view>
-  </view>
+  <cover-view class="award_pop-up"></cover-view>
+  <cover-view class="pop-up_box">
+    <cover-view class="pop-up_box_t">选择支付方式</cover-view>
+    <cover-view class="pop-up_box_c" bindtap="jifen">积分支付</cover-view>
+    <cover-view class="pop-up_box_b" bindtap="weixin">微信支付</cover-view>
+  </cover-view>
 </view>
-<view class="close" bindtap="hide" hidden="{{flag}}">X</view>
+<cover-view class="close" bindtap="hide" hidden="{{flag}}">X</cover-view>

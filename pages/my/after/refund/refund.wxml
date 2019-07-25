@@ -48,15 +48,17 @@
 </view>
 <!-- 商品信息 -->
 <view class="detalis_con">
-  <view class="detalis_img"></view>
+  <view class="detalis_img">
+    <img src="{{item.img}}" />
+  </view>
   <view class="detalis_conent">
-    <view class="detalis_brand">Salvatore Ferragamo</view>
-    <view class="detalis_standard">藍色經典男士淡香水50ml</view>
+    <view class="detalis_brand">{{item.goods_name}}</view>
+    <view class="detalis_standard">{{item.spec_key_name}}</view>
     <!-- <view class="detalis_size">香型：香型</view> -->
   </view>
   <view class="detalis_r">
-    <view class="detalis_price">HK$124.00</view>
-    <view class="detalis_num">X 1</view>
+    <view class="detalis_price">HK${{item.goods_price}}</view>
+    <view class="detalis_num">X {{item.goods_num}}</view>
   </view>
 </view>
 <!-- 退款信息 -->

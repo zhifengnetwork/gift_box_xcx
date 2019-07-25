@@ -84,5 +84,5 @@
       </view>
     </view>
   </scroll-view>
-  <view class="tips" wx:if="{{!item}}">暂无数据哦!</view>
+  <view class="tips" wx:if="{{!list}}">暂无数据哦!</view>
 </view>

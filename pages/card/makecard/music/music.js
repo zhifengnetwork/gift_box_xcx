@@ -41,6 +41,11 @@ Page({
       return false;
     }
     var that = this;
+
+    console.log('----')
+    console.log(app.globalData.makecard)
+    console.log('----')
+
     api.postJSON('api/box/set_box',{
       'token': app.globalData.token,
       'id': app.globalData.makecard,
