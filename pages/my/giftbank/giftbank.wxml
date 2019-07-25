@@ -80,7 +80,7 @@
       </view>
       <view class="giftbank_button">
         <view class="giftbank_cancel" data-id="{{item.order_id}}" bindtap="kaolao">犒劳自己</view>
-        <view class="giftbank_payment" data-id="{{item.order_id}}" bindtap="zengsong" >赠送他人</view>
+        <view class="giftbank_payment" data-id="{{item.order_id}}" bindtap="zengsong" >贈送他人</view>
       </view>
     </view>
   </scroll-view>

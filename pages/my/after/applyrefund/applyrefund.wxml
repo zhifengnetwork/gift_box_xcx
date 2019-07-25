@@ -20,7 +20,7 @@
 <view class="subtotal">
   <view class="subtotal_box">
     <text class="subtotal_boxl">商品小計</text>
-    <text class="subtotal_boxr">hk${{item.goods_price}}</text>
+    <text class="subtotal_boxr">HK${{item.goods_price}}</text>
   </view>
    <view class="subtotal_box">
     <text class="subtotal_boxl">積分</text>
@@ -28,18 +28,18 @@
   </view>
   <view class="subtotal_box">
     <text class="subtotal_boxl">優惠</text>
-    <text class="subtotal_boxr">-hk$0.00</text>
+    <text class="subtotal_boxr">-HK$0.00</text>
   </view>
 </view>
 <!-- 实付金额 -->
 <view class="pocket">
   <text class="pocket_l">實付金額</text>
-  <text class="pocket_r">hk${{after.order_amount}}</text>
+  <text class="pocket_r">HK${{after.order_amount}}</text>
 </view>
 <!-- 退款金额 -->
 <view class="refundmoney">
   <text class="refundmoney_l">退款金額</text>
-  <text class="refundmoney_r">hk$120.00</text>
+  <text class="refundmoney_r">HK$120.00</text>
 </view>
 <!-- 退款原因 -->
 <view class="refundcause" bindtap="dianji">
@@ -52,7 +52,7 @@
 </view>
 <!-- 提醒 -->
 <view class="remind">
-  最多hk$120.00，含發貨運費hk$0.00
+  最多HK$120.00，含發貨運費HK$0.00
 </view>
 <!-- 退款說明 -->
 <view class="refundstate">
