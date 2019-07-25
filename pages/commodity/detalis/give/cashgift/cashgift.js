@@ -62,9 +62,6 @@ Page({
             wx.redirectTo({
               url: '../giftbag/giftbag?order_id=' + app.globalData.give.order_id
             })
-            app.globalData.makecard = '';
-            app.globalData.give.sku_id = '';
-            app.globalData.give.order_id = '';
           },
           fail(res) {
             wx.showToast({

@@ -15,8 +15,13 @@
     <text class="shoppingcard_top_bottomr">{{user_no}}</text>
   </view>
 </view>
-<view class="shoppingcard_money">HK$ {{shop_card_balance}}
-  <!-- <view class="shoppingcard_eye"></view> -->
+<view class="shoppingcard_money">
+  <text wx:if="{{yj}}">HK$ {{shop_card_balance}}</text>
+  <text wx:if="{{!yj}}">******</text>
+  <view class="shoppingcard_eye" bindtap="yanjing">
+    <image src="../../../images/zhengyan.jpg"  wx:if="{{yj}}" />
+    <image src="../../../images/biyan.jpg" wx:if="{{!yj}}" />
+  </view>
 </view>
 <view class="shoppingcard_bottom">
   <view class="shoppingcard_recharge" bindtap="recharge">充值</view>

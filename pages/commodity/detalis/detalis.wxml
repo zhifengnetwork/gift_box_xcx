@@ -12,6 +12,9 @@
 
   <view class="detalisbox">
     <view class="detalis_img2">
+      <button class="qiuliwu" open-type='share'>
+        <image src="../../../images/qiuliwu.png" />
+      </button>
       <swiper class='detalis_swipers' autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
         <block wx:for="{{goods_data.img}}" wx:key>
           <swiper-item>
@@ -62,7 +65,7 @@
           <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">商品介紹</view>
         </view>
         <view class="detalis_tab">
-          <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">為妳星選</view>
+          <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">贈禮需知</view>
         </view>
       </view>
       <view class="{{currentTab == 0 ? 'show':'hidden'}}">
@@ -72,12 +75,15 @@
           <view>材质：本款雙扣僧侶鞋由黑色義大利小牛皮製作。鞋底採用布萊克針法以及橡膠工藝，增強抓地力。鞋身側面還飾有兩枚銀色鞋扣。</view>
         </view>
       </scroll-view> -->
-
-        <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+        <view style="font-size:32rpx;padding:0 20rpx;">
+            <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+          </view>
       </view>
       <view class="{{currentTab == 1 ? 'show':'hidden'}}">
         <scroll-view>
-          <view style="font-size:32rpx;padding:0 20rpx;"></view>
+          <view style="font-size:32rpx;padding:0 20rpx;">
+            <template is="wxParse" data="{{wxParseData:gift_notice.nodes}}"/>
+          </view>
         </scroll-view>
       </view>
     </view>

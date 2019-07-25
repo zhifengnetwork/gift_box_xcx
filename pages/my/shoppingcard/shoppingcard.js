@@ -8,7 +8,17 @@ Page({
   data: {
     shop_card_balance:'',
     user_no:'',
+    yj: true,
   },
+
+  yanjing: function () {
+    let that = this
+    that.setData({
+      yj: !that.data.yj
+    })
+  },
+
+
 
   recharge:function (){
     wx.navigateTo({

@@ -39,7 +39,7 @@ Page({
     let that = this;
     api.postJSON('api/gift/get_send_gift', {
       token: app.globalData.token,
-      gift_type: 2,
+      type: 2,
     }, function (res) {
       if (res.data.status == 1) {
         that.setData({
@@ -54,7 +54,7 @@ Page({
     let that = this;
     api.postJSON('api/gift/get_send_gift', {
       token: app.globalData.token,
-      gift_type: 1,
+      type: 1,
     }, function (res) {
       if (res.data.status == 1) {
         that.setData({

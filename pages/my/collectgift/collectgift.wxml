@@ -21,11 +21,13 @@
       </view>
     </view>
     <view class="collectgift_bott">
-      <view class="collectgift_bottnum">贈送人：東紫</view>
+      <view class="collectgift_bottnum">贈送人：{{item.nickname}}</view>
       <view class="collectgift_button">
         <view class="collectgift_cancel">查看物流</view>
         <view class="collectgift_payment" bindtap="shouhuo">確認收貨</view>
       </view>
+    </view>
+    <view>
     </view>
   </view>
 </view>

@@ -1235,3 +1235,18 @@ color:rgba(51,51,51,1);
  
 }
 /* 商品规格选择样式--e */
+
+.qiuliwu{
+  width: 200rpx;
+  height: 110rpx;
+  /* background: yellow; */
+  position: absolute;
+  top: 40%;
+  left: 0rpx;
+  z-index: 99;
+  background: none;
+}
+.qiuliwu image{
+  width: 100%;
+  height: 100%;
+}
