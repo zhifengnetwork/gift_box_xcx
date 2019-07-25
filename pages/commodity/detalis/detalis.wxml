@@ -126,7 +126,7 @@
       <image src="{{goods_data.img[0]}}" class="store" hidden="{{imgimg.length}}"></image>
       <image src="{{imgimg}}" class="store" wx:if="{{imgimg.length}}"></image>
       <text class="jiage">￥{{price}}</text>
-        <view class="selected"  wx:if="!{{imgimg.length}}">
+        <view class="selected"  wx:if="{{!imgimg.length}}">
         <text style="padding-left:10rpx">已选择: {{name}}</text>
         <!-- <text class="mama">{{title}}</text> -->
         <view style="padding-left:10rpx">库存:{{count}}</view>
