@@ -78,14 +78,13 @@ Page({
 
       })
     }
-    api.postJSON('api/gift/share_callback',{
-      'token': app.globalData.token,
+    api.postJSON('api/order/get_order_info',{
       'order_id': order_id,
     },
     function(res){
       if(res.data.status==1){
         that.setData({
-          goods: res.data.data.goods,
+          goods: res.data.data.order,
           address: res.data.data.address
         })
       }else{
