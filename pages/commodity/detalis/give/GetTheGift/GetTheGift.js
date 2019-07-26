@@ -50,14 +50,29 @@ Page({
         })
       }
     })
-    let address_id = '';
+    let address_id = options.address_id == undefined ? '' : options.address_id;
+    let order_id = options.order_id == undefined ? '' : options.order_id;
+    if(order_id == "" || order_id == undefined){
+      wx.showModal({
+        title: 'order_id不能为空',
+        content: '',
+      })
+    }
+    let pwdstr = options.pwdstr == undefined ? '' : options.pwdstr;
+    if (pwdstr == "" || pwdstr == undefined) {
+      wx.showModal({
+        title: 'pwdstr不能为空',
+        content: '',
+      })
+    }
+   
     console.log(options)
-    if (options){
+    if (address_id){
       address_id = options.address_id;
       api.postJSON('api/gift/set_address',{
         'token': app.globalData.token,
         'addressid': address_id,
-        'joinid': options.pwdstr
+        'joinid': pwdstr
       },
       function(res){
 
@@ -65,7 +80,7 @@ Page({
     }
     api.postJSON('api/gift/share_callback',{
       'token': app.globalData.token,
-      'order_id': options.order_id,
+      'order_id': order_id,
     },
     function(res){
       if(res.data.status==1){
