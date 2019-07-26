@@ -3,11 +3,13 @@
     <component title='九點星選' show_bol='{{falsr}}'></component>
   </view>
   <view class="getthegift_t">
-    <view class="getthegift_timg"></view>
+    <view class="getthegift_timg">
+      <image class="getthegift_img" src="{{goods.img}}"></image>
+    </view>
   </view>
   <view class="getthegift_c">
     <view>您的好友贈您一份禮物</view>
-    <text>Beats x MCM聯名pill膠囊無線藍牙音響</text>
+    <text>{{goods.goods_name}}</text>
   </view>
   <view class="getthegift_b">
   <view class="getthegift_bt" bindtap="show">立即領取</view>
@@ -19,27 +21,27 @@
   </view>
 </view>
 <!-- 无地址 -->
-<view class="award_pop-upbox" hidden="{{flag}}" catchtouchmove="preventTouchMove">
+<view class="award_pop-upbox" wx:if="{{address==null&&!flag}}" catchtouchmove="preventTouchMove">
   <view class="award_pop-up"></view>
   <view class="pop-up_box">
     <view class="pop-up_box_t">確認收貨地址</view>
     <view class="pop-up_box_c"><text class="pop-up_nosite">您暫無地址</text></view>
-    <view class="pop-up_box_b">進入地址管理</view>
+    <view class="pop-up_box_b" bindtap="again">進入地址管理</view>
   </view>
 </view>
  <view class="close" bindtap="hide" hidden="{{flag}}">X</view>
  <!-- 确认地址 -->
- <view class="award_pop-upbox" hidden="{{flag}}"  catchtouchmove="preventTouchMove">
+ <view class="award_pop-upbox" wx:if="{{address!=null&&!flag}}" catchtouchmove="preventTouchMove">
   <view class="award_pop-up"></view>
   <view class="pop-up_box">
     <view class="pop-up_box_t">確認收貨地址</view>
     <view class="pop-up_box_c">
-      <text class="pop-up_box_c_name">徐嘮會</text>
-      <text class="pop-up_box_c_num">1234567890</text>
-      <view class="pop-up_box_c_site">上海市浦东新区申迪北路753号申迪北路753号</view>
+      <text class="pop-up_box_c_name">{{address.consignee}}</text>
+      <text class="pop-up_box_c_num">{{address.mobile}}</text>
+      <view class="pop-up_box_c_site">{{address.province}} {{address.city}} {{address.district}} {{address.address}}</view>
     </view>
     <view class="pop-up_b">
-      <view class="pop-up_bl">重新選擇</view>
+      <view class="pop-up_bl" bindtap="again">重新選擇</view>
       <view class="pop-up_br" bindtap="tiaozhuan">確認無誤</view>
     </view>
   </view>
