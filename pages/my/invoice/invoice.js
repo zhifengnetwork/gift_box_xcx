@@ -286,11 +286,7 @@ Page({
       })
       return false;
     }
-     
-    
-
-
-
+  
     if ((that.data.unit_show == false && that.data.invoice_title == '') || (that.data.unit_show == false && that.data.taxpayer == '')) {
       wx.showToast({
         title: '请填写纳税人识别号和单位名称',
