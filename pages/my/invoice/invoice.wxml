@@ -32,7 +32,7 @@
     <!-- 收票人手机 -->
     <view class="messege_con">
       <text class="messege_con_text">收票人手機</text>
-      <input placeholder="請輸入收票人手機號碼" class="messege_phone" bindinput="getiphone" value="{{invoice_mobile}}"/>
+      <input placeholder="請輸入收票人手機號碼" class="messege_phone" bindinput="getiphone" value="{{invoice_mobile}}" maxlength="11"  type='number'/>
     </view>
     <!-- 收票人郵箱 -->
     <view class="messege_footer">
