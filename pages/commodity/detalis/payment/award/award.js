@@ -276,7 +276,8 @@ Page({
         goods: res.data.data.goods,
         shipping_price: res.data.data.shipping_price,
         order_num: res.data.data.order_num,
-        order_amount: res.data.data.order_amount
+        order_amount: res.data.data.order_amount,
+        address_id: res.data.data.addr_res.address_id
 
 
 
