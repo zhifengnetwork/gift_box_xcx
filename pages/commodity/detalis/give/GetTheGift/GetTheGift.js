@@ -1,4 +1,6 @@
 // pages/commodity/detalis/give/GetTheGift/GetTheGift.js
+var api = require('../../../../../utils/api');
+var app = getApp();
 Page({
 
   /**
@@ -25,7 +27,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    api.postJSON('api/order/order_detail',{
+      'token': app.globalData.token,
+      // 'order_id': options.order_id,
+      'order_id': options.order_id,
+    },
+    function(res){
+      console.log(res)
+    })
   },
 
   /**

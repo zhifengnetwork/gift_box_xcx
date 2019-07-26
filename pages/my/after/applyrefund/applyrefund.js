@@ -16,7 +16,7 @@ Page({
     inputValue:'',
     reason:'',
     datamsg:'',
-    itemList: ['7天无理由', '退运费', '少件/漏发', '质量问题', '商品信息描述不符', '包装/商品破损/污渍']
+    itemList: ['7天無理由', '退運費', '少件/漏發', '質量問題', '商品信息描述不符', '包裝/商品破損/汙漬']
   },
 
   dianji: function () {
@@ -47,34 +47,53 @@ Page({
 
   send:function () {
     var that = this
-    api.postJSON('api/order/refund_apply', {
-      'token': app.globalData.token,
-      order_id: that.data.order_id,
-      type: that.data.id,
-      goods_num: that.data.goods_num,
-      rec_id: that.data.item.rec_id,
-      msg: that.data.inputValue,
-      reason: that.data.reason + 1,
-      prine_way: 1,
-      pic: that.data.tupian
-    }, function (res) {
-      // console.log(res.data.data)
-      that.setData({
-        datamsg: res.data.msg
-      })
-      if (res.data.status == 1){
-        wx.switchTab({
-          url: '../../my'
-        })
-      }else{
-        // console.log(666)
-        wx.showModal({
-          title: '提示',
-          content: that.data.datamsg,
-          showCancel: false
-        })
+    wx.showModal({
+      title: '提示',
+      content: '您確定申請退款？',
+      // showCancel: false
+      success(res) {
+        if (res.confirm) {
+          api.postJSON('api/order/refund_apply', {
+            'token': app.globalData.token,
+            order_id: that.data.order_id,
+            type: that.data.id,
+            goods_num: that.data.goods_num,
+            rec_id: that.data.item.rec_id,
+            msg: that.data.inputValue,
+            reason: that.data.reason + 1,
+            prine_way: 1,
+            pic: that.data.tupian
+          }, function (res) {
+            // console.log(res.data.data)
+            that.setData({
+              datamsg: res.data.msg
+            })
+            if (res.data.status == 1) {
+              wx.showModal({
+                title: '提示',
+                content: '申請成功',
+                // showCancel: false
+                success(res) {
+                  if (res.confirm) {
+                    wx.switchTab({
+                      url: '../../my'
+                    })
+                  }
+                }
+              })
+            } else {
+              // console.log(666)
+              wx.showModal({
+                title: '提示',
+                content: that.data.datamsg,
+                showCancel: false
+              })
+            }
+          })
+        }
       }
     })
+
   },
 
 

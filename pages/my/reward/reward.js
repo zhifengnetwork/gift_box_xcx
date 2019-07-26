@@ -41,7 +41,7 @@ Page({
 
     wx.showModal({
       title: '提示',
-      content: '确认收货吗？',
+      content: '您確認收貨嗎？',
       success(res) {
         if (res.confirm) {
           api.postJSON('api/order/edit_status', {
