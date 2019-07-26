@@ -7,6 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
+    id:'',
+    type:'',
     order_id:'',
     pwdstr:''
   },
@@ -30,8 +32,14 @@ Page({
     }, function (res) {
       if (res.data.status == 1) {
         that.setData({
+          id: res.data.data.card_id,
+          type:res.data.data.type,
           pwdstr: res.data.data.pwdstr
         })
+
+        // var url = '/pages/card/go?id=' + that.data.id + '&type=' + that.data.type + '&order_id=' + that.data.order_id + '&pwdstr=' + that.data.pwdstr;
+        // console.log(url)
+
       } else {
         wx.showModal({
           content: res.data.msg,
@@ -42,6 +50,9 @@ Page({
     this.setData({
       order_id:order_id
     })
+
+
+  
   },
 
   /**
@@ -92,15 +103,13 @@ Page({
   onShareAppMessage: function () {
     let url = null;
     // if (app.globalData.give.order_type == 1) {
-    url = '/pages/card/go?id=' + app.globalData.makecard + '&type=' + app.globalData.give.order_type + '&order_id=' + app.globalData.give.order_id + '&pwdstr=' + this.data.pwdstr
+    url = '/pages/card/go?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr
     // } else {
     //   url = '/pages/turntable/turntable?order_id=' + this.data.order_id;
     // }
     var nickname = app.globalData.userInfo.nickname;
     nickname = nickname == undefined ? '' : nickname;
-    console.log('===========')
-    console.log(nickname)
-    console.log('===========')
+   
     return {
       title: nickname + '为你准备了一份惊喜,请火速查收!',
       imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',

@@ -10,12 +10,16 @@ Page({
 
   /**
    * 生命周期函数--监听页面加载
+   *   url = '/pages/card/go?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr
    */
   onLoad: function (options) {
     var id = options.id;
+    var type = options.type;
+    var order_id = options.order_id;
+    var pwdstr = options.pwdstr;
     if(id){
       this.setData({
-        url: this.data.url + '?card_id=' + id
+        url: this.data.url + '?card_id=' + id + '&type=' + type + '&order_id=' + order_id + '&pwdstr=' + pwdstr
       })
     }else{
       wx.showModal({
@@ -23,6 +27,8 @@ Page({
         content: '没有id',
       })
     }
+
+    
 
     console.log(this.data.url)
   },
@@ -52,7 +58,9 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
+    audioCtx.pause();//播放停止
+    
   },
 
   /**
