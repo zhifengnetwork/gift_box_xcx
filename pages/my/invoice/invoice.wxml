@@ -69,7 +69,7 @@
     </view>
   </view>
 
-  <view class="invoice_button black" bindtap="save_invoice" wx:if="{{source != 'my' }}">提交{{source}}</view>
+  <view class="invoice_button black" bindtap="save_invoice" wx:if="{{source != 'my' }}">提交</view>
 
 </view>
 <cover-view class="footer" hidden="{{footer_show}}">
