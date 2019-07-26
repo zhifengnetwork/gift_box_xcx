@@ -9,7 +9,7 @@
   <view class="detalis_conent">
     <view class="detalis_brand">{{item.goods_name}}</view>
     <view class="detalis_standard">{{item.spec_key_name}}</view>
-    <view class="detalis_size">黑色：26*12*19cm</view>
+    <!-- <view class="detalis_size">黑色：26*12*19cm</view> -->
   </view>
   <view class="detalis_r">
     <view class="detalis_price">HK${{item.goods_price}}</view>
@@ -24,22 +24,22 @@
   </view>
    <view class="subtotal_box">
     <text class="subtotal_boxl">積分</text>
-    <text class="subtotal_boxr">{{item.integral}}</text>
+    <text class="subtotal_boxr">{{after.integral}}</text>
   </view>
   <view class="subtotal_box">
     <text class="subtotal_boxl">優惠</text>
-    <text class="subtotal_boxr">-HK$0.00</text>
+    <text class="subtotal_boxr">-HK${{after.coupon_price}}</text>
   </view>
 </view>
 <!-- 实付金额 -->
 <view class="pocket">
   <text class="pocket_l">實付金額</text>
-  <text class="pocket_r">HK${{after.order_amount}}</text>
+  <text class="pocket_r">HK${{after.goods_total_amount}}</text>
 </view>
 <!-- 退款金额 -->
 <view class="refundmoney">
   <text class="refundmoney_l">退款金額</text>
-  <text class="refundmoney_r">HK${{item.price}}</text>
+  <text class="refundmoney_r">HK${{after.goods_total_amount}}</text>
 </view>
 <!-- 退款原因 -->
 <view class="refundcause" bindtap="dianji">
