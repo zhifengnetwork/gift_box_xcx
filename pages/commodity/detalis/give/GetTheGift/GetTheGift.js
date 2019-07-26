@@ -65,8 +65,7 @@ Page({
     }
     api.postJSON('api/gift/share_callback',{
       'token': app.globalData.token,
-      // 'order_id': options.order_id,
-      'order_id': 2835,
+      'order_id': options.order_id,
     },
     function(res){
       if(res.data.status==1){
