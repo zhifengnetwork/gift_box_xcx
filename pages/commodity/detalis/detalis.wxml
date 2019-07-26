@@ -150,7 +150,7 @@
           <view class='ggfl'>{{item[0].spec_name}}</view>
           <view class='ggList'>
             <block wx:for="{{item}}" wx:key>
-              <view data-index="{{pos}}" data-pos="{{index}}" class="item {{item.isClick==1?'isClick':''}}" data-itemId='{{item.item_id}}' bindtap="propClick">{{item.item}}</view>
+              <view data-index="{{pos}}" data-pos="{{index}}" class="item {{item.isClick==1?'isClick':''}}" data-itemid='{{item.item_id}}' bindtap="propClick" data-text="{{item.item}}">{{item.item}}</view>
             </block>
           </view>
         </view>
