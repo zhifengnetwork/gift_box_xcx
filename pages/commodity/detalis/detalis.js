@@ -159,7 +159,7 @@ Page({
       api.postJSON('api/order/immediatelyOrder',{
         'token': app.globalData.token,
         'sku_id': that.data.sku_id,
-        'cart_number':1
+        'cart_number': that.data.productNum
       },
       function(res){
         if(res.data.status==1){
@@ -181,7 +181,7 @@ Page({
       api.postJSON('api/order/immediatelyOrder', {
         'token': app.globalData.token,
         'sku_id': that.data.sku_id,
-        'cart_number': 1
+        'cart_number': that.data.productNum
       },
         function (res) {
           if (res.data.status == 1) {
