@@ -52,7 +52,9 @@ Page({
     autoplay:true,
     name:'',
     jige:'',
-    count:''
+    count:'',
+    text:'',
+    itemId:''
 
   },
   clickTab: function (e) {
@@ -251,7 +253,32 @@ Page({
      
         that.data.sku_id = res.data.data.spec_goods_price[xiabiao].sku_id
         WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
-        that.checkPrice();//首次需要调用，首次的规格
+        console.log("777")
+        console.log(that.data.goods_spec_list)
+        // 如果它只有一种规格的话,那么规格goods_spec_list的长度是1或者小于1
+        var item_id;
+        if (that.data.goods_spec_list.length <= 1)
+         {
+           
+          for (var i = 0; i < that.data.goods_spec_list[0].length;i++){
+            if (that.data.goods_spec_list[0][i].isClick===1){
+              item_id=that.data.goods_spec_list[0][i].item_id
+            }
+
+          }
+          console.log("默认的商品的id为",item_id);
+          var count=that.data.goodssss[item_id].store_count;
+          var name=that.data.goodssss[item_id].name;
+          var price=that.data.goodssss[item_id].price
+          that.setData({count:count,name:name,price:price});
+
+         
+
+         }
+         else{
+          that.checkPrice();//首次需要调用，首次的规格
+          }
+       
       }
     })
    
@@ -316,6 +343,10 @@ Page({
     var pos = e.currentTarget.dataset.pos;
     var index = e.currentTarget.dataset.index;
     var gsl = this.data.goods_spec_list;
+    var text = e.currentTarget.dataset.text;
+    var itemId = e.currentTarget.dataset.itemid
+    this.setData({text:text});
+    this.setData({ itemId: itemId})
     if (gsl[index].length > 0) {
       for (let i = 0; i < gsl[index].length; i++) {
         if (i == pos) {
@@ -331,13 +362,34 @@ Page({
     }
   },
   checkPrice: function () {
+    var that=this
     var goods = this.data.goods_spec_list;
     var spec = ""
+    console.log(that.data.spec_goods_price)
+    // 如果它是单规格的时候
     if(goods.length <= 1){
      
+       console.log(that.data.text);
+       var text=that.data.text
+       that.setData({name:text});
+      // for (var i = 0; i < that.data.spec_goods_price.length;i++){
+      //    if([i].name===text){
+      //     //  that.setData({store_count: goods[i]. })
+      //    }
+      //  }
+      var itemId = that.data.itemId
+      console.log("规格id")
+      console.log(itemId)
+      var store_count = that.data.goodssss[itemId].store_count
+      var price=that.data.goodssss[itemId].price;
+      that.setData({count: store_count,price:price})
+
      
+       
+
 
     }
+    //如果它是多规格的时候
     else{
       if (goods) {
         for (var i = 0; i < goods.length; i++) {
