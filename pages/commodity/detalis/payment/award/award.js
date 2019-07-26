@@ -33,13 +33,28 @@ Page({
     this.setData({
       flag: false
     });
-    
-    api.getJSON('/api/order/submitOrder?token=' + app.globalData.token + '&order_type=0' + '&address_id=' + this.data.address_id + '&invoice_id=' + this.data.invoice_id, function(res) {
-      if (res.data.status == 1) {
-        console.log("已经生成订单了");
-        that.setData({order_id:res.data.data})
-      }
-    })
+    if(that.data.address_id==''){
+      wx.showToast({
+        icon: 'none',
+        title: "请先添加地址",
+        duration: 2500
+      })
+      this.setData({
+        flag: true
+      });
+     
+    }else{
+      this.setData({
+        flag: false
+      });
+      api.getJSON('/api/order/submitOrder?token=' + app.globalData.token + '&order_type=0' + '&address_id=' + this.data.address_id + '&invoice_id=' + this.data.invoice_id, function (res) {
+        if (res.data.status == 1) {
+          console.log("已经生成订单了");
+          that.setData({ order_id: res.data.data })
+        }
+      })
+    }
+   
 
   },
   hide: function() {
