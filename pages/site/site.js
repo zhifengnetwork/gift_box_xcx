@@ -84,16 +84,13 @@ Page({
         award: false
       })
     }
-<<<<<<< HEAD
     if (options.again) {
       this.setData({
         award: true,
         again: true
       })
     }
-=======
-    
->>>>>>> 4c9412647375728ce7b26590d6c6dcafef4e307e
+
   },
   remove: function (e){
     let that = this;
