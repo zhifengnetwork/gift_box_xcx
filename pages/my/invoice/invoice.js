@@ -41,7 +41,7 @@ Page({
     this.setData({
       award: options.award == undefined ? "" : options.award,
       address_id: options.address_id == undefined ? "" : options.address_id,
-      source: options.source == undefined ? "" : options.source,
+      source: options.source == undefined ? "" : options.source,//一个是?source=cashgift
     });
 
     this.get_invoice();
@@ -274,9 +274,19 @@ Page({
             icon: 'success',
             duration: 2000
           })
-          wx.navigateTo({
-            url: '../../commodity/detalis/payment/award/award?address_id=' + that.data.address_id + '&invoice_id=' + res.data.data
-          })
+
+          //两个地方
+          if (that.data.source == 'cashgift'){
+            wx.navigateTo({
+              url: '../../commodity/detalis/give/cashgift/cashgift?invoice_id=' + res.data.data
+            })
+          }else{
+            wx.navigateTo({
+              url: '../../commodity/detalis/payment/award/award?address_id=' + that.data.address_id + '&invoice_id=' + res.data.data
+            })
+          }
+
+
 
         } else {
           wx.showModal({
