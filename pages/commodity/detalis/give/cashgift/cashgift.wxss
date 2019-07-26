@@ -8,7 +8,6 @@
   text-align: center;
   justify-content: space-between;
   border-bottom: 15rpx solid #ebeced;
-  border-top: 2rpx solid #F3F4F7;
 }
 
 .cashgift_tl {
