@@ -31,7 +31,7 @@ Page({
   invoice:function(){
     app.globalData.dingdang_id = app.globalData.give.order_id
     wx.navigateTo({
-      url: '../../../../my/invoice/invoice',
+      url: '../../../../my/invoice/invoice?source=cashgift',
     })
   },
   wxpay:function(){
@@ -85,11 +85,18 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
+
+    //有发票ID
+    this.setData({
+      invoice_id: options.invoice_id == undefined ? "" : options.invoice_id
+    });
+
     if (!app.globalData.give.order_id){
       api.postJSON('api/order/submitOrder', {
         'token': app.globalData.token,
         'order_type': app.globalData.give.order_type,
-        'box_id': app.globalData.makecard
+        'box_id': app.globalData.makecard,
+        'invoice_id': this.data.invoice_id
       },
         function (res) {
           that.setData({

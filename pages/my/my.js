@@ -120,7 +120,7 @@ Page({
   //跳转到电子发票
   invoice: function() {
     wx.navigateTo({
-      url: 'invoice/invoice',
+      url: 'invoice/invoice?source=my',
     })
   },
   //跳转到联系客服

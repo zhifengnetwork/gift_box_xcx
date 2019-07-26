@@ -132,16 +132,16 @@
       <image src="{{imgimg}}" class="store" wx:if="{{imgimg.length}}"></image>
       <text class="jiage">￥{{price}}</text>
         <view class="selected"  wx:if="{{!imgimg.length}}">
-        <text style="padding-left:10rpx">已選擇: {{name}}</text>
+        <text style="padding-left:18rpx">已選擇: {{name}}</text>
         <!-- <text class="mama">{{title}}</text> -->
-        <view style="padding-left:10rpx">庫存:{{count}}</view>
+        <view style="padding-left:18rpx">庫存:{{count}}</view>
       </view> 
 
 
       <view class="selected"  wx:if="{{imgimg.length}}">
-        <text style="padding-left:10rpx">已選擇: {{name}}</text>
+        <text style="padding-left:18rpx">已選擇: {{name}}</text>
         <!-- <text class="mama">{{title}}</text> -->
-        <view style="padding-left:10rpx">庫存:{{store_count}}</view>
+        <view style="padding-left:18rpx">庫存:{{store_count}}</view>
       </view>
       
       <!-- 正式的规格选择区块 s -->

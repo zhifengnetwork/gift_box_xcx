@@ -1,77 +1,77 @@
 <view class="award_top">
   <component title='确认支付' show_bol='{{falsr}}'></component>
 </view>
+
+<view class="body">
+
 <view class="xiahuanxian">
   <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/xiahuaxian_icon.png"></image>
 </view>
 <view class="award_topbox" bindtap="site">
   <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dingwei_icon.png" class="award_dingwei"></image>
-  <text class="award_text" wx:if="{{dizhi.length}}">{{dizhi}}</text>
-  <text class="award_text" wx:else>{{order_detail.address}}</text>
+  <text class="award_text" wx:if="{{c_cn}}">{{p_cn}}{{c_cn}}{{d_cn}}</text>
+  <text class="award_text" wx:else>请添加地址</text>
   <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/you_icon.png" class="award_you"></image>
 </view>
 
-
 <view class="detailshop" wx:for="{{goods}}">
-<view class="award_ct">
-  <view class="award_ct_l">
-  <image src="{{item.img}}" class="shop_img"></image>
-  </view>
-  <view class="award_ct_r">
-    <view class="award_ct_rt">{{item.goods_name}}</view>
-    <view class="award_ct_rc">
-      <text style="float:left;">{{item.spec_key_name}}</text>
-      <text style="float:right;">X{{item.goods_num}}</text>
+  <view class="award_ct">
+    <view class="award_ct_l">
+      <image src="{{item.img}}" class="shop_img"></image>
+    </view>
+    <view class="award_ct_r">
+      <view class="award_ct_rt">{{item.goods_name}}</view>
+      <view class="award_ct_rc">
+        <text style="float:left;">{{item.spec_key_name}}</text>
+        <text style="float:right;">X{{item.goods_num}}</text>
+      </view>
     </view>
   </view>
-</view>
-<view class="awrad_cb">
-  <!-- <view class="awrad_box" bindtap="tiaofapiao">
+  <view class="awrad_cb">
+    <!-- <view class="awrad_box" bindtap="tiaofapiao">
     <text>开具发票</text>
     <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/you_icon.png" class="awrad_cb_you"></image>
   </view> -->
-  <view class="awrad_box">
-    <text>商品金額</text>
-    <text class="awrad_box_text">HK${{item.goods_price}}</text>
-  </view>
-  <view class="awrad_box">
-    <text>優惠立減</text>
-    <text class="awrad_box_text">-HK${{item.discount}}</text>
-  </view>
-  <!-- <view class="awrad_box">
+    <view class="awrad_box">
+      <text>商品金額</text>
+      <text class="awrad_box_text">HK${{item.goods_price}}</text>
+    </view>
+    <view class="awrad_box">
+      <text>優惠立減</text>
+      <text class="awrad_box_text">-HK${{item.discount}}</text>
+    </view>
+    <!-- <view class="awrad_box">
     <text>郵費</text>
     <text class="awrad_box_text">HK$40.00</text>
-  </view> -->
-  <view class="awrad_box">
-    <text>稅金</text>
-    <text class="awrad_box_text">{{item.taxes}}%</text>
+    </view> -->
+    <view class="awrad_box">
+      <text>稅金</text>
+      <text class="awrad_box_text">{{item.taxes}}%</text>
+    </view>
   </view>
-  
-</view>
 </view>
 
-
-
-   
-
- 
 
 <view class="awrad_textarea">
-    <text>訂單備註</text>
-    <!-- <input placeholder="選填，請先和商家協商一致" disabled="{{!flag}}" /> -->
-    <textarea class="weui-textarea" placeholder="選填，請先和商家協商一致" bindblur="changeContext" style="height:140rpx"/>
+  <text>訂單備註</text>
+  <!-- <input placeholder="選填，請先和商家協商一致" disabled="{{!flag}}" /> -->
+  <textarea class="weui-textarea" placeholder="選填，請先和商家協商一致" bindblur="changeContext" style="height:140rpx" />
 </view>
 <view class="fapiaobox" bindtap="tiaofapiao">
   <text class="fapiaotext">开具发票</text>
   <text class="fapiaotextr">></text>
 </view>
 <view class="awrad_f">
-  <text class="awrad_fl">共1件</text>
-  <text class="awrad_fr">合計：HK$172.00  (含邮费:HK$40.00)</text>
+  <text class="awrad_fl">共{{order_num}}件</text>
+  <text class="awrad_fr">合計：HK$ {{order_amount}} <view wx:if="{{shipping_price}}">(含邮费:HK${{shipping_price}})</view></text>
 </view>
 <view class="award_button" bindtap="show">
   提交订单
 </view>
+
+
+</view>
+
 <view class="award_pop-upbox" hidden="{{flag}}" catchtouchmove="preventTouchMove">
   <cover-view class="award_pop-up"></cover-view>
   <cover-view class="pop-up_box">

@@ -29,7 +29,7 @@ Page({
     mask: true,            /**遮罩层 */
     win_id: false,          /**中奖者 */
     win_Name:[],
-    win: false,             /**礼物 */
+    win: true,             /**礼物 */
     wisecrack: false,       /**俏皮话 */
     wisecrack_t1: '',
     wisecrack_t2:'',
@@ -67,6 +67,12 @@ Page({
       mask:true,
       win_id:true,
       start: false
+    })
+  },
+  // 领取礼物
+  win_get:function(){
+    wx.redirectTo({
+      url: '../commodity/detalis/give/GetTheGift/GetTheGift?order_id' + this.data.order_id,
     })
   },
   start_time:function(){
@@ -220,8 +226,7 @@ Page({
           })
         }
         that.setData({
-          // order_id: options.order_id,
-          order_id: 2673,
+          order_id: options.order_id,
           award: that.data.rouletteData.award
         })
         that.selectComponent('#roulette').award(that.data.rouletteData);
