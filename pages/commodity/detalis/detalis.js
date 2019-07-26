@@ -89,6 +89,8 @@ Page({
     this.setData({
       statussxianshi: false
     }), 
+
+     
       api.getJSON('/api/Cart/addCart?sku_id=' + this.data.sku_id + '&cart_number=' + this.data.productNum+"&token="+app.globalData.token, function (res) {
        
       if (res.data.status == -1){
@@ -259,21 +261,16 @@ Page({
         var item_id;
         if (that.data.goods_spec_list.length <= 1)
          {
-           
           for (var i = 0; i < that.data.goods_spec_list[0].length;i++){
             if (that.data.goods_spec_list[0][i].isClick===1){
               item_id=that.data.goods_spec_list[0][i].item_id
             }
-
           }
           console.log("默认的商品的id为",item_id);
           var count=that.data.goodssss[item_id].store_count;
           var name=that.data.goodssss[item_id].name;
           var price=that.data.goodssss[item_id].price
           that.setData({count:count,name:name,price:price});
-
-         
-
          }
          else{
           that.checkPrice();//首次需要调用，首次的规格
@@ -382,7 +379,8 @@ Page({
       console.log(itemId)
       var store_count = that.data.goodssss[itemId].store_count
       var price=that.data.goodssss[itemId].price;
-      that.setData({count: store_count,price:price})
+      var sku_id = that.data.goodssss[itemId].sku_id
+      that.setData({count: store_count,price:price,sku_id:sku_id})
 
      
        
