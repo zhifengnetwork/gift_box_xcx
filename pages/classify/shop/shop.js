@@ -265,6 +265,13 @@ Page({
       that.GetList(that); //页面拉一次，加载一次
     }
   },
+  detail:function(e){
+    var id = e.currentTarget.dataset.id;
+    console.log('商品' + id)
+    wx.navigateTo({
+      url: '../../commodity/detalis/detalis?id=' + id,
+    })
+  }
 
 
 
