@@ -19,13 +19,15 @@
 }
 
 .getthegift_timg {
-  background: sandybrown;
   width: 436rpx;
   height: 436rpx;
   margin-left: 50%;
   transform: translate(-50%, 25%);
 }
-
+.getthegift_img{
+  width: 100%;
+  height: 100%;
+}
 .getthegift_c {
   text-align: center;
 }

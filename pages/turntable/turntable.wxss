@@ -209,7 +209,7 @@ page{
   text-align: center;
   color: #fff;
   border-radius: 100rpx;
-  background: #ffbf00;
+  background: #d7a868;
 }
 /* 中奖者 */
 .win_id_img{

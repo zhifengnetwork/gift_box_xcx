@@ -50,9 +50,9 @@
   <view wx:if="{{start}}" bindtap="start_time">
     <image class="start_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/gift.png"></image>
     <view class="start_info">
-      <view>开奖时间:</view>
-      <view>2019-06-01 12:00:00</view>
-      <!-- <view class="start_Btn" >点击参与</view> -->
+      <!-- <view>开奖时间:</view> -->
+      <!-- <view>2019-06-01 12:00:00</view> -->
+      <view class="start_Btn" >点击参与</view>
     </view>
   </view>
   <view class="mask_back" bindtap="back">X</view>
