@@ -1,5 +1,5 @@
 <view class="award_top">
-  <component title='确认支付' show_bol='{{falsr}}'></component>
+  <component title='確認支付' show_bol='{{falsr}}'></component>
 </view>
 
 <view class="body">

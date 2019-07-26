@@ -46,7 +46,8 @@
           <view class="item1_text">
             <text>{{item.name}}</text>
           </view>
-          <image src="../public/images/index/ninepoint.png" class="item1_icon"></image>
+          <!-- ../public/images/index/ninepoint.png -->
+          <image src="{{item.icon}}" class="item1_icon"></image>
         </view>
         <text class="xiegang">/</text>
       </view>
