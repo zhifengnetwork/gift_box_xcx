@@ -21,7 +21,7 @@
   <!-- 获取礼物 -->
   <view wx:if="{{win}}">
     <image class="win_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/win.png"></image>
-    <view class="win_btn">点击领取</view>
+    <view class="win_btn" bindtap="win_get">点击领取</view>
   </view>
   <!-- 俏皮话 -->
   <view wx:if="{{wisecrack}}">
