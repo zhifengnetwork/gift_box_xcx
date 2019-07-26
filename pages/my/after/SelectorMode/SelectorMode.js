@@ -31,7 +31,7 @@ Page({
     }else{
       wx.showModal({
         title: '提示',
-        content: '请输入服务类型',
+        content: '請輸入服務類型',
         showCancel: false
       })
     }
