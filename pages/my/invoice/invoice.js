@@ -41,7 +41,7 @@ Page({
     this.setData({
       award: options.award == undefined ? "" : options.award,
       address_id: options.address_id == undefined ? "" : options.address_id,
-      source: options.source == undefined ? "" : options.source,
+      source: options.source == undefined ? "" : options.source,//一个是?source=cashgift
     });
 
     this.get_invoice();

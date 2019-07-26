@@ -78,7 +78,7 @@ Page({
       'content': that.data.blessText
     },
     function(res){
-      console.log(res)
+
       if(res.data.status==1){
         wx.showToast({
           title: '提交成功',
