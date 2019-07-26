@@ -75,26 +75,39 @@ Page({
   quxiao: function (e) {
     console.log(e.target.dataset.id)
     let that = this;
-    api.postJSON('api/order/edit_status', {
-      token: app.globalData.token,
-      order_id: e.target.dataset.id,
-      status: 1,
-    }, function (res) {
-      if(res.data.status == 1){
-        wx.showModal({
-          title: '提示',
-          content: '取消订单成功',
-          showCancel: false,
-          success(res) {
-            // 当点击了提示框的确定之后，返回退款详情
-            if (res.confirm) {
-              that.onLoad();
+    wx.showModal({
+      title: '提示',
+      content: '您确定取消订单吗？',
+      // showCancel: false,
+      success(res) {
+        // 当点击了提示框的确定之后，返回退款详情
+        if (res.confirm) {
+          api.postJSON('api/order/edit_status', {
+            token: app.globalData.token,
+            order_id: e.target.dataset.id,
+            status: 1,
+          }, function (res) {
+            if (res.data.status == 1) {
+              wx.showModal({
+                title: '提示',
+                content: '取消订单成功',
+                showCancel: false,
+                success(res) {
+                  // 当点击了提示框的确定之后，返回退款详情
+                  if (res.confirm) {
+                    that.onLoad();
+                  }
+                }
+              })
+
             }
-          }
-        })
-        
+          })
+        }
       }
     })
+
+
+
   },
 
 
@@ -151,18 +164,44 @@ Page({
 
 
   kaolao:function (e) {
-    // wx.navigateTo({
-    //   url: '../reward/reward',
-    // })
-    // let that = this;
-    // api.postJSON('api/order/edit_order_type', {
-    //   token: app.globalData.token,
-    //   order_id: e.target.dataset.id,
-    // }, function (res) {
-    //   if(res.data.status == 1){
-    //     that.onLoad();
-    //   }
-    // })
+
+    let that = this;
+
+
+    wx.showModal({
+      title: '提示',
+      content: '您正要犒勞自己',
+      // showCancel: false,
+      success(res) {
+        // 当点击了提示框的确定之后，返回退款详情
+        if (res.confirm) {
+          api.postJSON('api/order/edit_order_type', {
+            token: app.globalData.token,
+            order_id: e.target.dataset.id,
+          }, function (res) {
+            if (res.data.status == 1) {
+                  wx.navigateTo({
+                    url: '../reward/reward',
+                  })
+                  that.onLoad()
+            }else{
+              wx.showModal({
+                title: '提示',
+                content: res.data.msg,
+                showCancel: false,
+                // success(res) {
+                //   // 当点击了提示框的确定之后，返回退款详情
+                //   if (res.confirm) {
+                //     that.onLoad();
+                //   }
+                // }
+              })
+            }
+          })
+        }
+      }
+    })
+
   },
 
 
@@ -173,7 +212,7 @@ Page({
     var order_id = e.currentTarget.dataset.id
     if(!order_id){
       wx.showModal({
-        title: '订单ID不存在',
+        title: '訂單ID不存在',
         content: '',
       })
     }
