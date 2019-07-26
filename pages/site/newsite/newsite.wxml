@@ -2,6 +2,7 @@
   <component title='添加地址' wx:if="{{item==''}}" show_bol='{{false}}'></component>
   <component title='编辑地址' wx:else="{{item!=''}}" show_bol='{{false}}'></component>
 </view>
+<view class="body">
 <view class="newsite_box">
   <view class="newsite_view">收貨人</view>
   <input placeholder="请填写收货人姓名" bindinput="consignee" value="{{item==''?'':item.consignee}}" class="newsite_input" />
@@ -55,3 +56,4 @@
 <view class="newsite_footer" bindtap="newsiteshow">保存地址</view>
 <!-- 保存成功 -->
 <!-- <cover-view class="newsite_save" hidden="{{site_show}}">保存成功</cover-view> -->
+</view>

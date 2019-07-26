@@ -8,41 +8,37 @@ Page({
    */
   data: {
     order_id:'',
-    flag:true
+    pwdstr:''
   },
-  give:function(){
-    let that = this;
-      // 分享
-      api.postJSON('api/gift/share_callback', {
-        token: app.globalData.token,
-        order_id: that.data.order_id,
-        act: 0
-      }, function (res) {
-        if (res.data.status == 1) {
-          // wx.redirectTo({
-          //   url: '../../../../my/sendgift/sendgift'
-          // })
-        } else {
-          wx.showModal({
-            content: res.data.msg,
-          })
-          return false;
-        }
-        console.log(res)
-      })
-    },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    console.log(app.globalData.makecard)
+    console.log(options)
     var order_id = options.order_id;
+    var that = this;
     if(!order_id){
       wx.showModal({
         title: '订单ID不存在',
         content: '',
       })
     }
+    api.postJSON('api/gift/share_callback', {
+      token: app.globalData.token,
+      order_id: order_id,
+      act: 0
+    }, function (res) {
+      if (res.data.status == 1) {
+        that.setData({
+          pwdstr: res.data.data.pwdstr
+        })
+      } else {
+        wx.showModal({
+          content: res.data.msg,
+        })
+      }
+      console.log(res)
+    })
     this.setData({
       order_id:order_id
     })
@@ -96,7 +92,7 @@ Page({
   onShareAppMessage: function () {
     let url = null;
     // if (app.globalData.give.order_type == 1) {
-    url = '/pages/card/go?id=' + app.globalData.makecard + '&type=' + app.globalData.give.order_type + '&order_id=' + app.globalData.give.order_id;
+    url = '/pages/card/go?id=' + app.globalData.makecard + '&type=' + app.globalData.give.order_type + '&order_id=' + app.globalData.give.order_id + '&pwdstr=' + this.data.pwdstr
     // } else {
     //   url = '/pages/turntable/turntable?order_id=' + this.data.order_id;
     // }

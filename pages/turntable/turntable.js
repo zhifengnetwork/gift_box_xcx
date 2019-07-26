@@ -29,7 +29,7 @@ Page({
     mask: true,            /**遮罩层 */
     win_id: false,          /**中奖者 */
     win_Name:[],
-    win: true,             /**礼物 */
+    win: false,             /**礼物 */
     wisecrack: false,       /**俏皮话 */
     wisecrack_t1: '',
     wisecrack_t2:'',
@@ -71,9 +71,27 @@ Page({
   },
   // 领取礼物
   win_get:function(){
-    wx.redirectTo({
-      url: '../commodity/detalis/give/GetTheGift/GetTheGift?order_id' + this.data.order_id,
-    })
+    let that = this;
+    api.postJSON('api/gift/receive_join', {
+      'token': app.globalData.token,
+      'order_id': that.data.order_id,
+      'join_type': 1,
+      'pwdstr': that.data.pwdstr
+    },
+      function (res) {
+        if (res.data.status == 1) {
+            console.log(res.data.data.type)
+            wx.redirectTo({
+              url: '../commodity/detalis/give/GetTheGift/GetTheGift?order_id' + this.data.order_id,
+            })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+        console.log(res);
+      })
   },
   start_time:function(){
     let that = this;
@@ -81,7 +99,7 @@ Page({
       'token': app.globalData.token,
       'order_id': that.data.order_id,
       'join_type': 2,
-      'pwdstr':''
+      'pwdstr': that.data.pwdstr
     },
     function(res){
       if (res.data.status==1){
@@ -227,6 +245,7 @@ Page({
         }
         that.setData({
           order_id: options.order_id,
+          pwdstr: options.pwdstr,
           award: that.data.rouletteData.award
         })
         that.selectComponent('#roulette').award(that.data.rouletteData);

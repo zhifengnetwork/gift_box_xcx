@@ -23,7 +23,8 @@ Page({
     address:'',
     mobile:'',
     is_default:0,
-    flag:''
+    flag:'',
+    again:''
   },
   //默认按钮选中取消事件
   switchChange: function (e) {
@@ -93,7 +94,12 @@ Page({
         })
         setTimeout(function () {
           console.log(that.data.flag)
-          if(that.data.flag){
+          console.log(that.data.again)
+          if (that.data.flag && that.data.again){
+            wx.redirectTo({
+              url: '../site?again=' + true,
+            });
+          } else if (that.data.flag){
             wx.redirectTo({
               url: '../site?award=' + true,
             });
@@ -174,7 +180,11 @@ Page({
     if (options.award){
       this.data.flag=true;
     }
-    this.setData({flag: this.data.flag})
+    console.log(options)
+    if (options.again) {
+      this.data.again=true;
+    }
+    this.setData({ flag: this.data.flag, again: this.data.again})
     this.animation = animation;
     if (!options.item){
       return false;

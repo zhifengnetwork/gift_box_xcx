@@ -3,7 +3,7 @@ page{
 }
 .newsite_nav{
   height: 115rpx;
-  border-bottom: 2rpx solid #D8D8D8;
+  /* border-bottom: 2rpx solid #D8D8D8; */
   background: #fff;
 }
 .newsite_box{
@@ -12,6 +12,7 @@ page{
   border-bottom: 2rpx solid #eee;
   background: #fff;
 }
+
 .newsite_button{
   height: 100rpx;
 }
@@ -35,7 +36,7 @@ page{
   margin-left: 20rpx;
 }
 .newsite_city{
-  float: left;
+  float: right;
   margin-left: 20rpx;
   font-size:28rpx;
   font-family:SourceHanSansCN-Regular;

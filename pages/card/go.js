@@ -17,6 +17,11 @@ Page({
       this.setData({
         url: this.data.url + '?card_id=' + id
       })
+    }else{
+      wx.showModal({
+        title: '盒子错误',
+        content: '没有id',
+      })
     }
 
     console.log(this.data.url)

@@ -9,12 +9,17 @@ Page({
   data: {
     site:[],
     award:false,
+    again:false,
     bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
     invoice_id:''
   },
   // 跳转到添加地址
   newsite: function () {
-    if (this.data.award) {
+    if (this.data.award && this.data.again) {
+      wx.redirectTo({
+        url: 'newsite/newsite?again=' + true +'&award='+true,
+      })
+    } else if (this.data.award){
       wx.redirectTo({
         url: 'newsite/newsite?award='+true,
       })
@@ -26,13 +31,17 @@ Page({
   },
   award:function(e){
     var that=this
-    let addid = e.currentTarget.dataset.address_id
+    let address_id = e.currentTarget.dataset.address_id
  
-    if(this.data.award){
-      console.log('++++++++++')
-      console.log(addid)
+    if(this.data.award&&this.data.again){
       wx.redirectTo({
-        url: '../commodity/detalis/payment/award/award?address_id=' + addid + '&invoice_id=' + that.data.invoice_id,
+        url: '../commodity/detalis/give/GetTheGift/GetTheGift?address_id=' + address_id,
+      })
+    } else if (this.data.award){
+      console.log('++++++++++')
+      console.log(address_id)
+      wx.redirectTo({
+        url: '../commodity/detalis/payment/award/award?address_id=' + address_id + '&invoice_id=' + that.data.invoice_id,
       })
     }
   },
@@ -44,10 +53,11 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-
-    this.setData({
-      invoice_id: options == undefined ? "" : options.invoice_id
-    })
+    if (options){
+      this.setData({
+        invoice_id: options.invoice_id == undefined ? "" : options.invoice_id
+      })
+    }
 
     let that = this;
     api.postJSON('api/user/address_list',
@@ -74,7 +84,13 @@ Page({
         award: false
       })
     }
-    
+    if (options.again) {
+      this.setData({
+        award: true,
+        again: true
+      })
+    }
+
   },
   remove: function (e){
     let that = this;

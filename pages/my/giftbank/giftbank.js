@@ -216,7 +216,7 @@ Page({
         content: '',
       })
     }
-    console.log('ooooooooooo')
+    console.log('ooooooooooo', order_id)
     wx.navigateTo({
       url: '../../commodity/detalis/give/giftbag/giftbag?order_id=' + order_id,
     })
