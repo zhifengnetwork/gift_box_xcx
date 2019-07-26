@@ -30,10 +30,10 @@
       <view class="reward_bottnum">共{{item.goods_num}}件商品</view>
       <view class="reward_bottprice">合计：HK${{item.goods_price*item.goods_num}}</view>
     </view>
-    <view class="reward_button" wx:if="{{item.shipping_status==1 && item.order_status==1}}">
+    <view class="reward_button">
       <view class="reward_cancel" wx:if="{{!refund_id}}" data-id="{{item.order_id}}" id="{{item.order_id}}" bindtap="selectormode">申請退款</view>
-      <view class="reward_cancel">查看物流</view>
-      <view class="reward_payment" data-id="{{item.order_id}}" id="{{item.order_status}}" bindtap="shouhuo" >確認收貨</view>
+      <view class="reward_cancel" wx:if="{{item.shipping_status==1 && item.order_status==1}}">查看物流</view>
+      <view class="reward_payment" data-id="{{item.order_id}}" id="{{item.order_status}}" bindtap="shouhuo"  wx:if="{{item.shipping_status==1 && item.order_status==1}}">確認收貨</view>
     </view>
   </view>
   <view class="tips" wx:if="{{!item}}">暂无数据哦!</view>

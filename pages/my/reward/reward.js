@@ -19,9 +19,10 @@ Page({
   },
   getData:function(){
     let that = this;
-    api.postJSON('api/order/order_list', {
+    api.postJSON('api/order/gift_list', {
       'token': app.globalData.token,
       'order_type': 0,
+      'page': 1,
       'num': 200
     }, function (res) {
       if (res.data.status == 1) {
