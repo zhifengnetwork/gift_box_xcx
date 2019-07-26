@@ -240,12 +240,14 @@
   text-align: center;
   line-height: 90rpx;
   color: #fff;
-  position: absolute;
-  top: 70%;
+  position: fixed;
+  top: 900rpx;
   left: 50%;
   transform: translate(-50%);
   z-index: 3;
 }
 .body{
   padding-bottom: 80rpx;
+  width: 100%;
+  overflow: hidden;
 }

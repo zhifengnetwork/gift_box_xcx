@@ -161,8 +161,15 @@ Page({
             gerren: "个人"
           });
           that.setData({
-            unit_show: true
+            unit_show:true
           });
+          var xiang = that.data.items;
+          xiang[1].checked = false;
+          xiang[0].checked = true
+
+          that.setData({
+            items: xiang
+          })
 
 
         } else {
@@ -179,6 +186,7 @@ Page({
           that.setData({
             items: xiang
           })
+         
 
         }
         if (res.data.data.invoice_desc === "购物卡") {
@@ -265,26 +273,53 @@ Page({
       })
       return false;
     }
+    if (that.data.unit_show == true){
 
-    api.postJSON('/api/order/edit_invoice?token=' + app.globalData.token + '&invoice_title=' + this.data.invoice_title + '&taxpayer=' + this.data.taxpayer + '&invoice_mobile=' + this.data.invoice_mobile + '&invoice_email=' + this.data.invoice_email + '&invoice_desc=' + this.data.invoice_desc,
-      function (res) {
-        if (res.data.status == 1) {
-          wx.showToast({
-            title: '提交成功',
-            icon: 'success',
-            duration: 2000
-          })
-          wx.navigateTo({
-            url: '../../commodity/detalis/payment/award/award?address_id=' + that.data.address_id + '&invoice_id=' + res.data.data
-          })
+      api.postJSON('/api/order/edit_invoice?token=' + app.globalData.token +'&invoice_mobile=' + this.data.invoice_mobile + '&invoice_email=' + this.data.invoice_email + '&invoice_desc=' + this.data.invoice_desc,
+        function (res) {
+          if (res.data.status == 1) {
+            wx.showToast({
+              title: '提交成功',
+              icon: 'success',
+              duration: 2000
+            })
+            wx.navigateTo({
+              url: '../../commodity/detalis/payment/award/award?address_id=' + that.data.address_id + '&invoice_id=' + res.data.data
+            })
 
-        } else {
-          wx.showModal({
-            title: res.data.msg,
-            content: '',
-          })
-        }
-      })
+          } else {
+            wx.showModal({
+              title: res.data.msg,
+              content: '',
+            })
+          }
+        })
+
+    }else{
+       
+      api.postJSON('/api/order/edit_invoice?token=' + app.globalData.token + '&invoice_title=' + this.data.invoice_title + '&taxpayer=' + this.data.taxpayer + '&invoice_mobile=' + this.data.invoice_mobile + '&invoice_email=' + this.data.invoice_email + '&invoice_desc=' + this.data.invoice_desc,
+        function (res) {
+          if (res.data.status == 1) {
+            wx.showToast({
+              title: '提交成功',
+              icon: 'success',
+              duration: 2000
+            })
+            wx.navigateTo({
+              url: '../../commodity/detalis/payment/award/award?address_id=' + that.data.address_id + '&invoice_id=' + res.data.data
+            })
+
+          } else {
+            wx.showModal({
+              title: res.data.msg,
+              content: '',
+            })
+          }
+        })
+
+
+    }
+    
   }
 
 })
