@@ -197,7 +197,7 @@ page{
 .start_info{
   position: absolute;
   left: 160rpx;
-  bottom: 440rpx;
+  top: 820rpx;
   width: 440rpx;
   font-size: 30rpx;
 }
