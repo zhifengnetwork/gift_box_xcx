@@ -45,6 +45,8 @@ Page({
     });
 
     this.get_invoice();
+    
+    console.log("来源"+this.data.source)
 
   },
 
@@ -283,9 +285,24 @@ Page({
               icon: 'success',
               duration: 2000
             })
-            wx.navigateTo({
-              url: '../../commodity/detalis/payment/award/award?address_id=' + that.data.address_id + '&invoice_id=' + res.data.data
-            })
+
+            console.log('来源555555555555 ' + that.data.source)
+
+            if (that.data.source == 'cashgift'){
+              wx.navigateTo({
+                url: '../../commodity/detalis/give/cashgift/cashgift?invoice_id=' + res.data.data
+              })
+
+            }else{
+              wx.navigateTo({
+                url: '../../commodity/detalis/payment/award/award?address_id=' + that.data.address_id + '&invoice_id=' + res.data.data
+              })
+
+            }
+
+
+            
+
 
           } else {
             wx.showModal({
@@ -305,9 +322,21 @@ Page({
               icon: 'success',
               duration: 2000
             })
-            wx.navigateTo({
-              url: '../../commodity/detalis/payment/award/award?address_id=' + that.data.address_id + '&invoice_id=' + res.data.data
-            })
+
+
+            if (that.data.source == 'cashgift') {
+              wx.navigateTo({
+                url: '../../commodity/detalis/give/cashgift/cashgift?invoice_id=' + res.data.data
+              })
+
+            } else {
+              wx.navigateTo({
+                url: '../../commodity/detalis/payment/award/award?address_id=' + that.data.address_id + '&invoice_id=' + res.data.data
+              })
+
+            }
+
+
 
           } else {
             wx.showModal({

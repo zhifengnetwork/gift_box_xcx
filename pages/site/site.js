@@ -46,7 +46,7 @@ Page({
     console.log(options)
 
     this.setData({
-      invoice_id: options.invoice_id == undefined ? "" : options.invoice_id
+      invoice_id: options == undefined ? "" : options.invoice_id
     })
 
     let that = this;
@@ -63,11 +63,18 @@ Page({
       }
      
     })
-    if (options.award){
+    if(options !=undefined){
+      if (options.award) {
+        this.setData({
+          award: true
+        })
+      }      
+    }else{
       this.setData({
-        award:true
+        award: false
       })
     }
+    
   },
   remove: function (e){
     let that = this;
@@ -84,8 +91,9 @@ Page({
           duration: 2000
         })
         setTimeout(function () {
+          console.log("666")
           that.onLoad()
-        }, 2000)
+        }, 100)
       }
       console.log(res)
     })

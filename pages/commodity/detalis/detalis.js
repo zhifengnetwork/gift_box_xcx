@@ -333,7 +333,9 @@ Page({
   checkPrice: function () {
     var goods = this.data.goods_spec_list;
     var spec = ""
-  
+    if(goods.length===1){
+      return false
+    }
     if (goods) {
       for (var i = 0; i < goods.length; i++) {
         for (var j = 0; j < goods[i].length; j++) {

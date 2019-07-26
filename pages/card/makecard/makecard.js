@@ -175,9 +175,9 @@ Page({
     },
     function (res) {
       if (!app.globalData.makecard){
-        app.globalData.makecard = res.data.id;
+        app.globalData.makecard = res.data.data.id;
         that.setData({
-          box_id: res.data.id
+          box_id: res.data.data.id
         })
       }else{
         return false;

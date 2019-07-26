@@ -250,4 +250,5 @@
   padding-bottom: 80rpx;
   width: 100%;
   overflow: hidden;
+  margin-top: 20rpx
 }
