@@ -24,20 +24,37 @@ Page({
     address_id:'',
     invoice_id:'',
     shipping_price:'',
-    order_num:''
+    order_num:'',
+    order_id:''
   },
 
   show: function() {
-
+    var that=this;
     this.setData({
       flag: false
     });
-
-    // api.getJSON('/api/order/submitOrder?token=' + app.globalData.token + '&order_type=0', function(res) {
-    //   if (res.data.status == 1) {
-    //     console.log("已经生成订单了")
-    //   }
-    // })
+    if (that.data.address_id == '' || that.data.address_id==undefined){
+      wx.showToast({
+        icon: 'none',
+        title: "请先添加地址",
+        duration: 2500
+      })
+      this.setData({
+        flag: true
+      });
+     
+    }else{
+      this.setData({
+        flag: false
+      });
+      api.getJSON('/api/order/submitOrder?token=' + app.globalData.token + '&order_type=0' + '&address_id=' + this.data.address_id + '&invoice_id=' + this.data.invoice_id, function (res) {
+        if (res.data.status == 1) {
+          console.log("已经生成订单了");
+          that.setData({ order_id: res.data.data })
+        }
+      })
+    }
+   
 
   },
   hide: function() {
@@ -53,50 +70,50 @@ Page({
       duration: 2500
     })
   },
-  wxpay: function() {
-    let that = this;
-    console.log(app.globalData.give)
-    api.postJSON('api/pay/order_wx_pay', {
-        'token': app.globalData.token,
-        'order_id': app.globalData.dingdang_id
-      },
-      function(res) {
-        console.log(res)
-        if (res.data.status == 1) {
-          wx.requestPayment({
-            timeStamp: res.data.data.timeStamp,
-            nonceStr: res.data.data.nonceStr,
-            package: res.data.data.package,
-            signType: 'MD5',
-            paySign: res.data.data.paySign,
-            success(res) {
-              wx.showToast({
-                icon: 'none',
-                title: "支付成功",
-                duration: 2500
-              })
-              app.globalData.dingdang_id = '';
-              wx.redirectTo({
-                url: '../../../../my/reward/reward'
-              })
-            },
-            fail(res) {
-              wx.showToast({
-                icon: 'none',
-                title: "支付失败",
-                duration: 2500
-              })
-            }
-          })
-        } else {
-          wx.showToast({
-            icon: 'none',
-            title: res.data.msg,
-            duration: 2500
-          })
-        }
-      })
-  },
+  // wxpay: function() {
+  //   let that = this;
+  //   console.log(app.globalData.give)
+  //   api.postJSON('api/pay/order_wx_pay', {
+  //       'token': app.globalData.token,
+  //       'order_id': app.globalData.dingdang_id
+  //     },
+  //     function(res) {
+  //       console.log(res)
+  //       if (res.data.status == 1) {
+  //         wx.requestPayment({
+  //           timeStamp: res.data.data.timeStamp,
+  //           nonceStr: res.data.data.nonceStr,
+  //           package: res.data.data.package,
+  //           signType: 'MD5',
+  //           paySign: res.data.data.paySign,
+  //           success(res) {
+  //             wx.showToast({
+  //               icon: 'none',
+  //               title: "支付成功",
+  //               duration: 2500
+  //             })
+  //             app.globalData.dingdang_id = '';
+  //             wx.redirectTo({
+  //               url: '../../../../my/reward/reward'
+  //             })
+  //           },
+  //           fail(res) {
+  //             wx.showToast({
+  //               icon: 'none',
+  //               title: "支付失败",
+  //               duration: 2500
+  //             })
+  //           }
+  //         })
+  //       } else {
+  //         wx.showToast({
+  //           icon: 'none',
+  //           title: res.data.msg,
+  //           duration: 2500
+  //         })
+  //       }
+  //     })
+  // },
   /**
    * 生命周期函数--监听页面加载
    */
@@ -259,7 +276,8 @@ Page({
         goods: res.data.data.goods,
         shipping_price: res.data.data.shipping_price,
         order_num: res.data.data.order_num,
-        order_amount: res.data.data.order_amount
+        order_amount: res.data.data.order_amount,
+        address_id: res.data.data.addr_res.address_id
 
 
 
@@ -333,7 +351,7 @@ Page({
     this.setData({
       flag: true
     });
-    api.getJSON('/api/pay/order_wx_pay?order_id=' + app.globalData.dingdang_id + '&user_note=' + this.data.context + '&token=' + app.globalData.token, function(res) {
+    api.getJSON('/api/pay/order_wx_pay?order_id=' + this.data.order_id + '&user_note=' + this.data.context + '&token=' + app.globalData.token, function(res) {
 
       if (res.data.status == 1) {
         wx.requestPayment({
@@ -343,20 +361,15 @@ Page({
           signType: 'MD5',
           paySign: res.data.data.paySign,
           success(res) {
-            console.log(res);
-            // order_type为0的时候，跳转到犒劳自己页面，否则切换到已付款页面
-            // if (e.target.id == 0) {
-            //   wx.navigateTo({
-            //     url: '../reward/reward',
-            //   })
-            // } else {
-            //   that.setData({
-            //     currentTab: 1,
-            //   })
-            // }
+            console.log(res); 
+            wx.navigateTo({
+              url: '../../../../my/reward/reward',
+            })
           },
           fail(res) {
-            console.log(res)
+            wx.navigateTo({
+              url: '../../../../my/giftbank/giftbank',
+            })
           }
         })
 

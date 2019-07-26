@@ -73,17 +73,27 @@ Page({
       }
      
     })
-    if (options.award){
+    if(options !=undefined){
+      if (options.award) {
+        this.setData({
+          award: true
+        })
+      }      
+    }else{
       this.setData({
-        award:true
+        award: false
       })
     }
+<<<<<<< HEAD
     if (options.again) {
       this.setData({
         award: true,
         again: true
       })
     }
+=======
+    
+>>>>>>> 4c9412647375728ce7b26590d6c6dcafef4e307e
   },
   remove: function (e){
     let that = this;
@@ -100,8 +110,9 @@ Page({
           duration: 2000
         })
         setTimeout(function () {
+          console.log("666")
           that.onLoad()
-        }, 2000)
+        }, 100)
       }
       console.log(res)
     })

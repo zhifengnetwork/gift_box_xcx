@@ -44,9 +44,25 @@ Page({
     })
   },
   kaolao:function(){
-    wx.navigateTo({
-      url: '../commodity/detalis/payment/award/award?buyao=0'
-    })
+    
+    var no_select=0;
+    for(var i=0;i<this.data.items.length;i++){
+      if (this.data.items[i].selected == 0){
+        no_select++
+      }
+    }
+    if (no_select===this.data.items.length){
+      wx.showToast({
+        icon: 'none',
+        title: "请先选择商品",
+        duration: 2500
+      })
+    }else{
+      wx.navigateTo({
+        url: '../commodity/detalis/payment/award/award?buyao=0'
+      })
+    }
+    
   },
   /**
    * 生命周期函数--监听页面加载

@@ -31,6 +31,9 @@ Page({
             paySign: res.data.data.paySign,
             success(res) {
               console.log(res);
+              wx.navigateTo({
+                url: '../shoppingcard',
+              })
             },
             fail(res) {
               console.log(res)

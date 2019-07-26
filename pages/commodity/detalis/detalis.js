@@ -333,74 +333,84 @@ Page({
   checkPrice: function () {
     var goods = this.data.goods_spec_list;
     var spec = ""
-  
-    if (goods) {
-      for (var i = 0; i < goods.length; i++) {
-        for (var j = 0; j < goods[i].length; j++) {
-          if (goods[i][j].isClick == 1) {
-            if (spec == "")
-              spec = goods[i][j].item_id
-            else
-              spec = spec + "_" + goods[i][j].item_id
+    if(goods.length <= 1){
+     
+     
+
+    }
+    else{
+      if (goods) {
+        for (var i = 0; i < goods.length; i++) {
+          for (var j = 0; j < goods[i].length; j++) {
+            if (goods[i][j].isClick == 1) {
+              if (spec == "")
+                spec = goods[i][j].item_id
+              else
+                spec = spec + "_" + goods[i][j].item_id
+            }
           }
         }
-      }
-  
-      var specs = spec.split("_");
-      for (var i = 0; i < specs.length; i++) {
-        specs[i] = parseInt(specs[i])
-      }
-      specs.sort(function (a, b) {
-        return a - b
-      });
-      spec = ""
-      for (var i = 0; i < specs.length; i++) {
-        if (spec == "")
-          spec = specs[i]
-        else {
-          spec = spec + "_" + specs[i];
-         
+
+        var specs = spec.split("_");
+        for (var i = 0; i < specs.length; i++) {
+          specs[i] = parseInt(specs[i])
         }
-      }
-     
-      // 收藏组合
-      var zuhe = [];
-      var ss = 0;
-      for (var st in this.data.goodssss) {
-        zuhe.push(st)
-      }
-      console.log('-----')
-      console.log(spec)
-      console.log('-----')
-      for (var i = 0; i < zuhe.length; i++) {
-        //有该组合的时候
-        if (zuhe[i] === spec) {
-          var price = this.data.goodssss[spec].price;
-          var name = this.data.goodssss[spec].name;
-          var sku_id = this.data.goodssss[spec].sku_id;
-          var imgimg = this.data.goodssss[spec].img;
-          var store_count = this.data.goodssss[spec].store_count
-          this.setData({
-            price: price,
-            name: name,
-            sku_id: sku_id,
-            imgimg: imgimg,
-            store_count: store_count
-          });
-        } else {
-          ss++
+        specs.sort(function (a, b) {
+          return a - b
+        });
+        spec = ""
+        for (var i = 0; i < specs.length; i++) {
+          if (spec == "")
+            spec = specs[i]
+          else {
+            spec = spec + "_" + specs[i];
+
+          }
         }
-      }
-      console.log(ss)
-      if (ss === zuhe.length) {
-        wx.showToast({
-          icon: 'none',
-          title: "没有该组合",
-          duration: 500
-        })
+
+        // 收藏组合
+        var zuhe = [];
+        var ss = 0;
+        for (var st in this.data.goodssss) {
+          zuhe.push(st)
+        }
+        console.log('-----')
+        console.log(spec)
+        console.log('-----')
+        for (var i = 0; i < zuhe.length; i++) {
+          //有该组合的时候
+          if (zuhe[i] === spec) {
+            var price = this.data.goodssss[spec].price;
+            var name = this.data.goodssss[spec].name;
+            var sku_id = this.data.goodssss[spec].sku_id;
+            var imgimg = this.data.goodssss[spec].img;
+            var store_count = this.data.goodssss[spec].store_count
+            this.setData({
+              price: price,
+              name: name,
+              sku_id: sku_id,
+              imgimg: imgimg,
+              store_count: store_count
+            });
+          } else {
+            ss++
+          }
+        }
+        console.log(ss)
+        if (ss === zuhe.length) {
+          wx.showToast({
+            icon: 'none',
+            title: "没有该组合",
+            duration: 500
+          })
+        }
+
       }
 
     }
+ 
+
+
   },
   //加减商品数量
   reduceProduct: function () {
