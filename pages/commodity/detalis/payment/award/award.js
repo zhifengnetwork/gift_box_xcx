@@ -33,7 +33,7 @@ Page({
     this.setData({
       flag: false
     });
-    if(that.data.address_id==''){
+    if (that.data.address_id == '' || that.data.address_id==undefined){
       wx.showToast({
         icon: 'none',
         title: "请先添加地址",
