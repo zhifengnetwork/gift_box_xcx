@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 14,
+			"current": 15,
 			"list": [
 				{
 					"id": -1,
@@ -153,6 +153,13 @@
 					"name": "礼盒",
 					"pathName": "pages/commodity/detalis/give/GetTheGift/GetTheGift",
 					"query": "card_id=506&type=1&order_id=2895&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDMwNzY3NSwiZXhwIjoxNTY0MzQzNjc1LCJ1c2VyX2lkIjoyODk1fQ.A-57frG7cyDBD5FBiVbI3PPmMBY28qLyMw2eLz_7GOQ",
+					"scene": null
+				},
+				{
+					"id": 15,
+					"name": "积分支付",
+					"pathName": "pages/commodity/detalis/give/integral/integral",
+					"query": "order_id=2903",
 					"scene": null
 				}
 			]
