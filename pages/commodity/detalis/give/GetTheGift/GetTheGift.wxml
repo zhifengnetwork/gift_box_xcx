@@ -38,11 +38,11 @@
     <view class="pop-up_box_c">
       <text class="pop-up_box_c_name">{{address.consignee}}</text>
       <text class="pop-up_box_c_num">{{address.mobile}}</text>
-      <view class="pop-up_box_c_site">{{address.province}} {{address.city}} {{address.district}} {{address.address}}</view>
+      <view class="pop-up_box_c_site">{{address.province_name}} {{address.city_name}} {{address.district_name}} {{address.address}}</view>
     </view>
     <view class="pop-up_b">
       <view class="pop-up_bl" bindtap="again">重新選擇</view>
-      <view class="pop-up_br" bindtap="tiaozhuan">確認無誤</view>
+      <view class="pop-up_br" bindtap="querenwuwu">確認無誤</view>
     </view>
   </view>
 </view>

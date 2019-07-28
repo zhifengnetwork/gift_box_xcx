@@ -31,8 +31,6 @@ Page({
       })
     }
 
-    
-
     console.log(this.data.url)
   },
 
