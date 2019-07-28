@@ -17,10 +17,13 @@ Page({
     var type = options.type;
     var order_id = options.order_id;
     var pwdstr = options.pwdstr;
+    var url = this.data.url + '?card_id=' + id + '&type=' + type + '&order_id=' + order_id + '&pwdstr=' + pwdstr
+    
     if(id){
       this.setData({
-        url: this.data.url + '?card_id=' + id + '&type=' + type + '&order_id=' + order_id + '&pwdstr=' + pwdstr
+        url: url
       })
+      console.log(url)
     }else{
       wx.showModal({
         title: '盒子错误',
@@ -59,7 +62,7 @@ Page({
    */
   onUnload: function () {
     
-    audioCtx.pause();//播放停止
+   
     
   },
 

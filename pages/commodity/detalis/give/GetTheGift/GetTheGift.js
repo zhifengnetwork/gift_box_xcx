@@ -49,10 +49,21 @@ Page({
           url: '../authorize/authorize',//授权页面
         })
       }
+      that.loadData(options);
     })
+        
+  },
+
+
+  /**
+   * 加载数据
+   */
+  loadData:function(options){
+    var that = this
+    
     let address_id = options.address_id == undefined ? '' : options.address_id;
     let order_id = options.order_id == undefined ? '' : options.order_id;
-    if(order_id == "" || order_id == undefined){
+    if (order_id == "" || order_id == undefined) {
       wx.showModal({
         title: 'order_id不能为空',
         content: '',
@@ -65,41 +76,47 @@ Page({
         content: '',
       })
     }
-   
-    console.log(options)
-    if (address_id){
+
+ 
+    if (address_id) {
       address_id = options.address_id;
-      api.postJSON('api/gift/set_address',{
+      api.postJSON('api/gift/set_address', {
         'token': app.globalData.token,
         'addressid': address_id,
         'joinid': pwdstr
       },
-      function(res){
+        function (res) {
 
-      })
+        })
     }
-    api.postJSON('api/order/get_order_info',{
+
+
+    api.postJSON('api/order/get_order_info', {
       'order_id': order_id,
     },
-    function(res){
-      if(res.data.status==1){
-        that.setData({
-          goods: res.data.data.order,
-          address: res.data.data.address
-        })
-      }else{
-        wx.showToast({
-          icon: 'none',
-          title: res.data.msg,
-          duration: 2500
-        })
-        that.setData({
-          active:false
-        })
-      }
-      console.log(res.data)
-    })
+      function (res) {
+        console.log(res.data);
+        if (res.data.status == 1) {
+          that.setData({
+            goods: res.data.data.order,
+            address: res.data.data.address
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: 'error:'+res.data.msg,
+            duration: 2500
+          })
+          that.setData({
+            active: false
+          })
+        }
+        console.log(res.data)
+      })
   },
+
+
+
 
   /**
    * 生命周期函数--监听页面初次渲染完成
