@@ -56,7 +56,9 @@
     "pages/my/after/applyrefund/applyrefund",
     "pages/commodity/detalis/give/scene/scene",
     "pages/my/after/logistics/logistics",
-    "pages/my/zengsong/zengsong"
+    "pages/my/zengsong/zengsong",
+    "pages/message/message",
+    "pages/message/inform/inform"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -82,6 +84,12 @@
         "iconPath": "pages/public/images/index/fenglei.png",
         "selectedIconPath": "pages/public/images/index/fenglei_x.png",
         "text": "分类"
+      },
+      {
+        "pagePath": "pages/message/message",
+        "iconPath": "pages/public/images/index/zhuye.png",
+        "selectedIconPath": "pages/public/images/index/zhuye_x.png",
+        "text": "消息"
       },
       {
         "pagePath": "pages/cart/cart",

@@ -1,0 +1,52 @@
+page{
+  background:rgba(246,249,251,1);
+}
+.message_top{
+  height: 150rpx;
+  background: #fff;
+}
+.message_box{
+  height: 120rpx;
+  background: #fff;
+  border-bottom: 2rpx solid rgba(246,249,251,1);
+}
+.message_l{
+  float: left;
+  margin-left: 40rpx;
+}
+.messageimg{
+  height: 50rpx;
+  width: 50rpx;
+  overflow: hidden;
+  margin-top: 35rpx;
+}
+.messageimg image{
+  width: 100%;
+  height: 100%;
+}
+.message_c{
+  float:left;
+  margin-left: 40rpx;
+}
+.message_c view{
+  font-size:27rpx;
+  margin-top: 20rpx;
+  font-family:SourceHanSansCN-Medium;
+  font-weight:500;
+  color:rgba(68,68,68,1);
+}
+.message_c text{
+  font-size:21rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}
+.message_r{
+  float: right;
+  margin-right: 40rpx;
+  line-height: 60rpx;
+  font-size:21rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+}

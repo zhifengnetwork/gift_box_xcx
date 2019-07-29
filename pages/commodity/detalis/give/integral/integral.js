@@ -13,6 +13,16 @@ Page({
     card_mobile:''
   },
 
+
+
+  send:function () {
+    wx.showToast({
+      title: '成功',
+      icon: 'success',
+      duration: 2000
+    })
+  },
+
   /**
    * 生命周期函数--监听页面加载
    */

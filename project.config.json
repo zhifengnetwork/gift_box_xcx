@@ -161,6 +161,13 @@
 					"pathName": "pages/commodity/detalis/give/integral/integral",
 					"query": "order_id=2903",
 					"scene": null
+				},
+				{
+					"id": 16,
+					"name": "xiaoxi",
+					"pathName": "pages/message/inform/inform",
+					"query": "",
+					"scene": null
 				}
 			]
 		}
