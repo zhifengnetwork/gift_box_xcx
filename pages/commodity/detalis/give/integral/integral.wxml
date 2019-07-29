@@ -25,5 +25,5 @@
       <input type="text" class="integral_input"></input>
     </view>
   </view>
-  <view class="send">提交</view>
+  <view class="send" bindtap="send">提交</view>
 </view>

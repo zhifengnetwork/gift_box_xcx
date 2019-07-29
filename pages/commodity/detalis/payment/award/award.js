@@ -338,13 +338,11 @@ Page({
     })
   },
   jifen: function() {
-    this.setData({
-      flag: true
-    });
-    wx.showToast({
-      title: '暂时不能用积分支付',
-      icon: 'none',
-      duration: 2000
+    // this.setData({
+    //   flag: true
+    // });
+    wx.navigateTo({
+      url: '../../give/integral/integral',
     })
   },
   weixin: function() {
