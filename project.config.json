@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 15,
+			"current": 14,
 			"list": [
 				{
 					"id": -1,
@@ -142,17 +142,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 13,
 					"name": "pages/turntable/turntable",
 					"pathName": "pages/turntable/turntable",
-					"query": "",
+					"query": "order_id=2956&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDM3NDI2MSwiZXhwIjoxNTY0Mzc3ODQwLCJ1c2VyX2lkIjoyOTU2fQ.st7DnUxzQdWhHTGaxVY-OQS_HQX3oqnZROciUi3HagA",
 					"scene": null
 				},
 				{
 					"id": 14,
 					"name": "礼盒",
 					"pathName": "pages/commodity/detalis/give/GetTheGift/GetTheGift",
-					"query": "card_id=506&type=1&order_id=2895&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDMwNzY3NSwiZXhwIjoxNTY0MzQzNjc1LCJ1c2VyX2lkIjoyODk1fQ.A-57frG7cyDBD5FBiVbI3PPmMBY28qLyMw2eLz_7GOQ",
+					"query": "card_id=506&type=0&order_id=2979&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDM5MDk3MiwiZXhwIjoxNTY0Mzk0Mjg5LCJ1c2VyX2lkIjoyOTc5fQ.6gahAEzJFasFX62HU-9lhblEmCKf3VAXE7oL8sz5cYA",
 					"scene": null
 				},
 				{

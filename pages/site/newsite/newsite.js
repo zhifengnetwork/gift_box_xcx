@@ -24,7 +24,8 @@ Page({
     mobile:'',
     is_default:0,
     flag:'',
-    again:''
+    again:'',
+    pwdstr:''
   },
   //默认按钮选中取消事件
   switchChange: function (e) {
@@ -97,7 +98,7 @@ Page({
           console.log(that.data.again)
           if (that.data.flag && that.data.again){
             wx.redirectTo({
-              url: '../site?again=' + true,
+              url: '../site?again=' + true + '&pwdstr=' + that.data.pwdstr + '&joinid=' + that.data.joinid,
             });
           } else if (that.data.flag){
             wx.redirectTo({
@@ -184,7 +185,14 @@ Page({
     if (options.again) {
       this.data.again=true;
     }
-    this.setData({ flag: this.data.flag, again: this.data.again})
+    let pwdstr = options.pwdstr == undefined ? '' : options.pwdstr;
+    let joinid = options.joinid == undefined ? '' : options.joinid;
+    this.setData({ 
+      flag: this.data.flag, 
+      again: this.data.again,
+      pwdstr: pwdstr,
+      joinid: joinid
+    })
     this.animation = animation;
     if (!options.item){
       return false;

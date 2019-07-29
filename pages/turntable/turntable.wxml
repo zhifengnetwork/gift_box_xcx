@@ -40,9 +40,9 @@
     </view>
   </view>
   <!-- 过期 -->
-  <view style="display:none;">
+  <view wx:if="{{past}}">
     <image class="miss_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/miss.png"></image>
-    <view class="miss_btn">
+    <view class="miss_btn" bindtap="win_id">
       查看中奖者<text>></text><text>></text><text>></text>
     </view>
   </view>

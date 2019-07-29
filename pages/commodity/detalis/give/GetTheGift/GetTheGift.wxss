@@ -66,6 +66,10 @@
   border-radius: 86rpx;
 }
 
+button::after{
+  border: none;
+}
+
 .getthegift_b .getthegift_bc {
   width: 414rpx;
   height: 86rpx;
