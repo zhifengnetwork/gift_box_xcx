@@ -18,6 +18,13 @@ Page({
   onLoad: function (options) {
     console.log(options)
     var order_id = options.order_id;
+    var type = options.type;
+
+    this.setData({
+      order_id: order_id,
+      type:type
+    })
+
     var that = this;
     if(!order_id){
       wx.showModal({
@@ -25,6 +32,7 @@ Page({
         content: '',
       })
     }
+
     api.postJSON('api/gift/share_callback', {
       token: app.globalData.token,
       order_id: order_id,
@@ -47,10 +55,7 @@ Page({
       }
       console.log(res)
     })
-    this.setData({
-      order_id:order_id
-    })
-
+  
 
   
   },
@@ -101,12 +106,24 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
+   
     let url = null;
-    if (app.globalData.give.order_type == 1) {
+    if (this.data.type == 1 || this.data.type == '1' ) {
       url = '/pages/card/go?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr
-    } else {
+    }
+    
+    if (this.data.type == 2 || this.data.type == '2') {
       url = '/pages/card/go2?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr
     }
+    
+    if(url == null){
+      wx.showModal({
+        title: '分享出错',
+        content: '订单类型错误',
+      })
+      return false;
+    }
+    console.log('分享URL：',url)
     var nickname = app.globalData.userInfo.nickname;
     nickname = nickname == undefined ? '' : nickname;
    
