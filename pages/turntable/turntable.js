@@ -78,33 +78,33 @@ Page({
     })
   },
   start_time:function(){
-    let that = this;
-    api.postJSON('api/gift/receive_join',{
-      'token': app.globalData.token,
-      'order_id': that.data.order_id,
-      'join_type': 2,
-      'pwdstr': that.data.pwdstr
-    },
-    function(res){
-      if (res.data.status==1){
-        console.log(res.data.data.type)
-        if (res.data.data.type==1){
+    // let that = this;
+    // api.postJSON('api/gift/receive_join',{
+    //   'token': app.globalData.token,
+    //   'order_id': that.data.order_id,
+    //   'join_type': 2,
+    //   'pwdstr': that.data.pwdstr
+    // },
+    // function(res){
+    //   if (res.data.status==1){
+    //     console.log(res.data.data.type)
+    //     if (res.data.data.type==1){
+    //       that.setData({mask:false})
+    //     }else{
+    //       wx.showToast({
+    //         title: '参与成功',
+    //         icon: 'none'
+    //       })
           that.setData({mask:false})
-        }else{
-          wx.showToast({
-            title: '参与成功',
-            icon: 'none'
-          })
-          that.setData({mask:false})
-        }
-      }else{
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none'
-        })
-      }
-      console.log(res);
-    })
+    //     }
+    //   }else{
+    //     wx.showToast({
+    //       title: res.data.msg,
+    //       icon: 'none'
+    //     })
+    //   }
+    //   console.log(res);
+    // })
   },
   back:function(){
     this.setData({

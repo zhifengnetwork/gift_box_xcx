@@ -43,40 +43,40 @@ Page({
     },
     function(res){
       console.log(res)
-        wx.redirectTo({
-          url: '../giftbag/giftbag?order_id=' + app.globalData.give.order_id
-        })
+      // wx.redirectTo({
+      //   url: '../giftbag/giftbag?order_id=' + app.globalData.give.order_id
+      // })
       if(res.data.status==1){
-      //   wx.requestPayment({
-      //     timeStamp: res.data.data.timeStamp,
-      //     nonceStr: res.data.data.nonceStr,
-      //     package: res.data.data.package,
-      //     signType: 'MD5',
-      //     paySign: res.data.data.paySign,
-      //     success(res) {
-      //       wx.showToast({
-      //         icon: 'none',
-      //         title: "支付成功",
-      //         duration: 2500
-      //       })
-      //       wx.redirectTo({
-      //         url: '../giftbag/giftbag?order_id=' + app.globalData.give.order_id
-      //       })
-      //     },
-      //     fail(res) {
-      //       wx.showToast({
-      //         icon: 'none',
-      //         title: "支付失败",
-      //         duration: 2500
-      //       })
-      //     }
-      //   })
-      // }else{
-      //   wx.showToast({
-      //     icon: 'none',
-      //     title: res.data.msg,
-      //     duration: 2500
-      //   })
+        wx.requestPayment({
+          timeStamp: res.data.data.timeStamp,
+          nonceStr: res.data.data.nonceStr,
+          package: res.data.data.package,
+          signType: 'MD5',
+          paySign: res.data.data.paySign,
+          success(res) {
+            wx.showToast({
+              icon: 'none',
+              title: "支付成功",
+              duration: 2500
+            })
+            wx.redirectTo({
+              url: '../giftbag/giftbag?order_id=' + app.globalData.give.order_id
+            })
+          },
+          fail(res) {
+            wx.showToast({
+              icon: 'none',
+              title: "支付失败",
+              duration: 2500
+            })
+          }
+        })
+      }else{
+        wx.showToast({
+          icon: 'none',
+          title: res.data.msg,
+          duration: 2500
+        })
       }
     })
   },

@@ -1,4 +1,4 @@
-// pages/authorize.js
+// pages/card/go2.js
 var api = require('../../utils/api');
 var app = getApp();
 Page({
@@ -7,11 +7,10 @@ Page({
    * 页面的初始数据
    */
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo'),//获取用户信息是否在当前版本可用
-    id: '',
-    type: '',
-    order_id: '',
-    pwdstr: '',
+    id:'',
+    type:'',
+    order_id:'',
+    pwdstr:'',
   },
 
   /**
@@ -22,45 +21,45 @@ Page({
     var type = options.type == undefined ? "" : options.type;
     var order_id = options.order_id == undefined ? "" : options.order_id;
     var pwdstr = options.pwdstr == undefined ? "" : options.pwdstr;
-    var source = options.source == undefined ? "" : options.source;
     this.setData({
       id: id,
       type: type,
       order_id: order_id,
       pwdstr: pwdstr,
-      source: source
     })
-  },
-  // 微信授权
-  bindGetUserInfo: function (e) {//点击的“拒绝”或者“允许
-    if (e.detail.userInfo) {//点击了“允许”按钮，
-      var that = this;
-      api.postJSON('api/user/edit_user',{
+    app.getUserInfo(userinfo => {
+      //昵称、头像 不存在，跳转去授权
+      if (userinfo.nickname == '' && userinfo.avatar == '') {
+        wx.redirectTo({
+          url: '/pages/authorize/authorize?source=go2&id=' + id + ' &type=' + type + '&order_id=' + order_id + '&pwdstr=' + pwdstr,//授权页面
+        })
+      }
+
+      let that = this;
+      api.postJSON('api/gift/receive_join', {
         'token': app.globalData.token,
-        'nickname': e.detail.userInfo.nickName,
-        'avatar': e.detail.userInfo.avatarUrl
+        'order_id': order_id,
+        'join_type': 2,
+        'pwdstr': pwdstr
       },
-      function (res) {
-        console.log(res)
-
-        
-
-        if (!that.data.source){
-          app.globalData.userInfo = res.data.data;
-          wx.switchTab({
-            url: '../index/index',//返回首页
-          })
-        }else{
-          wx.navigateTo({
-            url: '/pages/card/go?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr,
-          })
-        }
-
+        function (res) {
+          if (res.data.status == 1) {
+            wx.navigateTo({
+              url: '/pages/card/go?id=' + id + '&type=' + type + '&order_id=' + order_id + '&pwdstr=' + pwdstr
+            })
+          } else {
+            wx.showToast({
+              title: res.data.msg,
+              icon: 'none'
+            })
+          }
+          console.log(res);
+        })
+    })
 
 
-      })
-    }
   },
+
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

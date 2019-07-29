@@ -102,11 +102,11 @@ Page({
    */
   onShareAppMessage: function () {
     let url = null;
-    // if (app.globalData.give.order_type == 1) {
-    url = '/pages/card/go?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr
-    // } else {
-    //   url = '/pages/turntable/turntable?order_id=' + this.data.order_id;
-    // }
+    if (app.globalData.give.order_type == 1) {
+      url = '/pages/card/go?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr
+    } else {
+      url = '/pages/card/go2?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr
+    }
     var nickname = app.globalData.userInfo.nickname;
     nickname = nickname == undefined ? '' : nickname;
    

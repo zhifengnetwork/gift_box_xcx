@@ -2,6 +2,7 @@
   "pages": [
     "pages/index/index",
     "pages/card/go",
+    "pages/card/go2",
     "pages/cart/cart",
     "pages/home/integral/integral",
     "pages/logs/logs",

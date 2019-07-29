@@ -25,7 +25,7 @@ Page({
       //昵称、头像 不存在，跳转去授权
       if (userinfo.nickname == '' && userinfo.avatar == '') {
         wx.redirectTo({
-          url: '../authorize/authorize', //授权页面
+          url: '/pages/authorize/authorize', //授权页面
         })
       }
       that.loadData(options);
