@@ -95,7 +95,7 @@ Page({
     //         title: '参与成功',
     //         icon: 'none'
     //       })
-          that.setData({mask:false})
+    that.setData({ mask: false, start:false})
     //     }
     //   }else{
     //     wx.showToast({

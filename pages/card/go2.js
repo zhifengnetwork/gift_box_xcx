@@ -59,7 +59,10 @@ Page({
 
 
   },
-
+  btn:function(e){
+    console.log(e.detail.formId)
+    app.save_form_id(e.detail.formId)
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -71,7 +74,6 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
   },
 
   /**
