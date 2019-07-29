@@ -20,7 +20,7 @@
 }
 .go2_text{
   position: absolute;
-  top: 680rpx;
+  top: 720rpx;
   left: 20rpx;
   right: 0;
   margin: auto;

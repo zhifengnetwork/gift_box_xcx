@@ -11,6 +11,8 @@ Page({
     type:'',
     order_id:'',
     pwdstr:'',
+    status:false,
+    msg:''
   },
 
   /**
@@ -44,9 +46,17 @@ Page({
       },
         function (res) {
           if (res.data.status == 1) {
-            wx.navigateTo({
-              url: '/pages/card/go?id=' + id + '&type=' + type + '&order_id=' + order_id + '&pwdstr=' + pwdstr
+
+              that.setData({
+                status:true,
+                msg: res.data.msg
+              })
+
+            wx.showToast({
+              title: '请点击继续',
+              icon: 'none'
             })
+
           } else {
             wx.showToast({
               title: res.data.msg,
@@ -61,7 +71,19 @@ Page({
   },
   btn:function(e){
     console.log(e.detail.formId)
-    app.save_form_id(e.detail.formId)
+    if (this.data.status){
+      app.save_form_id(e.detail.formId)
+      wx.navigateTo({
+        url: '/pages/card/go?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr
+      })
+    }else{
+      wx.showToast({
+        title: this.data.msg,
+        icon: 'none'
+      })
+    }
+
+
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
