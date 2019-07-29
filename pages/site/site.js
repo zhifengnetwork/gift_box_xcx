@@ -19,7 +19,7 @@ Page({
   newsite: function () {
     if (this.data.award && this.data.again) {
       wx.redirectTo({
-        url: 'newsite/newsite?again=' + true +'&award='+true,
+        url: 'newsite/newsite?again=' + true + '&award=' + true + '&pwdstr=' + this.data.pwdstr + '&joinid=' + this.data.joinid,
       })
     } else if (this.data.award){
       wx.redirectTo({
@@ -37,7 +37,7 @@ Page({
  
     if(this.data.award&&this.data.again){
       wx.redirectTo({
-        url: '../commodity/detalis/give/GetTheGift/GetTheGift?address_id=' + address_id + '&order_id=' + that.data.order_id + '&pwdstr=' + that.data.pwdstr,
+        url: '../commodity/detalis/give/GetTheGift/GetTheGift?address_id=' + address_id + '&order_id=' + that.data.order_id + '&pwdstr=' + that.data.pwdstr + '&type=1&joinid=' + that.data.joinid,
       })
     } else if (this.data.award){
       console.log('++++++++++')
@@ -59,8 +59,8 @@ Page({
       this.setData({
         invoice_id: options.invoice_id == undefined ? "" : options.invoice_id,
         order_id: options.order_id == undefined ? "" : options.order_id,
-        pwdstr: options.pwdstr == undefined ? "" : options.pwdstr
-        
+        pwdstr: options.pwdstr == undefined ? "" : options.pwdstr,
+        joinid: options.joinid == undefined ? "" : options.joinid
       })
     }
 

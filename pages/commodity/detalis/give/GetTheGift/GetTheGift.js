@@ -30,7 +30,6 @@ Page({
       }
       that.loadData(options);
     })
-
   },
 
   /**
@@ -42,7 +41,8 @@ Page({
     let address_id = options.address_id == undefined ? '' : options.address_id;
     let order_id = options.order_id == undefined ? '' : options.order_id;
     let pwdstr = options.pwdstr == undefined ? '' : options.pwdstr;
-
+    let type = options.type == undefined ? '' : options.type;
+    let joinid = options.joinid == undefined ? '' : options.joinid;
     //3个参数
     //如果是调试
     //https://giftbox.zhifengwangluo.com/card?card_id=506&type=1&order_id=2895&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDMwNzY3NSwiZXhwIjoxNTY0MzQzNjc1LCJ1c2VyX2lkIjoyODk1fQ.A-57frG7cyDBD5FBiVbI3PPmMBY28qLyMw2eLz_7GOQ
@@ -71,16 +71,25 @@ Page({
     this.setData({
       address_id: address_id,
       order_id: order_id,
-      pwdstr: pwdstr
+      pwdstr: pwdstr,
+      type: type,
+      joinid: joinid,
     })
 
     api.postJSON('api/order/get_order_info', {
         'order_id': order_id,
-        'address_id': address_id
+        'address_id': address_id,
+        'token': app.globalData.token,
       },
       function(res) {
         console.log(res.data);
         if (res.data.status == 1) {
+          api.postJSON('api/user/get_address_info', {
+            'address_id': res.data.data.address.address_id,
+            'token': app.globalData.token,
+          },function(res){
+            console.log(res)
+          })
           that.setData({
             goods: res.data.data.order,
             address: res.data.data.address,
@@ -151,17 +160,42 @@ Page({
   },
 
   show: function() {
-    if (!this.data.active) {
-      wx.showToast({
-        icon: 'none',
-        title: '该订单已经领取过啦!',
-        duration: 2500
+    if(this.data.type!=1){
+      let that = this;
+      api.postJSON('api/gift/receive_join', {
+        'token': app.globalData.token,
+        'order_id': that.data.order_id,
+        'join_type': 1,
+        'pwdstr': that.data.pwdstr
+      },
+      function (res) {
+        if (res.data.status == 1) {
+          console.log(res.data.data)
+          that.setData({
+            flag: false,
+            joinid: res.data.data
+          })
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+        console.log(res);
       })
-      return false;
+    }else{
+      if (!this.data.active) {
+        wx.showToast({
+          icon: 'none',
+          title: '该订单已经领取过啦!',
+          duration: 2500
+        })
+        return false;
+      }
+      this.setData({
+        flag: false
+      })
     }
-    this.setData({
-      flag: false
-    })
   },
 
   hide: function() {
@@ -173,8 +207,9 @@ Page({
    * 重新选择
    */
   again: function() {
+    console.log(this.data.joinid)
     wx.navigateTo({
-      url: '../../../../site/site?again=' + true + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr,
+      url: '../../../../site/site?again=' + true + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr + '&joinid=' + this.data.joinid,
     })
   },
   /**
@@ -184,14 +219,14 @@ Page({
     console.log('======')
     var address_id = this.data.address_id;
     console.log(address_id)
-    var pwdstr = this.data.pwdstr
+    var joinid = this.data.joinid
 
     if (address_id && address_id != undefined) {
-    
+      console.log('地址id:'+address_id,'参与id:'+joinid)
       api.postJSON('api/gift/set_address', {
         'token': app.globalData.token,
         'addressid': address_id,
-        'joinid': pwdstr
+        'joinid': joinid
       },function (res) {
 
           if(res.data.status == 1 ){

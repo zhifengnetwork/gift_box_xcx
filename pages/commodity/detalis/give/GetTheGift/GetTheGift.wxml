@@ -13,7 +13,7 @@
   </view>
   <view class="getthegift_b">
   <view class="getthegift_bt" bindtap="show">立即領取</view>
-  <view class="getthegift_bc">轉贈他人</view>
+  <button class="getthegift_bc" open-type="share">轉贈他人</button>
 </view>
  <view class="getthegift_f">
     <image src="../../../../public/images/detalis/voice_icon.png" class="getthegift_fimg"></image>
