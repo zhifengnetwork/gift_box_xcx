@@ -165,7 +165,14 @@
 				{
 					"id": 16,
 					"name": "xiaoxi",
-					"pathName": "pages/message/inform/inform",
+					"pathName": "pages/message/praise/praise",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "xiao",
+					"pathName": "pages/message/comment/comment",
 					"query": "",
 					"scene": null
 				},

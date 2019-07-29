@@ -32,7 +32,7 @@
   </view>
 </view>
 <!--評論 -->
-<view class="message_box">
+<view class="message_box" bindtap="comment">
   <view class="message_l">
     <view class="messageimg">
       <image src="/images/pinlun.png" />

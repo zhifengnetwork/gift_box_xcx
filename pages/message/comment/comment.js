@@ -1,4 +1,4 @@
-// pages/message/message.js
+// pages/message/comment/comment.js
 Page({
 
   /**
@@ -8,28 +8,17 @@ Page({
 
   },
 
-
-
-  // 跳转到通知消息
-  inform: function () {
-    wx.navigateTo({
-      url: 'inform/inform',
-    })
-  },
-
-
-  // 跳转到评论
-  comment: function () {
-    wx.navigateTo({
-      url: 'comment/comment',
-    })
-  },
-
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    // api.postJSON('api/Sharing/comment_list', {
+    //   token: app.globalData.token,
+    //   sharing_id: order_id,
+    // }, function (res) {
+    //   if (res.data.status == 1) {
+    //     console.log(res)
+    //   }
 
   },
 

@@ -1,4 +1,4 @@
-// pages/message/message.js
+// pages/message/praise/praise.js
 Page({
 
   /**
@@ -7,24 +7,6 @@ Page({
   data: {
 
   },
-
-
-
-  // 跳转到通知消息
-  inform: function () {
-    wx.navigateTo({
-      url: 'inform/inform',
-    })
-  },
-
-
-  // 跳转到评论
-  comment: function () {
-    wx.navigateTo({
-      url: 'comment/comment',
-    })
-  },
-
 
   /**
    * 生命周期函数--监听页面加载

@@ -4,7 +4,7 @@
 }
 .inform_box{
   height: 500rpx;
-  background: yellow;
+  border-bottom: 2rpx solid rgba(246,246,246,1);
 }
 .inform_t{
   height: 80rpx;
@@ -18,7 +18,6 @@
   height:80rpx;
   border-radius:50%;
   overflow: hidden;
-  background: #ccc;
 }
 .inform_timg image{
   width: 100%;
@@ -42,12 +41,14 @@
   font-weight:500;
   color:rgba(153,153,153,1);
 }
-.inform_f{
-  background: skyblue;
-}
+
 .inform_fimg{
   width: 300rpx;
   height: 330rpx;
-  background: thistle;
   float: left;
+  overflow: hidden;
+}
+.inform_fimg image{
+  width: 100%;
+  height: 100%;
 }
