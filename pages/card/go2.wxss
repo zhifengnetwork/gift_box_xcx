@@ -11,12 +11,11 @@
 }
 .go2_btn{
   position: absolute;
-  top: 660rpx;
-  left: 20rpx;
-  right: 0;
+  left: 0;
+  top: 0;
   margin: auto;
-  width: 486rpx;
-  height: 360rpx;
+  width: 100vw;
+  height: 100vh;
   background: transparent;
 }
 .go2_text{

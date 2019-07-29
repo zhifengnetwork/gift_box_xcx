@@ -1,6 +1,7 @@
+
 <view class="go2_bg">
   <image class="go2_img" src="../public/images/card/back.png"></image>
-  <view class="go2_text">点击以继续</view>
+  <view class="go2_text">点击继续</view>
   <form report-submit="true" bindsubmit="btn">
     <button class="go2_btn" form-type="submit"></button>
   </form>
