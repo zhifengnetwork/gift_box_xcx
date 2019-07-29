@@ -1,4 +1,4 @@
-<view class="my_top">
+<!-- <view class="my_top">
   <component title='' show_bol='{{true}}'></component>
 </view>
 <view class="my_t">
@@ -38,30 +38,30 @@
       <text class="my_cbox_tl">我的礼品</text>
       <text class="my_cbox_tr">></text>
     </view>
-    <view class="my_cbox_c">
+    <view class="my_cbox_c"> -->
     <!-- 礼品库 -->
-      <view class="my_cbox_cbox" bindtap="giftbank">
+      <!-- <view class="my_cbox_cbox" bindtap="giftbank">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/giftbank.png"></image>
         </view>
         <text>礼品库</text>
-      </view>
+      </view> -->
       <!-- 犒劳自己 -->
-      <view class="my_cbox_cbox" bindtap="reward">
+      <!-- <view class="my_cbox_cbox" bindtap="reward">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/reward.png"></image>
         </view>
         <text>犒勞自己</text>
-      </view>
+      </view> -->
       <!-- 已送礼物 -->
-      <view class="my_cbox_cbox" bindtap="sendgift">
+      <!-- <view class="my_cbox_cbox" bindtap="sendgift">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/sendgift.png"></image>
         </view>
         <text>已送礼物</text>
-      </view>
+      </view> -->
       <!-- 已收礼物 -->
-      <view class="my_cbox_cbox" bindtap="collectgift">
+      <!-- <view class="my_cbox_cbox" bindtap="collectgift">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/collectgift.png"></image>
         </view>
@@ -71,37 +71,189 @@
   </view>
   <view class="my_cbox">
     <view class="my_cbox_t">
-      <text class="my_cbox_tl">我的服务</text>
+      <text class="my_cbox_tl">我的服务</text> -->
       <!-- <text class="my_cbox_tr">></text> -->
-    </view>
-    <view class="my_cbox_c">
+    <!-- </view>
+    <view class="my_cbox_c"> -->
     <!-- 电子发票 -->
-      <view class="my_cbox_cbox" bindtap="invoice">
+      <!-- <view class="my_cbox_cbox" bindtap="invoice">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/invoice.png"></image>
         </view>
         <text>電子发票</text>
-      </view>
+      </view> -->
       <!-- 联系客服 -->
-      <view class="my_cbox_cbox" bindtap="service">
+      <!-- <view class="my_cbox_cbox" bindtap="service">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/service.png"></image>
         </view>
         <text>联系客服</text>
-      </view>
+      </view> -->
       <!-- 常见问题 -->
-      <view class="my_cbox_cbox" bindtap="faq">
+      <!-- <view class="my_cbox_cbox" bindtap="faq">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/faq.png"></image>
         </view>
         <text>常见问题</text>
-      </view>
+      </view> -->
       <!-- 退換/售後 -->
-      <view class="my_cbox_cbox" bindtap="after">
+      <!-- <view class="my_cbox_cbox" bindtap="after">
         <view class="my_cbox_cboximg">
           <image src="../public/images/my/alteration.png"></image>
         </view>
         <text>退換/售後</text>
+      </view>
+    </view>
+  </view>
+</view> -->
+
+
+
+<!-- 2期 -->
+<component title='' show_bol='{{true}}'></component>
+<!-- 头部 -->
+<view class="my_t">
+<!-- 头像名字区域 -->
+  <view class="my_tt">
+    <view class="my_ttl">
+      <view>{{nickname}}</view>
+      <text>NO.{{id}}</text>
+    </view>
+    <view class="my_ttr" bindtap="mydetalis">
+      <image src="{{avatar}}" />
+    </view>
+  </view>
+  <!-- 文章、个人信息区域 -->
+  <view class="my_tf">
+    <view class="my_tf_box front">
+      <view>文章</view>
+      <text>126</text>  
+    </view>
+    <view class="my_tf_box front">
+      <view>關註</view>
+      <text>5</text>
+    </view>
+    <view class="my_tf_box front">
+      <view>粉絲</view>
+      <text>8</text>
+    </view>
+    <view class="my_tf_box2">
+      <view class="back">更改封面</view>
+    </view>
+    <view class="my_tf_box2" bindtap="mydetalis">
+      <view class="back">個人信息</view>
+    </view>
+  </view>
+</view>
+<!-- 首个导航栏 -->
+<view class="my_nav_top">
+  <view class="nav_tbox" bindtap="giftbank">
+    <view class="nav_imgbox">
+      <image src="/images/lipinku.png" />
+    </view>
+    <text>禮品庫</text>
+  </view>
+  <view class="nav_tbox" bindtap="reward">
+    <view class="nav_imgbox">
+      <image src="/images/klzj.png" />
+    </view>
+    <text>犒勞自己</text>
+  </view>
+  <view class="nav_tbox" bindtap="sendgift">
+     <view class="nav_imgbox">
+      <image src="/images/yslw.png" />
+    </view>
+    <text>已送禮物</text>
+  </view>
+  <view class="nav_tbox" bindtap="collectgift">
+     <view class="nav_imgbox">
+      <image src="/images/yshoulu.png" />
+    </view>
+    <text>已收禮物</text>
+  </view>
+</view>
+
+<!-- 第二个导航栏 -->
+<view class="nav_con">
+  <view class="nav_cont" bindtap="giftcard">
+    <view class="nav_contl">
+      <view class="nav_contimgbox">
+        <image src="/images/lpk.png" />
+      </view>
+    </view>
+    <view class="nav_contc">禮品卡</view>
+    <view class="nav_contr">
+      <view class="nav_contrimg">
+        <image src="/images/right.png" />
+      </view>
+    </view>
+  </view>
+    <view class="nav_cont" bindtap="shoppingcard">
+    <view class="nav_contl">
+      <view class="nav_contimgbox">
+        <image src="/images/gwk.png" />
+      </view>
+    </view>
+    <view class="nav_contc">購物卡</view>
+    <view class="nav_contr">
+      <view class="nav_contrimg">
+        <image src="/images/right.png" />
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 第三个导航栏 -->
+<view class="nav_f">
+  <view class="nav_cont" bindtap="after">
+    <view class="nav_contl">
+      <view class="nav_contimgbox">
+        <image src="/images/tui.png" />
+      </view>
+    </view>
+    <view class="nav_contc">退還/售後</view>
+    <view class="nav_contr">
+      <view class="nav_contrimg">
+        <image src="/images/right.png" />
+      </view>
+    </view>
+  </view>
+    <view class="nav_cont" bindtap="invoice">
+    <view class="nav_contl">
+      <view class="nav_contimgbox">
+        <image src="/images/dzfp.png" />
+      </view>
+    </view>
+    <view class="nav_contc">電子發票</view>
+    <view class="nav_contr">
+      <view class="nav_contrimg">
+        <image src="/images/right.png" />
+      </view>
+    </view>
+  </view>
+   <view class="nav_cont" bindtap="service">
+    <view class="nav_contl">
+      <view class="nav_contimgbox">
+        <image src="/images/lxkf.png" />
+      </view>
+    </view>
+    <view class="nav_contc">聯系客服</view>
+    <view class="nav_contr">
+      <view class="nav_contrimg">
+        <image src="/images/right.png" />
+      </view>
+    </view>
+  </view>
+   <view class="nav_cont" bindtap="faq">
+    <view class="nav_contl">
+      <view class="nav_contimgbox">
+        <image src="/images/cjwt.png" />
+      </view>
+    </view>
+    <view class="nav_contc">常見問題</view>
+    <view class="nav_contr">
+      <view class="nav_contrimg">
+        <image src="/images/right.png" />
       </view>
     </view>
   </view>

@@ -104,7 +104,8 @@ Page({
 
     this.setData({
       invoice_mobile: e.detail.value
-    })
+    });
+   
   },
   // 获取邮箱
   getemail: function (e) {
@@ -266,7 +267,26 @@ Page({
    */
   save_invoice: function () {
     var that = this
-
+    // 正则验证手机号格式
+    if (!(/^1[34578]\d{9}$/.test(that.data.invoice_mobile))) {
+      wx.showModal({
+        title: '提示',
+        content: '請輸入正確的手機號碼',
+        showCancel: false
+        
+      })
+      return false;
+    } 
+    
+    if (!(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(that.data.invoice_email))){
+      wx.showModal({
+        title: '提示',
+        content: '請輸入正確的Email',
+        showCancel: false
+      })
+      return false;
+    }
+  
     if ((that.data.unit_show == false && that.data.invoice_title == '') || (that.data.unit_show == false && that.data.taxpayer == '')) {
       wx.showToast({
         title: '请填写纳税人识别号和单位名称',

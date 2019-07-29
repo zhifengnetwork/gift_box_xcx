@@ -1,37 +1,24 @@
-// pages/card/go.js
+// pages/message/message.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    url:'https://giftbox.zhifengwangluo.com/card'
+
+  },
+
+  inform: function () {
+    wx.navigateTo({
+      url: 'inform/inform',
+    })
   },
 
   /**
    * 生命周期函数--监听页面加载
-   *   url = '/pages/card/go?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr
    */
   onLoad: function (options) {
-    var id = options.id;
-    var type = options.type;
-    var order_id = options.order_id;
-    var pwdstr = options.pwdstr;
-    var url = this.data.url + '?card_id=' + id + '&type=' + type + '&order_id=' + order_id + '&pwdstr=' + pwdstr
-    
-    if(id){
-      this.setData({
-        url: url
-      })
-      console.log(url)
-    }else{
-      wx.showModal({
-        title: '盒子错误',
-        content: '没有id',
-      })
-    }
 
-    console.log(this.data.url)
   },
 
   /**
@@ -52,14 +39,14 @@ Page({
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    console.log(1235)
+
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-    console.log(666)
+
   },
 
   /**

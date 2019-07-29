@@ -6,7 +6,7 @@
       VIP卡号:
     </view>
     <view class="integral_inp">
-      <input type="text" class="integral_input"></input>
+      <input type="text" class="integral_input" bindinput="card_num"></input>
     </view>
   </view>
   <view class="integral_item">
@@ -14,7 +14,7 @@
       会员姓名:
     </view>
     <view class="integral_inp">
-      <input type="text" class="integral_input"></input>
+      <input type="text" class="integral_input" bindinput="card_name"></input>
     </view>
   </view>
   <view class="integral_item">
@@ -22,8 +22,8 @@
       手机号码:
     </view>
     <view class="integral_inp">
-      <input type="text" class="integral_input"></input>
+      <input type="text" class="integral_input" bindinput="card_mobile"></input>
     </view>
   </view>
-  <view class="send" bindtap="send">提交</view>
+  <view class="send" bindtap="order_jifen_pay">提交</view>
 </view>

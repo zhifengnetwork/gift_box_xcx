@@ -1,0 +1,48 @@
+<view class="message_top">
+  <component title='消息' show_bol='{{falsr}}'></component>
+</view>
+<!-- 通知消息 -->
+<view class="message_box" style="margin-top: 40rpx;" bindtap="inform">
+  <view class="message_l">
+    <view class="messageimg">
+      <image src="/images/tzxx.png" />
+    </view>
+  </view>
+  <view class="message_c">
+    <view>通知消息</view>
+    <text>靠預告續命的電視劇 看不夠啊啊啊</text>
+  </view>
+  <view class="message_r">
+    <view>11:41</view>
+  </view>
+</view>
+<!--@我的 -->
+<view class="message_box">
+  <view class="message_l">
+    <view class="messageimg">
+      <image src="/images/@wode.png" />
+    </view>
+  </view>
+  <view class="message_c">
+    <view style="line-height: 80rpx;">@我的</view>
+    <!-- <text>靠預告續命的電視劇 看不夠啊啊啊</text> -->
+  </view>
+  <view class="message_r">
+    <view style="line-height: 120rpx;">11:41</view>
+  </view>
+</view>
+<!--評論 -->
+<view class="message_box">
+  <view class="message_l">
+    <view class="messageimg">
+      <image src="/images/pinlun.png" />
+    </view>
+  </view>
+  <view class="message_c">
+    <view style="line-height: 80rpx;">評論</view>
+    <!-- <text>靠預告續命的電視劇 看不夠啊啊啊</text> -->
+  </view>
+  <view class="message_r">
+    <view style="line-height: 120rpx;">11:41</view>
+  </view>
+</view>

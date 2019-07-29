@@ -3,7 +3,7 @@ page{
   padding-top: 160rpx;
 }
 .integral_item{
-  margin-left: 100rpx;
+  margin-left: 80rpx;
   height: 100rpx;
   line-height: 100rpx;
   margin: 100rpx 100rpx;
@@ -39,7 +39,7 @@ page{
   right: 100rpx;
   bottom: 40rpx;
   margin: auto;
-  line-height: 60rpx;
+  line-height: 80rpx;
   font-size: 30rpx;
   color:#fff;
   text-align: center;

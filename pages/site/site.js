@@ -11,7 +11,9 @@ Page({
     award:false,
     again:false,
     bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
-    invoice_id:''
+    invoice_id:'',
+    order_id: '',
+    pwdstr: ''
   },
   // 跳转到添加地址
   newsite: function () {
@@ -30,12 +32,12 @@ Page({
     }
   },
   award:function(e){
-    var that=this
+    var that = this
     let address_id = e.currentTarget.dataset.address_id
  
     if(this.data.award&&this.data.again){
       wx.redirectTo({
-        url: '../commodity/detalis/give/GetTheGift/GetTheGift?address_id=' + address_id,
+        url: '../commodity/detalis/give/GetTheGift/GetTheGift?address_id=' + address_id + '&order_id=' + that.data.order_id + '&pwdstr=' + that.data.pwdstr,
       })
     } else if (this.data.award){
       console.log('++++++++++')
@@ -55,7 +57,10 @@ Page({
     console.log(options)
     if (options){
       this.setData({
-        invoice_id: options.invoice_id == undefined ? "" : options.invoice_id
+        invoice_id: options.invoice_id == undefined ? "" : options.invoice_id,
+        order_id: options.order_id == undefined ? "" : options.order_id,
+        pwdstr: options.pwdstr == undefined ? "" : options.pwdstr
+        
       })
     }
 
