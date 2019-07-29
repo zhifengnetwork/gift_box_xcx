@@ -13,10 +13,11 @@ Page({
    *   url = '/pages/card/go?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr
    */
   onLoad: function (options) {
-    var id = options.id;
-    var type = options.type;
-    var order_id = options.order_id;
-    var pwdstr = options.pwdstr;
+    var id = options.id == undefined ? "" : options.id;
+    var type = options.type == undefined ? "" : options.type;
+    var order_id = options.order_id == undefined ? "" : options.order_id;
+    var pwdstr = options.pwdstr == undefined ? "" : options.pwdstr;
+
     var url = this.data.url + '?card_id=' + id + '&type=' + type + '&order_id=' + order_id + '&pwdstr=' + pwdstr
     
     if(id){
