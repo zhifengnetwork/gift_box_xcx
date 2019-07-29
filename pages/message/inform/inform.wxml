@@ -4,7 +4,9 @@
 <view class="inform_box">
   <view class="inform_t">
     <view class="inform_tl">
-      <view class="inform_timg"></view>
+      <view class="inform_timg">
+        <image src="/images/lxkf.png" />
+      </view>
     </view>
     <view class="inform_tr">
       <view>免費修復手柄漂移問題</view>
@@ -12,14 +14,20 @@
     </view>
   </view>
   <view class="inform_f">
-    <view class="inform_fimg" style="margin: 0 50rpx;"></view>
-    <view class="inform_fimg"></view>
+    <view class="inform_fimg" style="margin: 0 50rpx;">
+       <!-- <image src="" /> -->
+    </view>
+    <view class="inform_fimg">
+       <!-- <image src="" /> -->
+    </view>
   </view>  
 </view>
 <view class="inform_box">
   <view class="inform_t">
     <view class="inform_tl">
-      <view class="inform_timg"></view>
+      <view class="inform_timg">
+        <!-- <image src="" /> -->
+      </view>
     </view>
     <view class="inform_tr">
       <view>免費修復手柄漂移問題</view>
@@ -27,14 +35,20 @@
     </view>
   </view>
   <view class="inform_f">
-    <view class="inform_fimg" style="margin: 0 50rpx;"></view>
-    <view class="inform_fimg"></view>
+    <view class="inform_fimg" style="margin: 0 50rpx;">
+       <!-- <image src="" /> -->
+    </view>
+    <view class="inform_fimg">
+       <!-- <image src="" /> -->
+    </view>
   </view>  
 </view>
 <view class="inform_box">
   <view class="inform_t">
     <view class="inform_tl">
-      <view class="inform_timg"></view>
+      <view class="inform_timg">
+        <!-- <image src="" /> -->
+      </view>
     </view>
     <view class="inform_tr">
       <view>免費修復手柄漂移問題</view>
@@ -42,7 +56,11 @@
     </view>
   </view>
   <view class="inform_f">
-    <view class="inform_fimg" style="margin: 0 50rpx;"></view>
-    <view class="inform_fimg"></view>
+    <view class="inform_fimg" style="margin: 0 50rpx;">
+      <!-- <image src="" /> -->
+    </view>
+    <view class="inform_fimg">
+      <!-- <image src="" /> -->
+    </view>
   </view>  
 </view>

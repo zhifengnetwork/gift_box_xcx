@@ -57,7 +57,9 @@
     "pages/my/after/logistics/logistics",
     "pages/my/zengsong/zengsong",
     "pages/message/message",
-    "pages/message/inform/inform"
+    "pages/message/inform/inform",
+    "pages/message/praise/praise",
+    "pages/message/comment/comment"
   ],
   "window": {
     "backgroundTextStyle": "light",

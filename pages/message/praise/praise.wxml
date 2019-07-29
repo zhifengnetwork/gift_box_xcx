@@ -1,0 +1,64 @@
+<view class="praise_top">
+  <component title='赞' show_bol='{{falsr}}'></component>
+</view>
+<view class="praise">
+  <view class="praise_t">
+    <view class="praise_tl">
+      <view class="praise_tlimg">
+        <!-- <iamge src="" /> -->
+      </view>
+    </view>
+    <view class="praise_tc">
+      <view>敲好卡 兩集就換了</view>
+      <text>2019-07-24  16:38</text>
+    </view>
+    <view class="praise_tr">
+      <view>回復</view>
+    </view>
+  </view>
+  <view class="praise_c">
+    赞了这条微博 
+  </view>
+  <view class="praise_f">
+    <view class="praise_fl">
+      <view class="praise_flimg">
+        <!-- <image src="" /> -->
+      </view>
+    </view>
+    <view class="praise_fr">
+      <view>@MALIMALIJ</view>
+      <text>麻利麻利哄麻利麻利哄麻利麻利哄麻健康生命</text>
+    </view>
+  </view>
+</view>
+
+<view class="praise">
+  <view class="praise_t">
+    <view class="praise_tl">
+      <view class="praise_tlimg">
+        <!-- <iamge src="" /> -->
+      </view>
+    </view>
+    <view class="praise_tc">
+      <view>敲好卡 兩集就換了</view>
+      <text>2019-07-24  16:38</text>
+    </view>
+    <view class="praise_tr">
+      <view>回復</view>
+    </view>
+  </view>
+  <view class="praise_c">
+    赞了这条微博 
+  </view>
+  <view class="praise_f">
+    <view class="praise_fl">
+      <view class="praise_flimg">
+        <!-- <image src="" /> -->
+      </view>
+    </view>
+    <view class="praise_fr">
+      <view>@MALIMALIJ</view>
+      <text>麻利麻利哄麻利麻利哄麻利麻利哄麻健康生命</text>
+    </view>
+  </view>
+</view>
