@@ -1,1 +1,34 @@
 /* pages/card/go2.wxss */
+.go2_bg{
+  position: relative;
+  width: 100vw;
+  height: 100vh;
+  font-size: 0;
+}
+.go2_img{
+  width: 100%;
+  height: 100%;
+}
+.go2_btn{
+  position: absolute;
+  top: 660rpx;
+  left: 20rpx;
+  right: 0;
+  margin: auto;
+  width: 486rpx;
+  height: 360rpx;
+  background: transparent;
+}
+.go2_text{
+  position: absolute;
+  top: 680rpx;
+  left: 20rpx;
+  right: 0;
+  margin: auto;
+  width: 486rpx;
+  height: 100rpx;
+  line-height: 100rpx;
+  text-align: center;
+  font-size: 36rpx;
+  color: #e5b2c1;
+}
