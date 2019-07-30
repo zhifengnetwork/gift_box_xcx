@@ -1,0 +1,247 @@
+.sousou_ear{
+  width: 84%;
+  margin-left: 8%;
+  height: 56rpx;
+  background: rgb(245,245,245);
+  position: relative;
+  top:160rpx;
+  border-radius: 10rpx
+}
+.sousou{
+  position: absolute;
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 40rpx;
+  top: 13rpx;
+  z-index: 2
+}
+.find{
+  position: absolute;
+  top: 0;
+  left: 100rpx;
+  width: 65%;
+  height: 56rpx;
+  font-size: 25rpx
+}
+.close_pic{
+  position: absolute;
+  width: 32rpx;
+  height: 32rpx;
+  top: 13rpx;
+  right: 20rpx;
+  z-index: 2
+}
+.swiper-tab{
+  margin-top: 200rpx
+}
+.about_page{
+  margin: 0 10px;
+}
+.swiper-tab{
+    width: 60%;
+    margin-left: 20%;
+    /* border-bottom: 2rpx solid #ccc; */
+    text-align: center;
+    height: 88rpx;
+    line-height: 88rpx;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    color: #ccc;
+    font-size: 16px;
+}
+.swiper-tab-item{
+    width: 23%; 
+    color:#434343;
+    font-size: 33rpx;
+    color: gray;
+}
+.active{
+    color:black;
+    /* border-bottom: 4rpx solid #F65959; */
+    font-size: 35;
+    font-weight: bold;
+    border-bottom: 6rpx solid #ff1b37
+}
+.juzhong{
+  margin: 0 auto;
+}
+.domain{
+  background-color: #fff;
+  height: 100%;
+  margin:0 10px;
+}
+.show{
+  display: block;
+}
+.hidden{
+  display: none;
+}
+.gray{
+  background: #f5f5f5;
+  width: 100%;
+  height: 30rpx;
+}
+.top_ear{
+  width: 90%;
+  margin-left: 5%
+}
+.biji{
+  font-size: 28rpx;
+  color: gray
+}
+.biji2{
+  float: right;
+  font-size: 28rpx;
+  margin-top: 15rpx;
+  color: gray
+}
+.xiala_pic{
+  width: 20rpx;
+  height: 20rpx;
+  float: right;
+  margin-top:26rpx;
+  margin-left: 15rpx
+}
+/* 瀑布流 */
+swiper {
+  display: block !important;
+  overflow: scroll !important;
+}
+.touxiang{
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center
+}
+.case-page {
+  padding: 0 20rpx 20rpx 20rpx;
+  margin-top: 20rpx
+}
+
+.list-masonry {
+  column-count: 2;
+  column-gap: 10rpx;
+  height: 100%;
+}
+
+.item-masonry {
+  background-color: #fff;
+  break-inside: avoid;
+  box-sizing: border-box;
+  /* padding: 0  0rpx 20rpx 20rpx; */
+  padding-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+.item-masonry image {
+  width: 100%;
+}
+.biaoti{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nike{
+  margin-left: 20rpx;
+  font-size: 24rpx;
+
+}
+.user_pic{
+  display: inline-block;
+  width: 50rpx!important;
+  height: 50rpx;
+  border-radius: 50%;
+  background: red
+}
+.aixin_ear{
+  width: 200rpx;
+  height:50rpx;
+  line-height: 50rpx;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.aixin{
+   width: 30rpx!important;
+   height: 30rpx;
+}
+.love_ear{
+  width: 100%;
+  padding: 0 34rpx;
+  /* border: 1px solid green; */
+  box-sizing: border-box;
+  margin-top: 30rpx
+}
+.love_item{
+  display: inline-block;
+  width: 330rpx;
+  height: 330rpx;
+  /* border: 1px solid red; */
+  box-sizing: border-box;
+}
+.love_love{
+  display: inline-block;
+   margin-bottom: 26rpx
+}
+.love_love:nth-child(2n){
+  float: right;
+}
+.love_tile{
+  font-size: 32rpx;
+}
+.love_money{
+  font-size: 28rpx
+}
+.love_pic{
+  width: 100%;
+  height: 100%
+}
+/* 用户模块 */
+.yonghu_ear{
+  margin-top: 10rpx;
+}
+.user_item{
+  height: 150rpx;
+  display: flex;
+  align-items: center;
+  border-bottom: 1rpx solid rgba(242,242,242,1);
+}
+.user_picture{
+  display: inline-block;
+  width: 100rpx;
+  height: 100rpx;
+  border-radius: 50%;
+  background: gray;
+  vertical-align: top;
+  margin:0 30rpx;
+  float: left;
+}
+.center_ear{
+  display: inline-block;
+  vertical-align: top;
+  float:left;
+}
+.user_names{
+  font-size:27rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+}
+.user_fengsi{
+  font-size: 27rpx;
+  font-family:SourceHanSansCN-Regular;
+}
+.guanzhu{
+  float: right;
+  display: inline-block;
+  width:100rpx;
+  height:48rpx;
+  line-height: 48rpx;
+  border:2px solid rgba(255,150,162,1);
+  border-radius:10px;
+  color: rgba(255,150,162,1);
+  font-size: 28rpx;
+  text-align: center;
+  margin: 0 30rpx;
+}

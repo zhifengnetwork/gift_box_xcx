@@ -1,0 +1,136 @@
+.body {
+  margin-top: 150rpx;
+}
+
+.search {
+  width: 94%;
+  font-size: 28rpx;
+  text-align: center;
+  height: 80rpx;
+  line-height: 80rpx;
+  margin-left: 3%;
+  background: rgba(245, 245, 244, 1);
+  border-radius: 29px;
+  display: flex;
+  justify-content: center;
+  align-content: center;
+}
+
+.sousou {
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 25rpx;
+  margin-right: 15rpx;
+}
+
+/* tab切换 */
+
+.about_page {
+  margin: 0 10px;
+}
+.swiper-tab {
+  width: 100%;
+  /* border-bottom: 2rpx solid #ccc; */
+  text-align: center;
+  height: 88rpx;
+  line-height: 88rpx;
+  display: flex;
+  flex-flow: row;
+  justify-content: space-between;
+  color: #ccc;
+  font-size: 30rpx;
+}
+.swiper-tab-item {
+  width: 30%;
+  color: #434343;
+}
+
+.active {
+  color: black;
+  font-size: 32rpx;
+  font-weight: bold;
+  font-weight: bolder;
+}
+
+.juzhong {
+  margin: 0 auto;
+}
+
+.domain {
+  background-color: #fff;
+  height: 100%;
+  margin: 0 10px;
+}
+
+.show {
+  display: block;
+}
+
+.hidden {
+  display: none;
+}
+
+/* 瀑布流布局 */
+
+swiper {
+  display: block !important;
+  overflow: scroll !important;
+}
+.touxiang{
+  margin-top: 10rpx;
+  display: flex;
+  align-items: center
+}
+.case-page {
+  padding: 0 20rpx 20rpx 20rpx;
+}
+
+.list-masonry {
+  column-count: 2;
+  column-gap: 10rpx;
+  height: 100%;
+}
+
+.item-masonry {
+  background-color: #fff;
+  break-inside: avoid;
+  box-sizing: border-box;
+  /* padding: 0  0rpx 20rpx 20rpx; */
+  padding-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+.item-masonry image {
+  width: 100%;
+}
+.biaoti{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nike{
+  margin-left: 20rpx;
+  font-size: 24rpx;
+
+}
+.user_pic{
+  display: inline-block;
+  width: 50rpx!important;
+  height: 50rpx;
+  border-radius: 50%;
+  background: red
+}
+.aixin_ear{
+  width: 200rpx;
+  height:50rpx;
+  line-height: 50rpx;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.aixin{
+   width: 30rpx!important;
+   height: 30rpx;
+}

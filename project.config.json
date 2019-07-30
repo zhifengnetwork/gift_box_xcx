@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 16,
 			"list": [
 				{
 					"id": -1,
@@ -146,6 +146,26 @@
 					"name": "pages/turntable/turntable",
 					"pathName": "pages/turntable/turntable",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "享物圈",
+					"pathName": "pages/home/enjoy/enjoy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "享物圈详情",
+					"pathName": "pages/home/enjoy/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "享物圈搜索页面",
+					"pathName": "pages/home/enjoy/search/search",
 					"scene": null
 				}
 			]
