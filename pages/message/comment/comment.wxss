@@ -1,10 +1,10 @@
 page{
   background:rgba(238,238,238,1);
 }
-.comment_top{
+/* .comment_top{
   height: 150rpx;
   background: #fff;
-}
+} */
 .comment{
   background: #fff;
   height: 380rpx;

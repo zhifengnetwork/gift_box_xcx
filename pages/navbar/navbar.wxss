@@ -28,6 +28,7 @@
   /* background-color: rgba(255, 255,255, .3); */
 }
 .tabar2{
+  color: #fff;
   background: transparent !important;
 }
 .tabar2 text{
@@ -42,4 +43,7 @@
 }
 .tabar .active {
   color: #fff;
+}
+.heise{
+  background: #000;
 }

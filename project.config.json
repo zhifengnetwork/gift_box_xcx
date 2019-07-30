@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 16,
+			"current": 21,
 			"list": [
 				{
 					"id": -1,
@@ -170,9 +170,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 17,
 					"name": "xiao",
-					"pathName": "pages/message/comment/comment",
+					"pathName": "pages/home/enjoy/selectimg/selectimg",
 					"query": "",
 					"scene": null
 				},
@@ -187,6 +187,20 @@
 					"id": -1,
 					"name": "享物圈详情",
 					"pathName": "pages/home/enjoy/detail/detail",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "xiao",
+					"pathName": "pages/home/enjoy/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 21,
+					"name": "xiao",
+					"pathName": "pages/home/enjoy/label/label",
 					"query": "",
 					"scene": null
 				}

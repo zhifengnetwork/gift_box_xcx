@@ -1,43 +1,47 @@
-// pages/message/comment/comment.js
+// pages/home/enjoy/label/label.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    ab:'',
+    status: false,
+    currentTab: 0,
   },
 
-  
+  // 输入框显示关闭符号
+  userNameInput: function (event) {
+    var that = this;
+    if (event.detail.value == '') {
+      that.setData({ status: false })
+    } else {
+      that.setData({ status: true })
+    }
+  },
+  // 清空input的值
+  del: function () {
+    this.setData({ 'inputValue': '' })
+  },
+
+
+  // tab切换
+  //点击切换
+  clickTab: function (e) {
+    var that = this;
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current,
+      })
+    }
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // api.postJSON('api/Sharing/comment_list', {
-    //   token: app.globalData.token,
-    //   sharing_id: order_id,
-    // }, function (res) {
-    //   if (res.data.status == 1) {
-    //     console.log(res)
-    //   }
-    var that = this
-    
-    try {
-      const res = wx.getSystemInfoSync()
-      console.log(res.model)
-      console.log(res.pixelRatio)
-      console.log(res.windowWidth)
-      console.log(res.windowHeight)
-      console.log(res.language)
-      console.log(res.statusBarHeight)
-      console.log(res.version)
-      console.log(res.platform)
-      that.setData({ab: res.statusBarHeight })
 
-    } catch (e) {
-      // Do something when catch error
-    }
   },
 
   /**
