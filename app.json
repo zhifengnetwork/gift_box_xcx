@@ -65,7 +65,7 @@
     "pages/message/inform/inform",
     "pages/message/praise/praise",
     "pages/message/comment/comment",
-    "pages/home/enjoy/ issue/ issue"
+    "pages/home/enjoy/issue/issue"
   ],
   "window": {
     "backgroundTextStyle": "light",
