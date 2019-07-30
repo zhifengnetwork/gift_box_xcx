@@ -207,21 +207,20 @@ swiper {
   display: flex;
   align-items: center;
   border-bottom: 1rpx solid rgba(242,242,242,1);
+  position: relative
 }
 .user_picture{
   display: inline-block;
+  vertical-align: top;
   width: 100rpx;
   height: 100rpx;
   border-radius: 50%;
   background: gray;
-  vertical-align: top;
   margin:0 30rpx;
-  float: left;
 }
 .center_ear{
-  display: inline-block;
   vertical-align: top;
-  float:left;
+  display: inline-block
 }
 .user_names{
   font-size:27rpx;
@@ -233,8 +232,7 @@ swiper {
   font-family:SourceHanSansCN-Regular;
 }
 .guanzhu{
-  float: right;
-  display: inline-block;
+  
   width:100rpx;
   height:48rpx;
   line-height: 48rpx;
@@ -243,5 +241,7 @@ swiper {
   color: rgba(255,150,162,1);
   font-size: 28rpx;
   text-align: center;
-  margin: 0 30rpx;
+  position: absolute;
+  right: 30rpx;
+  
 }

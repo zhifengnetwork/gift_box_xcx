@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 16,
+			"current": 21,
 			"list": [
 				{
 					"id": -1,
@@ -188,6 +188,19 @@
 					"name": "享物圈详情",
 					"pathName": "pages/home/enjoy/detail/detail",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "享物圈搜索详情",
+					"pathName": "pages/home/enjoy/search/search",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "搜搜搜搜",
+					"pathName": "pages/home/enjoy/searchfirst/searchfirst",
 					"scene": null
 				}
 			]
