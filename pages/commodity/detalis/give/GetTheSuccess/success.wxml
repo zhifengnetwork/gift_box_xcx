@@ -21,7 +21,7 @@
 </view>
 <view class="success_b">
   <view class="success_bt">領取進度</view>
-  <view class="success_bbox"> `
+  <view class="success_bbox"> 
     <view class="success_bbox_img">
       <image src="../../../../public/images/card/sangjia.png" class="success_bbox_image"></image>
     </view>

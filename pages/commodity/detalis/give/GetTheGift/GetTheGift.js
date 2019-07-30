@@ -251,5 +251,15 @@ Page({
 
     }
 
+  },
+  onShareAppMessage: function () {
+    console.log('share')
+    var nickname = app.globalData.userInfo.nickname;
+    nickname = nickname == undefined ? '' : nickname;
+    console.log(nickname)
+    return {
+      title: nickname + '为你准备了一份惊喜,请火速查收!',
+      imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',
+    }
   }
 })
