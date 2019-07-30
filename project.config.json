@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 17,
+			"current": 16,
 			"list": [
 				{
 					"id": -1,
@@ -178,9 +178,16 @@
 				},
 				{
 					"id": -1,
-					"name": "pages/card/go2",
-					"pathName": "pages/card/go2",
-					"query": "card_id=506&type=0&order_id=2979&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDM5MDk3MiwiZXhwIjoxNTY0Mzk0Mjg5LCJ1c2VyX2lkIjoyOTc5fQ.6gahAEzJFasFX62HU-9lhblEmCKf3VAXE7oL8sz5cYA",
+					"name": "享物圈",
+					"pathName": "pages/home/enjoy/enjoy",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "享物圈详情",
+					"pathName": "pages/home/enjoy/detail/detail",
+					"query": "",
 					"scene": null
 				}
 			]
