@@ -9,7 +9,7 @@
     </view>
     <view class="collectgift_con">
       <view class="collectgift_img">
-        <img src="{{item.img}}" />
+        <image src="{{item.img}}"></image>
       </view>
       <view class="collectgift_conent">
         <view class="collectgift_brand">{{item.goods_name}}</view>

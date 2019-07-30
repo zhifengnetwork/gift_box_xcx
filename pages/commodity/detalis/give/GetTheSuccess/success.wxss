@@ -14,7 +14,21 @@
 .success_timg{
   width: 614rpx;
   height: 492rpx;
-  background: pink;
+}
+.success_tim{
+  width: 100%;
+  height: 100%;
+}
+.up_img{
+  position: absolute;
+  right: 20rpx;
+  bottom: 40rpx;
+  width: 40rpx;
+  height: 40rpx;
+}
+.up_img image{
+  width: 100%;
+  height: 100%;
 }
 .success_tc{
   background: rgba(247, 247, 247, 1);

@@ -219,6 +219,13 @@ Page({
     console.log('======')
     var address_id = this.data.address_id;
     console.log(address_id)
+    if (!address_id){
+      wx.showToast({
+        icon: 'none',
+        title: '请填写地址!',
+        duration: 2500
+      })
+    }
     var joinid = this.data.joinid
 
     if (address_id && address_id != undefined) {
@@ -231,7 +238,7 @@ Page({
 
           if(res.data.status == 1 ){
             wx.navigateTo({
-              url: '../GetTheSuccess/success',
+              url: '../GetTheSuccess/success?joinid=' + joinid,
             })
           }else{
             wx.showModal({

@@ -3,36 +3,41 @@
 </view>
 <view class="success_t">
   <view class="success_tbox">
-    <view class="success_timg"></view>
+    <view class="success_timg">
+      <image class="success_tim" src="../../../../public/images/card/gift.png"></image>
+    </view>
     <view class="success_tc">
       <view class="success_tct">這是一份精心挑選的禮物</view>
       <view class="success_tct">祝您生活愉快</view>
       <view class="success_tcimg">
-        <image src="../../../../public/images/detalis/success_icon.png" class="success_tcimage"></image>
+        <image src="../../../../public/images/card/success_icon.png" class="success_tcimage"></image>
       </view>
       <view class="success_tcb">去謝謝TA</view>
     </view>
   </view>
+  <view class="up_img">
+    <image src="../../../../public/images/card/up.png"></image>
+  </view>
 </view>
 <view class="success_b">
   <view class="success_bt">領取進度</view>
-  <view class="success_bbox">
+  <view class="success_bbox"> `
     <view class="success_bbox_img">
-      <image src="../../../../public/images/detalis/shangjia_icon.png" class="success_bbox_image"></image>
+      <image src="../../../../public/images/card/sangjia.png" class="success_bbox_image"></image>
     </view>
     <view class="success_bbox_r">
-      <view class="success_bbox_tview">微信名收禮<text>已領取禮物，正在等待收貨</text></view>
-      <text class="success_bbox_ttext">2019-06-04 13：05</text>
+      <view class="success_bbox_tview">{{accept_info.nickname}}收禮<text>已領取禮物，正在等待收貨</text></view>
+      <!-- <text class="success_bbox_ttext">2019-06-04 13：05</text> -->
     </view>
   </view>
   <view class="success_bbox">
     <view class="success_bbox_img">
-      <image src="../../../../public/images/detalis/gift_icon.png" class="success_bbox_image"></image>
+      <image src="../../../../public/images/card/souvenir.png" class="success_bbox_image"></image>
     </view>
     <!-- <view class="success_bbox_r">
       <view class="success_bbox_tview">微信名收禮<text>已領取禮物，正在等待收貨</text></view>
       <text class="success_bbox_ttext">2019-06-04 13：05</text>
     </view> -->
-    <view class="success_bbox_view">啦啦啦名1<text>送出一份禮物</text></view>
+    <view class="success_bbox_view">{{accept_info.nickname}}<text>送出一份禮物</text></view>
   </view>
 </view>
