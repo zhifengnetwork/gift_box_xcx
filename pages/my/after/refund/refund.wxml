@@ -3,7 +3,7 @@
 </view>
 <view class="refund_top" bindtap="logistics">
   <view>請退貨並填寫物流信息</view>
-  <text>還剩6天23時46分</text>
+  <text>還剩{{item.on_time}}</text>
 </view>
 <!-- 提醒 -->
 <view class="refund_remind">商家已同意退貨申請，請盡早退貨</view>

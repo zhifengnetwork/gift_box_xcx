@@ -37,11 +37,23 @@ Page({
   // 确认收货
   shouhuo: function (e) {
     let that = this;
+    console.log(e.target.id)
     api.postJSON('api/order/edit_status', {
       token: app.globalData.token,
-      order_id: e.target.dataset.id,
-      status: 2,
+      order_id: e.target.id,
+      status: 3,
     }, function (res) {
+      if(res.data.status==1){
+        wx.showToast({
+          title: '提交成功',
+          icon: 'success'
+        })
+      }else{
+        wx.showToast({
+          title: res.data.msg,
+          icon: 'none'
+        })
+      }
       console.log(res)
     })
   },
