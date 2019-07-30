@@ -1,8 +1,4 @@
-<<<<<<< HEAD
  <view class="status-bar {{side ? 'dingwei':''}}  {{heise ? 'heise':''}}" style="height:{{bar_Height+46}}px;">
-=======
- <view class="status-bar {{side ? 'dingwei':''}}"  >
->>>>>>> 7488892d819cbe0ef768b717e3a693116b3f2f28
    <!-- 返回按钮 -->
    <!-- 我们在用这个组件的时候,我们用属性名它的属性名(show_bol)来给它值,从而控制它的样式 -->
     <view class="goBack {{quan ? 'tupian':''}}" bindtap='goBack' style="padding-top:{{bar_Height}}px;"  hidden='{{show_bol}}'>			
