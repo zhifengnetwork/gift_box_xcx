@@ -10,7 +10,8 @@ Page({
     flag: true,
     order:'',
     goods_res:'',
-    order_id:''
+    order_id:'',
+    order_type:''
   },
   show: function () {
     this.setData({ flag: false })
@@ -25,18 +26,18 @@ Page({
     //   duration: 2500
     // })
     wx.navigateTo({
-      url: '/pages/commodity/detalis/give/integral/integral?order_id=' + this.data.order_id,
+      url: '/pages/commodity/detalis/give/integral/integral?order_id=' + this.data.order_id + '&order_type=' + this.data.order_type,
     })
   },
   invoice:function(){
     app.globalData.dingdang_id = app.globalData.give.order_id
     wx.navigateTo({
-      url: '../../../../my/invoice/invoice?source=cashgift',
+      url: '../../../../my/invoice/invoice?source=cashgift&order_type=' + this.data.order_type + '&order_id=' + this.data.order_id,
     })
   },
   wxpay:function(){
     let that = this;
-    console.log(app.globalData.give)
+    console.log(that.data.order_id)
     api.postJSON('api/pay/order_wx_pay',{
       'token': app.globalData.token,
       'order_id': app.globalData.give.order_id
@@ -44,7 +45,7 @@ Page({
     function(res){
       console.log(res)
       // wx.redirectTo({
-      //   url: '../giftbag/giftbag?order_id=' + app.globalData.give.order_id
+      //   url: '../giftbag/giftbag?order_id=' + that.data.order_id + '&type=' + that.data.order_type
       // })
       if(res.data.status==1){
         wx.requestPayment({
@@ -60,7 +61,7 @@ Page({
               duration: 2500
             })
             wx.redirectTo({
-              url: '../giftbag/giftbag?order_id=' + app.globalData.give.order_id
+              url: '../giftbag/giftbag?order_id=' + that.data.order_id + '&type=' + that.data.order_type
             })
           },
           fail(res) {
@@ -84,23 +85,28 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    console.log(options)
     let that = this;
-
+    let order_type = options.order_type == undefined ? '' : options.order_type;
+    let order_id = options.order_id == undefined ? '' : options.order_id;
     //有发票ID
     this.setData({
+      order_type: order_type,
+      order_id: order_id,
       invoice_id: options.invoice_id == undefined ? "" : options.invoice_id
     });
 
     if (!app.globalData.give.order_id){
       api.postJSON('api/order/submitOrder', {
         'token': app.globalData.token,
-        'order_type': app.globalData.give.order_type,
+        'order_type': order_type,
         'box_id': app.globalData.makecard,
         'invoice_id': this.data.invoice_id
       },
         function (res) {
           that.setData({
-            order_id: res.data.data
+            order_id: res.data.data,
+            order_type: order_type
           })
           if (res.data.status == 1) {
             app.globalData.give.order_id = res.data.data;

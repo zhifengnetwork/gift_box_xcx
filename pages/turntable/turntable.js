@@ -78,7 +78,7 @@ Page({
     })
   },
   start_time:function(){
-    // let that = this;
+    let that = this;
     // api.postJSON('api/gift/receive_join',{
     //   'token': app.globalData.token,
     //   'order_id': that.data.order_id,
@@ -150,7 +150,7 @@ Page({
     },
     function(res){
       console.log(res)
-      if(res.data.status!=1){
+      if(res.data.status==1){
         that.setData({
           flag: false,
           id:res.data.data.id
