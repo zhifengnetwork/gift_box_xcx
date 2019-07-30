@@ -30,17 +30,21 @@ Page({
     invoice_title: "",
     taxpayer: "",
     is_lipinka: '',
-    is_gouwuka: ''
+    is_gouwuka: '',
+    order_type:'',
+    order_id:''
   },
   /**
     * 生命周期函数--监听页面加载
     */
   onLoad: function (options) {
     var that = this
-
+    console.log(options)
     this.setData({
       award: options.award == undefined ? "" : options.award,
       address_id: options.address_id == undefined ? "" : options.address_id,
+      order_type: options.order_type == undefined ? "" : options.order_type,
+      order_id: options.order_id == undefined ? "" : options.order_id,
       source: options.source == undefined ? "" : options.source,//一个是?source=cashgift
     });
 
@@ -313,8 +317,8 @@ Page({
             console.log('来源555555555555 ' + that.data.source)
 
             if (that.data.source == 'cashgift'){
-              wx.navigateTo({
-                url: '../../commodity/detalis/give/cashgift/cashgift?invoice_id=' + res.data.data
+              wx.redirectTo({
+                url: '../../commodity/detalis/give/cashgift/cashgift?invoice_id=' + res.data.data + '&order_type=' + that.data.order_type + '&order_id='+that.data.order_id,
               })
 
             }else{

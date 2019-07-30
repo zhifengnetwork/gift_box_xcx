@@ -17,17 +17,17 @@ Page({
     picture:''
   },
   send:function(){
-    if (!this.data.name){
-      this.data.name = this.data.scene[0].name;
-    }
-    if (!this.data.picture) {
-      this.data.picture = this.data.get_scene[0].picture;
-    }
-    if (!this.data.id) {
-      this.data.id = this.data.get_scene[0].id;
-    }
-    wx.redirectTo({
-      url: '../GiveOthers/GiveOthers?name=' + this.data.name + '&picture=' + this.data.picture + '&id=' + this.data.id,
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2];  //上一个页面
+    //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+    console.log(this.data.name, this.data.picture, this.data.id)
+    prevPage.setData({
+      backName: this.data.name ? this.data.name:this.data.scene[0].name,
+      backPicture: this.data.picture ? this.data.picture : this.data.get_scene[0].picture,
+      backId: this.data.id ? this.data.id : this.data.get_scene[0].id
+    })
+    wx.navigateBack({
+      delta: 1
     })
   },
   /**
