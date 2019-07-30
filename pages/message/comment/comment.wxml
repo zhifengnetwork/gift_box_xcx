@@ -1,4 +1,4 @@
-<view class="comment_top">
+<view class="comment_top" style="background: pink;height:{{ab+46}}px">
   <component title='評論' show_bol='{{falsr}}'></component>
 </view>
 <view class="comment">
@@ -9,7 +9,7 @@
       </view>
     </view>
     <view class="comment_tc">
-      <view>敲好卡 兩集就換了</view>
+      <view>{{ab}}</view>
       <text>2019-07-24  16:38</text>
     </view>
     <view class="comment_tr">

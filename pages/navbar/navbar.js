@@ -13,6 +13,10 @@ Component({
       type: Boolean,
       value: false
     },
+    heise: {
+      type: Boolean,
+      value: false
+    },
     side:{        //控制头部的定位问题
         type:Boolean,
         value:false

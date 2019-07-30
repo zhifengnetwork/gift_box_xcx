@@ -12,7 +12,7 @@ App({
         this.globalData.height = res.statusBarHeight
       }
     })
-
+    
   },
 
   // 获取用户信息

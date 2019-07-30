@@ -65,6 +65,8 @@
     "pages/message/inform/inform",
     "pages/message/praise/praise",
     "pages/message/comment/comment",
+    "pages/home/enjoy/selectimg/selectimg",
+    "pages/home/enjoy/label/label",
     "pages/home/enjoy/issue/issue"
   ],
   "window": {
