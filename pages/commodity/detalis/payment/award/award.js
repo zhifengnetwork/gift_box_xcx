@@ -63,13 +63,7 @@ Page({
       flag: true
     })
   },
-  integral: function() {
-    wx.showToast({
-      icon: 'none',
-      title: "暂未开通",
-      duration: 2500
-    })
-  },
+
   // wxpay: function() {
   //   let that = this;
   //   console.log(app.globalData.give)
@@ -341,10 +335,13 @@ Page({
     this.setData({
       flag: true
     });
-    wx.showToast({
-      title: '暂时不能用积分支付',
-      icon: 'none',
-      duration: 2000
+    // wx.showToast({
+    //   title: '暂时不能用积分支付',
+    //   icon: 'none',
+    //   duration: 2000
+    // })
+    wx.navigateTo({
+      url: '/pages/commodity/detalis/give/integral/integral?order_id=' + this.data.order_id,
     })
   },
   weixin: function() {

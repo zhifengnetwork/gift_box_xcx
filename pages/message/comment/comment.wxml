@@ -1,0 +1,64 @@
+<view class="comment_top">
+  <component title='評論' show_bol='{{falsr}}'></component>
+</view>
+<view class="comment">
+  <view class="comment_t">
+    <view class="comment_tl">
+      <view class="comment_tlimg">
+        <!-- <iamge src="" /> -->
+      </view>
+    </view>
+    <view class="comment_tc">
+      <view>敲好卡 兩集就換了</view>
+      <text>2019-07-24  16:38</text>
+    </view>
+    <view class="comment_tr">
+      <view>回復</view>
+    </view>
+  </view>
+  <view class="comment_c">
+    真香真香真香真香幹啥 不記得了 
+  </view>
+  <view class="comment_f">
+    <view class="comment_fl">
+      <view class="comment_flimg">
+        <!-- <image src="" /> -->
+      </view>
+    </view>
+    <view class="comment_fr">
+      <view>@MALIMALIJ</view>
+      <text>麻利麻利哄麻利麻利哄麻利麻利哄麻健康生命</text>
+    </view>
+  </view>
+</view>
+
+<view class="comment">
+  <view class="comment_t">
+    <view class="comment_tl">
+      <view class="comment_tlimg">
+        <!-- <iamge src="" /> -->
+      </view>
+    </view>
+    <view class="comment_tc">
+      <view>敲好卡 兩集就換了</view>
+      <text>2019-07-24  16:38</text>
+    </view>
+    <view class="comment_tr">
+      <view>回復</view>
+    </view>
+  </view>
+  <view class="comment_c">
+    赞了这条微博 
+  </view>
+  <view class="comment_f">
+    <view class="comment_fl">
+      <view class="comment_flimg">
+        <!-- <image src="" /> -->
+      </view>
+    </view>
+    <view class="comment_fr">
+      <view>@MALIMALIJ</view>
+      <text>麻利麻利哄麻利麻利哄麻利麻利哄麻健康生命</text>
+    </view>
+  </view>
+</view>

@@ -25,8 +25,9 @@ Page({
       dotColor_2: ['#b1ffdd', '#ffffff'],
       angel: 0,               /**选择角度 */
     },
-    start: true,             /**参与抽奖 */
-    mask: true,            /**遮罩层 */
+    start: false,           /**参与抽奖 */
+    past: false,             /**是否过期 */
+    mask: true,             /**遮罩层 */
     win_id: false,          /**中奖者 */
     win_Name:[],
     win: false,             /**礼物 */
@@ -42,6 +43,7 @@ Page({
       return false;
     }
     let that = this;
+    that.setData({ past: false })
     api.postJSON('api/gift/get_gift_order',{
       'order_id': that.data.order_id,
       'status': 1
@@ -71,56 +73,38 @@ Page({
   },
   // 领取礼物
   win_get:function(){
-    let that = this;
-    api.postJSON('api/gift/receive_join', {
-      'token': app.globalData.token,
-      'order_id': that.data.order_id,
-      'join_type': 1,
-      'pwdstr': that.data.pwdstr
-    },
-      function (res) {
-        if (res.data.status == 1) {
-            console.log(res.data.data.type)
-            wx.redirectTo({
-              url: '../commodity/detalis/give/GetTheGift/GetTheGift?order_id' + this.data.order_id,
-            })
-        } else {
-          wx.showToast({
-            title: res.data.msg,
-            icon: 'none'
-          })
-        }
-        console.log(res);
-      })
+    wx.redirectTo({
+      url: '../commodity/detalis/give/GetTheGift/GetTheGift?order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr + '&type=1' +'&joinid='+this.data.id,
+    })
   },
   start_time:function(){
-    let that = this;
-    api.postJSON('api/gift/receive_join',{
-      'token': app.globalData.token,
-      'order_id': that.data.order_id,
-      'join_type': 2,
-      'pwdstr': that.data.pwdstr
-    },
-    function(res){
-      if (res.data.status==1){
-        console.log(res.data.data.type)
-        if (res.data.data.type==1){
-          that.setData({mask:false})
-        }else{
-          wx.showToast({
-            title: '参与成功',
-            icon: 'none'
-          })
-          that.setData({mask:false})
-        }
-      }else{
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none'
-        })
-      }
-      console.log(res);
-    })
+    // let that = this;
+    // api.postJSON('api/gift/receive_join',{
+    //   'token': app.globalData.token,
+    //   'order_id': that.data.order_id,
+    //   'join_type': 2,
+    //   'pwdstr': that.data.pwdstr
+    // },
+    // function(res){
+    //   if (res.data.status==1){
+    //     console.log(res.data.data.type)
+    //     if (res.data.data.type==1){
+    //       that.setData({mask:false})
+    //     }else{
+    //       wx.showToast({
+    //         title: '参与成功',
+    //         icon: 'none'
+    //       })
+    that.setData({ mask: false, start:false})
+    //     }
+    //   }else{
+    //     wx.showToast({
+    //       title: res.data.msg,
+    //       icon: 'none'
+    //     })
+    //   }
+    //   console.log(res);
+    // })
   },
   back:function(){
     this.setData({
@@ -128,6 +112,8 @@ Page({
       win_id: false,
       win: false,
       wisecrack: false,
+      start: false, 
+      past:false
     })
   },
   getWisecrack:function(){
@@ -164,9 +150,10 @@ Page({
     },
     function(res){
       console.log(res)
-      if(res.data.status==1){
+      if(res.data.status!=1){
         that.setData({
-          flag: false
+          flag: false,
+          id:res.data.data.id
         })
         that.getWisecrack();
         // let lotteryNum = that.data.lotteryNum;
@@ -225,6 +212,13 @@ Page({
    */
   onLoad: function (options) {
     let that = this;
+    wx.showLoading({
+      title: '加载中',
+    })
+
+    setTimeout(function () {
+      wx.hideLoading()
+    }, 1000)
     app.getUserInfo(userinfo => {
       //昵称、头像 不存在，跳转去授权
       if (userinfo.nickname == '' && userinfo.avatar == '') {
@@ -256,6 +250,33 @@ Page({
         })
       }
     })
+    // 获取是否结束
+    setTimeout(function(){
+      api.postJSON('api/gift/get_lottery_status',{
+        'token': app.globalData.token,
+        'order_id':options.order_id
+      },function (res) {
+        if (res.data.status == 1) {
+          console.log(res.data.data.lottery_status)
+          if (res.data.data.lottery_status<=1){
+            // 未过期
+            that.setData({
+              start:true
+            })
+          }else{
+            // 已过期
+            that.setData({
+              past:true
+            })
+          }
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
+        }
+      })
+    },1000)
   },
 
   /**

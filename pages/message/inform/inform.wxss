@@ -1,0 +1,54 @@
+.inform_top{
+  height: 150rpx;
+  background: #fff;
+}
+.inform_box{
+  height: 500rpx;
+  border-bottom: 2rpx solid rgba(246,246,246,1);
+}
+.inform_t{
+  height: 80rpx;
+  padding: 20rpx;
+}
+.inform_tl{
+  float: left;
+}
+.inform_timg{
+  width:80rpx;
+  height:80rpx;
+  border-radius:50%;
+  overflow: hidden;
+}
+.inform_timg image{
+  width: 100%;
+  height: 100%;
+}
+.inform_tr{
+  float: left;
+  margin-left: 20rpx;
+}
+.inform_tr view{
+  margin-top: 10rpx;
+  font-size:27rpx;
+  line-height: 20rpx;
+  font-family:SourceHanSansCN-Medium;
+  font-weight:500;
+  color:rgba(68,68,68,1);
+}
+.inform_tr text{
+  font-size:19rpx;
+  font-family:SourceHanSansCN-Medium;
+  font-weight:500;
+  color:rgba(153,153,153,1);
+}
+
+.inform_fimg{
+  width: 300rpx;
+  height: 330rpx;
+  float: left;
+  overflow: hidden;
+}
+.inform_fimg image{
+  width: 100%;
+  height: 100%;
+}

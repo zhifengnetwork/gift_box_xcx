@@ -7,14 +7,29 @@ Page({
    * 页面的初始数据
    */
   data: {
-    canIUse: wx.canIUse('button.open-type.getUserInfo')//获取用户信息是否在当前版本可用
+    canIUse: wx.canIUse('button.open-type.getUserInfo'),//获取用户信息是否在当前版本可用
+    id: '',
+    type: '',
+    order_id: '',
+    pwdstr: '',
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var id = options.id == undefined ? "" : options.id;
+    var type = options.type == undefined ? "" : options.type;
+    var order_id = options.order_id == undefined ? "" : options.order_id;
+    var pwdstr = options.pwdstr == undefined ? "" : options.pwdstr;
+    var source = options.source == undefined ? "" : options.source;
+    this.setData({
+      id: id,
+      type: type,
+      order_id: order_id,
+      pwdstr: pwdstr,
+      source: source
+    })
   },
   // 微信授权
   bindGetUserInfo: function (e) {//点击的“拒绝”或者“允许
@@ -27,12 +42,22 @@ Page({
       },
       function (res) {
         console.log(res)
-        // if(res.data.status==1){
+
+        
+
+        if (!that.data.source){
           app.globalData.userInfo = res.data.data;
           wx.switchTab({
             url: '../index/index',//返回首页
           })
-        // }
+        }else{
+          wx.navigateTo({
+            url: '/pages/card/go?id=' + this.data.id + '&type=' + this.data.type + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr,
+          })
+        }
+
+
+
       })
     }
   },

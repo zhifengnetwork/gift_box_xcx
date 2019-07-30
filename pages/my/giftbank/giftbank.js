@@ -210,15 +210,16 @@ Page({
   // 赠送他人
   zengsong: function (e) {
     var order_id = e.currentTarget.dataset.id
+    var type = e.currentTarget.dataset.type
     if(!order_id){
       wx.showModal({
         title: '訂單ID不存在',
         content: '',
       })
     }
-    console.log('ooooooooooo', order_id)
+   
     wx.navigateTo({
-      url: '../../commodity/detalis/give/giftbag/giftbag?order_id=' + order_id,
+      url: '../../commodity/detalis/give/giftbag/giftbag?order_id=' + order_id + '&type=' +type,
     })
   },
 

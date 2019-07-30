@@ -1,7 +1,8 @@
-.my_top{
+/* .my_top{
   height: 115rpx;
-}
-.my_t{
+} */
+
+/* .my_t{
   margin: 50rpx;
   height: 320rpx;
   background: linear-gradient(0deg,rgba(177,166,162,1) 0%,rgba(137,115,106,1) 100%);
@@ -79,7 +80,6 @@
 }
 .my_cbox{
   height: 250rpx;
-  /* background: skyblue; */
   border-bottom: 2rpx solid rgba(243,241,241,1);
   margin-bottom: 20rpx;
 }
@@ -128,4 +128,182 @@
   font-family:MicrosoftYaHei;
   font-weight:400;
   color:rgba(51,51,51,1);
+} */
+
+
+
+/* /////////////////////////////////////////////////// */
+/* 第二期 */
+page{
+  background:rgba(241,239,239,1);
+}
+.my_t {
+  height: 400rpx;
+  background: rgba(17, 17, 17, 1);
+}
+
+.my_tt {
+  height: 260rpx;
+}
+
+.my_ttl {
+  float: left;
+  height: 110rpx;
+  margin-left: 40rpx;
+  margin-top: 140rpx;
+}
+
+.my_ttl view {
+  font-size: 47rpx;
+  font-family: SourceHanSansCN-Bold;
+  font-weight: bold;
+  color: rgba(238, 238, 238, 1);
+}
+
+.my_ttl text {
+  font-size: 21rpx;
+  font-family: SourceHanSansCN-Light;
+  font-weight: 300;
+  color: rgba(238, 238, 238, 1);
+}
+
+.my_ttr {
+  float: right;
+  margin-top: 140rpx;
+  margin-right: 100rpx;
+  width: 110rpx;
+  height: 110rpx;
+  background: rgba(191, 191, 191, 1);
+  border-radius: 50%;
+  overflow: hidden;
+}
+.my_ttr image{
+  width: 100%;
+  height: 100%;
+}
+.my_tf{
+  height: 140rpx;
+  display: flex;
+  flex-direction:row;                
+  justify-content:space-between ;
+}
+.my_tf_box{
+  flex: 2;
+  text-align: center;
+}
+.my_tf_box2{
+  flex: 3;
+  text-align: center;
+}
+.front{
+  padding-top: 40rpx;
+}
+.front view{
+  font-size:21rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(238,238,238,1);
+}
+.front text{
+  font-size:35rpx;
+  font-family:Roboto-Bold;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+}
+.back{
+  width:140rpx;
+  height:40rpx;
+  margin-top: 50rpx;
+  border:1px solid rgba(240,238,238,1);
+  border-radius:20px;
+  font-size:22rpx;
+  line-height: 40rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  margin-left: 20rpx;
+}
+/* 首个导航栏 */
+.my_nav_top{
+  margin: 20rpx;
+  height:150rpx;
+  background:rgba(255,255,255,1);
+  border-radius:2rpx;
+  display: flex;
+  flex-direction:row;                
+  justify-content:space-between ;
+}
+.nav_tbox{
+  flex: 1;
+  text-align: center;
+}
+.nav_imgbox{
+  width: 60rpx;
+  height: 60rpx;
+  /* border-radius: 50%; */
+  overflow: hidden;
+  margin-left: 50%;
+  margin-top: 20rpx;
+  transform: translate(-50%);
+}
+.nav_imgbox image{
+  width: 100%;
+  height: 100%;
+}
+.nav_tbox text{
+  font-size:25rpx;
+  font-family:SourceHanSansCN-Medium;
+  font-weight:500;
+  color:rgba(51,51,51,1);
+}
+/* 第二个导航栏 */
+.nav_con{
+  margin: 20rpx;
+  background: #fff;
+  height: 200rpx;
+}
+.nav_cont{
+  height: 100rpx;
+}
+.nav_contl{
+  float: left;
+  margin-top: 30rpx;
+  margin-left: 60rpx;
+}
+.nav_contimgbox{
+  width: 40rpx;
+  height: 40rpx;
+  overflow: hidden;
+}
+.nav_contimgbox image{
+  width: 100%;
+  height: 100%;
+}
+.nav_contc{
+  float: left;
+  line-height: 100rpx;
+  margin-left: 30rpx;
+  font-size:29rpx;
+  font-family:SourceHanSansCN-Medium;
+  font-weight:500;
+  color:rgba(68,68,68,1);
+}
+.nav_contr{
+  float: right;
+  margin-top: 30rpx;
+}
+.nav_contrimg{
+  width: 30rpx;
+  height: 40rpx;
+  overflow: hidden;
+  margin-right: 40rpx;
+}
+.nav_contrimg image{
+  width: 100%;
+  height: 100%;
+}
+.nav_f{
+  height: 400rpx;
+  background: #fff;
+  margin: 20rpx;
 }

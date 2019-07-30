@@ -19,14 +19,14 @@ Page({
     this.setData({ flag: true })
   },
   integral: function () {
-    wx.showToast({
-      icon: 'none',
-      title: "暂未开通",
-      duration: 2500
-    })
-    // wx.navigateTo({
-    //   url: '../integral/integral',
+    // wx.showToast({
+    //   icon: 'none',
+    //   title: "暂未开通",
+    //   duration: 2500
     // })
+    wx.navigateTo({
+      url: '/pages/commodity/detalis/give/integral/integral?order_id=' + this.data.order_id,
+    })
   },
   invoice:function(){
     app.globalData.dingdang_id = app.globalData.give.order_id
@@ -43,10 +43,10 @@ Page({
     },
     function(res){
       console.log(res)
+      // wx.redirectTo({
+      //   url: '../giftbag/giftbag?order_id=' + app.globalData.give.order_id
+      // })
       if(res.data.status==1){
-        // wx.redirectTo({
-        //   url: '../giftbag/giftbag?order_id=' + app.globalData.give.order_id
-        // })
         wx.requestPayment({
           timeStamp: res.data.data.timeStamp,
           nonceStr: res.data.data.nonceStr,
