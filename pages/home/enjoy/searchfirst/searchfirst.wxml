@@ -1,0 +1,30 @@
+<component title='搜索' show_bol='{{false}}' side="{{true}}"></component>
+<view class="body">
+<view class="sousou_ear">
+  <input type="text" class="find" placeholder="不鏽鋼餐具" focus="false" bindconfirm="huiche" bindinput="userNameInput" value='{{inputValue}}'></input>
+  <image src="../../../public/images/classify/sousuo.png" class="sousou"></image>
+  <image src="../../../public/images/home/close.png" class="close_pic" wx:if="{{status}}" bindtap="del"></image>
+</view>
+<!-- 历史记录 -->
+<view class="history">
+  <view class="his_title">歷史記錄</view>
+  <view class="his_content_ear">
+     <view class="his_content">看這個就夠了 還需要</view>
+     <view class="his_content">辦公室小吃</view>
+  </view>
+</view>
+
+<!-- 热门搜索 -->
+<view class="hot">
+     <view>熱門搜索</view>
+     <view class="hot_content_ear">
+     <view class="hot_content"><image src="../../../public/images/home/hot.png" class="hot_pic"></image><text>看這個就夠了 還需要</text></view>
+     <view class="hot_content"><image src="../../../public/images/home/hot.png" class="hot_pic"></image><text>辦公室小吃</text></view>
+  </view>
+
+</view>
+
+
+
+
+</view>

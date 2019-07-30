@@ -2,7 +2,7 @@
 <!-- 商品信息 -->
 <view class="detalis_con" style="margin-top:{{bar_Height+140}}rpx">
   <view class="detalis_img">
-    <img src="{{img}}" />
+    <image src="{{img}}"></image>
   </view>
   <view class="detalis_conent">
     <view class="detalis_brand">{{goods_name}}</view>
@@ -22,7 +22,6 @@
     <text>></text>
   </view>
   <view class="refundcause_r" wx:if="{{ss}}">{{ss}}</view>
-   <text>></text>
 </view>
 <!-- 物流单号 -->
 <view class="refundstate">

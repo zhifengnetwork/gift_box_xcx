@@ -1,81 +1,77 @@
-// pages/commodity/detalis/give/GetTheSuccess/success.js
-var api = require('../../../../../utils/api');
-var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    accept_info:'',
-    send_info:''
+    status: false,
+    inputValue: null,
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    let that = this;
-    console.log(options)
-    api.postJSON('api/gift/get_gift_info',{
-      'token': app.globalData.token,
-      'id': options.joinid
-    },
-    function(res){
-      console.log(res);
-      that.setData({
-        accept_info: res.data.data.accept_info,
-        send_info: res.data.data.send_info
-      })
-    })
+    
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-
+    
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
+    
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
   onPullDownRefresh: function () {
-
+    
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
   onReachBottom: function () {
-
+    
   },
 
   /**
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
-  }
+    
+  },
+  userNameInput: function (event) {
+    var that = this;
+    if (event.detail.value == '') {
+      that.setData({ status: false })
+    } else {
+      that.setData({ status: true })
+    }
+  },
+  del: function () {
+    this.setData({ 'inputValue': '' })
+  },
 })

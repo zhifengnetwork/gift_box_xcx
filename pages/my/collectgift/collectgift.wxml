@@ -9,7 +9,7 @@
     </view>
     <view class="collectgift_con">
       <view class="collectgift_img">
-        <img src="{{item.img}}" />
+        <image src="{{item.img}}"></image>
       </view>
       <view class="collectgift_conent">
         <view class="collectgift_brand">{{item.goods_name}}</view>
@@ -24,7 +24,7 @@
       <view class="collectgift_bottnum">贈送人：{{item.nickname}}</view>
       <view class="collectgift_button">
         <view class="collectgift_cancel">查看物流</view>
-        <view class="collectgift_payment" bindtap="shouhuo">確認收貨</view>
+        <view class="collectgift_payment" bindtap="shouhuo" id="{{item.order_id}}">確認收貨</view>
       </view>
     </view>
     <view>

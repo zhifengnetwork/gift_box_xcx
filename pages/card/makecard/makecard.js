@@ -42,6 +42,7 @@ Page({
     ],
     blessing: false,
     blessText:'',
+    order_type:'',
     // 子页面返回值
     music: '',
     picture: '',
@@ -147,7 +148,7 @@ Page({
   },
   succeed:function(){
     wx.navigateTo({
-      url: '../../commodity/detalis/give/cashgift/cashgift'
+      url: '../../commodity/detalis/give/cashgift/cashgift?order_type=' + this.data.order_type
     })
   },
   back_white:function(){
@@ -161,12 +162,11 @@ Page({
   onLoad: function(options) {
     console.log(options)
     let that = this;
-    let cate_id = null;
-    if (!app.globalData.makecard){
-      cate_id = options.type_id;
-    }else{
-      cate_id = '';
-    }
+    let cate_id = app.globalData.makecard == undefined || app.globalData.makecard == '' ? options.type_id : '';
+    let order_type = options.order_type == undefined ? '' : options.order_type;
+    this.setData({
+      order_type: order_type
+    })
     api.postJSON('api/box/get_box',{
       'token': app.globalData.token,
       'cate_id': cate_id,

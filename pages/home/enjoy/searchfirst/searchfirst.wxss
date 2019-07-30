@@ -1,0 +1,98 @@
+.body{
+  margin-top: 160rpx;
+}
+.sousou_ear{
+  width: 84%;
+  margin-left: 8%;
+  height: 56rpx;
+  background: rgb(245,245,245);
+  position: relative;
+  border-radius: 10rpx
+}
+.sousou{
+  position: absolute;
+  width: 32rpx;
+  height: 32rpx;
+  margin-left: 40rpx;
+  top: 13rpx;
+  z-index: 2
+}
+.find{
+  position: absolute;
+  top: 0;
+  left: 100rpx;
+  width: 65%;
+  height: 56rpx;
+  font-size: 25rpx
+}
+.close_pic{
+  position: absolute;
+  width: 32rpx;
+  height: 32rpx;
+  top: 13rpx;
+  right: 20rpx;
+  z-index: 2
+}
+/* 历史记录 */
+.history{
+  width: 84%;
+  margin-left: 8%;
+  font-size: 28rpx;
+}
+.his_title{
+  margin-top: 50rpx;
+  margin-left: 10rpx;
+}
+.his_content{
+  float: left;
+  line-height: 52rpx;
+  height:52rpx;
+  background:rgba(246,245,245,1);
+  border-radius:26px;
+  margin: 20rpx 20rpx;
+  padding: 10rpx 20rpx;
+  font-size: 25rpx
+}
+.his_content_ear{
+  display: block;
+}
+.his_content:first-child{
+  margin-left: 0rpx
+}
+.hot{
+  text-align: left;
+  font-size: 28rpx;
+  margin-top: 130rpx;
+  width: 84%;
+  margin-left: 8%;
+}
+.hot_title{
+  margin-top: 50rpx;
+  margin-left: 10rpx;
+}
+.hot_content{
+  float: left;
+  line-height: 52rpx;
+  height:52rpx;
+  background:rgba(246,245,245,1);
+  border-radius:26px;
+  margin: 20rpx 20rpx;
+  padding: 10rpx 20rpx;
+  font-size: 25rpx;
+  position: relative;
+}
+.hot_content text{
+  margin-left: 40rpx
+}
+.hot_content_ear{
+  display: block;
+}
+.hot_content:first-child{
+  margin-left: 0rpx
+}
+.hot_pic{
+  position: absolute;
+  width: 32rpx;
+  height: 32rpx;
+  top: 19rpx
+}

@@ -25,10 +25,10 @@ Page({
     this.getOrder_id(2);
   },
   getOrder_id: function (order_type){
-    app.globalData.give.sku_id = this.data.sku_id;
-    app.globalData.give.order_type = order_type;
+    // app.globalData.give.sku_id = this.data.sku_id;
+    // app.globalData.give.order_type = order_type;
     wx.redirectTo({
-      url: '../detalis/give/GiveOthers/GiveOthers'
+      url: '../detalis/give/GiveOthers/GiveOthers?sku_id=' + this.data.sku_id + '&order_type='+order_type
     })
   },
   /**

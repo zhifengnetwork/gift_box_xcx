@@ -14,7 +14,9 @@ Page({
     backPicture:'',
     backId:'',
     giveothers:'',
-    type_id:''
+    type_id:'',
+    sku_id:'',
+    order_type:''
   },
   plus:function (e){
     let that = this;
@@ -22,7 +24,7 @@ Page({
     this.data.num++;
     api.postJSON('api/Cart/addCart',{
       'token':app.globalData.token,
-      'sku_id': app.globalData.give.sku_id,
+      'sku_id': that.data.sku_id,
       'cart_number':1
     },
     function(res){
@@ -53,7 +55,7 @@ Page({
     this.data.num--;
     api.postJSON('api/Cart/addCart',{
       'token':app.globalData.token,
-      'sku_id': app.globalData.give.sku_id,
+      'sku_id': that.data.sku_id,
       'cart_number':-1
     },
     function(res){
@@ -73,7 +75,7 @@ Page({
       return false;
     }
     wx.navigateTo({
-      url: '../../../../card/makecard/makecard?type_id=' + this.data.type_id + '&giveothers=' + this.data.giveothers,
+      url: '../../../../card/makecard/makecard?type_id=' + this.data.type_id + '&giveothers=' + this.data.giveothers + '&order_type='+this.data.order_type,
     })
   },
   more:function(){
@@ -93,7 +95,8 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
-    app.globalData.give.order_id = '';
+    let sku_id = options.sku_id == undefined ? '' : options.sku_id;
+    let order_type = options.order_type == undefined ? '' : options.order_type;
     let that = this;
     api.postJSON('api/box/box_cate_list',function(res){
       console.log(res);
@@ -101,14 +104,11 @@ Page({
         scene:res.data.data
       })
     })
-    if (options.name && options.picture){
-      this.setData({
-        radio:-1,
-        backName: options.name,
-        backPicture: options.picture,
-        backId: options.id
-      })
-    }
+    this.setData({
+      radio:-1,
+      sku_id: sku_id,
+      order_type: order_type,
+    })
   },
 
   /**
