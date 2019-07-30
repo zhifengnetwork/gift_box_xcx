@@ -1,18 +1,33 @@
 // pages/commodity/detalis/give/GetTheSuccess/success.js
+var api = require('../../../../../utils/api');
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-
+    accept_info:'',
+    send_info:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this;
+    console.log(options)
+    api.postJSON('api/gift/get_gift_info',{
+      'token': app.globalData.token,
+      'id': options.joinid
+    },
+    function(res){
+      console.log(res);
+      that.setData({
+        accept_info: res.data.data.accept_info,
+        send_info: res.data.data.send_info
+      })
+    })
   },
 
   /**

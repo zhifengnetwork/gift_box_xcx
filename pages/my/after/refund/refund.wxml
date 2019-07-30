@@ -3,7 +3,7 @@
 </view>
 <view class="refund_top" bindtap="logistics">
   <view>請退貨並填寫物流信息</view>
-  <text>還剩6天23時46分</text>
+  <text>還剩{{item.on_time}}</text>
 </view>
 <!-- 提醒 -->
 <view class="refund_remind">商家已同意退貨申請，請盡早退貨</view>
@@ -23,7 +23,8 @@
 </view>
 <!-- 退货备注 -->
 <view class="refund_remark">
-  {{item.return_remarks}} \n （註：不接受任何到付件和平郵）
+  {{item.return_remarks}}
+   <!-- \n （註：不接受任何到付件和平郵） -->
 </view>
 <!-- 说明 -->
 <view class="refund_declare">
@@ -49,7 +50,7 @@
 <!-- 商品信息 -->
 <view class="detalis_con">
   <view class="detalis_img">
-    <img src="{{item.img}}" />
+    <image src="{{item.img}}"></image>
   </view>
   <view class="detalis_conent">
     <view class="detalis_brand">{{item.goods_name}}</view>

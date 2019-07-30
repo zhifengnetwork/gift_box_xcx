@@ -29,8 +29,6 @@
 		"hidedInDevtools": []
 	},
 	"scripts": {},
-	"simulatorType": "wechat",
-	"simulatorPluginLibVersion": {},
 	"condition": {
 		"search": {
 			"current": -1,
@@ -152,7 +150,7 @@
 					"id": 14,
 					"name": "礼盒",
 					"pathName": "pages/commodity/detalis/give/GetTheGift/GetTheGift",
-					"query": "card_id=506&type=0&order_id=2979&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDM5MDk3MiwiZXhwIjoxNTY0Mzk0Mjg5LCJ1c2VyX2lkIjoyOTc5fQ.6gahAEzJFasFX62HU-9lhblEmCKf3VAXE7oL8sz5cYA",
+					"query": "card_id=506&type=0&order_id=3065&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDQ3MTQzMiwiZXhwIjoxNTY0NTA3NDMyLCJ1c2VyX2lkIjozMDY1fQ.iTIyaljP7O2ilKq7YhgNZmRzvc_NcNY2jhZUj6_xtqY",
 					"scene": null
 				},
 				{
