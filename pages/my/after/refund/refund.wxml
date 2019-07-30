@@ -23,7 +23,8 @@
 </view>
 <!-- 退货备注 -->
 <view class="refund_remark">
-  {{item.return_remarks}} \n （註：不接受任何到付件和平郵）
+  {{item.return_remarks}}
+   <!-- \n （註：不接受任何到付件和平郵） -->
 </view>
 <!-- 说明 -->
 <view class="refund_declare">
@@ -49,7 +50,7 @@
 <!-- 商品信息 -->
 <view class="detalis_con">
   <view class="detalis_img">
-    <img src="{{item.img}}" />
+    <image src="{{item.img}}"></image>
   </view>
   <view class="detalis_conent">
     <view class="detalis_brand">{{item.goods_name}}</view>

@@ -84,6 +84,13 @@ Page({
   send: function (){
     let that = this
     // 判断是否有填写快递公司、快递单号、手机号码
+    if (!(/^1[3456789]\d{9}$/.test(that.data.haoma))) {
+      wx.showToast({
+        title: "手机号码有误，请重填",
+        icon: 'none'
+      })
+      return false;
+    } 
     if (that.data.ss && that.data.danhao && that.data.haoma){
       api.postJSON('api/order/set_refund_kuaidi', {
         'token': app.globalData.token,

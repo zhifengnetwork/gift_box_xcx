@@ -14,7 +14,7 @@
     </view>
     <view class="reward_con">
       <view class="reward_img">
-      <image class="reward_i" src="{{item.img}}"></image>
+      <image class="reward_i" src="{{item.goods_list[0].img}}"></image>
     </view>
       <view class="reward_conent">
         <view class="reward_brand">{{item.goods_name}}</view>
