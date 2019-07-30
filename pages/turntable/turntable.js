@@ -27,7 +27,7 @@ Page({
     },
     start: false,           /**参与抽奖 */
     past: false,             /**是否过期 */
-    mask: true,             /**遮罩层 */
+    mask: false,             /**遮罩层 */
     win_id: false,          /**中奖者 */
     win_Name:[],
     win: false,             /**礼物 */
@@ -261,11 +261,12 @@ Page({
           if (res.data.data.lottery_status<=1){
             // 未过期
             that.setData({
-              start:true
+              start:false
             })
           }else{
             // 已过期
             that.setData({
+              mask:true,
               past:true
             })
           }
