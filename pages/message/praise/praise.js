@@ -1,3 +1,5 @@
+var api = require('../../../utils/api')
+var app = getApp();
 // pages/message/praise/praise.js
 Page({
 
@@ -12,9 +14,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    api.postJSON('api/sharing/user_point_list', {
+      'token': app.globalData.token,
+    }),
+      function (res) {
+        console.log(res)
+    }
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

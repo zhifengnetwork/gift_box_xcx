@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 23,
 			"list": [
 				{
 					"id": -1,
@@ -208,6 +208,13 @@
 					"id": -1,
 					"name": "享物圈照片选择",
 					"pathName": "pages/home/enjoy/issue/issue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 23,
+					"name": "1111",
+					"pathName": "pages/home/enjoy/labelsearch/labelsearch",
 					"query": "",
 					"scene": null
 				}

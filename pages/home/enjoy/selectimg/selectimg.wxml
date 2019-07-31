@@ -1,17 +1,33 @@
-
-<view class="imgbox"></view>
+<component title='享物圈' show_bol='{{false}}' side="{{true}}" quan="{{true}}" heise="{{true}}" my_class="{{true}}"></component>
+  <movable-area class="imgbox">
+  <!-- <image src=""></image> -->
+      <movable-view class="popupimg" x="{{x}}" y="{{y}}" direction="all" data-index="{{index}}" bindchange="tuozhuai" wx:for="{{xuanzhong}}">
+        <image src="{{item}}"></image>
+    </movable-view>
+</movable-area>
 <view class="select">
-  <view class="select_l">
+  <view class="select_l" bindtap="label">
     <view class="selectl_img">
       <image src="/images/biaoqian.png" />
     </view>
     <text>標籤</text>
   </view>
-  <view class="select_r">
+  <view class="select_r" bindtap="biaoqing">
     <view class="selectr_img">
       <image src="/images/tiezhi.png" />
     </view>
     <text>貼紙</text>
   </view>
 </view>
+<!-- 弹窗表情包 -->
+<view class="guanbi" bindtap="guanbi"></view>
+<view class="popup" wx:if="{{popup}}">
+  <view class="zhezhao"></view>
+  <view class="facebox">
+    <view class="faceimgbox" wx:for="{{face}}" bindtap="popup" data-index="{{index}}">
+      <image src="{{item}}"></image>
+    </view>
+  </view>
+</view>
+
 <view class="send">下一步</view>

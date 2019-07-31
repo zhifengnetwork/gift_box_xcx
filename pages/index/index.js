@@ -47,6 +47,17 @@ Page({
     autoplay: true
 
   },
+
+
+  // 点击跳转到享物圈页面
+    xwq: function () {
+      wx.navigateTo({
+        url: '../home/enjoy/selectimg/selectimg',
+      })
+    },
+
+
+
   onLoad: function (options) {
     var that = this;
     app.getUserInfo(userinfo => {

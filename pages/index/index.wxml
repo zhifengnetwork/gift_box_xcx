@@ -74,7 +74,10 @@
   </view>
 
 </view>
-
+<view class="xwq" bindtap="xwq">
+  <text>享物圈</text>
+  <view></view>
+</view>
 
 <text class="jiali_title">{{jiali.name}}</text>
 <text class="english">{{jiali.english}}</text>
