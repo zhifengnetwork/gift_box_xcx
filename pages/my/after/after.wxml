@@ -1,5 +1,5 @@
 <view class="after_nav">
-  <component title='退換/售後' show_bol='{{false}}'></component>
+  <component title='退換/售後' show_bol='{{false}}' side="{{true}}"></component>
 </view>
 <view class="after_box" wx:for="{{after}}">
   <view class="after_top">

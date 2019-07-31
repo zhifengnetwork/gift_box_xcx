@@ -64,7 +64,10 @@
     "pages/message/message",
     "pages/message/inform/inform",
     "pages/message/praise/praise",
-    "pages/message/comment/comment"
+    "pages/message/comment/comment",
+    "pages/home/enjoy/selectimg/selectimg",
+    "pages/home/enjoy/label/label",
+    "pages/home/enjoy/issue/issue"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -110,5 +113,10 @@
         "text": "个人中心"
       }
     ]
+  },
+  "permission": {
+    "scope.userLocation": {
+      "desc": "你的位置信息将用于小程序位置接口的效果展示"
+    }
   }
 }

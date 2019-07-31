@@ -1,11 +1,12 @@
- <view class="status-bar {{side ? 'dingwei':''}}"  >
+ <view class="status-bar {{side ? 'dingwei':''}}  {{heise ? 'heise':''}}" style="height:{{bar_Height+46}}px;">
    <!-- 返回按钮 -->
    <!-- 我们在用这个组件的时候,我们用属性名它的属性名(show_bol)来给它值,从而控制它的样式 -->
-    <view class="goBack {{quan ? 'bai':''}}" bindtap='goBack' style="padding-top:{{bar_Height+40}}rpx;"  hidden='{{show_bol}}'>			
-      <image src='../public/images/index/back.png' class="back_back22"></image>
+    <view class="goBack {{quan ? 'tupian':''}}" bindtap='goBack' style="padding-top:{{bar_Height}}px;"  hidden='{{show_bol}}'>			
+      <image src='../public/images/index/back.png' class="back_back22" wx:if="{{tupian}}"></image>
+      <image src="/images/bai.png" class="back_back22" wx:else></image>
     </view>
     <!-- 标题 -->
-    <view class="tabar {{my_class ? 'tabar2':''}}" style="padding-top:{{bar_Height+40}}rpx;">
+    <view class="tabar {{my_class ? 'tabar2':''}}" style="padding-top:{{bar_Height}}px;">
       <text class="red">{{title}}</text>
     </view>
   </view>
