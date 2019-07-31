@@ -13,7 +13,8 @@ Page({
     active: true,
     address_id:'',
     order_id:'',
-    pwdstr:''
+    pwdstr:'',
+    give:true
   },
 
   /**
@@ -107,6 +108,44 @@ Page({
         }
         console.log(res.data)
       })
+      if (this.data.type != 1) {
+        let that = this;
+        api.postJSON('api/gift/receive_join', {
+          'token': app.globalData.token,
+          'order_id': that.data.order_id,
+          'join_type': 1,
+          'pwdstr': that.data.pwdstr
+        },
+          function (res) {
+            if (res.data.status == 1) {
+              console.log(res.data.data)
+              that.setData({
+                joinid: res.data.data
+              })
+            } else {
+              that.setData({
+                give: false,
+              })
+              wx.showToast({
+                title: res.data.msg,
+                icon: 'none'
+              })
+            }
+            console.log(res);
+          })
+      } else {
+        if (!this.data.active) {
+          that.setData({
+            give:false
+          })
+          wx.showToast({
+            icon: 'none',
+            title: '该订单已经领取过啦!',
+            duration: 2500
+          })
+          return false;
+        }
+      }
   },
 
 
@@ -158,16 +197,13 @@ Page({
   onShareAppMessage: function() {
 
   },
-
-  show: function() {
-    if(this.data.type!=1){
-      let that = this;
-      api.postJSON('api/gift/receive_join', {
-        'token': app.globalData.token,
-        'order_id': that.data.order_id,
-        'join_type': 1,
-        'pwdstr': that.data.pwdstr
-      },
+  give:function(){
+    let that = this;
+    api.postJSON('api/gift/share_callback', {
+      'token': app.globalData.token,
+      'order_id': that.data.order_id,
+      'act': 3
+    },
       function (res) {
         if (res.data.status == 1) {
           console.log(res.data.data)
@@ -183,19 +219,18 @@ Page({
         }
         console.log(res);
       })
-    }else{
-      if (!this.data.active) {
-        wx.showToast({
-          icon: 'none',
-          title: '该订单已经领取过啦!',
-          duration: 2500
-        })
-        return false;
-      }
-      this.setData({
-        flag: false
+  },
+  show: function() {
+    if(!this.data.give){
+      wx.showToast({
+        title: '该订单已经领取过啦!',
+        icon: 'none'
       })
+      return false;
     }
+    this.setData({
+      flag: false
+    })
   },
 
   hide: function() {

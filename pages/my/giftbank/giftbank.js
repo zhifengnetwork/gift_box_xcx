@@ -8,10 +8,11 @@ Page({
    */
   data: {
     currentTab: 0,
-    item:'',
+    item:true,
     list:'',
     type:2,
     order_type:'',
+    flag:0
   },
 
   clickTab: function (e) {
@@ -36,16 +37,39 @@ Page({
     // this.getdata();
   },
 
-  
+  load:function(){
+    wx.showLoading({
+      title: '加载中',
+    })
+  },
   getdata:function(){
     let that = this;
+    if(this.data.flag==0){
+      this.load();
+    }
     api.postJSON('api/order/gift_list', {
       token: app.globalData.token,
       pay_status: 1,
     }, function (res) {
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 1000)
       if (res.data.status == 1) {
+        if(res.data.data.length<=0){
+          that.setData({
+            item:false,
+            flag:1
+          })
+        }
         that.setData({
-          item: res.data.data
+          item: res.data.data,
+          flag:1
+        })
+      }else{
+        wx.showToast({
+          icon: 'none',
+          title: res.data.msg,
+          duration: 2500
         })
       }
       // console.log(res.data.data.order_type)
@@ -54,15 +78,28 @@ Page({
 
   getlist: function () {
     let that = this;
+    if (this.data.flag == 0) {
+      this.load();
+    }
     api.postJSON('api/order/gift_list', {
       token: app.globalData.token,
       pay_status: 2,
       // order_type: '1' + ',' +'2',
       // num: 200
     }, function (res) {
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 1000)
       if (res.data.status == 1) {
         that.setData({
           list: res.data.data,
+          flag:1
+        })
+      }else{
+        wx.showToast({
+          icon: 'none',
+          title: res.data.msg,
+          duration: 2500
         })
       }
       console.log(res)
