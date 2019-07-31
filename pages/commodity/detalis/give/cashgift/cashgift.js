@@ -44,34 +44,34 @@ Page({
     },
     function(res){
       console.log(res)
-      // wx.redirectTo({
-      //   url: '../giftbag/giftbag?order_id=' + that.data.order_id + '&type=' + that.data.order_type
-      // })
+      wx.redirectTo({
+        url: '../giftbag/giftbag?order_id=' + that.data.order_id + '&type=' + that.data.order_type
+      })
       if(res.data.status==1){
-        wx.requestPayment({
-          timeStamp: res.data.data.timeStamp,
-          nonceStr: res.data.data.nonceStr,
-          package: res.data.data.package,
-          signType: 'MD5',
-          paySign: res.data.data.paySign,
-          success(res) {
-            wx.showToast({
-              icon: 'none',
-              title: "支付成功",
-              duration: 2500
-            })
-            wx.redirectTo({
-              url: '../giftbag/giftbag?order_id=' + that.data.order_id + '&type=' + that.data.order_type
-            })
-          },
-          fail(res) {
-            wx.showToast({
-              icon: 'none',
-              title: "支付失败",
-              duration: 2500
-            })
-          }
-        })
+        // wx.requestPayment({
+        //   timeStamp: res.data.data.timeStamp,
+        //   nonceStr: res.data.data.nonceStr,
+        //   package: res.data.data.package,
+        //   signType: 'MD5',
+        //   paySign: res.data.data.paySign,
+        //   success(res) {
+        //     wx.showToast({
+        //       icon: 'none',
+        //       title: "支付成功",
+        //       duration: 2500
+        //     })
+        //     wx.redirectTo({
+        //       url: '../giftbag/giftbag?order_id=' + that.data.order_id + '&type=' + that.data.order_type
+        //     })
+        //   },
+        //   fail(res) {
+        //     wx.showToast({
+        //       icon: 'none',
+        //       title: "支付失败",
+        //       duration: 2500
+        //     })
+        //   }
+        // })
       }else{
         wx.showToast({
           icon: 'none',

@@ -10,6 +10,7 @@ Page({
     currentTab: 0,
     item:'',
     list:'',
+    flag: 0
   },
 
   clickTab: function (e) {
@@ -28,12 +29,19 @@ Page({
       this.getlist()
     }
   },
-
+  load: function () {
+    wx.showLoading({
+      title: '加载中',
+    })
+  },
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     this.getdata();
+    if (this.data.flag == 0) {
+      this.load();
+    }
   },
   getdata:function(){
     let that = this;
@@ -41,9 +49,19 @@ Page({
       token: app.globalData.token,
       type: 2,
     }, function (res) {
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 1000)
       if (res.data.status == 1) {
         that.setData({
-          item: res.data.data
+          item: res.data.data,
+          flag: 1
+        })
+      }else{
+        wx.showToast({
+          icon: 'none',
+          title: res.data.msg,
+          duration: 2500
         })
       }
       console.log(res)
@@ -56,9 +74,19 @@ Page({
       token: app.globalData.token,
       type: 1,
     }, function (res) {
+      setTimeout(function () {
+        wx.hideLoading()
+      }, 1000)
       if (res.data.status == 1) {
         that.setData({
-          list: res.data.data
+          list: res.data.data,
+          flag: 1
+        })
+      } else {
+        wx.showToast({
+          icon: 'none',
+          title: res.data.msg,
+          duration: 2500
         })
       }
       console.log(res)

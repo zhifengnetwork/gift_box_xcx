@@ -10,7 +10,7 @@ Page({
     bar_Height: wx.getSystemInfoSync().statusBarHeight,
     ss: "",
     tupian: [],
-    itemList: ['顺丰快递', '中通快递', '圆通快递', '申通快递'],
+    itemList: [],
     goods_name: '',
     goods_num: '',
     goods_price: '',
@@ -143,6 +143,15 @@ Page({
    */
   onLoad: function (options) {
     let that = this
+    api.postJSON('api/order/refund_logistics',function(res){
+      that.data.itemList=[];
+      for(let i = 0;i<res.data.data.length;i++){
+        that.data.itemList.push(res.data.data[i].name)
+      }
+      that.setData({
+        itemList: that.data.itemList
+      })
+    })
     that.setData({
       goods_name: options.goods_name,
       goods_num: options.goods_num,
