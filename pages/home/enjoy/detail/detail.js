@@ -1,21 +1,27 @@
+var api = require('../../../../utils/api');
+var app = getApp();
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    imgUrls: [
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    ],
+    // imgUrls: [
+    //   'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
+    //   'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
+    //   'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+    // ],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
     duration: 1000,
     currentSwiper:0,
     liang:true,
-    zang: true
+    zang: true,
+    priture:[],
+    detaillist:[],
+    comments:[],
+    status:true
 
   },
 
@@ -23,7 +29,19 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that=this
+    api.getJSON('/api/sharing/sharing_info?id=1&token=' + app.globalData.token, function (res) {
+      if (res.data.status == 1) {
+        console.log(res.data.data);
+        that.setData({detaillist:res.data.data})
+        that.setData({priture:res.data.data.priture})
+        that.setData({comments: res.data.data.comment})
+        console.log(that.data.comments)
+      }
+    })
+
+
+
   },
 
   /**
@@ -94,6 +112,24 @@ Page({
     }
     if (this.data.zang == false) {
       that.setData({ zang: true })
+    }
+  },
+  // 文本域失去焦点
+  changeContext: function (e) {
+    console.log(e.detail.value);
+    this.setData({
+      context: e.detail.value
+    })
+  },
+  // 显示全部评论
+  quanbu:function(){
+    // this.setData({status:false})
+    if(this.data.status==false){
+      this.setData({status: true})
+      return;
+    }
+    if (this.data.status == true) {
+      this.setData({status: false})
     }
   }
   

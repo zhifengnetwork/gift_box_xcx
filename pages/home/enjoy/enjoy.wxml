@@ -2,7 +2,7 @@
 <view class="body">
   <!-- 搜索区域 -->
 
-  <view class="search">
+  <view class="search" bindtap="search">
     <image src="../../public/images/classify/sousuo.png" class="sousou"></image>
     <text>大家都在搜“有什麼好吃的”</text>
   </view>
@@ -22,7 +22,7 @@
       <scroll-view>
         <view class='case-page'>
           <view class='list-masonry'>
-            <view  class='lan' wx:for="{{note}}" wx:key>
+            <view  class='lan' wx:for="{{note}}" wx:key bindtap="details">
               <!-- ' class='pic {{item.show? "Action" : ""}}' -->
               <!-- <image src='{{item.stutus ? item.cover : ""}}' mode='widthFix'></image> -->
               <image src='{{item.cover}}' mode='widthFix'></image>
@@ -33,8 +33,8 @@
                 <view class="aixin_ear">
                   <!-- bindtap="dianji" -->
                   <!-- wx:if="{{dianzang[index]}}" -->
-                  <image class="aixin" src="../../public/images/home/aixin.png" wx:if="{{item.count}}" bindtap="dianji" data-index="{{index}}" data-id="{{item.id}}"></image>
-                  <image class="aixin" src="../../public/images/home/aixinan.png" wx:else  bindtap="dianji" data-index="{{index}}" data-id="{{item.id}}"></image>
+                  <image class="aixin" src="../../public/images/home/aixin.png" wx:if="{{item.count}}" catchtap="dianji" data-index="{{index}}" data-id="{{item.id}}"></image>
+                  <image class="aixin" src="../../public/images/home/aixinan.png" wx:else  catchtap="dianji" data-index="{{index}}" data-id="{{item.id}}"></image>
                   <text style="margin-left:5rpx">{{item.point_num}}</text>
                 </view>
                 
