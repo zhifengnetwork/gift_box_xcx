@@ -23,7 +23,7 @@
   left: 100rpx;
   width: 65%;
   height: 56rpx;
-  font-size: 25rpx
+  font-size: 31rpx
 }
 .close_pic{
   position: absolute;
@@ -37,11 +37,17 @@
 .history{
   width: 84%;
   margin-left: 8%;
-  font-size: 28rpx;
+  font-size: 31rpx;
 }
 .his_title{
   margin-top: 50rpx;
   margin-left: 10rpx;
+}
+.laji_pic{
+  width: 37rpx;
+  height: 37rpx;
+  float: right;
+  margin-top: 5rpx
 }
 .his_content{
   float: left;
@@ -51,7 +57,7 @@
   border-radius:26px;
   margin: 20rpx 20rpx;
   padding: 10rpx 40rpx;
-  font-size: 25rpx
+  font-size: 30rpx
 }
 .his_content_ear{
   display: block;
@@ -61,7 +67,7 @@
 } */
 .hot{
   text-align: left;
-  font-size: 28rpx;
+  font-size: 31rpx;
   margin-top: 130rpx;
   width: 84%;
   margin-left: 8%;
@@ -78,7 +84,7 @@
   border-radius:26px;
   margin: 20rpx 20rpx;
   padding: 10rpx 30rpx;
-  font-size: 25rpx;
+  font-size: 31rpx;
   position: relative;
 }
 .textsss{

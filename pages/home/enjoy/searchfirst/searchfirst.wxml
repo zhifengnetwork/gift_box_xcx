@@ -7,7 +7,8 @@
 </view>
 <!-- 历史记录 -->
 <view class="history">
-  <view class="his_title">歷史記錄</view>
+  <view class="his_title">歷史記錄<image src="../../../../images/laji.png" class="laji_pic" bindtap="qingchu"></image></view>
+  
   <view class="his_content_ear">
      <view class="his_content" wx:for="{{history}}">{{item.keyword}}</view>
   </view>
