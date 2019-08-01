@@ -68,7 +68,7 @@
     <view class="pop-up_box_t">选择支付方式</view>
     <!-- <button class="pop-up_box_c" bindtap="integral" open-type="share">积分支付</button> -->
     <view class="pop-up_box_c" bindtap="integral" >积分支付</view>
-    <view class="pop-up_box_b" bindtap="wxpay">微信支付</view>
+    <view class="pop-up_box_b" bindtap="weixin">微信支付</view>
   </view>
 </view>
  <view class="close" bindtap="hide" hidden="{{flag}}">X</view>
