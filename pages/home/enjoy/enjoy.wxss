@@ -91,7 +91,7 @@ swiper {
   height: 100%;
 }
 
-.item-masonry {
+.lan {
   background-color: #fff;
   break-inside: avoid;
   box-sizing: border-box;
@@ -100,7 +100,7 @@ swiper {
   font-size: 30rpx;
 }
 
-.item-masonry image {
+.lan image {
   width: 100%;
 }
 .biaoti{
@@ -112,6 +112,9 @@ swiper {
 .nike{
   margin-left: 20rpx;
   font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
 
 }
 .user_pic{
@@ -119,7 +122,7 @@ swiper {
   width: 50rpx!important;
   height: 50rpx;
   border-radius: 50%;
-  background: red
+  
 }
 .aixin_ear{
   width: 200rpx;
@@ -134,3 +137,4 @@ swiper {
    width: 30rpx!important;
    height: 30rpx;
 }
+

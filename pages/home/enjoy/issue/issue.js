@@ -8,7 +8,9 @@ Page({
     bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
     images: [],
     status:true,
-    address:""
+    address:"",
+    xianshi:false,
+    xianshi2:false
   },
 
   /**
@@ -122,5 +124,25 @@ Page({
       }
     })
     console.log("666")
+  },
+  chumask1:function(){
+    this.setData({ xianshi:true})
+  },
+  quxiao: function () {
+    this.setData({ xianshi: false })
+  },
+  sure:function(){
+    this.setData({ xianshi: false })
+  },
+
+
+  goBack: function () {
+    this.setData({ xianshi2: true })
+  },
+  quxiao2: function () {
+    this.setData({ xianshi2: false })
+  },
+  sure2: function () {
+    this.setData({ xianshi2: false })
   }
 })
