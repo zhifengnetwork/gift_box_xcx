@@ -9,11 +9,15 @@ Page({
   data: {
     popup: false,
     face:'',
-    xuanzhong:[],
+    xuanzhong: '',
     x: 0,
     y: 0,
-    xx:[100,200],
-    yy: [100, 200]
+    xx: 0,
+    xindex:0,
+    xxindex:'',
+    xxx:[],
+    yy: 0,
+    name:'',
   },
 
   // 点击跳转到标签页
@@ -30,18 +34,35 @@ Page({
     that.setData({
       popup: true
     })
-
+    // console.log(that.data.xxx.concat([that.data.xindex,that.data.xx,that.data.yy]))
   },
 
   
   tuozhuai:function(e) {
   let that = this
   //  event.detail = { x, y, source }
-    console.log(e)
+    // console.log(e)
   //   // yy: that.data.yy.concat(that.data.yyy)
-   console.log(that.data.x)
-  //   // console.log(that.data.yyy)
+  //  console.log(that.data.x)
+   that.setData({
+     xx: e.detail.x,
+    //  xindex: e.target.dataset.index,
+     yy: e.detail.y
+   })
+
   },
+
+  // ab:function (e){
+  //   let that = this
+  //   console.log(e)
+  //   console.log(e.changedTouches[0].clientY)
+  //   that.setData({
+  //     xx: e.changedTouches[0].clientX,
+  //     //  xindex: e.target.dataset.index,
+  //     yy: e.changedTouches[0].clientY
+  //   })
+  // },
+  
 
   // 点击遮罩上方关闭遮罩
   guanbi:function (){
@@ -55,17 +76,49 @@ Page({
   // 点击表情
   popup:function (e){
     let that = this
-    console.log(e.currentTarget.dataset.index)
-    console.log(that.data.face[e.currentTarget.dataset.index])
+    // console.log(e)
+    // console.log(e.currentTarget.dataset.index)
+    // console.log(that.data.xindex)
     // 选取了表情之后关闭表情包
     that.setData({
       popup: false,
-      xuanzhong: that.data.xuanzhong.concat(that.data.face[e.currentTarget.dataset.index]),
+      xuanzhong: that.data.face[e.currentTarget.dataset.index],
       // xx: that.data.xx.concat([e.currentTarget.dataset.index]),
       // yy: that.data.yy.concat(that.data.yyy)
-    })
+      xxindex: e.currentTarget.dataset.index,
+      xindex: that.data.xindex+1,
+
+    }) 
+
     // console.log(that.data.yy)
-    console.log(that.data.xuanzhong)
+    // console.log(that.data.xuanzhong)
+    if(that.data.xuanzhong){
+      var aa = [{ id: that.data.xindex, x: that.data.xx, y: that.data.yy, img: that.data.xuanzhong }]
+      that.setData({
+        xxx: that.data.xxx.concat(aa)
+      })
+    }
+    console.log(that.data.xxx)
+    // that.data.xxx.push({ id: that.data.xindex, x: that.data.xx, y: that.data.yy, img: that.data.xuanzhong })
+    // console.log(that.data.xxx)
+    // if(that.data.xxx.length>1){
+    //   console.log(aa[aa.length-1].x)
+    //   console.log(aa[0].x)
+    //   var qianx = aa[0].x
+    //   var qiany = aa[0].y
+    //   var houx = aa[aa.length - 1].x
+    //   var houy = aa[aa.length - 1].y
+      
+    //   aa[0].x = houx
+    //   aa[aa.length - 1].x = qianx
+    //   aa[0].y = houy
+    //   aa[aa.length - 1].y = qiany
+
+    //   that.setData({
+    //     xxx: aa
+    //   })
+    //   console.log(that.data.xxx)
+    // }
   },
 
 
@@ -75,6 +128,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    let that = this
+    console.log(options.name)
+    if(options.name){
+      that.setData({
+        name: options.name
+      })
+    }
 
   },
 
