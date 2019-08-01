@@ -35,12 +35,42 @@ Page({
       url: '../../../../my/invoice/invoice?source=cashgift&order_type=' + this.data.order_type + '&order_id=' + this.data.order_id,
     })
   },
-  wxpay:function(){
+  weixin:function(){
+    let that = this;
+    if (app.globalData.give.order_id){
+      that.wxpay(app.globalData.give.order_id);
+      return false;
+    }
+    api.postJSON('api/order/submitOrder', {
+      'token': app.globalData.token,
+      'order_type': that.data.order_type,
+      'box_id': app.globalData.makecard,
+      'invoice_id': this.data.invoice_id
+    },
+    function (res) {
+
+      that.setData({
+        order_id: res.data.data,
+        order_type: that.data.order_type
+      })
+      if (res.data.status == 1) {
+        app.globalData.give.order_id = res.data.data
+        that.wxpay(res.data.data);
+      } else {
+        wx.showToast({
+          icon: 'none',
+          title: res.data.msg,
+          duration: 2500
+        })
+      }
+    })
+  },
+  wxpay: function (order_id){
     let that = this;
     console.log(that.data.order_id)
     api.postJSON('api/pay/order_wx_pay',{
       'token': app.globalData.token,
-      'order_id': app.globalData.give.order_id
+      'order_id': order_id
     },
     function(res){
       console.log(res)
@@ -95,48 +125,16 @@ Page({
       order_id: order_id,
       invoice_id: options.invoice_id == undefined ? "" : options.invoice_id
     });
-
     if (!app.globalData.give.order_id){
-      api.postJSON('api/order/submitOrder', {
-        'token': app.globalData.token,
-        'order_type': order_type,
-        'box_id': app.globalData.makecard,
-        'invoice_id': this.data.invoice_id
-      },
-        function (res) {
-          that.setData({
-            order_id: res.data.data,
-            order_type: order_type
-          })
-          if (res.data.status == 1) {
-            app.globalData.give.order_id = res.data.data;
-            that.order_detail(res.data.data);
-          } else {
-            wx.showToast({
-              icon: 'none',
-              title: res.data.msg,
-              duration: 2500
-            })
-          }
-        })
-    }else{
-      that.order_detail(app.globalData.give.order_id);
-    }
-  },
-  order_detail: function (order_id){
-    let that = this;
-    api.postJSON('api/order/order_detail', {
-      'token': app.globalData.token,
-      'order_id': order_id
-    },
-      function (res) {
+      api.postJSON('api/order/temporary',{
+        'token': app.globalData.token
+      },function(res){
         console.log(res)
         if (res.data.status == 1) {
           that.setData({
             order: res.data.data,
-            goods_res: res.data.data.goods_res
+            goods_res: res.data.data.goods
           })
-          console.log(that.data.goods_res)
         } else {
           wx.showToast({
             icon: 'none',
@@ -145,6 +143,26 @@ Page({
           })
         }
       })
+    }else{
+      api.postJSON('api/order/order_detail', {
+        'token': app.globalData.token,
+        'order_id': app.globalData.give.order_id
+      }, function (res) {
+        console.log(res)
+        if (res.data.status == 1) {
+          that.setData({
+            order: res.data.data,
+            goods_res: res.data.data.goods_res
+          })
+        } else {
+          wx.showToast({
+            icon: 'none',
+            title: res.data.msg,
+            duration: 2500
+          })
+        }
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
