@@ -14,6 +14,7 @@ Page({
     goods_price:'',
     spec_key_name:'',
     img:'',
+    refund_apply_id:''
   },
 
   logistics: function (){
@@ -26,11 +27,31 @@ Page({
 
 // 撤销申请
   chexiao: function () {
+    let that = this;
     wx.showModal({
       title: '提示',
       content: '您將撤銷本次申請，如果問題未解決，您還可以再次發起。確定繼續嗎？',
       success(res) {
         if (res.confirm) {
+          api.postJSON('api/order/undo_refund',{
+            'token': app.globalData.token,
+            'raid': that.data.refund_apply_id
+          },
+          function(res){
+            if(res.data.status==1){
+              wx.showToast({
+                title: '提交成功',
+                icon: 'success',
+                duration: 2000
+              })
+            }else{
+              wx.showToast({
+                title: res.data.msg,
+                icon: 'none',
+                duration: 2000
+              })
+            }
+          })
           console.log('用户点击确定')
         } else if (res.cancel) {
           console.log('用户点击取消')
@@ -61,9 +82,12 @@ Page({
   onLoad: function (options) {
     console.log(options.refund_apply_id)
     var that = this
+    that.setData({
+      refund_apply_id: options.refund_apply_id
+    })
     api.postJSON('api/order/get_refund_info', {
       'token': app.globalData.token,
-      refund_apply_id: options.refund_apply_id,
+      'refund_apply_id': options.refund_apply_id,
     }, function (res) {
       console.log(res)
       if(res.data.status == 1){
