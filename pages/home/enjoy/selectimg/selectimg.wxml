@@ -1,9 +1,16 @@
 <component title='享物圈' show_bol='{{false}}' side="{{true}}" quan="{{true}}" heise="{{true}}" my_class="{{true}}"></component>
-  <movable-area class="imgbox">
+<movable-area class="imgbox">
   <!-- <image src=""></image> -->
-      <movable-view class="popupimg" x="{{x}}" y="{{y}}" direction="all" data-index="{{index}}" bindchange="tuozhuai" wx:for="{{xuanzhong}}">
-        <image src="{{item}}"></image>
-    </movable-view>
+  <!-- 拖拽的表情 -->
+  <movable-view class="popupimg" wx:for="{{xxx}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" bindchange="tuozhuai">
+    <image src="{{item.img}}"></image>
+  </movable-view>
+
+  <!-- 拖拽的标签 -->
+  <movable-view class="popupimg"  x="{{x}}" y="{{y}}" direction="all" >
+    <!-- <image src="{{item.img}}"></image> -->
+    <text>{{name}}</text>
+  </movable-view>
 </movable-area>
 <view class="select">
   <view class="select_l" bindtap="label">
