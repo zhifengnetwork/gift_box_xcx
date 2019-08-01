@@ -1,3 +1,5 @@
+var api = require('../../../utils/api')
+var app = getApp();
 // pages/message/comment/comment.js
 Page({
 
@@ -5,7 +7,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    ab:'',
+    item:'',
+    navheight:'',
   },
 
   
@@ -14,15 +17,20 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    // api.postJSON('api/Sharing/comment_list', {
-    //   token: app.globalData.token,
-    //   sharing_id: order_id,
-    // }, function (res) {
-    //   if (res.data.status == 1) {
-    //     console.log(res)
-    //   }
-    var that = this
-    
+    let that = this
+    api.postJSON('api/sharing/user_comment_list', {
+      token: app.globalData.token,
+    }, function (res) {
+      if (res.data.status == 1) {
+        console.log(res.data.data)
+        that.setData({
+          item: res.data.data
+        })
+      }
+    })
+
+
+
     try {
       const res = wx.getSystemInfoSync()
       console.log(res.model)
@@ -33,8 +41,7 @@ Page({
       console.log(res.statusBarHeight)
       console.log(res.version)
       console.log(res.platform)
-      that.setData({ab: res.statusBarHeight })
-
+      that.setData({ navheight: res.statusBarHeight })
     } catch (e) {
       // Do something when catch error
     }

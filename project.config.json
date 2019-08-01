@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": -1,
+			"current": 23,
 			"list": [
 				{
 					"id": -1,
@@ -152,7 +152,7 @@
 					"id": 14,
 					"name": "礼盒",
 					"pathName": "pages/commodity/detalis/give/GetTheGift/GetTheGift",
-					"query": "card_id=506&type=0&order_id=3065&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDQ3MTQzMiwiZXhwIjoxNTY0NTA3NDMyLCJ1c2VyX2lkIjozMDY1fQ.iTIyaljP7O2ilKq7YhgNZmRzvc_NcNY2jhZUj6_xtqY",
+					"query": "card_id=506&type=0&order_id=3098&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDU0MTAxOCwiZXhwIjoxNTY0NTQ0NjA0LCJ1c2VyX2lkIjozMDk4fQ.xGfJqIU-XBTT1IT9kqRiKcJqmcZyX5YBH-crqlnqIsI",
 					"scene": null
 				},
 				{
@@ -208,6 +208,13 @@
 					"id": -1,
 					"name": "享物圈照片选择",
 					"pathName": "pages/home/enjoy/issue/issue",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 23,
+					"name": "1111",
+					"pathName": "pages/home/enjoy/labelsearch/labelsearch",
 					"query": "",
 					"scene": null
 				}

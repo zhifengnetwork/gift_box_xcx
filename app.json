@@ -67,7 +67,8 @@
     "pages/message/comment/comment",
     "pages/home/enjoy/selectimg/selectimg",
     "pages/home/enjoy/label/label",
-    "pages/home/enjoy/issue/issue"
+    "pages/home/enjoy/issue/issue",
+    "pages/home/enjoy/labelsearch/labelsearch"
   ],
   "window": {
     "backgroundTextStyle": "light",

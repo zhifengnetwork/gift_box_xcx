@@ -13,10 +13,7 @@ Page({
     currentTab:0,
     note: [],
     nav_title:[],
-    list:[],
-    selectId:0,
-    dianzang:[]
-  
+    list:[]
   },
 
   /**
@@ -30,14 +27,11 @@ Page({
         that.setData({nav_title:res.data.data});
       }
     }),
-    api.getJSON('/api/sharing/sharing_list?topic_id=0&page=1&num=3333', function (res) {
+    api.getJSON('/api/sharing/sharing_list?topic_id=0&page=1&num=3333'+'&token='+app.globalData.token, function (res) {
         if (res.data.status == 1) {
           console.log(res.data.data);
           that.setData({ note: res.data.data });
-          var a = false;
-          for (var i = 0; i < that.data.note.length; i++) {
-            that.data.dianzang.push(a)
-          }
+         
         
         }
       })
@@ -103,7 +97,7 @@ Page({
       })
     } 
     console.log(e.target.dataset.id)
-    api.getJSON('/api/sharing/sharing_list?topic_id=' + e.target.dataset.id +'&page=1&num=3333', function (res) {
+    api.getJSON('/api/sharing/sharing_list?topic_id=' + e.target.dataset.id + '&page=1&num=3333' + '&token=' + app.globalData.token, function (res)    {
       if (res.data.status == 1) {
         console.log(res.data.data);
         that.setData({note:res.data.data});
@@ -114,38 +108,57 @@ Page({
 
   },
   dianji:function(e){
-    
     var that=this;
-    //dianzang这个数组将存点赞的位置
-    console.log(that.data.dianzang)
     var id=e.target.dataset.id;
     var index = e.target.dataset.index;
-    var dianzang = that.data.dianzang
     console.log(index)
-    if (that.data.dianzang[index] == false){
-      console.log("aa")
-      dianzang[index] = true;
-      that.setData({dianzang: dianzang});
-      api.getJSON('/api/sharing/add_point?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDY0NDEwMiwiZXhwIjoxNTY0NjgwMTAyLCJ1c2VyX2lkIjo4OH0.TbF3Z_6ynHmj6iUcEWMW1ychAyhI_O2ZcMoo9lPIb2o' + '&sharing_id='+id, function (res) {
-        if (res.data.status == 1) {
-         console.log("点赞");
-         console.log(res.data)
-        //  that.onLoad()
-        }
-      })
-      return;
-    }
-    if (that.data.dianzang[index] == true) {
-      dianzang[index] = false
-      that.setData({ dianzang: dianzang })
-      api.getJSON('/api/sharing/add_point?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDY0NDEwMiwiZXhwIjoxNTY0NjgwMTAyLCJ1c2VyX2lkIjo4OH0.TbF3Z_6ynHmj6iUcEWMW1ychAyhI_O2ZcMoo9lPIb2o' + '&sharing_id=' + id, function (res) {
-        if (res.data.status == 1) {
+    
+    if (that.data.note[index].count==1){
+        api.getJSON('/api/sharing/add_point?token=' + app.globalData.token + '&sharing_id=' + id, function (res) {
+          if (res.data.status == 1) {
           console.log("取消点赞");
           console.log(res.data)
-          // that.onLoad()
+            that.onLoad()
+          }
+      })
+        return;
+    }
+    if (that.data.note[index].count == 0) {
+      api.getJSON('/api/sharing/add_point?token=' + app.globalData.token + '&sharing_id=' + id, function (res) {
+        if (res.data.status == 1) {
+          console.log("点赞成功");
+          console.log(res.data)
+          that.onLoad()
         }
       })
     }
+
+
+
+    // if (that.data.dianzang[index] == false){
+    //   console.log("aa")
+    //   dianzang[index] = true;
+    //   that.setData({dianzang: dianzang});
+    //   api.getJSON('/api/sharing/add_point?token=' + app.globalData.token + '&sharing_id='+id, function (res) {
+    //     if (res.data.status == 1) {
+    //      console.log("点赞");
+    //      console.log(res.data)
+    //     //  that.onLoad()
+    //     }
+    //   })
+    //   return;
+    // }
+    // if (that.data.dianzang[index] == true) {
+    //   dianzang[index] = false
+    //   that.setData({ dianzang: dianzang })
+    //   api.getJSON('/api/sharing/add_point?token=' + app.globalData.token + '&sharing_id=' + id, function (res) {
+    //     if (res.data.status == 1) {
+    //       console.log("取消点赞");
+    //       console.log(res.data)
+    //       // that.onLoad()
+    //     }
+    //   })
+    // }
     
    
    

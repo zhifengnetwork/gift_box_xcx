@@ -1,7 +1,7 @@
 <component title='標籤' show_bol='{{false}}' side="{{true}}" quan="{{true}}" heise="{{true}}" my_class="{{true}}"></component>
 <view class="sousou_ear">
-  <input type="text" class="find" placeholder="不鏽鋼餐具" placeholder-style="color:#fff;" focus="false" bindconfirm="huiche" bindinput="userNameInput" value='{{inputValue}}'></input>
-  <image src="/images/ss.png" class="sousou"></image>
+  <input type="text" class="find" placeholder="搜索" placeholder-style="color:#fff;" focus="false" bindconfirm="huiche" bindinput="userNameInput" value='{{inputValue}}'></input>
+  <image src="/images/ss.png" class="sousou" bindtap="huiche"></image>
   <image src="/images/close.png" class="close_pic" wx:if="{{status}}" bindtap="del"></image>
 </view>
 <!-- tab切换 -->
@@ -15,7 +15,7 @@
     </view>
     <text>地點</text>
   </view>
-  <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">
+  <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab" bincatch="pinpai">
   <view class="touming" data-current="1"></view>
     <view class="swiper_img">
      <view class="siteimg">
@@ -66,6 +66,53 @@
       <view class="tab_cr">
         <view>大洲科技園</view>
         <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
+      </view>
+    </view>
+    <view class="more">
+      <text>查看更多</text>
+      <view class="xiaimg">
+        <image src="/images/xia.png" />
+      </view>
+    </view>
+  </scroll-view>
+</view>
+<view class="{{currentTab == 1 ? 'show':'hidden'}}">
+  <scroll-view class="yonghu_ear">
+    <!-- <view class="tab_t">推薦地點</view> -->
+    <view class="tab_c" wx:for="{{pinpai}}">
+      <view class="tab_cl">
+        <!-- <view class="tab_climg">
+          <image src="/images/site.png" />
+        </view> -->
+        <image src="{{item.priture}}"></image>
+      </view>
+      <view class="tab_cr">
+        <view>{{item.name}}</view>
+        <text>{{item.introduce}}</text>
+      </view>
+    </view>
+    <view class="more">
+      <text>查看更多</text>
+      <view class="xiaimg">
+        <image src="/images/xia.png" />
+      </view>
+    </view>
+  </scroll-view>
+</view>
+
+<view class="{{currentTab == 2 ? 'show':'hidden'}}">
+  <scroll-view class="yonghu_ear">
+    <!-- <view class="tab_t">推薦地點</view> -->
+    <view class="tab_c" wx:for="{{shangpin}}">
+      <view class="tab_cl">
+        <!-- <view class="tab_climg">
+          <image src="/images/site.png" />
+        </view> -->
+        <image src="{{item.picture}}"></image>
+      </view>
+      <view class="tab_cr">
+        <view>{{item.goods_name}}</view>
+        <text>{{item.desc}}</text>
       </view>
     </view>
     <view class="more">

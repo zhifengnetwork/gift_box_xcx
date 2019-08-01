@@ -164,7 +164,7 @@ Page({
       function(res){
         if(res.data.status==1){
           wx.navigateTo({
-            url: '../givingother/givingother?sku_id=' + app.globalData.sku_id
+            url: '../givingother/givingother?sku_id=' + app.globalData.sku_id + '&num=' + that.data.productNum
           })
         }else{
           wx.showToast({

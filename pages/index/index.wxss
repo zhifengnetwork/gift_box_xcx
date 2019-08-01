@@ -373,3 +373,13 @@ opacity:1;
 
 }
 
+.xwq{
+  height: 500rpx;
+}
+.xwq text{
+  line-height: 100rpx;
+}
+.xwq view{
+  height: 400rpx;
+  background: skyblue;
+}

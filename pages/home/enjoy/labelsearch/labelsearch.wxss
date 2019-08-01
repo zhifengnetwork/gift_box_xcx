@@ -43,7 +43,6 @@ page{
 }
 .swiper-tab{
     text-align: center;
-    height: 150rpx;
     display: flex;
     flex-flow: row;
     justify-content: space-between;
@@ -74,27 +73,17 @@ page{
 }
 .swiper-tab-item{
     flex: 1;
-   position: relative;
-    /* background:linear-gradient(0deg,rgba(156,145,142,1) 0%,rgba(77,77,76,1) 100%); */
-}
-.touming{
-  z-index: 999;
-  width: 100%;
-  height: 100%;
-  background: yellow;
-  position: absolute;
-  opacity: 0;
-}
-.swiper-tab-item text{
-  font-size:22rpx;
-  font-family:SourceHanSansCN-Regular;
-  font-weight:400;
-  color:rgba(221,221,221,1);
-  line-height:50rpx;
+    font-size:23rpx;
+    font-family:SourceHanSansCN-Normal;
+    font-weight:400;
+    color:rgba(153,153,153,1);
+    line-height:70rpx;
+    border-top: 1rpx solid rgba(60,55,52,1);
+    border-bottom: 1rpx solid rgba(60,55,52,1);
 }
 .active{
-    color:black;
-    /* border-bottom: 4rpx solid #F65959; */
+    color: #fff;
+    border-bottom: 4rpx solid #Fff;
     font-size: 35;
     font-weight: bold;
 }
@@ -112,8 +101,55 @@ page{
 .hidden{
   display: none;
 }
-/* ///////////////////////////////////// */
-
+/* 添加标签 */
+.tianjia{
+  margin: 40rpx;
+  height:110rpx;
+  background:rgba(243, 238, 238, 0.2);
+  border-radius:15px;
+  overflow: hidden;
+}
+.tianjia_l{
+  float: left;
+  width:65rpx;
+  height:65rpx;
+  background:rgba(23,25,23,0.6);
+  border-radius:10px;
+  margin-top: 22rpx;
+  margin-left: 22rpx;
+}
+.tianjia_limg{
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 15rpx;
+  margin-left: 15rpx;
+  overflow: hidden;
+}
+.tianjia_limg image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.tianjia_r{
+  float: left;
+  margin-left: 40rpx;
+}
+.tianjia_r view{
+  font-size:25rpx;
+  line-height: 10rpx;
+  margin-top: 30rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+}
+.tianjia_r text{
+  font-size:21rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:50rpx;
+}
+/* //////////////////////////// */
 .tab_t{
   font-size:22rpx;
   margin: 0 40rpx;
