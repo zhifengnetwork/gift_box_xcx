@@ -6,7 +6,8 @@ Page({
    * 页面的初始数据
    */
   data: {
-    sku_id:''
+    sku_id:'',
+    num:''
   },
 
   /**
@@ -15,7 +16,8 @@ Page({
   onLoad: function (options) {
     console.log(options.sku_id)
     this.setData({
-      sku_id: options.sku_id
+      sku_id: options.sku_id,
+      num: options.num
     })
   },
   git_one:function(){
@@ -28,7 +30,7 @@ Page({
     // app.globalData.give.sku_id = this.data.sku_id;
     // app.globalData.give.order_type = order_type;
     wx.redirectTo({
-      url: '../detalis/give/GiveOthers/GiveOthers?sku_id=' + this.data.sku_id + '&order_type='+order_type
+      url: '../detalis/give/GiveOthers/GiveOthers?sku_id=' + this.data.sku_id + '&order_type=' + order_type + '&num=' + this.data.num
     })
   },
   /**
