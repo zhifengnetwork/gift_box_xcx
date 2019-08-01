@@ -130,11 +130,132 @@
 }
 .bottom{
   position: fixed;
-  bottom: 0rpx;
+  bottom: 30rpx;
 }
 .caogao_pic{
   width: 40rpx;
-  height: 40rpx
+  height: 40rpx;
+  background: #eeeeee;
+  padding: 20rpx;
+  border-radius: 50%
 }
-
-
+/* 底部区域 */
+.bottom{
+  width: 90%;
+  margin-left: 5%;
+}
+.img_box{
+  width: 100rpx;
+  text-align: center;
+  float: left
+}
+.save{
+  font-size: 28rpx;
+  margin-top: -10rpx
+}
+.fabu{
+  background:rgba(0,0,0,1);
+  border-radius:30px;
+  width: 520rpx;
+  height: 70rpx;
+  line-height: 70rpx;
+  margin-left: 120rpx;
+  color: white;
+  font-size: 28rpx;
+  text-align: center;
+  margin-top: 35rpx
+}
+/*遮罩层1*/
+.chumask1{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: black;
+  z-index: 9;
+  opacity: .4
+}
+.white_ear{
+  width: 550rpx;
+  height: 300rpx;
+  position: absolute;
+  background: white;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 20rpx
+}
+.aresure{
+  width: 100%;
+  text-align: center;
+  margin-top: 80rpx
+}
+.anniu{
+  width: 100%;
+  text-align: center;
+  margin-top: 60rpx
+}
+.quxiao{
+  display: inline-block;
+  width: 150rpx;
+  border:1px solid rgba(0,0,0,1);
+  border-radius:28px;
+}
+.sure{
+  width: 150rpx;
+  display: inline-block;
+  border:1px solid rgba(0,0,0,1);
+  border-radius:28px;
+  background: rgba(0,0,0,1);
+  color: white;
+  margin-left: 30rpx
+}
+/* 遮罩层2 */
+.chumask2{
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  background: black;
+  z-index: 9;
+  opacity: .4
+}
+.white_ear2{
+  width: 550rpx;
+  height: 300rpx;
+  position: absolute;
+  background: white;
+  z-index: 10;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%,-50%);
+  border-radius: 20rpx
+}
+.aresure2{
+  width: 100%;
+  text-align: center;
+  margin-top: 80rpx
+}
+.anniu2{
+  width: 100%;
+  text-align: center;
+  margin-top: 60rpx
+}
+.quxiao2{
+  display: inline-block;
+  width: 150rpx;
+  border:1px solid rgba(0,0,0,1);
+  border-radius:28px;
+}
+.sure2{
+  width: 150rpx;
+  display: inline-block;
+  border:1px solid rgba(0,0,0,1);
+  border-radius:28px;
+  background: rgba(0,0,0,1);
+  color: white;
+  margin-left: 30rpx
+}

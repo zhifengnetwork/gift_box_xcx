@@ -29,7 +29,7 @@
         <icon wx:else type="circle" bindtap="selectList" data-index="{{index}}" class="dagou" size="20" data-goodid="{{item.id}}" data-sku_id="{{item.sku_id}}"/>
         
         <!-- 点击商品图片可跳转到商品详情 -->
-        <navigator url="../commodity/detalis/detalis?id={{item.id}}">
+        <navigator url="../commodity/detalis/detalis?id={{item.goods_id}}">
             <image class="cart-thumb" src="{{item.goods_img}}"></image>
             
         </navigator>

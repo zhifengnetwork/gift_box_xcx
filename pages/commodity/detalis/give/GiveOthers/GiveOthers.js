@@ -108,6 +108,7 @@ Page({
       radio:-1,
       sku_id: sku_id,
       order_type: order_type,
+      num: options.num
     })
   },
 

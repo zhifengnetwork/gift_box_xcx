@@ -38,14 +38,38 @@
     <text class="yijing_tianjia" wx:else>{{address}}</text>
 </view>
 
+<!-- 底部 -->
 <view class="bottom">
-   
-   <view class="img_box">
+   <view class="img_box" bindtap="chumask1">
       <image src="../../../../images/caogaoxiang.png" class="caogao_pic" ></image>
+      <view class="save">存草稿</view>
    </view>
-
-
-
+   <view class="fabu">發佈</view>
 </view>
+
+
+
+<!-- 存草稿箱的遮罩层 -->
+<cover-view class="chumask1" wx:if="{{xianshi}}">
+</cover-view>
+<cover-view class="white_ear" wx:if="{{xianshi}}">
+   <cover-view class="aresure">確認保存至草稿箱嗎？</cover-view>
+   <cover-view class="anniu">
+    <cover-view class="quxiao" bindtap="quxiao">取消</cover-view>
+    <cover-view class="sure" bindtap="sure">确定</cover-view>
+   </cover-view>
+</cover-view>
+
+
+<!-- 返回按钮的遮罩层 -->
+<cover-view class="chumask2" wx:if="{{xianshi2}}">
+</cover-view>
+<cover-view class="white_ear2" wx:if="{{xianshi2}}">
+   <cover-view class="aresure2">您將退出發佈，是否保存草稿？</cover-view>
+   <cover-view class="anniu2">
+    <cover-view class="quxiao2" bindtap="quxiao2">取消</cover-view>
+    <cover-view class="sure2" bindtap="sure2">确定</cover-view>
+   </cover-view>
+</cover-view>
 
 

@@ -208,7 +208,7 @@ Page({
         if (res.data.status == 1) {
           console.log(res.data.data)
           that.setData({
-            flag: false,
+            flag: true,
             joinid: res.data.data
           })
         } else {

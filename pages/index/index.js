@@ -51,8 +51,11 @@ Page({
 
   // 点击跳转到享物圈页面
     xwq: function () {
+      // wx.navigateTo({
+      //   url: '../home/enjoy/selectimg/selectimg',
+      // })
       wx.navigateTo({
-        url: '../home/enjoy/selectimg/selectimg',
+        url: '../home/enjoy/enjoy',
       })
     },
 
