@@ -1243,10 +1243,11 @@ color:rgba(51,51,51,1);
 /* 商品规格选择样式--e */
 
 .qiuliwu{
-  width: 200rpx;
+  width: 130rpx;
   height: 110rpx;
   /* background: yellow; */
   position: absolute;
+  padding: 0;
   top: 40%;
   left: 0rpx;
   z-index: 99;

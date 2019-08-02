@@ -199,6 +199,12 @@ Page({
   },
   give:function(){
     let that = this;
+      wx.shareAppMessage(
+        {
+          title:  '为你准备了一份惊喜,请火速查收!',
+          imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',
+        }
+      )
     api.postJSON('api/gift/share_callback', {
       'token': app.globalData.token,
       'order_id': that.data.order_id,
