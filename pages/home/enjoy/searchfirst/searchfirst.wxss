@@ -23,7 +23,7 @@
   left: 100rpx;
   width: 65%;
   height: 56rpx;
-  font-size: 25rpx
+  font-size: 31rpx
 }
 .close_pic{
   position: absolute;
@@ -37,11 +37,17 @@
 .history{
   width: 84%;
   margin-left: 8%;
-  font-size: 28rpx;
+  font-size: 31rpx;
 }
 .his_title{
   margin-top: 50rpx;
   margin-left: 10rpx;
+}
+.laji_pic{
+  width: 37rpx;
+  height: 37rpx;
+  float: right;
+  margin-top: 5rpx
 }
 .his_content{
   float: left;
@@ -50,18 +56,18 @@
   background:rgba(246,245,245,1);
   border-radius:26px;
   margin: 20rpx 20rpx;
-  padding: 10rpx 20rpx;
-  font-size: 25rpx
+  padding: 10rpx 40rpx;
+  font-size: 30rpx
 }
 .his_content_ear{
   display: block;
 }
-.his_content:first-child{
+/* .his_content:first-child{
   margin-left: 0rpx
-}
+} */
 .hot{
   text-align: left;
-  font-size: 28rpx;
+  font-size: 31rpx;
   margin-top: 130rpx;
   width: 84%;
   margin-left: 8%;
@@ -77,22 +83,35 @@
   background:rgba(246,245,245,1);
   border-radius:26px;
   margin: 20rpx 20rpx;
-  padding: 10rpx 20rpx;
-  font-size: 25rpx;
+  padding: 10rpx 30rpx;
+  font-size: 31rpx;
   position: relative;
 }
-.hot_content text{
+.textsss{
   margin-left: 40rpx
 }
 .hot_content_ear{
   display: block;
 }
-.hot_content:first-child{
+/* .hot_content:first-child{
   margin-left: 0rpx
-}
+} */
 .hot_pic{
   position: absolute;
   width: 32rpx;
   height: 32rpx;
   top: 19rpx
+}
+.biaoti{
+  margin-top: 300rpx;
+  text-align: left;
+  position: relative;
+  height: 45rpx;
+  line-height: 45rpx;
+  padding-top: 30rpx
+
+}
+.biaoti text{
+  position: absolute;
+  left: 0
 }

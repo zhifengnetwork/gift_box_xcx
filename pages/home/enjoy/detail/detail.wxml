@@ -2,14 +2,14 @@
 <view class="body">
 
   <view class="header">
-    <view class="user_pic"></view>
-    <view class="user_name">today</view>
+    <view class="user_pic"><image src="{{detaillist.avatar}}" class="touxia"></image></view>
+    <view class="user_name">{{detaillist.nickname}}</view>
     <view class="care">關注</view>
   </view>
   <!-- swiper -->
   <view class="wrap">
     <swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange">
-      <block wx:for="{{imgUrls}}" wx:key="imgs">
+      <block wx:for="{{priture}}" wx:key="imgs">
         <swiper-item>
           <image src="{{item}}" class="slide-image"></image>
         </swiper-item>
@@ -18,17 +18,13 @@
     <!--重置小圆点的样式 -->
   </view>
   <view class="dots">
-    <block wx:for="{{imgUrls}}" wx:key>
+    <block wx:for="{{priture}}" wx:key>
       <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
     </block>
   </view>
   <!-- 文字介绍 -->
-  <view class="intriduce1" wx:if="{{liang}}">
-   看這個就夠了還需要什麼說明書-15天退換期後的AirPods2的使用心得總歸一句話:值得買!!因為我之前因為我之前的P8藍牙耳機(MFB-E6800)勒脖子而且不美觀加上待機時間太短即使是大黄的限量版可是我還是想換新的畢竟設備都是蘋果的AirPods2無疑是最優選擇因為各方面性能有提升還新加了無線充電盒在618打折的優惠誘惑下癢癢的心終於爆發了逛超市時去我們這邊的代理店諮詢了一下使用了下店員的1代初印象很不錯因為無線和有線相隔300多開始我以為無線充電盒才能攜帶幫耳機充電後來才知道差別只不過是無線充電盒可以像X一背面貼在無線充電盤上直接充電但是使用x一年半裏一次都用不著這項功能加上代理店裏普通版的只比蘇寧易購的618價格貴10塊 (1199)而無線的要貴50(1499)加上15天之內非人為問題無條件退換我就選擇了1199的普通款果然這種選擇是正確的因為我用了還沒8天現了左邊耳機連不的問題
-  </view>
-   <view class="intriduce2" wx:else>
-  看這個就夠了還需要什麼說明書-15天退換期後的AirPods2的使用心得總歸一句話:值得買!!因為我之前因為我之前的P8藍牙耳機(MFB-E6800)勒脖子而且不美觀加上待機時間太短即使是大黄的限量版可是我還是想換新的畢竟設備都是蘋果的AirPods2無疑是最優選擇因為各方面性能有提升還新加了無線充電盒在618打折的優惠誘惑下癢癢的心終於爆發了逛超市時去我們這邊的代理店諮詢了一下使用了下店員的1代初印象很不錯因為無線和有線相隔300多開始我以為無線充電盒才能攜帶幫耳機充電後來才知道差別只不過是無線充電盒可以像X一背面貼在無線充電盤上直接充電但是使用x一年半裏一次都用不著這項功能加上代理店裏普通版的只比蘇寧易購的618價格貴10塊 (1199)而無線的要貴50(1499)加上15天之內非人為問題無條件退換我就選擇了1199的普通款果然這種選擇是正確的因為我用了還沒8天現了左邊耳機連不的問題
-  </view>
+  <view class="intriduce1" wx:if="{{liang}}">{{detaillist.content}}</view>
+   <view class="intriduce2" wx:else>{{detaillist.content}}</view>
   <view class="zhankai" wx:if="{{liang}}" bindtap="zhankai">展開</view>
   <view class="zhankai" wx:else bindtap="shouqi">收起</view>
   
@@ -37,22 +33,41 @@
      <view class="first">
           <image class="aixin" src="../../../public/images/home/aixinan.png"  wx:if="{{zang}}" bindtap="dianji"></image>
           <image class="aixin" src="../../../public/images/home/aixin.png" wx:else bindtap="dianji"></image>
-          <text class="tiaoshu">8999</text>
+          <text class="tiaoshu">{{detaillist.point_num}}</text>
      </view>
      <view class="second">
          <image class="aixin2" src="../../../public/images/home/zhuanfa.png"></image>
-         <text class="tiaoshu2">8999</text>
+         <text class="tiaoshu2">{{detaillist.forward_num}}</text>
      </view>
      <view class="three">
           <image class="aixin3" src="../../../public/images/home/soucang.png"></image> 
-          <text class="tiaoshu3">8999</text>
+          <text class="tiaoshu3">{{detaillist.collection_num}}</text>
      </view>
   </view>
   <!-- 评论区域 -->
-  <view class="comment_ear">
-       
-  </view>
+ <view class="comment_ear">
+   <view wx:if="{{status}}">
+      <view class="ear" wx:for="{{comments}}" wx:if="{{index<2}}">
+          <view class="nick_name_ear">{{item.nickname}}:</view>
+          <text class="comment_text">{{item.content}}</text>
+      </view>
+   </view>
+  
+  <view wx:if="{{!status}}">
+      <view class="ear" wx:for="{{comments}}" >
+          <view class="nick_name_ear">{{item.nickname}}:</view>
+          <text class="comment_text">{{item.content}}</text>
+      </view>
+   </view>
 
+    <view class="looks_detail" bindtap="quanbu">查看全部3條評論></view>
+    
+      <view class="white_ear">
+            <image src="../../../../images/white.png" class="white_pic"></image>
+            <textarea class="weui-textarea" placeholder="選填，請先和商家協商一致" bindblur="changeContext" style="height:140rpx" />
+      </view>
+   
+ </view>
 
 
 

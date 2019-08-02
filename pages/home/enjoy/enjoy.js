@@ -132,38 +132,18 @@ Page({
         }
       })
     }
-
-
-
-    // if (that.data.dianzang[index] == false){
-    //   console.log("aa")
-    //   dianzang[index] = true;
-    //   that.setData({dianzang: dianzang});
-    //   api.getJSON('/api/sharing/add_point?token=' + app.globalData.token + '&sharing_id='+id, function (res) {
-    //     if (res.data.status == 1) {
-    //      console.log("点赞");
-    //      console.log(res.data)
-    //     //  that.onLoad()
-    //     }
-    //   })
-    //   return;
-    // }
-    // if (that.data.dianzang[index] == true) {
-    //   dianzang[index] = false
-    //   that.setData({ dianzang: dianzang })
-    //   api.getJSON('/api/sharing/add_point?token=' + app.globalData.token + '&sharing_id=' + id, function (res) {
-    //     if (res.data.status == 1) {
-    //       console.log("取消点赞");
-    //       console.log(res.data)
-    //       // that.onLoad()
-    //     }
-    //   })
-    // }
-    
-   
-   
-  
-
+  },
+  // 跳转到商品详情
+  details:function(){
+    wx.navigateTo({
+      url: '../../home/enjoy/detail/detail',
+    })
+  },
+  // 搜索框跳转页面
+  search:function(){
+    wx.navigateTo({
+      url: '../../home/enjoy/searchfirst/searchfirst',
+    })
   }
  
 

@@ -1,3 +1,5 @@
+var api = require('../../../../utils/api');
+var app = getApp();
 Page({
 
   /**
@@ -6,13 +8,22 @@ Page({
   data: {
     status: false,
     inputValue: null,
+    hot:[],
+    history:[]
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    
+    var that=this
+    api.getJSON('/api/Category/hot_search?token=' + app.globalData.token, function (res) {
+      if (res.data.status == 1) {
+        console.log(res.data.data)
+        that.setData({ hot: res.data.data.hot})
+        that.setData({ history: res.data.data.history})
+      }
+    })
   },
 
   /**
@@ -74,4 +85,12 @@ Page({
   del: function () {
     this.setData({ 'inputValue': '' })
   },
+  // 清理垃圾桶
+  qingchu:function(){
+    api.getJSON('/api/sharing/empty_search?token=' + app.globalData.token, function (res) {
+      if (res.data.status == 1) {
+        console.log("清除成功!")
+      }
+    })
+  }
 })

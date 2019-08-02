@@ -11,6 +11,7 @@ Page({
     currentTab: 0,
     pinpai:'',
     shangpin:'',
+    name:'',
   },
 
   // 输入框显示关闭符号
@@ -77,6 +78,50 @@ Page({
 
   },
 
+
+
+  // 点击品牌返回下标所对应的name进行传参
+  pinpaibox:function (e){
+    let that = this
+    // console.log(e)
+    // console.log(e.target.dataset.id)
+    for(var i=0;i<that.data.pinpai.length;i++){
+      // console.log(that.data.pinpai[i].name)
+      if(that.data.pinpai[i].id == e.target.dataset.id){
+        
+        var namelist = that.data.pinpai[i].name
+      }
+    }
+    that.setData({
+      name: namelist
+    })
+    wx.navigateTo({
+      url: '../selectimg/selectimg?name=' + that.data.name,
+    })
+
+  },
+
+
+// 点击商品返回下标所对应的name进行传参
+  shangpinbox:function(e){
+    let that = this
+    // console.log(e)
+    // console.log(e.target.dataset.id)
+    for (var i = 0; i < that.data.shangpin.length; i++) {
+      // console.log(that.data.pinpai[i].name)
+      if (that.data.shangpin[i].goods_id == e.target.dataset.id) {
+
+        var namelist = that.data.shangpin[i].goods_name
+      }
+    }
+    that.setData({
+      name: namelist
+    })
+    wx.navigateTo({
+      url: '../selectimg/selectimg?name=' + that.data.name,
+    })
+
+  },
 
 
 

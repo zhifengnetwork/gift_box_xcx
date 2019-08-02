@@ -7,20 +7,21 @@
 </view>
 <!-- 历史记录 -->
 <view class="history">
-  <view class="his_title">歷史記錄</view>
+  <view class="his_title">歷史記錄<image src="../../../../images/laji.png" class="laji_pic" bindtap="qingchu"></image></view>
+  
   <view class="his_content_ear">
-     <view class="his_content">看這個就夠了 還需要</view>
-     <view class="his_content">辦公室小吃</view>
+     <view class="his_content" wx:for="{{history}}">{{item.keyword}}</view>
   </view>
 </view>
 
 <!-- 热门搜索 -->
-<view class="hot">
-     <view>熱門搜索</view>
+
+<view class="hot"> 
+     <view class="biaoti"><text>熱門搜索</text></view> 
      <view class="hot_content_ear">
-     <view class="hot_content"><image src="../../../public/images/home/hot.png" class="hot_pic"></image><text>看這個就夠了 還需要</text></view>
-     <view class="hot_content"><image src="../../../public/images/home/hot.png" class="hot_pic"></image><text>辦公室小吃</text></view>
-  </view>
+          <view class="hot_content" wx:for="{{hot}}"><image src="../../../public/images/home/hot.png" class="hot_pic" wx:if="{{index<2}}"></image><text class="{{index<2 ? 'textsss':''}}">{{item.keyword}}</text></view>
+          <!-- <view class="hot_content"><image src="../../../public/images/home/hot.png" class="hot_pic"></image><text>辦公室小吃</text></view> -->
+     </view>
 
 </view>
 
