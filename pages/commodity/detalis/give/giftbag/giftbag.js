@@ -126,7 +126,9 @@ Page({
     console.log('分享URL：',url)
     var nickname = app.globalData.userInfo.nickname;
     nickname = nickname == undefined ? '' : nickname;
-   
+    wx.switchTab({
+      url: '/pages/index/index'
+    })
     return {
       title: nickname + '为你准备了一份惊喜,请火速查收!',
       imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',

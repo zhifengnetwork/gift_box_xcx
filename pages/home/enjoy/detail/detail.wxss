@@ -194,3 +194,6 @@ swiper{
   position: absolute;
   left: 135rpx
 }
+.ear:last-child{
+  padding-bottom: 20rpx
+}
