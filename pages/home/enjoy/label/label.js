@@ -1,5 +1,6 @@
 var api = require('../../../../utils/api');
 var app = getApp();
+
 // pages/home/enjoy/label/label.js
 Page({
 
@@ -12,6 +13,7 @@ Page({
     pinpai:'',
     shangpin:'',
     name:'',
+    aa: []
   },
 
   // 输入框显示关闭符号
@@ -83,43 +85,50 @@ Page({
   // 点击品牌返回下标所对应的name进行传参
   pinpaibox:function (e){
     let that = this
-    // console.log(e)
-    // console.log(e.target.dataset.id)
     for(var i=0;i<that.data.pinpai.length;i++){
-      // console.log(that.data.pinpai[i].name)
       if(that.data.pinpai[i].id == e.target.dataset.id){
-        
-        var namelist = that.data.pinpai[i].name
+       var namelist = that.data.pinpai[i].name
       }
     }
+    // that.data.aa.push(namelist)
+    // console.log(that.data.aa)
     that.setData({
-      name: namelist
+      name: that.data.aa
     })
-    wx.navigateTo({
-      url: '../selectimg/selectimg?name=' + that.data.name,
-    })
-
+    console.log(that.data.name)
+   
+    app.globalData.a.push(namelist)
+    console.log("sss")
+    console.log(app.globalData.a)
+    wx.setStorageSync('name', app.globalData.a);
+        wx.navigateTo({
+          url: '../selectimg/selectimg',
+        }) 
   },
 
 
 // 点击商品返回下标所对应的name进行传参
   shangpinbox:function(e){
     let that = this
-    // console.log(e)
-    // console.log(e.target.dataset.id)
     for (var i = 0; i < that.data.shangpin.length; i++) {
-      // console.log(that.data.pinpai[i].name)
-      if (that.data.shangpin[i].goods_id == e.target.dataset.id) {
-
+      if (that.data.shangpin[i].id == e.target.dataset.id) {
         var namelist = that.data.shangpin[i].goods_name
       }
     }
+    // that.data.aa.push(namelist)
+    // console.log(that.data.aa)
     that.setData({
-      name: namelist
+      name: that.data.aa
     })
+    console.log(that.data.name)
+
+    app.globalData.a.push(namelist)
+    console.log("sss")
+    console.log(app.globalData.a)
+    wx.setStorageSync('name', app.globalData.a);
     wx.navigateTo({
-      url: '../selectimg/selectimg?name=' + that.data.name,
-    })
+      url: '../selectimg/selectimg',
+    }) 
 
   },
 

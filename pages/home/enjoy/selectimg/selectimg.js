@@ -18,6 +18,7 @@ Page({
     xxx:[],
     yy: 0,
     name:'',
+    huancun: '',
   },
 
   // 点击跳转到标签页
@@ -41,27 +42,18 @@ Page({
   tuozhuai:function(e) {
   let that = this
   //  event.detail = { x, y, source }
-    // console.log(e)
+    console.log(e)
   //   // yy: that.data.yy.concat(that.data.yyy)
   //  console.log(that.data.x)
    that.setData({
-     xx: e.detail.x,
+     xx: e.changedTouches[0].pageX,
     //  xindex: e.target.dataset.index,
-     yy: e.detail.y
+     yy: e.changedTouches[0].pageY
    })
-
+   
+  console.log(that.data.xx)
   },
 
-  // ab:function (e){
-  //   let that = this
-  //   console.log(e)
-  //   console.log(e.changedTouches[0].clientY)
-  //   that.setData({
-  //     xx: e.changedTouches[0].clientX,
-  //     //  xindex: e.target.dataset.index,
-  //     yy: e.changedTouches[0].clientY
-  //   })
-  // },
   
 
   // 点击遮罩上方关闭遮罩
@@ -76,27 +68,20 @@ Page({
   // 点击表情
   popup:function (e){
     let that = this
-    // console.log(e)
-    // console.log(e.currentTarget.dataset.index)
-    // console.log(that.data.xindex)
-    // 选取了表情之后关闭表情包
     that.setData({
       popup: false,
       xuanzhong: that.data.face[e.currentTarget.dataset.index],
-      // xx: that.data.xx.concat([e.currentTarget.dataset.index]),
-      // yy: that.data.yy.concat(that.data.yyy)
       xxindex: e.currentTarget.dataset.index,
       xindex: that.data.xindex+1,
-
     }) 
-
-    // console.log(that.data.yy)
-    // console.log(that.data.xuanzhong)
     if(that.data.xuanzhong){
       var aa = [{ id: that.data.xindex, x: that.data.xx, y: that.data.yy, img: that.data.xuanzhong }]
       that.setData({
         xxx: that.data.xxx.concat(aa)
       })
+      app.globalData.biaoqing = that.data.xxx
+      console.log(app.globalData.biaoqing)
+      wx.setStorageSync('biaoqing', app.globalData.biaoqing);
     }
     console.log(that.data.xxx)
     // that.data.xxx.push({ id: that.data.xindex, x: that.data.xx, y: that.data.yy, img: that.data.xuanzhong })
@@ -129,13 +114,20 @@ Page({
    */
   onLoad: function (options) {
     let that = this
-    console.log(options.name)
-    if(options.name){
+    var a = wx.getStorageSync('name')
+    if(a){
       that.setData({
-        name: options.name
+        name: a
       })
     }
-
+    var b = wx.getStorageSync('biaoqing')
+    if (b) {
+      that.setData({
+        xxx: b
+      })
+    }
+    
+    console.log(that.data.name)
   },
 
   /**
@@ -159,12 +151,15 @@ Page({
         })
       }
     })
+    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    let that = this
+
 
   },
 
@@ -172,7 +167,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
   },
 
   /**

@@ -92,7 +92,9 @@ App({
     iphone:"",
     email:"",
     buxuan:'',
-    xuan:''
+    xuan:'',
+    a:[],
+    biaoqing:'',
 
 
 
