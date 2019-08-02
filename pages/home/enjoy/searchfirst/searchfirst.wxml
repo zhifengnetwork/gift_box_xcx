@@ -5,17 +5,17 @@
   <image src="../../../public/images/classify/sousuo.png" class="sousou"></image>
   <image src="../../../public/images/home/close.png" class="close_pic" wx:if="{{status}}" bindtap="del"></image>
 </view>
+
 <!-- 历史记录 -->
 <view class="history">
   <view class="his_title">歷史記錄<image src="../../../../images/laji.png" class="laji_pic" bindtap="qingchu"></image></view>
-  
   <view class="his_content_ear">
      <view class="his_content" wx:for="{{history}}">{{item.keyword}}</view>
-  </view>
+  </view>  
 </view>
 
-<!-- 热门搜索 -->
 
+<!-- 热门搜索 -->
 <view class="hot"> 
      <view class="biaoti"><text>熱門搜索</text></view> 
      <view class="hot_content_ear">
