@@ -39,8 +39,7 @@ Page({
    * 积分支付
    */
   order_jifen_pay: function () {
-    console.log('8888888888888')
-
+  
     var that = this
     if (!(/^1[3456789]\d{9}$/.test(that.data.card_mobile))) {
       wx.showToast({
@@ -48,7 +47,8 @@ Page({
         icon: 'none'
       })
       return false;
-    } 
+    }
+
     api.postJSON('api/jifen/order_jifen_pay', {
       'order_id': that.data.order_id,
       'card_num': that.data.card_num,
@@ -59,26 +59,26 @@ Page({
       function (res) {
       
         if (res.data.status == 1) {
-          console.log('55555555555555')
+         
           wx.showToast({
-            title: '提交成功,等待审核',
+            title: '提交成功',
             icon: 'success',
             duration: 2000
           })
-          setTimeout(function(){
-            wx.reLaunch({
-              url: '/pages/index/index',
+          // setTimeout(function(){
+          //   wx.reLaunch({
+          //     url: '/pages/index/index',
+          //   })
+          // },2000)
+          if (that.data.order_type>=1){
+            wx.navigateTo({
+              url: '/pages/commodity/detalis/give/giftbag/giftbag?order_id=' + that.data.order_id,
             })
-          },2000)
-          // if (that.data.order_type>=1){
-          //   wx.navigateTo({
-          //     url: '/pages/commodity/detalis/give/giftbag/giftbag?order_id=' + that.data.order_id,
-          //   })
-          // }else{
-          //   wx.navigateTo({
-          //     url: '/pages/my/giftbank/giftbank?order_id=' + that.data.order_id,
-          //   })
-          // }
+          }else{
+            wx.navigateTo({
+              url: '/pages/my/giftbank/giftbank?order_id=' + that.data.order_id,
+            })
+          }
 
         } else {
           wx.showToast({
