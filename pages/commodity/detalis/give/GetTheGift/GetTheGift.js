@@ -14,7 +14,8 @@ Page({
     address_id:'',
     order_id:'',
     pwdstr:'',
-    give:true
+    give:true,
+    givetext:''
   },
 
   /**
@@ -125,6 +126,7 @@ Page({
             } else {
               that.setData({
                 give: false,
+                givetext: res.data.msg
               })
               wx.showToast({
                 title: res.data.msg,
@@ -199,12 +201,6 @@ Page({
   },
   give:function(){
     let that = this;
-      wx.shareAppMessage(
-        {
-          title:  '为你准备了一份惊喜,请火速查收!',
-          imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',
-        }
-      )
     api.postJSON('api/gift/share_callback', {
       'token': app.globalData.token,
       'order_id': that.data.order_id,
@@ -229,7 +225,7 @@ Page({
   show: function() {
     if(!this.data.give){
       wx.showToast({
-        title: '该订单已经领取过啦!',
+        title: this.data.givetext,
         icon: 'none'
       })
       return false;

@@ -27,9 +27,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var order_id = options.order_id;
+    var order_id = options.order_id ? options.order_id : '';
+    var order_type = options.order_type ? options.order_type : '';
     this.setData({
-      order_id: order_id
+      order_id: order_id,
+      order_type: order_type
     })
     console.log('oooooooooooooo' + order_id)
   },
@@ -40,6 +42,13 @@ Page({
     console.log('8888888888888')
 
     var that = this
+    if (!(/^1[3456789]\d{9}$/.test(that.data.card_mobile))) {
+      wx.showToast({
+        title: "手机号码有误，请重填",
+        icon: 'none'
+      })
+      return false;
+    } 
     api.postJSON('api/jifen/order_jifen_pay', {
       'order_id': that.data.order_id,
       'card_num': that.data.card_num,
@@ -51,10 +60,31 @@ Page({
       
         if (res.data.status == 1) {
           console.log('55555555555555')
-          wx.navigateTo({
-            url: '/pages/commodity/detalis/give/giftbag/giftbag?order_id=' + that.data.order_id,
+          wx.showToast({
+            title: '提交成功,等待审核',
+            icon: 'success',
+            duration: 2000
           })
+          setTimeout(function(){
+            wx.reLaunch({
+              url: '/pages/index/index',
+            })
+          },2000)
+          // if (that.data.order_type>=1){
+          //   wx.navigateTo({
+          //     url: '/pages/commodity/detalis/give/giftbag/giftbag?order_id=' + that.data.order_id,
+          //   })
+          // }else{
+          //   wx.navigateTo({
+          //     url: '/pages/my/giftbank/giftbank?order_id=' + that.data.order_id,
+          //   })
+          // }
 
+        } else {
+          wx.showToast({
+            title: res.data.msg,
+            icon: 'none'
+          })
         }
       })
   },
