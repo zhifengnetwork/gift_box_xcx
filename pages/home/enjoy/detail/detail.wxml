@@ -2,7 +2,9 @@
 <view class="body">
 
   <view class="header">
-    <view class="user_pic"><image src="{{detaillist.avatar}}" class="touxia"></image></view>
+    <view class="user_pic">
+      <image src="{{detaillist.avatar}}" class="touxia"></image>
+    </view>
     <view class="user_name">{{detaillist.nickname}}</view>
     <view class="care">關注</view>
   </view>
@@ -24,50 +26,59 @@
   </view>
   <!-- 文字介绍 -->
   <view class="intriduce1" wx:if="{{liang}}">{{detaillist.content}}</view>
-   <view class="intriduce2" wx:else>{{detaillist.content}}</view>
+  <view class="intriduce2" wx:else>{{detaillist.content}}</view>
   <view class="zhankai" wx:if="{{liang}}" bindtap="zhankai">展開</view>
   <view class="zhankai" wx:else bindtap="shouqi">收起</view>
-  
+
   <!-- 点赞,转发,收藏区域 -->
   <view class="collect_ear">
-     <view class="first">
-          <image class="aixin" src="../../../public/images/home/aixinan.png"  wx:if="{{zang}}" bindtap="dianji"></image>
-          <image class="aixin" src="../../../public/images/home/aixin.png" wx:else bindtap="dianji"></image>
-          <text class="tiaoshu">{{detaillist.point_num}}</text>
-     </view>
-     <view class="second">
-         <image class="aixin2" src="../../../public/images/home/zhuanfa.png"></image>
-         <text class="tiaoshu2">{{detaillist.forward_num}}</text>
-     </view>
-     <view class="three">
-          <image class="aixin3" src="../../../public/images/home/soucang.png"></image> 
-          <text class="tiaoshu3">{{detaillist.collection_num}}</text>
-     </view>
+    <view class="first">
+      <image class="aixin" src="../../../public/images/home/aixinan.png" wx:if="{{zang}}" bindtap="dianji"></image>
+      <image class="aixin" src="../../../public/images/home/aixin.png" wx:else bindtap="dianji"></image>
+      <text class="tiaoshu">{{detaillist.point_num}}</text>
+    </view>
+    <view class="second">
+      <image class="aixin2" src="../../../public/images/home/zhuanfa.png"></image>
+      <text class="tiaoshu2">{{detaillist.forward_num}}</text>
+    </view>
+    <view class="three">
+      <image class="aixin3" src="../../../public/images/home/soucang.png"></image>
+      <text class="tiaoshu3">{{detaillist.collection_num}}</text>
+    </view>
   </view>
   <!-- 评论区域 -->
- <view class="comment_ear">
-   <view wx:if="{{status}}">
-      <view class="ear" wx:for="{{comments}}" wx:if="{{index<3}}">
-          <view class="nick_name_ear">{{item.nickname}}:</view>
-          <text class="comment_text">{{item.content}}</text>
+  <view class="comment_ear">
+
+      <!-- {{comments[5].list[0].content}} -->
+
+    <view wx:if="{{status}}">
+      <view class="ear" wx:for="{{comments}}" wx:if="{{index<3}}" wx:key bindtap="huifu" data-pid="{{item.pid}}" data-nickname="{{item.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
+        <view class="nick_name_ear">{{itemname.nickname}}</view>
+        <text class="comment_text">{{itemname.content}}</text>
       </view>
-   </view>
+    </view>
+
   
-  <view wx:if="{{!status}}">
-      <view class="ear" wx:for="{{comments}}" >
-          <view class="nick_name_ear">{{item.nickname}}:</view>
-          <text class="comment_text">{{item.content}}</text>
+
+    <view wx:if="{{!status}}">
+      <view class="ear" wx:for="{{comments}}" wx:key bindtap="huifu" data-pid="{{item.pid}}" data-nickname="{{item.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
+        <view class="nick_name_ear">{{itemname.nickname}}:</view>
+        <text class="comment_text">{{itemname.content}}</text>
+
       </view>
-   </view>
+    </view>
+
+
+
 
     <view class="looks_detail" bindtap="quanbu" wx:if="{{detaillist.comment_num>3}}">查看全部{{detaillist.comment_num}}條評論></view>
-    
-      <view class="white_ear">
-            <image src="../../../../images/white.png" class="white_pic"></image>
-            <textarea class="weui-textarea" placeholder="選填，請先和商家協商一致" bindblur="changeContext" style="height:140rpx" />
-      </view>
-   
- </view>
+
+    <view class="white_ear">
+      <image src="../../../../images/white.png" class="white_pic"></image>
+      <textarea class="weui-textarea" placeholder="{{placeholder}}" bindblur="changeContext" style="height:140rpx" focus="{{focus}}" value="{{hhh}}" />
+    </view>
+
+  </view>
 
 
 

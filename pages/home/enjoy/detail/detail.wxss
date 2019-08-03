@@ -197,3 +197,7 @@ swiper{
 .ear:last-child{
   padding-bottom: 20rpx
 }
+.list{
+  padding-left: 140rpx;
+  font-size: 30rpx
+}

@@ -1,4 +1,5 @@
 <component title='享物圈' show_bol='{{false}}' side="{{true}}"></component>
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad">
 <view class="body">
   <!-- 搜索区域 -->
 
@@ -78,3 +79,4 @@
    -->
 
 </view>
+</scroll-view>

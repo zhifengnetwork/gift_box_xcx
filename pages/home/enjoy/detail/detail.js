@@ -21,7 +21,11 @@ Page({
     priture:[],
     detaillist:[],
     comments:[],
-    status:true
+    status:true,
+    placeholder:"選填，請先和商家協商一致",
+    focus:false,
+    pid:null,
+    hhh:''
 
   },
 
@@ -39,6 +43,9 @@ Page({
         console.log(that.data.comments)
       }
     })
+    
+
+
 
 
 
@@ -116,21 +123,57 @@ Page({
   },
   // 文本域失去焦点
   changeContext: function (e) {
+    var that=this
     console.log(e.detail.value);
     this.setData({
       context: e.detail.value
     })
+   
+    if(that.data.pid ===null){
+
+        api.getJSON('/api/sharing/add_comment?sharing_id=1&token=' + app.globalData.token + '&content=' + that.data.context, function (res) {
+          if (res.data.status == 1){
+            that.onLoad();
+            that.setData({placeholder: "選填，請先和商家協商一致"})
+            that.setData({hhh: ""})
+          }
+        }) 
+    }
+    else{
+
+      api.getJSON('/api/sharing/add_comment?sharing_id=1&token=' + app.globalData.token + '&content=' + that.data.context + '&pid=' + that.data.pid, function (res) {
+        if (res.data.status == 1) {
+          that.onLoad()
+          that.setData({ placeholder: "選填，請先和商家協商一致" })
+          that.setData({hhh:""})
+        }
+      }) 
+
+    }
+    
   },
   // 显示全部评论
   quanbu:function(){
-    // this.setData({status:false})
-    if(this.data.status==false){
-      this.setData({status: true})
-      return;
-    }
     if (this.data.status == true) {
       this.setData({status: false})
+      return;
     }
+    if (this.data.status == false) {
+      this.setData({ status: true })
+    }
+  },
+  //回复别人的评论
+  huifu:function(e){
+    var nickname = e.currentTarget.dataset.nickname;
+    var pid=e.currentTarget.dataset.pid;
+    nickname = "回复"+nickname+":"
+    console.log(nickname)
+    this.setData({placeholder:nickname});
+    this.setData({focus:true});
+    this.setData({pid:pid});
+    console.log(this.data.hhh)
   }
+
+ 
   
 })
