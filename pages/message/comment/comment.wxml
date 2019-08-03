@@ -1,43 +1,45 @@
-<view style="overflow: hidden;height:{{navheight+46}}px">
-  <component title='評論' show_bol='{{false}}' side="{{true}}" quan="{{true}}" side="{{true}}"></component>
-</view>
-<view class="comment" wx:for="{{item}}">
-  <view class="comment_t">
-    <view class="comment_tl">
-      <view class="comment_tlimg">
-        <iamge src="{{item.avatar}}" />
+<scroll-view class='dataContainer' scroll-y bindscrolltolower="nextDataPage" style="height:100%;">
+  <view style="overflow: hidden;height:{{navheight+46}}px">
+    <component title='評論' show_bol='{{false}}' side="{{true}}" quan="{{true}}" side="{{true}}"></component>
+  </view>
+  <view class="comment" wx:for="{{item}}">
+    <view class="comment_t">
+      <view class="comment_tl">
+        <view class="comment_tlimg">
+          <iamge src="{{item.avatar}}" />
+        </view>
+      </view>
+      <view class="comment_tc">
+        <view>{{item.nickname}}</view>
+        <text>{{item.addtime}}</text>
+      </view>
+      <view class="comment_tr">
+        <view>回復</view>
       </view>
     </view>
-    <view class="comment_tc">
-      <view>{{item.nickname}}</view>
-      <text>{{item.addtime}}</text>
+    <view class="comment_c">
+      {{item.comment_content}}
     </view>
-    <view class="comment_tr">
-      <view>回復</view>
-    </view>
-  </view>
-  <view class="comment_c">
-    {{item.title}}
-  </view>
-  <view class="comment_f">
-    <view class="comment_fl">
-      <view class="comment_flimg">
-        <image src="{{item.cover}}" />
+    <view class="comment_f">
+      <view class="comment_fl">
+        <view class="comment_flimg">
+          <image src="{{item.cover}}" />
+        </view>
+      </view>
+      <view class="comment_fr">
+        <view>{{item.nickname}}</view>
+        <text>{{item.content}}</text>
       </view>
     </view>
-    <view class="comment_fr">
-      <view>@MALIMALIJ</view>
-      <text>{{item.content}}</text>
-    </view>
   </view>
-</view>
-<!-- 
+  <!-- <view class='bottomline' wx:if="{{item.length > 0}}" >我也是有底线的</view> -->
+  <!-- 
 <view class="comment">
   <view class="comment_t">
     <view class="comment_tl">
       <view class="comment_tlimg">
         <!-- <iamge src="" /> -->
-      <!-- </view>
+  <!-- </view>
     </view>
     <view class="comment_tc">
       <view>敲好卡 兩集就換了</view>
@@ -53,8 +55,8 @@
   <view class="comment_f">
     <view class="comment_fl">
       <view class="comment_flimg"> -->
-        <!-- <image src="" /> -->
-      <!-- </view>
+  <!-- <image src="" /> -->
+  <!-- </view>
     </view>
     <view class="comment_fr">
       <view>@MALIMALIJ</view>
@@ -62,3 +64,5 @@
     </view>
   </view>
 </view> -->
+
+</scroll-view>

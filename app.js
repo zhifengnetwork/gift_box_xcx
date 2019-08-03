@@ -95,7 +95,7 @@ App({
     xuan:'',
     a:[],
     biaoqing:'',
-
+    biaoqian:[],
 
 
 

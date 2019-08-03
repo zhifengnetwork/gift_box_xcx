@@ -92,14 +92,22 @@ Page({
     }
     // that.data.aa.push(namelist)
     // console.log(that.data.aa)
-    that.setData({
-      name: that.data.aa
-    })
-    console.log(that.data.name)
-   
-    app.globalData.a.push(namelist)
-    console.log("sss")
-    console.log(app.globalData.a)
+    // that.setData({
+    //   name: that.data.aa
+    // })
+    // console.log(that.data.name)
+    that.data.aa = { name: namelist, bqx: 100, bqy: 100}
+    console.log(that.data.aa)
+    if (!app.globalData.a){
+      app.globalData.a = ([that.data.aa])
+      console.log("sss")
+      console.log(app.globalData.a)
+    }else{
+      app.globalData.a.push(that.data.aa)
+      console.log("sss")
+      console.log(app.globalData.a)
+    }
+
     wx.setStorageSync('name', app.globalData.a);
         wx.navigateTo({
           url: '../selectimg/selectimg',
@@ -111,18 +119,13 @@ Page({
   shangpinbox:function(e){
     let that = this
     for (var i = 0; i < that.data.shangpin.length; i++) {
-      if (that.data.shangpin[i].id == e.target.dataset.id) {
+      if (that.data.shangpin[i].goods_id == e.target.dataset.id) {
         var namelist = that.data.shangpin[i].goods_name
       }
     }
-    // that.data.aa.push(namelist)
-    // console.log(that.data.aa)
-    that.setData({
-      name: that.data.aa
-    })
-    console.log(that.data.name)
-
-    app.globalData.a.push(namelist)
+    that.data.aa = { name: namelist, bqx: 100, bqy: 100 }
+    console.log(that.data.aa)
+    app.globalData.a.push(that.data.aa)
     console.log("sss")
     console.log(app.globalData.a)
     wx.setStorageSync('name', app.globalData.a);

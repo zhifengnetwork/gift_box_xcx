@@ -7,9 +7,9 @@
   </movable-view>
 
   <!-- 拖拽的标签 -->
-  <movable-view class="popuptext"  x="200" y="200" direction="all" wx:for="{{name}}">
+  <movable-view class="popuptext"  x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{name}}" data-index="{{index}}" bindtouchend="biaoqian">
     <!-- <image src="{{item.img}}"></image> -->
-    <text>{{item}}</text>
+    <text>{{item.name}}</text>
   </movable-view>
 </movable-area>
 <view class="select">
