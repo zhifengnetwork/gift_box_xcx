@@ -47,7 +47,7 @@
   <!-- 评论区域 -->
  <view class="comment_ear">
    <view wx:if="{{status}}">
-      <view class="ear" wx:for="{{comments}}" wx:if="{{index<2}}">
+      <view class="ear" wx:for="{{comments}}" wx:if="{{index<3}}">
           <view class="nick_name_ear">{{item.nickname}}:</view>
           <text class="comment_text">{{item.content}}</text>
       </view>
@@ -60,7 +60,7 @@
       </view>
    </view>
 
-    <view class="looks_detail" bindtap="quanbu">查看全部3條評論></view>
+    <view class="looks_detail" bindtap="quanbu" wx:if="{{detaillist.comment_num>3}}">查看全部{{detaillist.comment_num}}條評論></view>
     
       <view class="white_ear">
             <image src="../../../../images/white.png" class="white_pic"></image>

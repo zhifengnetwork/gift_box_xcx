@@ -9,7 +9,8 @@ Page({
     status: false,
     inputValue: null,
     hot:[],
-    history:[]
+    history:[],
+    keyword:''
   },
 
   /**
@@ -81,15 +82,26 @@ Page({
     } else {
       that.setData({ status: true })
     }
+    that.setData({keyword: event.detail.value})
   },
   del: function () {
     this.setData({ 'inputValue': '' })
   },
   // 清理垃圾桶
   qingchu:function(){
+    var that=this
     api.getJSON('/api/sharing/empty_search?token=' + app.globalData.token, function (res) {
       if (res.data.status == 1) {
-        console.log("清除成功!")
+        console.log("清除成功!");
+        that.onLoad()
+      }
+    })
+  },
+  // 搜索内容
+  huiche:function(){
+    api.getJSON('/api/sharing/search_sharing?token=' + app.globalData.token + '&keyword=' + this.data.keyword, function (res) {
+      if (res.data.status == 1) {
+        console.log("搜索成功")
       }
     })
   }
