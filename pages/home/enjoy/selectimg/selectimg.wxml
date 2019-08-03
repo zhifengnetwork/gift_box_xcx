@@ -2,14 +2,14 @@
 <movable-area class="imgbox">
   <!-- <image src=""></image> -->
   <!-- 拖拽的表情 -->
-  <movable-view class="popupimg" wx:for="{{xxx}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" bindchange="tuozhuai">
+  <movable-view class="popupimg" wx:for="{{xxx}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" bindtouchend="tuozhuai">
     <image src="{{item.img}}"></image>
   </movable-view>
 
   <!-- 拖拽的标签 -->
-  <movable-view class="popupimg"  x="{{x}}" y="{{y}}" direction="all" >
+  <movable-view class="popuptext"  x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{name}}" data-index="{{index}}" bindtouchend="biaoqian">
     <!-- <image src="{{item.img}}"></image> -->
-    <text>{{name}}</text>
+    <text>{{item.name}}</text>
   </movable-view>
 </movable-area>
 <view class="select">

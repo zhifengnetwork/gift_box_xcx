@@ -25,8 +25,29 @@ Page({
     //   title: "暂未开通",
     //   duration: 2500
     // })
-    wx.navigateTo({
-      url: '/pages/commodity/detalis/give/integral/integral?order_id=' + this.data.order_id + '&order_type=' + this.data.order_type,
+    let that = this;
+    api.postJSON('api/order/submitOrder', {
+      'token': app.globalData.token,
+      'order_type': that.data.order_type,
+      'box_id': app.globalData.makecard,
+      'invoice_id': that.data.invoice_id
+    },
+    function (res) {
+      that.setData({
+        order_id: res.data.data,
+        order_type: that.data.order_type
+      })
+      if (res.data.status == 1) {
+        wx.navigateTo({
+          url: '/pages/commodity/detalis/give/integral/integral?order_id=' + that.data.order_id + '&order_type=' + that.data.order_type,
+        })
+      } else {
+        wx.showToast({
+          icon: 'none',
+          title: res.data.msg,
+          duration: 2500
+        })
+      }
     })
   },
   invoice:function(){
@@ -45,7 +66,7 @@ Page({
       'token': app.globalData.token,
       'order_type': that.data.order_type,
       'box_id': app.globalData.makecard,
-      'invoice_id': this.data.invoice_id
+      'invoice_id': that.data.invoice_id
     },
     function (res) {
 
@@ -131,6 +152,7 @@ Page({
       },function(res){
         console.log(res)
         if (res.data.status == 1) {
+          console.log(res.data.data,66)
           that.setData({
             order: res.data.data,
             goods_res: res.data.data.goods

@@ -1,5 +1,7 @@
 page{
   background:rgba(238,238,238,1);
+  height: 100%;
+  width: 100%;
 }
 /* .comment_top{
   height: 150rpx;
@@ -105,4 +107,9 @@ page{
   font-family:SourceHanSansCN-Normal;
   font-weight:400;
   color:rgba(119,119,119,1);
+}
+.bottomline{
+  font-size: 32rpx;
+  line-height: 100rpx;
+  text-align: center;
 }

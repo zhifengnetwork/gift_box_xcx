@@ -14,17 +14,47 @@ Page({
     y: 0,
     xx: 0,
     xindex:0,
-    xxindex:'',
     xxx:[],
     yy: 0,
     name:'',
+    huancun: '',
+    bqx: 100,
+    bqy: 100,
+    bqid:'',
   },
+
+  // 1.拖拽标签保存记录当前标签的位置，以数组的形式，记录每个拖拽的标签的最后一次信息位置
+  // 2.点击标签页跳转页面添加标签，当前标签页记录各个标签页位置信息，回到此页面再重新渲染
+  // 3.点击贴纸记录位置，在选择表情时重新渲染
 
   // 点击跳转到标签页
   label:function(){
+    let that = this
+    if (app.globalData.a){
+      // wx.setStorageSync('name', that.data.name);
+      // var aa = wx.getStorageSync('name')
+      app.globalData.a = that.data.name
+      console.log(app.globalData.a)
+    }
+    // that.setData({
+    //   name: that.data.name
+    // })
     wx.navigateTo({
       url: '../label/label',
     })
+    // console.log(that.data.bqx)
+    // console.log(that.data.bqy)
+    // console.log(that.data.bqid)
+    
+    // for(var i = 0; i <that.data.name.length;i++){
+    //   // var bq = [{ id: that.data.bqid, x: that.data.bqx, y: that.data.bqy }]
+    //   if (that.data.bqid == i){
+    //     that.data.name[i].bqx = that.data.bqx
+    //   }
+    //   console.log(that.data.name)
+      
+    // }
+    
   },
 
 
@@ -37,32 +67,47 @@ Page({
     // console.log(that.data.xxx.concat([that.data.xindex,that.data.xx,that.data.yy]))
   },
 
-  
+  // 拖拽表情记录位置
   tuozhuai:function(e) {
   let that = this
   //  event.detail = { x, y, source }
-    // console.log(e)
+    console.log(e)
   //   // yy: that.data.yy.concat(that.data.yyy)
   //  console.log(that.data.x)
    that.setData({
-     xx: e.detail.x,
+     xx: e.changedTouches[0].pageX,
     //  xindex: e.target.dataset.index,
-     yy: e.detail.y
+     yy: e.changedTouches[0].pageY
    })
-
+   
+  console.log(that.data.xx)
+  
   },
 
-  // ab:function (e){
-  //   let that = this
-  //   console.log(e)
-  //   console.log(e.changedTouches[0].clientY)
-  //   that.setData({
-  //     xx: e.changedTouches[0].clientX,
-  //     //  xindex: e.target.dataset.index,
-  //     yy: e.changedTouches[0].clientY
-  //   })
-  // },
-  
+  // 拖拽标签记录位置
+  biaoqian:function (e){
+    let that= this
+    console.log(e)
+    that.data.bqx = e.changedTouches[0].pageX
+    that.data.bqy = e.changedTouches[0].pageY
+    that.data.bqid = e.currentTarget.dataset.index
+    console.log(that.data.bqx)
+    console.log(that.data.bqy)
+    console.log(that.data.bqid)
+
+    for (var i = 0; i < that.data.name.length; i++) {
+      // var bq = [{ id: that.data.bqid, x: that.data.bqx, y: that.data.bqy }]
+      if (that.data.bqid == i) {
+        that.data.name[i].bqx = that.data.bqx
+        that.data.name[i].bqy = that.data.bqy
+      }
+
+    }
+    console.log(that.data.name)
+  },
+
+
+
 
   // 点击遮罩上方关闭遮罩
   guanbi:function (){
@@ -76,28 +121,21 @@ Page({
   // 点击表情
   popup:function (e){
     let that = this
-    // console.log(e)
-    // console.log(e.currentTarget.dataset.index)
-    // console.log(that.data.xindex)
-    // 选取了表情之后关闭表情包
     that.setData({
       popup: false,
       xuanzhong: that.data.face[e.currentTarget.dataset.index],
-      // xx: that.data.xx.concat([e.currentTarget.dataset.index]),
-      // yy: that.data.yy.concat(that.data.yyy)
       xxindex: e.currentTarget.dataset.index,
       xindex: that.data.xindex+1,
-
     }) 
 
-    // console.log(that.data.yy)
-    // console.log(that.data.xuanzhong)
-    if(that.data.xuanzhong){
       var aa = [{ id: that.data.xindex, x: that.data.xx, y: that.data.yy, img: that.data.xuanzhong }]
       that.setData({
         xxx: that.data.xxx.concat(aa)
       })
-    }
+      app.globalData.biaoqing = that.data.xxx
+      console.log(app.globalData.biaoqing)
+      wx.setStorageSync('biaoqing', app.globalData.biaoqing);
+    
     console.log(that.data.xxx)
     // that.data.xxx.push({ id: that.data.xindex, x: that.data.xx, y: that.data.yy, img: that.data.xuanzhong })
     // console.log(that.data.xxx)
@@ -129,13 +167,20 @@ Page({
    */
   onLoad: function (options) {
     let that = this
-    console.log(options.name)
-    if(options.name){
+    var a = wx.getStorageSync('name')
+    console.log(a)
+    if(a){
       that.setData({
-        name: options.name
+        name: a
       })
     }
-
+    var b = wx.getStorageSync('biaoqing')
+    if (b) {
+      that.setData({
+        xxx: b
+      })
+    }
+    console.log(that.data.name)
   },
 
   /**
@@ -159,12 +204,15 @@ Page({
         })
       }
     })
+    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
+    let that = this
+
 
   },
 
@@ -172,7 +220,6 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
-
   },
 
   /**
