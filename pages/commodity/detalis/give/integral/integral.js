@@ -27,9 +27,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var order_id = options.order_id;
+    var order_id = options.order_id ? options.order_id : '';
+    var order_type = options.order_type ? options.order_type : '';
     this.setData({
-      order_id: order_id
+      order_id: order_id,
+      order_type: order_type
     })
     console.log('oooooooooooooo' + order_id)
   },
@@ -51,9 +53,15 @@ Page({
       
         if (res.data.status == 1) {
           console.log('55555555555555')
-          wx.navigateTo({
-            url: '/pages/commodity/detalis/give/giftbag/giftbag?order_id=' + that.data.order_id,
-          })
+          if (that.data.order_type>=1){
+            wx.navigateTo({
+              url: '/pages/commodity/detalis/give/giftbag/giftbag?order_id=' + that.data.order_id,
+            })
+          }else{
+            wx.navigateTo({
+              url: '/pages/my/giftbank/giftbank?order_id=' + that.data.order_id,
+            })
+          }
 
         }
       })
