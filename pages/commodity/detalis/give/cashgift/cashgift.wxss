@@ -97,11 +97,10 @@
 }
 
 .cashgift_ct_rt {
-  font-size: 22rpx;
   width: 384rpx;
   padding-top: 6rpx;
   font-family: SourceHanSansCN-Regular;
-  font-size: 28rpx;
+  font-size: 24rpx;
   color: rgba(34, 34, 34, 1);
 }
 
