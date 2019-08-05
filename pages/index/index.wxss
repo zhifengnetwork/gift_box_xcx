@@ -263,6 +263,13 @@
   width: 110rpx;
   height: 20rpx;
 }
+.xiaode:nth-last-child(1) .item1_icon{
+  bottom: 12rpx;
+  width: 140rpx;
+}
+.xiaode:nth-last-child(2) .item1_icon{
+  width: 140rpx;
+}
 .xiegang{
   vertical-align: top;
   display: inline-block;
