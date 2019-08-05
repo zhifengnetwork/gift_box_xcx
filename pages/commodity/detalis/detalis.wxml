@@ -165,7 +165,7 @@
         </view>
       </scroll-view>
       <view class="next" bindtap="jiele" wx:if="{{anniu}}">確定</view>
-      <view class="next" bindtap="nextshi" wx:if="{{!anniu}}">下壹步</view>
+      <view class="next" bindtap="nextshi" wx:if="{{!anniu}}">下一步</view>
       <!-- 正式的规格选择区块 e -->
       <view>
         <view hidden='{{dataArr.goods.type==0?"":"true"}}'>
