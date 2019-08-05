@@ -23,7 +23,7 @@
       <view class="award_ct_rt">{{item.goods_name}}</view>
       <view class="award_ct_rc">
         <text style="float:left;">{{item.spec_key_name}}</text>
-        <text style="float:right;">X{{item.goods_num}}</text>
+        <text style="float:right;">X {{item.goods_num}}</text>
       </view>
     </view>
   </view>

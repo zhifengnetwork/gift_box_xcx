@@ -101,7 +101,7 @@
   width: 384rpx;
   padding-top: 6rpx;
   font-family: SourceHanSansCN-Regular;
-  font-weight: bold;
+  font-size: 28rpx;
   color: rgba(34, 34, 34, 1);
 }
 
@@ -221,6 +221,7 @@
   height: 393rpx;
   background: #fff;
   text-align: center;
+  border-radius:20rpx;
   z-index: 2;
 }
 

@@ -260,7 +260,7 @@
   left: 0;
   right: 0;
   margin: 0 auto;
-  width: 96rpx;
+  width: 110rpx;
   height: 20rpx;
 }
 .xiegang{
