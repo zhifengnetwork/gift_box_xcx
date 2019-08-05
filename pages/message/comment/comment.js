@@ -65,6 +65,7 @@ Page({
   nextDataPage: function () {
     let that = this;
     if (that.data.datalist.length>0){
+      console.log(1)
       let islastVar = that.data.isLastPage;
 
       if (!that.data.isLoadInterface) {
@@ -83,12 +84,13 @@ Page({
           wx.showToast({
             title: '加载中',
             icon: 'loading',
-            duration: 400
+            duration: 200
           })
         }
       }
     }
     else{
+      console.log(2)
       wx.showToast({
         title: '我是有底线的',
         icon: 'none',

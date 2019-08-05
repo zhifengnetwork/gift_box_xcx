@@ -23,9 +23,7 @@ Page({
     bqid:'',
   },
 
-  // 1.拖拽标签保存记录当前标签的位置，以数组的形式，记录每个拖拽的标签的最后一次信息位置
-  // 2.点击标签页跳转页面添加标签，当前标签页记录各个标签页位置信息，回到此页面再重新渲染
-  // 3.点击贴纸记录位置，在选择表情时重新渲染
+
 
   // 点击跳转到标签页
   label:function(){
@@ -36,25 +34,9 @@ Page({
       app.globalData.a = that.data.name
       console.log(app.globalData.a)
     }
-    // that.setData({
-    //   name: that.data.name
-    // })
     wx.navigateTo({
       url: '../label/label',
     })
-    // console.log(that.data.bqx)
-    // console.log(that.data.bqy)
-    // console.log(that.data.bqid)
-    
-    // for(var i = 0; i <that.data.name.length;i++){
-    //   // var bq = [{ id: that.data.bqid, x: that.data.bqx, y: that.data.bqy }]
-    //   if (that.data.bqid == i){
-    //     that.data.name[i].bqx = that.data.bqx
-    //   }
-    //   console.log(that.data.name)
-      
-    // }
-    
   },
 
 
@@ -70,10 +52,6 @@ Page({
   // 拖拽表情记录位置
   tuozhuai:function(e) {
   let that = this
-  //  event.detail = { x, y, source }
-    console.log(e)
-  //   // yy: that.data.yy.concat(that.data.yyy)
-  //  console.log(that.data.x)
    that.setData({
      xx: e.changedTouches[0].pageX,
     //  xindex: e.target.dataset.index,
@@ -91,21 +69,17 @@ Page({
     that.data.bqx = e.changedTouches[0].pageX
     that.data.bqy = e.changedTouches[0].pageY
     that.data.bqid = e.currentTarget.dataset.index
-    console.log(that.data.bqx)
-    console.log(that.data.bqy)
-    console.log(that.data.bqid)
-
+    // console.log(that.data.bqx)
+    // console.log(that.data.bqy)
+    // console.log(that.data.bqid)
     for (var i = 0; i < that.data.name.length; i++) {
-      // var bq = [{ id: that.data.bqid, x: that.data.bqx, y: that.data.bqy }]
       if (that.data.bqid == i) {
         that.data.name[i].bqx = that.data.bqx
         that.data.name[i].bqy = that.data.bqy
       }
-
     }
     console.log(that.data.name)
   },
-
 
 
 
@@ -135,7 +109,6 @@ Page({
       app.globalData.biaoqing = that.data.xxx
       console.log(app.globalData.biaoqing)
       wx.setStorageSync('biaoqing', app.globalData.biaoqing);
-    
     console.log(that.data.xxx)
     // that.data.xxx.push({ id: that.data.xindex, x: that.data.xx, y: that.data.yy, img: that.data.xuanzhong })
     // console.log(that.data.xxx)
@@ -212,7 +185,7 @@ Page({
    */
   onHide: function () {
     let that = this
-
+    console.log(123)
 
   },
 
@@ -220,6 +193,12 @@ Page({
    * 生命周期函数--监听页面卸载
    */
   onUnload: function () {
+    console.log(345)
+    app.globalData.a = []
+    console.log(app.globalData.a)
+    wx.removeStorageSync('name')
+    wx.removeStorageSync('biaoqing')
+    console.log(wx.getStorageSync('name'))
   },
 
   /**
