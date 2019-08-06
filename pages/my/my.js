@@ -74,6 +74,19 @@ Page({
   onShareAppMessage: function() {
 
   },
+  // 点击跳转到文章
+  article:function(){
+    wx.navigateTo({
+      url: 'article/article',
+    })
+  },
+
+  //点击跳转到关注
+  follow:function(){
+    wx.navigateTo({
+      url: 'follow/follow',
+    })
+  },
 
   // 跳转到个人信息
   mydetalis: function() {

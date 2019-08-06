@@ -1,0 +1,203 @@
+.body {
+  margin-top: 150rpx;
+}
+.header{
+  width: 86%;
+  margin-left: 7%;
+  padding-top: 20rpx;
+  display: flex;
+  justify-items: center;
+  align-items: center;
+}
+.user_pic{
+  width: 80rpx;
+  height: 80rpx;
+  border-radius: 50%;
+  background: gray
+}
+.touxia{
+  width: 100%;
+  height: 100%
+}
+.user_name{
+  margin-left: 20rpx;
+  font-size: 33rpx
+}
+.header view{
+  display: inline-block
+}
+.care{
+  position: absolute;
+  right: 7%;
+  top: 190rpx;
+  width: 140rpx;
+  background:rgba(255,255,255,1);
+  border:2rpx solid rgba(255,38,64,1);
+  border-radius:25px;
+  color: rgba(255,38,64,1);
+  font-size: 28rpx;
+  padding:5rpx 0;
+  text-align: center
+}
+swiper{
+ height: 835rpx;
+ margin-top:30rpx 
+}
+.slide-image{
+  height: 100%;
+  width: 100%;
+}
+.dots{
+ width: 180rpx;
+ margin: 0 auto;
+ text-align: center
+}
+.dot{
+  width: 15rpx;
+  height: 15rpx;
+  background: rgba(238,238,238,1);
+  display: inline-block;
+  margin: 0 10rpx;
+  border-radius: 50%
+}
+.active{
+  width: 15rpx;
+  height: 15rpx;
+  background:rgba(255,38,64,1);
+}
+.intriduce1{
+  width: 90%;
+  margin-left: 5%;
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
+}
+.intriduce2{
+  width: 90%;
+  margin-left: 5%
+}
+.zhankai{
+  float: right;
+  margin-right: 5%;
+  font-size: 35rpx;
+  margin-top: 30rpx
+}
+.zhankai2{
+  float: right;
+  margin-right: 5%;
+  font-size: 40rpx;
+  margin-top: 30rpx
+}
+.collect_ear{
+   width: 90%;
+  margin-left: 5%
+}
+.collect_ear view{
+  display: inline-block
+}
+.aixin{
+   width: 50rpx!important;
+   height: 50rpx;
+}
+.first{
+  margin-top: 100rpx;
+  position: relative;
+  width: 20%;
+ 
+}
+.tiaoshu{
+  font-size: 28rpx;
+  position: absolute;
+  top: -10rpx;
+  margin-left: 3rpx
+}
+.second{
+   position: relative;
+   left: 0rpx;
+   width: 20%;
+   text-align: left;
+  
+}
+.aixin2{
+  width: 40rpx!important;
+  height: 40rpx;
+  position: absolute;
+  top: -43rpx
+}
+.tiaoshu2{
+  position: absolute;
+  top: -60rpx;
+  left: 45rpx;
+  font-size: 28rpx
+}
+.three{
+   width: 45%;
+   text-align: right;
+   position: relative;
+
+}
+.aixin3{
+  width: 50rpx!important;
+  height: 50rpx;
+}
+.tiaoshu3{
+  font-size: 28rpx;
+  position: absolute;
+  top: -10rpx
+}
+.comment_ear{
+  width: 90%;
+  margin-left: 5%;
+  background: #f6f5f5;
+  border-radius: 10rpx;
+  margin-top: 15rpx
+}
+.ear{
+  width: 90%;
+  margin-left: 4%;
+  padding-top: 3%;
+}
+.nick_name_ear{
+  font-size: 34rpx;
+  font-weight: bolder;
+  display: inline-block
+}
+.comment_text{
+  font-size: 30rpx;
+  padding-left: 20rpx
+}
+.looks_detail{
+  width: 92%;
+  color: #7AA6E5;
+  margin-left: 4%;
+  font-family:SourceHanSansCN-Regular;
+  margin-top: 18rpx;
+  font-size: 30rpx;
+  padding-bottom: 20rpx
+}
+.white_ear{
+  width:92%;
+  margin-left: 4%;
+  margin-top: 20rpx
+}
+.white_pic{
+  width: 7%;
+  height: 55rpx;
+  position: absolute
+}
+.weui-textarea{
+  width: 70%;
+  font-size: 32rpx;
+  padding-top: 20rpx;
+  position: absolute;
+  left: 135rpx
+}
+.ear:last-child{
+  padding-bottom: 20rpx
+}
+.list{
+  padding-left: 140rpx;
+  font-size: 30rpx
+}
