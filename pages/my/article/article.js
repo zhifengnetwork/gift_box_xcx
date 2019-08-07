@@ -340,7 +340,6 @@ Page({
    */
   onLoad: function (options) {
     let that = this
-    // that.shoucang();
     let page = that.data.page;
     that.searchDataList(page);
   },

@@ -6,49 +6,111 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // imgUrls: [
-    //   'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-    //   'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-    //   'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    // ],
-    indicatorDots: true,
-    autoplay: true,
-    interval: 5000,
-    duration: 1000,
-    currentSwiper: 0,
-    liang: true,
-    zang: true,
-    priture: [],
-    detaillist: [],
-    comments: [],
-    status: true,
-    placeholder: "選填，請先和商家協商一致",
-    focus: false,
-    pid: null,
-    hhh: ''
-
+    bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
+    item:[],
+    page:1,
+    rows: 10,
+    isLastPage: false,
+    isLoadInterface: false,
+    datalist: '',
   },
+
+  // 点击跳转到关注详情
+  followlist:function(e){
+    let that = this
+    // console.log(e.target.dataset.id)
+    for(var i = 0;i<that.data.item.length;i++){
+      var user_id = that.data.item[e.target.dataset.id].user_id
+    }
+    // console.log(user_id)
+    wx.navigateTo({
+      url: '../followlist/followlist?user_id=' + user_id,
+    })
+  },
+
+  //查询关注数据列表
+  searchDataList: function (pageNum) {
+    let that = this;
+      let pageIndex = pageNum;
+      api.postJSON({
+        url: 'api/sharing/my_follow',
+        method: "POST",
+        data: {
+          token: app.globalData.token,
+          "page": pageIndex,
+          "num": that.data.rows
+        },
+        success: function (res) {
+
+          that.setData({
+            isLastPage: res.data.status,
+            page: pageIndex,
+            isLoadInterface: false,
+            datalist: res.data.data
+          })
+          if (res.data.data != undefined) {
+            if (pageIndex > 1) {
+              var listBefore = that.data.item;
+              var currentList = res.data.data;
+              that.setData({
+                item: listBefore.concat(currentList)
+              })
+            } else {
+              that.setData({
+                item: res.data.data
+              })
+            }
+          }
+        }, complete(e) {
+          that.setData({
+            isShowLoadPage: false
+          })
+        }
+      })
+  },
+
+  // 触底加载下一页
+  nextDataPage: function () {
+    let that = this;
+      if (that.data.datalist.length > 0) {
+        // console.log(1)
+        let islastVar = that.data.isLastPage;
+
+        if (!that.data.isLoadInterface) {
+          // console.log(456)
+          if (islastVar) {
+            //防止在接口未执行完再次调用接口
+            // console.log(that.data.datalist)
+            that.setData({
+              isLoadInterface: true
+            })
+            let page = that.data.page * 1 + 1;
+            that.searchDataList(page);
+            wx.showToast({
+              title: '加载中',
+              icon: 'loading',
+              duration: 200
+            })
+          }
+        }
+      } else {
+        // console.log(2)
+        wx.showToast({
+          title: '我是有底线的',
+          icon: 'none',
+          duration: 600
+        })
+      }
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    var that = this
-    api.getJSON('/api/sharing/sharing_info?id=1&token=' + app.globalData.token, function (res) {
-      if (res.data.status == 1) {
-        console.log(res.data.data);
-        that.setData({ detaillist: res.data.data })
-        that.setData({ priture: res.data.data.priture })
-        that.setData({ comments: res.data.data.comment })
-        console.log(that.data.comments)
-      }
-    })
-
-
-
-
-
-
+    let that = this
+    let page = that.data.page;
+    that.searchDataList(page);
   },
 
   /**
@@ -99,81 +161,6 @@ Page({
   onShareAppMessage: function () {
 
   },
-  swiperChange: function (e) {
-    this.setData({
-      currentSwiper: e.detail.current
-    });
-
-  },
-  zhankai: function () {
-    this.setData({ liang: false })
-  },
-  shouqi: function () {
-    this.setData({ liang: true })
-  },
-  dianji: function () {
-    var that = this;
-    if (this.data.zang == true) {
-      that.setData({ zang: false })
-      return
-    }
-    if (this.data.zang == false) {
-      that.setData({ zang: true })
-    }
-  },
-  // 文本域失去焦点
-  changeContext: function (e) {
-    var that = this
-    console.log(e.detail.value);
-    this.setData({
-      context: e.detail.value
-    })
-
-    if (that.data.pid === null) {
-
-      api.getJSON('/api/sharing/add_comment?sharing_id=1&token=' + app.globalData.token + '&content=' + that.data.context, function (res) {
-        if (res.data.status == 1) {
-          that.onLoad();
-          that.setData({ placeholder: "選填，請先和商家協商一致" })
-          that.setData({ hhh: "" })
-        }
-      })
-    }
-    else {
-
-      api.getJSON('/api/sharing/add_comment?sharing_id=1&token=' + app.globalData.token + '&content=' + that.data.context + '&pid=' + that.data.pid, function (res) {
-        if (res.data.status == 1) {
-          that.onLoad()
-          that.setData({ placeholder: "選填，請先和商家協商一致" })
-          that.setData({ hhh: "" })
-        }
-      })
-
-    }
-
-  },
-  // 显示全部评论
-  quanbu: function () {
-    if (this.data.status == true) {
-      this.setData({ status: false })
-      return;
-    }
-    if (this.data.status == false) {
-      this.setData({ status: true })
-    }
-  },
-  //回复别人的评论
-  huifu: function (e) {
-    var nickname = e.currentTarget.dataset.nickname;
-    var pid = e.currentTarget.dataset.pid;
-    nickname = "回复" + nickname + ":"
-    console.log(nickname)
-    this.setData({ placeholder: nickname });
-    this.setData({ focus: true });
-    this.setData({ pid: pid });
-    console.log(this.data.hhh)
-  }
-
-
+  
 
 })

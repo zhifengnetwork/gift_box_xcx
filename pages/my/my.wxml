@@ -133,7 +133,7 @@
       <view>關註</view>
       <text>5</text>
     </view>
-    <view class="my_tf_box front">
+    <view class="my_tf_box front" bindtap="fans">
       <view>粉絲</view>
       <text>8</text>
     </view>
