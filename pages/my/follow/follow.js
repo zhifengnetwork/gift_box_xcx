@@ -15,7 +15,7 @@ Page({
     datalist: '',
   },
 
-  // 点击跳转到关注详情
+  // 点击跳转到他人页面
   followlist:function(e){
     let that = this
     // console.log(e.target.dataset.id)
@@ -24,7 +24,7 @@ Page({
     }
     // console.log(user_id)
     wx.navigateTo({
-      url: '../followlist/followlist?user_id=' + user_id,
+      url: '../other/other?user_id=' + user_id,
     })
   },
 

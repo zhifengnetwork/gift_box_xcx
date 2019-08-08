@@ -39,6 +39,19 @@
   padding:5rpx 0;
   text-align: center
 }
+.yiguanzhu{
+  position: absolute;
+  right: 7%;
+  top: 190rpx;
+  width: 140rpx;
+  background:rgba(255,255,255,1);
+  border:2rpx solid #999999;
+  border-radius:25px;
+  color: #999999;
+  font-size: 28rpx;
+  padding:5rpx 0;
+  text-align: center
+}
 swiper{
  height: 835rpx;
  margin-top:30rpx 
@@ -67,6 +80,10 @@ swiper{
 }
 .intriduce1{
   width: 90%;
+  font-size:25rpx;
+  font-family:SourceHanSansCN-Normal;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
   margin-left: 5%;
   overflow:hidden; 
   text-overflow:ellipsis;
@@ -76,19 +93,31 @@ swiper{
 }
 .intriduce2{
   width: 90%;
-  margin-left: 5%
+  margin-left: 5%;
+    font-size:25rpx;
+  font-family:SourceHanSansCN-Normal;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  overflow:hidden; 
+  text-overflow:ellipsis;
+  display:-webkit-box; 
+  -webkit-box-orient:vertical;
+  -webkit-line-clamp:2; 
 }
 .zhankai{
   float: right;
   margin-right: 5%;
-  font-size: 35rpx;
+  font-size: 32rpx;
   margin-top: 30rpx
 }
 .zhankai2{
   float: right;
   margin-right: 5%;
-  font-size: 40rpx;
-  margin-top: 30rpx
+  margin-top: 30rpx;
+  font-size:29rpx;
+  font-family:SourceHanSansCN-Bold;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
 }
 .collect_ear{
    width: 90%;

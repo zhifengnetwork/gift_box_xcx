@@ -1,20 +1,30 @@
-var app = getApp()
+var app = getApp();
+var api = require('../../utils/api');
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    nickname: '',
-    avatar: '',
-    id:''
+    item:[],
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-   
+    let that = this
+    api.postJSON('api/sharing/my_user', {
+      token: app.globalData.token,
+      user_id: that.data.user_id
+    }, function (res) {
+      if (res.data.status == 1) {
+        that.setData({
+          item: res.data.data
+        })
+      }
+      console.log(that.data.item)
+    })
     app.getUserInfo( userinfo => {
         console.log(userinfo);
     });
@@ -26,11 +36,11 @@ Page({
    */
   onReady: function() {
   
-    this.setData({
-      'nickname': app.globalData.userInfo.nickname,
-      'id': app.globalData.userInfo.id,
-      'avatar': app.globalData.userInfo.avatar
-    })
+    // this.setData({
+    //   'nickname': app.globalData.userInfo.nickname,
+    //   'id': app.globalData.userInfo.id,
+    //   'avatar': app.globalData.userInfo.avatar
+    // })
   },
 
   /**
@@ -91,7 +101,7 @@ Page({
   //点击跳转到粉丝列表
   fans:function(){
     wx.navigateTo({
-      url: '../home/enjoy/topic/topic',
+      url: 'fans/fans',
     })
   },
 

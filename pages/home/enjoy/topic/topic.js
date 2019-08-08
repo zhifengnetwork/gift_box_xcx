@@ -17,9 +17,11 @@ Page({
     datalist: '',
     index:0,
     currentTab:0,
+    inputValue:'',
     itemlist:[],
     pid: 1,
     topic:'',
+    list:'',
   },
 
   //查询关注数据列表
@@ -103,14 +105,79 @@ Page({
   // 显示关闭符号
   userNameInput: function (event) {
     var that = this;
-    if (event.detail.value == '') {
-      that.setData({ status: false })
-    } else {
-      that.setData({ status: true })
-    }
-    that.setData({ keyword: event.detail.value })
+    // if (event.detail.value == '') {
+    //   that.setData({ status: false })
+    // } else {
+    //   that.setData({ status: true })
+    // }
+    that.setData({ inputValue: event.detail.value })
+
+    // 延时
+    this.throttle(this.queryData, null, 600, that.data.inputValue);
   },
   
+  // 节流
+  throttle: function (fn, context, delay, text) {
+    clearTimeout(fn.timeoutId);
+    fn.timeoutId = setTimeout(function () {
+      fn.call(context, text);
+    }, delay);
+  },
+
+  // 输入框输入延时后的操作
+  queryData: function (e) {
+    let that = this
+    console.log(that.data.inputValue)
+    // 判断输入框是否有值，有值则请求接口，每次输入完会请求一次接口
+    if (that.data.inputValue) {
+      console.log(1)
+      api.postJSON('api/sharing/join_topic', {
+          page: that.data.page,
+          keyword: that.data.inputValue
+        },
+          function (res) {
+            if (res.data.status == 1) {
+              that.setData({
+                itemlist: res.data.data,
+                list: that.data.inputValue
+              })
+              // console.log(that.data.itemlist)
+              // if (!res.data.data.length){
+              //   that.setData({
+              //     list: that.data.inputValue
+              //   })
+              // }
+            }
+          })
+          
+      // 输入框显示关闭符号
+      that.setData({
+        status: true,
+      })
+    } else { // 当输入框的值为空时， 
+      console.log(2)
+      api.postJSON('api/sharing/join_topic', {
+          page: that.data.page,
+          pid: that.data.pid,
+          keyword: that.data.inputValue
+        },
+          function (res) {
+            if (res.data.status == 1) {
+              console.log(res.data)
+              that.setData({
+                itemlist: res.data.data,
+                list: that.data.inputValue
+              })
+            }
+          })
+      // 输入框关闭符隐藏
+      that.setData({
+        status: false
+      })
+    }
+  },
+
+
 
   // 清空内容
   del: function () {
@@ -162,6 +229,14 @@ Page({
     })
     wx.navigateTo({
       url: '../issue/issue?topic=' + that.data.topic,
+    })
+  },
+
+  // 点击创建新话题
+  kong:function(){
+    let that = this
+    wx.navigateTo({
+      url: '../issue/issue?topic=' + that.data.list,
     })
   },
 

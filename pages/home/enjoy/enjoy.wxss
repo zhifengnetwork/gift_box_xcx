@@ -29,9 +29,7 @@
   margin: 0 10px;
 }
 .swiper-tab {
-  width: 100%;
   /* border-bottom: 2rpx solid #ccc; */
-  text-align: center;
   height: 88rpx;
   line-height: 88rpx;
   display: flex;
@@ -39,12 +37,21 @@
   justify-content: space-between;
   color: #ccc;
   font-size: 30rpx;
+  white-space:nowrap;
+  overflow:hidden;
+  text-overflow:ellipsis;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  padding-left: 20rpx;
 }
 .swiper-tab-item {
-  width: 30%;
+  display: inline-block;
   color: #434343;
+  margin: 0 15rpx;
 }
-
+.swiper-tab :last-of-type{
+  margin-right: 40rpx;
+}
 .active {
   color: black;
   font-size: 32rpx;
@@ -138,3 +145,14 @@ swiper {
    height: 30rpx;
 }
 
+.huadong{
+  height: 300rpx;
+  background: pink;
+}
+.upimg{
+  width: 150rpx;
+  height: 250rpx;
+  background: skyblue;
+  margin-left: 40rpx;
+  margin-top: 25rpx;
+}

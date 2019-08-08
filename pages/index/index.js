@@ -55,7 +55,7 @@ Page({
         url: '../home/enjoy/enjoy',
       })
       // wx.navigateTo({
-      //   url: '../home/enjoy/enjoy',
+      //   url: '../home/enjoy/selectimg/selectimg',
       // })
     },
 

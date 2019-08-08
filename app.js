@@ -96,7 +96,7 @@ App({
     a:[],
     biaoqing:'',
     biaoqian:[],
-
+    image:[]
 
 
   }
