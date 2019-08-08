@@ -121,7 +121,7 @@
 .add_address{
   font-size: 28rpx;
   margin-left: 20rpx;
-  color: #cacaca;
+  color:rgba(153,153,153,1);
 }
 .yijing_tianjia{
   font-size: 28rpx;
@@ -258,4 +258,66 @@
   background: rgba(0,0,0,1);
   color: white;
   margin-left: 30rpx
+}
+/* 话题 */
+.huati{
+  margin-left: 3%;
+  width: 94%;
+  height: 120rpx;
+  border-bottom: 2rpx solid #EEEEEE;
+}
+.huati_l{
+  float: left;
+  width:28rpx;
+  height:28rpx;
+  background:rgba(202,202,202,1);
+  border-radius:50%;
+  font-size:21rpx;
+  text-align: center;
+  font-family:SourceHanSansCN-Normal;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:28rpx;
+  margin-top: 46rpx;
+}
+.huati_c{
+  float: left;
+  font-size:27rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:120rpx;
+  margin-left: 20rpx;
+}
+.huati_r{
+  float: right;
+  margin-right: 20rpx;
+  font-size:21rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:120rpx;
+}
+.huati_lactive{
+  background: #5590E0;
+  float: left;
+  width:28rpx;
+  height:28rpx;
+  border-radius:50%;
+  font-size:21rpx;
+  text-align: center;
+  font-family:SourceHanSansCN-Normal;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  line-height:28rpx;
+  margin-top: 46rpx;
+}
+.huati_cactive{
+  color: #5590E0;
+  float: left;
+  font-size:27rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  line-height:120rpx;
+  margin-left: 20rpx;
 }

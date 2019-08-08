@@ -1,0 +1,75 @@
+page{
+  width: 100%;
+  height: 100%;
+}
+.border_top{
+  height:20rpx;
+  background:linear-gradient(0deg,rgba(246,249,251,1) 0%,rgba(240,243,245,1) 100%);
+}
+.fans_box{
+  height: 200rpx;
+  border-bottom:1rpx solid rgba(242,242,242,1);
+}
+.fans_l{
+  float: left;
+  margin-top: 50rpx;
+  margin-left: 40rpx;
+  margin-right: 30rpx;
+}
+.fans_imgbox{
+  width: 100rpx;
+  height: 100rpx;
+  background: #D0D0D0;
+  overflow: hidden;
+  border-radius: 50%;
+}
+.fans_c{
+  float: left;
+  margin-top: 50rpx;
+}
+.fanc_ct{
+  font-size:27rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  line-height:50rpx;
+}
+.fans_cf{
+  font-size:22rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(153,153,153,1);
+  line-height:50rpx;
+}
+.fans_cf_text{
+  margin: 0 20rpx;
+}
+.fans_r{
+  float: right;
+  margin-right: 40rpx;
+  margin-top: 74rpx;
+}
+.guanzhu{
+  width:100rpx;
+  height:48rpx;
+  border:2rpx solid #FF96A2;
+  border-radius:24rpx;
+  font-size:22rpx;
+  text-align: center;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:#FF96A2;
+  line-height:52rpx;
+}
+.yiguanzhu{
+  width:100rpx;
+  height:48rpx;
+  border:2rpx solid #999999;
+  border-radius:24rpx;
+  font-size:22rpx;
+  text-align: center;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(153, 153, 153, 1);
+  line-height:52rpx;
+}

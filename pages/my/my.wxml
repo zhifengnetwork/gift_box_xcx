@@ -125,15 +125,15 @@
   </view>
   <!-- 文章、个人信息区域 -->
   <view class="my_tf">
-    <view class="my_tf_box front">
+    <view class="my_tf_box front" bindtap="article">
       <view>文章</view>
       <text>126</text>  
     </view>
-    <view class="my_tf_box front">
+    <view class="my_tf_box front" bindtap="follow">
       <view>關註</view>
       <text>5</text>
     </view>
-    <view class="my_tf_box front">
+    <view class="my_tf_box front" bindtap="fans">
       <view>粉絲</view>
       <text>8</text>
     </view>

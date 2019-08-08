@@ -124,7 +124,7 @@ page{
 }
 .tab_c{
   margin: 30rpx 40rpx;
-  height:120rpx;
+  overflow: hidden;
   background:rgba(0,0,0,0.2);
   border-radius:15rpx;
 }
@@ -155,32 +155,45 @@ page{
 .tab_cr{
   float: left;
   margin-left: 10rpx;
+  width: 80%;
 }
 .tab_cr view{
   margin-top: 35rpx;
   font-size:25rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
-  line-height: 10rpx;
+  /* line-height: 10rpx; */
   color:rgba(255,255,255,1);
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
 }
 .tab_cr text{
   font-size:21rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
   color:rgba(153,153,153,1);
+  display: block;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow:ellipsis;
 }
 .more{
   background: #000;
   text-align: center;
   position: relative;
+  height: 100rpx;
+  
 }
 .more text{
+  position: absolute;
+  left: 50%;
+  transform: translate(-50%);
   font-size:25rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
   color:rgba(255,255,255,1);
-  line-height:50rpx;
+  line-height:100rpx;
 }
 .xiaimg{
   width: 20rpx;

@@ -1,33 +1,46 @@
-var api = require('../../../utils/api')
+var api = require('../../../utils/api');
 var app = getApp();
-// pages/message/comment/comment.js
+// pages/my/fans/fans.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
-    item:[],
-    navheight:'',
+    bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
+    item: [],
     page: 1,
-    rows: 20,
-    isLastPage: 0,
+    rows: 10,
+    isLastPage: false,
     isLoadInterface: false,
-    userList: [],
-    datalist:'',
+    datalist: '',
+  },
+
+  // 点击跳转到关注详情
+  followlist: function (e) {
+    let that = this
+    // console.log(e.target.dataset.id)
+    for (var i = 0; i < that.data.item.length; i++) {
+      var user_id = that.data.item[e.target.dataset.id].user_id
+    }
+    // console.log(user_id)
+    wx.navigateTo({
+      url: '../followlist/followlist?user_id=' + user_id,
+    })
   },
 
 
-  //查询数据列表
+  //查询关注数据列表
   searchDataList: function (pageNum) {
     let that = this;
     let pageIndex = pageNum;
     api.postJSON({
-      url: 'api/sharing/user_comment_list',
+      url: 'api/sharing/my_fans',
       method: "POST",
       data: {
-        "page": pageIndex,
         token: app.globalData.token,
+        "page": pageIndex,
+        "num": that.data.rows
       },
       success: function (res) {
 
@@ -37,8 +50,7 @@ Page({
           isLoadInterface: false,
           datalist: res.data.data
         })
-
-        if (res.data.data) {
+        if (res.data.data != undefined) {
           if (pageIndex > 1) {
             var listBefore = that.data.item;
             var currentList = res.data.data;
@@ -51,21 +63,19 @@ Page({
             })
           }
         }
-
       }, complete(e) {
         that.setData({
           isShowLoadPage: false
         })
       }
     })
-
-
   },
-  // 加载下一页数据
+
+  // 触底加载下一页
   nextDataPage: function () {
     let that = this;
-    if (that.data.datalist.length>0){
-      console.log(1)
+    if (that.data.datalist.length > 0) {
+      // console.log(1)
       let islastVar = that.data.isLastPage;
 
       if (!that.data.isLoadInterface) {
@@ -76,11 +86,8 @@ Page({
           that.setData({
             isLoadInterface: true
           })
-
           let page = that.data.page * 1 + 1;
-
           that.searchDataList(page);
-
           wx.showToast({
             title: '加载中',
             icon: 'loading',
@@ -88,58 +95,15 @@ Page({
           })
         }
       }
-    }
-    else{
-      console.log(2)
+    } else {
+      // console.log(2)
       wx.showToast({
         title: '我是有底线的',
         icon: 'none',
         duration: 600
       })
     }
-
   },
-
-
-
-  
-
-  // fenye:function(){
-  //   let that = this
-  //   api.postJSON('api/sharing/user_comment_list', {
-  //     token: app.globalData.token,
-  //     page: that.data.page
-  //   }, function (res) {
-  //     console.log(that.data.page)
-  //     if (res.data.status == 1) {
-  //       console.log(res.data.data)
-  //       that.setData({
-  //         item: res.data.data,
-  //       })
-  //       that.data.page++
-  //       console.log(that.data.page)
-  //     }
-  //   })
-
-  //   // that.GetList()
-
-  //   //缓冲提醒
-  //   wx.showToast({
-  //     title: '加载中',
-  //     icon: 'loading',
-  //     duration: 400
-  //   })
-  //   //获取系统的参数，scrollHeight数值,微信必须要设置style:height才能监听滚动事件
-  //   wx.getSystemInfo({
-  //     success: function (res) {
-  //       console.info(res.windowHeight)
-  //       that.setData({
-  //         scrollHeight: res.windowHeight
-  //       })
-  //     }
-  //   });
-  // },
-
 
 
   /**
@@ -149,21 +113,6 @@ Page({
     let that = this
     let page = that.data.page;
     that.searchDataList(page);
-    // that.fenye()
-    // try {
-    //   const res = wx.getSystemInfoSync()
-    //   console.log(res.model)
-    //   console.log(res.pixelRatio)
-    //   console.log(res.windowWidth)
-    //   console.log(res.windowHeight)
-    //   console.log(res.language)
-    //   console.log(res.statusBarHeight)
-    //   console.log(res.version)
-    //   console.log(res.platform)
-    //   that.setData({ navheight: res.statusBarHeight })
-    // } catch (e) {
-    //   // Do something when catch error
-    // }
   },
 
   /**
@@ -177,9 +126,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
   },
-
-
 
   /**
    * 生命周期函数--监听页面隐藏

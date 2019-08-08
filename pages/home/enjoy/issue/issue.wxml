@@ -29,6 +29,16 @@
   <!-- <input placeholder="選填，請先和商家協商一致" disabled="{{!flag}}" /> -->
   <textarea class="weui-textarea" placeholder="說說此刻的心情..." bindblur="changeContext" style="height:140rpx" />
 </view>
+
+<!-- 参与话题 -->
+<view class="huati" bindtap="topic">
+  <view class="huati_l" wx:if="{{!topic}}">#</view>
+  <view class="huati_c" wx:if="{{!topic}}">參與話題</view>
+  <view class="huati_r" wx:if="{{!topic}}">選擇合適的話題會有更多讚~</view>
+  <view class="huati_lactive" wx:if="{{topic}}">#</view>
+  <view class="huati_cactive" wx:if="{{topic}}">{{topic}}</view>
+</view>
+
 <!-- 地点选择--定位 -->
 <!-- <button >定位</button> -->
 <view class="dingwei" bindtap="dingwei">  

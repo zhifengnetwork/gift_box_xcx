@@ -1,0 +1,95 @@
+<view style="height:{{bar_Height+46}}px;">
+  <component title='文章' show_bol='{{false}}' site="{{false}}"></component>
+</view>
+<scroll-view class='dataContainer' scroll-y bindscrolltolower="nextDataPage" style="height:100%;">
+  <!-- tab切换 -->
+  <view class="swiper-tab">
+    <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
+      <text data-current="0">文章</text>
+    </view>
+    <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">
+      <text data-current="1">收藏</text>
+    </view>
+    <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">
+      <text data-current="2">讚過</text>
+    </view>
+  </view>
+  <view class="{{currentTab == 0 ? 'show':'hidden'}}">
+    <scroll-view class="yonghu_ear">
+      <view class="articlebox">
+        <view class="article_box" wx:for="{{wenzhang}}">
+          <view class="article_imgbox">
+            <image src="{{item.cover}}"></image>
+          </view>
+          <view class="article_con">
+            {{item.title}}
+          </view>
+          <view class="article_f">
+            <view class="article_touxiang">
+              <image src="{{item.avatar}}"></image>
+            </view>
+            <view class="article_name">{{item.nickname}}</view>
+            <view class="article_zan">
+              <view class="zan_imgbox">
+                <image src="../../public/images/home/aixin.png"></image>
+              </view>
+              <view class="zan_text">{{item.point_num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="{{currentTab == 1 ? 'show':'hidden'}}">
+    <scroll-view class="yonghu_ear">
+      <view class="articlebox">
+        <view class="article_box" wx:for="{{shoucang}}">
+          <view class="article_imgbox">
+            <image src="{{item.cover}}"></image>
+          </view>
+          <view class="article_con">
+            {{item.title}}
+          </view>
+          <view class="article_f">
+            <view class="article_touxiang">
+              <image src="{{item.avatar}}"></image>
+            </view>
+            <view class="article_name">{{item.nickname}}</view>
+            <view class="article_zan">
+              <view class="zan_imgbox">
+                <image src="../../public/images/home/aixin.png"></image>
+              </view>
+              <view class="zan_text">{{item.point_num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+  <view class="{{currentTab == 2 ? 'show':'hidden'}}">
+    <scroll-view class="yonghu_ear">
+      <view class="articlebox">
+        <view class="article_box" wx:for="{{zanguo}}">
+          <view class="article_imgbox">
+            <image src="{{item.cover}}"></image>
+          </view>
+          <view class="article_con">
+            {{item.title}}
+          </view>
+          <view class="article_f">
+            <view class="article_touxiang">
+              <image src="{{item.avatar}}"></image>
+            </view>
+            <view class="article_name">{{item.nickname}}</view>
+            <view class="article_zan">
+              <view class="zan_imgbox">
+                <image src="../../public/images/home/aiguo.jpg"></image>
+              </view>
+              <view class="zan_text">{{item.point_num}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </scroll-view>
+  </view>
+</scroll-view>

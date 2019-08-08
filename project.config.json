@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 23,
+			"current": 24,
 			"list": [
 				{
 					"id": -1,
@@ -215,6 +215,13 @@
 					"id": 23,
 					"name": "1111",
 					"pathName": "pages/home/enjoy/labelsearch/labelsearch",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 24,
+					"name": "1112",
+					"pathName": "pages/home/enjoy/topic/topic",
 					"query": "",
 					"scene": null
 				}

@@ -10,14 +10,29 @@ Page({
     status:true,
     address:"",
     xianshi:false,
-    xianshi2:false
+    xianshi2:false,
+    topic:'',
   },
+
+  // 点击跳转到话题页面
+  topic:function(){
+    wx.navigateTo({
+      url: '../topic/topic',
+    })
+  },
+
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-
+    let that = this
+    console.log(options.topic)
+    if(options.topic){
+      that.setData({
+        topic: options.topic
+      })
+    }
   },
 
   /**

@@ -68,7 +68,12 @@
     "pages/home/enjoy/selectimg/selectimg",
     "pages/home/enjoy/label/label",
     "pages/home/enjoy/issue/issue",
-    "pages/home/enjoy/labelsearch/labelsearch"
+    "pages/home/enjoy/labelsearch/labelsearch",
+    "pages/my/article/article",
+    "pages/my/follow/follow",
+    "pages/my/followlist/followlist",
+    "pages/my/fans/fans",
+    "pages/home/enjoy/topic/topic"
   ],
   "window": {
     "backgroundTextStyle": "light",

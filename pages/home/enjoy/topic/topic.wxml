@@ -1,0 +1,36 @@
+<view style="height: {{bar_Height+46}}px">
+  <component title='參與話題' show_bol='{{false}}' quan="{{true}}"></component>
+</view>
+<scroll-view class='dataContainer' scroll-y bindscrolltolower="nextDataPage" style="height:100%;">
+<!-- 搜索框 -->
+<view class="sousou_ear">
+  <input type="text" class="find" placeholder="搜索更多話題" focus="false" bindconfirm="huiche" bindinput="userNameInput" value='{{inputValue}}'></input>
+  <image src="../../../public/images/classify/sousuo.png" class="sousou"></image>
+  <image src="../../../public/images/home/close.png" class="close_pic" wx:if="{{status}}" bindtap="del"></image>
+</view>
+
+<!-- tab切换 -->
+<scroll-view class="swiper-tab" scroll-x>
+  <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{item}}">
+    <view class="touming" data-current="{{index}}"></view>
+    <view class="tabimgbox">
+      <image src="{{item.img}}"></image>
+    </view>
+    <view class="tabtext">{{item.name}}</view>
+  </view>
+</scroll-view>
+
+<!-- <view class="show">
+  <scroll-view class="yonghu_ear"> -->
+    <view class="topicbox" wx:for="{{itemlist}}" bindtap="topic" data-name="{{item.name}}">
+      <view class="topic_l"># {{item.name}}</view>
+      <view class="topic_r">
+        <view class="topic_rimgbox">
+          <image src="/images/ren.jpg"></image>
+        </view>
+        <view class="topic_rview">{{item.count}}人</view>
+      </view>
+    </view>
+  <!-- </scroll-view>
+</view> -->
+</scroll-view>

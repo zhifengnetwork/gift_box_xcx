@@ -1,33 +1,40 @@
-var api = require('../../../utils/api')
+var api = require('../../../../utils/api');
 var app = getApp();
-// pages/message/comment/comment.js
+// pages/home/enjoy/topic/topic.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    // 获取手机状态栏高度
+    bar_Height: wx.getSystemInfoSync().statusBarHeight,
     item:[],
-    navheight:'',
     page: 1,
-    rows: 20,
-    isLastPage: 0,
+    rows: 10,
+    isLastPage: false,
     isLoadInterface: false,
-    userList: [],
-    datalist:'',
+    datalist: '',
+    index:0,
+    currentTab:0,
+    itemlist:[],
+    pid: 1,
+    topic:'',
   },
 
-
-  //查询数据列表
+  //查询关注数据列表
   searchDataList: function (pageNum) {
     let that = this;
     let pageIndex = pageNum;
+    
     api.postJSON({
-      url: 'api/sharing/user_comment_list',
+      url: 'api/sharing/join_topic',
       method: "POST",
       data: {
-        "page": pageIndex,
         token: app.globalData.token,
+        "page": pageIndex,
+        "num": that.data.rows,
+        "pid": that.data.pid 
       },
       success: function (res) {
 
@@ -37,35 +44,32 @@ Page({
           isLoadInterface: false,
           datalist: res.data.data
         })
-
-        if (res.data.data) {
+        if (res.data.data != undefined) {
           if (pageIndex > 1) {
-            var listBefore = that.data.item;
+            var listBefore = that.data.itemlist;
             var currentList = res.data.data;
             that.setData({
-              item: listBefore.concat(currentList)
+              itemlist: listBefore.concat(currentList)
             })
           } else {
             that.setData({
-              item: res.data.data
+              itemlist: res.data.data
             })
           }
         }
-
       }, complete(e) {
         that.setData({
           isShowLoadPage: false
         })
       }
     })
-
-
   },
-  // 加载下一页数据
+
+  // 触底加载下一页
   nextDataPage: function () {
     let that = this;
-    if (that.data.datalist.length>0){
-      console.log(1)
+    if (that.data.datalist.length > 0) {
+      // console.log(1)
       let islastVar = that.data.isLastPage;
 
       if (!that.data.isLoadInterface) {
@@ -76,11 +80,8 @@ Page({
           that.setData({
             isLoadInterface: true
           })
-
           let page = that.data.page * 1 + 1;
-
           that.searchDataList(page);
-
           wx.showToast({
             title: '加载中',
             icon: 'loading',
@@ -88,82 +89,99 @@ Page({
           })
         }
       }
-    }
-    else{
-      console.log(2)
+    } else {
+      // console.log(2)
       wx.showToast({
         title: '我是有底线的',
         icon: 'none',
         duration: 600
       })
     }
-
   },
 
 
-
+  // 显示关闭符号
+  userNameInput: function (event) {
+    var that = this;
+    if (event.detail.value == '') {
+      that.setData({ status: false })
+    } else {
+      that.setData({ status: true })
+    }
+    that.setData({ keyword: event.detail.value })
+  },
   
 
-  // fenye:function(){
-  //   let that = this
-  //   api.postJSON('api/sharing/user_comment_list', {
-  //     token: app.globalData.token,
-  //     page: that.data.page
-  //   }, function (res) {
-  //     console.log(that.data.page)
+  // 清空内容
+  del: function () {
+    this.setData({ 'inputValue': '' })
+  },
+
+
+  // 搜索内容
+  // huiche: function () {
+  //   api.getJSON('/api/sharing/search_sharing?token=' + app.globalData.token + '&keyword=' + this.data.keyword, function (res) {
   //     if (res.data.status == 1) {
-  //       console.log(res.data.data)
-  //       that.setData({
-  //         item: res.data.data,
-  //       })
-  //       that.data.page++
-  //       console.log(that.data.page)
+  //       console.log("搜索成功")
   //     }
   //   })
-
-  //   // that.GetList()
-
-  //   //缓冲提醒
-  //   wx.showToast({
-  //     title: '加载中',
-  //     icon: 'loading',
-  //     duration: 400
-  //   })
-  //   //获取系统的参数，scrollHeight数值,微信必须要设置style:height才能监听滚动事件
-  //   wx.getSystemInfo({
-  //     success: function (res) {
-  //       console.info(res.windowHeight)
-  //       that.setData({
-  //         scrollHeight: res.windowHeight
-  //       })
-  //     }
-  //   });
   // },
 
+  clickTab: function (e) {
+    var that = this;
+    console.log(e)
+    // 点击切换
+    if (this.data.currentTab === e.target.dataset.current) {
+      return false;
+    } else {
+      that.setData({
+        currentTab: e.target.dataset.current,
+      })
+    }
 
+    // 获取到id
+    for(var i=0;i<that.data.item.length;i++){
+      var pid = that.data.item[e.target.dataset.current].id
+    }
+    that.setData({
+      pid: pid
+    })
+    console.log(that.data.pid)
+    // 请求接口
+      let page = 1
+      that.searchDataList(page);
+  },
+
+
+  // 点击每一个表标签
+  topic:function(e){
+    let that = this
+    // console.log(e.currentTarget.dataset.name)
+    this.setData({
+      topic: e.currentTarget.dataset.name
+    })
+    wx.navigateTo({
+      url: '../issue/issue?topic=' + that.data.topic,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let that = this
+    api.postJSON('api/sharing/join_topic', {
+      token: app.globalData.token,
+    }, function (res) {
+      if (res.data.status == 1) {
+        that.setData({
+          item: res.data.data,
+          // pid: res.data.data[0].id
+        })
+      }
+    })
     let page = that.data.page;
     that.searchDataList(page);
-    // that.fenye()
-    // try {
-    //   const res = wx.getSystemInfoSync()
-    //   console.log(res.model)
-    //   console.log(res.pixelRatio)
-    //   console.log(res.windowWidth)
-    //   console.log(res.windowHeight)
-    //   console.log(res.language)
-    //   console.log(res.statusBarHeight)
-    //   console.log(res.version)
-    //   console.log(res.platform)
-    //   that.setData({ navheight: res.statusBarHeight })
-    // } catch (e) {
-    //   // Do something when catch error
-    // }
   },
 
   /**
@@ -177,9 +195,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
+
   },
-
-
 
   /**
    * 生命周期函数--监听页面隐藏

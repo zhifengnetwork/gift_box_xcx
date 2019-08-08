@@ -1,0 +1,25 @@
+<view style="height:{{bar_Height+46}}px;">
+  <component title='我的粉絲' show_bol='{{false}}' site="{{false}}"></component>
+</view>
+<scroll-view class='dataContainer' scroll-y bindscrolltolower="nextDataPage" style="height:100%;">
+  <view class="border_top"></view>
+  <view class="fans_box" bindtap="fanslist" wx:for="{{item}}" data-id="{{index}}">
+    <view class="fans_l">
+      <view class="fans_imgbox">
+        <image src="{{item.avatar}}"></image>
+      </view>
+    </view>
+    <view class="fans_c">
+      <view class="fans_ct">{{item.nickname}}</view>
+      <view class="fans_cf">
+        <text>筆記·{{item.article_num}}</text>
+        <text class="fans_cf_text">|</text>
+        <text>粉絲·{{item.fans_num}}</text>
+      </view>
+    </view>
+    <view class="fans_r">
+      <view class="guanzhu" wx:if="{{!item.follow_count}}">關注</view>
+      <view class="yiguanzhu" wx:if="{{item.follow_count}}">已關注</view>
+    </view>
+  </view>
+</scroll-view>

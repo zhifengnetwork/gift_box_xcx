@@ -20,7 +20,7 @@
     </view>
   </view>
   <view class="tianjia_r">
-    <view>三葉草</view>
+    <view>{{inputValue}}</view>
     <text>點擊創建標籤</text>
   </view>
 </view>
@@ -100,30 +100,19 @@
 <view class="{{currentTab == 2 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
     <!-- <view class="tab_t">推薦地點</view> -->
-    <view class="tab_c">
+    <view class="tab_c" wx:for="{{pinpai}}" bindtap="pinpaibox" data-id="{{item.id}}">
       <view class="tab_cl">
         <view class="tab_climg">
-          <image src="/images/site.png" />
+          <image src="{{item.priture}}" />
         </view>
       </view>
       <view class="tab_cr">
-        <view>大洲科技園</view>
-        <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
-      </view>
-    </view>
-    <view class="tab_c">
-      <view class="tab_cl">
-        <view class="tab_climg">
-          <image src="/images/site.png" />
-        </view>
-      </view>
-      <view class="tab_cr">
-        <view>大洲科技園</view>
-        <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
+        <view>{{item.name}}</view>
+        <text>{{item.introduce}}</text>
       </view>
     </view>
     <view class="more">
-      <text>查看更多</text>
+      <text bindtap="gengduopp">查看更多</text>
       <view class="xiaimg">
         <image src="/images/xia.png" />
       </view>
@@ -135,28 +124,18 @@
 <view class="{{currentTab == 3 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
     <!-- <view class="tab_t">推薦地點</view> -->
-    <view class="tab_c">
+    <view class="tab_c" wx:for="{{shangpin}}" bindtap="shangpinbox" data-id="{{item.goods_id}}">
       <view class="tab_cl">
         <view class="tab_climg">
-          <image src="/images/site.png" />
+          <image src="{{item.picture}}" />
         </view>
       </view>
       <view class="tab_cr">
-        <view>大洲科技園</view>
-        <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
+        <view>{{item.goods_name}}</view>
+        <text>{{item.desc}}</text>
       </view>
     </view>
-    <view class="tab_c">
-      <view class="tab_cl">
-        <view class="tab_climg">
-          <image src="/images/site.png" />
-        </view>
-      </view>
-      <view class="tab_cr">
-        <view>大洲科技園</view>
-        <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
-      </view>
-    </view>
+    
     <view class="more">
       <text>查看更多</text>
       <view class="xiaimg">
