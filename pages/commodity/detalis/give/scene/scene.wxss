@@ -3,6 +3,11 @@ page{
   padding-top: 140rpx
 }
 .tabBar{
+  display:flex;
+  align-items: flex-end;
+  overflow-x: scroll;
+  overflow-y: hidden;
+  font-size: 0;
   margin: 60rpx 0 120rpx 80rpx;
 }
 .tabBar::after{
@@ -15,8 +20,9 @@ page{
   background: #f79c97;
 }
 .tabBar_item{
+  flex-shrink:0;
+  display: inline-block;
   position: relative;
-  float: left;
   margin-left: 10rpx;
   width: 210rpx;
   height: 120rpx;
