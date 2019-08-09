@@ -68,6 +68,16 @@ Page({
       })
     }
 
+    if (address_id == "" || address_id == undefined) {
+      api.postJSON('api/user/get_default_address', {
+        'token': app.globalData.token,
+      },function(res){
+        that.setData({
+          address: res.data.data,
+          address_id: res.data.data.address_id
+        })
+      })
+    }
    
     //存起来
     this.setData({

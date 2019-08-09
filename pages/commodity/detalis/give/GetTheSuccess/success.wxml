@@ -12,7 +12,7 @@
       <view class="success_tcimg">
         <image src="../../../../public/images/card/success_icon.png" class="success_tcimage"></image>
       </view>
-      <view class="success_tcb">去謝謝TA</view>
+      <view class="success_tcb" bindtap="index">去謝謝TA</view>
     </view>
   </view>
   <view class="up_img">
@@ -38,6 +38,6 @@
       <view class="success_bbox_tview">微信名收禮<text>已領取禮物，正在等待收貨</text></view>
       <text class="success_bbox_ttext">2019-06-04 13：05</text>
     </view> -->
-    <view class="success_bbox_view">{{accept_info.nickname}}<text>送出一份禮物</text></view>
+    <view class="success_bbox_view">{{send_info.nickname}}<text>送出一份禮物</text></view>
   </view>
 </view>
