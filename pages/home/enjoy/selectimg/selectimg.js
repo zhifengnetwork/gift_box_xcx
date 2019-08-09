@@ -43,12 +43,14 @@ Page({
   // 下一步
   send:function(){
     let that = this
-    // console.log(app.globalData.a)
-    // console.log(app.globalData.biaoqing)
-    var biaoqian = JSON.stringify(that.data.name);
-    var biaoqing = JSON.stringify(that.data.xxx);
+    
+    app.globalData.biaoqing = that.data.xxx
+    // var biaoqian = JSON.stringify(that.data.name);
+    // var biaoqing = JSON.stringify(that.data.xxx);
+    app.globalData.a = that.data.name
+    console.log(app.globalData.a)
     wx.navigateTo({
-      url: '../issue/issue?biaoqian=' +biaoqian + '&biaoqing=' + biaoqing,
+      url: '../issue/issue',
     })
   },
 

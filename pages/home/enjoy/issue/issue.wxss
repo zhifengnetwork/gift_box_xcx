@@ -190,18 +190,21 @@
 .aresure{
   width: 100%;
   text-align: center;
-  margin-top: 80rpx
+  font-size: 26rpx;
+  line-height: 160rpx;
 }
 .anniu{
   width: 100%;
   text-align: center;
-  margin-top: 60rpx
 }
 .quxiao{
   display: inline-block;
   width: 150rpx;
   border:1px solid rgba(0,0,0,1);
   border-radius:28px;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 26rpx;
 }
 .sure{
   width: 150rpx;
@@ -210,7 +213,10 @@
   border-radius:28px;
   background: rgba(0,0,0,1);
   color: white;
-  margin-left: 30rpx
+  margin-left: 30rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 26rpx;
 }
 /* 遮罩层2 */
 .chumask2{
@@ -237,18 +243,21 @@
 .aresure2{
   width: 100%;
   text-align: center;
-  margin-top: 80rpx
+  font-size: 26rpx;
+  line-height: 160rpx;
 }
 .anniu2{
   width: 100%;
   text-align: center;
-  margin-top: 60rpx
 }
 .quxiao2{
   display: inline-block;
   width: 150rpx;
   border:1px solid rgba(0,0,0,1);
   border-radius:28px;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 26rpx;
 }
 .sure2{
   width: 150rpx;
@@ -257,7 +266,10 @@
   border-radius:28px;
   background: rgba(0,0,0,1);
   color: white;
-  margin-left: 30rpx
+  margin-left: 30rpx;
+  height: 56rpx;
+  line-height: 56rpx;
+  font-size: 26rpx;
 }
 /* 话题 */
 .huati{

@@ -239,11 +239,13 @@ Page({
   // 点击品牌把数据添加进全局app.globalData.a中
   pinpaibox: function(e) {
     let that = this
+    console.log(e)
     for (var i = 0; i < that.data.pinpai.length; i++) {
-      if (that.data.pinpai[i].id == e.target.dataset.id) {
+      if (that.data.pinpai[i].id == e.currentTarget.dataset.id) {
         var namelist = that.data.pinpai[i].name
       }
     }
+    console.log(namelist)
     // that.data.aa.push(namelist)
     // console.log(that.data.aa)
     // that.setData({
@@ -253,7 +255,8 @@ Page({
     that.data.aa = {
       name: namelist,
       bqx: 100,
-      bqy: 100
+      bqy: 100,
+      id: e.currentTarget.dataset.id
     }
     console.log(that.data.aa)
     if (!app.globalData.a) {
@@ -276,14 +279,16 @@ Page({
   shangpinbox: function(e) {
     let that = this
     for (var i = 0; i < that.data.shangpin.length; i++) {
-      if (that.data.shangpin[i].goods_id == e.target.dataset.id) {
+      if (that.data.shangpin[i].goods_id == e.currentTarget.dataset.id) {
         var namelist = that.data.shangpin[i].goods_name
       }
     }
+    console.log(namelist)
     that.data.aa = {
       name: namelist,
       bqx: 100,
-      bqy: 100
+      bqy: 100,
+      goods_id: e.currentTarget.dataset.id,
     }
     console.log(that.data.aa)
     if (!app.globalData.a) {

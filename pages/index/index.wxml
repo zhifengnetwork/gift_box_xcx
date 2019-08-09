@@ -23,7 +23,7 @@
 <swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange" bindanimationfinish="changeGoodsSwip">
 <block wx:for="{{imgs}}" wx:key="imgs">
 <swiper-item>
-<image src="{{item}}"></image>
+<image src="{{item.picture}}"></image>
 </swiper-item>
 </block>
 </swiper>

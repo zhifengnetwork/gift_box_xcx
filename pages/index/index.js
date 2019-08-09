@@ -38,9 +38,9 @@ Page({
     swipernow: 1,
     imgs: [
 
-      'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-      'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-      'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
+      // 'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
+      // 'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
+      // 'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
 
     ],
     // currentSwiper: 0,
@@ -88,6 +88,7 @@ Page({
           xingxuanyoupin: res.data.data.xingxuanyoupin,
           guess_like: res.data.data.cainixihuan,
           chaoliudaogou: res.data.data.chaoliudaogou,
+          imgs: res.data.data.banner,
         })
       }
     })
