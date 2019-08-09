@@ -25,8 +25,10 @@ Page({
     placeholder:"選填，請先和商家協商一致",
     focus:false,
     pid:null,
-    hhh:''
-
+    hhh:'',
+    id:'',
+    user_id:'',
+    follow_count:'',
   },
 
   /**
@@ -34,21 +36,22 @@ Page({
    */
   onLoad: function (options) {
     var that=this
-    api.getJSON('/api/sharing/sharing_info?id=1&token=' + app.globalData.token, function (res) {
+    that.setData({
+      id: options.id
+    })
+    api.getJSON('/api/sharing/sharing_info?id=' + that.data.id + '&token=' + app.globalData.token, function (res) {
       if (res.data.status == 1) {
         console.log(res.data.data);
-        that.setData({detaillist:res.data.data})
-        that.setData({priture:res.data.data.priture})
-        that.setData({comments: res.data.data.comment})
+        that.setData({
+          detaillist:res.data.data,
+          priture: res.data.data.priture,
+          comments: res.data.data.comment,
+          user_id: res.data.data.user_id,
+          follow_count: res.data.data.follow_count,
+          })
         console.log(that.data.comments)
       }
     })
-    
-
-
-
-
-
   },
 
   /**
@@ -172,8 +175,46 @@ Page({
     this.setData({focus:true});
     this.setData({pid:pid});
     console.log(this.data.hhh)
-  }
+  },
 
- 
+  // 关注按钮
+  guanzhu:function (){
+    let that = this
+    if (that.data.follow_count) {
+      wx.showModal({
+        content: '確認不再關注?',
+        success(res) {
+          if (res.confirm) {
+            that.setData({
+              follow_count: !that.data.follow_count
+            })
+            api.postJSON('api/sharing/add_follow', {
+              token: app.globalData.token,
+              follow_user_id: that.data.user_id
+            }, function (res) {
+              if (res.data.status == 1) {
+                console.log(res)
+              }
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    }else{
+      that.setData({
+        follow_count: !that.data.follow_count
+      })
+      api.postJSON('api/sharing/add_follow', {
+        token: app.globalData.token,
+        follow_user_id: that.data.user_id
+      }, function (res) {
+        if (res.data.status == 1) {
+          console.log(res)
+        }
+      })
+    }
+
+  },
   
 })

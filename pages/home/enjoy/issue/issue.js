@@ -1,3 +1,5 @@
+var api = require('../../../../utils/api');
+var app = getApp();
 // pages/home/enjoy/ issue/ issue.js
 Page({
 
@@ -12,6 +14,12 @@ Page({
     xianshi:false,
     xianshi2:false,
     topic:'',
+    lat:'',
+    lon:'',
+    inputValue:'',
+    content:'',
+    biaoqing:'',
+    biaoqian:'',
   },
 
   // 点击跳转到话题页面
@@ -21,16 +29,108 @@ Page({
     })
   },
 
+  // 获取标题
+  userNameInput: function (event) {
+    var that = this;
+    that.setData({ inputValue: event.detail.value })
+  },
+
+  // 获取内容
+  content:function(event) {
+    var that = this;
+    that.setData({ content: event.detail.value })
+  },
+
+
+  fabu:function () {
+    let that = this
+    // 判断图片
+    if(that.data.images.length){
+      console.log(that.data.images)
+      // 判断标题
+      if (that.data.inputValue) {
+        console.log(234)
+        // 判断内容
+        if (that.data.content){
+          console.log(345)
+          // 判断话题
+          if (that.data.topic){
+            console.log(456)
+            // 判断地点
+            if (that.datalat || that.data.lon) {
+              // console.log(567)
+              // 万事俱备，请求接口
+              api.postJSON('api/sharing/add_Sharing',{
+                token: app.globalData.token,
+                priture: that.data.images,
+                title: that.data.inputValue,
+                content: that.data.content,
+                topic_name: that.data.topic,
+                lat: that.data.lat,
+                lon: that.data.lon,
+                txet: that.data.biaoqing,
+                text2: that.data.biaoqing
+              },function(res){
+                if(res.data.status == 1){
+                  console.log(res)
+                }
+              })
+            } else {
+              wx.showToast({
+                title: '請填寫正確的地址',
+                icon: 'none',
+                duration: 1000
+              })
+            }
+          }else{
+            wx.showToast({
+              title: '請參與話題',
+              icon: 'none',
+              duration: 1000
+            })
+          }
+        }else{
+          wx.showToast({
+            title: '請填寫內容',
+            icon: 'none',
+            duration: 1000
+          })
+        }
+      } else {
+        wx.showToast({
+          title: '請填寫標題',
+          icon: 'none',
+          duration: 1000
+        })
+      }
+    }else{
+      wx.showToast({
+        title: '請添加圖片',
+        icon: 'none',
+        duration: 1000
+      })
+    }
+  },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
     let that = this
-    console.log(options.topic)
+    that.setData({
+      biaoqian: JSON.parse(options.biaoqian),
+      biaoqing: JSON.parse(options.biaoqing)
+    })
     if(options.topic){
       that.setData({
         topic: options.topic
+      })
+    }
+    if (app.globalData.image){
+      var image = [] 
+      image = image.concat(app.globalData.image)
+      that.setData({
+        images: image
       })
     }
   },
@@ -128,6 +228,8 @@ Page({
         console.log(res.longitude)
         that.setData({
           address: res.name,
+          lat: res.latitude,
+          lon: res.longitude,
           status:false
         })
       },

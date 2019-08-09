@@ -14,8 +14,15 @@ Page({
     isLastPage: false,
     isLoadInterface: false,
     datalist: '',
+    follow_count:'',
   },
 
+  // 点击关注/取消关注
+  guanzhu:function(e){
+    let that = this
+    console.log(e)
+  },
+  
   // 点击跳转到关注详情
   followlist: function (e) {
     let that = this
@@ -55,11 +62,13 @@ Page({
             var listBefore = that.data.item;
             var currentList = res.data.data;
             that.setData({
-              item: listBefore.concat(currentList)
+              item: listBefore.concat(currentList),
+              // follow_count: res.data.data.follow_count
             })
           } else {
             that.setData({
-              item: res.data.data
+              item: res.data.data,
+              // follow_count: res.data.data.follow_count
             })
           }
         }

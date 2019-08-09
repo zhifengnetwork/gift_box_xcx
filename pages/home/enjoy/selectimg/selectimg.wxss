@@ -12,6 +12,11 @@ page{
   top: 200rpx;
   left: 0;
 }
+.imgbox image{
+  width: 100%;
+  height: 100%;
+  z-index: 2;
+}
 .popupimg{
   width: 100rpx;
   height: 100rpx;
@@ -23,6 +28,7 @@ page{
   display: block;
 }
 .popuptext{
+  color: #fff;
   font-size: 30rpx;
   height:auto;
   width: auto;

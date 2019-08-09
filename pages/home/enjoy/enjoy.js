@@ -16,9 +16,68 @@ Page({
     list: [],
     bujia: true,
     goodslist: [],
-    topic_id:0,
-    page:1
+    topic_id: 0,
+    page: 1,
+    image: [],
   },
+
+  // 上传图片或视频按钮
+  upimg: function() {
+    let that = this
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album', 'camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+          filePath: tempFilePaths[0],
+          name: 'file',
+          header: {
+            'content-type': 'multipart/form-data'
+          },
+          formData: {
+            'token': app.globalData.token,
+          },
+          success: function(res) {
+            let avatar = JSON.parse(res.data)
+            that.setData({
+              avatar: avatar.data
+            })
+            console.log(that.data.avatar)
+            that.setData({
+              image: that.data.avatar
+            })
+            app.globalData.image = that.data.image
+            if (that.data.image) {
+              wx.navigateTo({
+                url: 'selectimg/selectimg',
+              })
+            }
+          }
+        })
+        // that.setData({
+        //   image: tempFilePaths
+        // })
+
+        // api.postJSON('api/sharing/upload_imgs',{
+        //   token: app.globalData.token,
+        //   images: that.data.image
+        // },function(res){
+        //   if(res.data.status == 1){
+        //     console.log(res)
+        //   }
+        // })
+      }
+    })
+    // console.log(that.data.image)
+  },
+
+
+
+
 
   /**
    * 生命周期函数--监听页面加载
@@ -48,13 +107,13 @@ Page({
         });
       }
     })
-    
+
   },
 
 
   GetList: function(that) {
 
-    api.getJSON('/api/sharing/sharing_list?num=10' + '&topic_id='+that.data.topic_id+ '&page=' + that.data.page + '&token=' + app.globalData.token, function(res) {
+    api.getJSON('/api/sharing/sharing_list?num=10' + '&topic_id=' + that.data.topic_id + '&page=' + that.data.page + '&token=' + app.globalData.token, function(res) {
       if (res.data.status == 1) {
         if (res.data.data.length > 0) {
           for (var i = 0; i < res.data.data.length; i++) {
@@ -87,10 +146,10 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    var that=this
+    var that = this
     this.GetList(that); //页面初次展示调用第一次数据，比如说5条记录
   },
-   
+
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -130,7 +189,9 @@ Page({
   clickTab: function(e) {
     var that = this;
     var arr = [];
-    that.setData({ goodslist: arr});
+    that.setData({
+      goodslist: arr
+    });
 
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
@@ -139,12 +200,17 @@ Page({
         currentTab: e.target.dataset.current,
       })
     }
-    that.setData({topic_id:e.target.dataset.id});
-    that.setData({bujia: true, page: 1})
+    that.setData({
+      topic_id: e.target.dataset.id
+    });
+    that.setData({
+      bujia: true,
+      page: 1
+    })
 
-    api.getJSON('/api/sharing/sharing_list?num=10' + '&topic_id=' + that.data.topic_id + '&page=1&token=' + app.globalData.token, function (res) {
+    api.getJSON('/api/sharing/sharing_list?num=10' + '&topic_id=' + that.data.topic_id + '&page=1&token=' + app.globalData.token, function(res) {
       if (res.data.status == 1) {
-       
+
         if (res.data.data.length > 0) {
           for (var i = 0; i < res.data.data.length; i++) {
             that.data.goodslist.push(res.data.data[i])
@@ -154,12 +220,12 @@ Page({
           })
           that.data.page++;
         } else {
-          var kong=[]
+          var kong = []
           that.setData({
             bujia: false
           })
           that.setData({
-            note:kong
+            note: kong
           })
         }
 
@@ -195,9 +261,13 @@ Page({
     }
   },
   // 跳转到商品详情
-  details: function() {
+  details: function(e) {
+    let that = this
+    that.setData({
+      id: e.currentTarget.dataset.id
+    })
     wx.navigateTo({
-      url: '../../home/enjoy/detail/detail',
+      url: '../../home/enjoy/detail/detail?id=' + that.data.id,
     })
   },
   // 搜索框跳转页面

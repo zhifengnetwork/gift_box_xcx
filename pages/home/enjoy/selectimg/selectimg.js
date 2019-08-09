@@ -21,6 +21,7 @@ Page({
     bqx: 100,
     bqy: 100,
     bqid:'',
+    image:'',
   },
 
 
@@ -35,10 +36,21 @@ Page({
       console.log(app.globalData.a)
     }
     wx.navigateTo({
-      url: '../label/label',
+      url: '../label/label?',
     })
   },
 
+  // 下一步
+  send:function(){
+    let that = this
+    // console.log(app.globalData.a)
+    // console.log(app.globalData.biaoqing)
+    var biaoqian = JSON.stringify(that.data.name);
+    var biaoqing = JSON.stringify(that.data.xxx);
+    wx.navigateTo({
+      url: '../issue/issue?biaoqian=' +biaoqian + '&biaoqing=' + biaoqing,
+    })
+  },
 
   // 点击贴纸出现遮罩表情包
   biaoqing:function () {
@@ -140,6 +152,10 @@ Page({
    */
   onLoad: function (options) {
     let that = this
+    that.setData({
+      image: app.globalData.image
+    })
+    // wx.setStorageSync('image', that.data.image);
     var a = wx.getStorageSync('name')
     console.log(a)
     if(a){
@@ -199,6 +215,7 @@ Page({
     wx.removeStorageSync('name')
     wx.removeStorageSync('biaoqing')
     console.log(wx.getStorageSync('name'))
+    app.globalData.image = []
   },
 
   /**

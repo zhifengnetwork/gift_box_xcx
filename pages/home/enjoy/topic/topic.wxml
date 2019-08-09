@@ -4,13 +4,16 @@
 <scroll-view class='dataContainer' scroll-y bindscrolltolower="nextDataPage" style="height:100%;">
 <!-- 搜索框 -->
 <view class="sousou_ear">
-  <input type="text" class="find" placeholder="搜索更多話題" focus="false" bindconfirm="huiche" bindinput="userNameInput" value='{{inputValue}}'></input>
+  <input type="text" class="find" placeholder="搜索更多話題" focus="false"  bindinput="userNameInput" value='{{inputValue}}'></input>
   <image src="../../../public/images/classify/sousuo.png" class="sousou"></image>
   <image src="../../../public/images/home/close.png" class="close_pic" wx:if="{{status}}" bindtap="del"></image>
 </view>
 
+<!-- 搜索时状态 -->
+<view class="kong" wx:if="{{list}}" bindtap="kong">沒有想參與的話題？創建新話題：{{list}}</view>
+
 <!-- tab切换 -->
-<scroll-view class="swiper-tab" scroll-x>
+<scroll-view class="swiper-tab" scroll-x wx:if="{{!list}}" >
   <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{item}}">
     <view class="touming" data-current="{{index}}"></view>
     <view class="tabimgbox">

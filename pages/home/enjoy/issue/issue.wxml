@@ -22,12 +22,12 @@
 </view>
 <!-- 填写标题 -->
 <view class="title_ear">
-  <input placeholder="加個標題會有更多讚哦~" class="title"></input>
+  <input placeholder="加個標題會有更多讚哦~" class="title" value="{{inputValue}}" bindinput="userNameInput"></input>
 </view>
 <!-- 文本区域 -->
 <view class="awrad_textarea">
   <!-- <input placeholder="選填，請先和商家協商一致" disabled="{{!flag}}" /> -->
-  <textarea class="weui-textarea" placeholder="說說此刻的心情..." bindblur="changeContext" style="height:140rpx" />
+  <textarea class="weui-textarea" placeholder="說說此刻的心情..." bindblur="changeContext" bindinput="content" style="height:140rpx" value="{{content}}" />
 </view>
 
 <!-- 参与话题 -->
@@ -54,7 +54,7 @@
       <image src="../../../../images/caogaoxiang.png" class="caogao_pic" ></image>
       <view class="save">存草稿</view>
    </view>
-   <view class="fabu">發佈</view>
+   <view class="fabu" bindtap="fabu">發佈</view>
 </view>
 
 

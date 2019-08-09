@@ -116,26 +116,26 @@
 <!-- 头像名字区域 -->
   <view class="my_tt">
     <view class="my_ttl">
-      <view>{{nickname}}</view>
-      <text>NO.{{id}}</text>
+      <view>{{item.nickname}}</view>
+      <text>{{item.user_no}}</text>
     </view>
     <view class="my_ttr" bindtap="mydetalis">
-      <image src="{{avatar}}" />
+      <image src="{{item.avatar}}" />
     </view>
   </view>
   <!-- 文章、个人信息区域 -->
   <view class="my_tf">
     <view class="my_tf_box front" bindtap="article">
       <view>文章</view>
-      <text>126</text>  
+      <text>{{item.article_num}}</text>  
     </view>
     <view class="my_tf_box front" bindtap="follow">
       <view>關註</view>
-      <text>5</text>
+      <text>{{item.follow_num}}</text>
     </view>
     <view class="my_tf_box front" bindtap="fans">
       <view>粉絲</view>
-      <text>8</text>
+      <text>{{item.fans_num}}</text>
     </view>
     <view class="my_tf_box2">
       <view class="back">更改封面</view>
