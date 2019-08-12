@@ -1,0 +1,32 @@
+<!--pages/my/logistics/logistics.wxml-->
+<view class="reward_nav">
+  <component title='查看物流' show_bol='{{false}}'></component>
+</view>
+<view class="logistics_title">
+  <view class="title_top">
+    <view class="title_state">
+      {{item.deliverystatus}}
+    </view>
+    <view class="title_service">
+      <view>联系客服/投诉</view>
+      <view>09:00-21:00</view>
+    </view>
+  </view>
+  <view class="title_number">{{item.expName}} {{item.courierPhone}}</view>
+</view>
+
+<view class="logistics_info">
+  <view class="info_item" wx:for="{{logistics}}" wx:key="index">
+    <view class="info_icon" wx:if="{{index==0||index==over}}">√</view>
+    <view class="info_icon1" wx:if="{{index!=0&&index!=over}}"></view>
+    <view class="item_title">
+      {{item.title}}
+    </view>
+    <view class="item_content">
+      {{item.status}}
+    </view>
+    <view class="item_time">
+      {{item.time}}
+    </view>
+  </view>
+</view>

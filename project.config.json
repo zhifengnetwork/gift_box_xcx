@@ -224,6 +224,12 @@
 					"pathName": "pages/home/enjoy/select/select",
 					"query": "",
 					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/my/logistics/logistics",
+					"pathName": "pages/my/logistics/logistics",
+					"scene": null
 				}
 			]
 		}

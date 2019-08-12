@@ -1,4 +1,4 @@
-// pages/my/collectgift/collectgift.js
+// pages/my/logistics/logistics.js
 var app = getApp()
 var api = require('../../../utils/api');
 Page({
@@ -7,59 +7,34 @@ Page({
    * 页面的初始数据
    */
   data: {
-    item:''
+    item:'',
+    over:'',
+    logistics:''
   },
 
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.getdata();
-  },
-  getdata: function () {
     let that = this;
-    api.postJSON('api/order/order_list', {
-      token: app.globalData.token,
-      order_type:'1,2',
-      gift_type: 3,
-      num: 200
+    let over = '';
+    let order_id = options.order_id == undefined ? '' : options.order_id;
+    api.postJSON('api/order/get_order_logistics', {
+      'token': app.globalData.token,
+      'order_id': order_id,
+      // 'order_id': 3232,
     }, function (res) {
       if (res.data.status == 1) {
+        for (let i = 0; i < res.data.data.list.length;i++){
+          over = i;
+        }
         that.setData({
-          item: res.data.data
+          item: res.data.data,
+          over: over,
+          logistics: res.data.data.list.reverse()
         })
       }
-      console.log(res)
-    })
-  },
-
-
-  // 确认收货
-  shouhuo: function (e) {
-    let that = this;
-    console.log(e.target.id)
-    api.postJSON('api/order/edit_status', {
-      token: app.globalData.token,
-      order_id: e.target.id,
-      status: 3,
-    }, function (res) {
-      if(res.data.status==1){
-        wx.showToast({
-          title: '提交成功',
-          icon: 'success'
-        })
-      }else{
-        wx.showToast({
-          title: res.data.msg,
-          icon: 'none'
-        })
-      }
-      console.log(res)
-    })
-  },
-  logistics: function (e){
-    wx.navigateTo({
-      url: '../logistics/logistics?order_id=' + e.target.id,
+      console.log(res.data.data)
     })
   },
 
