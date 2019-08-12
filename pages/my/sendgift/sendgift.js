@@ -43,6 +43,11 @@ Page({
       this.load();
     }
   },
+  logistics: function (e) {
+    wx.navigateTo({
+      url: '../logistics/logistics?order_id=' + e.target.id,
+    })
+  },
   getdata:function(){
     let that = this;
     api.postJSON('api/gift/get_send_gift', {

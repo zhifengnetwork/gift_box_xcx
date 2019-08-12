@@ -1,0 +1,94 @@
+/* pages/my/logistics/logistics.wxss */
+page{
+  background: #f5f5f5;
+}
+.reward_nav{
+  height: 120rpx;
+  background: #fff;
+}
+.logistics_title{
+  margin: 20rpx 0;
+  padding: 20rpx 20rpx 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  background: #fff;
+}
+.title_top{
+  height: 120rpx;
+  font-size: 32rpx;
+  border-bottom: 1px solid #ccc;
+}
+.title_state{
+  float: left;
+  display: block;
+}
+.title_service{
+  float: right;
+  display: block;
+}
+.title_service :nth-child(1){
+  padding: 5rpx 20rpx;
+  border: 1rpx solid #ccc;
+  border-radius: 100rpx;
+}
+.title_service :nth-child(2){
+  letter-spacing: 4rpx;
+  text-indent: 20rpx;
+  color:#999;
+}
+.title_number{
+  line-height: 80rpx;
+  font-size: 28rpx;
+  color: #999;
+}
+.logistics_info{
+  margin-bottom: 100rpx;
+  padding: 20rpx;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  line-height: 60rpx;
+  background: #fff;
+}
+.info_item{
+  position: relative;
+  margin-left: 80rpx;
+  padding-left: 60rpx;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  border-left: 1rpx solid #ccc;
+}
+.info_icon{
+  position: absolute;
+  top: 4rpx;
+  left: -20rpx;
+  width: 40rpx;
+  height: 40rpx;
+  color:#fff;
+  line-height: 40rpx;
+  text-align: center;
+  background: #000;
+  border-radius: 50%;
+}
+.info_icon1{
+  position: absolute;
+  top: 25rpx;
+  left: -10rpx;
+  width: 20rpx;
+  height: 20rpx;
+  background: #999;
+  border-radius: 50%;
+}
+.item_title{
+  font-size: 32rpx;
+}
+.item_content{
+  color:#999;
+  font-size: 28rpx;
+}
+.item_time{
+  color:#999;
+  font-size: 28rpx;
+}

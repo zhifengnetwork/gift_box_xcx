@@ -74,7 +74,8 @@
     "pages/my/followlist/followlist",
     "pages/my/fans/fans",
     "pages/home/enjoy/topic/topic",
-    "pages/my/other/other"
+    "pages/my/other/other",
+    "pages/my/logistics/logistics"
   ],
   "window": {
     "backgroundTextStyle": "light",
