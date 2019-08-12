@@ -57,7 +57,7 @@
     <view wx:if="{{selectMenuID==index}}" class="nei" wx:for="{{navLeftItems}}" wx:key>
       <scroll-view scroll-y="true" class="scrolhei1" style='height:{{scroll_height1}}rpx;' bindscroll="bindScroll" scroll-into-view="{{scrollTopId}}" scroll-top="{{scrollTop}}">
         <view class="leifen">全部分类</view>
-        <view class="center_shop" wx:for="{{dier}}" wx:key bindtap="shangpxing" data-id="{{item.cat_id}}">
+        <view class="center_shop" wx:for="{{dier}}" wx:key bindtap="shangpxing" data-cat_name="{{item.cat_name}}" data-id="{{item.cat_id}}">
           <image src="{{item.img}}" class="img_item"></image>
           <view class="text_item">{{item.cat_name}}</view>
         </view>
