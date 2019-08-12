@@ -1,61 +1,60 @@
 var api = require('../../../../utils/api');
 var app = getApp();
-// pages/home/enjoy/selectimg/selectimg.js
+// pages/home/enjoy/select/select.js
 Page({
 
   /**
    * 页面的初始数据
    */
   data: {
+    video: '',
     popup: false,
-    face:'',
+    face: '',
     xuanzhong: '',
     x: 0,
     y: 0,
     xx: 0,
-    xindex:0,
-    xxx:[],
+    xindex: 0,
+    xxx: [],
     yy: 0,
-    name:'',
+    name: '',
     huancun: '',
     bqx: 100,
     bqy: 100,
-    bqid:'',
-    image:'',
+    bqid: '',
   },
 
-
-
+  
   // 点击跳转到标签页
-  label:function(){
+  label: function () {
     let that = this
-    if (app.globalData.a){
+    if (app.globalData.a) {
       // wx.setStorageSync('name', that.data.name);
       // var aa = wx.getStorageSync('name')
       app.globalData.a = that.data.name
       console.log(app.globalData.a)
     }
     wx.navigateTo({
-      url: '../label/label?pageid=2',
+      url: '../label/label?pageid=1',
     })
   },
 
   // 下一步
-  send:function(){
+  send: function () {
     let that = this
-    
+
     app.globalData.biaoqing = that.data.xxx
     // var biaoqian = JSON.stringify(that.data.name);
     // var biaoqing = JSON.stringify(that.data.xxx);
     app.globalData.a = that.data.name
     console.log(app.globalData.a)
     wx.navigateTo({
-      url: '../issue/issue?pageid=2',
+      url: '../issue/issue?pageid=1',
     })
   },
 
   // 点击贴纸出现遮罩表情包
-  biaoqing:function () {
+  biaoqing: function () {
     let that = this
     that.setData({
       popup: true
@@ -64,21 +63,21 @@ Page({
   },
 
   // 拖拽表情记录位置
-  tuozhuai:function(e) {
-  let that = this
-   that.setData({
-     xx: e.changedTouches[0].pageX,
-    //  xindex: e.target.dataset.index,
-     yy: e.changedTouches[0].pageY
-   })
-   
-  console.log(that.data.xx)
-  
+  tuozhuai: function (e) {
+    let that = this
+    that.setData({
+      xx: e.changedTouches[0].pageX,
+      //  xindex: e.target.dataset.index,
+      yy: e.changedTouches[0].pageY
+    })
+
+    console.log(that.data.xx)
+
   },
 
   // 拖拽标签记录位置
-  biaoqian:function (e){
-    let that= this
+  biaoqian: function (e) {
+    let that = this
     console.log(e)
     that.data.bqx = e.changedTouches[0].pageX
     that.data.bqy = e.changedTouches[0].pageY
@@ -98,7 +97,7 @@ Page({
 
 
   // 点击遮罩上方关闭遮罩
-  guanbi:function (){
+  guanbi: function () {
     let that = this
     that.setData({
       popup: false
@@ -107,43 +106,23 @@ Page({
 
 
   // 点击表情
-  popup:function (e){
+  popup: function (e) {
     let that = this
     that.setData({
       popup: false,
       xuanzhong: that.data.face[e.currentTarget.dataset.index],
       xxindex: e.currentTarget.dataset.index,
-      xindex: that.data.xindex+1,
-    }) 
+      xindex: that.data.xindex + 1,
+    })
 
-      var aa = [{ id: that.data.xindex, x: that.data.xx, y: that.data.yy, img: that.data.xuanzhong }]
-      that.setData({
-        xxx: that.data.xxx.concat(aa)
-      })
-      app.globalData.biaoqing = that.data.xxx
-      console.log(app.globalData.biaoqing)
-      wx.setStorageSync('biaoqing', app.globalData.biaoqing);
+    var aa = [{ id: that.data.xindex, x: that.data.xx, y: that.data.yy, img: that.data.xuanzhong }]
+    that.setData({
+      xxx: that.data.xxx.concat(aa)
+    })
+    app.globalData.biaoqing = that.data.xxx
+    console.log(app.globalData.biaoqing)
+    wx.setStorageSync('biaoqing', app.globalData.biaoqing);
     console.log(that.data.xxx)
-    // that.data.xxx.push({ id: that.data.xindex, x: that.data.xx, y: that.data.yy, img: that.data.xuanzhong })
-    // console.log(that.data.xxx)
-    // if(that.data.xxx.length>1){
-    //   console.log(aa[aa.length-1].x)
-    //   console.log(aa[0].x)
-    //   var qianx = aa[0].x
-    //   var qiany = aa[0].y
-    //   var houx = aa[aa.length - 1].x
-    //   var houy = aa[aa.length - 1].y
-      
-    //   aa[0].x = houx
-    //   aa[aa.length - 1].x = qianx
-    //   aa[0].y = houy
-    //   aa[aa.length - 1].y = qiany
-
-    //   that.setData({
-    //     xxx: aa
-    //   })
-    //   console.log(that.data.xxx)
-    // }
   },
 
 
@@ -155,12 +134,12 @@ Page({
   onLoad: function (options) {
     let that = this
     that.setData({
-      image: app.globalData.image
+      video: app.globalData.image
     })
-    // wx.setStorageSync('image', that.data.image);
+
     var a = wx.getStorageSync('name')
     console.log(a)
-    if(a){
+    if (a) {
       that.setData({
         name: a
       })
@@ -195,15 +174,12 @@ Page({
         })
       }
     })
-    
   },
 
   /**
    * 生命周期函数--监听页面隐藏
    */
   onHide: function () {
-    let that = this
-    console.log(123)
 
   },
 

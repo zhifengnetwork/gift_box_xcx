@@ -15,6 +15,7 @@ Page({
     pagepp: 1,
     aa: [],
     name: '',
+    pageid:'',
   },
 
   // 输入框输入
@@ -270,9 +271,15 @@ Page({
     }
 
     wx.setStorageSync('name', app.globalData.a);
-    wx.navigateTo({
-      url: '../selectimg/selectimg',
-    })
+    if(that.data.pageid == 1){
+      wx.navigateTo({
+        url: '../select/select',
+      })
+    }else if(that.data.pageid == 2){
+      wx.navigateTo({
+        url: '../selectimg/selectimg',
+      })
+    }
   },
 
   // 点击商品把数据添加进全局app.globalData.a中
@@ -316,7 +323,8 @@ Page({
     let that = this
     that.setData({
       inputValue: options.inputValue,
-      status: true
+      status: true,
+      pageid: options.pageid
     })
     console.log(that.data.inputValue)
   },

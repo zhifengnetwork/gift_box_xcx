@@ -24,55 +24,164 @@ Page({
   // 上传图片或视频按钮
   upimg: function() {
     let that = this
-    wx.chooseImage({
-      count: 1,
-      sizeType: ['original', 'compressed'],
-      sourceType: ['album', 'camera'],
+    wx.showActionSheet({
+      itemList: ['拍照', '選擇圖片', '選擇視頻','拍視頻'],
       success(res) {
-        // tempFilePath可以作为img标签的src属性显示图片
-        const tempFilePaths = res.tempFilePaths
-        wx.uploadFile({
-          url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
-          filePath: tempFilePaths[0],
-          name: 'file',
-          header: {
-            'content-type': 'multipart/form-data'
-          },
-          formData: {
-            'token': app.globalData.token,
-          },
-          success: function(res) {
-            let avatar = JSON.parse(res.data)
-            that.setData({
-              avatar: avatar.data
-            })
-            console.log(that.data.avatar)
-            that.setData({
-              image: that.data.avatar
-            })
-            app.globalData.image = that.data.image
-            if (that.data.image) {
-              wx.navigateTo({
-                url: 'selectimg/selectimg',
+        console.log(res.tapIndex)
+        if (res.tapIndex == 0) {
+          wx.chooseImage({
+            count: 1,
+            sizeType: ['original', 'compressed'],
+            sourceType: ['camera'],
+            success(res) {
+              // tempFilePath可以作为img标签的src属性显示图片
+              const tempFilePaths = res.tempFilePaths
+              console.log(tempFilePaths)
+              wx.uploadFile({
+                url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                filePath: tempFilePaths[0],
+                name: 'file',
+                header: {
+                  'content-type': 'multipart/form-data'
+                },
+                formData: {
+                  'token': app.globalData.token,
+                },
+                success: function(res) {
+                  let avatar = JSON.parse(res.data)
+                  that.setData({
+                    avatar: avatar.data
+                  })
+                  console.log(that.data.avatar)
+                  that.setData({
+                    image: that.data.avatar
+                  })
+                  app.globalData.image = that.data.image
+                  if (that.data.image) {
+                    wx.navigateTo({
+                      url: 'selectimg/selectimg',
+                    })
+                  }
+                }
               })
             }
-          }
-        })
-        // that.setData({
-        //   image: tempFilePaths
-        // })
-
-        // api.postJSON('api/sharing/upload_imgs',{
-        //   token: app.globalData.token,
-        //   images: that.data.image
-        // },function(res){
-        //   if(res.data.status == 1){
-        //     console.log(res)
-        //   }
-        // })
+          })
+        } else if (res.tapIndex == 1){
+          wx.chooseImage({
+            count: 1,
+            sizeType: ['original', 'compressed'],
+            sourceType: ['album'],
+            success(res) {
+              // tempFilePath可以作为img标签的src属性显示图片
+              const tempFilePaths = res.tempFilePaths
+              wx.uploadFile({
+                url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                filePath: tempFilePaths[0],
+                name: 'file',
+                header: {
+                  'content-type': 'multipart/form-data'
+                },
+                formData: {
+                  'token': app.globalData.token,
+                },
+                success: function (res) {
+                  let avatar = JSON.parse(res.data)
+                  that.setData({
+                    avatar: avatar.data
+                  })
+                  console.log(that.data.avatar)
+                  that.setData({
+                    image: that.data.avatar
+                  })
+                  app.globalData.image = that.data.image
+                  if (that.data.image) {
+                    wx.navigateTo({
+                      url: 'selectimg/selectimg',
+                    })
+                  }
+                }
+              })
+            }
+          })
+        } else if (res.tapIndex == 2){
+          wx.chooseVideo({
+            sourceType: ['album'],
+            maxDuration: 60,
+            camera: 'back',
+            success(res) {
+              // tempFilePath可以作为img标签的src属性显示图片
+              const tempFilePath = res.tempFilePath
+              console.log(tempFilePath)
+              wx.uploadFile({
+                url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                filePath: tempFilePath,
+                name: 'file',
+                header: {
+                  'content-type': 'multipart/form-data'
+                },
+                formData: {
+                  'token': app.globalData.token,
+                },
+                success: function (res) {
+                  let avatar = JSON.parse(res.data)
+                  that.setData({
+                    avatar: avatar.data
+                  })
+                  console.log(that.data.avatar)
+                  that.setData({
+                    image: that.data.avatar
+                  })
+                  app.globalData.image = that.data.image
+                  if (that.data.image) {
+                    wx.navigateTo({
+                      url: 'select/select',
+                    })
+                  }
+                }
+              })
+            }
+          })
+        } else if (res.tapIndex == 3){
+          wx.chooseVideo({
+            sourceType: ['camera'],
+            maxDuration: 60,
+            camera: 'back',
+            success(res) {
+              // tempFilePath可以作为img标签的src属性显示图片
+              const tempFilePath = res.tempFilePath
+              console.log(tempFilePath)
+              wx.uploadFile({
+                url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                filePath: tempFilePath,
+                name: 'file',
+                header: {
+                  'content-type': 'multipart/form-data'
+                },
+                formData: {
+                  'token': app.globalData.token,
+                },
+                success: function (res) {
+                  let avatar = JSON.parse(res.data)
+                  that.setData({
+                    avatar: avatar.data
+                  })
+                  console.log(that.data.avatar)
+                  that.setData({
+                    image: that.data.avatar
+                  })
+                  app.globalData.image = that.data.image
+                  if (that.data.image) {
+                    wx.navigateTo({
+                      url: 'select/select',
+                    })
+                  }
+                }
+              })
+            }
+          })
+        }
       }
     })
-    // console.log(that.data.image)
   },
 
 
@@ -101,7 +210,7 @@ Page({
     });
     api.getJSON('/api/Sharing/get_sharing_topic', function(res) {
       if (res.data.status == 1) {
-        console.log(res.data.data);
+        // console.log(res.data.data);
         that.setData({
           nav_title: res.data.data
         });
@@ -122,7 +231,7 @@ Page({
           that.setData({
             note: that.data.goodslist
           })
-          console.log(that.data.note)
+          // console.log(that.data.note)
           that.data.page++;
         } else {
           that.setData({

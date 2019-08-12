@@ -21,6 +21,7 @@ Page({
     biaoqing: '',
     biaoqian: '',
     tupian: '',
+    pageid:'',
   },
 
   // 点击跳转到话题页面
@@ -139,7 +140,8 @@ Page({
     let that = this
     if (options.topic) {
       that.setData({
-        topic: options.topic
+        topic: options.topic,
+        pageid: options.pageid
       })
     }
     if (app.globalData.a){
