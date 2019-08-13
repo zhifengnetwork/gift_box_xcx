@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 25,
+			"current": 24,
 			"list": [
 				{
 					"id": -1,
@@ -221,7 +221,7 @@
 				{
 					"id": 24,
 					"name": "1112",
-					"pathName": "pages/my/other/other",
+					"pathName": "pages/home/enjoy/select/select",
 					"query": "",
 					"scene": null
 				},

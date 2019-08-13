@@ -17,6 +17,7 @@ Page({
     pagepp: 1,
     pagesp:1,
     inputValue: '',
+    pageid:''
   },
 
   // 输入框输入时跳转到搜索页
@@ -52,7 +53,7 @@ Page({
     let that = this
     if (that.data.inputValue != ''){
         wx.navigateTo({
-          url: '../labelsearch/labelsearch?inputValue=' + that.data.inputValue
+          url: '../labelsearch/labelsearch?inputValue=' + that.data.inputValue + '&pageid=' + that.data.pageid
         });
         that.setData({
           // status: true,
@@ -118,8 +119,9 @@ Page({
 
 
   clickTab:function(){
+    let that = this
     wx.navigateTo({
-      url: '../labelsearch/labelsearch',
+      url: '../labelsearch/labelsearch?pageid=' + that.data.pageid,
     })
   },
 
@@ -222,6 +224,9 @@ Page({
    */
   onLoad: function(options) {
     let that = this
+    that.setData({
+      pageid: options.pageid
+    })
     that.hideShareMenu()
   },
 

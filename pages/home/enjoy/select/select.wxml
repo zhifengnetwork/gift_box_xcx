@@ -1,0 +1,52 @@
+<component title='' show_bol='{{false}}' side="{{true}}" quan="{{true}}" heise="{{true}}" my_class="{{true}}"></component>
+<movable-area class="imgbox" bindtap="guanbi">
+  <video src="{{video}}"></video>
+  <!-- 拖拽的表情 -->
+  <movable-view class="popupimg" wx:for="{{xxx}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" bindtouchend="tuozhuai">
+    <image src="{{item.img}}"></image>
+  </movable-view>
+
+  <!-- 拖拽的标签 -->
+  <movable-view class="popuptext" x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{name}}" data-index="{{index}}" bindtouchend="biaoqian">
+    <!-- <image src="{{item.img}}"></image> -->
+    <text>{{item.name}}</text>
+  </movable-view>
+</movable-area>
+<view class="select">
+  <view class="select_l" bindtap="label">
+    <view class="selectl_img">
+      <image src="/images/mute.png" />
+    </view>
+    <text>靜音</text>
+  </view>
+  <view class="select_l" bindtap="label">
+    <view class="selectl_img">
+      <image src="/images/biaoqian.png" />
+    </view>
+    <text>標籤</text>
+  </view>
+  <view class="select_l" bindtap="biaoqing">
+    <view class="selectl_img">
+      <image src="/images/tiezhi.png" />
+    </view>
+    <text>貼紙</text>
+  </view>
+  <view class="select_l" bindtap="biaoqing">
+    <view class="selectl_img">
+      <image src="/images/tiezhi.png" />
+    </view>
+    <text>貼紙</text>
+  </view>
+</view>
+<!-- 弹窗表情包 -->
+<view class="guanbi" bindtap="guanbi"></view>
+<view class="popup" wx:if="{{popup}}">
+  <view class="zhezhao"></view>
+  <view class="facebox">
+    <view class="faceimgbox" wx:for="{{face}}" bindtap="popup" data-index="{{index}}">
+      <image src="{{item}}"></image>
+    </view>
+  </view>
+</view>
+
+<view class="send" bindtap="send">下一步</view>
