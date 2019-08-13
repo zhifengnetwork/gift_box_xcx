@@ -22,9 +22,72 @@ Page({
     bqx: 100,
     bqy: 100,
     bqid: '',
+    mute:false,
+    music:'',
+    music_pop: false,
+    music_one:'',
+    music_id:'',
   },
 
-  
+  // 静音播放
+  mute:function(){
+    let that = this
+    that.setData({
+      mute: !that.data.mute,
+    })
+  },
+
+  // 点击配乐，判断有无music数据，没有就请求接口
+  music:function(){
+    let that = this
+    that.setData({
+      music_pop: !that.data.music_pop
+    })
+    if(!that.data.music){
+      api.postJSON('/api/sharing/get_sharing_music',{
+        token: app.globalData.token,
+        pid: -1,
+      },function (res) {
+        if (res.data.status == 1) {
+          console.log(res)
+          that.setData({
+            music: res.data.data,
+            music_one: res.data.data[0].id
+          })
+          that.audioCtx.audioId = 'myAudio' + that.data.music_one
+          that.audioCtx.play()
+        }
+      })
+    }
+  },
+
+  // 关闭配乐弹窗
+  close:function(){
+    let that = this
+    that.setData({
+      music_pop: !that.data.music_pop
+    })
+  },
+
+  // 点击音乐
+  bofang:function(e){
+    let that = this
+    // that.setData({
+    //   music_id: e.currentTarget.dataset.id
+    // })
+    // that.audioCtx.audioId = 'myAudio'+that.data.music_id
+    // if (that.audioCtx.paused) {
+    //   that.audioCtx.play();
+    //   console.log(1)
+    // } else {
+    //   console.log(2)
+    //   that.audioCtx.pause();
+    // }
+    // that.audioCtx.paused
+    // that.audioCtx.play()
+    // console.log(that.audioCtx)
+  },
+
   // 点击跳转到标签页
   label: function () {
     let that = this
@@ -95,7 +158,6 @@ Page({
   },
 
 
-
   // 点击遮罩上方关闭遮罩
   guanbi: function () {
     let that = this
@@ -127,7 +189,6 @@ Page({
 
 
 
-
   /**
    * 生命周期函数--监听页面加载
    */
@@ -151,14 +212,26 @@ Page({
       })
     }
     console.log(that.data.name)
+
+    that.audioCtx = wx.createAudioContext('myAudio')
+    console.log(that.audioCtx)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function () {
-
+  onReady: function (e) {
+    let that =this
   },
+  
+
+  // bindSendDanmu() {
+  //   this.videoContext.play({
+  //     // text: this.inputValue,
+  //     // color: getRandomColor()
+  //   })
+  // }
+
 
   /**
    * 生命周期函数--监听页面显示

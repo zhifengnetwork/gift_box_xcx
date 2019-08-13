@@ -1,6 +1,6 @@
 <component title='' show_bol='{{false}}' side="{{true}}" quan="{{true}}" heise="{{true}}" my_class="{{true}}"></component>
 <movable-area class="imgbox" bindtap="guanbi">
-  <video src="{{video}}"></video>
+  <video id="myVideo" src="{{video}}" muted="{{mute}}" vslide-gesture="{{false}}"></video>
   <!-- 拖拽的表情 -->
   <movable-view class="popupimg" wx:for="{{xxx}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" bindtouchend="tuozhuai">
     <image src="{{item.img}}"></image>
@@ -13,9 +13,10 @@
   </movable-view>
 </movable-area>
 <view class="select">
-  <view class="select_l" bindtap="label">
+  <view class="select_l" bindtap="mute">
     <view class="selectl_img">
-      <image src="/images/mute.png" />
+      <image wx:if="{{!mute}}" src="/images/mute.png" />
+      <image wx:else src="/images/mute-red.png"></image>
     </view>
     <text>靜音</text>
   </view>
@@ -31,11 +32,11 @@
     </view>
     <text>貼紙</text>
   </view>
-  <view class="select_l" bindtap="biaoqing">
+  <view class="select_l" bindtap="music">
     <view class="selectl_img">
-      <image src="/images/tiezhi.png" />
+      <image src="/images/music.png" />
     </view>
-    <text>貼紙</text>
+    <text>配樂</text>
   </view>
 </view>
 <!-- 弹窗表情包 -->
@@ -47,6 +48,33 @@
       <image src="{{item}}"></image>
     </view>
   </view>
+</view>
+
+<!-- 弹窗音乐包 -->
+<view class="music_popup" wx:if="{{music_pop}}">
+  <!-- <view class="music_zhezhao"></view> -->
+  <view class="music_t">
+    <view class="music_tl" bindtap="close">
+      <image src="/images/music_close.png"></image>
+    </view>
+    <text class="music_tc">配樂</text>
+    <view class="music_tr">
+      <image src="/images/affirm.png"></image>
+    </view>
+  </view>
+  <scroll-view class="music_f" scroll-x>
+    <view class="music_fbox">
+      <view class="waiquan">
+        <view class="neiquan"></view>
+      </view>
+      <text>音樂庫</text>
+    </view>
+    <view class="music_fbox" wx:for="{{music}}" data-id="{{item.id}}" bindtap="bofang">
+      <view class="music_ft">{{item.name}}</view>
+      <text class="music_ff">{{item.desc}}</text>
+      <audio id="myAudio{{item.id}}" src="{{item.url}}" ></audio>
+    </view>
+  </scroll-view>
 </view>
 
 <view class="send" bindtap="send">下一步</view>
