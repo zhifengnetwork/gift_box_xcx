@@ -21,7 +21,7 @@
   </view>
 </view>
 <!-- 无地址 -->
-<view class="award_pop-upbox" wx:if="{{address==null&&!flag}}" catchtouchmove="preventTouchMove">
+<view class="award_pop-upbox" wx:if="{{address==''&&!flag}}" catchtouchmove="preventTouchMove">
   <view class="award_pop-up"></view>
   <view class="pop-up_box">
     <view class="pop-up_box_t">確認收貨地址</view>
@@ -31,7 +31,7 @@
 </view>
  <view class="close" bindtap="hide" hidden="{{flag}}">X</view>
  <!-- 确认地址 -->
- <view class="award_pop-upbox" wx:if="{{address!=null&&!flag}}" catchtouchmove="preventTouchMove">
+ <view class="award_pop-upbox" wx:if="{{address!=''&&!flag}}" catchtouchmove="preventTouchMove">
   <view class="award_pop-up"></view>
   <view class="pop-up_box">
     <view class="pop-up_box_t">確認收貨地址</view>

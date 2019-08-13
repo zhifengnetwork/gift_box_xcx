@@ -187,6 +187,10 @@
   color: #fff;
   background: #fff;
 }
+.radio image{
+  width: 100%;
+  height: 100%;
+}
 .giveothers_img {
   width: 190rpx;
   height: 300rpx;
