@@ -38,8 +38,8 @@
     <view class="giveothers_cbox">
       <view class="giveothers_imgbox" wx:for="{{scene}}" wx:key="{{index}}" bindtap="radioChange" data-index="{{index}}" data-id="{{backId&&index==0?backId:item.id}}">
         <view class="giveothers_img">
-          <view class="radio {{radio==index?'active':''}}">
-            <text>√</text>
+          <view class="radio">
+            <image wx:if="{{radio==index}}" src="../../../../public/images/cancel.png"></image>
           </view>
           <image class="giveothers_i" wx:if="{{backPicture&&index==0}}" src="{{backPicture}}"></image>
           <image class="giveothers_i" wx:else src="{{item.picture}}"></image>
