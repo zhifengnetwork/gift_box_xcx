@@ -16,6 +16,8 @@ Page({
     aa: [],
     name: '',
     pageid:'',
+    addresslist:[],
+    movie:[]
   },
 
   // 输入框输入
@@ -163,8 +165,45 @@ Page({
           }
         })
     }
+    // 当current == 1的时候，请求地点的接口
+    else if (e.target.dataset.current == 1){
+      api.postJSON('api/sharing/label_list', {
+        page: that.data.pagesp,
+        keyword: that.data.inputValue,
+        type:1
+      },
+        function (res) {
+          if (res.data.status == 1) {
+            console.log(res.data.data)
+            that.setData({addresslist: res.data.data})
+          }
+        })
+    }
+    // 当current==4的时候，请求影视的接口
+    else if(e.target.dataset.current==4){
+        api.postJSON('api/sharing/label_list', {
+          page: that.data.pagesp,
+          keyword: that.data.inputValue,
+          type: 4
+        },
+          function (res) {
+            if (res.data.status == 1) {
+              console.log("ss6666")
+              console.log(res.data.data)
+              that.setData({movie: res.data.data})
+
+            }
+          })
+      
+    }
 
   },
+
+
+
+
+
+
 
 
   // 点击回车跟搜素图片时跳转
@@ -212,6 +251,7 @@ Page({
           }
         })
     }
+   
   },
 
   // 品牌里点击加载更多
@@ -281,6 +321,72 @@ Page({
       })
     }
   },
+  // 地点box
+  addressbox:function(e){
+    var that=this
+    console.log("ssaaa")
+    console.log(e.currentTarget.dataset.title)
+    that.data.aa = {
+      name: e.currentTarget.dataset.title,
+      bqx: 100,
+      bqy: 100,
+      id: e.currentTarget.dataset.id
+    }
+    console.log(that.data.aa)
+    if (!app.globalData.a) {
+      app.globalData.a = ([that.data.aa])
+      console.log("sss")
+      console.log(app.globalData.a)
+    } else {
+      app.globalData.a.push(that.data.aa)
+      console.log("sss")
+      console.log(app.globalData.a)
+    }
+
+    wx.setStorageSync('name', app.globalData.a);
+    if (that.data.pageid == 1) {
+      wx.navigateTo({
+        url: '../select/select',
+      })
+    } else if (that.data.pageid == 2) {
+      wx.navigateTo({
+        url: '../selectimg/selectimg',
+      })
+    }
+
+  },
+  // 影视box
+  moviebox:function(){
+    var that = this
+    console.log("ssaaa")
+    console.log(e.currentTarget.dataset.title)
+    that.data.aa = {
+      name: e.currentTarget.dataset.title,
+      bqx: 100,
+      bqy: 100,
+      id: e.currentTarget.dataset.id
+    }
+    console.log(that.data.aa)
+    if (!app.globalData.a) {
+      app.globalData.a = ([that.data.aa])
+      console.log("sss")
+      console.log(app.globalData.a)
+    } else {
+      app.globalData.a.push(that.data.aa)
+      console.log("sss")
+      console.log(app.globalData.a)
+    }
+    wx.setStorageSync('name', app.globalData.a);
+    if (that.data.pageid == 1) {
+      wx.navigateTo({
+        url: '../select/select',
+      })
+    } else if (that.data.pageid == 2) {
+      wx.navigateTo({
+        url: '../selectimg/selectimg',
+      })
+    }
+  },
 
   // 点击商品把数据添加进全局app.globalData.a中
   shangpinbox: function(e) {
@@ -321,12 +427,80 @@ Page({
    */
   onLoad: function(options) {
     let that = this
+    var current = parseInt(options.current)+1
+    console.log("aa")
     that.setData({
       inputValue: options.inputValue,
       status: true,
-      pageid: options.pageid
+      pageid: options.pageid,
+      currentTab: current
     })
     console.log(that.data.inputValue)
+    // 点击进来这个页面的时候,需要渲染对应的项的内容
+    // 当currentTab == 1的时候，请求地点的接口
+    if (that.data.currentTab===1){
+      api.postJSON('api/sharing/label_list', {
+        page: that.data.pagesp,
+        keyword: that.data.inputValue,
+        type: 1
+      },
+        function (res) {
+          if (res.data.status == 1) {
+            console.log(res.data.data)
+            that.setData({ addresslist: res.data.data })
+          }
+        })
+    }
+    // 当currentTab == 1的时候，请求品牌的接口
+    if (that.data.currentTab == 2) {
+      api.postJSON('api/sharing/brand_list', {
+        page: that.data.pagepp,
+        keyword: that.data.inputValue
+      },
+        function (res) {
+          if (res.data.status == 1) {
+            console.log(res.data)
+            that.setData({
+              pinpai: res.data.data
+            })
+          }
+        })
+    }
+    // 当currentTab == 3的时候，请求商品的接口
+    else if (that.data.currentTab == 3) {
+      api.postJSON('api/sharing/goods_list', {
+        page: that.data.pagesp,
+        keyword: that.data.inputValue
+      },
+        function (res) {
+          if (res.data.status == 1) {
+            console.log(res.data)
+            that.setData({
+              shangpin: res.data.data
+            })
+          }
+        })
+    }
+    //当currentTab==4的时候，请求影视的接口
+    else if (that.data.currentTab === 4) {
+      api.postJSON('api/sharing/label_list', {
+        page: that.data.pagesp,
+        keyword: that.data.inputValue,
+        type: 4
+      },
+        function (res) {
+          if (res.data.status == 1) {
+            console.log("ss6666")
+            console.log(res.data.data)
+            that.setData({ movie: res.data.data })
+          }
+        })
+    }
+
+
+
+
+    
   },
 
   /**

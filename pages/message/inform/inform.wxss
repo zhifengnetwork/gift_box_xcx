@@ -47,20 +47,24 @@ page{
 }
 
 .inform_f{
-  width: 100%;
+  width: 92%;
   white-space:nowrap;
   overflow:hidden;
   text-overflow:ellipsis;
-  overflow-x: scroll;
-  overflow-y: hidden;
+  margin: 0 auto;
+  /* overflow-x: scroll;
+  overflow-y: hidden; */
 }
 .inform_fimg{
-  width: 300rpx;
-  height: 330rpx;
+  width: 330rpx;
+  height: 350rpx;
   display: inline-block;
-  overflow: hidden;
+  /* overflow: hidden; */
 }
-.inform_fimg image{
+.tupian{
   width: 100%;
   height: 100%;
+}
+.inform_fimg:nth-child(even) .tupian{
+  margin-left: 30rpx
 }

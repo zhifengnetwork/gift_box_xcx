@@ -13,10 +13,10 @@
       <text>{{item.addtime}}</text>
     </view>
   </view>
-  <scroll-view class="inform_f" scroll-x>
-    <view class="inform_fimg" style="margin: 0 50rpx;" wx:for="{{item.cover}}">
-       <image src="{{item}}" />
-       <view>{{item}}</view>
+  <view class="inform_f" >
+    <view class="inform_fimg" wx:for="{{item.cover}}" wx:for-index="idx" >
+       <image src="{{item}}" class="tupian" wx:if="{{idx<2}}"/>
+       <!-- <view>{{item}}</view> -->
     </view>
-  </scroll-view>
+  </view>
 </view>
