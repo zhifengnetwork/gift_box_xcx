@@ -21,9 +21,9 @@
   <image src="../../../../images/jia.png" class="close_pic" class='uploadImgBtn' bindtap="chooseImage" wx:if="{{images.length < 9}}"></image>
 </view>
 <!-- 视频封面 -->
-<view class="videobox">
-  <video src="{{images}}" show-play-btn="{{false}}" show-center-play-btn="{{false}}"></video>
-</view>
+<!-- <view class="videobox">
+  <video src="{{images}}" controls="{{false}}" ></video>
+</view> -->
 <!-- 填写标题 -->
 <view class="title_ear">
   <input placeholder="加個標題會有更多讚哦~" class="title" value="{{inputValue}}" bindinput="userNameInput"></input>

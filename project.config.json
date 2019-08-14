@@ -229,6 +229,7 @@
 					"id": -1,
 					"name": "pages/my/logistics/logistics",
 					"pathName": "pages/my/logistics/logistics",
+					"query": "",
 					"scene": null
 				}
 			]

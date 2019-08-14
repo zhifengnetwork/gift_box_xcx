@@ -5,12 +5,12 @@ page{
 }
 .imgbox{
   z-index: 2;
-  height: 560rpx;
+  height: 800rpx;
   width: 100%;
   background: #fff;
   overflow: hidden;
   position: relative;
-  top: 200rpx;
+  top: 180rpx;
   left: 0;
 }
 .imgbox video{
@@ -37,14 +37,14 @@ page{
   z-index: 2;
 }
 .select{
-  height: 250rpx;
-  margin-top: 200rpx;
+  height: 150rpx;
+  margin-top: 230rpx;
   display: flex;
 }
 .select_l{
   /* width: 50%; */
   flex: 1;
-  height: 250rpx;
+  height: 150rpx;
   float: left;
   text-align: center;
 }
@@ -52,7 +52,7 @@ page{
   width: 50rpx;
   height: 50rpx;
   overflow: hidden;
-  margin-top: 80rpx;
+  margin-top: 20rpx;
   margin-left: 50%;
   transform: translate(-50%);
 }
@@ -109,6 +109,7 @@ page{
   bottom: 100rpx;
   left: 50%;
   transform: translate(-50%);
+  z-index: 1;
 }
 /* 弹窗表情包 */
 .guanbi{
@@ -153,4 +154,116 @@ page{
   width: 100%;
   height: 100%;
   display: block;
+}
+.music_popup{
+  width: 100%;
+  height: 350rpx;
+  background: pink;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  z-index: 3;
+  overflow: hidden;
+}
+.music_t{
+  height: 62rpx;
+  overflow: hidden;
+  padding: 0 40rpx;
+  margin-top: 20rpx;
+  text-align: center;
+  line-height: 62rpx;
+  color: #fff;
+}
+.music_tl{
+  float: left;
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 15rpx;
+}
+.music_tl image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.music_tr{
+  float: right;
+  width: 32rpx;
+  height: 32rpx;
+  margin-top: 15rpx;
+}
+.music_tr image{
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+.music_f{
+  margin-top: 30rpx;
+  overflow: hidden;
+  white-space:nowrap;
+  text-overflow:ellipsis;
+  overflow-x: scroll;
+  overflow-y: hidden;
+}
+.music_fbox{
+  width: 130rpx;
+  height: 130rpx;
+  margin: 0 20rpx;
+  display: inline-block;
+  background: #171917;
+  border-radius: 24rpx;
+  overflow: hidden;
+  text-align: center;
+  box-sizing: border-box;
+  position: relative;
+}
+.music_f .music_fbox:nth-child(1){
+  margin-left: 40rpx;
+  line-height: 45rpx;
+  color: #fff;
+  font-size: 22rpx;
+}
+.music_f :last-of-type .music_fbox{
+  margin-right: 40rpx;
+}
+.waiquan{
+  width: 60rpx;
+  height: 60rpx;
+  border-radius: 50%;
+  border: 4rpx solid #424242;
+  box-sizing: border-box;
+  margin-left: 35rpx;
+  margin-top: 25rpx;
+}
+.neiquan{
+  width: 20rpx;
+  height: 20rpx;
+  border-radius: 50%;
+  border: 6rpx solid #eaae4d;
+  box-sizing: border-box;
+  margin-left: 17rpx;
+  margin-top: 17rpx;
+}
+.music_ft{
+  color: #fff;
+  font-size: 22rpx;
+  /* line-height: 40rpx; */
+  margin: 10rpx;
+ word-break:break-all;
+  display:-webkit-box;
+  -webkit-line-clamp:2;
+  -webkit-box-orient:vertical;
+  overflow:hidden;
+}
+.music_ff{
+  font-size: 22rpx;
+  color: #999999;
+  line-height: 20rpx;
+}
+audio{
+  width: 130rpx;
+  height: 130rpx;
+  float: left;
+  position: absolute;
+  top: 0;
+  left: 0;
 }
