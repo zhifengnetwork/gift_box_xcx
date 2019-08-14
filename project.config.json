@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 24,
+			"current": 26,
 			"list": [
 				{
 					"id": -1,
@@ -229,6 +229,13 @@
 					"id": -1,
 					"name": "pages/my/logistics/logistics",
 					"pathName": "pages/my/logistics/logistics",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "1113",
+					"pathName": "pages/home/enjoy/selectmusic/selectmusic",
 					"query": "",
 					"scene": null
 				}
