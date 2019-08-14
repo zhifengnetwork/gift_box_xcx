@@ -1,3 +1,4 @@
+ <import src="../../../wxParse/wxParse.wxml"/>
  <component title='信息详情' show_bol='{{false}}'></component>
  <!-- 图片详情页 -->
   <!-- swiper -->
@@ -17,6 +18,9 @@
     </block>
   </view>
   <!-- 文字介绍 -->
-  <view class="intriduce1">{{content.content}}</view>
+  <view class="intriduce1">
+  <!-- {{content.content}} -->
+   <template is="wxParse" data="{{wxParseData:content.nodes}}"/>
+  </view>
   <!-- <view class="intriduce2" wx:else>{{content.content}}</view> -->
   
