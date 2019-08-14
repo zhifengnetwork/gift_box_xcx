@@ -1,5 +1,5 @@
 <component title='享物圈' show_bol='{{false}}' side="{{true}}"></component>
-<scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad">
+<scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" >
 <view class="body">
   <!-- 搜索区域 -->
 
@@ -10,12 +10,6 @@
   <!-- tab切换 -->
   <scroll-view class="swiper-tab" scroll-x>
     <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{nav_title}}" wx:key data-id="{{item.id}}">{{item.name}}</view>
-    <!-- <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">附近</view>
-    <view class="swiper-tab-item {{currentTab==2?'active':''}}" data-current="2" bindtap="clickTab">护肤</view>
-    <view class="swiper-tab-item {{currentTab==3?'active':''}}" data-current="3" bindtap="clickTab">时尚</view>
-    <view class="swiper-tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">美食</view>
-    <view class="swiper-tab-item {{currentTab==5?'active':''}}" data-current="5" bindtap="clickTab">家居</view>
-    <view class="swiper-tab-item {{currentTab==6?'active':''}}" data-current="6" bindtap="clickTab">读书</view> -->
   </scroll-view>
 
   <scroll-view class="huadong">
@@ -50,37 +44,7 @@
       </scroll-view>
     </view>
   </view>
-  <!-- <view class="{{currentTab == 1 ? 'show':'hidden'}}">
-    <scroll-view>
-      <text>暂无内容1</text>
-    </scroll-view>
-  </view>
-  <view class="{{currentTab == 2 ? 'show':'hidden'}}">
-    <scroll-view>
-      <text>暂无内容2</text>
-    </scroll-view>
-  </view>
-  <view class="{{currentTab == 3 ? 'show':'hidden'}}">
-    <scroll-view>
-      <text>暂无内容3</text>
-    </scroll-view>
-  </view>
-  <view class="{{currentTab == 4 ? 'show':'hidden'}}">
-    <scroll-view>
-      <text>暂无内容4</text>
-    </scroll-view>
-  </view>
-  <view class="{{currentTab == 5 ? 'show':'hidden'}}">
-    <scroll-view>
-      <text>暂无内容5</text>
-    </scroll-view>
-  </view>
-  <view class="{{currentTab == 6 ? 'show':'hidden'}}">
-    <scroll-view>
-      <text>暂无内容6</text>
-    </scroll-view>
-  </view>
-   -->
+  
 
 </view>
 </scroll-view>

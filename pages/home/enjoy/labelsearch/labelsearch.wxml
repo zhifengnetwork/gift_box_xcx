@@ -65,7 +65,7 @@
 <view class="{{currentTab == 1 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
     <!-- <view class="tab_t">推薦地點</view> -->
-    <view class="tab_c">
+    <!-- <view class="tab_c">
       <view class="tab_cl">
         <view class="tab_climg">
           <image src="/images/site.png" />
@@ -75,16 +75,16 @@
         <view>大洲科技園</view>
         <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
       </view>
-    </view>
-    <view class="tab_c">
+    </view> -->
+    <view class="tab_c" wx:for="{{addresslist}}" wx:key bindtap="addressbox" data-id="{{item.id}}" data-title="{{item.title}}">
       <view class="tab_cl">
         <view class="tab_climg">
-          <image src="/images/site.png" />
+          <image src="{{item.img}}"/>
         </view>
       </view>
       <view class="tab_cr">
-        <view>大洲科技園</view>
-        <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
+        <view>{{item.title}}</view>
+        <text>{{item.desc}}</text>
       </view>
     </view>
     <view class="more">
@@ -149,7 +149,18 @@
 <view class="{{currentTab == 4 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
     <!-- <view class="tab_t">推薦地點</view> -->
-    <view class="tab_c">
+    <view class="tab_c" wx:for="{{movie}}" wx:key bindtap="moviebox" data-id="{{item.id}}" data-title="{{item.title}}">
+      <view class="tab_cl">
+        <view class="tab_climg">
+          <image src="{{item.img}}" />
+        </view>
+      </view>
+      <view class="tab_cr">
+        <view>{{item.title}}</view>
+        <text>{{item.desc}}</text>
+      </view>
+    </view>
+    <!-- <view class="tab_c">
       <view class="tab_cl">
         <view class="tab_climg">
           <image src="/images/site.png" />
@@ -159,18 +170,7 @@
         <view>大洲科技園</view>
         <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
       </view>
-    </view>
-    <view class="tab_c">
-      <view class="tab_cl">
-        <view class="tab_climg">
-          <image src="/images/site.png" />
-        </view>
-      </view>
-      <view class="tab_cr">
-        <view>大洲科技園</view>
-        <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
-      </view>
-    </view>
+    </view> -->
     <view class="more">
       <text>查看更多</text>
       <view class="xiaimg">

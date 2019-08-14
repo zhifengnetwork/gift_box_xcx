@@ -118,10 +118,11 @@ Page({
   // },
 
 
-  clickTab:function(){
+  clickTab:function(e){
+    console.log(e)
     let that = this
     wx.navigateTo({
-      url: '../labelsearch/labelsearch?pageid=' + that.data.pageid,
+      url: '../labelsearch/labelsearch?pageid=' + that.data.pageid + '&current=' + e.currentTarget.dataset.current,
     })
   },
 

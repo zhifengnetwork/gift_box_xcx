@@ -23,7 +23,7 @@
     <scroll-view>
       <view class="boss_c" wx:for="{{tabtitleneirong}}" wx:key="index" wx:for-item="items">
         <view class="boss_cbox">
-          <view class="boss_cbox_box" wx:for="{{items}}"  wx:key>
+          <view class="boss_cbox_box" wx:for="{{items}}"  wx:key bindtap="detail" data-id="{{item.id}}">
             <view class="boss_cbox_img">
             <image src="{{item. picture}}" class="imgimgimg2"></image>
             </view>
