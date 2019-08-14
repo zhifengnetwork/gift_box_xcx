@@ -97,10 +97,31 @@ Page({
       })
     }
   },
+ //跳转到图片详情的页面
+  // tupiancontainer:function(e){
+  //   console.log(e.currentTarget.dataset.id)
+  //  wx.navigateTo({
+  //    url: '../tupiandetail/tupiandetail?id='+e.currentTarget.dataset.id,
+  //  })
+  // },
 
 
-
-
+  //跳转到详情的页面
+  contextcontainer:function(e){
+    console.log(e.currentTarget.dataset.id)
+    console.log(this.data.item)
+    for(var i=0;i<this.data.item.length;i++){
+      if(this.data.item[i].cover.length>0){
+        wx.navigateTo({
+          url: '../tupiandetail/tupiandetail?id=' + e.currentTarget.dataset.id,
+        })
+      }else{
+        wx.navigateTo({
+          url: '../contextdetail/contextdetail?id=' + e.currentTarget.dataset.id,
+        })
+      }
+    }
+  },
   /**
    * 生命周期函数--监听页面加载
    */
