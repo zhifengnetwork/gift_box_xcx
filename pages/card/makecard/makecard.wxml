@@ -8,12 +8,13 @@
   <!-- 选择列表-s -->
   <view class="select_list">
     <!-- 列表项-s -->
-    <view class="select_item" wx:for="{{list}}" wx:key="item.id" bindtap="skip" data-url="{{item.url}}">
+    <view class="select_item" wx:for="{{list}}" wx:key="{{index}}" bindtap="skip" data-url="{{item.url}}">
       <view class="select_imgwrap">
         <image class="select_img" src="{{item.img}}"></image>
       </view>
       <view class="select_text">{{item.text}}</view>
-      <view class="select_tips">{{item.tips}}</view>
+      <view class="select_tips" wx:if="{{index==2&&recordTime!=''}}">{{item.tips}} {{recordTime}}秒</view>
+      <view class="select_tips" wx:else>{{item.tips}}</view>
       <view class="select_icon">
         <image class="select_icon_img" src="{{item.icon}}"></image>
       </view>

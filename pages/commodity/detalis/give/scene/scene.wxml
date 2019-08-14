@@ -12,6 +12,7 @@
   <view class="tabCont_item {{tabCont[index]?'active':''}}" wx:for="{{get_scene}}" wx:key="{{index}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="tabCont">
     <image class="tabCont_img" src="{{item.picture}}"></image>
   </view>
+  <view wx:if="{{get_scene.length>1}}" style="width:120rpx;height:1rpx;display:inline-block;flex-shrink:0;"></view>
 </view>
 <view class="btn" bindtap="send">
  使用它

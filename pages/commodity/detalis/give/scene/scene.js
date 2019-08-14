@@ -22,10 +22,12 @@ Page({
     //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
     console.log(this.data.name, this.data.picture, this.data.id)
     prevPage.setData({
+      radio:0,
       backName: this.data.name ? this.data.name:this.data.scene[0].name,
       backPicture: this.data.picture ? this.data.picture : this.data.get_scene[0].picture,
       backId: this.data.id ? this.data.id : this.data.get_scene[0].id
     })
+    prevPage.radioChange();
     wx.navigateBack({
       delta: 1
     })

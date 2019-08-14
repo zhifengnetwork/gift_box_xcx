@@ -43,10 +43,12 @@ Page({
     blessing: false,
     blessText:'',
     order_type:'',
+    music_id:'',
     // 子页面返回值
     music: '',
     picture: '',
     record: '',
+    recordTime: '',
     bless: '',
     box_id:0
   },
@@ -61,7 +63,7 @@ Page({
       return false;
     }
     wx.navigateTo({
-      url: url
+      url: url+'?music_id='+ this.data.music_id
     })
   },
   // 关闭祝福弹出层
@@ -177,7 +179,8 @@ Page({
       if (!app.globalData.makecard){
         app.globalData.makecard = res.data.data.id;
         that.setData({
-          box_id: res.data.data.id
+          box_id: res.data.data.id,
+          music_id: res.data.data.music_id
         })
       }else{
         return false;
