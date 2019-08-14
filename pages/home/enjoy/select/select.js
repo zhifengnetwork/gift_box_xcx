@@ -27,6 +27,16 @@ Page({
     music_pop: false,
     music_one:'',
     music_id:'',
+    music: [],
+    src: '',
+    songName: '',
+    musicone:'',
+    audio:'',
+    audio_id:'',
+    audio_url:'',
+    audio_name:'',
+    audioid:'',
+    musicid:'',
   },
 
   // 静音播放
@@ -37,28 +47,54 @@ Page({
     })
   },
 
-  // 点击配乐，判断有无music数据，没有就请求接口
+  
+  // 点击每一首音乐
+  bofang: function (e) {
+    let that = this;
+    let ind = e.currentTarget.dataset.ind;
+    // for (let i = 0; i < this.data.music.length; i++) {
+    //   this.data.music[i].radio = 'false';
+    // }
+    // this.data.music[ind].radio = 'true';
+    that.setData({
+      music: this.data.music,
+      src: that.data.music[ind].src,
+      songName: that.data.music[ind].songName,
+      music_id: that.data.music[ind].id
+    })
+    // 播放音乐
+    console.log(that.data.music[ind].id)
+    this.audioCtx.play()
+  },
+
+  // 点击配乐
   music:function(){
     let that = this
     that.setData({
-      music_pop: !that.data.music_pop
+      music_pop: !that.data.music_pop,
+      src: that.data.musicone,
+      music_id: that.data.music_one
     })
-    if(!that.data.music){
-      api.postJSON('/api/sharing/get_sharing_music',{
-        token: app.globalData.token,
-        pid: -1,
-      },function (res) {
-        if (res.data.status == 1) {
-          console.log(res)
-          that.setData({
-            music: res.data.data,
-            music_one: res.data.data[0].id
-          })
-          that.audioCtx.audioId = 'myAudio' + that.data.music_one
-          that.audioCtx.play()
-        }
-      })
+    console.log(that.data.music_id)
+    that.audioCtx.play()
+    if(that.data.audio){
+      that.audio.pause()
     }
+    // if(!that.data.music){
+    //   api.postJSON('/api/sharing/get_sharing_music',{
+    //     token: app.globalData.token,
+    //     pid: -1,
+    //   },function (res) {
+    //     if (res.data.status == 1) {
+    //       console.log(res)
+    //       that.setData({
+    //         music: res.data.data,
+    //         music_one: res.data.data[0].id
+    //       })
+          // that.audioCtx.audioId = 'myAudio' + that.data.music_one
+    //     }
+    //   })
+    // }
   },
 
   // 关闭配乐弹窗
@@ -69,9 +105,34 @@ Page({
     })
   },
 
-  // 点击音乐
-  bofang:function(e){
+  // 配乐确认
+  queren:function(){
     let that = this
+    console.log(that.data.music_id)
+    that.audioCtx.pause()
+    that.setData({
+      music_pop: !that.data.music_pop,
+      audio_id: that.data.music_id,
+      audio: that.data.src
+    })
+    that.audio.play()
+  },
+
+  // 点击音乐库
+  musicbank:function(){
+    let that = this 
+    console.log(that.data.music_id)
+    that.audioCtx.pause()
+    that.audio.pause()
+    wx.navigateTo({
+      url: '../selectmusic/selectmusic',
+    })
+  },
+
+
+  // 点击音乐
+  // bofang:function(e){
+  //   let that = this
     // that.setData({
     //   music_id: e.currentTarget.dataset.id
     // })
@@ -86,7 +147,7 @@ Page({
     // that.audioCtx.paused
     // that.audioCtx.play()
     // console.log(that.audioCtx)
-  },
+  // },
 
   // 点击跳转到标签页
   label: function () {
@@ -105,15 +166,30 @@ Page({
   // 下一步
   send: function () {
     let that = this
-
     app.globalData.biaoqing = that.data.xxx
     // var biaoqian = JSON.stringify(that.data.name);
     // var biaoqing = JSON.stringify(that.data.xxx);
     app.globalData.a = that.data.name
-    console.log(app.globalData.a)
-    wx.navigateTo({
-      url: '../issue/issue?pageid=1',
-    })
+    if (that.data.audioid){
+      that.setData({
+        musicid: that.data.audioid
+      })
+      wx.navigateTo({
+        url: '../issue/issue?pageid=1&musicid=' + that.data.musicid,
+      })
+    } else if (that.data.music_id){
+      that.setData({
+        musicid: that.data.music_id
+      })
+      wx.navigateTo({
+        url: '../issue/issue?pageid=1&musicid=' + that.data.musicid,
+      })
+    }else{
+      wx.navigateTo({
+        url: '../issue/issue?pageid=1',
+      })
+    }
+    // console.log(app.globalData.a)
   },
 
   // 点击贴纸出现遮罩表情包
@@ -187,6 +263,13 @@ Page({
     console.log(that.data.xxx)
   },
 
+  popupbox:function(){
+    let that =this
+    if(that.data.music_pop){
+      console.log(123)
+      that.audioCtx.play()
+    }
+  },
 
 
   /**
@@ -195,7 +278,7 @@ Page({
   onLoad: function (options) {
     let that = this
     that.setData({
-      video: app.globalData.image
+      video: app.globalData.image,
     })
 
     var a = wx.getStorageSync('name')
@@ -212,16 +295,30 @@ Page({
       })
     }
     console.log(that.data.name)
+    
+    if(options.url){
+      that.setData({
+      audio_name: options.songName,
+      audio_url: options.url,
+      audioid: options.id,
+      // music_pop: true,
+      })
+      console.log(1234)
+      
+      
+    }
 
-    that.audioCtx = wx.createAudioContext('myAudio')
-    console.log(that.audioCtx)
+    // that.audioCtx = wx.createAudioContext('myAudio')
+    // console.log(that.audioCtx)
   },
 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function (e) {
-    let that =this
+    // let that =this
+    this.audioCtx = wx.createAudioContext('myAudio')
+    this.audio = wx.createAudioContext('audio')
   },
   
 
@@ -239,6 +336,7 @@ Page({
   onShow: function () {
     // 进入页面请求表情包
     let that = this
+    
     api.getJSON('/api/sharing/emojis', function (res) {
       if (res.data.status == 1) {
         console.log(res.data)
@@ -247,6 +345,29 @@ Page({
         })
       }
     })
+    api.postJSON('api/sharing/get_sharing_music', {
+      pid: -1,
+    },function (res) {
+      console.log(res.data.data)
+      if (res.data.status == 1) {
+        for (let i = 0; i < res.data.data.length; i++) {
+          that.data.music.push({
+            id: res.data.data[i].id,
+            songName: res.data.data[i].name,
+            singer: res.data.data[i].desc,
+            src: res.data.data[i].url,
+          })
+          console.log(that.data.src)
+        }
+        that.setData({
+          music: that.data.music,
+          music_one: res.data.data[0].id,
+          musicone: res.data.data[0].url
+        })
+        console.log(that.data.music)
+      }
+    })
+    
   },
 
   /**

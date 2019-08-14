@@ -22,6 +22,7 @@ Page({
     biaoqian: '',
     tupian: '',
     pageid:'',
+    music_id:'',
   },
 
   // 点击跳转到话题页面
@@ -78,6 +79,8 @@ Page({
                 lon: that.data.lon,
                 txet: JSON.stringify(that.data.biaoqian),
                 text2: JSON.stringify(that.data.biaoqing),
+                music_id: that.data.music_id,
+                type: that.data.pageid
               }, function(res) {
                 if (res.data.status == 1) {
                   console.log(res)
@@ -138,11 +141,20 @@ Page({
    */
   onLoad: function(options) {
     let that = this
+    that.setData({
+      pageid: options.pageid
+    })
     if (options.topic) {
       that.setData({
         topic: options.topic,
-        pageid: options.pageid
       })
+    }
+    console.log(options.musicid)
+    if(options.musicid){
+      that.setData({
+        music_id: options.musicid
+      })
+      
     }
     if (app.globalData.a){
       that.setData({
@@ -312,7 +324,9 @@ Page({
       lon: that.data.lon,
       txet: JSON.stringify(that.data.biaoqian),
       text2: JSON.stringify(that.data.biaoqing),
+      music_id: that.data.music_id,
       status: 1,
+      type: that.data.pageid
     }, function(res) {
       if (res.data.status == 1) {
         console.log(res)
@@ -362,6 +376,8 @@ Page({
       txet: JSON.stringify(that.data.biaoqian),
       text2: JSON.stringify(that.data.biaoqing),
       status: 1,
+      type: that.data.pageid,
+      music_id: that.data.music_id
     }, function(res) {
       if (res.data.status == 1) {
         console.log(res)
