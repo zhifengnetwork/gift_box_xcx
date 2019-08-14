@@ -39,8 +39,14 @@ Page({
       })
       return false;
     }
+    let num = 0;
+    for (var i = 0; i < this.data.carts.length; i++){
+      if (this.data.carts[i].selected){
+        num = this.data.carts[i].goods_num;
+      }
+    }
     wx.navigateTo({
-      url: '../commodity/givingother/givingother?sku_id=' + this.data.sku_id[0]
+      url: '../commodity/givingother/givingother?sku_id=' + this.data.sku_id[0] + '&num=' + num
     })
   },
   kaolao:function(){
