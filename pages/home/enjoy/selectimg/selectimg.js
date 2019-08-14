@@ -36,7 +36,7 @@ Page({
       console.log(app.globalData.a)
     }
     wx.navigateTo({
-      url: '../label/label?pageid=2',
+      url: '../label/label?pageid=0',
     })
   },
 
@@ -50,7 +50,7 @@ Page({
     app.globalData.a = that.data.name
     console.log(app.globalData.a)
     wx.navigateTo({
-      url: '../issue/issue?pageid=2',
+      url: '../issue/issue?pageid=0',
     })
   },
 

@@ -7,12 +7,13 @@ page{
   background: #fff;
 }
 .inform_box{
-  height: 500rpx;
+  /* height: 500rpx; */
   border-bottom: 2rpx solid rgba(246,246,246,1);
 }
 .inform_t{
   height: 80rpx;
   padding: 20rpx;
+ 
 }
 .inform_tl{
   float: left;
@@ -67,4 +68,21 @@ page{
 }
 .inform_fimg:nth-child(even) .tupian{
   margin-left: 30rpx
+}
+.title{
+  margin-left: 115rpx;
+  font-size: 27rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.content{
+  margin-left: 115rpx;
+  font-size: 27rpx;
+  overflow: hidden;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+}
+.greenbox{
+  border: 1px solid green;
 }

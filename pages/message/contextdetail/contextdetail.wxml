@@ -1,0 +1,8 @@
+<component title='信息详情' show_bol='{{false}}'></component>
+<!-- 时间 -->
+<view class="body">
+<view class="time">{{neirong.addtime}}</view>
+<!-- 标题 -->
+<view class="title">{{neirong.title}}</view>
+<view class="context">{{neirong.content}}</view>
+</view>

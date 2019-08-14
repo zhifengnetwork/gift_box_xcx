@@ -65,6 +65,8 @@
     "pages/message/message",
     "pages/message/inform/inform",
     "pages/message/praise/praise",
+    "pages/message/tupiandetail/tupiandetail",
+    "pages/message/contextdetail/contextdetail",
     "pages/message/comment/comment",
     "pages/home/enjoy/selectimg/selectimg",
     "pages/home/enjoy/label/label",
@@ -76,7 +78,8 @@
     "pages/my/fans/fans",
     "pages/home/enjoy/topic/topic",
     "pages/my/other/other",
-    "pages/home/enjoy/select/select"
+    "pages/home/enjoy/select/select",
+    "pages/home/enjoy/selectmusic/selectmusic"
   ],
   "window": {
     "backgroundTextStyle": "light",

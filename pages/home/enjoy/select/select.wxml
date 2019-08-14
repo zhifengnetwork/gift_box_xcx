@@ -58,23 +58,35 @@
       <image src="/images/music_close.png"></image>
     </view>
     <text class="music_tc">配樂</text>
-    <view class="music_tr">
+    <view class="music_tr" bindtap="queren">
       <image src="/images/affirm.png"></image>
     </view>
   </view>
   <scroll-view class="music_f" scroll-x>
-    <view class="music_fbox">
+    <view class="music_fbox" bindtap="musicbank">
       <view class="waiquan">
         <view class="neiquan"></view>
       </view>
       <text>音樂庫</text>
     </view>
-    <view class="music_fbox" wx:for="{{music}}" data-id="{{item.id}}" bindtap="bofang">
-      <view class="music_ft">{{item.name}}</view>
+    
+    
+    <!-- <view class="music_fbox" bindtap="bofang" wx:if="{{audio_name}}">
+      <view class="music_ft">{{audio_name}}</view> -->
+      <!-- <text class="music_ff">{{item.desc}}</text> -->
+      <!-- <audio id="myAudio" class="wailai" src="{{audio_url}}"></audio>
+    </view> -->
+
+
+    <view class="music_fbox" wx:for="{{music}}" data-ind="{{index}}" bindtap="bofang">
+      <view class="music_ft">{{item.songName}}</view>
       <text class="music_ff">{{item.desc}}</text>
-      <audio id="myAudio{{item.id}}" src="{{item.url}}" ></audio>
+      <audio id="myAudio" src="{{src}}" ></audio>
     </view>
   </scroll-view>
 </view>
 
 <view class="send" bindtap="send">下一步</view>
+<view class="audiobox" wx:if="{{audio}}">
+  <audio id="audio" src="{{audio}}"></audio>
+</view>
