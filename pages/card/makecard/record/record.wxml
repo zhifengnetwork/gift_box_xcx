@@ -14,7 +14,7 @@
           <view class="circleProgress rightcircle" style="-webkit-transform:rotate({{rRotate}}deg)"></view>
       </view>
     </view> 
-   {{second}}:{{minute}}
+   {{minute}}:{{second}}
   </view>
   <view class="record_pause" bindtap="pause" wx:if="{{!flag}}">
     <image class="record_pause_img" wx:if="{{start}}" src="../../../public/images/card/pause.png"></image>

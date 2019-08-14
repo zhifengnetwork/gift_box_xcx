@@ -1,0 +1,24 @@
+
+.body{
+  width: 94%;
+  margin: 0 auto;
+  margin-top: 170rpx;
+}
+.time{
+  font-size: 27rpx;
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  color: rgba(153,153,153,1);
+  padding-bottom: 15rpx
+}
+.title{
+  font-size: 30rpx;
+}
+.context{
+  font-size: 30rpx;
+  color: rgba(153,153,153,1);
+  font-family: SourceHanSansCN-Regular;
+  font-weight: 400;
+  text-indent: 2em;
+  margin-top: 10rpx
+}

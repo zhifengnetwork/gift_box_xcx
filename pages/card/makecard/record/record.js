@@ -145,8 +145,8 @@ Page({
         clearInterval(times);
       }
       that.setData({
-        minute: num,
-        second: sum
+        minute: sum,
+        second: num
       })
     }, 1000)
     if (!flag) {
@@ -203,8 +203,14 @@ Page({
               var pages = getCurrentPages();
               var prevPage = pages[pages.length - 2]; //上一个页面
               //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+              let recordTime = null;
+              recordTime = that.data.second;
+              if (that.data.minute=='01'){
+                recordTime = 60;
+              }
               prevPage.setData({
-                record: that.data.record
+                record: that.data.record,
+                recordTime: recordTime
               })
               wx.navigateBack({
                 delta: 1

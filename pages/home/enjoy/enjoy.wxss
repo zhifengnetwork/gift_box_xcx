@@ -42,7 +42,8 @@
   text-overflow:ellipsis;
   overflow-x: scroll;
   overflow-y: hidden;
-  padding-left: 20rpx;
+  padding-left: 0 20rpx;
+  box-sizing: border-box
 }
 .swiper-tab-item {
   display: inline-block;

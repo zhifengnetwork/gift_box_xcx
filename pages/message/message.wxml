@@ -1,5 +1,5 @@
 <view class="message_top">
-  <component title='消息' show_bol='{{falsr}}'></component>
+  <component title='消息'></component>
 </view>
 <!-- 通知消息 -->
 <view class="message_box" style="margin-top: 40rpx;" bindtap="inform">

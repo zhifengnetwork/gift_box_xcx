@@ -22,10 +22,12 @@ Page({
     //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
     console.log(this.data.name, this.data.picture, this.data.id)
     prevPage.setData({
-      backName: this.data.name ? this.data.name:this.data.scene[0].name,
+      radio:0,
+      backName: this.data.name ? this.data.name : this.data.get_scene[0].name,
       backPicture: this.data.picture ? this.data.picture : this.data.get_scene[0].picture,
       backId: this.data.id ? this.data.id : this.data.get_scene[0].id
     })
+    prevPage.radioChange();
     wx.navigateBack({
       delta: 1
     })
@@ -63,7 +65,6 @@ Page({
     that.get_scene(id);
     that.setData({
       tabBar: that.data.tabBar,
-      name: that.data.scene[index].name
     })
   },
   tabCont:function(e){
@@ -77,7 +78,8 @@ Page({
     that.setData({
       tabCont: that.data.tabCont,
       id: id,
-      picture: that.data.get_scene[index].picture
+      picture: that.data.get_scene[index].picture,
+      name: that.data.get_scene[index].name
     })
   },
   get_scene:function(id){

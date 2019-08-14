@@ -32,7 +32,7 @@ Page({
   },
   // 提交数据&&返回上一页
   send:function(){
-    if(this.data.src==''){
+    if (this.data.music_id==''){
       wx.showModal({
         title: '选择音乐',
         content: '请选择音乐',
@@ -82,7 +82,10 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
-    
+    this.setData({
+      music_id: options.music_id,
+      music: this.data.music
+    })
   },
 
   /**
@@ -101,12 +104,16 @@ Page({
       console.log(res.data.data)
       if (res.data.status==1){
         for(let i = 0;i<res.data.data.length;i++){
+          let radio = 'false';
+          if (res.data.data[i].id == that.data.music_id) {
+            radio = 'true';
+          }
           that.data.music.push({
             id: res.data.data[i].id,
             songName: res.data.data[i].name,
             singer: res.data.data[i].musician,
             src: res.data.data[i].music_url,
-            radio: false
+            radio: radio
           })
           console.log(that.data.src)
         }
