@@ -221,6 +221,7 @@ page{
   line-height: 45rpx;
   color: #fff;
   font-size: 22rpx;
+  float: left;
 }
 .music_f :last-of-type .music_fbox{
   margin-right: 40rpx;
