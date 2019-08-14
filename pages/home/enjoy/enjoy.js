@@ -103,6 +103,7 @@ Page({
               })
             }
           })
+          
         } else if (res.tapIndex == 2){
           wx.chooseVideo({
             sourceType: ['album'],

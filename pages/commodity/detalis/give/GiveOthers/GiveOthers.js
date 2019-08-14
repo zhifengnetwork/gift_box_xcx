@@ -84,7 +84,21 @@ Page({
     })
   },
   radioChange: function (e) {
-    console.log(e);
+    console.log(e); 
+    if (this.data.backId != '' && !e) {
+      this.setData({
+        radio: 0,
+        type_id: this.data.backId
+      })
+      return false;
+    }
+    if (this.data.radio == 0&&!e){
+      this.setData({
+        radio: 0,
+        type_id: this.data.scene[0].id
+      })
+      return false;
+    }
     this.setData({
       radio: e.currentTarget.dataset.index,
       type_id: e.currentTarget.dataset.id
@@ -103,9 +117,10 @@ Page({
       that.setData({
         scene:res.data.data
       })
+      that.radioChange();
     })
     this.setData({
-      radio:-1,
+      radio:0,
       sku_id: sku_id,
       order_type: order_type,
       num: options.num
