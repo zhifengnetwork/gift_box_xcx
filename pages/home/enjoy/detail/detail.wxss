@@ -94,15 +94,10 @@ swiper{
 .intriduce2{
   width: 90%;
   margin-left: 5%;
-    font-size:25rpx;
+  font-size:25rpx;
   font-family:SourceHanSansCN-Normal;
   font-weight:bold;
   color:rgba(51,51,51,1);
-  overflow:hidden; 
-  text-overflow:ellipsis;
-  display:-webkit-box; 
-  -webkit-box-orient:vertical;
-  -webkit-line-clamp:2; 
 }
 .zhankai{
   float: right;
