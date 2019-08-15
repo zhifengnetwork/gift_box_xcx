@@ -315,9 +315,9 @@ Page({
       wx.navigateTo({
         url: '../select/select',
       })
-    }else if(that.data.pageid == 2){
+    }else if(that.data.pageid == 0){
       wx.navigateTo({
-        url: '../selectimg/selectimg',
+        url: '../selectimg/selectimg?pageid=0',
       })
     }
   },
@@ -348,9 +348,9 @@ Page({
       wx.navigateTo({
         url: '../select/select',
       })
-    } else if (that.data.pageid == 2) {
+    } else if (that.data.pageid == 0) {
       wx.navigateTo({
-        url: '../selectimg/selectimg',
+        url: '../selectimg/selectimg?pageid=0',
       })
     }
 
@@ -381,9 +381,9 @@ Page({
       wx.navigateTo({
         url: '../select/select',
       })
-    } else if (that.data.pageid == 2) {
+    } else if (that.data.pageid == 0) {
       wx.navigateTo({
-        url: '../selectimg/selectimg',
+        url: '../selectimg/selectimg?pageid=0',
       })
     }
   },
@@ -415,7 +415,7 @@ Page({
     }
     wx.setStorageSync('name', app.globalData.a);
     wx.navigateTo({
-      url: '../selectimg/selectimg',
+      url: '../selectimg/selectimg?pageid=0',
     })
 
   },

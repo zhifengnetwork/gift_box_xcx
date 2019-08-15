@@ -174,7 +174,6 @@ Page({
       that.setData({
         musicid: that.data.audioid
       })
-      app.globalData.type = 1,
       app.globalData.music_id = that.data.musicid
       wx.navigateTo({
         url: '../issue/issue'
@@ -279,6 +278,7 @@ Page({
    */
   onLoad: function (options) {
     let that = this
+    app.globalData.type = 1
     that.setData({
       video: app.globalData.image,
     })

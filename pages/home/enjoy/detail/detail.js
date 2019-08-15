@@ -25,7 +25,9 @@ Page({
     user_id: '',
     follow_count: '',
     type: '',
-    note: []
+    note: [],
+    biaoqing:'',
+    biaoqian:'',
   },
 
   // 视频播放函数
@@ -58,13 +60,15 @@ Page({
         that.setData({
           detaillist: res.data.data,
           priture: res.data.data.priture,
-          comments: res.data.data.comment,
+          // comments: res.data.data.comment,
           user_id: res.data.data.user_id,
           follow_count: res.data.data.follow_count,
           type: res.data.data.type,
-          music: res.data.data.music
+          music: res.data.data.music,
+          biaoqian: JSON.parse(res.data.data.text),
+          biaoqing: JSON.parse(res.data.data.text2),
         })
-        console.log(that.data.comments)
+        // console.log(that.data.comments)
       }
     })
   },

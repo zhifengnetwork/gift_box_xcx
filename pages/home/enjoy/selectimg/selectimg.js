@@ -43,7 +43,7 @@ Page({
   // 下一步
   send:function(){
     let that = this
-    
+    app.globalData.type = 0,
     app.globalData.biaoqing = that.data.xxx
     // var biaoqian = JSON.stringify(that.data.name);
     // var biaoqing = JSON.stringify(that.data.xxx);
@@ -154,6 +154,7 @@ Page({
    */
   onLoad: function (options) {
     let that = this
+    app.globalData.type = null
     that.setData({
       image: app.globalData.image
     })
