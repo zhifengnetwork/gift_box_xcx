@@ -6,11 +6,6 @@ Page({
    * 页面的初始数据
    */
   data: {
-    // imgUrls: [
-    //   'https://images.unsplash.com/photo-1551334787-21e6bd3ab135?w=640',
-    //   'https://images.unsplash.com/photo-1551214012-84f95e060dee?w=640',
-    //   'https://images.unsplash.com/photo-1551446591-142875a901a1?w=640'
-    // ],
     indicatorDots: true,
     autoplay: true,
     interval: 5000,
@@ -30,6 +25,21 @@ Page({
     user_id:'',
     follow_count:'',
     type:'',
+  },
+
+  // 视频播放函数
+  audioplay: function(){
+    let taht = this
+    // 视频播放，配乐播放
+    console.log(123)
+    that.audioCtx.play()
+  },
+
+  // 视频暂停播放函数
+  audiopause: function(){
+    let that = this
+    console.log(456)
+    that.audioCtx.pause()
   },
 
   /**
@@ -57,10 +67,6 @@ Page({
     })
   },
 
-  audioPlay: function () {
-    console.log(123455)
-    this.audioCtx.play()
-  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 26,
+			"current": 25,
 			"list": [
 				{
 					"id": -1,
@@ -226,9 +226,9 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 25,
 					"name": "pages/my/logistics/logistics",
-					"pathName": "pages/my/logistics/logistics",
+					"pathName": "pages/home/enjoy/detailvideo/detailvideo",
 					"query": "",
 					"scene": null
 				},

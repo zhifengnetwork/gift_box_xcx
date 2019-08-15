@@ -7,23 +7,23 @@
   </view>
 </view>
 <!-- 图片上传 -->
-<view class="question-images clearFloat">
+<!-- <view class="question-images clearFloat">
   <block wx:for="{{images}}" wx:key="*this">
-    <view class="q-image-wrap">
+    <view class="q-image-wrap"> -->
       <!-- 图片缩略图  -->
-      <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image>
+      <!-- <image class="q-image" src="{{item}}" mode="aspectFill" data-idx="{{index}}" bindtap="handleImagePreview"></image> -->
       <!-- 移除图片的按钮  -->
-      <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">
+      <!-- <view class="q-image-remover" data-idx="{{index}}" bindtap="removeImage">
         <image src="../../../public/images/home/close.png" style="width:30rpx;height:30rpx"></image>
       </view>
     </view>
   </block>
   <image src="../../../../images/jia.png" class="close_pic" class='uploadImgBtn' bindtap="chooseImage" wx:if="{{images.length < 9}}"></image>
-</view>
-<!-- 视频封面 -->
-<!-- <view class="videobox">
-  <video src="{{images}}" controls="{{false}}" ></video>
 </view> -->
+<!-- 视频封面 -->
+<view class="videobox">
+  <video src="{{images}}" controls="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}"></video>
+</view>
 <!-- 填写标题 -->
 <view class="title_ear">
   <input placeholder="加個標題會有更多讚哦~" class="title" value="{{inputValue}}" bindinput="userNameInput"></input>

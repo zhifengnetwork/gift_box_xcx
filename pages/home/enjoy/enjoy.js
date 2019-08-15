@@ -19,6 +19,7 @@ Page({
     topic_id: 0,
     page: 1,
     image: [],
+    type:'',
   },
 
   // 上传图片或视频按钮
@@ -374,11 +375,17 @@ Page({
   details: function(e) {
     let that = this
     that.setData({
-      id: e.currentTarget.dataset.id
+      id: e.currentTarget.dataset.id,
     })
-    wx.navigateTo({
-      url: '../../home/enjoy/detail/detail?id=' + that.data.id,
-    })
+    if (e.currentTarget.dataset.type == 0){
+      wx.navigateTo({
+        url: 'detail/detail?id=' + that.data.id,
+      })
+    } else if (e.currentTarget.dataset.type == 1){
+      wx.navigateTo({
+        url: 'detailvideo/detailvideo?id=' + that.data.id,
+      })
+    }
   },
   // 搜索框跳转页面
   search: function() {
