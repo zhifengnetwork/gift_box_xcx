@@ -1,6 +1,5 @@
 <component title='享物圈' show_bol='{{false}}' side="{{true}}"></component>
 <view class="body">
-
   <view class="header">
     <view class="user_pic">
       <image src="{{detaillist.avatar}}" class="touxia"></image>
@@ -9,7 +8,8 @@
     <view class="care" bindtap="guanzhu" wx:if="{{!follow_count}}">關注</view>
     <view class="yiguanzhu" bindtap="guanzhu" wx:if="{{follow_count}}">已關注</view>
   </view>
-  <!-- swiper -->
+  <!-- 图片swiper -->
+<view wx:if="{{type == 0}}" style="overflow:hidden;">
   <view class="wrap">
     <swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange">
       <block wx:for="{{priture}}" wx:key="imgs">
@@ -25,6 +25,12 @@
       <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
     </block>
   </view>
+</view>
+<!-- 视频 -->
+<view wx:for="{{priture}}" wx:key="imgs" class="videobox" wx:if="{{type == 1}}">
+  <video src="{{item}}"  bindtap="audioPlay"></video>
+  <audio src="{{music}}" id="myAudio"></audio>
+</view>
   <!-- 文字介绍 -->
   <view class="intriduce1" wx:if="{{liang}}">{{detaillist.content}}</view>
   <view class="intriduce2" wx:else>{{detaillist.content}}</view>

@@ -225,3 +225,7 @@ swiper{
   padding-left: 140rpx;
   font-size: 30rpx
 }
+.videobox{
+  margin: 50rpx 10%;
+  width: 80%;
+}

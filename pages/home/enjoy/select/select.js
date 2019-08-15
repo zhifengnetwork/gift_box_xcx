@@ -174,8 +174,10 @@ Page({
       that.setData({
         musicid: that.data.audioid
       })
+      app.globalData.type = 1,
+      app.globalData.music_id = that.data.musicid
       wx.navigateTo({
-        url: '../issue/issue?pageid=1&musicid=' + that.data.musicid,
+        url: '../issue/issue'
       })
     } else if (that.data.music_id){
       that.setData({
@@ -304,10 +306,7 @@ Page({
       // music_pop: true,
       })
       console.log(1234)
-      
-      
     }
-
     // that.audioCtx = wx.createAudioContext('myAudio')
     // console.log(that.audioCtx)
   },
