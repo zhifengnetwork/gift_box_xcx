@@ -1,4 +1,5 @@
 <component title='享物圈' show_bol='{{false}}' side="{{true}}"></component>
+<!-- <video src="https://giftbox.zhifengwangluo.com/public/uploads/user/20190814/1fa2852ef37a8551bacb9ef0a823b8e7.mp4"></video> -->
 <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" >
 <view class="body">
   <!-- 搜索区域 -->
@@ -25,6 +26,7 @@
               <!-- ' class='pic {{item.show? "Action" : ""}}' -->
               <!-- <image src='{{item.stutus ? item.cover : ""}}' mode='widthFix'></image> -->
               <image src='{{item.cover}}' mode='widthFix'></image>
+              
               <view class="biaoti">{{item.title}}</view>
               <view class="touxiang">
                 <image class="user_pic" src="{{item.avatar}}"></image>
@@ -32,8 +34,10 @@
                 <view class="aixin_ear">
                   <!-- bindtap="dianji" -->
                   <!-- wx:if="{{dianzang[index]}}" -->
-                  <image class="aixin" src="../../public/images/home/aixin.png" wx:if="{{item.count}}" catchtap="dianji" data-index="{{index}}" data-id="{{item.id}}"></image>
-                  <image class="aixin" src="../../public/images/home/aixinan.png" wx:else  catchtap="dianji" data-index="{{index}}" data-id="{{item.id}}"></image>
+                  <!-- catchtap="dianji" -->
+                  <image class="aixin" src="../../public/images/home/xuanaixin.png"  wx:if="{{dianzang[index]}}"  data-index="{{index}}" data-id="{{item.id}}"></image>
+
+                  <image class="aixin" src="../../public/images/home/aixin.png" wx:else  data-index="{{index}}" data-id="{{item.id}}"></image>
                   <text style="margin-left:5rpx">{{item.point_num}}</text>
                 </view>
                 

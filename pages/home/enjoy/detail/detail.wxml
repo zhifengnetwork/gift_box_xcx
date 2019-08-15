@@ -35,7 +35,7 @@
   <!-- 点赞,转发,收藏区域 -->
   <view class="collect_ear">
     <view class="first">
-      <image class="aixin" src="../../../public/images/home/aixinan.png" wx:if="{{zang}}" bindtap="dianji"></image>
+      <image class="aixin" src="../../../public/images/home/xuanaixin.png" wx:if="{{zang}}" bindtap="dianji"></image>
       <image class="aixin" src="../../../public/images/home/aixin.png" wx:else bindtap="dianji"></image>
       <text class="tiaoshu">{{detaillist.point_num}}</text>
     </view>
