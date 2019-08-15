@@ -48,10 +48,9 @@ Page({
    */
   onLoad: function(options) {
     var that = this
-    console.log(JSON.parse(options.note))
+   
     that.setData({
       id: options.id,
-      note: options.note
     })
     api.getJSON('/api/sharing/sharing_info?id=' + that.data.id + '&token=' + app.globalData.token, function(res) {
       if (res.data.status == 1) {

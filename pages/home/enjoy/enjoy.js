@@ -403,11 +403,11 @@ Page({
     })
     if (e.currentTarget.dataset.type == 0){
       wx.navigateTo({
-        url: '../../home/enjoy/detail/detail?id=' + that.data.id + '&note='+ model,
+        url: '../../home/enjoy/detail/detail?id=' + that.data.id,
       })
     } else if (e.currentTarget.dataset.type == 1){
       wx.navigateTo({
-        url: 'detailvideo/detailvideo?id=' + that.data.id + '&note='+ model,
+        url: 'detailvideo/detailvideo?id=' + that.data.id,
       })
     }
   },
