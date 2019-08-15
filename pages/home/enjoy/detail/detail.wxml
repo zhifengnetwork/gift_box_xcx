@@ -44,7 +44,8 @@
       <text class="tiaoshu2">{{detaillist.forward_num}}</text>
     </view>
     <view class="three">
-      <image class="aixin3" src="../../../public/images/home/soucang.png"></image>
+      <image class="aixin3" src="../../../public/images/home/soucang.png" bindtap="collect" wx:if="{{detaillist.collection_count === 0 ? true : false}}"></image>
+      <image class="aixin3" src="../../../public/images/home/soucangxuan.png" bindtap="collect" wx:else></image>
       <text class="tiaoshu3">{{detaillist.collection_num}}</text>
     </view>
   </view>
@@ -54,25 +55,28 @@
       <!-- {{comments[5].list[0].content}} -->
 
     <view wx:if="{{status}}">
-      <view class="ear" wx:for="{{comments}}" wx:if="{{index<3}}" wx:key bindtap="huifu" data-pid="{{item.pid}}" data-nickname="{{item.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
-        <view class="nick_name_ear">{{itemname.nickname}}</view>
+      <view class="ear" wx:for="{{comments}}" wx:if="{{index<3}}" wx:key bindtap="huifu" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
+        <view class="nick_name_ear">{{itemname.nickname}}:</view>
         <text class="comment_text">{{itemname.content}}</text>
+        <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui" class="huifucontext">{{nickname}}:{{xijinzui.content}}</view>
       </view>
+     
     </view>
 
   
-
+     
     <view wx:if="{{!status}}">
-      <view class="ear" wx:for="{{comments}}" wx:key bindtap="huifu" data-pid="{{item.pid}}" data-nickname="{{item.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
+      <view class="ear" wx:for="{{comments}}" wx:key bindtap="huifu" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
         <text class="comment_text">{{itemname.content}}</text>
+        <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui" class="huifucontext">{{nickname}}:{{xijinzui.content}}</view>
       </view>
     </view>
 
 
 
 
-    <view class="looks_detail" bindtap="quanbu" wx:if="{{detaillist.comment_num>3}}">查看全部{{detaillist.comment_num}}條評論></view>
+    <view class="looks_detail" bindtap="quanbu" wx:if="{{detaillist.comment_num>3}}">查看全部{{comments.length}}條評論></view>
 
     <view class="white_ear">
       <image src="../../../../images/white.png" class="white_pic"></image>

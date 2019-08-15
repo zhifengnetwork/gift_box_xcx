@@ -166,6 +166,7 @@ swiper{
 .aixin3{
   width: 50rpx!important;
   height: 50rpx;
+  padding-left: 30rpx
 }
 .tiaoshu3{
   font-size: 28rpx;
@@ -230,4 +231,9 @@ swiper{
   margin: 50rpx 10%;
   width: 80%;
   z-index: 2;
+}
+.huifucontext{
+  font-size: 30rpx;
+  padding-left: 80rpx;
+  
 }

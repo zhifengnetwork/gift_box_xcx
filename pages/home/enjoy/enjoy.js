@@ -259,9 +259,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    var that=this
-    that.GetList(that); //页面初次展示调用第一次数据，比如说5条记录
-    that.onLoad()
+    
+    this.GetList(this); //页面初次展示调用第一次数据，比如说5条记录
   },
 
   /**

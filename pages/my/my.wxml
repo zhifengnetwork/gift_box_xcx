@@ -137,9 +137,9 @@
       <view>粉絲</view>
       <text>{{item.fans_num}}</text>
     </view>
-    <view class="my_tf_box2">
-      <view class="back">更改封面</view>
-    </view>
+    <!-- <view class="my_tf_box2"> -->
+      <!-- <view class="back">更改封面</view> -->
+    <!-- </view> -->
     <view class="my_tf_box2" bindtap="mydetalis">
       <view class="back">個人信息</view>
     </view>

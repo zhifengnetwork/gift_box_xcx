@@ -25,7 +25,8 @@ Page({
     user_id: '',
     follow_count: '',
     type: '',
-    note: []
+    note: [],
+    nickname:""
   },
 
   // 视频播放函数
@@ -48,9 +49,10 @@ Page({
    */
   onLoad: function(options) {
     var that = this
-   
+    
+    that.setData({ nickname: app.globalData.userInfo.nickname}) 
     that.setData({
-      id: options.id,
+      id: options.id
     })
     api.getJSON('/api/sharing/sharing_info?id=' + that.data.id + '&token=' + app.globalData.token, function(res) {
       if (res.data.status == 1) {
@@ -58,15 +60,28 @@ Page({
         that.setData({
           detaillist: res.data.data,
           priture: res.data.data.priture,
-          comments: res.data.data.comment,
           user_id: res.data.data.user_id,
           follow_count: res.data.data.follow_count,
           type: res.data.data.type,
           music: res.data.data.music
         })
-        console.log(that.data.comments)
+        // console.log(that.data.comments)
       }
     })
+    api.getJSON('/api/sharing/sharing_comment_list?sharing_id=' + that.data.id + '&token=' + app.globalData.token +'&page=1&num=100000' , function (res) {
+      if (res.data.status == 1) {
+        console.log(res.data.data);
+        that.setData({comments: res.data.data})
+      }
+    })
+
+
+
+
+
+
+
+
   },
 
   audioPlay: function() {
@@ -137,32 +152,15 @@ Page({
       liang: true
     })
   },
+  // 点赞
   dianji: function() {
     var that = this;
-
     api.getJSON('/api/sharing/add_point?sharing_id=' + that.data.id + '&token=' + app.globalData.token, function(res) {
       if (res.data.status == 1) {
         var num = 0;
         if (res.data.msg === "点赞成功") {
           console.log("点赞成功")
           var array = that.data.detaillist
-          // 从列表页面获取列表的数据
-          // for (var i = 0; i < array.length; i++) {
-          //   if (parseInt(array[i].id) === parseInt(that.data.id)) {
-          //     num = parseInt(array[i].point_num)
-          //     if (parseInt(array[i].point_count) === 0) {
-          //       num = num + 1
-          //     } else {
-          //       num = num
-          //     }
-          //     array[i].point_num = num
-          //     array[i].point_count = 1
-          //     that.setData({
-          //       detaillist: array[i]
-          //     })
-          //   }
-          // }
-         
           num = parseInt(array.point_num)
           if (parseInt(array.point_count) === 0) {
             num = num + 1
@@ -181,22 +179,6 @@ Page({
         else {
           console.log("取消点赞")
           var array = that.data.detaillist
-          // 从列表页面获取列表的数据
-          // for (var i = 0; i < array.length; i++) {
-          //   if (parseInt(array[i].id) === parseInt(that.data.id)) {
-          //     console.log(num)
-          //     num = array[i].point_num
-          //     if (parseInt(array[i].point_count) === 1) {
-          //       num = num - 1
-          //     }
-          //     console.log(num)
-          //     array[i].point_num = num
-          //     array[i].point_count = 0
-          //     that.setData({
-          //       detaillist: array[i]
-          //     })
-          //   }
-          // }
           console.log(num)
           num = array.point_num
           if (parseInt(array.point_count) === 1) {
@@ -213,13 +195,38 @@ Page({
         }
       }
     })
+  },
+  //收藏
+  collect:function(){
+    var that=this
+    api.getJSON('/api/sharing/add_collection?sharing_id='+that.data.id+'&token=' + app.globalData.token, function (res) {
+      if (res.data.status == 1) {
+        // zhang是收藏显示的数字
+        var zhang=0
+        if (res.data.msg === "取消收藏"){
+      
+          var arr = that.data.detaillist;
+          zhang = arr.collection_num
+          if (arr.collection_count===1){
+            zhang--
+          }
+          arr.collection_count = 0
+          arr.collection_num = zhang
+          that.setData({ detaillist: arr})
 
-
-
-
-
-
-
+        }else{
+          
+          var arr = that.data.detaillist;
+          zhang = arr.collection_num
+          if (arr.collection_count === 0) {
+            zhang++
+          }
+          arr.collection_count = 1
+          arr.collection_num = zhang
+          that.setData({ detaillist: arr })
+        }         
+      }
+    })
 
 
 
@@ -234,32 +241,49 @@ Page({
 
     if (that.data.pid === null) {
 
-      api.getJSON('/api/sharing/add_comment?sharing_id=1&token=' + app.globalData.token + '&content=' + that.data.context, function(res) {
+      api.getJSON('/api/sharing/add_comment?sharing_id='+that.data.id+'&token=' + app.globalData.token + '&content=' + that.data.context, function(res) {
         if (res.data.status == 1) {
-          that.onLoad();
           that.setData({
             placeholder: "選填，請先和商家協商一致"
           })
           that.setData({
             hhh: ""
+          })
+          // 重新请求接口渲染数据
+          api.getJSON('/api/sharing/sharing_comment_list?sharing_id=' + that.data.id + '&token=' + app.globalData.token + '&page=1&num=100000', function (res) {
+            if (res.data.status == 1) {
+              console.log(res.data.data);
+              that.setData({ comments: res.data.data })
+            }
           })
         }
       })
     } else {
 
-      api.getJSON('/api/sharing/add_comment?sharing_id=1&token=' + app.globalData.token + '&content=' + that.data.context + '&pid=' + that.data.pid, function(res) {
+      api.getJSON('/api/sharing/add_comment?sharing_id='+that.data.id+'&token=' + app.globalData.token + '&content=' + that.data.context + '&pid=' + that.data.pid, function(res) {
         if (res.data.status == 1) {
-          that.onLoad()
           that.setData({
             placeholder: "選填，請先和商家協商一致"
           })
           that.setData({
             hhh: ""
           })
+          // 重新请求接口渲染数据
+          api.getJSON('/api/sharing/sharing_comment_list?sharing_id=' + that.data.id + '&token=' + app.globalData.token + '&page=1&num=100000', function (res) {
+            if (res.data.status == 1) {
+              console.log(res.data.data);
+              that.setData({ comments: res.data.data })
+            }
+          })
         }
       })
 
     }
+
+
+
+
+    
 
   },
   // 显示全部评论
@@ -268,12 +292,14 @@ Page({
       this.setData({
         status: false
       })
+      console.log("aaaa")
       return;
     }
     if (this.data.status == false) {
       this.setData({
         status: true
       })
+      console.log("bbbb")
     }
   },
   //回复别人的评论
@@ -288,9 +314,7 @@ Page({
     this.setData({
       focus: true
     });
-    this.setData({
-      pid: pid
-    });
+    this.setData({pid:pid});
     console.log(this.data.hhh)
   },
 
