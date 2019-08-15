@@ -35,7 +35,7 @@
                   <!-- bindtap="dianji" -->
                   <!-- wx:if="{{dianzang[index]}}" -->
                   <!-- catchtap="dianji" -->
-                  <image class="aixin" src="../../public/images/home/xuanaixin.png"  wx:if="{{dianzang[index]}}"  data-index="{{index}}" data-id="{{item.id}}"></image>
+                  <image class="aixin" src="../../public/images/home/xuanaixin.png"  wx:if="{{item.point_count}}"  data-index="{{index}}" data-id="{{item.id}}"></image>
 
                   <image class="aixin" src="../../public/images/home/aixin.png" wx:else  data-index="{{index}}" data-id="{{item.id}}"></image>
                   <text style="margin-left:5rpx">{{item.point_num}}</text>

@@ -40,7 +40,7 @@
   <!-- 点赞,转发,收藏区域 -->
   <view class="collect_ear">
     <view class="first">
-      <image class="aixin" src="../../../public/images/home/xuanaixin.png" wx:if="{{zang}}" bindtap="dianji"></image>
+      <image class="aixin" src="../../../public/images/home/xuanaixin.png" wx:if="{{detaillist.point_count === 1? true : false}}" bindtap="dianji"></image>
       <image class="aixin" src="../../../public/images/home/aixin.png" wx:else bindtap="dianji"></image>
       <text class="tiaoshu">{{detaillist.point_num}}</text>
     </view>
@@ -71,7 +71,6 @@
       <view class="ear" wx:for="{{comments}}" wx:key bindtap="huifu" data-pid="{{item.pid}}" data-nickname="{{item.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
         <text class="comment_text">{{itemname.content}}</text>
-
       </view>
     </view>
 

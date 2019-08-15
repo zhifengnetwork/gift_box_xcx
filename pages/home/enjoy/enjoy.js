@@ -260,6 +260,7 @@ Page({
   onShow: function() {
     var that=this
     that.GetList(that); //页面初次展示调用第一次数据，比如说5条记录
+    that.onLoad()
   },
 
   /**
@@ -399,8 +400,10 @@ Page({
     that.setData({
       id: e.currentTarget.dataset.id
     })
+    var model = JSON.stringify(that.data.note);
+    console.log(model)
     wx.navigateTo({
-      url: '../../home/enjoy/detail/detail?id=' + that.data.id,
+      url: '../../home/enjoy/detail/detail?id=' + that.data.id + '&note=' + model ,
     })
   },
   // 搜索框跳转页面

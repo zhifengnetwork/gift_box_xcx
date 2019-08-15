@@ -125,6 +125,7 @@ swiper{
    width: 50rpx!important;
    height: 50rpx;
 }
+
 .first{
   margin-top: 100rpx;
   position: relative;
