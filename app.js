@@ -96,9 +96,9 @@ App({
     a:[],
     biaoqing:'',
     biaoqian:[],
-    image:[]
-
-
+    image:[],
+    type:'',
+    music_id:'',
   }
 
 

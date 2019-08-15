@@ -29,6 +29,7 @@ Page({
     id:'',
     user_id:'',
     follow_count:'',
+    type:'',
   },
 
   /**
@@ -48,17 +49,23 @@ Page({
           comments: res.data.data.comment,
           user_id: res.data.data.user_id,
           follow_count: res.data.data.follow_count,
+          type: res.data.data.type,
+          music: res.data.data.music
           })
         console.log(that.data.comments)
       }
     })
   },
 
+  audioPlay: function () {
+    console.log(123455)
+    this.audioCtx.play()
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
   onReady: function () {
-    
+    this.audioCtx = wx.createAudioContext('myAudio')
   },
 
   /**

@@ -23,6 +23,7 @@ Page({
     tupian: '',
     pageid:'',
     music_id:'',
+    type:'',
   },
 
   // 点击跳转到话题页面
@@ -80,7 +81,7 @@ Page({
                 txet: JSON.stringify(that.data.biaoqian),
                 text2: JSON.stringify(that.data.biaoqing),
                 music_id: that.data.music_id,
-                type: that.data.pageid
+                type: that.data.type
               }, function(res) {
                 if (res.data.status == 1) {
                   console.log(res)
@@ -141,18 +142,20 @@ Page({
    */
   onLoad: function(options) {
     let that = this
-    that.setData({
-      pageid: options.pageid
-    })
+    if (app.globalData.type){
+      that.setData({
+        type: app.globalData.type
+      })
+    }
     if (options.topic) {
       that.setData({
         topic: options.topic,
       })
     }
-    console.log(options.musicid)
-    if(options.musicid){
+    // console.log(app.globalData.music_id)
+    if (app.globalData.music_id){
       that.setData({
-        music_id: options.musicid
+        music_id: app.globalData.music_id
       })
       
     }
