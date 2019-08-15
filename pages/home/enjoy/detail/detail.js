@@ -27,6 +27,8 @@ Page({
     type: '',
     note: [],
     nickname:""
+    biaoqing:'',
+    biaoqian:'',
   },
 
   // 视频播放函数
@@ -63,9 +65,11 @@ Page({
           user_id: res.data.data.user_id,
           follow_count: res.data.data.follow_count,
           type: res.data.data.type,
-          music: res.data.data.music
+          music: res.data.data.music,
+          biaoqian: JSON.parse(res.data.data.text),
+          biaoqing: JSON.parse(res.data.data.text2),
         })
-        // console.log(that.data.comments)
+  
       }
     })
     api.getJSON('/api/sharing/sharing_comment_list?sharing_id=' + that.data.id + '&token=' + app.globalData.token +'&page=1&num=100000' , function (res) {
