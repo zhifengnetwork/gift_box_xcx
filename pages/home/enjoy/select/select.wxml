@@ -20,12 +20,12 @@
     </view>
     <text>靜音</text>
   </view>
-  <view class="select_l" bindtap="label">
+  <!-- <view class="select_l" bindtap="label">
     <view class="selectl_img">
       <image src="/images/biaoqian.png" />
     </view>
     <text>標籤</text>
-  </view>
+  </view> -->
   <view class="select_l" bindtap="biaoqing">
     <view class="selectl_img">
       <image src="/images/tiezhi.png" />

@@ -79,7 +79,8 @@
     "pages/home/enjoy/topic/topic",
     "pages/my/other/other",
     "pages/home/enjoy/select/select",
-    "pages/home/enjoy/selectmusic/selectmusic"
+    "pages/home/enjoy/selectmusic/selectmusic",
+    "pages/home/enjoy/detailvideo/detailvideo"
   ],
   "window": {
     "backgroundTextStyle": "light",

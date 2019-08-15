@@ -26,11 +26,6 @@
     </block>
   </view>
 </view>
-<!-- 视频 -->
-<view wx:for="{{priture}}" wx:key="imgs" class="videobox" wx:if="{{type == 1}}">
-  <video src="{{item}}"  bindtap="audioPlay"></video>
-  <audio src="{{music}}" id="myAudio"></audio>
-</view>
   <!-- 文字介绍 -->
   <view class="intriduce1" wx:if="{{liang}}">{{detaillist.content}}</view>
   <view class="intriduce2" wx:else>{{detaillist.content}}</view>
@@ -85,9 +80,6 @@
     </view>
 
   </view>
-
-
-
 
 
 

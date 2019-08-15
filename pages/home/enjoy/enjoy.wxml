@@ -22,7 +22,7 @@
       <scroll-view>
         <view class='case-page'>
           <view class='list-masonry'>
-            <view  class='lan' wx:for="{{note}}" wx:key bindtap="details" data-id="{{item.id}}">
+            <view  class='lan' wx:for="{{note}}" wx:key bindtap="details" data-id="{{item.id}}" data-type="{{item.type}}">
               <!-- ' class='pic {{item.show? "Action" : ""}}' -->
               <!-- <image src='{{item.stutus ? item.cover : ""}}' mode='widthFix'></image> -->
               <image src='{{item.cover}}' mode='widthFix'></image>

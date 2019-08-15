@@ -19,6 +19,7 @@ Page({
     topic_id: 0,
     page: 1,
     image: [],
+    type:'',
     dianzang:[]
   },
 
@@ -398,13 +399,17 @@ Page({
   details: function(e) {
     let that = this
     that.setData({
-      id: e.currentTarget.dataset.id
+      id: e.currentTarget.dataset.id,
     })
-    var model = JSON.stringify(that.data.note);
-    console.log(model)
-    wx.navigateTo({
-      url: '../../home/enjoy/detail/detail?id=' + that.data.id + '&note=' + model ,
-    })
+    if (e.currentTarget.dataset.type == 0){
+      wx.navigateTo({
+        url: '../../home/enjoy/detail/detail?id=' + that.data.id + '&note='+ model,
+      })
+    } else if (e.currentTarget.dataset.type == 1){
+      wx.navigateTo({
+        url: 'detailvideo/detailvideo?id=' + that.data.id + '&note='+ model,
+      })
+    }
   },
   // 搜索框跳转页面
   search: function() {

@@ -229,4 +229,5 @@ swiper{
 .videobox{
   margin: 50rpx 10%;
   width: 80%;
+  z-index: 2;
 }
