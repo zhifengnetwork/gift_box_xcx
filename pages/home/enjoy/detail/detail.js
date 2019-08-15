@@ -26,7 +26,7 @@ Page({
     follow_count: '',
     type: '',
     note: [],
-    nickname:""
+    nickname:"",
     biaoqing:'',
     biaoqian:'',
   },

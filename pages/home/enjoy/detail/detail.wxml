@@ -79,13 +79,10 @@
      
     </view>
 
-<<<<<<< HEAD
   
      
-=======
 
 
->>>>>>> 05b49788d419648469837e4ca68b3a834fa2c8a8
     <view wx:if="{{!status}}">
       <view class="ear" wx:for="{{comments}}" wx:key bindtap="huifu" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
