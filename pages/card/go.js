@@ -17,8 +17,9 @@ Page({
     var type = options.type == undefined ? "" : options.type;
     var order_id = options.order_id == undefined ? "" : options.order_id;
     var pwdstr = options.pwdstr == undefined ? "" : options.pwdstr;
+    var preview = options.preview == undefined ? "" : options.preview; 
 
-    var url = this.data.url + '?card_id=' + id + '&type=' + type + '&order_id=' + order_id + '&pwdstr=' + pwdstr
+    var url = this.data.url + '?card_id=' + id + '&type=' + type + '&order_id=' + order_id + '&pwdstr=' + pwdstr + '&preview=' + preview
     
     if(id){
       this.setData({
