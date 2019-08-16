@@ -361,12 +361,13 @@ Page({
   shangpxing:function(e){
     var id = e.currentTarget.dataset.id;
     var cat_name = e.currentTarget.dataset.cat_name;
+    var cat_id = e.currentTarget.dataset.cat_id;
     console.log(cat_name)
     // wx.navigateTo({
     //   url: '../commodity/detalis/detalis?id=' + id,
     // })
     wx.navigateTo({
-      url: './sousuoxiang/sousuoxiang?keywords=' + cat_name,
+      url: './sousuoxiang/sousuoxiang?keywords=' + cat_name + '&classify=true&cat_id=' + cat_id,
     })
   }
 

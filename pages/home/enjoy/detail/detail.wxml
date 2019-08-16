@@ -18,6 +18,15 @@
           <block wx:for="{{priture}}" wx:key="imgs">
             <swiper-item>
               <image src="{{item}}" class="slide-image"></image>
+              <!-- 拖拽的表情 -->
+              <movable-view class="popupimg" wx:for="{{biaoqing}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
+                <image src="{{item.img}}"></image>
+              </movable-view>
+              <!-- 拖拽的标签 -->
+              <movable-view class="popuptext" x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{biaoqian}}" data-index="{{index}}" disabled="{{true}}">
+                <!-- <image src="{{item.img}}"></image> -->
+                <text>{{item.name}}</text>
+              </movable-view>
             </swiper-item>
           </block>
         </swiper>
@@ -29,16 +38,6 @@
     </block>
   </view> -->
     </view>
-    <!-- 拖拽的表情 -->
-    <movable-view class="popupimg" wx:for="{{biaoqing}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
-      <image src="{{item.img}}"></image>
-    </movable-view>
-
-    <!-- 拖拽的标签 -->
-    <movable-view class="popuptext" x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{biaoqian}}" data-index="{{index}}" disabled="{{true}}">
-      <!-- <image src="{{item.img}}"></image> -->
-      <text>{{item.name}}</text>
-    </movable-view>
   </movable-area>
 
 

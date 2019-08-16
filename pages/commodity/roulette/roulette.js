@@ -77,17 +77,17 @@ Component({
       ctx.stroke();
 
       // 装饰点
-      var dotColor = options.dotColor;
-      for (var i = 0; i < 26; i++) {
-        ctx.beginPath();
-        var radius = 131;
-        var xr = radius * Math.cos(startAngel)
-        var yr = radius * Math.sin(startAngel)
-        ctx.fillStyle = dotColor[i % dotColor.length]
-        ctx.arc(xr, yr, 5, 0, 2 * Math.PI)
-        ctx.fill()
-        startAngel += (2 * Math.PI / 360) * (360 / 26);
-      }
+      // var dotColor = options.dotColor;
+      // for (var i = 0; i < 26; i++) {
+      //   ctx.beginPath();
+      //   var radius = 131;
+      //   var xr = radius * Math.cos(startAngel)
+      //   var yr = radius * Math.sin(startAngel)
+      //   ctx.fillStyle = dotColor[i % dotColor.length]
+      //   ctx.arc(xr, yr, 5, 0, 2 * Math.PI)
+      //   ctx.fill()
+      //   startAngel += (2 * Math.PI / 360) * (360 / 26);
+      // }
        // 画里转盘   
       var colors = options.bgInner;
       for (var i = 0; i < num; i++) {

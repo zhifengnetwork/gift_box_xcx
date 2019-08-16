@@ -99,6 +99,7 @@ App({
     image:[],
     type:'',
     music_id:'',
+    caogao:'',
   }
 
 

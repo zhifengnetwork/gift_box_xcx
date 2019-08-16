@@ -9,12 +9,21 @@
   z-index: 0;
 }
 .start{
-  height: 112px;
-  width: 90px;
+  height: 120px;
+  width: 80px;
   position: absolute;
   top:50%;
   left: 50%;
-  margin-left: -45px;
-  margin-top: -66px;
+  margin-left: -40px;
+  margin-top: -82px;
   z-index: 2;
+}
+.btn{
+  width: 400rpx;
+  height: 80rpx;
+  position: absolute;
+  top:52vh;
+  left: 0;
+  right: 0;
+  margin: auto;
 }

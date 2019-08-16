@@ -12,7 +12,7 @@
       <view>09:00-21:00</view>
     </view>
   </view>
-  <view class="title_number">{{item.expName}} {{item.courierPhone}}</view>
+  <view class="title_number">{{item.expName}} {{item.number}}</view>
 </view>
 
 <view class="logistics_info">

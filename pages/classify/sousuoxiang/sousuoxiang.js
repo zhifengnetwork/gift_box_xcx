@@ -46,6 +46,22 @@ Page({
     var that = this
     console.log('上个页面传过来的keywords是',options.keywords)
     that.setData({ headtitle: options.keywords});
+    if (options.classify){
+      api.getJSON(
+        '/api/Category/category_goods?cat_id2=' + options.cat_id + "&token=" + app.globalData.token, function (res) {
+          if (res.data.status == 1) {
+            console.log(res.data.data)
+            that.setData({ shopzu: res.data.data })
+            if (that.data.shopzu.length > 0) {
+              that.setData({ xianshi: true })
+            } else {
+              that.setData({ xianshi: false })
+            }
+
+          }
+        })
+        return false;
+    }
     api.getJSON(
       '/api/Category/search_goods?keyword=' + this.data.headtitle + "&token=" + app.globalData.token, function (res) {
         if (res.data.status == 1) {
