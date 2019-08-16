@@ -7,7 +7,7 @@
   </view>
 </view>
 <!-- 图片上传 -->
-<view class="question-images clearFloat">
+<view class="question-images clearFloat" wx:if="{{type == 0}}">
   <block wx:for="{{images}}" wx:key="*this">
     <view class="q-image-wrap">
       <!-- 图片缩略图  -->
@@ -21,9 +21,9 @@
   <image src="../../../../images/jia.png" class="close_pic" class='uploadImgBtn' bindtap="chooseImage" wx:if="{{images.length < 9}}"></image>
 </view>
 <!-- 视频封面 -->
-<!-- <view class="videobox">
-  <video src="{{images}}" controls="{{false}}" ></video>
-</view> -->
+<view class="videobox" wx:else>
+  <video src="{{images}}" controls="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}"></video>
+</view>
 <!-- 填写标题 -->
 <view class="title_ear">
   <input placeholder="加個標題會有更多讚哦~" class="title" value="{{inputValue}}" bindinput="userNameInput"></input>

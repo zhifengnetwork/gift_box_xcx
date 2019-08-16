@@ -78,7 +78,7 @@ Page({
                 topic_name: that.data.topic,
                 lat: that.data.lat,
                 lon: that.data.lon,
-                txet: JSON.stringify(that.data.biaoqian),
+                text: JSON.stringify(that.data.biaoqian),
                 text2: JSON.stringify(that.data.biaoqing),
                 music_id: that.data.music_id,
                 type: that.data.type
@@ -142,6 +142,7 @@ Page({
    */
   onLoad: function(options) {
     let that = this
+    console.log(app.globalData.type)
     if (app.globalData.type){
       that.setData({
         type: app.globalData.type

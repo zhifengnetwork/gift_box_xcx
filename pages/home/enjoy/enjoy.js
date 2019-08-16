@@ -19,6 +19,8 @@ Page({
     topic_id: 0,
     page: 1,
     image: [],
+    type:'',
+    dianzang:[]
   },
 
   // 上传图片或视频按钮
@@ -195,34 +197,35 @@ Page({
   onLoad: function(options) {
     var that = this;
     //缓冲提醒
-    wx.showToast({
-      title: '加载中',
-      icon: 'loading',
-      duration: 400
-    })
+    // wx.showToast({
+    //   title: '加载中',
+    //   icon: 'loading',
+    //   duration: 400
+    // })
     //分页代码:获取系统的参数，scrollHeight数值,微信必须要设置style:height才能监听滚动事件
     wx.getSystemInfo({
-      success: function(res) {
+      success: function(res) { 
         console.info(res.windowHeight)
         that.setData({
           scrollHeight: res.windowHeight
         })
       }
     });
+    //tab切换标题
     api.getJSON('/api/Sharing/get_sharing_topic', function(res) {
       if (res.data.status == 1) {
-        // console.log(res.data.data);
         that.setData({
           nav_title: res.data.data
         });
       }
     })
+    
 
   },
 
 
   GetList: function(that) {
-
+   
     api.getJSON('/api/sharing/sharing_list?num=10' + '&topic_id=' + that.data.topic_id + '&page=' + that.data.page + '&token=' + app.globalData.token, function(res) {
       if (res.data.status == 1) {
         if (res.data.data.length > 0) {
@@ -232,14 +235,14 @@ Page({
           that.setData({
             note: that.data.goodslist
           })
-          // console.log(that.data.note)
+          console.log(that.data.note)
           that.data.page++;
         } else {
           that.setData({
             bujia: false
           })
         }
-
+       
       }
     })
 
@@ -256,8 +259,8 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    var that = this
-    this.GetList(that); //页面初次展示调用第一次数据，比如说5条记录
+    
+    this.GetList(this); //页面初次展示调用第一次数据，比如说5条记录
   },
 
   /**
@@ -302,7 +305,6 @@ Page({
     that.setData({
       goodslist: arr
     });
-
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
@@ -317,68 +319,96 @@ Page({
       bujia: true,
       page: 1
     })
+    console.log(e.target.dataset.id)
+    // 如果点击的是附近的话,就不分页了,点击其他的滚动条滚动到底部加载下一页
+    console.log(that.data.nav_title[1].id)
+    if (e.target.dataset.id === that.data.nav_title[1].id){
+      api.getJSON('/api/sharing/sharing_list?topic_id=' + that.data.topic_id + '&token=' + app.globalData.token, function (res) {
+        if (res.data.status == 1) { 
+          console.log(res.data.data);
+          that.setData({ note: res.data.data, bujia: false})
+        
+        }
+      })
+    }else{
+      api.getJSON('/api/sharing/sharing_list?num=10' + '&topic_id=' + that.data.topic_id + '&page=1&token=' + app.globalData.token, function (res) {
+        if (res.data.status == 1) {
 
-    api.getJSON('/api/sharing/sharing_list?num=10' + '&topic_id=' + that.data.topic_id + '&page=1&token=' + app.globalData.token, function(res) {
-      if (res.data.status == 1) {
-
-        if (res.data.data.length > 0) {
-          for (var i = 0; i < res.data.data.length; i++) {
-            that.data.goodslist.push(res.data.data[i])
+          if (res.data.data.length > 0) {
+            for (var i = 0; i < res.data.data.length; i++) {
+              that.data.goodslist.push(res.data.data[i])
+            }
+            that.setData({
+              note: that.data.goodslist
+            })
+            that.data.page++;
+          } else {
+            var kong = []
+            that.setData({
+              bujia: false
+            })
+            that.setData({
+              note: kong
+            })
           }
-          that.setData({
-            note: that.data.goodslist
-          })
-          that.data.page++;
-        } else {
-          var kong = []
-          that.setData({
-            bujia: false
-          })
-          that.setData({
-            note: kong
-          })
-        }
 
-      }
-    })
-
-
-  },
-  dianji: function(e) {
-    var that = this;
-    var id = e.target.dataset.id;
-    var index = e.target.dataset.index;
-    console.log(index)
-
-    if (that.data.note[index].count == 1) {
-      api.getJSON('/api/sharing/add_point?token=' + app.globalData.token + '&sharing_id=' + id, function(res) {
-        if (res.data.status == 1) {
-          console.log("取消点赞");
-          console.log(res.data)
-          that.onLoad()
-        }
-      })
-      return;
-    }
-    if (that.data.note[index].count == 0) {
-      api.getJSON('/api/sharing/add_point?token=' + app.globalData.token + '&sharing_id=' + id, function(res) {
-        if (res.data.status == 1) {
-          console.log("点赞成功");
-          console.log(res.data)
-          that.onLoad()
         }
       })
     }
+   
+    
+   
+
+
   },
+  // dianji: function(e) {
+  //   var that = this;
+  //   var id = e.target.dataset.id;
+  //   var index = e.target.dataset.index;
+  //   console.log(index)
+  //   console.log("-------")
+  //   console.log(that.data.note)
+  //   console.log("-------")
+  //   //count	0未点赞 1已点赞
+  //   if (that.data.note[index].count === 1) {
+     
+  //     api.getJSON('/api/sharing/add_point?token=' + app.globalData.token + '&sharing_id=' + id, function(res) {
+  //       if (res.data.status == 1) {
+  //         console.log("取消点赞");
+  //         console.log(res.data);
+  //         that.GetList(that);
+  
+  //       }
+  //     })
+  //     return;
+  //   }
+  //   if (that.data.note[index].count === 0) {
+  
+  //     api.getJSON('/api/sharing/add_point?token=' + app.globalData.token + '&sharing_id=' + id, function(res) {
+  //       if (res.data.status == 1) {
+  //         console.log("点赞成功");
+  //         console.log(res.data);
+  //         that.GetList(that);
+        
+  //       }
+  //     })
+  //   }
+  // },
   // 跳转到商品详情
   details: function(e) {
     let that = this
     that.setData({
-      id: e.currentTarget.dataset.id
+      id: e.currentTarget.dataset.id,
     })
-    wx.navigateTo({
-      url: '../../home/enjoy/detail/detail?id=' + that.data.id,
-    })
+    if (e.currentTarget.dataset.type == 0){
+      wx.navigateTo({
+        url: '../../home/enjoy/detail/detail?id=' + that.data.id,
+      })
+    } else if (e.currentTarget.dataset.type == 1){
+      wx.navigateTo({
+        url: 'detailvideo/detailvideo?id=' + that.data.id,
+      })
+    }
   },
   // 搜索框跳转页面
   search: function() {

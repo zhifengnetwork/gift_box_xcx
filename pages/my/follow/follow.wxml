@@ -6,7 +6,7 @@
   <view class="follow_box" bindtap="followlist" wx:for="{{item}}" data-id="{{index}}">
     <view class="follow_l">
       <view class="follow_imgbox">
-        <image src="{{item.avatar}}"></image>
+        <image src="{{item.avatar}}" class="follow_img"></image>
       </view>
     </view>
     <view class="follow_c">

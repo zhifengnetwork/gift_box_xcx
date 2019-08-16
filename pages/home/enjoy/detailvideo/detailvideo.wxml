@@ -1,0 +1,31 @@
+<!-- <view style="height:0rpx;">
+  <component title='享物圈' show_bol='{{false}}' side="{{true}}"></component>
+</view> -->
+<view class="box">
+  <!-- 拖拽的表情 -->
+  <movable-area class="imgbox" bindtap="guanbi">
+    <!-- 视频 -->
+    <view wx:for="{{priture}}" wx:key="imgs" class="videobox">
+      <video id="myVideo" src="{{item}}" bindtap="audioplay" bindpause="audiopause" autoplay loop show-play-btn="{{false}}" show-fullscreen-btn="{{false}}" muted></video>
+      <audio src="{{music}}" id="myAudio"></audio>
+    </view>
+    <movable-view class="popupimg" wx:for="{{biaoqing}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
+      <image src="{{item.img}}"></image>
+    </movable-view>
+  </movable-area>
+  <!-- 返回按钮 -->
+  <view class="return" style="position: absolute;left: 40rpx;top:{{bar_Height+40}}rpx;" bindtap="return">
+    <image src="/images/bai.png"></image>
+  </view>
+  <!-- 头像 -->
+  <view class="xbox">
+    <view class="touxiang">
+      <view class="touxiangimg">
+        <image src="{{avatar}}"></image>
+      </view>
+      <view class="name">{{nickname}}</view>
+    </view>
+    <view class="title">{{title}}</view>
+    <view class="content">{{content}}</view>
+  </view>
+</view>
