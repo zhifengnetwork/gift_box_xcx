@@ -92,9 +92,10 @@ Page({
                     success: function(res) {
                       setTimeout(function () {
                         wx.hideToast();
-                        wx.navigateBack({
+                        wx.reLaunch({
                           url: '../enjoy',
                         })
+                        
                       }, 1000);
                     }
                   })
@@ -295,10 +296,11 @@ Page({
             //   image: that.data.avatar
             // })
             // let image = []
-            console.log(that.data.imsges)
-            that.data.images = that.data.images.concat(that.data.avatar)
-             console.log(that.data.images)
-
+            const images1 = that.data.images.concat(that.data.avatar)
+            const images2 = images1.length <= 3 ? images1 : images1.slice(0, 3)
+            that.setData({
+              images: images2
+            })
             // if (that.data.image) {
             //   wx.navigateTo({
             //     url: '../selectimg/selectimg',
