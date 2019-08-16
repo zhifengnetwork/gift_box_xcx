@@ -6,7 +6,7 @@
   <movable-area class="imgbox" bindtap="guanbi">
     <!-- 视频 -->
     <view wx:for="{{priture}}" wx:key="imgs" class="videobox">
-      <video id="myVideo" src="{{item}}" bindtap="audioplay" bindpause="audiopause" autoplay loop show-play-btn="{{false}}" show-fullscreen-btn="{{false}}" muted></video>
+      <video id="myVideo" src="{{item}}" bindtap="audioplay" bindpause="audiopause" autoplay loop show-play-btn="{{false}}" show-fullscreen-btn="{{false}}" muted  controls='{{controls}}'></video>
       <audio src="{{music}}" id="myAudio"></audio>
     </view>
     <movable-view class="popupimg" wx:for="{{biaoqing}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
@@ -28,4 +28,15 @@
     <view class="title">{{title}}</view>
     <view class="content">{{content}}</view>
   </view>
+  <!-- 评论,点赞 -->
+  <view class="commentear">
+  <textarea class="weui-textarea" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;color:white;" bindblur="changeContext" focus="{{focus}}" value="{{hhh}}"/>
+ 
+  <image src="../../../public/images/home/aixinan2.png" class="aixinan2"></image>
+  </view> 
+   
+ 
+
+
+  
 </view>

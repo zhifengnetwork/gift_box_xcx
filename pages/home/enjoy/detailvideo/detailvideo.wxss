@@ -79,3 +79,33 @@ page{
   color: #fff;
   font-size: 32rpx;
 }
+.commentear{
+  position: fixed;
+  bottom: 0rpx;
+  left: 0rpx;
+  height: 100rpx;
+  width: 100%;
+  background: transparent;
+  z-index: 2
+}
+.weui-textarea{
+  position: absolute;
+  bottom: 18rpx;
+  z-index: 3;
+  left: 40rpx;
+  margin: auto 0;
+  width: 300rpx;
+  height: 50rpx;
+  line-height: 30rpx;
+  border-radius: 30rpx;
+  font-size: 30rpx;
+  color: white;
+  font-weight: 30rpx;
+  padding-left: 10rpx;
+}
+.aixinan2{
+  position: absolute;
+  bottom: 28rpx;
+  width: 50rpx;
+  height: 45rpx
+}
