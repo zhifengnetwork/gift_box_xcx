@@ -1,7 +1,7 @@
  <!-- 标题 -->
 <view> 
    <view class='goBack' bindtap='goBack' style="padding-top:{{bar_Height+40}}rpx;">			
-      <image src='../public/images/index/back.png' class="back_back22"></image>
+      <!-- <image src='../public/images/index/back.png' class="back_back22"></image> -->
     </view>
     <view class="tabar" style="padding-top:{{bar_Height+40}}rpx;">
       <text class="red">购物车</text>
