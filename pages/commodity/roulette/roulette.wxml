@@ -1,5 +1,6 @@
 <view class="canvas">
   <canvas canvas-id="roulette" style=" width: 700rpx; height: 700rpx;">
   </canvas>
-  <cover-image src="images/start.png" class="start" bindtap='rollStart' />
+  <cover-image src="images/start.png" class="start" />
+  <cover-image src="images/btn.png" class="btn" bindtap='rollStart' />
 </view>

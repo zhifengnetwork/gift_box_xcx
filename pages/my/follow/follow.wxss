@@ -23,6 +23,10 @@ page{
   overflow: hidden;
   border-radius: 50%;
 }
+.follow_img{
+  width: 100%;
+  height: 100%;
+}
 .follow_c{
   float: left;
   margin-top: 50rpx;
