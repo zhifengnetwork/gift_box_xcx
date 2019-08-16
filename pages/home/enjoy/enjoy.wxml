@@ -26,7 +26,7 @@
               <!-- ' class='pic {{item.show? "Action" : ""}}' -->
               <!-- <image src='{{item.stutus ? item.cover : ""}}' mode='widthFix'></image> -->
               <image src='{{item.cover}}' mode='widthFix' wx:if="{{!item.type}}"></image>
-              <video src='{{item.cover}}' mode='widthFix' wx:else autoplay controls="{{false}}"></video>
+              <video src='{{item.cover}}' mode='widthFix' wx:else autoplay controls="{{false}}" loop="{{false}}"></video>
               <view class="biaoti">{{item.title}}</view>
               <view class="touxiang">
                 <image class="user_pic" src="{{item.avatar}}"></image>
