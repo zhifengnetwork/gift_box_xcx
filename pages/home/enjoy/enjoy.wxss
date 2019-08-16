@@ -111,6 +111,9 @@ swiper {
 .lan image {
   width: 100%;
 }
+.lan video{
+  width: 100%
+}
 .biaoti{
   width: 100%;
   white-space: nowrap;
