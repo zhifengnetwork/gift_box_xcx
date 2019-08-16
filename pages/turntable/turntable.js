@@ -14,11 +14,11 @@ Page({
           img:'https://giftbox.zhifengwangluo.com/public/images/turntable/turntable_small.png'
         }
       ],/**奖项内容 */
-      fontColor: '#e21b58',/**文字颜色 */
+      fontColor: '#fff',/**文字颜色 */
       font: '14px Arial',
-      bgOut: '#ffe774',/**外层 */
-      bgMiddle: '#ffc046',/**中间层 */
-      bgInner: ['#fff2ca', '#fdd890', '#fff2ca', '#fdd890', '#fff2ca', '#fdd890'],
+      bgOut: '#cdb353',/**外层 */
+      bgMiddle: '#b19532',/**中间层 */
+      bgInner: ['#c9ae4a', '#cc9530', '#c9ae4a', '#cc9530', '#c9ae4a', '#cc9530'],
       speedDot: 1000,/**点切换速度 */
       dotColor: ['#ffffff', '#b1ffdd'],
       dotColor_1: ['#ffffff', '#b1ffdd'],

@@ -33,7 +33,11 @@ Page({
       console.log(res)
     })
   },
-
+  logistics: function (e) {
+    wx.navigateTo({
+      url: '../logistics/logistics?order_id=' + e.target.dataset.id,
+    })
+  },
 
   // 确认收货
   shouhuo: function (e) {

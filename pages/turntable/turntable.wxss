@@ -47,7 +47,7 @@ page{
 /* 转盘 */
 .container{
   position: absolute;
-  top: 0;
+  top: -60rpx;
   left: 0;
   right: 0;
   margin: auto;
