@@ -92,9 +92,10 @@ Page({
                     success: function(res) {
                       setTimeout(function () {
                         wx.hideToast();
-                        wx.navigateBack({
+                        wx.reLaunch({
                           url: '../enjoy',
                         })
+                        
                       }, 1000);
                     }
                   })
