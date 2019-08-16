@@ -176,7 +176,7 @@ swiper{
 .comment_ear{
   width: 90%;
   margin-left: 5%;
-  background: #f6f5f5;
+  /* background: #f6f5f5; */
   border-radius: 10rpx;
   margin-top: 15rpx
 }
@@ -234,7 +234,12 @@ swiper{
 }
 .huifucontext{
   font-size: 30rpx;
-  padding-left: 40rpx;
+  display: inline-block
+}
+.huifuear{
+  background: #f6f5f5;
+  border-radius: 20rpx;
+  padding: 0 15rpx 15rpx 15rpx;
 }
 .imgbox{
   z-index: 2;
@@ -263,4 +268,13 @@ swiper{
   font-size: 30rpx;
   height:auto;
   width: auto;
+}
+.flex{
+  display: flex;
+}
+.yingcang{
+  font-size: 34rpx;
+  font-weight: bolder;
+  display: inline-block;
+  color: transparent;
 }
