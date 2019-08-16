@@ -74,7 +74,7 @@
       <view class="ear" wx:for="{{comments}}" wx:if="{{index<3}}" wx:key bindtap="huifu" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
         <text class="comment_text">{{itemname.content}}</text>
-        <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui" class="huifucontext">{{nickname}}:{{xijinzui.content}}</view>
+        <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui" class="huifucontext">{{xijinzui.nickname}}:{{xijinzui.content}}</view>
       </view>
      
     </view>
