@@ -103,6 +103,8 @@ page{
   font-weight: 30rpx;
   padding-left: 10rpx;
 }
+
+/* rrr */
 .aixinan2{
   position: absolute;
   bottom: 28rpx;
