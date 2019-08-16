@@ -63,6 +63,11 @@ Page({
 
   },
 
+  logistics: function (e) {
+    wx.navigateTo({
+      url: '../logistics/logistics?order_id=' + e.target.id,
+    })
+  },
 
 
 

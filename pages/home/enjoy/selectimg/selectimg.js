@@ -71,7 +71,7 @@ Page({
     //  xindex: e.target.dataset.index,
      yy: e.changedTouches[0].pageY
    })
-   
+  
   console.log(that.data.xx)
   
   },
