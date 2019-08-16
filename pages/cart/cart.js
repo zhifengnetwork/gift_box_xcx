@@ -242,7 +242,7 @@ Page({
    */
   onShow: function() {
     // 隐藏底部导航条
-    wx.hideTabBar()
+    // wx.hideTabBar()
     var that = this;
     var shuliang = 0
     //先获取用户信息
