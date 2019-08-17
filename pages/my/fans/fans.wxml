@@ -3,7 +3,7 @@
 </view>
 <scroll-view class='dataContainer' scroll-y bindscrolltolower="nextDataPage" style="height:100%;">
   <view class="border_top"></view>
-  <view class="fans_box" bindtap="fanslist" wx:for="{{item}}" data-id="{{index}}">
+  <view class="fans_box" bindtap="fanslist" wx:for="{{item}}" wx:key data-id="{{index}}">
     <view class="fans_l">
       <view class="fans_imgbox">
         <image src="{{item.avatar}}"></image>

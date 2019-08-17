@@ -34,8 +34,6 @@ App({
 
               //回调
               cb && cb(that.globalData.userInfo)
-            
-              console.log(that.globalData.userInfo)
             }
           })
         }
