@@ -148,11 +148,11 @@ Page({
         type: app.globalData.type
       })
     }
-    if (options.topic) {
-      that.setData({
-        topic: options.topic,
-      })
-    }
+    // if (options.topic) {
+    //   that.setData({
+    //     topic: options.topic,
+    //   })
+    // }
     // console.log(app.globalData.music_id)
     if (app.globalData.music_id){
       that.setData({

@@ -227,9 +227,18 @@ Page({
     this.setData({
       topic: e.currentTarget.dataset.name
     })
-    wx.navigateTo({
-      url: '../issue/issue?topic=' + that.data.topic,
+    var pages = getCurrentPages();
+    var prevPage = pages[pages.length - 2]; //上一个页面
+    //直接调用上一个页面的setData()方法，把数据存到上一个页面中去
+    prevPage.setData({
+      topic: e.currentTarget.dataset.name
     })
+    wx.navigateBack({
+      delta: 1
+    })
+    // wx.navigateTo({
+    //   url: '../issue/issue?topic=' + that.data.topic,
+    // })
   },
 
   // 点击创建新话题
