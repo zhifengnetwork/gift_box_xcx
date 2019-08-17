@@ -1,5 +1,5 @@
 <component title='享物圈' show_bol='{{false}}' side="{{true}}"></component>
-<!-- <video src="https://giftbox.zhifengwangluo.com/public/uploads/user/20190814/1fa2852ef37a8551bacb9ef0a823b8e7.mp4"></video> -->
+
 <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" >
 <view class="body">
   <!-- 搜索区域 -->
@@ -27,7 +27,7 @@
   </view>         
   <view class="img_item" wx:for="{{draglist}}" wx:key  bindtap="details" data-id='{{item.id}}' data-type="{{item.type}}">
     <image src="{{item.cover}}" class="huadon" wx:if="{{!item.type}}"></image>
-    <video src="{{item.cover}}" class="huadon" wx:else controls="{{false}}" autoplay muted="{{true}}"></video>
+    <video src="{{item.cover}}" class="huadon" wx:else controls="{{false}}" muted="{{true}}"></video>
   </view>
 </view>
 
@@ -41,7 +41,7 @@
               <!-- ' class='pic {{item.show? "Action" : ""}}' -->
               <!-- <image src='{{item.stutus ? item.cover : ""}}' mode='widthFix'></image> -->
               <image src='{{item.cover}}' mode='widthFix' wx:if="{{!item.type}}"></image>
-              <video src='{{item.cover}}' mode='widthFix' wx:else autoplay controls="{{false}}" loop="{{false}}" muted="{{true}}"></video>
+              <video src='{{item.cover}}' mode='widthFix' wx:else controls="{{false}}" loop="{{false}}" muted="{{true}}"></video>
               <view class="biaoti">{{item.title}}</view>
               <view class="touxiang">
                 <image class="user_pic" src="{{item.avatar}}"></image>
