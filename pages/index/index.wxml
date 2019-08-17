@@ -78,7 +78,6 @@
   <text>享物圈</text>
   <view></view>
 </view> -->
-
 <!-- 享物圈 -->
 <text class="jiali_title">{{sharing_name.name}}</text>
 <text class="english">{{sharing_name.english}}</text>
