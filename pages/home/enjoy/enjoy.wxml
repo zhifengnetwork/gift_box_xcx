@@ -8,6 +8,8 @@
     <image src="../../public/images/classify/sousuo.png" class="sousou"></image>
     <text>大家都在搜“有什麼好吃的”</text>
   </view>
+
+  
   <!-- tab切换 -->
   <scroll-view class="swiper-tab" scroll-x>
     <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{nav_title}}" wx:key data-id="{{item.id}}">{{item.name}}</view>
