@@ -206,19 +206,22 @@ swiper{
 .white_ear{
   width:92%;
   margin-left: 4%;
-  margin-top: 20rpx
+  margin-top: 40rpx;
+  padding-bottom: 100rpx
 }
 .white_pic{
   width: 7%;
   height: 55rpx;
-  position: absolute
+  position: absolute;
+  left: 40rpx
 }
 .weui-textarea{
   width: 70%;
+  height: 40rpx;
   font-size: 32rpx;
   padding-top: 20rpx;
   position: absolute;
-  left: 135rpx
+  left: 105rpx
 }
 .ear:last-child{
   padding-bottom: 20rpx

@@ -89,25 +89,169 @@ page{
   z-index: 2
 }
 .weui-textarea{
-  position: absolute;
+  position: fixed;
   bottom: 18rpx;
-  z-index: 3;
+  z-index: 2;
   left: 40rpx;
   margin: auto 0;
-  width: 300rpx;
+  width: 250rpx;
   height: 50rpx;
   line-height: 30rpx;
   border-radius: 30rpx;
   font-size: 30rpx;
-  color: white;
+  color:white;
   font-weight: 30rpx;
   padding-left: 10rpx;
 }
-
-/* rrr */
+.weui-textarea2{
+  position: absolute;
+  bottom: 18rpx;
+  z-index: 5;
+  left: 110rpx;
+  margin: auto 0;
+  width: 500rpx;
+  height: 50rpx;
+  line-height: 30rpx;
+  border-radius: 30rpx;
+  font-size: 30rpx;
+  font-weight: 30rpx;
+  padding-left: 10rpx;
+  border: 1px solid #ccc;
+  padding-top: 20rpx
+}
+.aixinear{
+  display: inline-block;
+}
 .aixinan2{
   position: absolute;
   bottom: 28rpx;
+  left: 300rpx;
   width: 50rpx;
   height: 45rpx
+}
+.dianzangshu{
+  color: white;
+  position: absolute;
+  bottom: 50rpx;
+  left: 353rpx;
+  font-size: 30rpx
+}
+.shoucangear{
+  display: inline-block;
+}
+.shoucange2{
+  position: absolute;
+  bottom: 28rpx;
+  left: 450rpx;
+  width: 50rpx;
+  height: 45rpx
+}
+.dianshoucang{
+  color: white;
+  position: absolute;
+  bottom: 50rpx;
+  left: 500rpx;
+  font-size: 30rpx
+}
+
+
+.xinxiear{
+  display: inline-block;
+}
+.xinxi2{
+  position: absolute;
+  bottom: 20rpx;
+  left: 580rpx;
+  width: 50rpx;
+  height: 45rpx
+}
+.dianxinxi{
+  color: white;
+  position: absolute;
+  bottom: 50rpx;
+  left: 630rpx;
+  font-size: 30rpx
+}
+.mask{
+  width: 100%;
+  height: 900rpx;
+  background: white;
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 999999999;
+}
+.cha{
+  width: 30rpx;
+  height: 40rpx;
+  position: absolute;
+  right: 30rpx;
+  top: 30rpx
+}
+.title_comments{
+  width: 100%;
+  text-align: center;
+  margin-top: 23rpx
+}
+.pinglun_ear{
+  width: 94%;
+  margin: 0 auto;
+  height: 700rpx;
+  overflow-y: scroll
+}
+.ear{
+  width: 90%;
+  margin-left: 4%;
+  padding-top: 3%;
+}
+.nick_name_ear{
+  font-size: 34rpx;
+  font-weight: bolder;
+  display: inline-block
+}
+.comment_text{
+  font-size: 30rpx;
+  padding-left: 20rpx
+}
+.flex{
+  display: flex;
+}
+.yingcang{
+  font-size: 34rpx;
+  font-weight: bolder;
+  display: inline-block;
+  color: transparent;
+}
+.huifuear{
+  background: #f6f5f5;
+  border-radius: 20rpx;
+  padding: 0 15rpx 15rpx 15rpx;
+}
+.huifucontext{
+  font-size: 30rpx;
+  display: inline-block
+}
+.touxiangdd{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+  position: fixed;
+  bottom: 18rpx;
+  left: 20rpx;
+}
+.touxiangdd .img{
+  width: 100%;
+  height: 100%
+}
+.fasong{
+  display: inline-block;
+  margin-left: 30rpx;
+  position: fixed;
+  bottom: 34rpx;
+  left: 620rpx;
+  font-size: 30rpx;
+}
+.dibu{
+  width: 100%;
 }

@@ -114,7 +114,7 @@
 
     <view class="white_ear">
       <image src="../../../../images/white.png" class="white_pic"></image>
-      <textarea class="weui-textarea" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;" bindblur="changeContext" style="height:140rpx" focus="{{focus}}" value="{{hhh}}" />
+      <textarea class="weui-textarea" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;" bindblur="changeContext"  focus="{{focus}}" value="{{hhh}}" />
     </view>
 
   </view>
