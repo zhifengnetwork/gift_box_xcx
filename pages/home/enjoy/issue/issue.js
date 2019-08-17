@@ -313,9 +313,6 @@ Page({
     })
   },
 
-
-
-
   removeImage(e) {
     var that = this;
     var images = that.data.images;
