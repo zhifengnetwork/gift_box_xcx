@@ -56,7 +56,6 @@
 .active {
   color: black;
   font-size: 32rpx;
-  font-weight: bold;
   font-weight: bolder;
 }
 
@@ -72,12 +71,70 @@
 
 .show {
   display: block;
+  margin-top: 50rpx
 }
 
 .hidden {
   display: none;
 }
-
+/* 滑动区域 */
+.img_box{
+  width: 90%;
+  margin-left: 5%;
+  height: 335rpx;
+  display: flex;
+  overflow-x: scroll;
+  overflow-y:hidden;
+}
+/* 隐藏滚动条 */
+::-webkit-scrollbar {display:none}
+.img_item{
+  width: 170rpx;
+  height: inherit;
+  display: inline-block;
+  flex-shrink:0;
+  border-radius: 25rpx ;
+  box-sizing: border-box;
+  margin-right: 50rpx;
+  overflow-y:hidden;
+  border:6rpx solid #fce828
+}
+.img_item1{
+  width: 170rpx;
+  height: inherit;
+  display: inline-block;
+  flex-shrink:0;
+  border-radius: 25rpx ;
+  box-sizing: border-box;
+  margin-right: 50rpx;
+  overflow-y:hidden;
+  /* background: gray */
+  background: -webkit-linear-gradient( #fff, #a0a0a0); /* Safari 5.1 - 6.0 */
+  background: -o-linear-gradient( #fff, #a0a0a0); /* Opera 11.1 - 12.0 */
+  background: -moz-linear-gradient( #fff, #a0a0a0); /* Firefox 3.6 - 15 */
+  background: linear-gradient( #fff, #a0a0a0); /* 标准的语法,必须放最后 */
+  position: relative;
+  border:6rpx solid #fce828
+}
+.add{
+  width: 50rpx;
+  height: 50rpx;
+  position: absolute;
+  bottom: 50rpx;
+  left: 10rpx
+}
+.wenzi{
+  font-size: 28rpx;
+  position: absolute;
+  bottom: 10rpx;
+  left: 10rpx;
+  color: white
+}
+.huadon{
+  width: 100%;
+  height: 100%;
+  border-radius: 25rpx
+}
 /* 瀑布流布局 */
 
 swiper {

@@ -14,10 +14,23 @@
   <scroll-view class="swiper-tab" scroll-x>
     <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{nav_title}}" wx:key data-id="{{item.id}}">{{item.name}}</view>
   </scroll-view>
-
-  <scroll-view class="huadong">
+  
+ 
+  <!-- <scroll-view class="huadong">
     <view class="upimg" bindtap="upimg"></view>
-  </scroll-view>
+  </scroll-view> -->
+   <!-- tab切换下面的公共部分 bindtap="xwq"-->
+  <view class="img_box">
+  <view class="img_item1" bindtap="upimg">
+    <image src="../../public/images/home/add.png" class="add"></image>
+    <view class="wenzi">發佈 hey</view>
+  </view>         
+  <view class="img_item" wx:for="{{draglist}}" wx:key  bindtap="details" data-id='{{item.id}}' data-type="{{item.type}}">
+    <image src="{{item.cover}}" class="huadon" wx:if="{{!item.type}}"></image>
+    <video src="{{item.cover}}" class="huadon" wx:else controls="{{false}}" autoplay muted="{{true}}"></video>
+  </view>
+</view>
+
 
   <view wx:for="{{note.length}}" wx:for-index="idx" wx:key>
     <view class="{{currentTab == idx ? 'show':'hidden'}}">

@@ -17,11 +17,12 @@ Page({
     bujia: true,
     goodslist: [],
     topic_id: 0,
-    page: 1,
+    page: 2,
     image: [],
     type:'',
     dianzang:[],
     draft:'',
+    draglist:[]
   },
 
   // 上传图片或视频按钮
@@ -236,7 +237,13 @@ Page({
         })
         console.log(res)
       }
-    })
+    }),
+    // 请求tab切换下面那一块的数据
+      api.getJSON('/api/sharing/sharing_list?num=8' + '&topic_id=' + that.data.topic_id + '&page=1&token=' + app.globalData.token, function (res) {
+        if (res.data.status == 1) {
+          that.setData({draglist: res.data.data})
+        }
+      })
 
   },
 
@@ -335,7 +342,7 @@ Page({
     });
     that.setData({
       bujia: true,
-      page: 1
+      page: 2
     })
     console.log(e.target.dataset.id)
     // 如果点击的是附近的话,就不分页了,点击其他的滚动条滚动到底部加载下一页
