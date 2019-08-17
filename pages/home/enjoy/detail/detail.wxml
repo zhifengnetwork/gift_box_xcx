@@ -18,28 +18,27 @@
           <block wx:for="{{priture}}" wx:key="imgs">
             <swiper-item>
               <image src="{{item}}" class="slide-image"></image>
+              <!-- 拖拽的表情 -->
+              <movable-view class="popupimg" wx:for="{{biaoqing}}" wx:key x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
+                <image src="{{item.img}}"></image>
+              </movable-view>
+              <!-- 拖拽的标签 -->
+              <movable-view class="popuptext" x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{biaoqian}}" wx:key data-index="{{index}}" disabled="{{true}}">
+                <!-- <image src="{{item.img}}"></image> -->
+                <text>{{item.name}}</text>
+              </movable-view>
             </swiper-item>
           </block>
         </swiper>
         <!--重置小圆点的样式 -->
       </view>
-      <!-- <view class="dots">
+    </view>
+  </movable-area>
+  <view class="dots">
     <block wx:for="{{priture}}" wx:key>
       <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
     </block>
-  </view> -->
-    </view>
-    <!-- 拖拽的表情 -->
-    <movable-view class="popupimg" wx:for="{{biaoqing}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
-      <image src="{{item.img}}"></image>
-    </movable-view>
-
-    <!-- 拖拽的标签 -->
-    <movable-view class="popuptext" x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{biaoqian}}" data-index="{{index}}" disabled="{{true}}">
-      <!-- <image src="{{item.img}}"></image> -->
-      <text>{{item.name}}</text>
-    </movable-view>
-  </movable-area>
+  </view>
 
 
   <!-- 文字介绍 -->
@@ -55,10 +54,10 @@
       <image class="aixin" src="../../../public/images/home/aixin.png" wx:else bindtap="dianji"></image>
       <text class="tiaoshu">{{detaillist.point_num}}</text>
     </view>
-    <view class="second">
+    <button class="second" open-type="share">
       <image class="aixin2" src="../../../public/images/home/zhuanfa.png"></image>
       <text class="tiaoshu2">{{detaillist.forward_num}}</text>
-    </view>
+    </button>
     <view class="three">
       <image class="aixin3" src="../../../public/images/home/soucang.png" bindtap="collect" wx:if="{{detaillist.collection_count === 0 ? true : false}}"></image>
       <image class="aixin3" src="../../../public/images/home/soucangxuan.png" bindtap="collect" wx:else></image>
@@ -74,20 +73,37 @@
       <view class="ear" wx:for="{{comments}}" wx:if="{{index<3}}" wx:key bindtap="huifu" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
         <text class="comment_text">{{itemname.content}}</text>
-        <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui" class="huifucontext">{{xijinzui.nickname}}:{{xijinzui.content}}</view>
+        <view class="flex">
+          <view class="yingcang" wx:if="{{itemname.list.length}}">{{itemname.nickname}}:</view>
+          <view class="huifuear" wx:if="{{itemname.list.length}}">
+            <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui">
+              <view class="huifucontext">{{xijinzui.nickname}}:{{xijinzui.content}}</view>
+            </view>
+          </view>
+        </view>
+
+
       </view>
-     
+
     </view>
 
-  
-     
+
+
 
 
     <view wx:if="{{!status}}">
       <view class="ear" wx:for="{{comments}}" wx:key bindtap="huifu" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
         <text class="comment_text">{{itemname.content}}</text>
-        <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui" class="huifucontext">{{nickname}}:{{xijinzui.content}}</view>
+        <view class="flex">
+          <view class="yingcang" wx:if="{{itemname.list.length}}">{{itemname.nickname}}:</view>
+          <view class="huifuear" wx:if="{{itemname.list.length}}">
+            <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui">
+              <view class="huifucontext">{{xijinzui.nickname}}:{{xijinzui.content}}</view>
+            </view>
+          </view>
+        </view>
+
       </view>
     </view>
 
@@ -98,7 +114,7 @@
 
     <view class="white_ear">
       <image src="../../../../images/white.png" class="white_pic"></image>
-      <textarea class="weui-textarea" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;" bindblur="changeContext" style="height:140rpx" focus="{{focus}}" value="{{hhh}}" />
+      <textarea class="weui-textarea" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;" bindblur="changeContext" focus="{{focus}}" value="{{hhh}}" />
     </view>
 
   </view>

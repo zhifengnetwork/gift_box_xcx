@@ -71,7 +71,7 @@ Page({
     //  xindex: e.target.dataset.index,
      yy: e.changedTouches[0].pageY
    })
-   
+  
   console.log(that.data.xx)
   
   },
@@ -124,26 +124,6 @@ Page({
       console.log(app.globalData.biaoqing)
       wx.setStorageSync('biaoqing', app.globalData.biaoqing);
     console.log(that.data.xxx)
-    // that.data.xxx.push({ id: that.data.xindex, x: that.data.xx, y: that.data.yy, img: that.data.xuanzhong })
-    // console.log(that.data.xxx)
-    // if(that.data.xxx.length>1){
-    //   console.log(aa[aa.length-1].x)
-    //   console.log(aa[0].x)
-    //   var qianx = aa[0].x
-    //   var qiany = aa[0].y
-    //   var houx = aa[aa.length - 1].x
-    //   var houy = aa[aa.length - 1].y
-      
-    //   aa[0].x = houx
-    //   aa[aa.length - 1].x = qianx
-    //   aa[0].y = houy
-    //   aa[aa.length - 1].y = qiany
-
-    //   that.setData({
-    //     xxx: aa
-    //   })
-    //   console.log(that.data.xxx)
-    // }
   },
 
 

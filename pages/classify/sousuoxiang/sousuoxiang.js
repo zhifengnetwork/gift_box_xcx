@@ -36,7 +36,8 @@ Page({
         sortting: 'price'
       }
     ],
-    headtitle:'搜索'
+    headtitle:'搜索',
+    cat_id:null
   },
 
   /**
@@ -46,9 +47,10 @@ Page({
     var that = this
     console.log('上个页面传过来的keywords是',options.keywords)
     that.setData({ headtitle: options.keywords});
+    that.setData({ cat_id:options.cat_id})
     if (options.classify){
       api.getJSON(
-        '/api/Category/category_goods?cat_id2=' + options.cat_id + "&token=" + app.globalData.token, function (res) {
+        '/api/Category/category_goods?cat_id2=' + options.cat_id + "&token=" + app.globalData.token+'&page=1&num=100000', function (res) {
           if (res.data.status == 1) {
             console.log(res.data.data)
             that.setData({ shopzu: res.data.data })
@@ -144,7 +146,7 @@ Page({
     this.setData({ color: 'red' });
     var that = this;
     api.getJSON(
-      '/api/Category/search_goods?keyword=' + this.data.headtitle + "&token=" + app.globalData.token + '&num=1000000000000' + '&page=1' + '&order=' + sortfangshi, function (res) {
+      '/api/Category/category_goods?keyword=' + this.data.headtitle + "&token=" + app.globalData.token + '&num=1000000000000' + '&page=1' + '&order=' + sortfangshi + '&cat_id2=' + that.data.cat_id, function (res) {
         if (res.data.status == 1) {
           console.log(res.data.data)
           that.setData({ shopzu: res.data.data })
@@ -156,6 +158,19 @@ Page({
 
         }
       }) 
+    // api.getJSON(
+    //   '/api/Category/category_goods?cat_id2=' + options.cat_id + "&token=" + app.globalData.token, function (res) {
+    //     if (res.data.status == 1) {
+    //       console.log(res.data.data)
+    //       that.setData({ shopzu: res.data.data })
+    //       if (that.data.shopzu.length > 0) {
+    //         that.setData({ xianshi: true })
+    //       } else {
+    //         that.setData({ xianshi: false })
+    //       }
+
+    //     }
+    //   })
 
 
 

@@ -43,7 +43,7 @@
     <text>影視</text>
   </view>
 </view>
-<view class="{{currentTab == 0 ? 'show':'hidden'}}">
+<!-- <view class="{{currentTab == 0 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
     <view class="tab_t">推薦地點</view>
     <view class="tab_c">
@@ -75,7 +75,7 @@
       </view>
     </view>
   </scroll-view>
-</view>
+</view> -->
 <view class="{{currentTab == 1 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
     <!-- <view class="tab_t">推薦地點</view> -->

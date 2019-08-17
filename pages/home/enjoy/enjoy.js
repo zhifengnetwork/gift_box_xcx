@@ -20,171 +20,178 @@ Page({
     page: 1,
     image: [],
     type:'',
-    dianzang:[]
+    dianzang:[],
+    draft:'',
   },
 
   // 上传图片或视频按钮
   upimg: function() {
     let that = this
-    wx.showActionSheet({
-      itemList: ['拍照', '選擇圖片', '選擇視頻','拍視頻'],
-      success(res) {
-        console.log(res.tapIndex)
-        if (res.tapIndex == 0) {
-          wx.chooseImage({
-            count: 1,
-            sizeType: ['original', 'compressed'],
-            sourceType: ['camera'],
-            success(res) {
-              // tempFilePath可以作为img标签的src属性显示图片
-              const tempFilePaths = res.tempFilePaths
-              console.log(tempFilePaths)
-              wx.uploadFile({
-                url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
-                filePath: tempFilePaths[0],
-                name: 'file',
-                header: {
-                  'content-type': 'multipart/form-data'
-                },
-                formData: {
-                  'token': app.globalData.token,
-                },
-                success: function(res) {
-                  let avatar = JSON.parse(res.data)
-                  that.setData({
-                    avatar: avatar.data
-                  })
-                  console.log(that.data.avatar)
-                  that.setData({
-                    image: that.data.avatar
-                  })
-                  app.globalData.image = that.data.image
-                  if (that.data.image) {
-                    wx.navigateTo({
-                      url: 'selectimg/selectimg',
+    if(that.data.draft){
+      app.globalData.caogao = 1,
+      wx.navigateTo({
+        url: 'issue/issue?',
+      })
+    }else{
+      wx.showActionSheet({
+        itemList: ['拍照', '選擇圖片', '選擇視頻', '拍視頻'],
+        success(res) {
+          console.log(res.tapIndex)
+          if (res.tapIndex == 0) {
+            wx.chooseImage({
+              count: 1,
+              sizeType: ['original', 'compressed'],
+              sourceType: ['camera'],
+              success(res) {
+                // tempFilePath可以作为img标签的src属性显示图片
+                const tempFilePaths = res.tempFilePaths
+                console.log(tempFilePaths)
+                wx.uploadFile({
+                  url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                  filePath: tempFilePaths[0],
+                  name: 'file',
+                  header: {
+                    'content-type': 'multipart/form-data'
+                  },
+                  formData: {
+                    'token': app.globalData.token,
+                  },
+                  success: function (res) {
+                    let avatar = JSON.parse(res.data)
+                    that.setData({
+                      avatar: avatar.data
                     })
-                  }
-                }
-              })
-            }
-          })
-        } else if (res.tapIndex == 1){
-          wx.chooseImage({
-            count: 1,
-            sizeType: ['original', 'compressed'],
-            sourceType: ['album'],
-            success(res) {
-              // tempFilePath可以作为img标签的src属性显示图片
-              const tempFilePaths = res.tempFilePaths
-              wx.uploadFile({
-                url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
-                filePath: tempFilePaths[0],
-                name: 'file',
-                header: {
-                  'content-type': 'multipart/form-data'
-                },
-                formData: {
-                  'token': app.globalData.token,
-                },
-                success: function (res) {
-                  let avatar = JSON.parse(res.data)
-                  that.setData({
-                    avatar: avatar.data
-                  })
-                  console.log(that.data.avatar)
-                  that.setData({
-                    image: that.data.avatar
-                  })
-                  app.globalData.image = that.data.image
-                  if (that.data.image) {
-                    wx.navigateTo({
-                      url: 'selectimg/selectimg',
+                    console.log(that.data.avatar)
+                    that.setData({
+                      image: that.data.avatar
                     })
+                    app.globalData.image = that.data.image
+                    if (that.data.image) {
+                      wx.navigateTo({
+                        url: 'selectimg/selectimg',
+                      })
+                    }
                   }
-                }
-              })
-            }
-          })
-          
-        } else if (res.tapIndex == 2){
-          wx.chooseVideo({
-            sourceType: ['album'],
-            maxDuration: 60,
-            camera: 'back',
-            success(res) {
-              // tempFilePath可以作为img标签的src属性显示图片
-              const tempFilePath = res.tempFilePath
-              console.log(tempFilePath)
-              wx.uploadFile({
-                url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
-                filePath: tempFilePath,
-                name: 'file',
-                header: {
-                  'content-type': 'multipart/form-data'
-                },
-                formData: {
-                  'token': app.globalData.token,
-                },
-                success: function (res) {
-                  let avatar = JSON.parse(res.data)
-                  that.setData({
-                    avatar: avatar.data
-                  })
-                  console.log(that.data.avatar)
-                  that.setData({
-                    image: that.data.avatar
-                  })
-                  app.globalData.image = that.data.image
-                  if (that.data.image) {
-                    wx.navigateTo({
-                      url: 'select/select',
+                })
+              }
+            })
+          } else if (res.tapIndex == 1) {
+            wx.chooseImage({
+              count: 1,
+              sizeType: ['original', 'compressed'],
+              sourceType: ['album'],
+              success(res) {
+                const tempFilePaths = res.tempFilePaths
+                wx.uploadFile({
+                  url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                  filePath: tempFilePaths[0],
+                  name: 'file',
+                  header: {
+                    'content-type': 'multipart/form-data'
+                  },
+                  formData: {
+                    'token': app.globalData.token,
+                  },
+                  success: function (res) {
+                    let avatar = JSON.parse(res.data)
+                    that.setData({
+                      avatar: avatar.data
                     })
-                  }
-                }
-              })
-            }
-          })
-        } else if (res.tapIndex == 3){
-          wx.chooseVideo({
-            sourceType: ['camera'],
-            maxDuration: 60,
-            camera: 'back',
-            success(res) {
-              // tempFilePath可以作为img标签的src属性显示图片
-              const tempFilePath = res.tempFilePath
-              console.log(tempFilePath)
-              wx.uploadFile({
-                url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
-                filePath: tempFilePath,
-                name: 'file',
-                header: {
-                  'content-type': 'multipart/form-data'
-                },
-                formData: {
-                  'token': app.globalData.token,
-                },
-                success: function (res) {
-                  let avatar = JSON.parse(res.data)
-                  that.setData({
-                    avatar: avatar.data
-                  })
-                  console.log(that.data.avatar)
-                  that.setData({
-                    image: that.data.avatar
-                  })
-                  app.globalData.image = that.data.image
-                  if (that.data.image) {
-                    wx.navigateTo({
-                      url: 'select/select',
+                    console.log(that.data.avatar)
+                    that.setData({
+                      image: that.data.avatar
                     })
+                    app.globalData.image = that.data.image
+                    if (that.data.image) {
+                      wx.navigateTo({
+                        url: 'selectimg/selectimg',
+                      })
+                    }
                   }
-                }
-              })
-            }
-          })
+                })
+              }
+            })
+
+          } else if (res.tapIndex == 2) {
+            wx.chooseVideo({
+              sourceType: ['album'],
+              maxDuration: 60,
+              camera: 'back',
+              success(res) {
+                // tempFilePath可以作为img标签的src属性显示图片
+                const tempFilePath = res.tempFilePath
+                console.log(tempFilePath)
+                wx.uploadFile({
+                  url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                  filePath: tempFilePath,
+                  name: 'file',
+                  header: {
+                    'content-type': 'multipart/form-data'
+                  },
+                  formData: {
+                    'token': app.globalData.token,
+                  },
+                  success: function (res) {
+                    let avatar = JSON.parse(res.data)
+                    that.setData({
+                      avatar: avatar.data
+                    })
+                    console.log(that.data.avatar)
+                    that.setData({
+                      image: that.data.avatar
+                    })
+                    app.globalData.image = that.data.image
+                    if (that.data.image) {
+                      wx.navigateTo({
+                        url: 'select/select',
+                      })
+                    }
+                  }
+                })
+              }
+            })
+          } else if (res.tapIndex == 3) {
+            wx.chooseVideo({
+              sourceType: ['camera'],
+              maxDuration: 60,
+              camera: 'back',
+              success(res) {
+                // tempFilePath可以作为img标签的src属性显示图片
+                const tempFilePath = res.tempFilePath
+                console.log(tempFilePath)
+                wx.uploadFile({
+                  url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                  filePath: tempFilePath,
+                  name: 'file',
+                  header: {
+                    'content-type': 'multipart/form-data'
+                  },
+                  formData: {
+                    'token': app.globalData.token,
+                  },
+                  success: function (res) {
+                    let avatar = JSON.parse(res.data)
+                    that.setData({
+                      avatar: avatar.data
+                    })
+                    console.log(that.data.avatar)
+                    that.setData({
+                      image: that.data.avatar
+                    })
+                    app.globalData.image = that.data.image
+                    if (that.data.image) {
+                      wx.navigateTo({
+                        url: 'select/select',
+                      })
+                    }
+                  }
+                })
+              }
+            })
+          }
         }
-      }
-    })
+      })
+    }
   },
 
 
@@ -219,7 +226,17 @@ Page({
         });
       }
     })
-    
+
+    api.postJSON('api/sharing/sharing_info', {
+      token: app.globalData.token,
+    },function (res) {
+      if (res.data.status == 1) {
+        that.setData({
+          draft: res.data.data
+        })
+        console.log(res)
+      }
+    })
 
   },
 
@@ -259,8 +276,9 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    
-    this.GetList(this); //页面初次展示调用第一次数据，比如说5条记录
+    var that=this
+    that.GetList(that);
+    that.onLoad()
   },
 
   /**

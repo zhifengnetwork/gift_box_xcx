@@ -34,8 +34,6 @@ App({
 
               //回调
               cb && cb(that.globalData.userInfo)
-            
-              console.log(that.globalData.userInfo)
             }
           })
         }
@@ -99,6 +97,7 @@ App({
     image:[],
     type:'',
     music_id:'',
+    caogao:'',
   }
 
 

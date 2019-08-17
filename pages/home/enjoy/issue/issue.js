@@ -65,7 +65,7 @@ Page({
           if (that.data.topic) {
             console.log(456)
             // 判断地点
-            if (that.datalat || that.data.lon) {
+            if (that.data.lat || that.data.lon) {
               // console.log(567)
               // 万事俱备，请求接口
               // let txet = JSON.parse(that.data.biaoqian)
@@ -92,9 +92,10 @@ Page({
                     success: function(res) {
                       setTimeout(function () {
                         wx.hideToast();
-                        wx.navigateBack({
+                        wx.reLaunch({
                           url: '../enjoy',
                         })
+                        
                       }, 1000);
                     }
                   })
@@ -172,24 +173,35 @@ Page({
         biaoqing: app.globalData.biaoqing
       })
     }
-    // if (options.biaoqian) {
-    //   that.setData({
-    //     biaoqian: options.biaoqian,
-    //   })
-    //   console.log(that.data.biaoqian)
-    // }
-    // if (options.biaoqing) {
-    //   that.setData({
-    //     biaoqing: options.biaoqing
-    //   })
-    //   console.log(that.data.biaoqing)
-    // }
     if (app.globalData.image) {
       let image = []
       image = image.concat(app.globalData.image)
       that.setData({
         images: image,
         tupian: image
+      })
+    }
+
+    // 如果是有草稿箱的情况
+    if (app.globalData.caogao){
+      api.postJSON('api/sharing/sharing_info', {
+        token: app.globalData.token,
+      }, function (res) {
+        if (res.data.status == 1) {
+          console.log(res)
+          that.setData({
+            images: res.data.data.priture,
+            inputValue: res.data.data.title,
+            content: res.data.data.content,
+            type: res.data.data.type,
+            biaoqian: res.data.data.text,
+            biaoqing: res.data.data.text,
+            music_id: res.data.data.music_id,
+            lat: res.data.data.lat,
+            lon: res.data.data.lon,
+            // topic: res.data.data.topic_id
+          })
+        }
       })
     }
   },
@@ -242,20 +254,68 @@ Page({
   onShareAppMessage: function() {
 
   },
-  chooseImage(e) {
+  // chooseImage(e) {
+  //   wx.chooseImage({
+  //     sizeType: ['original', 'compressed'], //可选择原图或压缩后的图片
+  //     sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
+  //     success: res => {
+  //       const images = this.data.images.concat(res.tempFilePaths)
+  //       // 限制最多只能留下3张照片
+  //       const images1 = images.length <= 9 ? images : images.slice(0, 9)
+  //       this.setData({
+  //         images: images1
+  //       })
+  //     }
+  //   })
+  // },
+
+  chooseImage:function(e){
+    let that = this
     wx.chooseImage({
-      sizeType: ['original', 'compressed'], //可选择原图或压缩后的图片
-      sourceType: ['album', 'camera'], //可选择性开放访问相册、相机
-      success: res => {
-        const images = this.data.images.concat(res.tempFilePaths)
-        // 限制最多只能留下3张照片
-        const images1 = images.length <= 9 ? images : images.slice(0, 9)
-        this.setData({
-          images: images1
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album'],
+      success(res) {
+        const tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+          filePath: tempFilePaths[0],
+          name: 'file',
+          header: {
+            'content-type': 'multipart/form-data'
+          },
+          formData: {
+            'token': app.globalData.token,
+          },
+          success: function (res) {
+            let avatar = JSON.parse(res.data)
+            that.setData({
+              avatar: avatar.data
+            })
+            console.log(that.data.avatar)
+            // that.setData({
+            //   image: that.data.avatar
+            // })
+            // let image = []
+            const images1 = that.data.images.concat(that.data.avatar)
+            const images2 = images1.length <= 3 ? images1 : images1.slice(0, 3)
+            that.setData({
+              images: images2
+            })
+            // if (that.data.image) {
+            //   wx.navigateTo({
+            //     url: '../selectimg/selectimg',
+            //   })
+            // }
+          }
         })
       }
     })
   },
+
+
+
+
   removeImage(e) {
     var that = this;
     var images = that.data.images;

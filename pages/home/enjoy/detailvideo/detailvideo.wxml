@@ -6,7 +6,7 @@
   <movable-area class="imgbox" bindtap="guanbi">
     <!-- 视频 -->
     <view wx:for="{{priture}}" wx:key="imgs" class="videobox">
-      <video id="myVideo" src="{{item}}" bindtap="audioplay" bindpause="audiopause" autoplay loop show-play-btn="{{false}}" show-fullscreen-btn="{{false}}" muted></video>
+      <video id="myVideo" src="{{item}}" bindtap="audioplay" bindpause="audiopause" autoplay loop show-play-btn="{{false}}" show-fullscreen-btn="{{false}}" muted controls='{{controls}}'></video>
       <audio src="{{music}}" id="myAudio"></audio>
     </view>
     <movable-view class="popupimg" wx:for="{{biaoqing}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
@@ -28,4 +28,52 @@
     <view class="title">{{title}}</view>
     <view class="content">{{content}}</view>
   </view>
+  <!-- 评论,点赞 -->
+  <view class="commentear">
+    <textarea class="weui-textarea" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;color:white;" bindblur="changeContext"  value="{{hhh}}" wx:if="{{xianshistauts}}" bindtap="showcomments" disabled="{{true}}"/>
+    <view class="aixinear" bindtap="dianzang">
+      <image src="../../../public/images/home/aixinan2.png" class="aixinan2" wx:if="{{!point_count}}"></image>
+      <image src="../../../public/images/home/aixinxuanze2.png" class="aixinan2" wx:if="{{point_count}}"></image>
+      <text class="dianzangshu">{{point_num}}</text>
+    </view>
+    <view class="shoucangear" bindtap="shoucang">
+      <image src="../../../public/images/home/soucang1.png" class="shoucange2" wx:if="{{!collection_count}}"></image>
+       <image src="../../../public/images/home/soucangxuan1.png" class="shoucange2" wx:if="{{collection_count}}"></image>
+      <text class="dianshoucang">{{collection_num}}</text>
+    </view>
+    <view class="xinxiear" bindtap="showcomments">
+      <image src="../../../public/images/home/xinxi.png" class="xinxi2"></image>
+      <text class="dianxinxi">{{comments.length}}</text>
+    </view>
+  </view>
+  <view class="mask" wx:if="{{maskstatus}}">
+    <image src="../../../public/images/home/closecuo.png" class="cha" bindtap="guandiao"></image>
+    <view class="title_comments">评论列表</view>
+    <view class="pinglun_ear">
+      <view class="ear" wx:for="{{comments}}" wx:key bindtap="huifu" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
+        <view class="nick_name_ear">{{itemname.nickname}}:</view>
+        <text class="comment_text">{{itemname.content}}</text>
+        <view class="flex">
+          <view class="yingcang" wx:if="{{itemname.list.length}}">{{itemname.nickname}}:</view>
+          <view class="huifuear" wx:if="{{itemname.list.length}}">
+            <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui">
+              <view class="huifucontext">{{xijinzui.nickname}}:{{xijinzui.content}}</view>
+            </view>
+          </view>
+        </view>
+      </view>
+    </view>
+    <!-- 底部评论文本域 -->
+    <view class="dibu">
+         <image src="{{avatar}}" class="touxiangdd"></image>
+         <textarea class="weui-textarea2" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;"  focus="{{focus}}" value="{{hhh}}" bindinput="bind"/>
+         <view class="fasong" bindtap="song">发送</view>
+    </view>
+    
+  </view>
+
+
+
+
+
 </view>

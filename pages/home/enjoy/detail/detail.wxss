@@ -139,22 +139,29 @@ swiper{
   margin-left: 3rpx
 }
 .second{
-   position: relative;
-   left: 0rpx;
-   width: 20%;
-   text-align: left;
-  
+   position: relative!important;
+   left: 0rpx !important;
+   width: 20% !important;
+   height: 60rpx !important;
+   text-align: left !important;
+   display: inline-block;
+   background: none;
+}
+ button::after { border: none; }
+.button-hover{
+  color: rgba(0, 0, 0, 1)!important;
+  background-color: white!important
 }
 .aixin2{
-  width: 40rpx!important;
-  height: 40rpx;
+  width: 45rpx!important;
+  height: 45rpx;
   position: absolute;
-  top: -43rpx
+  top: 11rpx;
 }
 .tiaoshu2{
   position: absolute;
-  top: -60rpx;
-  left: 45rpx;
+  top: -15rpx;
+  left: 85rpx;
   font-size: 28rpx
 }
 .three{
@@ -176,7 +183,7 @@ swiper{
 .comment_ear{
   width: 90%;
   margin-left: 5%;
-  background: #f6f5f5;
+  /* background: #f6f5f5; */
   border-radius: 10rpx;
   margin-top: 15rpx
 }
@@ -206,19 +213,22 @@ swiper{
 .white_ear{
   width:92%;
   margin-left: 4%;
-  margin-top: 20rpx
+  margin-top: 40rpx;
+  padding-bottom: 100rpx
 }
 .white_pic{
   width: 7%;
   height: 55rpx;
-  position: absolute
+  position: absolute;
+  left: 40rpx
 }
 .weui-textarea{
   width: 70%;
+  height: 40rpx;
   font-size: 32rpx;
   padding-top: 20rpx;
   position: absolute;
-  left: 135rpx
+  left: 105rpx
 }
 .ear:last-child{
   padding-bottom: 20rpx
@@ -234,7 +244,12 @@ swiper{
 }
 .huifucontext{
   font-size: 30rpx;
-  padding-left: 40rpx;
+  display: inline-block
+}
+.huifuear{
+  background: #f6f5f5;
+  border-radius: 20rpx;
+  padding: 0 15rpx 15rpx 15rpx;
 }
 .imgbox{
   z-index: 2;
@@ -263,4 +278,13 @@ swiper{
   font-size: 30rpx;
   height:auto;
   width: auto;
+}
+.flex{
+  display: flex;
+}
+.yingcang{
+  font-size: 34rpx;
+  font-weight: bolder;
+  display: inline-block;
+  color: transparent;
 }

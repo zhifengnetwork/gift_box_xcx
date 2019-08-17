@@ -1,6 +1,6 @@
 <component title='享物圈' show_bol='{{false}}' side="{{true}}" quan="{{true}}" heise="{{true}}" my_class="{{true}}"></component>
 <movable-area class="imgbox" bindtap="guanbi">
-  <image src="{{image}}"></image>
+  <image src="{{image}}" mode="aspectFill"></image>
   <!-- 拖拽的表情 -->
   <movable-view class="popupimg" wx:for="{{xxx}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" bindtouchend="tuozhuai">
     <image src="{{item.img}}"></image>

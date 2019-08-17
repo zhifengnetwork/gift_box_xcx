@@ -8,7 +8,7 @@
 </view>
 <view class="{{currentTab == 0 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
-    <view class="box" wx:for="{{music}}">
+    <view class="box" wx:for="{{music}}" wx:key>
       <view class="box_l" data-ind="{{index}}" bindtap="bofang">
         <view class="boximg">
           <image src="/images/play.png"></image>

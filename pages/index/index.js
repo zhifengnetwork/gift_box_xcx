@@ -94,7 +94,8 @@ Page({
     })
   },
   onShow: function () {
-    wx.showTabBar();
+    // 显示底部滚动条
+    // wx.showTabBar();
     // this.setData({
     //   currentSwiper: 0
     // })
