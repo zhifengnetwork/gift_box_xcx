@@ -32,13 +32,13 @@
         </swiper>
         <!--重置小圆点的样式 -->
       </view>
-      <!-- <view class="dots">
+    </view>
+  </movable-area>
+  <view class="dots">
     <block wx:for="{{priture}}" wx:key>
       <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
     </block>
-  </view> -->
-    </view>
-  </movable-area>
+  </view>
 
 
   <!-- 文字介绍 -->
@@ -54,10 +54,10 @@
       <image class="aixin" src="../../../public/images/home/aixin.png" wx:else bindtap="dianji"></image>
       <text class="tiaoshu">{{detaillist.point_num}}</text>
     </view>
-    <view class="second">
+    <button class="second" open-type="share">
       <image class="aixin2" src="../../../public/images/home/zhuanfa.png"></image>
       <text class="tiaoshu2">{{detaillist.forward_num}}</text>
-    </view>
+    </button>
     <view class="three">
       <image class="aixin3" src="../../../public/images/home/soucang.png" bindtap="collect" wx:if="{{detaillist.collection_count === 0 ? true : false}}"></image>
       <image class="aixin3" src="../../../public/images/home/soucangxuan.png" bindtap="collect" wx:else></image>
@@ -74,12 +74,12 @@
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
         <text class="comment_text">{{itemname.content}}</text>
         <view class="flex">
-            <view class="yingcang" wx:if="{{itemname.list.length}}">{{itemname.nickname}}:</view>
-            <view class="huifuear" wx:if="{{itemname.list.length}}">
-              <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui">
-                <view class="huifucontext">{{xijinzui.nickname}}:{{xijinzui.content}}</view>
-              </view>
+          <view class="yingcang" wx:if="{{itemname.list.length}}">{{itemname.nickname}}:</view>
+          <view class="huifuear" wx:if="{{itemname.list.length}}">
+            <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui">
+              <view class="huifucontext">{{xijinzui.nickname}}:{{xijinzui.content}}</view>
             </view>
+          </view>
         </view>
 
 
@@ -96,13 +96,13 @@
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
         <text class="comment_text">{{itemname.content}}</text>
         <view class="flex">
-              <view class="yingcang" wx:if="{{itemname.list.length}}">{{itemname.nickname}}:</view>
-              <view class="huifuear" wx:if="{{itemname.list.length}}">
-                <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui">
-                  <view class="huifucontext">{{xijinzui.nickname}}:{{xijinzui.content}}</view>
-                </view>
-              </view>
+          <view class="yingcang" wx:if="{{itemname.list.length}}">{{itemname.nickname}}:</view>
+          <view class="huifuear" wx:if="{{itemname.list.length}}">
+            <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui">
+              <view class="huifucontext">{{xijinzui.nickname}}:{{xijinzui.content}}</view>
+            </view>
           </view>
+        </view>
 
       </view>
     </view>
@@ -114,7 +114,7 @@
 
     <view class="white_ear">
       <image src="../../../../images/white.png" class="white_pic"></image>
-      <textarea class="weui-textarea" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;" bindblur="changeContext"  focus="{{focus}}" value="{{hhh}}" />
+      <textarea class="weui-textarea" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;" bindblur="changeContext" focus="{{focus}}" value="{{hhh}}" />
     </view>
 
   </view>

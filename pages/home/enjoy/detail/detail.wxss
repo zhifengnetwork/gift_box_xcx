@@ -139,22 +139,29 @@ swiper{
   margin-left: 3rpx
 }
 .second{
-   position: relative;
-   left: 0rpx;
-   width: 20%;
-   text-align: left;
-  
+   position: relative!important;
+   left: 0rpx !important;
+   width: 20% !important;
+   height: 60rpx !important;
+   text-align: left !important;
+   display: inline-block;
+   background: none;
+}
+ button::after { border: none; }
+.button-hover{
+  color: rgba(0, 0, 0, 1)!important;
+  background-color: white!important
 }
 .aixin2{
-  width: 40rpx!important;
-  height: 40rpx;
+  width: 45rpx!important;
+  height: 45rpx;
   position: absolute;
-  top: -43rpx
+  top: 11rpx;
 }
 .tiaoshu2{
   position: absolute;
-  top: -60rpx;
-  left: 45rpx;
+  top: -15rpx;
+  left: 85rpx;
   font-size: 28rpx
 }
 .three{
