@@ -97,7 +97,7 @@
   box-sizing: border-box;
   margin-right: 50rpx;
   overflow-y:hidden;
-  border:6rpx solid #fce828
+  /* border:6rpx solid #fce828 */
 }
 .img_item1{
   width: 170rpx;
@@ -114,7 +114,7 @@
   background: -moz-linear-gradient( #fff, #a0a0a0); /* Firefox 3.6 - 15 */
   background: linear-gradient( #fff, #a0a0a0); /* 标准的语法,必须放最后 */
   position: relative;
-  border:6rpx solid #fce828
+  /* border:6rpx solid #fce828 */
 }
 .add{
   width: 50rpx;
