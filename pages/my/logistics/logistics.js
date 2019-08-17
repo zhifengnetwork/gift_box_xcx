@@ -25,14 +25,18 @@ Page({
       // 'order_id': 3232,
     }, function (res) {
       if (res.data.status == 1) {
-        for (let i = 0; i < res.data.data.list.length;i++){
-          over = i;
+        
+        if (res.data.data.length !=0){
+            for (let i = 0; i < res.data.data.list.length;i++){
+              over = i;
+            }
+            that.setData({
+              item: res.data.data,
+              over: over,
+              logistics: res.data.data.list.reverse()
+            })
         }
-        that.setData({
-          item: res.data.data,
-          over: over,
-          logistics: res.data.data.list.reverse()
-        })
+        
       }
       console.log(res.data.data)
     })
@@ -85,5 +89,12 @@ Page({
    */
   onShareAppMessage: function () {
 
+  },
+  // 跳转到客服页面
+  servie:function(){
+    wx.navigateTo({
+      url: '../service/service'
+    })
   }
+
 })

@@ -59,7 +59,7 @@ page{
   font-family:SourceHanSansCN-Regular;
   font-weight:bold;
   color:#FF96A2;
-  line-height:52rpx;
+  line-height:44rpx;
 }
 .yiguanzhu{
   width:100rpx;

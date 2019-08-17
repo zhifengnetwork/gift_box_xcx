@@ -17,6 +17,8 @@ Page({
     xingxuanyoupin: [],
     guess_like: [],
     chaoliudaogou: [],
+    sharing_name:[],
+    sharing:[],
     // indicatorActivecolor: 'red',
     // 头部导航栏的高度
     // statusBarHeight: app.globalData.statusBarHeight,
@@ -89,6 +91,8 @@ Page({
           guess_like: res.data.data.cainixihuan,
           chaoliudaogou: res.data.data.chaoliudaogou,
           imgs: res.data.data.banner,
+          sharing_name: res.data.data.sharing_name,
+          sharing: res.data.data.sharing
         })
       }
     })

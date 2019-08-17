@@ -45,8 +45,9 @@ page{
   display: block;
 }
 .xbox{
+  width: 75%;
   position: absolute;
-  bottom: 150rpx;
+  bottom: 86rpx;
   left: 40rpx;
   z-index: 3;
 }
@@ -70,14 +71,26 @@ page{
   font-size: 32rpx;
 }
 .title{
-  line-height: 120rpx;
   color: #fff;
   font-size: 32rpx;
+  margin-top: 109rpx;
+  width: 75%;
+  height: 40rpx;
+  line-height: 40rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
 }
 .content{
-  line-height: 120rpx;
+  width: 75%;
+  height: 40rpx;
+  line-height: 40rpx;
+  margin-top: 10rpx;
   color: #fff;
   font-size: 32rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
 }
 .commentear{
   position: fixed;

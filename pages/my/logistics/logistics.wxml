@@ -7,7 +7,7 @@
     <view class="title_state">
       {{item.deliverystatus}}
     </view>
-    <view class="title_service">
+    <view class="title_service" bindtap="servie">
       <view>联系客服/投诉</view>
       <view>09:00-21:00</view>
     </view>

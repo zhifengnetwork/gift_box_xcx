@@ -56,6 +56,7 @@ page{
 .yiguanzhu{
   width:100rpx;
   height:48rpx;
+  line-height: 44rpx;
   border:2rpx solid #999999;
   border-radius:24rpx;
   font-size:22rpx;
@@ -63,5 +64,4 @@ page{
   font-family:SourceHanSansCN-Regular;
   font-weight:bold;
   color:rgba(153, 153, 153, 1);
-  line-height:52rpx;
 }

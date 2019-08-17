@@ -74,11 +74,21 @@
   </view>
 
 </view>
-<view class="xwq" bindtap="xwq">
+<!-- <view class="xwq" bindtap="xwq">
   <text>享物圈</text>
   <view></view>
-</view>
+</view> -->
 
+<!-- 享物圈 -->
+<text class="jiali_title">{{sharing_name.name}}</text>
+<text class="english">{{sharing_name.english}}</text>
+<view class="img_box">         
+  <view class="img_item" wx:for="{{sharing}}" wx:key  bindtap="xwq" data-id='{{item.id}}'>
+    <image src="{{item.cover}}" class="huadon" wx:if="{{!item.type}}"></image>
+    <video src="{{item.cover}}" class="huadon" wx:else controls="{{false}}" autoplay></video>
+  </view>
+</view>
+<!-- 佳礼 -->
 <text class="jiali_title">{{jiali.name}}</text>
 <text class="english">{{jiali.english}}</text>
 <view class="img_box">         
