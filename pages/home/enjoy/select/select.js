@@ -3,6 +3,7 @@ var app = getApp();
 // pages/home/enjoy/select/select.js
 Page({
 
+
   /**
    * 页面的初始数据
    */
@@ -284,19 +285,18 @@ Page({
     })
 
     var a = wx.getStorageSync('name')
-    console.log(a)
     if (a) {
       that.setData({
         name: a
       })
     }
+    
     var b = wx.getStorageSync('biaoqing')
     if (b) {
       that.setData({
         xxx: b
       })
     }
-    console.log(that.data.name)
     
     if(options.url){
       that.setData({
@@ -363,7 +363,7 @@ Page({
           music_one: res.data.data[0].id,
           musicone: res.data.data[0].url
         })
-        console.log(that.data.music)
+      
       }
     })
     

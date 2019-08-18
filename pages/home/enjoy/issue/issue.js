@@ -1,6 +1,6 @@
 var api = require('../../../../utils/api');
 var app = getApp();
-// pages/home/enjoy/ issue/ issue.js
+
 Page({
 
   /**
@@ -21,15 +21,16 @@ Page({
     biaoqing: '',
     biaoqian: '',
     tupian: '',
-    pageid:'',
     music_id:'',
     type:'',
+    caogao:''
   },
 
   // 点击跳转到话题页面
   topic: function() {
+    var that = this
     wx.navigateTo({
-      url: '../topic/topic',
+      url: '../topic/topic?caogao=' + that.data.caogao,
     })
   },
 
@@ -70,6 +71,15 @@ Page({
               // 万事俱备，请求接口
               // let txet = JSON.parse(that.data.biaoqian)
               // let text2 = JSON.parse(that.data.biaoqing)
+
+              if (that.data.type == '' || !that.data.type){
+                wx.showModal({
+                  title: '类型不能为空',
+                  content: '类型不能为空',
+                })
+                return false;
+              }
+
               api.postJSON('api/sharing/add_Sharing', {
                 token: app.globalData.token,
                 priture: that.data.images.join(','),
@@ -142,8 +152,16 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    var caogao = options.caogao == undefined ? "" : options.caogao;
+    console.log('是不是草稿箱：' + caogao)
+    
+    this.setData({
+      caogao: caogao
+    })
+
+    console.log('选了类型:' + app.globalData.type)
     let that = this
-    console.log(app.globalData.type)
+    
     if (app.globalData.type){
       that.setData({
         type: app.globalData.type
@@ -173,6 +191,11 @@ Page({
         biaoqing: app.globalData.biaoqing
       })
     }
+
+    console.log('======image======')
+    console.log(app.globalData.image)
+    console.log('======image======')
+
     if (app.globalData.image) {
       let image = []
       image = image.concat(app.globalData.image)
@@ -183,7 +206,9 @@ Page({
     }
 
     // 如果是有草稿箱的情况
-    if (app.globalData.caogao){
+    if (options.caogao == 1){
+      console.log('有草稿箱' + options.caogao)
+
       api.postJSON('api/sharing/sharing_info', {
         token: app.globalData.token,
       }, function (res) {
@@ -199,10 +224,21 @@ Page({
             music_id: res.data.data.music_id,
             lat: res.data.data.lat,
             lon: res.data.data.lon,
-            // topic: res.data.data.topic_id
+            topic: res.data.data.topic_name
           })
+
+          var topic = options.topic == undefined ? "" : options.topic;
+          if(topic){
+            that.setData({
+              topic: topic
+            })
+          }
+
         }
       })
+
+     
+
     }
   },
 
@@ -270,6 +306,8 @@ Page({
   // },
 
   chooseImage:function(e){
+    console.log('选择图片')
+    
     let that = this
     wx.chooseImage({
       count: 1,
@@ -368,6 +406,9 @@ Page({
       xianshi: false
     })
   },
+/**
+ * 保存草稿
+ */
   sure: function() {
     let that = this
     that.setData({
@@ -375,6 +416,16 @@ Page({
     })
     console.log(that.data.biaoqian)
     console.log(that.data.biaoqing)
+
+    var type = this.data.type;
+    if (type == '' || !type) {
+      wx.showModal({
+        title: '类型type不能为空',
+        content: '类型type不能为空',
+      })
+      return false;
+    }
+
     api.postJSON('api/sharing/add_Sharing', {
       token: app.globalData.token,
       priture: that.data.images.join(','),
@@ -387,7 +438,7 @@ Page({
       text2: JSON.stringify(that.data.biaoqing),
       music_id: that.data.music_id,
       status: 1,
-      type: that.data.pageid
+      type: type
     }, function(res) {
       if (res.data.status == 1) {
         console.log(res)
@@ -397,9 +448,11 @@ Page({
           success: function (res) {
             setTimeout(function () {
               wx.hideToast();
+
               wx.navigateBack({
-                url: '../enjoy',
+                delta: 2,
               })
+
             }, 1000);
           }
         })
@@ -465,15 +518,39 @@ Page({
       console.log(res.data)
     })
 
-    wx.navigateBack({
-      url: '../enjoy',
+    wx.navigateBack({//返回
+      delta:2
     })
+
   },
   sure2: function() {
     let that = this
     that.setData({
       xianshi2: false
     })
+    
+
+    var type = this.data.type;
+    if (type == '' || !type) {
+      wx.showModal({
+        title: '类型type不能为空',
+        content: '类型type不能为空',
+      })
+      return false;
+    }
+
+    console.log("----")
+    console.log(that.data.images)
+    console.log("----")
+
+    if (that.data.images == undefined){
+      wx.showModal({
+        title: '没有images',
+        content: '没有images',
+      })
+      return false;
+    }
+
     api.postJSON('api/sharing/add_Sharing', {
       token: app.globalData.token,
       priture: that.data.images.join(','),
@@ -485,7 +562,7 @@ Page({
       txet: JSON.stringify(that.data.biaoqian),
       text2: JSON.stringify(that.data.biaoqing),
       status: 1,
-      type: that.data.pageid,
+      type: type,
       music_id: that.data.music_id
     }, function(res) {
       if (res.data.status == 1) {
@@ -497,7 +574,7 @@ Page({
             setTimeout(function() {　　　　
               wx.hideToast();
               wx.navigateBack({
-                url: '../enjoy',
+                delta: 2,
               })　　
             }, 1000);
           }

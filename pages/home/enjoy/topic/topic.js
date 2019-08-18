@@ -22,6 +22,7 @@ Page({
     pid: 1,
     topic:'',
     list:'',
+    caogao:''
   },
 
   //查询关注数据列表
@@ -243,9 +244,10 @@ Page({
 
   // 点击创建新话题
   kong:function(){
+
     let that = this
     wx.navigateTo({
-      url: '../issue/issue?topic=' + that.data.list,
+      url: '../issue/issue?caogao=' + that.data.caogao + '&topic=' + that.data.list,
     })
   },
 
@@ -253,6 +255,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    var caogao = options.caogao == undefined ? "" : options.caogao;
+    this.setData({
+      caogao:caogao
+    })
+
+    console.log('是否 '+caogao)
+
     let that = this
     api.postJSON('api/sharing/join_topic', {
       token: app.globalData.token,

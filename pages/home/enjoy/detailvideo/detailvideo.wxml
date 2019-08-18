@@ -9,7 +9,7 @@
       <video id="myVideo" src="{{item}}" bindtap="audioplay" bindpause="audiopause" autoplay loop show-play-btn="{{false}}" show-fullscreen-btn="{{false}}" muted controls='{{controls}}'></video>
       <audio src="{{music}}" id="myAudio"></audio>
     </view>
-    <movable-view class="popupimg" wx:for="{{biaoqing}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
+    <movable-view class="popupimg" wx:for="{{biaoqing}}" wx:key x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
       <image src="{{item.img}}"></image>
     </movable-view>
   </movable-area>
