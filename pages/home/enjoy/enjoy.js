@@ -28,6 +28,11 @@ Page({
   // 上传图片或视频按钮
   upimg: function() {
     let that = this
+
+    console.log("================")
+    console.log(that.data.draft)
+    console.log("================")
+
     if(that.data.draft){
       app.globalData.caogao = 1,
       wx.navigateTo({
