@@ -96,8 +96,8 @@ App({
     biaoqian:[],
     image:[],
     type:'',
-    music_id:'',
-    caogao:'',
+    music_id:''
+   
   }
 
 

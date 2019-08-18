@@ -14,7 +14,7 @@
 
 <!-- tab切换 -->
 <scroll-view class="swiper-tab" scroll-x wx:if="{{!list}}" >
-  <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{item}}">
+  <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{item}}" wx:key>
     <view class="touming" data-current="{{index}}"></view>
     <view class="tabimgbox">
       <image src="{{item.img}}"></image>
@@ -25,7 +25,7 @@
 
 <!-- <view class="show">
   <scroll-view class="yonghu_ear"> -->
-    <view class="topicbox" wx:for="{{itemlist}}" bindtap="topic" data-name="{{item.name}}">
+    <view class="topicbox" wx:for="{{itemlist}}" bindtap="topic" data-name="{{item.name}}" wx:key>
       <view class="topic_l"># {{item.name}}</view>
       <view class="topic_r">
         <view class="topic_rimgbox">

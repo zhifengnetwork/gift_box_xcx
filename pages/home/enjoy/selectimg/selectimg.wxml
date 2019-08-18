@@ -2,12 +2,12 @@
 <movable-area class="imgbox" bindtap="guanbi">
   <image src="{{image}}" mode="aspectFill"></image>
   <!-- 拖拽的表情 -->
-  <movable-view class="popupimg" wx:for="{{xxx}}" x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" bindtouchend="tuozhuai">
+  <movable-view class="popupimg" wx:for="{{xxx}}" wx:key x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" bindtouchend="tuozhuai">
     <image src="{{item.img}}"></image>
   </movable-view>
 
   <!-- 拖拽的标签 -->
-  <movable-view class="popuptext"  x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{name}}" data-index="{{index}}" bindtouchend="biaoqian">
+  <movable-view class="popuptext"  x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{name}}" wx:key data-index="{{index}}" bindtouchend="biaoqian">
     <!-- <image src="{{item.img}}"></image> -->
     <text>{{item.name}}</text>
   </movable-view>
@@ -31,7 +31,7 @@
 <view class="popup" wx:if="{{popup}}">
   <view class="zhezhao"></view>
   <view class="facebox">
-    <view class="faceimgbox" wx:for="{{face}}" bindtap="popup" data-index="{{index}}">
+    <view class="faceimgbox" wx:for="{{face}}" wx:key bindtap="popup" data-index="{{index}}">
       <image src="{{item}}"></image>
     </view>
   </view>

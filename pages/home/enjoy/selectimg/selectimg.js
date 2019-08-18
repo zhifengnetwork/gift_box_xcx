@@ -125,10 +125,7 @@ Page({
       wx.setStorageSync('biaoqing', app.globalData.biaoqing);
     console.log(that.data.xxx)
   },
-
-
-
-
+  
   /**
    * 生命周期函数--监听页面加载
    */
@@ -140,7 +137,7 @@ Page({
     })
     // wx.setStorageSync('image', that.data.image);
     var a = wx.getStorageSync('name')
-    console.log(a)
+   
     if(a){
       that.setData({
         name: a
@@ -152,7 +149,7 @@ Page({
         xxx: b
       })
     }
-    console.log(that.data.name)
+   
   },
 
   /**

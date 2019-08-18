@@ -34,9 +34,9 @@ Page({
     console.log("================")
 
     if(that.data.draft){
-      app.globalData.caogao = 1,
+    
       wx.navigateTo({
-        url: 'issue/issue?',
+        url: 'issue/issue?caogao=1',
       })
     }else{
       wx.showActionSheet({
@@ -200,14 +200,25 @@ Page({
     }
   },
 
-
-
-
-
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
+  onLoad: function() {
+    
+  },
+  /**
+   * 生命周期函数--监听页面显示
+   */
+  onShow: function () {
+    this.GetList(this);
+    this.loadData()
+  },
+
+  /**
+   * 加载数据
+   */
+  loadData: function () {
+
     var that = this;
     //缓冲提醒
     // wx.showToast({
@@ -218,7 +229,6 @@ Page({
     //分页代码:获取系统的参数，scrollHeight数值,微信必须要设置style:height才能监听滚动事件
     wx.getSystemInfo({
       success: function(res) { 
-        console.info(res.windowHeight)
         that.setData({
           scrollHeight: res.windowHeight
         })
@@ -233,6 +243,7 @@ Page({
       }
     })
 
+    //储存草稿
     api.postJSON('api/sharing/sharing_info', {
       token: app.globalData.token,
     },function (res) {
@@ -240,9 +251,9 @@ Page({
         that.setData({
           draft: res.data.data
         })
-        console.log(res)
       }
     }),
+
     // 请求tab切换下面那一块的数据
       api.getJSON('/api/sharing/sharing_list?num=8' + '&topic_id=' + that.data.topic_id + '&page=1&token=' + app.globalData.token, function (res) {
         if (res.data.status == 1) {
@@ -252,6 +263,7 @@ Page({
 
   },
 
+ 
 
   GetList: function(that) {
    
@@ -284,14 +296,7 @@ Page({
 
   },
 
-  /**
-   * 生命周期函数--监听页面显示
-   */
-  onShow: function() {
-    var that=this
-    that.GetList(that);
-    that.onLoad()
-  },
+ 
 
   /**
    * 生命周期函数--监听页面隐藏
