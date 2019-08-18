@@ -330,7 +330,22 @@ Page({
   //     console.log(res)
   //   })
   // },
-
+  // 跳转到商品详情
+  details: function (e) {
+    let that = this
+    that.setData({
+      id: e.currentTarget.dataset.id,
+    })
+    if (e.currentTarget.dataset.type == 0) {
+      wx.navigateTo({
+        url: '../../home/enjoy/detail/detail?id=' + that.data.id,
+      })
+    } else if (e.currentTarget.dataset.type == 1) {
+      wx.navigateTo({
+        url: 'detailvideo/detailvideo?id=' + that.data.id,
+      })
+    }
+  },
 
 
 
