@@ -188,7 +188,7 @@ Page({
         token: app.globalData.token,
       }, function (res) {
         if (res.data.status == 1) {
-          console.log(res)
+         
           that.setData({
             images: res.data.data.priture,
             inputValue: res.data.data.title,
@@ -459,6 +459,12 @@ Page({
     this.setData({
       xianshi2: false
     })
+
+    //删掉草稿
+    api.postJSON('api/sharing/del_caogao', { token: app.globalData.token},function(res){
+      console.log(res.data)
+    })
+
     wx.navigateBack({
       url: '../enjoy',
     })
