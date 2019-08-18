@@ -409,8 +409,50 @@ Page({
       }
     })
   },
+  selectfengmian:function(){
+   var that=this
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album'],
+      success(res) {
+        const tempFilePaths = res.tempFilePaths
+        wx.uploadFile({
+          url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+          filePath: tempFilePaths[0],
+          name: 'file',
+          header: {
+            'content-type': 'multipart/form-data'
+          },
+          formData: {
+            'token': app.globalData.token,
+          },
+          success: function (res) {
+            let avatar = JSON.parse(res.data)
+            that.setData({
+              avatar: avatar.data
+            })
+            console.log(that.data.avatar)
+            // that.setData({
+            //   image: that.data.avatar
+            // })
+            // let image = []
+            // const images1 = that.data.images.concat(that.data.avatar)
+            // const images2 = images1.length <= 3 ? images1 : images1.slice(0, 3)
+            // that.setData({
+            //   images: images2
+            // })
+            // if (that.data.image) {
+            //   wx.navigateTo({
+            //     url: '../selectimg/selectimg',
+            //   })
+            // }
+          }
+        })
+      }
+    })  
 
-
+  },
   goBack: function() {
     this.setData({
       xianshi2: true

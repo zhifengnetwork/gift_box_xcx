@@ -18,7 +18,7 @@ Page({
   // 点击跳转到他人页面
   followlist:function(e){
     let that = this
-    // console.log(e.target.dataset.id)
+    console.log(e.target.dataset.id)
     for(var i = 0;i<that.data.item.length;i++){
       var user_id = that.data.item[e.target.dataset.id].user_id
     }

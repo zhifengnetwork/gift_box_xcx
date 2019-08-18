@@ -97,7 +97,6 @@
   box-sizing: border-box;
   margin-right: 50rpx;
   overflow-y:hidden;
-  /* border:6rpx solid #fce828 */
 }
 .img_item1{
   width: 170rpx;
@@ -108,13 +107,12 @@
   box-sizing: border-box;
   margin-right: 50rpx;
   overflow-y:hidden;
-  /* background: gray */
   background: -webkit-linear-gradient( #fff, #a0a0a0); /* Safari 5.1 - 6.0 */
   background: -o-linear-gradient( #fff, #a0a0a0); /* Opera 11.1 - 12.0 */
   background: -moz-linear-gradient( #fff, #a0a0a0); /* Firefox 3.6 - 15 */
   background: linear-gradient( #fff, #a0a0a0); /* 标准的语法,必须放最后 */
   position: relative;
-  /* border:6rpx solid #fce828 */
+ 
 }
 .add{
   width: 50rpx;

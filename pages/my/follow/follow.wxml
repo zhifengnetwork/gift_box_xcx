@@ -4,17 +4,17 @@
 <scroll-view class='dataContainer' scroll-y bindscrolltolower="nextDataPage" style="height:100%;">
   <view class="border_top"></view>
   <view class="follow_box" bindtap="followlist" wx:for="{{item}}" wx:key data-id="{{index}}">
-    <view class="follow_l">
-      <view class="follow_imgbox">
-        <image src="{{item.avatar}}" class="follow_img"></image>
+    <view class="follow_l"  bindtap="followlist" data-id="{{index}}">
+      <view class="follow_imgbox" bindtap="followlist" data-id="{{index}}">
+        <image src="{{item.avatar}}" class="follow_img" bindtap="followlist" data-id="{{index}}"></image>
       </view>
     </view>
-    <view class="follow_c">
-      <view class="follow_ct">{{item.nickname}}</view>
-      <view class="follow_cf">
-        <text>筆記·{{item.article_num}}</text>
-        <text class="follow_cf_text">|</text>
-        <text>粉絲·{{item.fans_num}}</text>
+    <view class="follow_c" bindtap="followlist" data-id="{{index}}">
+      <view class="follow_ct" bindtap="followlist" data-id="{{index}}">{{item.nickname}}</view>
+      <view class="follow_cf" bindtap="followlist" data-id="{{index}}">
+        <text bindtap="followlist" data-id="{{index}}">筆記·{{item.article_num}}</text>
+        <text class="follow_cf_text" bindtap="followlist" data-id="{{index}}">|</text>
+        <text bindtap="followlist" data-id="{{index}}">粉絲·{{item.fans_num}}</text>
       </view>
     </view>
     <view class="follow_r">

@@ -21,7 +21,7 @@
   <image src="../../../../images/jia.png" class="close_pic" class='uploadImgBtn' bindtap="chooseImage" wx:if="{{images.length < 9}}"></image>
 </view>
 <!-- 视频封面 -->
-<view class="videobox" wx:else>
+<view class="videobox" wx:else bindtap="selectfengmian">
   <video src="{{images}}" controls="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}"></video>
 </view>
 <!-- 填写标题 -->
