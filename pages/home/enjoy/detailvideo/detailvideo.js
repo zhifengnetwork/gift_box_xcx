@@ -260,6 +260,44 @@ Page({
       that.setData({ point_count: 1 })
     }
   },
+  // 关注按钮
+  guanzhu: function () {
+    let that = this
+    if (that.data.follow_count) {
+      wx.showModal({
+        content: '確認不再關注?',
+        success(res) {
+          if (res.confirm) {
+            that.setData({
+              follow_count: !that.data.follow_count
+            })
+            api.postJSON('api/sharing/add_follow', {
+              token: app.globalData.token,
+              follow_user_id: that.data.user_id
+            }, function (res) {
+              if (res.data.status == 1) {
+                console.log(res)
+              }
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+    } else {
+      that.setData({
+        follow_count: !that.data.follow_count
+      })
+      api.postJSON('api/sharing/add_follow', {
+        token: app.globalData.token,
+        follow_user_id: that.data.user_id
+      }, function (res) {
+        if (res.data.status == 1) {
+          console.log(res)
+        }
+      })
+    }
+  },
   // 收藏
   shoucang:function(){
     var that=this;

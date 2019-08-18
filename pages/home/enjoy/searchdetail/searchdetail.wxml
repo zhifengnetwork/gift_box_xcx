@@ -2,9 +2,6 @@
 
 <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" >
 <view class="body">
-  
-  
-  
     <view>
       <scroll-view>
         <view class='case-page'>
