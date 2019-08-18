@@ -43,7 +43,7 @@
   <view class="{{currentTab == 1 ? 'show':'hidden'}}">
     <scroll-view class="yonghu_ear">
       <view class="articlebox">
-        <view class="article_box" wx:for="{{shoucang}}">
+        <view class="article_box" wx:for="{{shoucang}}"  bindtap="details" data-id="{{item.id}}" wx:key data-type="{{item.type}}">
           <view class="article_imgbox">
             <image src="{{item.cover}}"></image>
           </view>
@@ -69,7 +69,7 @@
   <view class="{{currentTab == 2 ? 'show':'hidden'}}">
     <scroll-view class="yonghu_ear">
       <view class="articlebox">
-        <view class="article_box" wx:for="{{zanguo}}">
+        <view class="article_box" wx:for="{{zanguo}}"  bindtap="details" data-id="{{item.id}}" wx:key data-type="{{item.type}}">
           <view class="article_imgbox">
             <image src="{{item.cover}}"></image>
           </view>

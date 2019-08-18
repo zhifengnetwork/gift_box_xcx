@@ -18,9 +18,27 @@ Page({
   },
 
   // 点击关注/取消关注
-  guanzhu:function(e){
+  // 关注按钮
+  guanzhu: function (e) {
     let that = this
-    console.log(e)
+    var userid = e.currentTarget.dataset.userid
+    var index = e.currentTarget.dataset.index
+    console.log(e.currentTarget.dataset.index)
+    that.setData({ user_id: userid })
+    var item = that.data.item
+    console.log(that.data.item)
+    api.postJSON('api/sharing/add_follow', {
+      token: app.globalData.token,
+      follow_user_id: that.data.user_id
+    }, function (res) {
+      if (res.data.status == 1) {
+        // console.log(res)
+        // item[index].follow_count = !item[index].follow_count;
+        // that.setData({item:item})
+        // console.log(that.data.item)
+        console.log(res.data.msg)
+      }
+    })
   },
   
   // 点击跳转到关注详情

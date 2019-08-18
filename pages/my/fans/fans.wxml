@@ -18,8 +18,8 @@
       </view>
     </view>
     <view class="fans_r">
-      <view class="guanzhu" wx:if="{{!item.follow_count}}" bindtap="guanzhu" data-id="{{index}}">關注</view>
-      <view class="yiguanzhu" wx:if="{{item.follow_count}}" bindtap="guanzhu" data-id="index">已關注</view>
+     <view class="care1" catchtap="guanzhu" wx:if="{{!item.follow_count}}" data-userid="{{item.user_id}}" data-index="{{index}}">關注</view>
+      <view class="yiguanzhu1" catchtap="guanzhu" wx:if="{{item.follow_count}}" data-userid="{{item.user_id}}"  data-index="{{index}}">已關注</view>
     </view>
   </view>
 </scroll-view>

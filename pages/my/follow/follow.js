@@ -13,6 +13,7 @@ Page({
     isLastPage: false,
     isLoadInterface: false,
     datalist: '',
+    user_id:null
   },
 
   // 点击跳转到他人页面
@@ -68,7 +69,35 @@ Page({
         }
       })
   },
-
+  // 关注按钮
+  guanzhu: function (e) {
+    let that = this
+    var userid=e.currentTarget.dataset.userid
+    var index=e.currentTarget.dataset.index
+    console.log(e.currentTarget.dataset.index)
+    that.setData({user_id: userid})
+    var item=that.data.item
+      wx.showModal({
+        content: '確認不再關注?',
+        success(res) {
+          if (res.confirm) {
+            item[index].follow_count = !item[index].follow_count;
+            that.setData({ item: item })
+            api.postJSON('api/sharing/add_follow', {
+              token: app.globalData.token,
+              follow_user_id: that.data.user_id
+            }, function (res) {
+              if (res.data.status == 1) {
+                console.log(res)
+                that.onLoad()
+              }
+            })
+          } else if (res.cancel) {
+            console.log('用户点击取消')
+          }
+        }
+      })
+  },
   // 触底加载下一页
   nextDataPage: function () {
     let that = this;

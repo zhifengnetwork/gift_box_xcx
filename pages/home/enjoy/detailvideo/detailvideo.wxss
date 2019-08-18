@@ -273,17 +273,6 @@ page{
   width: 100%;
 }
 .care1{
-  /* position: absolute;
-  right: 7%;
-  top: 190rpx;
-  width: 140rpx;
-  background:rgba(255,255,255,1);
-  border:2rpx solid rgba(255,38,64,1);
-  border-radius:25px;
-  color: rgba(255,38,64,1);
-  font-size: 28rpx;
-  padding:5rpx 0;
-  text-align: center */
   display: inline-block;
   height: 60rpx;
   line-height: 60rpx;

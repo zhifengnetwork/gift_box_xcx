@@ -28,7 +28,8 @@ Page({
     xianshistauts:true,
     context2:null,
     point_count:null,
-    collection_count:null
+    collection_count:null,
+    user_id:null
   },
 
   // 返回按钮
@@ -62,7 +63,8 @@ Page({
           point_num: res.data.data.point_num,
           collection_num: res.data.data.collection_num,
           point_count: res.data.data.point_count,
-          collection_count: res.data.data.collection_count
+          collection_count: res.data.data.collection_count,
+          user_id: res.data.data.id
         })
         console.log("视频的数据")
         console.log(that.data.item)

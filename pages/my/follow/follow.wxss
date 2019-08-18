@@ -53,7 +53,7 @@ page{
   margin-right: 40rpx;
   margin-top: 74rpx;
 }
-.yiguanzhu{
+/* .yiguanzhu{
   width:100rpx;
   height:48rpx;
   line-height: 44rpx;
@@ -64,4 +64,29 @@ page{
   font-family:SourceHanSansCN-Regular;
   font-weight:bold;
   color:rgba(153, 153, 153, 1);
+} */
+.care1{
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 120rpx;
+  border-radius:25px;
+  color: white;
+  font-size: 30rpx;
+  margin-left: 28rpx;
+  background: rgba(255,38,64,1);
+  text-align:center;
+}
+.yiguanzhu1{
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 120rpx;
+  border-radius:25px;
+  background:transparent;
+  border: 1rpx solid #ccc;
+  margin-left: 30rpx;
+  color: #ccc;
+  font-size: 28rpx;
+  text-align: center
 }
