@@ -51,9 +51,13 @@ page{
   left: 40rpx;
   z-index: 3;
 }
+.touxiang{
+  position: relative;
+  bottom: -55rpx
+}
 .touxiangimg{
-  width: 100rpx;
-  height: 100rpx;
+  width: 75rpx;
+  height: 75rpx;
   border-radius: 50%;
   float: left;
   overflow: hidden;
@@ -267,4 +271,42 @@ page{
 }
 .dibu{
   width: 100%;
+}
+.care1{
+  /* position: absolute;
+  right: 7%;
+  top: 190rpx;
+  width: 140rpx;
+  background:rgba(255,255,255,1);
+  border:2rpx solid rgba(255,38,64,1);
+  border-radius:25px;
+  color: rgba(255,38,64,1);
+  font-size: 28rpx;
+  padding:5rpx 0;
+  text-align: center */
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 120rpx;
+  border-radius:25px;
+  color: white;
+  font-size: 30rpx;
+  margin-left: 28rpx;
+  margin-top: 19rpx;
+  background: rgba(255,38,64,1);
+  text-align:center;
+}
+.yiguanzhu1{
+  display: inline-block;
+  height: 60rpx;
+  line-height: 60rpx;
+  width: 120rpx;
+  border-radius:25px;
+  background:transparent;
+  border: 1rpx solid #ccc;
+  margin-left: 30rpx;
+  margin-top: 19rpx;
+  color: #ccc;
+  font-size: 28rpx;
+  text-align: center
 }

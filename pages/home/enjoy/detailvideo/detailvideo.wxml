@@ -24,6 +24,9 @@
         <image src="{{avatar}}"></image>
       </view>
       <view class="name">{{nickname}}</view>
+      <!-- 关注按钮 -->
+      <view class="care1" bindtap="guanzhu" wx:if="{{!follow_count}}">關注</view>
+      <view class="yiguanzhu1" bindtap="guanzhu" wx:if="{{follow_count}}">已關注</view>
     </view>
     <view class="title">{{title}}</view>
     <view class="content">{{content}}</view>
