@@ -32,8 +32,17 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-  
-    var that=this
+     
+    var that=this;
+    //分页代码:获取系统的参数，scrollHeight数值,微信必须要设置style:height才能监听滚动事件
+    wx.getSystemInfo({
+      success: function (res) {
+        console.info(res.windowHeight)
+        that.setData({
+          scrollHeight: res.windowHeight
+        })
+      }
+    });
     that.setData({ keyword: options.keyword})
     api.getJSON('/api/sharing/search_sharing?num=10' + '&keyword=' + that.data.keyword + '&page=' + that.data.page + '&token=' + app.globalData.token, function (res) {
       if (res.data.status == 1) {
@@ -45,9 +54,10 @@ Page({
           that.setData({
             note: that.data.goodslist
           })
-
+          that.data.page++;
+        }else{
+          that.setData({bujia:false})
         }
-
       }
     })
   },
@@ -64,6 +74,34 @@ Page({
     } else if (e.currentTarget.dataset.type == 1) {
       wx.navigateTo({
         url: '../detailvideo/detailvideo?id=' + that.data.id,
+      })
+    }
+  },
+   //该方法绑定了页面滑动到底部的事件,下拉一次请求一次数据
+  bindDownLoad: function () {
+    var that = this;
+    if (this.data.bujia) {
+      wx.showToast({
+        title: '加载中',
+        icon: 'loading',
+        duration: 400
+      }) 
+      api.getJSON('/api/sharing/search_sharing?num=10' + '&keyword=' + that.data.keyword + '&page=' + that.data.page + '&token=' + app.globalData.token, function (res) {
+        if (res.data.status == 1) {
+          console.log(res.data.data)
+          if (res.data.data.length > 0) {
+            for (var i = 0; i < res.data.data.length; i++) {
+              that.data.goodslist.push(res.data.data[i])
+            }
+            that.setData({
+              note: that.data.goodslist
+            })
+            that.data.page++;
+          }else{
+            that.setData({ bujia: false })
+          }
+
+        }
       })
     }
   },

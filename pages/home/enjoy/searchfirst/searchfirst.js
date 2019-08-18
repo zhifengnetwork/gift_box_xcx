@@ -97,6 +97,15 @@ Page({
       }
     })
   },
+  hissdd:function(e){
+    var that=this
+    console.log(e.currentTarget.dataset.guanjian)
+    var guanjian = e.currentTarget.dataset.guanjian
+    that.setData({keyword: guanjian})
+    wx.navigateTo({
+      url: '../../enjoy/searchdetail/searchdetail?keyword=' + this.data.keyword
+    })
+  },
   // 搜索内容
   huiche:function(){
     wx.navigateTo({
