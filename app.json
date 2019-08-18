@@ -9,6 +9,7 @@
     "pages/home/enjoy/detail/detail",
     "pages/home/enjoy/search/search",
     "pages/home/enjoy/searchfirst/searchfirst",
+    "pages/home/enjoy/searchdetail/searchdetail",
     "pages/logs/logs",
     "pages/home/home",
     "pages/classify/classify",

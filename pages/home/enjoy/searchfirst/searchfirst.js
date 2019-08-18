@@ -99,10 +99,9 @@ Page({
   },
   // 搜索内容
   huiche:function(){
-    api.getJSON('/api/sharing/search_sharing?token=' + app.globalData.token + '&keyword=' + this.data.keyword, function (res) {
-      if (res.data.status == 1) {
-        console.log("搜索成功")
-      }
+    wx.navigateTo({
+      url: '../../enjoy/searchdetail/searchdetail?keyword=' +this.data.keyword
     })
+    console.log(this.data.keyword)
   }
 })
