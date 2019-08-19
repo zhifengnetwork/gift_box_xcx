@@ -5,7 +5,7 @@ page{
   margin-left: 8%;
   width:671rpx;
   height:60rpx;
-  background:rgba(67,67,67,1);
+  background:rgba(67,67,67,1); 
   border-radius:30rpx;
   position: relative;
   top:160rpx;
@@ -159,7 +159,7 @@ page{
   line-height:80rpx;
 }
 .tab_c{
-  margin: 30rpx 40rpx;
+  margin: 0 40rpx;
   overflow: hidden;
   background:rgba(0,0,0,0.2);
   border-radius:15rpx;
@@ -170,7 +170,7 @@ page{
   height:60rpx;
   background:rgba(0,0,0,0.6);
   border-radius:10rpx;
-  margin: 30rpx;
+  margin: 20rpx;
   overflow: hidden;
 }
 .tab_cl image{
@@ -194,7 +194,7 @@ page{
   width: 80%;
 }
 .tab_cr view{
-  margin-top: 35rpx;
+  margin-top: 20rpx;
   font-size:25rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:400;

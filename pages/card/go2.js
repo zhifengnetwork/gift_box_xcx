@@ -58,6 +58,10 @@ Page({
             })
 
           } else {
+            that.setData({
+              status: false,
+              msg: res.data.msg
+            })
             wx.showToast({
               title: res.data.msg,
               icon: 'none'
