@@ -62,7 +62,7 @@
 <view class="voucher">上傳憑證</view>
 <!-- 相机 -->
 <view class="camera">
-  <view wx:for="{{tupian}}" class="tupian_box">
+  <view wx:for="{{tupian}}" class="tupian_box" wx:key>
     <image src="{{item}}" class="tupian"></image>
   </view>
   <view class="camera_box" bindtap="camera">

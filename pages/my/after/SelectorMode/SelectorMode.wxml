@@ -1,7 +1,7 @@
 <component title='選擇服務類型' show_bol='{{false}}'></component>
 <view class="selectormode_box" style="margin-top:{{bar_Height+140}}rpx">
   <radio-group class="radio-group" bindchange="radioChange">
-    <label class="radio" wx:for="{{items}}">
+    <label class="radio" wx:for="{{items}}" wx:key>
       <view class="radio_view">{{item.value}}
         <text class="radio_text">{{item.text}}</text>
         <radio value="{{item.name}}" checked="{{item.checked}}" class="radio_radio" color="#000"/>
