@@ -44,8 +44,11 @@
   <!-- 文字介绍 -->
   <view class="intriduce1" wx:if="{{liang}}">{{detaillist.content}}</view>
   <view class="intriduce2" wx:else>{{detaillist.content}}</view>
-  <view class="zhankai" wx:if="{{liang}}" bindtap="zhankai">展開</view>
-  <view class="zhankai" wx:else bindtap="shouqi">收起</view>
+  <view wx:if="{{xianshi}}">
+      <view class="zhankai" wx:if="{{liang}}" bindtap="zhankai">展開</view>
+      <view class="zhankai" wx:else bindtap="shouqi">收起</view>
+  </view>
+  
 
   <!-- 点赞,转发,收藏区域 -->
   <view class="collect_ear">
