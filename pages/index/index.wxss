@@ -47,6 +47,7 @@
   top: 518rpx;
   right: 14rpx;
   z-index:20;
+  
   }
 /* 选择栏--s */
 .selection_bar{
