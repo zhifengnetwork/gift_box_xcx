@@ -12,14 +12,14 @@
     <text class="mydetalis_ctext">昵稱</text>
     <input placeholder="请输入您的性别昵稱" value="{{nickname}}" bindinput="nickname" class="mydetalis_cinput" />
   </view>
-  <view class="mydetalis_cname">
+  <view class="mydetalis_cname" bindtap="sex">
     <text class="mydetalis_ctext">性別</text>
-    <input placeholder="请输入您的性别" value="{{sex}}" bindtap="sex" class="mydetalis_cinput" />
+    <input placeholder="请输入您的性别" value="{{sex}}" disabled class="mydetalis_cinput" />
   </view>
-  <view class="mydetalis_cname">
+  <view class="mydetalis_cname" disabled="disabled">
     <text class="mydetalis_ctext">生日</text>
     <picker mode="date" value="{{date}}" bindchange="bindDateChange" end='{{time}}'>
-      <input placeholder="请输入您的生日" disabled="disabled" value="{{date}}" class="mydetalis_cinput" />
+      <input placeholder="请输入您的生日" disabled value="{{date}}" class="mydetalis_cinput" />
     </picker>
   </view>
   <view class="mydetalis_cintro">
