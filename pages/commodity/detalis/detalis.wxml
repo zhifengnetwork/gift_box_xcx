@@ -17,8 +17,8 @@
       </button>
       <swiper class='detalis_swipers' autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
         <block wx:for="{{goods_data.img}}" wx:key>
-          <swiper-item>
-            <image class="detalis_swiper_image" src="{{item}}" lazy-load="true" bindtap="imgYu"  data-src="{{item}}" data-list="{{goods_data.img}}"/>
+        <swiper-item>
+          <image class="detalis_swiper_image" src="{{item}}" lazy-load="true" bindtap="imgYu"  data-src="{{item}}" data-list="{{goods_data.img}}"/>
           </swiper-item>
         </block>
       </swiper>
