@@ -131,7 +131,7 @@ Page({
    */
   onLoad: function (options) {
     let that = this
-    app.globalData.type = null
+    app.globalData.type = 0
     that.setData({
       image: app.globalData.image
     })

@@ -69,6 +69,9 @@ Page({
           biaoqian: JSON.parse(res.data.data.text),
           biaoqing: JSON.parse(res.data.data.text2),
         })
+        if (that.data.detaillist.content.length>20){
+          console.log("aaa")
+        }
   
       }
     })

@@ -33,8 +33,8 @@ Page({
     }, function (res) {
       if (res.data.status == 1) {
         // console.log(res)
-        // item[index].follow_count = !item[index].follow_count;
-        // that.setData({item:item})
+        item[index].follow_count = !item[index].follow_count;
+        that.setData({item:item})
         // console.log(that.data.item)
         console.log(res.data.msg)
       }

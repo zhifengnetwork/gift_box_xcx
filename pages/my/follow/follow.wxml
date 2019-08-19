@@ -19,7 +19,7 @@
     </view>
     <view class="follow_r">
       <view class="care1" catchtap="guanzhu" wx:if="{{!item.follow_count}}" data-userid="{{item.user_id}}" data-index="{{index}}">關注</view>
-      <view class="yiguanzhu1" catchtap="guanzhu" wx:if="{{item.follow_count}}" data-userid="{{item.user_id}}"  data-index="{{index}}">已關</view>
+      <view class="yiguanzhu1" catchtap="guanzhu" wx:if="{{item.follow_count}}" data-userid="{{item.user_id}}"  data-index="{{index}}">已關注</view>
     </view>
   </view>
 </scroll-view>

@@ -72,7 +72,7 @@ Page({
               // let txet = JSON.parse(that.data.biaoqian)
               // let text2 = JSON.parse(that.data.biaoqing)
 
-              if (that.data.type == '' || !that.data.type){
+              if (that.data.type != 0 && that.data.type != 1){
                 wx.showModal({
                   title: '类型不能为空',
                   content: '类型不能为空',
@@ -161,12 +161,11 @@ Page({
 
     console.log('选了类型:' + app.globalData.type)
     let that = this
+  
+    this.setData({
+      type: app.globalData.type
+    })
     
-    if (app.globalData.type){
-      that.setData({
-        type: app.globalData.type
-      })
-    }
     // if (options.topic) {
     //   that.setData({
     //     topic: options.topic,
@@ -418,7 +417,7 @@ Page({
     console.log(that.data.biaoqing)
 
     var type = this.data.type;
-    if (type == '' || !type) {
+    if (type != 0 && type != 1) {
       wx.showModal({
         title: '类型type不能为空',
         content: '类型type不能为空',
@@ -531,7 +530,7 @@ Page({
     
 
     var type = this.data.type;
-    if (type == '' || !type) {
+    if (type != 0 && type != 1) {
       wx.showModal({
         title: '类型type不能为空',
         content: '类型type不能为空',
