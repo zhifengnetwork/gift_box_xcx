@@ -214,25 +214,7 @@ Page({
     var array=[]
     that.loadData();
     that.setData({ page: 2, goodslist: array})
-    api.getJSON('/api/sharing/sharing_list?num=10' + '&topic_id=' + that.data.topic_id + '&page=' + that.data.page + '&token=' + app.globalData.token, function (res) {
-      if (res.data.status == 1) {
-        if (res.data.data.length > 0) {
-          for (var i = 0; i < res.data.data.length; i++) {
-            that.data.goodslist.push(res.data.data[i])
-          }
-          that.setData({
-            note: that.data.goodslist
-          })
-          console.log(that.data.note)
-          that.data.page++;
-        } else {
-          that.setData({
-            bujia: false
-          })
-        }
-
-      }
-    })
+    that.GetList(that)
 
   },
 

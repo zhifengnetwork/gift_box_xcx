@@ -23,7 +23,7 @@
         <radio value="默認地址" color="#000" checked />默認地址
       </view> -->
       <view class="radio">
-        <radio value="默認地址" color="#000" checked="{{item.is_default==1}}" bindtap="shezhi"/>默認地址
+        <radio value="默認地址" color="#000" bindtap="shezhi" data-addressid="{{item.address_id}}" checked="{{item.is_default==1}}"/>默認地址
       </view>
       <!-- wx:if="{{!award}}" -->
       <view class="site_btn" >
