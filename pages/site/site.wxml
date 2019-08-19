@@ -19,8 +19,11 @@
     <view class="site_tconent">{{item.province_name}} {{item.city_name}} {{item.district_name}} {{item.address}}</view>
     <view class="site_tbottom">
       <!-- 默认地址按钮 -->
-      <view class="radio" wx:if="{{item.is_default==1}}">
+      <!-- <view class="radio" wx:if="{{item.is_default==1}}">
         <radio value="默認地址" color="#000" checked />默認地址
+      </view> -->
+      <view class="radio">
+        <radio value="默認地址" color="#000" bindtap="shezhi" data-addressid="{{item.address_id}}" checked="{{item.is_default==1}}"/>默認地址
       </view>
       <!-- wx:if="{{!award}}" -->
       <view class="site_btn" >

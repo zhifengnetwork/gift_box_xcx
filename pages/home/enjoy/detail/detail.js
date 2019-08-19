@@ -29,6 +29,7 @@ Page({
     nickname:"",
     biaoqing:'',
     biaoqian:'',
+    xianshi:true
   },
 
   // 视频播放函数
@@ -51,7 +52,13 @@ Page({
    */
   onLoad: function(options) {
     var that = this
-    
+    // 获取屏幕的宽度 单位是px
+    var windowWidth = wx.getSystemInfoSync().windowWidth
+    windowWidth = windowWidth * 0.9
+    var geshu = windowWidth / 11
+    geshu = parseInt(geshu) * 2 - 1
+    console.log(geshu)
+
     that.setData({ nickname: app.globalData.userInfo.nickname}) 
     that.setData({
       id: options.id
@@ -69,10 +76,13 @@ Page({
           biaoqian: JSON.parse(res.data.data.text),
           biaoqing: JSON.parse(res.data.data.text2),
         })
-        if (that.data.detaillist.content.length>20){
-          console.log("aaa")
+        console.log(that.data.detaillist.content.length)
+        if (geshu > that.data.detaillist.content.length){
+          that.setData({xianshi:false})
+        }else{
+          that.setData({ xianshi: true })
         }
-  
+        
       }
     })
     api.getJSON('/api/sharing/sharing_comment_list?sharing_id=' + that.data.id + '&token=' + app.globalData.token +'&page=1&num=100000' , function (res) {
@@ -81,6 +91,8 @@ Page({
         that.setData({comments: res.data.data})
       }
     })
+    
+   
 
 
 

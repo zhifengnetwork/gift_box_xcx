@@ -210,8 +210,12 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function () {
-    this.GetList(this);
-    this.loadData()
+    var that=this
+    var array=[]
+    that.loadData();
+    that.setData({ page: 2, goodslist: array})
+    that.GetList(that)
+
   },
 
   /**

@@ -13,7 +13,8 @@ Page({
     bar_Height: wx.getSystemInfoSync().statusBarHeight,		// 获取手机状态栏高度
     invoice_id:'',
     order_id: '',
-    pwdstr: ''
+    pwdstr: '',
+    addressid:null
   },
   // 跳转到添加地址
   newsite: function () {
@@ -124,6 +125,32 @@ Page({
     wx.redirectTo({
       url: 'newsite/newsite?item=' + JSON.stringify(item),
     });
+  },
+  // 设置默认地址打钩
+  shezhi:function(e){
+    var that=this
+    var addressid = e.currentTarget.dataset.addressid
+    that.setData({addressid: addressid})
+    console.log(e.currentTarget.dataset.addressid)
+    api.getJSON('/api/user/edit_address_default?address_id=' + that.data.addressid + '&token=' + app.globalData.token, function (res) {
+      if (res.data.status == 1) {  
+       console.log("设置默认地址成功")
+      //  重新请求接口,渲染数据
+        api.postJSON('api/user/address_list',
+          {
+            token: app.globalData.token
+          },
+          function (res) {
+            if (res.data.status == 1) {
+              that.setData({
+                site: res.data.data
+              })
+              console.log(that.data.site)
+            }
+
+          })
+      }
+    })
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
