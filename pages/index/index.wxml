@@ -59,19 +59,19 @@
 <view class="bar-ear">
   <view class="bar_ear_item">
     <image src="../public/images/index/1.png" class="bar_pic"></image>
-    <text class="bar_title">品質生活</text>
+    <view class="bar_title">品質生活</view>
   </view>
   <view class="bar_ear_item">
     <image src="../public/images/index/2.png" class="bar_pic"></image>
-    <text class="bar_title">全球直采</text>
+    <view class="bar_title">全球直采</view>
   </view>
   <view class="bar_ear_item">
     <image src="../public/images/index/3.png" class="bar_pic"></image>
-    <text class="bar_title">服務周到</text>
+    <view class="bar_title">服務周到</view>
   </view>
   <view class="bar_ear_item">
     <image src="../public/images/index/4.png" class="bar_pic"></image>
-    <text class="bar_title">售後無憂</text>
+    <view class="bar_title">售後無憂</view>
   </view>
 
 </view>
