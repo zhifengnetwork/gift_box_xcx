@@ -125,6 +125,10 @@ Page({
       url: 'newsite/newsite?item=' + JSON.stringify(item),
     });
   },
+  // 设置默认地址打钩
+  shezhi:function(){
+     
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
