@@ -53,7 +53,7 @@
   width: 92%;
   margin: 0 auto;
   /* border: 1px solid gray; */
-  height: 170rpx;
+  height: 120rpx;
 }
 .selection_bar_box{
   
@@ -69,19 +69,25 @@
 .jiali_title{
   display: inline-block;
   padding-left: 21rpx;
-  padding-bottom: 48rpx;
+  padding-bottom: 25rpx;
   height: 80rpx;
-  line-height:80rpx;
-  font-size:40rpx;
+  line-height: 80rpx;
   font-weight: bolder;
-  margin-top: 45rpx;
+  margin-top: 31rpx;
+  font-size:36rpx;
+  font-family:Source Han Sans CN;
+  color:rgba(0,0,0,1);
+
 }
 .english{
   display: inline-block;
   height: 80rpx;
   line-height:100rpx;
-  font-size: 30rpx;
-  padding-left: 15rpx
+  padding-left: 15rpx;
+  font-size:21rpx;
+  font-family:Source Han Sans CN;
+  font-weight:400;
+  color:rgba(51,51,51,1);
 }
 .img_box{
   width: 90%;
@@ -223,13 +229,18 @@
   float: right;
 }
 .love_tile{
-  font-size: 32rpx;
+  font-size:28rpx;
+  font-family:Source Han Sans CN;
+  font-weight:400;
+  color:rgba(51,51,51,1);
 }
 .love_money{
-  font-size: 28rpx
+  font-size:24rpx;
+  font-family:Source Han Sans CN;
+  font-weight:bold;
+  color:rgba(51,51,51,1)
 }
 .dsdsds{
-
   width: 90%;
   height: 100%;
   margin: 0 auto;
@@ -252,8 +263,10 @@
   right: 0;
   margin: 0 auto;
   top: 15rpx;
-  font-size: 27rpx;
-  
+  font-size:24rpx;
+  font-family:Source Han Sans CN;
+  font-weight:bold;
+  color:rgba(42,42,42,1);
 }
 .item1_icon{
   position: absolute;
@@ -291,10 +304,16 @@
   padding: 0 21rpx;
 }
 .bu{
-  font-size: 32rpx
+  font-size:28rpx;
+  font-family:Source Han Sans CN;
+  font-weight:400;
+  color:rgba(51,51,51,1)
 }
 .jiansu{
-  font-size:25rpx
+  font-size:22rpx;
+  font-family:Source Han Sans CN;
+  font-weight:400;
+  color:rgba(102,102,102,1);
 }
 .bar-ear{
   margin:0 21rpx;
@@ -302,21 +321,25 @@
 }
 .bar_ear_item{
   width: 25%;
+  height: 26rpx;
+  line-height: 26rpx;
   text-align: center;
   display: inline-block;
-  box-sizing: border-box
+  box-sizing: border-box;
 }
 .bar_pic{
   width: 26rpx;
   height: 26rpx;
-
+  vertical-align: top;
 }
 .bar_title{
-  font-size: 28rpx;
+  font-size: 24rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:bold;
   color:rgba(102,102,102,1);
-  padding-left: 10rpx
+  padding-left: 10rpx;
+  display: inline-block;
+  vertical-align: top
 }
 .love_pic{
   width: 100%;
