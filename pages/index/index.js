@@ -68,6 +68,7 @@ Page({
   },
   onShow: function () {
   
+    app.globalData.give.order_id = '';
     var that = this;
     app.getUserInfo(userinfo => {
 
