@@ -9,7 +9,8 @@ Page({
   data: {
     item:'',
     over:'',
-    logistics:''
+    logistics:'',
+    flag:false
   },
 
   /**
@@ -41,7 +42,11 @@ Page({
       console.log(res.data.data)
     })
   },
-
+  all(){
+    this.setData({
+      flag:true
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
