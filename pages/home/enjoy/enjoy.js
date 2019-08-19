@@ -74,7 +74,7 @@ Page({
                     app.globalData.image = that.data.image
                     if (that.data.image) {
                       wx.navigateTo({
-                        url: 'selectimg/selectimg',
+                        url: 'selectimg/selectimg?type=0',
                       })
                     }
                   }
@@ -110,7 +110,7 @@ Page({
                     app.globalData.image = that.data.image
                     if (that.data.image) {
                       wx.navigateTo({
-                        url: 'selectimg/selectimg',
+                        url: 'selectimg/selectimg?type=0',
                       })
                     }
                   }
@@ -149,7 +149,7 @@ Page({
                     app.globalData.image = that.data.image
                     if (that.data.image) {
                       wx.navigateTo({
-                        url: 'select/select',
+                        url: 'select/select?type=1',
                       })
                     }
                   }
@@ -187,7 +187,7 @@ Page({
                     app.globalData.image = that.data.image
                     if (that.data.image) {
                       wx.navigateTo({
-                        url: 'select/select',
+                        url: 'select/select?type=1',
                       })
                     }
                   }
