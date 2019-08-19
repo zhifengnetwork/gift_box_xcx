@@ -73,7 +73,7 @@
   height: 80rpx;
   line-height: 80rpx;
   font-weight: bolder;
-  margin-top: 6rpx;
+  margin-top: 32rpx;
   font-size:36rpx;
   font-family:Source Han Sans CN;
   color:rgba(0,0,0,1);
