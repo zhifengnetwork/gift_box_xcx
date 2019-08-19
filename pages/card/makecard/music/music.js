@@ -115,7 +115,7 @@ Page({
             src: res.data.data[i].music_url,
             radio: radio
           })
-          console.log(that.data.src)
+          console.log(that.data.music)
         }
         that.setData({
           music: that.data.music

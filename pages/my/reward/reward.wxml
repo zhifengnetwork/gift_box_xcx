@@ -32,7 +32,7 @@
     </view>
     <view class="reward_button">
       <view class="reward_cancel" wx:if="{{!refund_id}}" data-id="{{item.order_id}}" id="{{item.order_id}}" bindtap="selectormode">申請退款</view>
-      <view class="reward_cancel" wx:if="{{item.shipping_status==1 && item.order_status==1}}" data-id="{{item.order_id}}" bindtap="logistics">查看物流</view>
+      <view class="reward_cancel" wx:if="{{item.shipping_status==1 && item.order_status==1}}" data-id="{{item.order_id}}" id="{{item.order_id}}" bindtap="logistics">查看物流</view>
       <view class="reward_payment" data-id="{{item.order_id}}" id="{{item.order_status}}" bindtap="shouhuo"  wx:if="{{item.shipping_status==1 && item.order_status==1}}">確認收貨</view>
     </view>
   </view>

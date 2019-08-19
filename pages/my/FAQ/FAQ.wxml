@@ -2,9 +2,9 @@
   <component title='常見問題' show_bol='{{false}}'></component>
 </view>
 <view class="faq">
-  <view class="faq_box" wx:for="{{list}}">
+  <view class="faq_box" wx:for="{{list}}" wx:key>
     <view class="faq_top">{{index+1}}、{{item.name}}</view>
-    <view wx:for="{{item.list}}">
+    <view wx:for="{{item.list}}" wx:key>
       <text class="faq_wen">{{item.title}}</text>
       <view class="faq_da">{{item.content}}</view>
     </view>

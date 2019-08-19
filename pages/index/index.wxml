@@ -37,6 +37,7 @@
 </view>
 
 <image src="../public/images/index/red_enpole.png" class="red_enpole" bindtap="zefeng"></image>
+
 <!-- 选择栏 -->
 <view class="selection_bar">
   <view class="selection_bar_box">
@@ -87,7 +88,7 @@
     <video src="{{item.cover}}" class="huadon" wx:else controls="{{false}}"  muted="{{true}}"></video>
   </view>
 </view>
-<!-- 佳礼 -->
+<!-- 佳礼
 <text class="jiali_title">{{jiali.name}}</text>
 <text class="english">{{jiali.english}}</text>
 <view class="img_box">         
@@ -95,6 +96,7 @@
     <image src="{{item.picture}}" class="huadon"></image>
   </view>
 </view>
+ -->
 <text class="jiali_title">{{xingxuanyoupin.name}}</text>
 <text class="english">{{xingxuanyoupin.english}}</text>
 <view class="dangimg_box">

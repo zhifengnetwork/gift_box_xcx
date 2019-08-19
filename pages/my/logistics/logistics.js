@@ -33,7 +33,7 @@ Page({
             that.setData({
               item: res.data.data,
               over: over,
-              logistics: res.data.data.list.reverse()
+              logistics: res.data.data.list
             })
         }
         
