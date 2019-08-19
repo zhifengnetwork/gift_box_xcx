@@ -14,8 +14,25 @@
   </view>
   <view class="title_number">{{item.expName}} {{item.number}}</view>
 </view>
-
-<view class="logistics_info">
+<view class="logistics_info logistics" wx:if="{{!flag}}">
+  <view class="info_item" wx:for="{{logistics}}" wx:key="index">
+    <view class="info_icon" wx:if="{{index==0||index==over}}">√</view>
+    <view class="info_icon1" wx:if="{{index!=0&&index!=over}}"></view>
+    <view class="item_title">
+      {{item.title}}
+    </view>
+    <view class="item_content">
+      {{item.status}}
+    </view>
+    <view class="item_time">
+      {{item.time}}
+    </view>
+  </view>
+  <view class="logistics_btn" bindtap="all">
+    展开全部 <image class="logistics_pic" src="/pages/public/images/classify/xia.png"></image>
+  </view>
+</view>
+<view class="logistics_info" wx:if="{{flag}}">
   <view class="info_item" wx:for="{{logistics}}" wx:key="index">
     <view class="info_icon" wx:if="{{index==0||index==over}}">√</view>
     <view class="info_icon1" wx:if="{{index!=0&&index!=over}}"></view>
