@@ -43,7 +43,7 @@
 .red_enpole{
   width: 120rpx;
   height: 120rpx;
-  position: fixed;
+  position:absolute;
   top: 518rpx;
   right: 14rpx;
   z-index:20;
