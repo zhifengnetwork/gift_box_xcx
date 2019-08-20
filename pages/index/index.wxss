@@ -128,16 +128,24 @@
   box-sizing: border-box;
   padding:0 21rpx;
   display: flex;
-  justify-content: space-around
+  justify-content: space-between;
+  overflow-x: scroll;
+  overflow-y:hidden;
+
 }
 .fashion_item{
   width: 201rpx;
   height: 201rpx;
   display: inline-block;
+  flex-shrink:0;
+  margin: 0 40rpx
 }
 .dapai{
   width:100%;
   height: 100%
+}
+.dapai:last-child{
+  margin-right: 68rpx
 }
 /* 第二个轮播图样式 */
 .swiper_boxxxx{
@@ -166,26 +174,35 @@
   width: 100%;
   padding:0 21rpx;
   box-sizing: border-box;
+  display: flex;
+  justify-content: space-between;
+  overflow-x: scroll;
+  overflow-y:hidden;
 }
 .new_shop_item{ 
   box-sizing: border-box;
   width: 230rpx;
   height: 230rpx;
   display: inline-block;
-  margin-left: 12rpx  
+  margin-left: 12rpx;
+  flex-shrink:0;
+  margin: 0 40rpx;
 }
 .shagn{
   width: 100%;
   height: 100%
 }
-.new_shop_item:nth-child(2n){
+.shagn:last-child{
+  margin: 0 104rpx 0 40rpx
+}
+/* .new_shop_item:nth-child(2n){
   float: left;
   margin-left: 0rpx 
 }
 .new_shop_item:nth-child(3n){
   float: right;
   margin-left: 0rpx 
-}
+} */
 .images_wu{
   width: 695rpx;
   height: 370rpx;
