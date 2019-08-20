@@ -54,7 +54,8 @@ Page({
     jige: '',
     count: '',
     text: '',
-    itemId: ''
+    itemId: '',
+    id:null
 
   },
   clickTab: function (e) {
@@ -86,11 +87,10 @@ Page({
     })
   },
   jiele: function () {
+    var that=this
     this.setData({
       statussxianshi: false
     }),
-
-
       api.getJSON('/api/Cart/addCart?sku_id=' + this.data.sku_id + '&cart_number=' + this.data.productNum + "&token=" + app.globalData.token, function (res) {
 
         if (res.data.status < 0) {
@@ -105,6 +105,16 @@ Page({
             icon: 'none',
             title: "加入购物车成功",
             duration: 1500
+          })
+          api.getJSON('/api/goods/goodsinfo?goods_id=' + that.data.id + '&token=' + app.globalData.token, function (res) {
+            if (res.data.status == 1) {
+              console.log(res.data.data.goods_spec_list)
+              that.setData({
+                goods_spec_list: res.data.data.goods_spec_list,
+                goodssss: res.data.data.spec_goods_price,
+                goods_data: res.data.data
+              })
+            }
           })
         }
 
@@ -232,6 +242,7 @@ Page({
 
     var that = this;
     var id = options.id
+    that.setData({ id: id})
     // 请求数据,渲染商品页面
     // api.getJSON('api/goods/goodsDetail?goods_id=' + id + '&token=' + app.globalData.token, function (res) {
     //   if (res.data.status == 1) {
@@ -241,7 +252,7 @@ Page({
     //     WxParse.wxParse('content', 'html', res.data.data.content, that, 5)
     //   }
     // });
-    api.getJSON('/api/goods/goodsinfo?goods_id=' + id, function (res) {
+    api.getJSON('/api/goods/goodsinfo?goods_id=' + that.data.id+'&token='+app.globalData.token, function (res) {
       if (res.data.status == 1) {
         console.log(res.data.data.goods_spec_list)
         that.setData({
@@ -282,9 +293,13 @@ Page({
 
       }
     })
-
   },
-
+  // 跳转到购物车
+  tocart:function(){
+    wx.switchTab({
+      url: '../../cart/cart',
+    })
+  },
   swiperChange: function (e) {
     this.setData({
       currentSwiper: e.detail.current

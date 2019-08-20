@@ -194,6 +194,14 @@
         </view>
       </view>
     </view>
-
   </view>
+  <!-- 购物车小图标 -->
+  <view class="cart" bindtap="tocart">
+     <image src="../../../images/cart.png" class="cart_img"></image>
+     <view class="xixi">{{goods_data.cart_num}}</view>
+  </view>
+   
+
+
+
 </view>
