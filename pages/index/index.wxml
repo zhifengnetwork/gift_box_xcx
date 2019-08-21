@@ -109,7 +109,7 @@
   <image src="{{item.picture}}" class="dapai"></image>
 </view>
 </view>
-
+<!-- 时尚指南 -->
 <text class="jiali_title">{{shishangzhinan.name}}</text>
 <text class="english">{{shishangzhinan.english}}</text>
 <view class="feng_bi">
@@ -125,7 +125,7 @@
     </swiper-item>
   </block>
 </swiper>
-
+<!-- 新品上市 -->
 <text class="jiali_title">{{xinpinshangshi.name}}</text>
 <text class="english">{{xinpinshangshi.english}}</text>
 <view class="new_shop">
@@ -133,21 +133,26 @@
     <image src="{{item.picture}}" class="shagn"></image>
   </view>
 </view>
+<!-- 潮流导购 -->
 <text class="jiali_title">{{chaoliudaogou.name}}</text>
 <text class="english">{{chaoliudaogou.englist}}</text>
-<view class="images_wu" bindtap='details' data-id='{{chaoliudaogou.goods_info.goods_id}}'>
-  <image class="images_wu_img" src="{{chaoliudaogou.goods_info.picture}}"></image>
+<view class="daogou_ear">
+  <view bindtap='details' data-id='{{item.goods_id}}' wx:for="{{chaoliudaogou.goods_list}}" class="chaoliu_ear">
+    <view class="images_wu">
+      <image class="images_wu_img" src="{{item.picture}}"></image>
+    </view>
+    <view class="zaixian">
+      <view class="bu">{{item.goods_name}}</view>
+    </view>
+    <view class="zaixian">
+      <view class="jiansu">{{item.desc}}</view>
+    </view>
+  </view>
 </view>
-<view class="zaixian">
-  <text class="bu">{{chaoliudaogou.goods_info.goods_name}}</text>
-</view>
-<view class="zaixian">
-  <text class="jiansu">{{chaoliudaogou.goods_info.desc}}</text>
-</view>
+<!-- 猜你喜欢 -->
 <text class="jiali_title">{{guess_like.name}}</text>
 <text class="english">{{guess_like.english}}</text>
 <view class="love_ear">
-
   <view class="love_love"  wx:for="{{guess_like.goods_list}}" wx:key bindtap='details' data-id='{{item.goods_id}}'>
     <view class="love_item">
       <image src="{{item.picture}}" class="love_pic"></image>
