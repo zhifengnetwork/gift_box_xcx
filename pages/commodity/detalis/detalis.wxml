@@ -75,7 +75,7 @@
           <view>材质：本款雙扣僧侶鞋由黑色義大利小牛皮製作。鞋底採用布萊克針法以及橡膠工藝，增強抓地力。鞋身側面還飾有兩枚銀色鞋扣。</view>
         </view>
       </scroll-view> -->
-        <view style="font-size:32rpx;padding:0 20rpx;">
+        <view style="font-size:32rpx;">
           <template is="wxParse" data="{{wxParseData:content.nodes}}" />
         </view>
       </view>
