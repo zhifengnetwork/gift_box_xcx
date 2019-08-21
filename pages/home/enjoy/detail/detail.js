@@ -146,26 +146,41 @@ Page({
    // 分享
   onShareAppMessage: function(res) {
     var that=this
-    return {
-      success: function (res) {
-        //转发成功    
-        api.getJSON('/api/sharing/add_forward?sharing_id=' + that.data.id + '&token=' + app.globalData.token, function (res) {
+    // return {
+    //   success: function (res) {
+    //     //转发成功    
+    //     api.getJSON('/api/sharing/add_forward?sharing_id=' + that.data.id + '&token=' + app.globalData.token, function (res) {
+    //       if (res.data.status == 1) {
+    //        console.log("分享成功")
+    //       }
+    //     })
+    //     //重新请求接口
+    //     var num=that.data.forward_num
+    //     num=num+1
+    //     that.setData({forward_num:num})
+    //   },
+
+    //   fail: function (res) {
+    //     // 转发失败      
+    //     console.log("转发失败:" + JSON.stringify(res));
+    //   }
+    // }
+    api.getJSON('/api/sharing/add_forward?sharing_id=' + that.data.id + '&token=' + app.globalData.token, function (res) {
           if (res.data.status == 1) {
            console.log("分享成功")
           }
         })
-        //重新请求接口
+    //重新请求接口
         var num=that.data.forward_num
         num=num+1
-        that.setData({forward_num:num})
-      },
+      setTimeout(function () {
+        that.setData({ forward_num: num })
+      }, 2000)
+   
 
-      fail: function (res) {
-        // 转发失败      
-        console.log("转发失败:" + JSON.stringify(res));
-      }
 
-    }
+
+
   },
   swiperChange: function(e) {
     this.setData({
