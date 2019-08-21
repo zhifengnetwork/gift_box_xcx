@@ -76,6 +76,25 @@ page{
   font-weight:bold;
   color:rgba(255,255,255,1);
 }
+.back1{
+  width:140rpx;
+  height:40rpx;
+  margin-top: 50rpx;
+  border-radius:20px;
+  font-size:22rpx;
+  line-height: 40rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:400;
+  color:rgba(255,255,255,1);
+  margin-left: 20rpx;
+  background: rgba(255,38,64,1);
+}
+button::after {
+  border: none;
+  }
+button{
+  background-color: transparent!important
+}
 .back{
   width:140rpx;
   height:40rpx;
@@ -89,7 +108,9 @@ page{
   color:rgba(255,255,255,1);
   margin-left: 20rpx;
 }
-
+.button-hover{
+ background-color: transparent!important
+}
 
 /* 第二部分 */
 .swiper-tab{

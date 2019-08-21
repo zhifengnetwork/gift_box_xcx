@@ -31,12 +31,12 @@ button::after {
   /* padding: 12rpx 20px 0 30rpx; */
 }
 .detalis_img2 {
-  height: 815rpx;
+  height: 770rpx;
   border-bottom: 20rpx solid #f0f2f5;
 }
 
 .detalis_swipers {
-  height: 688rpx;
+  height: 640px;
 }
 
 .detalis_swiper_image {
