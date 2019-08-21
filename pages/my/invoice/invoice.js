@@ -113,7 +113,6 @@ Page({
   },
   // 获取邮箱
   getemail: function (e) {
-
     this.setData({
       invoice_email: e.detail.value
     })
@@ -281,7 +280,9 @@ Page({
       })
       return false;
     } 
-    
+    console.log("邮箱是");
+    console.log(that.data.invoice_email)
+    console.log(!(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(that.data.invoice_email)))
     if (!(/^([A-Za-z0-9_\-\.])+\@([A-Za-z0-9_\-\.])+\.([A-Za-z]{2,4})$/.test(that.data.invoice_email))){
       wx.showModal({
         title: '提示',
