@@ -28,6 +28,7 @@ Page({
     wenzhang: [],
     shoucang: [],
     zanguo: [],
+    user_idguanzhu:null
   },
 
   /**
@@ -404,7 +405,28 @@ Page({
       console.log(res)
     })
   },
-
+  //点关注
+  guanzhu:function(e){
+    let that = this
+    var userid = e.currentTarget.dataset.userid
+    // var index = e.currentTarget.dataset.index
+    // console.log(e.currentTarget.dataset.index)
+    that.setData({user_idguanzhu: userid })
+    var item = that.data.item
+    console.log(that.data.item)
+    api.postJSON('api/sharing/add_follow', {
+      token: app.globalData.token,
+      follow_user_id: that.data.user_idguanzhu
+    }, function (res) {
+      if (res.data.status == 1) {
+        // console.log(res)
+        item.follow_count = !item.follow_count;
+        that.setData({item: item })
+        // console.log(that.data.item)
+        console.log(res.data.msg)
+      }
+    })
+  }
   //请求读过文章接口
   // zanguo: function () {
   //   let that = this;

@@ -26,7 +26,9 @@
       <text>{{item.fans_num}}</text>
     </view>
     <view class="my_tf_box2">
-      <view class="back">關註</view>
+      <!-- <view class="back">關註</view> -->
+       <view class="back1" bindtap="guanzhu" wx:if="{{!item.follow_count}}" data-userid="{{item.id}}">關注</view>
+       <view class="back" bindtap="guanzhu" wx:if="{{item.follow_count}}" data-userid="{{item.id}}">已關注</view>
     </view>
     <view class="my_tf_box2" bindtap="mydetalis">
       <view class="back">分享</view>
