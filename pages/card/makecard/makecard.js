@@ -164,7 +164,7 @@ Page({
   onLoad: function(options) {
     console.log(options)
     let that = this;
-    let cate_id = app.globalData.makecard == undefined || app.globalData.makecard == '' ? options.type_id : '';
+    let cate_id = options.type_id == undefined ? '' : options.type_id;
     let order_type = options.order_type == undefined ? '' : options.order_type;
     this.setData({
       order_type: order_type
