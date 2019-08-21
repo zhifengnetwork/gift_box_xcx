@@ -59,7 +59,7 @@
     </view>
     <button class="second" open-type="share">
       <image class="aixin2" src="../../../public/images/home/zhuanfa.png"></image>
-      <text class="tiaoshu2">{{detaillist.forward_num}}</text>
+      <text class="tiaoshu2">{{forward_num}}</text>
     </button>
     <view class="three">
       <image class="aixin3" src="../../../public/images/home/soucang.png" bindtap="collect" wx:if="{{detaillist.collection_count === 0 ? true : false}}"></image>

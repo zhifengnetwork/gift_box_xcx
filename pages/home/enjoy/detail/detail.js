@@ -29,7 +29,8 @@ Page({
     nickname:"",
     biaoqing:'',
     biaoqian:'',
-    xianshi:true
+    xianshi:true,
+    forward_num:0
   },
 
   // 视频播放函数
@@ -75,14 +76,14 @@ Page({
           music: res.data.data.music,
           biaoqian: JSON.parse(res.data.data.text),
           biaoqing: JSON.parse(res.data.data.text2),
+          forward_num: res.data.data.forward_num
         })
         console.log(that.data.detaillist.content.length)
         if (geshu > that.data.detaillist.content.length){
           that.setData({xianshi:false})
         }else{
           that.setData({ xianshi: true })
-        }
-        
+        }       
       }
     })
     api.getJSON('/api/sharing/sharing_comment_list?sharing_id=' + that.data.id + '&token=' + app.globalData.token +'&page=1&num=100000' , function (res) {
@@ -91,16 +92,6 @@ Page({
         that.setData({comments: res.data.data})
       }
     })
-    
-   
-
-
-
-
-
-
-
-
   },
 
   audioPlay: function() {
@@ -152,8 +143,29 @@ Page({
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+   // 分享
+  onShareAppMessage: function(res) {
+    var that=this
+    return {
+      success: function (res) {
+        //转发成功    
+        api.getJSON('/api/sharing/add_forward?sharing_id=' + that.data.id + '&token=' + app.globalData.token, function (res) {
+          if (res.data.status == 1) {
+           console.log("分享成功")
+          }
+        })
+        //重新请求接口
+        var num=that.data.forward_num
+        num=num+1
+        that.setData({forward_num:num})
+      },
 
+      fail: function (res) {
+        // 转发失败      
+        console.log("转发失败:" + JSON.stringify(res));
+      }
+
+    }
   },
   swiperChange: function(e) {
     this.setData({
@@ -171,6 +183,7 @@ Page({
       liang: true
     })
   },
+ 
   // 点赞
   dianji: function() {
     var that = this;
