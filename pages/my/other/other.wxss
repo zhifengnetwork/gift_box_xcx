@@ -89,6 +89,12 @@ page{
   margin-left: 20rpx;
   background: rgba(255,38,64,1);
 }
+button::after {
+  border: none;
+  }
+button{
+  background-color: transparent!important
+}
 .back{
   width:140rpx;
   height:40rpx;
@@ -102,7 +108,9 @@ page{
   color:rgba(255,255,255,1);
   margin-left: 20rpx;
 }
-
+.button-hover{
+ background-color: transparent!important
+}
 
 /* 第二部分 */
 .swiper-tab{
