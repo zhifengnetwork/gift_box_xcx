@@ -92,23 +92,6 @@ view{
 .wxParse-video-video{
     width:100%;
 }
-.wxParse-img{
-    /*background-color: #efefef;*/
-    overflow: hidden;
-    display: flex!important;
-    display: -webkit-box!important;
-    display: -moz-box!important;
-    display: -ms-flexbox!important;
-    display: -webkit-flex!important;
-}
-image{
-    display: flex!important;
-    display: -webkit-box!important;
-    display: -moz-box!important;
-    display: -ms-flexbox!important;
-    display: -webkit-flex!important;
-}
-
 .wxParse-blockquote {
     margin: 0;
     padding:10px 0 10px 5px;
@@ -214,4 +197,21 @@ image{
 }
 .wxParse-figure {
   overflow: hidden;
+}
+.wxParse-img{
+    /*background-color: #efefef;*/
+    overflow: hidden;
+    display: flex!important;
+    display: -webkit-box!important;
+    display: -moz-box!important;
+    display: -ms-flexbox!important;
+    display: -webkit-flex!important;
+    border: 2px solid red
+}
+image{
+    display: flex!important;
+    display: -webkit-box!important;
+    display: -moz-box!important;
+    display: -ms-flexbox!important;
+    display: -webkit-flex!important;
 }
