@@ -37,7 +37,14 @@
     /* border-bottom: 4rpx solid #F65959; */
     font-size: 32rpx;
     font-weight: bold;
-    border-bottom: 1rpx solid #000;
+    /* border-bottom: 5rpx solid #000; */
+}
+.active:after{
+content:'';
+display:block;
+width:80rpx;
+border-bottom:2px solid #000;
+margin: 0 auto;
 }
 .show{
   display: block;
