@@ -19,7 +19,7 @@ page {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 40rpx;
+  margin-top: 17rpx;
   position: fixed;
   z-index: 999
 }
