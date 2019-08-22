@@ -137,7 +137,7 @@
 <text class="jiali_title">{{chaoliudaogou.name}}</text>
 <text class="english">{{chaoliudaogou.englist}}</text>
 <view class="daogou_ear">
-  <view bindtap='details' data-id='{{item.goods_id}}' wx:for="{{chaoliudaogou.goods_list}}" class="chaoliu_ear">
+  <view bindtap='details' data-id='{{item.goods_id}}' wx:for="{{chaoliudaogou.goods_list}}" wx:key class="chaoliu_ear">
     <view class="images_wu">
       <image class="images_wu_img" src="{{item.picture}}"></image>
     </view>
