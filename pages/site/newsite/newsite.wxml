@@ -18,7 +18,7 @@
       <image src='../../public/images/index/back.png' class="back_back22"></image>
     </view>
     <view class="tabar" style="padding-top:{{bar_Height+40}}rpx;">
-      <text class="red">添加地址</text>
+      <text class="red">编辑地址</text>
     </view>
  </view>
 

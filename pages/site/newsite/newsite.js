@@ -30,9 +30,10 @@ Page({
   // 返回
   goBack:function(){
     wx.navigateTo({
-      url: '../site/site'
+      url: '../../site/site'
     })
   },
+
   //默认按钮选中取消事件
   switchChange: function (e) {
     console.log('switch1 发生 change 事件，携带值为', e.detail.value)
