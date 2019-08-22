@@ -69,7 +69,7 @@
 .jiali_title{
   display: inline-block;
   padding-left: 21rpx;
-  padding-bottom: 25rpx;
+  padding-bottom: 44rpx;
   height: 80rpx;
   line-height: 80rpx;
   font-weight: bolder;
@@ -148,13 +148,17 @@
   margin-right: 68rpx
 }
 /* 第二个轮播图样式 */
+
 .swiper_boxxxx{
   width: 87%;
-  height: 370rpx!important;
+  height: 400rpx!important;
   margin-left: 21rpx;
   /* border: 1px solid green; */
 }
-.swiper_boxxxx .slide-image{
+.lunbo2{
+  height: 400rpx!important;
+}
+.slide-image{
   width: 100%;
   height: 100%;
 }
@@ -174,10 +178,10 @@
   width: 100%;
   padding:0 21rpx;
   box-sizing: border-box;
-  display: flex;
+  /* display: flex;
   justify-content: space-between;
   overflow-x: scroll;
-  overflow-y:hidden;
+  overflow-y:hidden; */
 }
 .new_shop_item{ 
   box-sizing: border-box;
@@ -185,24 +189,27 @@
   height: 230rpx;
   display: inline-block;
   margin-left: 12rpx;
-  flex-shrink:0;
-  margin: 0 40rpx;
+  /* flex-shrink:0;
+  margin: 0 40rpx; */
 }
 .shagn{
   width: 100%;
   height: 100%
 }
-.shagn:last-child{
+/* .shagn:last-child{
   margin: 0 104rpx 0 40rpx
-}
-/* .new_shop_item:nth-child(2n){
+} */
+ .new_shop_item:nth-child(2n){
   float: left;
   margin-left: 0rpx 
+}
+.lunbo2{
+  height: 200px
 }
 .new_shop_item:nth-child(3n){
   float: right;
   margin-left: 0rpx 
-} */
+} 
 .images_wu{
   width: 695rpx;
   height: 370rpx;
@@ -232,8 +239,8 @@
 }
 .love_item{
   display: inline-block;
-  width: 330rpx;
-  height: 330rpx;
+  width: 325rpx;
+  height: 325rpx;
   /* border: 1px solid red; */
   box-sizing: border-box;
 }
@@ -249,6 +256,7 @@
   font-family:Source Han Sans CN;
   font-weight:400;
   color:rgba(51,51,51,1);
+  padding: 12rpx 0
 }
 .love_money{
   font-size:24rpx;

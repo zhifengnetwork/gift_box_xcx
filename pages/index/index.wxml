@@ -118,7 +118,7 @@
 </view>
 
 <!-- 轮播图2 -->
-<swiper indicator-dots="{{indicatorDots}}" interval="{{interval}}" duration="{{duration}}" current="{{currentSwiper2}}" bindchange="swiperChange2">
+<swiper class="lunbo2" indicator-dots="{{indicatorDots}}" interval="{{interval}}" duration="{{duration}}" current="{{currentSwiper2}}" bindchange="swiperChange2">
   <block wx:for="{{shishangzhinan.goods_list}}" wx:key="">
     <swiper-item class="swiper_boxxxx"  bindtap='details' data-id='{{item.goods_id}}'>
       <image src="{{item.picture}}" class="slide-image" width="695" height="370" />
