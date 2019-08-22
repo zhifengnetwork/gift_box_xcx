@@ -50,7 +50,8 @@ Page({
     record: '',
     recordTime: '',
     bless: '',
-    box_id:0
+    box_id:0,
+    cate_id:''//类型封面
   },
   // 跳转子页面
   skip: function(e) {
@@ -90,6 +91,7 @@ Page({
         })
         if (that.data.blessText != '') {
           that.data.list[3].tips = that.data.blessText;
+
         }
         that.setData({
           blessing: false,
@@ -97,6 +99,7 @@ Page({
           blessText: '',
           list: that.data.list
         })
+
       }else{
         wx.showModal({
           title: '提示',
@@ -144,7 +147,7 @@ Page({
       // 跳转预览
       console.log('跳转')
       wx.navigateTo({
-        url: '../go?id=' + app.globalData.makecard
+        url: '../go?id=' + app.globalData.makecard + '&preview=1'
       })
     }
   },
@@ -163,42 +166,77 @@ Page({
    */
   onLoad: function(options) {
     console.log(options)
+    
     let that = this;
+    
     let cate_id = options.type_id == undefined ? '' : options.type_id;
     let order_type = options.order_type == undefined ? '' : options.order_type;
+    let giveothers = options.giveothers == undefined ? '' : options.giveothers;
+
     this.setData({
-      order_type: order_type
+      order_type: order_type,
+      cate_id: cate_id,
+      giveothers: giveothers
     })
-    api.postJSON('api/box/get_box',{
-      'token': app.globalData.token,
-      'cate_id': cate_id,
-      'advice': options.giveothers,
-      'id': app.globalData.makecard
-    },
-    function (res) {
-      if (!app.globalData.makecard){
-        app.globalData.makecard = res.data.data.id;
-        that.setData({
-          box_id: res.data.data.id,
-          music_id: res.data.data.music_id
-        })
-      }else{
-        return false;
-      }
-    })
+
+    //加载数据
+    this.loadData();
+
   },
 
   /**
-   * 生命周期函数--监听页面初次渲染完成
+   * 加载数据
    */
-  onReady: function() {
+  loadData:function(){
 
+    var that = this
+    api.postJSON('api/box/get_box', {
+      'token': app.globalData.token,
+      'cate_id': that.data.cate_id,
+      'advice': that.data.giveothers,
+      'id': app.globalData.makecard
+    },
+      function (res) {
+        if (!app.globalData.makecard) {
+          app.globalData.makecard = res.data.data.id;
+          that.setData({
+            box_id: res.data.data.id,
+            music_id: res.data.data.music_id,
+          })
+
+          var datalist=[]
+          datalist=that.data.list
+          
+          // 截取字符串前面18位
+          var photourlurlqian = res.data.data.photo_url.substring(0, 12)
+          // 截取字符串后面八位
+          var photourlurlhou = res.data.data.photo_url.slice(-10)
+          var photourl = photourlurlqian + '...' + photourlurlhou
+          
+          var voice_urlqian = res.data.data.voice_url.substring(0, 12)
+          // 截取字符串后面八位
+          var voice_urlhou = res.data.data.voice_url.slice(-10)
+          var voice_url = voice_urlqian + '...' + voice_urlhou
+
+
+          datalist[0].tips = res.data.data.music_name == '' ? '请选择歌曲' : res.data.data.music_name;//音乐
+          that.data.list[1].tips = res.data.data.photo_url == '' ? '请选择照片' : photourl;//图片
+          that.data.list[2].tips = res.data.data.voice_url == '' ? '请录入语音' : voice_url;//录音
+          that.data.list[3].tips = res.data.data.content == '' ? '请填写祝福' : res.data.data.content;//祝福
+          that.setData({ list: datalist })
+
+        } else {
+          return false;
+        }
+      })
   },
 
   /**
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
+    console.log('渲染makecard')
+
     if(this.data.music!=''){
       this.data.list[0].tips = this.data.music;
     }
@@ -213,7 +251,18 @@ Page({
     this.setData({
       list:this.data.list
     })
+
+    console.log("====")
     console.log(this.data)
+    console.log("====")
+
+  },
+
+  /**
+   * 生命周期函数--监听页面初次渲染完成
+   */
+  onReady: function () {
+
   },
 
   /**
