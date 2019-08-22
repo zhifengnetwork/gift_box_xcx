@@ -1,6 +1,6 @@
-<view class="sendgift_nav">
+<!-- <view class="sendgift_nav"> -->
   <component title='已送礼物' show_bol='{{false}}' side="{{true}}"></component>
-</view>
+<!-- </view> -->
 <view class="swiper-tab">
   <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
     好友未領
@@ -13,7 +13,7 @@
   </view>
 </view>
 <view class="{{currentTab == 0 ? 'show':'hidden'}}">
-  <scroll-view>
+  <scroll-view class="hhhhhaaaa">
     <view class="sendgift_box" wx:for="{{item}}">
       <view class="sendgift_top">
         <view class="sendgift_number">订单编号：{{item.order_sn}}</view>
@@ -46,7 +46,7 @@
   </scroll-view>
 </view>
 <view class="{{currentTab == 1 ? 'show':'hidden'}} abc">
-  <scroll-view>
+  <scroll-view class="hhhhhaaaa">
     <view class="sendgift_box" wx:for="{{list}}">
       <view class="sendgift_top">
         <view class="sendgift_number">订单编号：{{item.order_sn}}</view>
