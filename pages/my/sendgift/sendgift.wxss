@@ -19,11 +19,13 @@ page {
   display: flex;
   align-items: center;
   justify-content: space-around;
-  margin-top: 17rpx;
   position: fixed;
+  top:119rpx;
   z-index: 999
 }
-
+.hhhhhaaaa .sendgift_box:first-child{
+  padding-top: 40px
+}
 .swiper-tab-item {
   flex: 1;
   text-align: center;
