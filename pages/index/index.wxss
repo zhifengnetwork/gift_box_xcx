@@ -293,7 +293,7 @@
 }
 .item1_icon{
   position: absolute;
-  bottom: 15rpx;
+  bottom: 10rpx;
   left: 0;
   right: 0;
   margin: 0 auto;
@@ -304,9 +304,9 @@
   bottom: 12rpx;
   width: 140rpx;
 } */
-.xiaode:nth-last-child(2) .item1_icon{
+/* .xiaode:nth-last-child(2) .item1_icon{
   width: 140rpx;
-}
+} */
 .xiegang{
   vertical-align: top;
   display: inline-block;

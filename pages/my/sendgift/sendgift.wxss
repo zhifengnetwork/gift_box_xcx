@@ -19,6 +19,9 @@ page {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  margin-top: 40rpx;
+  position: fixed;
+  z-index: 999
 }
 
 .swiper-tab-item {
@@ -61,6 +64,7 @@ page {
 
 .show {
   display: block;
+  margin-top: 150rpx
 }
 
 .hidden {

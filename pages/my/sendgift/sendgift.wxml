@@ -1,5 +1,5 @@
 <view class="sendgift_nav">
-  <component title='已送礼物' show_bol='{{false}}'></component>
+  <component title='已送礼物' show_bol='{{false}}' side="{{true}}"></component>
 </view>
 <view class="swiper-tab">
   <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
