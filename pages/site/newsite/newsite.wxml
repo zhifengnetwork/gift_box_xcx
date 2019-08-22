@@ -1,7 +1,30 @@
-<view class="newsite_nav">
+<!-- <view class="newsite_nav">
   <component title='添加地址' wx:if="{{item==''}}" show_bol='{{false}}'></component>
   <component title='编辑地址' wx:else="{{item!=''}}" show_bol='{{false}}'></component>
-</view>
+</view> -->
+
+
+
+<view wx:if="{{item==''}}" class="header"> 
+   <view class='goBack' bindtap='goBack' style="padding-top:{{bar_Height+40}}rpx;">			
+      <image src='../../public/images/index/back.png' class="back_back22"></image>
+    </view>
+    <view class="tabar" style="padding-top:{{bar_Height+40}}rpx;">
+      <text class="red">添加地址</text>
+    </view>
+ </view>
+<view  wx:else="{{item!=''}}" class="header"> 
+   <view class='goBack' bindtap='goBack' style="padding-top:{{bar_Height+40}}rpx;">			
+      <image src='../public/images/index/back.png' class="back_back22"></image>
+    </view>
+    <view class="tabar" style="padding-top:{{bar_Height+40}}rpx;">
+      <text class="red">添加地址</text>
+    </view>
+ </view>
+
+
+
+
 <view class="body">
 <view class="newsite_box">
   <view class="newsite_view">收貨人</view>

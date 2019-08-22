@@ -1,10 +1,35 @@
 page{
   background: #EFEEF1;
 }
+.header{
+  margin-top:65rpx
+}
 .newsite_nav{
-  height: 115rpx;
+  height: 125rpx;
+  line-height: 50rpx;
   /* border-bottom: 2rpx solid #D8D8D8; */
   background: #fff;
+}
+.goBack{
+  position: absolute;
+  top: 60rpx;
+  font-size:12pt;
+}
+.goBack image{
+  width: 21rpx;
+  height: 40rpx;
+  padding: 12rpx 20px 0 30rpx;
+}
+.tabar {
+  display: flex;
+  justify-content: center;
+  /* background-color: rgba(255, 255,255, .3); */
+}
+.tabar text {
+  padding: 0rpx 30rpx 40rpx 0;
+  color: #353535;
+  font-size: 37rpx;
+  font-weight: bold;
 }
 .newsite_box{
   height: 70rpx;
@@ -12,7 +37,6 @@ page{
   border-bottom: 2rpx solid #eee;
   background: #fff;
 }
-
 .newsite_button{
   height: 100rpx;
 }

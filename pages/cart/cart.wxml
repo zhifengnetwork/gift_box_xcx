@@ -6,7 +6,6 @@
     <view class="tabar" style="padding-top:{{bar_Height+40}}rpx;">
       <text class="red">购物车</text>
     </view>
-
  </view>
 <!-- 全选 -->
 <view class="selectquan">
