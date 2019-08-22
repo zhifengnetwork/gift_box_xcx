@@ -179,9 +179,6 @@ Page({
       giveothers: giveothers
     })
 
-    //加载数据
-    this.loadData();
-
   },
 
   /**
@@ -190,6 +187,7 @@ Page({
   loadData:function(){
 
     var that = this
+
     api.postJSON('api/box/get_box', {
       'token': app.globalData.token,
       'cate_id': that.data.cate_id,
@@ -197,7 +195,11 @@ Page({
       'id': app.globalData.makecard
     },
       function (res) {
-        if (!app.globalData.makecard) {
+
+        console.log(res.data)
+
+        //if (!app.globalData.makecard) {
+
           app.globalData.makecard = res.data.data.id;
           that.setData({
             box_id: res.data.data.id,
@@ -220,14 +222,16 @@ Page({
 
 
           datalist[0].tips = res.data.data.music_name == '' ? '请选择歌曲' : res.data.data.music_name;//音乐
-          that.data.list[1].tips = res.data.data.photo_url == '' ? '请选择照片' : photourl;//图片
-          that.data.list[2].tips = res.data.data.voice_url == '' ? '请录入语音' : voice_url;//录音
-          that.data.list[3].tips = res.data.data.content == '' ? '请填写祝福' : res.data.data.content;//祝福
+          datalist[1].tips = res.data.data.photo_url == '' ? '请选择照片' : photourl;//图片
+          datalist[2].tips = res.data.data.voice_url == '' ? '请录入语音' : voice_url;//录音
+          datalist[3].tips = res.data.data.content == '' ? '请填写祝福' : res.data.data.content;//祝福
+          
           that.setData({ list: datalist })
 
-        } else {
-          return false;
-        }
+       // } else {
+       //     return false;
+       // }
+
       })
   },
 
@@ -236,7 +240,8 @@ Page({
    */
   onShow: function() {
     console.log('渲染makecard')
-
+    //加载数据
+  
     if(this.data.music!=''){
       this.data.list[0].tips = this.data.music;
     }
@@ -252,9 +257,7 @@ Page({
       list:this.data.list
     })
 
-    console.log("====")
-    console.log(this.data)
-    console.log("====")
+    this.loadData();
 
   },
 
