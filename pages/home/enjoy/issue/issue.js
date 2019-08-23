@@ -23,7 +23,8 @@ Page({
     tupian: '',
     music_id:'',
     type:'',
-    caogao:''
+    caogao:'',
+    title:''
   },
 
   // 点击跳转到话题页面
@@ -56,22 +57,8 @@ Page({
     console.log(that.data.biaoqian)
     // 判断图片
     if (that.data.images) {
-      // 判断标题
-      if (that.data.inputValue) {
-        console.log(234)
-        // 判断内容
-        if (that.data.content) {
-          console.log(345)
-          // 判断话题
-          if (that.data.topic) {
-            console.log(456)
-            // 判断地点
-            if (that.data.lat || that.data.lon) {
-              // console.log(567)
+       
               // 万事俱备，请求接口
-              // let txet = JSON.parse(that.data.biaoqian)
-              // let text2 = JSON.parse(that.data.biaoqing)
-
               if (that.data.type != 0 && that.data.type != 1){
                 wx.showModal({
                   title: '类型不能为空',
@@ -111,35 +98,8 @@ Page({
                   })
                 }
               })
-            } else {
-              wx.showToast({
-                title: '請填寫正確的地址',
-                icon: 'none',
-                duration: 1000
-              })
-            }
-          } else {
-            wx.showToast({
-              title: '請參與話題',
-              icon: 'none',
-              duration: 1000
-            })
-          }
-        } else {
-          wx.showToast({
-            title: '請填寫內容',
-            icon: 'none',
-            duration: 1000
-          })
-        }
-      } else {
-        wx.showToast({
-          title: '請填寫標題',
-          icon: 'none',
-          duration: 1000
-        })
-      }
-    } else {
+            } 
+    else {
       wx.showToast({
         title: '請添加圖片',
         icon: 'none',

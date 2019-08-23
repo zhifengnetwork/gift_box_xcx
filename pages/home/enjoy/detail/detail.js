@@ -56,7 +56,7 @@ Page({
     // 获取屏幕的宽度 单位是px
     var windowWidth = wx.getSystemInfoSync().windowWidth
     windowWidth = windowWidth * 0.9
-    var geshu = windowWidth / 11
+    var geshu = windowWidth /11
     geshu = parseInt(geshu) * 2 - 1
     console.log(geshu)
 
@@ -176,11 +176,6 @@ Page({
       setTimeout(function () {
         that.setData({ forward_num: num })
       }, 2000)
-   
-
-
-
-
   },
   swiperChange: function(e) {
     this.setData({

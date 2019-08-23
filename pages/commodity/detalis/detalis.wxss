@@ -46,9 +46,15 @@ button::after {
 .detalis_top_connect {
   padding-top:15rpx;
   text-align: center;
+  width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .detalis_top_connect_name {
+  
+  
   font-size: 36rpx;
   font-family: SourceHanSansCN-Regular;
   font-weight: 400;

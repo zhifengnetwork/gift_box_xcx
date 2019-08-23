@@ -8,7 +8,9 @@
     <view class="care" bindtap="guanzhu" wx:if="{{!follow_count}}">關注</view>
     <view class="yiguanzhu" bindtap="guanzhu" wx:if="{{follow_count}}">已關注</view>
   </view>
-
+  
+  <!-- 显示展示第几屏 -->
+  <view class="screen">{{currentSwiper+1}}/{{priture.length}}</view>
 
   <movable-area class="imgbox" bindtap="guanbi">
     <!-- 图片swiper -->

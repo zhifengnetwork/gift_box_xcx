@@ -36,9 +36,9 @@
   font-weight: lighter !important;
 }
 .tabar text {
-  padding: 20rpx 30rpx;
+  padding: 30rpx 30rpx;
   color: #353535;
-  font-size: 37rpx;
+  font-size: 30rpx;
   font-weight: bold;
 }
 .tabar .active {

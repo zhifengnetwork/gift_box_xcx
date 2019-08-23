@@ -14,9 +14,9 @@
   /* background-color: rgba(255, 255,255, .3); */
 }
 .tabar text {
-  padding: 20rpx 30rpx;
+  padding: 30rpx 30rpx;
   color: #353535;
-  font-size: 37rpx;
+  font-size: 30rpx;
   font-weight: bold;
 }
 /* 图片上传 */
@@ -134,8 +134,8 @@
   bottom: 30rpx;
 }
 .caogao_pic{
-  width: 40rpx;
-  height: 40rpx;
+  width: 27rpx;
+  height: 27rpx;
   background: #eeeeee;
   padding: 20rpx;
   border-radius: 50%
@@ -151,13 +151,13 @@
   float: left
 }
 .save{
-  font-size: 28rpx;
-  margin-top: -10rpx
+  font-size: 19rpx;
+  margin-top: -1rpx
 }
 .fabu{
   background:rgba(0,0,0,1);
   border-radius:30px;
-  width: 520rpx;
+  width: 560rpx;
   height: 70rpx;
   line-height: 70rpx;
   margin-left: 120rpx;

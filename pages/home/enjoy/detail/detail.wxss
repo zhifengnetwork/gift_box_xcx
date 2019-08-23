@@ -2,8 +2,8 @@
   margin-top: 150rpx;
 }
 .header{
-  width: 86%;
-  margin-left: 7%;
+  width: 90%;
+  margin-left: 5%;
   padding-top: 20rpx;
   display: flex;
   justify-items: center;
@@ -29,7 +29,7 @@
 }
 .care{
   position: absolute;
-  right: 7%;
+  right: 4%;
   top: 190rpx;
   width: 140rpx;
   background:rgba(255,255,255,1);
@@ -81,7 +81,7 @@ swiper{
 }
 .intriduce1{
   width: 90%;
-  font-size:16px;
+  font-size:11px;
   font-family:SourceHanSansCN-Normal;
   font-weight:bold;
   color:rgba(51,51,51,1);
@@ -95,7 +95,7 @@ swiper{
 .intriduce2{
   width: 90%;
   margin-left: 5%;
-  font-size:16px;
+  font-size:11px;
   font-family:SourceHanSansCN-Normal;
   font-weight:bold;
   color:rgba(51,51,51,1);
@@ -123,15 +123,13 @@ swiper{
   display: inline-block
 }
 .aixin{
-   width: 50rpx!important;
-   height: 50rpx;
+   width: 45rpx!important;
+   height: 45rpx;
 }
 
 .first{
   margin-top: 100rpx;
   position: relative;
-  width: 20%;
- 
 }
 .tiaoshu{
   font-size: 28rpx;
@@ -154,10 +152,11 @@ swiper{
   background-color: white!important
 }
 .aixin2{
-  width: 45rpx!important;
-  height: 45rpx;
+  width: 40rpx!important;
+  height: 40rpx;
   position: absolute;
-  top: 11rpx;
+  top: 20rpx;
+  left:40rpx
 }
 .tiaoshu2{
   position: absolute;
@@ -172,8 +171,8 @@ swiper{
 
 }
 .aixin3{
-  width: 50rpx!important;
-  height: 50rpx;
+  width: 45rpx!important;
+  height: 45rpx;
   padding-left: 30rpx
 }
 .tiaoshu3{
@@ -288,4 +287,18 @@ swiper{
   font-weight: bolder;
   display: inline-block;
   color: transparent;
+}
+.screen{
+  width:70rpx;
+  height:50rpx;
+  line-height: 50rpx;
+  text-align: center;
+  position: absolute;
+  top: 300rpx;
+  right: 20px;
+  z-index: 999999;
+  background:rgba(94,94,94,1);
+  border-radius:23px;
+  color: white;
+  font-size:28rpx
 }
