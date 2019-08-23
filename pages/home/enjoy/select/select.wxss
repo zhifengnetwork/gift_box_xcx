@@ -158,12 +158,16 @@ page{
 .music_popup{
   width: 100%;
   height: 350rpx;
-  background: pink;
+  background: black;
   position: absolute;
   bottom: 0;
   left: 0;
   z-index: 3;
   overflow: hidden;
+}
+.dianjile{
+  border: 9rpx solid #e1a74a;
+  color:#706a5d
 }
 .music_t{
   height: 62rpx;
@@ -213,7 +217,6 @@ page{
   border-radius: 24rpx;
   overflow: hidden;
   text-align: center;
-  box-sizing: border-box;
   position: relative;
 }
 .music_f .music_fbox:nth-child(1){

@@ -78,7 +78,7 @@
     </view> -->
 
 
-    <view class="music_fbox" wx:for="{{music}}" data-ind="{{index}}" bindtap="bofang">
+    <view class="music_fbox {{xiabiao===index ? 'dianjile':''}}" wx:for="{{music}}" data-ind="{{index}}" bindtap="bofang">
       <view class="music_ft">{{item.songName}}</view>
       <text class="music_ff">{{item.desc}}</text>
       <audio id="myAudio" src="{{src}}" ></audio>

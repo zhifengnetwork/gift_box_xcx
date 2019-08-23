@@ -38,6 +38,7 @@ Page({
     audio_name:'',
     audioid:'',
     musicid:'',
+    xiabiao:0
   },
 
   // 静音播放
@@ -53,6 +54,7 @@ Page({
   bofang: function (e) {
     let that = this;
     let ind = e.currentTarget.dataset.ind;
+    that.setData({xiabiao: ind})
     // for (let i = 0; i < this.data.music.length; i++) {
     //   this.data.music[i].radio = 'false';
     // }
