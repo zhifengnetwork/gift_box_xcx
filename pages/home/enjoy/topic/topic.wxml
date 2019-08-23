@@ -10,7 +10,7 @@
 </view>
 
 <!-- 搜索时状态 -->
-<view class="kong" wx:if="{{list}}" bindtap="kong">沒有想參與的話題？創建新話題：{{list}}</view>
+<view class="kong" wx:if="{{list}}" bindtap="kong"><view class="want">沒有想參與的話題？</view><view>創建新話題：{{list}}</view></view>
 
 <!-- tab切换 -->
 <scroll-view class="swiper-tab" scroll-x wx:if="{{!list}}" >

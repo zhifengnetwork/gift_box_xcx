@@ -10,7 +10,7 @@ page{
   height: 56rpx;
   background: rgb(245,245,245);
   position: relative;
-  border-radius: 10rpx;
+  border-radius: 20rpx;
   margin-top: 20rpx;
 }
 .sousou{
@@ -164,10 +164,21 @@ page{
   line-height: 35rpx;
 }
 .kong{
-  margin-left: 40rpx;
+  padding-left: 40rpx;
   font-size:24rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
   color:rgba(153,153,153,1);
-  line-height:100rpx;
+  border-top:10rpx solid rgba(153,153,153,.05);
+  -moz-box-sizing: border-box;  
+  -webkit-box-sizing: border-box; 
+  -o-box-sizing: border-box; 
+  -ms-box-sizing: border-box; 
+  box-sizing: border-box; 
+  position: absolute;
+  top:90rpx;
+  width: 100% 
+}
+.want{
+  padding:10rpx 0 10rpx 0
 }

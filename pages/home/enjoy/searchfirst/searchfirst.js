@@ -89,13 +89,23 @@ Page({
   },
   // 清理垃圾桶
   qingchu:function(){
-    var that=this
-    api.getJSON('/api/sharing/empty_search?token=' + app.globalData.token, function (res) {
-      if (res.data.status == 1) {
-        console.log("清除成功!");
-        that.onLoad()
+    var that=this;
+    wx.showModal({
+      content: '確認刪除?',
+      success(res) {
+        if (res.confirm) {
+         api.getJSON('/api/sharing/empty_search?token=' + app.globalData.token, function (res) {
+            if (res.data.status == 1) {
+              console.log("清除成功!");
+              that.onLoad()
+            }
+          })
+        } else if (res.cancel) {
+          console.log('用户点击取消')
+        }
       }
     })
+
   },
   hissdd:function(e){
     var that=this
