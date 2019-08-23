@@ -244,8 +244,12 @@ Page({
 
   // 点击创建新话题
   kong:function(){
-
     let that = this
+
+    console.log('==新话题==')
+    console.log(that.data.list)
+    console.log('==新话题==')
+
     wx.navigateTo({
       url: '../issue/issue?caogao=' + that.data.caogao + '&topic=' + that.data.list,
     })
