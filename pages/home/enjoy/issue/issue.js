@@ -153,10 +153,13 @@ Page({
    */
   onLoad: function(options) {
     var caogao = options.caogao == undefined ? "" : options.caogao;
+    var topic = options.topic == undefined ? "" : options.topic;
+
     console.log('是不是草稿箱：' + caogao)
     
     this.setData({
-      caogao: caogao
+      caogao: caogao,
+      topic: topic
     })
 
     console.log('选了类型:' + app.globalData.type)
@@ -166,11 +169,6 @@ Page({
       type: app.globalData.type
     })
     
-    // if (options.topic) {
-    //   that.setData({
-    //     topic: options.topic,
-    //   })
-    // }
     // console.log(app.globalData.music_id)
     if (app.globalData.music_id){
       that.setData({
