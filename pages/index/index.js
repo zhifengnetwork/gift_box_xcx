@@ -148,6 +148,7 @@ Page({
             that.data.page++
           }else{
             that.setData({bujia:false})
+            that.setData({ yuan: false }) 
           }
 
         }
