@@ -137,9 +137,9 @@ Page({
     if(that.data.bujia===true){
       api.getJSON('/api/index/getBrandGoods?page=' + that.data.page, function (res) {
         if (res.data.status == 1) {
+          that.setData({yuan:false}) 
           var noteafter = that.data.goods_list
           if (res.data.data.length > 0) {
-            that.setData({ yuan: false }) 
             for (var i = 0; i < res.data.data.length; i++) {
               noteafter.push(res.data.data[i])
             }
@@ -147,14 +147,15 @@ Page({
             that.setData({goods_list: noteafter})
             that.data.page++
           }else{
-            that.setData({bujia:false})
-            that.setData({ yuan: false }) 
+            that.setData({bujia:false}) 
+            that.setData({yuan:false})  
           }
-
         }
       })
 
 
+    }else{
+      that.setData({ yuan: false }) 
     }
     
 
