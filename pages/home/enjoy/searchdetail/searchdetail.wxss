@@ -215,3 +215,9 @@ swiper {
   margin-left: 40rpx;
   margin-top: 25rpx;
 }
+.wu{
+  width: 95%;
+  margin:0 auto;
+  padding-top: 150px;
+  text-align:center;
+}

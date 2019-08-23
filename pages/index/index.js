@@ -19,6 +19,7 @@ Page({
     chaoliudaogou: [],
     sharing_name:[],
     sharing:[],
+    yuan:false,
     // indicatorActivecolor: 'red',
     // 头部导航栏的高度
     // statusBarHeight: app.globalData.statusBarHeight,
@@ -46,7 +47,10 @@ Page({
 
     ],
     // currentSwiper: 0,
-    autoplay: true
+    autoplay: true,
+    goods_list:[],
+    page:1,
+    bujia:true
 
   },
 
@@ -60,16 +64,18 @@ Page({
       //   url: '../home/enjoy/selectimg/selectimg',
       // })
     },
-
-
+    // 滚动条触碰到底部
+    // 获取容器高度，使页面滚动到容器底部
+  
 
   onLoad: function () {
     
   },
   onShow: function () {
-  
+    
     app.globalData.give.order_id = '';
     var that = this;
+    that.setData({bujia:true,page:1})
     app.getUserInfo(userinfo => {
 
       //昵称、头像 不存在，跳转去授权
@@ -88,7 +94,7 @@ Page({
               jiali: res.data.data.jializhixuan,
               shishangdapai: res.data.data.shishangdapai,
               shishangzhinan: res.data.data.shishangzhinan,
-              // guess_like: res.data.data.guess_like,
+              guess_like: res.data.data.guess_like,
               imgUrlslength: res.data.data.shishangzhinan.goods_list.length,
               xinpinshangshi: res.data.data.xinpinshangshi,
               xingxuanyoupin: res.data.data.xingxuanyoupin,
@@ -96,7 +102,8 @@ Page({
               chaoliudaogou: res.data.data.chaoliudaogou,
               imgs: res.data.data.banner,
               sharing_name: res.data.data.sharing_name,
-              sharing: res.data.data.sharing
+              sharing: res.data.data.sharing,
+              goods_list: res.data.data.cainixihuan.goods_list
             })
           }
         })
@@ -123,7 +130,33 @@ Page({
   onPullDownRefresh: function () {
 
   },
+  // 微信自定义的函数,如果滚动条滚动到底部,会自动触发该函数
   onReachBottom: function () {
+    var that=this
+    that.setData({yuan:true}) 
+    if(that.data.bujia===true){
+      api.getJSON('/api/index/getBrandGoods?page=' + that.data.page, function (res) {
+        if (res.data.status == 1) {
+          var noteafter = that.data.goods_list
+          if (res.data.data.length > 0) {
+            that.setData({ yuan: false }) 
+            for (var i = 0; i < res.data.data.length; i++) {
+              noteafter.push(res.data.data[i])
+            }
+            console.log(noteafter)
+            that.setData({goods_list: noteafter})
+            that.data.page++
+          }else{
+            that.setData({bujia:false})
+          }
+
+        }
+      })
+
+
+    }
+    
+
 
   },
  

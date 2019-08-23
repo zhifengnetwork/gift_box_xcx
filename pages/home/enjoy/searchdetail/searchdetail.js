@@ -25,7 +25,8 @@ Page({
     draft: '',
     draglist: [],
     keyword:'',
-    page:1
+    page:1,
+    wu:false
   },
 
   /**
@@ -43,11 +44,12 @@ Page({
         })
       }
     });
-    that.setData({ keyword: options.keyword})
+    that.setData({keyword: options.keyword})
     api.getJSON('/api/sharing/search_sharing?num=10' + '&keyword=' + that.data.keyword + '&page=' + that.data.page + '&token=' + app.globalData.token, function (res) {
       if (res.data.status == 1) {
         console.log(res.data.data)
         if (res.data.data.length > 0) {
+          that.setData({ wu: false })
           for (var i = 0; i < res.data.data.length; i++) {
             that.data.goodslist.push(res.data.data[i])
           }
@@ -57,6 +59,7 @@ Page({
           that.data.page++;
         }else{
           that.setData({bujia:false})
+          that.setData({wu:true})
         }
       }
     })

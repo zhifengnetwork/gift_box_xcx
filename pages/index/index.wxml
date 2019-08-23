@@ -1,5 +1,4 @@
-<component title='澳门星选' show_bol='{{true}}' side='{{false}}'>
-</component>
+<component title='澳门星选' show_bol='{{true}}' side='{{false}}'></component>
 <!-- 轮播图 -->
 <!-- <view class='index_top'>
   <view class='swiper_box'>
@@ -19,7 +18,7 @@
 </view> -->
 
 
-<view class="wrap">
+<view class="wrap" >
 <swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange" bindanimationfinish="changeGoodsSwip">
 <block wx:for="{{imgs}}" wx:key="imgs">
 <swiper-item>
@@ -153,12 +152,12 @@
 <text class="jiali_title">{{guess_like.name}}</text>
 <text class="english">{{guess_like.english}}</text>
 <view class="love_ear">
-  <view class="love_love"  wx:for="{{guess_like.goods_list}}" wx:key bindtap='details' data-id='{{item.goods_id}}'>
+  <view class="love_love"  wx:for="{{goods_list}}" wx:key bindtap='details' data-id='{{item.goods_id}}'>
     <view class="love_item">
       <image src="{{item.picture}}" class="love_pic"></image>
     </view>
     <view class="love_tile">{{item.goods_name}}</view>
     <view class="love_money">HK$ {{item.price}} </view>
   </view>
-
+  <image src="/images/dian.png" class="dian" wx:if="{{yuan}}"></image>
 </view>

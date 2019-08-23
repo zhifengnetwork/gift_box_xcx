@@ -6,7 +6,7 @@
       <scroll-view>
         <view class='case-page'>
           <view class='list-masonry'>
-            <view  class='lan' wx:for="{{note}}" wx:key bindtap="details" data-id="{{item.id}}" data-type="{{item.type}}">
+            <view  class='lan'  wx:for="{{note}}" wx:key bindtap="details" data-id="{{item.id}}" data-type="{{item.type}}">
               <!-- ' class='pic {{item.show? "Action" : ""}}' -->
               <!-- <image src='{{item.stutus ? item.cover : ""}}' mode='widthFix'></image> -->
               <image src='{{item.cover}}' mode='widthFix' wx:if="{{!item.type}}"></image>
@@ -31,7 +31,7 @@
         </view>
       </scroll-view>
     </view>
-  
+    <view class="wu" wx:if="{{wu}}">没有搜索到任何内容</view>
   
 
 </view>
