@@ -31,7 +31,7 @@
 <!-- 文本区域 -->
 <view class="awrad_textarea">
   <!-- <input placeholder="選填，請先和商家協商一致" disabled="{{!flag}}" /> -->
-  <textarea class="weui-textarea" placeholder="說說此刻的心情..." bindblur="changeContext" bindinput="content" style="height:140rpx" value="{{content}}" />
+  <textarea class="weui-textarea" placeholder="說說此刻的心情..." maxlength="-1" bindblur="changeContext" bindinput="content" style="height:140rpx" value="{{content}}" />
 </view>
 
 <!-- 参与话题 -->
