@@ -1,5 +1,5 @@
 <view class="giftbank_nav">
-  <component title='礼品库' show_bol='{{false}}'></component>
+  <component title='礼品库' show_bol='{{false}}' side="{{true}}"></component>
 </view>
 <view class="swiper-tab">
   <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
@@ -13,7 +13,7 @@
   </view>
 </view>
 <view class="{{currentTab == 0 ? 'show':'hidden'}}">
-  <scroll-view>
+  <scroll-view class="hhhhhaaaa">
     <view class="giftbank_box" wx:for="{{item}}" wx:key="">
       <view class="giftbank_top">
         <view class="giftbank_number">订单编号：{{item.order_sn}}</view>

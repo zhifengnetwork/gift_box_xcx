@@ -10,6 +10,15 @@ page {
 /* tab切换 */
 
 .swiper-tab {
+  /* background: #fff;
+  width: 100%;
+  border-bottom: 2rpx solid rgba(243, 241, 241, 1);
+  text-align: center;
+  height: 100rpx;
+  line-height: 100rpx;
+  display: flex;
+  align-items: center;
+  justify-content: space-around; */
   background: #fff;
   width: 100%;
   border-bottom: 2rpx solid rgba(243, 241, 241, 1);
@@ -19,8 +28,10 @@ page {
   display: flex;
   align-items: center;
   justify-content: space-around;
+  position: fixed;
+  top:119rpx;
+  z-index: 999
 }
-
 .swiper-tab-item {
   flex: 1;
   text-align: center;
@@ -200,4 +211,7 @@ page {
 .tips{
   line-height: 200rpx;
   text-align: center;
+}
+.hhhhhaaaa .giftbank_box:first-child{
+  padding-top: 40px
 }
