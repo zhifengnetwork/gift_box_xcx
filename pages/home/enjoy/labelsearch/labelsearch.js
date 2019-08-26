@@ -356,7 +356,7 @@ Page({
 
   },
   // 影视box
-  moviebox:function(){
+  moviebox:function(e){
     var that = this
     console.log("ssaaa")
     console.log(e.currentTarget.dataset.title)
