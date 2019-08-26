@@ -359,15 +359,15 @@ Page({
           paySign: res.data.data.paySign,
           success(res) {
             console.log(res); 
-            wx.navigateTo({
-              url: '../../../../my/reward/reward',
+            wx.switchTab({
+              url: '../../../../index/index',
             })
           },
-          fail(res) {
-            wx.navigateTo({
-              url: '../../../../my/giftbank/giftbank',
-            })
-          }
+          // fail(res) {
+          //   wx.navigateTo({
+          //     url: '../../../../my/giftbank/giftbank',
+          //   })
+          // }
         })
 
 

@@ -74,9 +74,14 @@ Page({
             wx.navigateTo({
               url: '/pages/commodity/detalis/give/giftbag/giftbag?order_id=' + that.data.order_id,
             })
+            // console.log("1111")
           }else{
-            wx.navigateTo({
-              url: '/pages/my/giftbank/giftbank?order_id=' + that.data.order_id,
+            // wx.navigateTo({
+            //   url: '/pages/my/giftbank/giftbank?order_id=' + that.data.order_id,
+            // })
+            // 积分支付成功
+            wx.switchTab({
+              url: '/pages/index/index',
             })
           }
 
