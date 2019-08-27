@@ -37,10 +37,10 @@ page{
 }
 .tabBar_icon{
   position: absolute;
-  top: 4rpx;
+  top: 20rpx;
   left: 28rpx;
-  width: 60rpx;
-  height: 60rpx;
+  width: 32rpx;
+  height: 32rpx;
 }
 .tabCont{
   display:flex;
