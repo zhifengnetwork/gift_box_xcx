@@ -101,10 +101,11 @@
 <view class="dangimg_box">
   <image class="dangimg_box_img" src="{{xingxuanyoupin.goods_info.picture}}" bindtap='details' data-id='{{xingxuanyoupin.goods_info.goods_id}}'></image>
 </view>
+<!-- 时尚大牌 -->
 <text class="jiali_title">{{shishangdapai.name}}</text>
 <text class="english">{{shishangdapai.english}}</text>
 <view class="fashion_ear">
-<view class="fashion_item" wx:for="{{shishangdapai.goods_list}}" wx:key="" bindtap='details' data-id='{{item.goods_id}}' >
+<view class="fashion_item" wx:for="{{shishangdapai.goods_list}}" wx:key="" bindtap='brand' data-id='{{item.id}}' >
   <image src="{{item.picture}}" class="dapai"></image>
 </view>
 </view>

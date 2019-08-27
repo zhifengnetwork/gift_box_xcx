@@ -193,6 +193,13 @@ Page({
       url: '../commodity/detalis/detalis?id=' + id,
     })
   },
+  brand: function (e) {
+    var id = e.currentTarget.dataset.id;
+    console.log('商品' + id)
+    wx.navigateTo({
+      url: '../classify/shop/shop?id=' + id,
+    })
+  },
   onShareAppMessage: function () {
     console.log('share')
     var nickname = app.globalData.userInfo.nickname;
