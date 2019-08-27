@@ -293,7 +293,7 @@ Page({
             // })
             // let image = []
             const images1 = that.data.images.concat(that.data.avatar)
-            const images2 = images1.length <= 3 ? images1 : images1.slice(0, 3)
+            const images2 = images1.length <= 9 ? images1 : images1.slice(0, 9)
             that.setData({
               images: images2
             })
