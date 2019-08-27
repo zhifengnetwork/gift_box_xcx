@@ -20,7 +20,7 @@ Page({
     let that = this;
     let over = '';
     let order_id = options.order_id == undefined ? '' : options.order_id;
-    api.postJSON('api/order/get_order_logistics', {
+    api.postJSON('api/order/get_order_logistics?token='+app.globalData.token, {
       'token': app.globalData.token,
       'order_id': order_id,
       // 'order_id': 3232,

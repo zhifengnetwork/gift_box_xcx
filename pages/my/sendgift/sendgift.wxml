@@ -69,7 +69,7 @@
       <view class="sendgift_bott">
         <view class="sendgift_bottnum">領取人：{{item.nickname}}</view>
         <view class="sendgift_bottprice">合计：HK${{item.goods_price}}</view>
-        <view class="sendgift_payment" bindtap="logistics" id="{{item.order_id}}">查看物流</view>
+        <!-- <view class="sendgift_payment" bindtap="logistics" id="{{item.order_id}}">查看物流</view> -->
       </view>
     </view>
   </scroll-view>
