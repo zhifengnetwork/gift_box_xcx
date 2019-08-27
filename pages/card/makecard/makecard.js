@@ -64,7 +64,7 @@ Page({
       return false;
     }
     wx.navigateTo({
-      url: url+'?music_id='+ this.data.music_id
+      url: url + '?music_id=' + this.data.music_id + '&picture=' + this.data.picture
     })
   },
   // 关闭祝福弹出层
@@ -204,6 +204,7 @@ Page({
           that.setData({
             box_id: res.data.data.id,
             music_id: res.data.data.music_id,
+            picture: res.data.data.photo_url
           })
 
           var datalist=[]
