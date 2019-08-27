@@ -51,6 +51,10 @@
   font-family:SourceHanSansCN-Regular;
   font-weight:bold;
   color:rgba(34,34,34,1);
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .collectgift_standard{
   font-size:22rpx;
@@ -58,6 +62,10 @@
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
   color:rgba(34,34,34,1);
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .collectgift_size{
   font-size:18rpx;

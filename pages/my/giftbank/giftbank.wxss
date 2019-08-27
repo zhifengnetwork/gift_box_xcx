@@ -127,6 +127,10 @@ page {
   font-family:SourceHanSansCN-Regular;
   font-weight:bold;
   color:rgba(34,34,34,1);
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .giftbank_standard{
   font-size:22rpx;
@@ -134,6 +138,10 @@ page {
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
   color:rgba(34,34,34,1);
+  width: 400rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 .giftbank_size{
   font-size:18rpx;
