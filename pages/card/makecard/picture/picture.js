@@ -11,6 +11,17 @@ Page({
     video:'',
     picture:''
   },
+  
+  /**
+  * 生命周期函数--监听页面加载
+  */
+  onLoad: function (options) {
+    var picture = options.picture == undefined ? '../../../public/images/card/picture.png' : options.picture;
+    this.setData({
+      imglist: picture
+    })
+  },
+
   // 点击添加按钮
   add: function() {
     var that = this;
@@ -151,13 +162,7 @@ Page({
       }
     })
   },
-  /**
-   * 生命周期函数--监听页面加载
-   */
-  onLoad: function(options) {
-
-  },
-
+ 
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
