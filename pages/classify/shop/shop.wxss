@@ -13,8 +13,8 @@ page {
 }
 
 .addidas {
-  width: 220rpx;
-  height: 220rpx;
+  width: 180rpx;
+  height: 180rpx;
   margin-top: 150rpx;
 }
 

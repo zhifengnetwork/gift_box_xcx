@@ -158,7 +158,7 @@ Page({
   },
   back_white:function(){
     wx.navigateBack({
-      delta: 2,
+      delta: 1,
     })
   }, 
   /**
