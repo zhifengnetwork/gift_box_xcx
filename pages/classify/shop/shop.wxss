@@ -13,15 +13,15 @@ page {
 }
 
 .addidas {
-  width: 110rpx;
-  height: 110rpx;
-  margin-top: 200rpx;
+  width: 180rpx;
+  height: 180rpx;
+  margin-top: 150rpx;
 }
 
 .text_header {
   background: white;
   font-size: 27rpx;
-  padding: 80rpx 40rpx 0 40rpx;
+  padding: 40rpx 40rpx 0 40rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
