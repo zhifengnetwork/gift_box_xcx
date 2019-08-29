@@ -51,7 +51,7 @@
   <view class="tips" wx:if="{{!item}}">暂无数据哦!</view>
 </view>
 <view class="{{currentTab == 1 ? 'show':'hidden'}}">
-  <scroll-view>
+  <scroll-view class="hhhhhaaaa">
     <view class="giftbank_box" wx:for="{{list}}" wx:key="">
       <view class="giftbank_top">
         <view class="giftbank_number">订单编号：{{item.order_sn}}</view>
