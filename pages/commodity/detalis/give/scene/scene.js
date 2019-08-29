@@ -69,15 +69,14 @@ Page({
   },
   tabCont:function(e){
     let that = this;
-    let index = e.currentTarget.dataset.index;
-    let id = e.currentTarget.dataset.id;
+    let index = e.detail.current;
     for (let i = 0; i < that.data.tabCont.length; i++) {
       that.data.tabCont[i] = false;
     }
     that.data.tabCont[index] = true;
     that.setData({
       tabCont: that.data.tabCont,
-      id: id,
+      id: that.data.get_scene[index].id,
       picture: that.data.get_scene[index].picture,
       name: that.data.get_scene[index].name
     })

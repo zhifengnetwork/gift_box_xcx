@@ -48,7 +48,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 25,
+			"current": 27,
 			"list": [
 				{
 					"id": -1,
@@ -237,6 +237,12 @@
 					"name": "1113",
 					"pathName": "pages/home/enjoy/selectmusic/selectmusic",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "pages/commodity/detalis/give/scene/scene",
+					"pathName": "pages/commodity/detalis/give/scene/scene",
 					"scene": null
 				}
 			]
