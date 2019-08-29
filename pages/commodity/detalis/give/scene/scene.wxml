@@ -4,7 +4,7 @@
 </view>
 <view class="tabBar">
   <view class="tabBar_item {{tabBar[index]?'active':''}}" wx:for="{{scene}}" wx:key="{{index}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="tabBar">
-    <image class="tabBar_icon" src="{{item.picture}}"></image>
+    <image class="tabBar_icon" src="{{tabBar[index]?item.gif:item.picture}}"></image>
     <text>{{item.name}}</text>
   </view>
 </view>
