@@ -1,6 +1,6 @@
 <view class="getthegift_box">
   <view class="getthegift_top">
-    <component title='九點星選' show_bol='{{falsr}}'></component>
+    <component title='澳門星選' show_bol='{{falsr}}'></component>
   </view>
   <view class="getthegift_t">
     <view class="getthegift_timg">

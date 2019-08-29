@@ -4,7 +4,7 @@
     <image class="turntable_back_img" src="../public/images/index/back_white.png"></image>
   </view>
   <view class="turntable_title">
-    <text class="turntable_text">九点星选</text>
+    <text class="turntable_text">澳門星选</text>
   </view>
 </view>
 <!-- 背景图 -->
