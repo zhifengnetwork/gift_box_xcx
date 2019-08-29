@@ -8,12 +8,21 @@
     <text>{{item.name}}</text>
   </view>
 </view>
-<view class="tabCont">
+<!-- <view class="tabCont">
   <view class="tabCont_item {{tabCont[index]?'active':''}}" wx:for="{{get_scene}}" wx:key="{{index}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="tabCont">
     <image class="tabCont_img" src="{{item.picture}}"></image>
   </view>
   <view wx:if="{{get_scene.length>1}}" style="width:200rpx;height:1rpx;display:inline-block;flex-shrink:0;"></view>
-</view>
+</view> -->
+
+<swiper duration="500" style="height:730rpx;" previous-margin="120rpx" next-margin="120rpx" bindchange="tabCont">
+  <block wx:for="{{get_scene}}">
+    <swiper-item>
+      <image src="{{item.picture}}" class="tabCont_img {{tabCont[index]?'tabCont_active':''}}"/>
+    </swiper-item>
+  </block>
+</swiper>
+
 <view class="btn" bindtap="send">
  使用它
 </view>
