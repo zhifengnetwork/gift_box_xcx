@@ -10,7 +10,7 @@ Page({
     scene:'',
     get_scene:'',
     tabBar:[],
-    tabCont:[],
+    current:'',
     array:'',
     id:'',
     name:'',
@@ -65,20 +65,18 @@ Page({
     that.get_scene(id);
     that.setData({
       tabBar: that.data.tabBar,
+      current: '0'
     })
   },
   tabCont:function(e){
     let that = this;
     let index = e.detail.current;
-    for (let i = 0; i < that.data.tabCont.length; i++) {
-      that.data.tabCont[i] = false;
-    }
-    that.data.tabCont[index] = true;
     that.setData({
       tabCont: that.data.tabCont,
       id: that.data.get_scene[index].id,
       picture: that.data.get_scene[index].picture,
-      name: that.data.get_scene[index].name
+      name: that.data.get_scene[index].name,
+      current: index
     })
   },
   get_scene:function(id){
