@@ -1,5 +1,5 @@
 <view class="giftbag_top">
-  <component title='九點星選' show_bol='{{falsr}}'></component>
+  <component title='澳門星選' show_bol='{{falsr}}'></component>
 </view>
 <view class="giftbag_t">
   <view class="giftbag_tc">

@@ -55,7 +55,8 @@ button::after {
 .detalis_top_connect_name {
   
   
-  font-size: 36rpx;
+  font-size: 32rpx;
+  line-height: 40rpx;
   font-family: SourceHanSansCN-Regular;
   font-weight: 400;
   color: rgba(51, 51, 51, 1);
@@ -70,7 +71,8 @@ button::after {
 
 .detalis_top_connect_price>text {
   color: #222;
-  font-size: 44rpx;
+  font-size: 32rpx;
+  font-weight: bold;
 }
 
 .detalis_c {

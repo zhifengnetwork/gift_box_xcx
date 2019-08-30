@@ -4,7 +4,7 @@
 </view>
 <view class="tabBar">
   <view class="tabBar_item {{tabBar[index]?'active':''}}" wx:for="{{scene}}" wx:key="{{index}}" data-index="{{index}}" data-id="{{item.id}}" bindtap="tabBar">
-    <image class="tabBar_icon" src="{{item.picture}}"></image>
+    <image class="tabBar_icon" src="{{tabBar[index]?item.gif:item.picture}}"></image>
     <text>{{item.name}}</text>
   </view>
 </view>
@@ -15,10 +15,10 @@
   <view wx:if="{{get_scene.length>1}}" style="width:200rpx;height:1rpx;display:inline-block;flex-shrink:0;"></view>
 </view> -->
 
-<swiper duration="500" style="height:730rpx;" previous-margin="120rpx" next-margin="120rpx" bindchange="tabCont">
+<swiper duration="500" style="height:730rpx;" previous-margin="120rpx" next-margin="120rpx" current="{{current}}" bindchange="tabCont">
   <block wx:for="{{get_scene}}">
     <swiper-item>
-      <image src="{{item.picture}}" class="tabCont_img {{tabCont[index]?'tabCont_active':''}}"/>
+      <image src="{{item.picture}}" class="tabCont_img {{index==current?'tabCont_active':''}}"/>
     </swiper-item>
   </block>
 </swiper>
