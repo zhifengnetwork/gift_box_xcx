@@ -336,6 +336,7 @@ swiper{
   text-overflow: ellipsis;
 }
 .nike{
+  display: inline-block;
   margin-left: 20rpx;
   font-size: 24rpx;
   overflow: hidden;
@@ -355,9 +356,13 @@ swiper{
   height:50rpx;
   line-height: 50rpx;
   display: inline-block;
-  display: flex;
-  align-items: center;
-  justify-content: center
+  vertical-align: center;
+  text-align: center
+
+}
+.aixin77{
+   width: 30rpx!important;
+   height: 30rpx;
 }
 .huadong{
   height: 300rpx;

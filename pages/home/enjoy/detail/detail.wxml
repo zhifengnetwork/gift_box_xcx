@@ -135,14 +135,14 @@
               <view class="biaoti">{{item.title}}</view>
               <view class="touxiang">
                 <image class="user_pic" src="{{item.avatar}}"></image>
-                <text class="nike">{{item.nickname}}</text>
+                <view class="nike">{{item.nickname}}</view>
                 <view class="aixin_ear">
                   <!-- bindtap="dianji" -->
                   <!-- wx:if="{{dianzang[index]}}" -->
                   <!-- catchtap="dianji" -->
-                  <image class="aixin" src="../../../public/images/home/xuanaixin.png"  wx:if="{{item.point_count}}"  data-index="{{index}}" data-id="{{item.id}}"></image>
+                  <image class="aixin77" src="../../../public/images/home/xuanaixin.png"  wx:if="{{item.point_count}}"  data-index="{{index}}" data-id="{{item.id}}"></image>
 
-                  <image class="aixin" src="../../../public/images/home/aixin.png" wx:else  data-index="{{index}}" data-id="{{item.id}}"></image>
+                  <image class="aixin77" src="../../../public/images/home/aixin.png" wx:else  data-index="{{index}}" data-id="{{item.id}}"></image>
                   <text style="margin-left:5rpx">{{item.point_num}}</text>
                 </view>
                 
