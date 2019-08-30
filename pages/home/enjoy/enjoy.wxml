@@ -15,12 +15,9 @@
     <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{nav_title}}" wx:key data-id="{{item.id}}">{{item.name}}</view>
   </scroll-view>
   
- 
-  <!-- <scroll-view class="huadong">
-    <view class="upimg" bindtap="upimg"></view>
-  </scroll-view> -->
+
    <!-- tab切换下面的公共部分 bindtap="xwq"-->
-  <view class="img_box">
+<view class="img_box">
   <view class="img_item1" bindtap="upimg">
     <image src="../../public/images/home/add.png" class="add"></image>
     <view class="wenzi">發佈 hey</view>
@@ -32,7 +29,8 @@
 </view>
 
 
-  <view wx:for="{{note.length}}" wx:for-index="idx" wx:key>
+
+ <view wx:for="{{nav_title.length}}" wx:for-index="idx" wx:key>
     <view class="{{currentTab == idx ? 'show':'hidden'}}">
       <scroll-view>
         <view class='case-page'>
@@ -63,7 +61,57 @@
       </scroll-view>
     </view>
   </view>
+
+
+
+<!-- tab -->
+<!-- <scroll-view class="swiper-tab" scroll-x>
+    <view class="swiper-tab-item {{currentTab==index?'active':''}}"  data-current="{{index}}" bindtap="clickTab" wx:for="{{nav_title}}" wx:key data-id="{{item.id}}">{{item.name}}</view>
+</scroll-view>
+
+  <view class = "{{currentTab == idx ? 'show':'hidden'}}" wx:for="{{nav_title.length}}" wx:for-index="idx" wx:key>
+    <scroll-view>
+      <text>{{idx}}</text>
+    </scroll-view>
+  </view> -->
   
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
 
 </view>
 </scroll-view>

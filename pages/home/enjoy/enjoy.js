@@ -17,7 +17,7 @@ Page({
     bujia: true,
     goodslist: [],
     topic_id: 0,
-    page: 2,
+    page: 1,
     image: [],
     type:'',
     dianzang:[],
@@ -213,7 +213,7 @@ Page({
     var that=this
     var array=[]
     that.loadData();
-    that.setData({ page: 2, goodslist: array})
+    that.setData({ page: 1, goodslist: array})
     that.GetList(that)
 
   },
@@ -356,7 +356,7 @@ Page({
     });
     that.setData({
       bujia: true,
-      page: 2
+      page: 1
     })
     console.log(e.target.dataset.id)
     // 如果点击的是附近的话,就不分页了,点击其他的滚动条滚动到底部加载下一页
