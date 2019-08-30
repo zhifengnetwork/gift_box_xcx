@@ -31,7 +31,8 @@ Page({
     biaoqian:'',
     xianshi:true,
     forward_num:0,
-    note:[]
+    note:[],
+    topic_id:null
   },
 
   // 视频播放函数
@@ -77,14 +78,27 @@ Page({
           music: res.data.data.music,
           biaoqian: JSON.parse(res.data.data.text),
           biaoqing: JSON.parse(res.data.data.text2),
-          forward_num: res.data.data.forward_num
+          forward_num: res.data.data.forward_num,
+          topic_id: res.data.data.topic_id
         })
         console.log(that.data.detaillist.content.length)
+        console.log("qqqq")
+        console.log(that.data.topic_id)
         if (geshu > that.data.detaillist.content.length){
           that.setData({xianshi:false})
         }else{
           that.setData({ xianshi: true })
-        }       
+        } 
+
+        // 相关推荐
+        api.getJSON('/api/sharing/sharing_list?topic_id=' + that.data.topic_id + '&token=' + app.globalData.token + '&page=1&num=100000', function (res) {
+          if (res.data.status == 1) {
+            console.log(res.data.data);
+            that.setData({ note: res.data.data })
+          }
+        }) 
+
+
       }
     })
     api.getJSON('/api/sharing/sharing_comment_list?sharing_id=' + that.data.id + '&token=' + app.globalData.token +'&page=1&num=100000' , function (res) {
@@ -93,13 +107,7 @@ Page({
         that.setData({comments: res.data.data})
       }
     })
-    // 相关推荐
-    api.getJSON('/api/sharing/sharing_list?topic_id=0' + '&token=' + app.globalData.token + '&page=1&num=100000', function (res) {
-      if (res.data.status == 1) {
-        console.log(res.data.data);
-        that.setData({ note: res.data.data })
-      }
-    }) 
+   
 
   },
 
