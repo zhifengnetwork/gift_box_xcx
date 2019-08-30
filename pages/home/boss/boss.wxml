@@ -6,7 +6,7 @@
   <view class="swiper-tab">
     <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" 
     wx:for="{{tablist}}" data-id="{{item.id}}">
-      <p>{{item.name}}</p>
+      {{item.name}}
     </view>
     <!-- <view class="swiper-tab-item {{currentTab==1?'active':''}}" data-current="1" bindtap="clickTab">
       为你星选
