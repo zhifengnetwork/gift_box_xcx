@@ -28,6 +28,7 @@
 .about_page {
   margin: 0 10px;
 }
+
 .swiper-tab {
   /* border-bottom: 2rpx solid #ccc; */
   height: 88rpx;
