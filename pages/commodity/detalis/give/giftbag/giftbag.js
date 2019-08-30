@@ -18,7 +18,7 @@ Page({
   onLoad: function (options) {
     console.log(options)
     var order_id = options.order_id;
-    var type = options.type;
+    var type = options.type == undefined ? "" :　options.type;
 
     this.setData({
       order_id: order_id,

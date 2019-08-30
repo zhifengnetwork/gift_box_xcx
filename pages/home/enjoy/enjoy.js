@@ -364,6 +364,8 @@ Page({
     if (e.target.dataset.id === that.data.nav_title[1].id){
       api.getJSON('/api/sharing/sharing_list?topic_id=' + that.data.topic_id + '&token=' + app.globalData.token, function (res) {
         if (res.data.status == 1) { 
+          console.log('==');
+
           console.log(res.data.data);
           that.setData({ note: res.data.data, bujia: false})
         
@@ -377,6 +379,7 @@ Page({
             for (var i = 0; i < res.data.data.length; i++) {
               that.data.goodslist.push(res.data.data[i])
             }
+            console.log(that.data.goodslist)
             that.setData({
               note: that.data.goodslist
             })
