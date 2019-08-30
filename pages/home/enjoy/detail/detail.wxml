@@ -123,7 +123,7 @@
     </view>
 
     <!-- 相关推荐 -->
-    <view style="padding:30rpx 30px 30rpx 15rpx;font-size:30rpx;color:rgba(102,102,102,1);">相关推荐</view>
+    <view style="padding:30rpx 30px 30rpx 0rpx;font-size:30rpx;color:rgba(102,102,102,1);">相关推荐</view>
     <scroll-view>
         <view class='case-page'>
           <view class='list-masonry'>
