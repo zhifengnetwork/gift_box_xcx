@@ -359,11 +359,6 @@ swiper{
   align-items: center;
   justify-content: center
 }
-.aixin{
-   width: 30rpx!important;
-   height: 30rpx;
-}
-
 .huadong{
   height: 300rpx;
   background: pink;
