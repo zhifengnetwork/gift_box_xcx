@@ -163,11 +163,13 @@ swiper {
   font-size: 30rpx;
 }
 
-.lan image {
+.xixihhhhhaaa {
   width: 100%;
+  border-radius:20rpx
 }
 .lan video{
-  width: 100%
+  width: 100%;
+  border-radius:20rpx
 }
 .biaoti{
   width: 100%;

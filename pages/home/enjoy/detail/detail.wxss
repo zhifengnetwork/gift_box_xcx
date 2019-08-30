@@ -55,7 +55,6 @@
 }
 swiper{
  height: 835rpx;
- margin-top:30rpx 
 }
 .slide-image{
   height: 100%;
@@ -257,6 +256,7 @@ swiper{
   width: 100%;
   background: #fff;
   overflow: hidden;
+  margin-top:23rpx
 }
 .imgbox image{
   width: 100%;
@@ -294,7 +294,7 @@ swiper{
   line-height: 50rpx;
   text-align: center;
   position: absolute;
-  top: 300rpx;
+  top: 270rpx;
   right: 20px;
   z-index: 999999;
   background:rgba(94,94,94,1);
@@ -303,7 +303,7 @@ swiper{
   font-size:28rpx
 }
 .case-page {
-  padding: 0 20rpx 20rpx 20rpx;
+  width:100%
 }
 
 .list-masonry {
@@ -321,11 +321,13 @@ swiper{
   font-size: 30rpx;
 }
 
-.lan image {
+.xixihhhhhaaa {
   width: 100%;
+  border-radius:20rpx
 }
 .lan video{
-  width: 100%
+  width: 100%;
+  border-radius:20rpx
 }
 .biaoti{
   width: 100%;
