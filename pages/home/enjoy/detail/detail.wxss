@@ -337,8 +337,10 @@ swiper{
 }
 .nike{
   display: inline-block;
+  vertical-align: center;
   margin-left: 20rpx;
   font-size: 24rpx;
+  width: 100rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; 
@@ -349,16 +351,14 @@ swiper{
   width: 50rpx!important;
   height: 50rpx;
   border-radius: 50%;
-  
 }
 .aixin_ear{
-  width: 200rpx;
+  width: 100rpx;
   height:50rpx;
   line-height: 50rpx;
   display: inline-block;
   vertical-align: center;
-  text-align: center
-
+  text-align: center;
 }
 .aixin77{
    width: 30rpx!important;
