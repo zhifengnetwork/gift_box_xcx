@@ -30,7 +30,8 @@ Page({
     biaoqing:'',
     biaoqian:'',
     xianshi:true,
-    forward_num:0
+    forward_num:0,
+    note:[]
   },
 
   // 视频播放函数
@@ -92,11 +93,35 @@ Page({
         that.setData({comments: res.data.data})
       }
     })
+    // 相关推荐
+    api.getJSON('/api/sharing/sharing_list?topic_id=0' + '&token=' + app.globalData.token + '&page=1&num=100000', function (res) {
+      if (res.data.status == 1) {
+        console.log(res.data.data);
+        that.setData({ note: res.data.data })
+      }
+    }) 
+
   },
 
   audioPlay: function() {
     console.log(123455)
     this.audioCtx.play()
+  },
+  // 跳转到商品详情
+  details: function (e) {
+    let that = this
+    that.setData({
+      id: e.currentTarget.dataset.id,
+    })
+    if (e.currentTarget.dataset.type == 0) {
+      wx.navigateTo({
+        url: '../../../home/enjoy/detail/detail?id=' + that.data.id,
+      })
+    } else if (e.currentTarget.dataset.type == 1) {
+      wx.navigateTo({
+        url: '../detailvideo/detailvideo?id=' + that.data.id,
+      })
+    }
   },
   /**
    * 生命周期函数--监听页面初次渲染完成

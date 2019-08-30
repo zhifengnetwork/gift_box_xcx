@@ -302,3 +302,80 @@ swiper{
   color: white;
   font-size:28rpx
 }
+.case-page {
+  padding: 0 20rpx 20rpx 20rpx;
+}
+
+.list-masonry {
+  column-count: 2;
+  column-gap: 10rpx;
+  height: 100%;
+}
+
+.lan {
+  background-color: #fff;
+  break-inside: avoid;
+  box-sizing: border-box;
+  /* padding: 0  0rpx 20rpx 20rpx; */
+  padding-bottom: 20rpx;
+  font-size: 30rpx;
+}
+
+.lan image {
+  width: 100%;
+}
+.lan video{
+  width: 100%
+}
+.biaoti{
+  width: 100%;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.nike{
+  margin-left: 20rpx;
+  font-size: 24rpx;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap; 
+
+}
+.user_pic{
+  display: inline-block;
+  width: 50rpx!important;
+  height: 50rpx;
+  border-radius: 50%;
+  
+}
+.aixin_ear{
+  width: 200rpx;
+  height:50rpx;
+  line-height: 50rpx;
+  display: inline-block;
+  display: flex;
+  align-items: center;
+  justify-content: center
+}
+.aixin{
+   width: 30rpx!important;
+   height: 30rpx;
+}
+
+.huadong{
+  height: 300rpx;
+  background: pink;
+}
+.upimg{
+  width: 150rpx;
+  height: 250rpx;
+  background: skyblue;
+  margin-left: 40rpx;
+  margin-top: 25rpx;
+}
+.wu{
+  width: 95%;
+  margin:0 auto;
+  padding-top: 150px;
+  text-align:center;
+}
