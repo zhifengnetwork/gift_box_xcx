@@ -22,7 +22,9 @@ Page({
     type:'',
     dianzang:[],
     draft:'',
-    draglist:[]
+    draglist:[],
+    si:false,
+    shebei:false
   },
 
   // 上传图片或视频按钮
@@ -204,7 +206,14 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function() {
-    
+    this.checkIsIPhoneX()
+    // console.log(app.globalData.isIPX)
+    if (app.globalData.isIPX===true){
+        this.setData({shebei:true})
+    }else{
+      this.setData({ shebei: false })
+    }
+
   },
   /**
    * 生命周期函数--监听页面显示
@@ -470,7 +479,36 @@ Page({
       var that = this;
       that.GetList(that); //页面拉一次，加载一次
     }
-  }
+  },
+  // 滚动条滚动
+  scroll:function(e){
+    console.log(e.detail.scrollTop)
+    if (e.detail.scrollTop>40){
+      this.setData({si:true})
+      this.setData({shebei: true })
+    }else{
+      this.setData({si: false})
+      this.setData({ shebei: false })
+    }
+  },
+  // 判断是不是苹果设备的方法
+  checkIsIPhoneX: function () {
+    const self = this
+    wx.getSystemInfo({
+      success: function (res) {
+        // 根据 model 进行判断
+        if (res.model.search('iPhone X') != -1) {
+          app.globalData.isIPX = true
+        }
+        // 或者根据 screenHeight 进行判断
+        // if (res.screenHeight == 812) {
+        //   self.globalData.isIPX = true
+        // }
+      }
+    })
+  },
+  
+  
 
 
 

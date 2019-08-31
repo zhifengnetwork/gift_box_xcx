@@ -96,7 +96,8 @@ App({
     biaoqian:[],
     image:[],
     type:'',
-    music_id:''
+    music_id:'',
+    isIPX: false,
    
   }
 
