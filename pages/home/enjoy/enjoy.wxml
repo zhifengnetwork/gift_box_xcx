@@ -3,11 +3,13 @@
 <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" >
 <view class="body">
   <!-- 搜索区域 -->
-
-  <view class="search" bindtap="search">
-    <image src="../../public/images/classify/sousuo.png" class="sousou"></image>
-    <text>大家都在搜“有什麼好吃的”</text>
-  </view>
+<view class="red_ear">
+    <view class="search" bindtap="search">
+        <image src="../../public/images/classify/sousuo.png" class="sousou"></image>
+        <text>大家都在搜“有什麼好吃的”</text>
+      </view>
+</view>  
+  
 
   
   <!-- tab切换 -->
@@ -30,7 +32,8 @@
 
 
 
- <view wx:for="{{nav_title.length}}" wx:for-index="idx" wx:key>
+ 
+<view wx:for="{{nav_title.length}}" wx:for-index="idx" wx:key>
     <view class="{{currentTab == idx ? 'show':'hidden'}}">
       <scroll-view>
         <view class='case-page'>

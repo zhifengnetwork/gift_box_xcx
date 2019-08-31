@@ -14,8 +14,18 @@
   display: flex;
   justify-content: center;
   align-content: center;
+  position: fixed;
+  top:160rpx;
+  z-index: 9999999999999; 
 }
-
+.red_ear{
+  width: 100%;
+  height: 100rpx;
+  background: white;
+  position:fixed;
+  top:150rpx;
+  z-index: 9999999999999; 
+}
 .sousou {
   width: 32rpx;
   height: 32rpx;
@@ -43,7 +53,11 @@
   overflow-x: scroll;
   overflow-y: hidden;
   padding-left: 0 20rpx;
-  box-sizing: border-box
+  box-sizing: border-box;
+  position: fixed;
+  top:235rpx;
+  z-index: 9999;
+  background: white
 }
 .swiper-tab-item {
   display: inline-block;
@@ -85,6 +99,7 @@
   display: flex;
   overflow-x: scroll;
   overflow-y:hidden;
+  margin-top:325rpx
 }
 /* 隐藏滚动条 */
 ::-webkit-scrollbar {display:none}
