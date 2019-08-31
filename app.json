@@ -109,8 +109,8 @@
       },
       {
         "pagePath": "pages/message/message",
-        "iconPath": "pages/public/images/index/zhuye.png",
-        "selectedIconPath": "pages/public/images/index/zhuye_x.png",
+        "iconPath": "pages/public/images/index/message.png",
+        "selectedIconPath": "pages/public/images/index/message_x.png",
         "text": "消息"
       },
       {
