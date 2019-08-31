@@ -1,7 +1,9 @@
 .body {
+  margin-top: 150rpx;
+}
+.bodyipx{
   margin-top: 180rpx;
 }
-
 .search {
   width: 94%;
   font-size: 28rpx;
@@ -71,7 +73,7 @@
   padding-left: 0 20rpx;
   box-sizing: border-box;
   position: fixed;
-  top:100rpx;
+  top:130rpx;
   z-index: 9999;
   background: white
 }

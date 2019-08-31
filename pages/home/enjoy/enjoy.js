@@ -24,7 +24,8 @@ Page({
     draft:'',
     draglist:[],
     si:false,
-    shebei:false
+    shebei:false,
+    sb:false
   },
 
   // 上传图片或视频按钮
@@ -207,13 +208,13 @@ Page({
    */
   onLoad: function() {
     this.checkIsIPhoneX()
-    // console.log(app.globalData.isIPX)
     if (app.globalData.isIPX===true){
-        this.setData({shebei:true})
+      this.setData({sb:true})
     }else{
-      this.setData({ shebei: false })
+      this.setData({ sb: false })
     }
-
+    // console.log(app.globalData.isIPX)
+   
   },
   /**
    * 生命周期函数--监听页面显示
@@ -483,13 +484,37 @@ Page({
   // 滚动条滚动
   scroll:function(e){
     console.log(e.detail.scrollTop)
-    if (e.detail.scrollTop>40){
-      this.setData({si:true})
-      this.setData({shebei: true })
-    }else{
-      this.setData({si: false})
+    if (app.globalData.isIPX === true) {
+      this.setData({ shebei: true })
+    } else {
       this.setData({ shebei: false })
+    }  
+    // 苹果设备
+    if (app.globalData.isIPX === true){
+      if (e.detail.scrollTop > 40) {
+        this.setData({ shebei: true })
+      }else{
+        this.setData({ shebei: false })
+      }
+    }else{
+      if (e.detail.scrollTop > 40) {
+        this.setData({ si: true })
+      } else {
+        this.setData({ si:false })
+      }
     }
+
+
+
+
+    // if (e.detail.scrollTop>40){
+    //   this.setData({si:true})
+    //   this.setData({shebei: true})
+    // }else{
+    //   this.setData({si: false})
+    //   this.setData({ shebei: false })
+    // }
+   
   },
   // 判断是不是苹果设备的方法
   checkIsIPhoneX: function () {

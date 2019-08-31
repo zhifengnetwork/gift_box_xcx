@@ -2,7 +2,7 @@
 
 
 <scroll-view scroll-y="true" style="height:{{scrollHeight}}px;" bindscrolltolower="bindDownLoad" bindscroll='scroll'>
-<view class="body">
+<view class="{{sb===true ? 'bodyipx':'body'}}">
   <!-- 搜索区域 -->
 
     <view class="search" bindtap="search">
