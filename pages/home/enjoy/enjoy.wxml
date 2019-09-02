@@ -26,7 +26,7 @@
     <view class="wenzi">發佈 hey</view>
   </view>         
   <view class="img_item" wx:for="{{draglist}}" wx:key  bindtap="details" data-id='{{item.id}}' data-type="{{item.type}}">
-    <image src="{{item.cover}}" class="huadon" wx:if="{{!item.type}}"></image>
+    <image src="{{item.cover}}" class="huadon" mode="aspectFill" wx:if="{{!item.type}}"></image>
     <video src="{{item.cover}}" class="huadon" wx:else controls="{{false}}" muted="{{true}}"></video>
   </view>
 </view>
