@@ -2,7 +2,7 @@
 <view class="body">
   <view class="header">
     <view class="user_pic">
-      <image src="{{detaillist.avatar}}" class="touxia"></image>
+      <image src="{{detaillist.avatar}}" class="touxia" ></image>
     </view>
     <view class="user_name">{{detaillist.nickname}}</view>
     <view class="care" bindtap="guanzhu" wx:if="{{!follow_count}}">關注</view>
@@ -19,10 +19,10 @@
         <swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange">
           <block wx:for="{{priture}}" wx:key="imgs">
             <swiper-item >
-              <image src="{{item}}" class="slide-image"></image>
+              <image src="{{item}}" class="slide-image" mode='aspectFit'></image>
               <!-- 拖拽的表情 -->
               <movable-view class="popupimg" wx:for="{{biaoqing}}" wx:key x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
-                <image src="{{item.img}}"></image>
+                <image src="{{item.img}}" ></image>
               </movable-view>
               <!-- 拖拽的标签 -->
               <movable-view class="popuptext" x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{biaoqian}}" wx:key data-index="{{index}}" disabled="{{true}}">
@@ -44,8 +44,8 @@
 
 
   <!-- 文字介绍 -->
-  <view class="intriduce1" wx:if="{{liang}}"><view>{{detaillist.title}}</view><view>{{detaillist.content}}</view></view>
-  <view class="intriduce2" wx:else><view>{{detaillist.title}}</view><view>{{detaillist.content}}</view></view>
+  <view class="intriduce1" wx:if="{{liang}}"><view style="font-size:14px">{{detaillist.title}}</view><view>{{detaillist.content}}</view></view>
+  <view class="intriduce2" wx:else><view style="font-size:14px">{{detaillist.title}}</view><view>{{detaillist.content}}</view></view>
   <view wx:if="{{xianshi}}">
       <view class="zhankai" wx:if="{{liang}}" bindtap="zhankai">展開</view>
       <view class="zhankai" wx:else bindtap="shouqi">收起</view>
