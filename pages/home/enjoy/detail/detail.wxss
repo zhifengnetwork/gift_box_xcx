@@ -61,8 +61,7 @@ swiper{
   width: 100%;
 }
 .dots{
- width: 180rpx;
- margin: 0 auto;
+ width: 800rpx;
  text-align: center
 }
 .dot{
@@ -216,18 +215,21 @@ swiper{
   padding-bottom: 100rpx
 }
 .white_pic{
-  width: 7%;
+  width: 9%;
   height: 55rpx;
-  position: absolute;
-  left: 40rpx
+  position: relative;
+  left: -15rpx;
+  top:53rpx;
+
 }
 .weui-textarea{
   width: 70%;
   height: 40rpx;
   font-size: 32rpx;
-  padding-top: 20rpx;
+  /* padding-top: 20rpx; */
   position: absolute;
-  left: 105rpx
+  left: 105rpx;
+  padding-left:10rpx
 }
 .ear:last-child{
   padding-bottom: 20rpx
