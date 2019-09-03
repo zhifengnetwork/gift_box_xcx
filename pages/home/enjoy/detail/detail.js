@@ -59,7 +59,7 @@ Page({
     var windowWidth = wx.getSystemInfoSync().windowWidth
     windowWidth = windowWidth * 0.9
     var geshu = windowWidth /11
-    geshu = parseInt(geshu) * 3 - 1
+    geshu = parseInt(geshu) * 2 - 1
     console.log(geshu)
 
     that.setData({ nickname: app.globalData.userInfo.nickname}) 
@@ -82,20 +82,12 @@ Page({
           topic_id: res.data.data.topic_id
         })
         console.log(that.data.detaillist.content.length)
-        var zongchangdu=0
-        var wenzibiaoti = windowWidth / 11
-        if (that.data.detaillist.title.length > wenzibiaoti){
-          zongchangdu = that.data.detaillist.title.length + that.data.detaillist.content.length
-        }
-        else{
-          zongchangdu = wenzibiaoti + that.data.detaillist.content.length
-        }
-
+      
         console.log(that.data.topic_id)
         console.log("个数为"+geshu)
-        console.log("内容长度" + zongchangdu)
+        console.log("内容长度" + that.data.detaillist.content.length)
         console.log(that.data.detaillist.content)
-        if (geshu > zongchangdu){
+        if (geshu > that.data.detaillist.content.length){
           that.setData({xianshi:false})
         }else{
           that.setData({ xianshi: true })
