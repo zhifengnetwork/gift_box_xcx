@@ -18,7 +18,7 @@
       <view class="wrap">
         <swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange">
           <block wx:for="{{priture}}" wx:key="imgs">
-            <swiper-item >
+            <swiper-item class="swidfdd">
               <image src="{{item}}" class="slide-image" mode='aspectFit'></image>
               <!-- 拖拽的表情 -->
               <movable-view class="popupimg" wx:for="{{biaoqing}}" wx:key x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
