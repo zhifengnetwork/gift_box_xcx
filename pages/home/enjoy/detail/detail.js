@@ -82,9 +82,15 @@ Page({
           topic_id: res.data.data.topic_id
         })
         console.log(that.data.detaillist.content.length)
+        
         console.log("qqqq")
         console.log(that.data.topic_id)
+        console.log("个数为"+geshu)
+        console.log("内容长度" + that.data.detaillist.content.length)
         if (geshu > that.data.detaillist.content.length){
+
+         
+
           that.setData({xianshi:false})
         }else{
           that.setData({ xianshi: true })

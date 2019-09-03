@@ -256,7 +256,11 @@
   font-family:Source Han Sans CN;
   font-weight:400;
   color:rgba(51,51,51,1);
-  padding: 12rpx 0
+  padding: 12rpx 0;
+  width: 325rpx;
+  overflow: hidden;    
+ 	text-overflow: ellipsis;   
+ 	white-space: nowrap;
 }
 .love_money{
   font-size:24rpx;
