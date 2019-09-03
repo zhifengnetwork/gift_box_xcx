@@ -73,7 +73,7 @@
   padding-left: 0 20rpx;
   box-sizing: border-box;
   position: fixed;
-  top:130rpx;
+  top:118rpx;
   z-index: 9999;
   background: white
 }
