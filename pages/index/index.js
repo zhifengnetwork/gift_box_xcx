@@ -49,7 +49,7 @@ Page({
     // currentSwiper: 0,
     autoplay: true,
     goods_list:[],
-    page:1,
+    page:2,
     bujia:true
 
   },
@@ -75,7 +75,7 @@ Page({
     
     app.globalData.give.order_id = '';
     var that = this;
-    that.setData({bujia:true,page:1})
+    that.setData({bujia:true,page:2})
     app.getUserInfo(userinfo => {
 
       //昵称、头像 不存在，跳转去授权
@@ -135,6 +135,7 @@ Page({
     var that=this
     that.setData({yuan:true}) 
     if(that.data.bujia===true){
+      console.log(that.data.page)
       api.getJSON('/api/index/getBrandGoods?page=' + that.data.page, function (res) {
         if (res.data.status == 1) {
           that.setData({yuan:false}) 

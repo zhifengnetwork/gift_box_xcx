@@ -25,7 +25,7 @@
         <view class="boss_cbox">
           <view class="boss_cbox_box" wx:for="{{items}}"  wx:key bindtap="detail" data-id="{{item.goods_id}}">
             <view class="boss_cbox_img">
-            <image src="{{item. picture}}" class="imgimgimg2"></image>
+            <image src="{{item. picture}}" style="width:250rpx;height:310rpx;" ></image>
             </view>
             <view class="boss_cbox_name">{{item. goods_name}}</view>
             <view class="boss_cbox_price">HK${{item.price}}</view>
