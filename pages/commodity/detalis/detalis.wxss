@@ -265,23 +265,28 @@ color:rgba(51,51,51,1);
   z-index: 10000;
 }
 .store{
+  position: absolute;
+  left: 37rpx;
+  top: -60rpx;
   width: 212rpx;
   height: 212rpx;
-  margin-left: 37rpx;
-  margin-top: -47rpx;
+  /* margin-left: 37rpx;
+  margin-top: -47rpx; */
   vertical-align: top
 }
 .jiage{
-  display: inline-block;
+  position: absolute;
+  left: 274rpx;
+  /* display: inline-block; */
   vertical-align: top;
   padding-top: 20rpx;
-  margin-left: 25rpx;
 }
 .selected{
   display: inline-block;
   font-size: 28rpx;
-  margin-top: 70rpx;
-  margin-left: -143rpx
+  position: absolute;
+  left: 279rpx;
+  top:62rpx
 }
 /* 商品规格详情选择 */
 .allConten{
@@ -289,6 +294,7 @@ color:rgba(51,51,51,1);
   overflow: scroll;
   width: 90%;
   margin-left: 5%;
+  margin-top:140rpx
 }
 .modeScroll{
   height:674rpx !important;
@@ -1238,7 +1244,9 @@ color:rgba(51,51,51,1);
   border-left: none
 }
 .next{
-  margin-left: 10%;
+  position: absolute;
+  left: 10%;
+  bottom: 40rpx;
   width: 80%;
   height: 80rpx;
   line-height: 80rpx;
