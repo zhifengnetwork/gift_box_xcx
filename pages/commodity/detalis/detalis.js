@@ -55,7 +55,8 @@ Page({
     count: '',
     text: '',
     itemId: '',
-    id:null
+    id:null,
+    imgimg222:''
 
   },
   clickTab: function (e) {
@@ -284,8 +285,9 @@ Page({
           console.log("默认的商品的id为", item_id);
           var count = that.data.goodssss[item_id].store_count;
           var name = that.data.goodssss[item_id].name;
-          var price = that.data.goodssss[item_id].price
-          that.setData({ count: count, name: name, price: price });
+          var price = that.data.goodssss[item_id].price;
+          var imgimg = that.data.goodssss[item_id].img
+          that.setData({ count: count, name: name, price: price,imgimg:imgimg });
         }
         else {
           that.checkPrice();//首次需要调用，首次的规格
@@ -398,8 +400,9 @@ Page({
       console.log(itemId)
       var store_count = that.data.goodssss[itemId].store_count
       var price = that.data.goodssss[itemId].price;
-      var sku_id = that.data.goodssss[itemId].sku_id
-      that.setData({ count: store_count, price: price, sku_id: sku_id })
+      var sku_id = that.data.goodssss[itemId].sku_id;
+      var imgimg = that.data.goodssss[itemId].img
+      that.setData({ count: store_count, price: price, sku_id: sku_id,imgimg: imgimg})
 
 
 

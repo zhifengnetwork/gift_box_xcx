@@ -281,7 +281,7 @@ color:rgba(51,51,51,1);
   display: inline-block;
   font-size: 28rpx;
   margin-top: 70rpx;
-  margin-left: -130rpx
+  margin-left: -143rpx
 }
 /* 商品规格详情选择 */
 .allConten{
@@ -300,7 +300,9 @@ color:rgba(51,51,51,1);
   margin-left: 10rpx
 }
 .item{
-  width: 120rpx;
+  /* width: 120rpx; */
+  padding: 0 11rpx;
+  min-width: 120rpx;
   height: 50rpx;
   line-height: 50rpx;
   font-size: 28rpx;
