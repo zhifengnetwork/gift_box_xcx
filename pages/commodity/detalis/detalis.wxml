@@ -123,7 +123,7 @@
 
     <!-- 商品规格选择蒙层 -->
     <!-- catchtouchmove="preventTouchMove" 作用是出现蒙层是不能滑动的-->
-    <view class="shop_selection" catchtouchmove="preventTouchMove" wx:if="{{statussxianshi}}">
+    <view class="shop_selection" catchtouchmove="preventTouchMove" wx:if="{{statussxianshi}}" bindtap="xiaoshi">
     </view>
     <view class="shop_ear" catchtouchmove="preventTouchMove" wx:if="{{statussxianshi}}">
 

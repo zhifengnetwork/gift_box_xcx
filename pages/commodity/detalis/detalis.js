@@ -80,12 +80,18 @@ Page({
     this.setData({ anniu: true })
   },
   goBack: function () {
+    if (this.data.statussxianshi == true) {
+      console.log("sss")
+    } else {
+      wx.navigateBack({
+        delta: 1
+      })
+    }
     this.setData({
       statussxianshi: false
     });
-    wx.navigateBack({
-      delta: 1,
-    })
+   
+   
   },
   jiele: function () {
     var that=this
@@ -133,7 +139,10 @@ Page({
       anniu: false,
       order_type: false
     })
-
+  },
+  // 蒙层消失
+  xiaoshi:function(){
+    this.setData({statussxianshi:false})
   },
   // 轮播图图片放大
   //图片点击事件
