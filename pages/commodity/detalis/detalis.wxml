@@ -134,7 +134,7 @@
       <view class="selected" wx:if="{{!imgimg.length}}">
         <text>已選擇: {{name}}</text>
         <!-- <text class="mama">{{title}}</text> -->
-        <view>庫存:{{count}}</view>
+        <view>庫存:{{store_count}}</view>
       </view>
 
       <!-- 默认第一个 -->

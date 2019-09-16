@@ -412,7 +412,7 @@ Page({
       var price = that.data.goodssss[itemId].price;
       var sku_id = that.data.goodssss[itemId].sku_id;
       var imgimg = that.data.goodssss[itemId].img
-      that.setData({ count: store_count, price: price, sku_id: sku_id,imgimg: imgimg})
+      that.setData({ store_count: store_count, price: price, sku_id: sku_id,imgimg: imgimg})
 
 
 
