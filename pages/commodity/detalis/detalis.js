@@ -52,7 +52,7 @@ Page({
     autoplay: true,
     name: '',
     jige: '',
-    count: '',
+    count: null,
     text: '',
     itemId: '',
     id:null,
@@ -293,10 +293,11 @@ Page({
           }
           console.log("默认的商品的id为", item_id);
           var count = that.data.goodssss[item_id].store_count;
+          console.log(count)
           var name = that.data.goodssss[item_id].name;
           var price = that.data.goodssss[item_id].price;
           var imgimg = that.data.goodssss[item_id].img
-          that.setData({ count: count, name: name, price: price,imgimg:imgimg });
+          that.setData({count:count, name:name, price: price,imgimg:imgimg });
         }
         else {
           that.checkPrice();//首次需要调用，首次的规格
