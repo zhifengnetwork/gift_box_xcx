@@ -33,28 +33,28 @@
       <view class="detalis_ct">贈送流程</view>
       <view class="detalis_cc">
         <view class="detalis_cc_img">
-          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/weixin_icon.png"></image>
+          <image src="https://www.9pointstars.com/public/images/detalis/weixin_icon.png"></image>
         </view>
         <text>1微信贈送</text>
-        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+        <image src="https://www.9pointstars.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
       </view>
       <view class="detalis_cc">
         <view class="detalis_cc_img">
-          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/xiaolian_icon.png"></image>
+          <image src="https://www.9pointstars.com/public/images/detalis/xiaolian_icon.png"></image>
         </view>
         <text>2好友領取</text>
-        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+        <image src="https://www.9pointstars.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
       </view>
       <view class="detalis_cc">
         <view class="detalis_cc_img">
-          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dizhi_icon.png"></image>
+          <image src="https://www.9pointstars.com/public/images/detalis/dizhi_icon.png"></image>
         </view>
         <text>3兌換填地址</text>
-        <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
+        <image src="https://www.9pointstars.com/public/images/detalis/jiantou_icon.png" class="jiantou"></image>
       </view>
       <view class="detalis_cc">
         <view class="detalis_cc_img">
-          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/shouhuo_icon.png"></image>
+          <image src="https://www.9pointstars.com/public/images/detalis/shouhuo_icon.png"></image>
         </view>
         <text>4送貨上門</text>
       </view>
@@ -94,18 +94,18 @@
     <view class="detalis_f">
       <view class="detalis_fl">
         <view class="detalis_flbox" bindtap="shouye">
-          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/home_icon.png"></image>
+          <image src="https://www.9pointstars.com/public/images/detalis/home_icon.png"></image>
           <view class="detalis_fl_text">首頁</view>
         </view>
         <view class="detalis_flbox">
-          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/kefu_icon.png"></image>
+          <image src="https://www.9pointstars.com/public/images/detalis/kefu_icon.png"></image>
           <view class="detalis_fl_text">客服
             <contact-button class='contact' size='27' session-from="weapp"></contact-button>
           </view>
 
         </view>
         <view class="detalis_flbox" bindtap="my_goods">
-          <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/gouwuche_icon.png"></image>
+          <image src="https://www.9pointstars.com/public/images/detalis/gouwuche_icon.png"></image>
           <view class="detalis_fl_text">加入</view>
         </view>
       </view>

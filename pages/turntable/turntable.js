@@ -11,7 +11,7 @@ Page({
       speed: 10,/**转盘速度 */
       award: [
         {
-          img:'https://giftbox.zhifengwangluo.com/public/images/turntable/turntable_small.png'
+          img:'https://www.9pointstars.com/public/images/turntable/turntable_small.png'
         }
       ],/**奖项内容 */
       fontColor: '#fff',/**文字颜色 */

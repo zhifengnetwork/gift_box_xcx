@@ -9,7 +9,7 @@
 </view>
 <!-- 背景图 -->
 <view class="turntable_bg">
-  <image class="turntable_bgImg" src="https://giftbox.zhifengwangluo.com/public/images/turntable/turntable_bg.png"></image>
+  <image class="turntable_bgImg" src="https://www.9pointstars.com/public/images/turntable/turntable_bg.png"></image>
 </view>
 <!-- 转盘 -->
 <view class="container" style="{{mask?'display:none':''}}">
@@ -20,13 +20,13 @@
 <view class="mask" wx:if="{{mask}}">
   <!-- 获取礼物 -->
   <view wx:if="{{win}}">
-    <image class="win_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/win.png"></image>
+    <image class="win_img" src="https://www.9pointstars.com/public/images/gift/win.png"></image>
     <view class="win_btn" bindtap="win_get">点击领取</view>
   </view>
   <!-- 俏皮话 -->
   <view wx:if="{{wisecrack}}">
-    <image class="wisecrack_bg" src="https://giftbox.zhifengwangluo.com/public/images/gift/greeting_bg.png"></image>
-    <image class="wisecrack_icon" src="https://giftbox.zhifengwangluo.com/public/images/gift/greeting.png"></image>
+    <image class="wisecrack_bg" src="https://www.9pointstars.com/public/images/gift/greeting_bg.png"></image>
+    <image class="wisecrack_icon" src="https://www.9pointstars.com/public/images/gift/greeting.png"></image>
     <view class="wisecrack_info">
       <view class="wisecrack_text">{{wisecrack_t1}}</view>
       <view class="wisecrack_text">{{wisecrack_t2}}</view>
@@ -34,21 +34,21 @@
   </view>
   <!--  中奖者 -->
   <view wx:if="{{win_id}}">
-    <image class="win_id_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/win_id.png"></image>
+    <image class="win_id_img" src="https://www.9pointstars.com/public/images/gift/win_id.png"></image>
     <view class="win_id">
       <text wx:for="{{win_Name}}">{{item}}、</text>
     </view>
   </view>
   <!-- 过期 -->
   <view wx:if="{{past}}">
-    <image class="miss_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/miss.png"></image>
+    <image class="miss_img" src="https://www.9pointstars.com/public/images/gift/miss.png"></image>
     <view class="miss_btn" bindtap="win_id">
       查看中奖者<text>></text><text>></text><text>></text>
     </view>
   </view>
   <!-- 开奖时间 -->
   <view wx:if="{{start}}" bindtap="start_time">
-    <image class="start_img" src="https://giftbox.zhifengwangluo.com/public/images/gift/gift.png"></image>
+    <image class="start_img" src="https://www.9pointstars.com/public/images/gift/gift.png"></image>
     <view class="start_info">
       <!-- <view>开奖时间:</view> -->
       <!-- <view>2019-06-01 12:00:00</view> -->

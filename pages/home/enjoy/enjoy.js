@@ -56,7 +56,7 @@ Page({
                 const tempFilePaths = res.tempFilePaths
                 console.log(tempFilePaths)
                 wx.uploadFile({
-                  url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                  url: 'https://www.9pointstars.com/api/Sharing/upload_file',
                   filePath: tempFilePaths[0],
                   name: 'file',
                   header: {
@@ -92,7 +92,7 @@ Page({
               success(res) {
                 const tempFilePaths = res.tempFilePaths
                 wx.uploadFile({
-                  url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                  url: 'https://www.9pointstars.com/api/Sharing/upload_file',
                   filePath: tempFilePaths[0],
                   name: 'file',
                   header: {
@@ -131,7 +131,7 @@ Page({
                 const tempFilePath = res.tempFilePath
                 console.log(tempFilePath)
                 wx.uploadFile({
-                  url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                  url: 'https://www.9pointstars.com/api/Sharing/upload_file',
                   filePath: tempFilePath,
                   name: 'file',
                   header: {
@@ -169,7 +169,7 @@ Page({
                 const tempFilePath = res.tempFilePath
                 console.log(tempFilePath)
                 wx.uploadFile({
-                  url: 'https://giftbox.zhifengwangluo.com/api/Sharing/upload_file',
+                  url: 'https://www.9pointstars.com/api/Sharing/upload_file',
                   filePath: tempFilePath,
                   name: 'file',
                   header: {

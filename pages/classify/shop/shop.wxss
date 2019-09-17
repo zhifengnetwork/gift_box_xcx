@@ -164,7 +164,7 @@ page {
   float: right;
   margin-top: 28rpx;
   margin-right: 50rpx;
-  background: url("https://giftbox.zhifengwangluo.com/public/images/check.png");
+  background: url("https://www.9pointstars.com/public/images/check.png");
   background-size: 100% 100%;
 }
 .name{

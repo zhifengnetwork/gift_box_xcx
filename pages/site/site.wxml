@@ -11,7 +11,7 @@
 <view style="margin-top:{{bar_Height+140}}rpx;margin-bottom:220rpx;">
 <view class="site" wx:for="{{site}}" wx:key="{{index}}" data-address_id="{{item.address_id}}" bindtap="award" >
   <view class="site_box">
-    <image src="https://giftbox.zhifengwangluo.com/public/images/detalis/dingwei_icon.png" class="site_dingwei"></image>
+    <image src="https://www.9pointstars.com/public/images/detalis/dingwei_icon.png" class="site_dingwei"></image>
     <view class="site_boxt">
       <view class="site_name">{{item.consignee}}</view>
       <text class="site_phone">{{item.mobile}}</text>

@@ -47,7 +47,7 @@ Page({
     let joinid = options.joinid == undefined ? '' : options.joinid;
     //3个参数
     //如果是调试
-    //https://giftbox.zhifengwangluo.com/card?card_id=506&type=1&order_id=2895&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDMwNzY3NSwiZXhwIjoxNTY0MzQzNjc1LCJ1c2VyX2lkIjoyODk1fQ.A-57frG7cyDBD5FBiVbI3PPmMBY28qLyMw2eLz_7GOQ
+    //https://www.9pointstars.com/card?card_id=506&type=1&order_id=2895&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDMwNzY3NSwiZXhwIjoxNTY0MzQzNjc1LCJ1c2VyX2lkIjoyODk1fQ.A-57frG7cyDBD5FBiVbI3PPmMBY28qLyMw2eLz_7GOQ
 
     // let address_id = '506';
     // let order_id = '2895';
@@ -305,7 +305,7 @@ Page({
     console.log(nickname)
     return {
       title: nickname + '为你准备了一份惊喜,请火速查收!',
-      imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',
+      imageUrl: 'https://www.9pointstars.com/image/back.png',
     }
   }
 })

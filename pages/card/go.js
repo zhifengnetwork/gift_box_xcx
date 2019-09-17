@@ -5,7 +5,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    url:'https://giftbox.zhifengwangluo.com/card'
+    url:'https://www.9pointstars.com/card'
   },
 
   /**

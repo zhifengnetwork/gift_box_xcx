@@ -171,7 +171,7 @@ Page({
     }
     var that = this;
     wx.uploadFile({
-      url: 'https://giftbox.zhifengwangluo.com/api/box/upload_file',
+      url: 'https://www.9pointstars.com/api/box/upload_file',
       filePath: that.data.src,
       name: 'file',
       header: {

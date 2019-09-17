@@ -118,7 +118,7 @@ Page({
         // tempFilePath可以作为img标签的src属性显示图片
         const tempFilePaths = res.tempFilePaths
         wx.uploadFile({
-          url: 'https://giftbox.zhifengwangluo.com/api/box/upload_file',
+          url: 'https://www.9pointstars.com/api/box/upload_file',
           filePath: tempFilePaths[0],
           name: 'file',
           header:{

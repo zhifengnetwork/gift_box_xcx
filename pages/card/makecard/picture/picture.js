@@ -94,7 +94,7 @@ Page({
   upload: function (tempFilePaths){
     let that = this;
     wx.uploadFile({
-      url: 'https://giftbox.zhifengwangluo.com/api/box/upload_file',
+      url: 'https://www.9pointstars.com/api/box/upload_file',
       filePath: tempFilePaths[0],
       name: 'file',
       header: {

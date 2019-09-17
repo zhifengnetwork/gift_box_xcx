@@ -40,32 +40,32 @@ Page({
           [ 
             {
               "name": "A品牌",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "A"
             },
             {
               "name": "A品牌",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "A"
             },
             {
               "name": "A品牌",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "A"
             },
             {
               "name": "A品牌",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "A"
             },
             {
               "name": "A品牌",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "A"
             },
             {
               "name": "A品牌",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "A"
             }
 
@@ -73,104 +73,104 @@ Page({
           [
             {
               "name": "B品牌",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "B"
             },
             {
               "name": "B品牌",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "B"
             },
             {
               "name": "B品牌yy",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "B"
             },
             {
               "name": "B品牌yy",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "B"
             },
             {
               "name": "B品牌00",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "B"
             },
             {
               "name": "B品牌0088",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "B"
             } 
           ],
           [
             {
               "name": "G品牌",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌11",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌44",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌67",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌89",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌44",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌67",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌89",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌44",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌67",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌89",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌44",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌67",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             },
             {
               "name": "G品牌89",
-              "img": "https://giftbox.zhifengwangluo.com/public/upload/images/category/20190625156139819085278.png",
+              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
               "key": "G"
             }
 

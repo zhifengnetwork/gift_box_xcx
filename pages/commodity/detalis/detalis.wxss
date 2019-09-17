@@ -445,7 +445,7 @@ color:rgba(51,51,51,1);
   color: black;
   border: 1px solid black; 
   text-align: center;
-  background: url("https://giftbox.zhifengwangluo.com/public/images/bg.png");
+  background: url("https://www.9pointstars.com/public/images/bg.png");
   background-size: 100% 100%
 }
 .product-box .product-img-box .banner-list,.product-box .product-img-box .banner-list .slide-image{

@@ -133,7 +133,7 @@ Page({
     },2000)
     return {
       title: nickname + '为你准备了一份惊喜,请火速查收!',
-      imageUrl: 'https://giftbox.zhifengwangluo.com/image/back.png',
+      imageUrl: 'https://www.9pointstars.com/image/back.png',
       path: url,
       // success: function (res) {
       //   console.log(res, 111)
