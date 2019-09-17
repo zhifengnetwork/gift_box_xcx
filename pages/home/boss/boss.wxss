@@ -23,7 +23,8 @@
     line-height: 88rpx;
     display: flex;
     flex-flow: row;
-    justify-content: space-between;
+    /* justify-content: space-between; */
+    justify-content:space-around;
     color: #ccc;
     font-size: 30rpx;
     border-bottom: 1rpx solid #F1F0F0;
@@ -77,7 +78,7 @@ margin: 0 auto;
 .boss_cbox_img{
   width: 250rpx;
   height: 310rpx;
-  background: orange;
+  /* background: orange; */
 }
 .boss_cbox_name{
 font-size:24rpx;
