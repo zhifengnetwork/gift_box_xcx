@@ -137,6 +137,17 @@
 page{
   background:rgba(241,239,239,1);
 }
+/* button默认样式 */
+.button-hover {
+  color: white;
+  background-color: transparent;
+}
+button{
+  color: white;
+  background-color: transparent;
+  padding-left: 0rpx;
+  padding-right:0rpx
+}
 .my_t {
   height: 400rpx;
   background: rgba(17, 17, 17, 1);
@@ -151,6 +162,7 @@ page{
   height: 110rpx;
   margin-left: 40rpx;
   margin-top: 140rpx;
+  position: relative;
 }
 
 .my_ttl view {
@@ -159,14 +171,14 @@ page{
   font-weight: bold;
   color: rgba(238, 238, 238, 1);
 }
-
 .my_ttl text {
-  font-size: 21rpx;
-  font-family: SourceHanSansCN-Light;
-  font-weight: 300;
-  color: rgba(238, 238, 238, 1);
+    font-size: 21rpx;
+    font-family: SourceHanSansCN-Light;
+    font-weight: 300;
+    color: rgba(238, 238, 238, 1);
+    position: absolute;
+    top: 93rpx;
 }
-
 .my_ttr {
   float: right;
   margin-top: 140rpx;
