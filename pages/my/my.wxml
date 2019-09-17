@@ -116,7 +116,7 @@
 <!-- 头像名字区域 -->
   <view class="my_tt">
     <view class="my_ttl">
-      <view>{{item.nickname}}</view>
+      <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">{{item.nickname}}</button>
       <text>{{item.user_no}}</text>
     </view>
     <view class="my_ttr" bindtap="mydetalis">
