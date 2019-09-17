@@ -18,10 +18,11 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		}
+		},
+		"enhance": true
 	},
 	"compileType": "miniprogram",
-	"libVersion": "2.0.4",
+	"libVersion": "2.2.5",
 	"appid": "wxe7d1d050fd8dc078",
 	"projectname": "xingxuan",
 	"cloudfunctionTemplateRoot": "",
