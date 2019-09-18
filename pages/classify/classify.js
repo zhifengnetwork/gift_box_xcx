@@ -34,158 +34,9 @@ Page({
       scroll_top: 0,
       goTop_show: false
     } , 
-    "result": {
-      "goods": {
-        "goods_spec_list": [
-          [ 
-            {
-              "name": "A品牌",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "A"
-            },
-            {
-              "name": "A品牌",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "A"
-            },
-            {
-              "name": "A品牌",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "A"
-            },
-            {
-              "name": "A品牌",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "A"
-            },
-            {
-              "name": "A品牌",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "A"
-            },
-            {
-              "name": "A品牌",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "A"
-            }
-
-          ],
-          [
-            {
-              "name": "B品牌",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "B"
-            },
-            {
-              "name": "B品牌",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "B"
-            },
-            {
-              "name": "B品牌yy",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "B"
-            },
-            {
-              "name": "B品牌yy",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "B"
-            },
-            {
-              "name": "B品牌00",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "B"
-            },
-            {
-              "name": "B品牌0088",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "B"
-            } 
-          ],
-          [
-            {
-              "name": "G品牌",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌11",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌44",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌67",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌89",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌44",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌67",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌89",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌44",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌67",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌89",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌44",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌67",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            },
-            {
-              "name": "G品牌89",
-              "img": "https://www.9pointstars.com/public/upload/images/category/20190625156139819085278.png",
-              "key": "G"
-            }
-
-          ]
-        ]
-      },
-    
-    }
-    
-    //字母检索数据  --e
-
-
   },
-  onReady:function(){
 
+  onReady:function(){
     var that=this;
    //判断设备是否为 iPhone X
     wx.getSystemInfo({
@@ -208,7 +59,11 @@ Page({
       }
   })
   },
-  onLoad: function() {
+  onLoad: function () {
+    
+  },
+
+  init: function() {
 
     let windowHeight = wx.getSystemInfoSync().windowHeight // 屏幕的高度
     console.log("windowHeight" + windowHeight)
@@ -226,26 +81,7 @@ Page({
     })
     // 加载的使用进行网络访问，把需要的数据设置到data数据对象  
     var that = this
-    // api.getJSON('/api/goods/categoryList', function(res) {
-    //   if (res.data.status == 1) {
-    //     that.setData({
-    //       navLeftItems: res.data.data
-    //     })
-    //     console.log(res.data.data)
-    //     console.log("ss" + that.data.navLeftItems[0].cat_name)
-    //   }
-    // }),
-      
-      // api.getJSON('/api/goods/brand', function (res) {
-      //   if (res.data.status == 1) {
-      //    console.log("--------+++");
-      //    console.log(res.data.data);
-      //     console.log("--------+++");
-      //    that.setData({city:res.data.data})
-
-      //   }
-      // })
-
+   
     api.getJSON('/api/Brand/getGoodsBrand', function (res) {
         if (res.data.status == 1) {
          console.log(res.data.data);
@@ -263,19 +99,12 @@ Page({
             var ss = that.data.createArr[i][0].key
             key.push(ss);
           }
-          console.log("sss")
-          console.log(key)
-          that.setData({key:key})
-          // var ss=that.data.createArr[0][0].key
          
-          // console.log(ss)
-
-
+          that.setData({key:key})
+         
         }
       })
 
-
-      
     // 侧边索引表
     var sysInfo = wx.getSystemInfoSync();
 
@@ -286,6 +115,11 @@ Page({
       searchLetter: tempObj, 
     });
   },
+
+  onShow:function(){
+    this.init();
+  },
+
   switchToRight: function(e) {
     var id = e.currentTarget.dataset.id;
     var index = e.currentTarget.dataset.index;
