@@ -85,6 +85,7 @@ view{
 }
 
 .wxParse-video{
+ 
     text-align: center;
     margin: 10px 0;
 }

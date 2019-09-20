@@ -74,6 +74,10 @@ button::after {
   font-size: 32rpx;
   font-weight: bold;
 }
+video{
+  width: 100%;
+  height: 500rpx;
+}
 
 .detalis_c {
   height: 222rpx;

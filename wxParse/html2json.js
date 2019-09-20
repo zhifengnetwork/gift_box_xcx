@@ -226,7 +226,7 @@ function html2json(html, bindName) {
 
             //当有缓存source资源时于于video补上src资源
             if(node.tag === 'video' && results.source){
-                node.attr.src = results.source;
+              node.attr.src = "https://www.9pointstars.com"+results.source;
                 delete results.source;
             }
             
