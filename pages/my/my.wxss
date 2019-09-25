@@ -272,7 +272,7 @@ button{
 .nav_con{
   margin: 20rpx;
   background: #fff;
-  height: 200rpx;
+  /* height: 200rpx; */
 }
 .nav_cont{
   height: 100rpx;
