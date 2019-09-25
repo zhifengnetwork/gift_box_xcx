@@ -68,11 +68,11 @@
 .jiali_title{
   display: inline-block;
   padding-left: 21rpx;
-  padding-bottom: 44rpx;
+  padding-bottom: 9rpx;
   height: 80rpx;
   line-height: 80rpx;
   font-weight: bolder;
-  margin-top: 32rpx;
+  margin-top: 31rpx;
   font-size:36rpx;
   font-family:Source Han Sans CN;
   color:rgba(0,0,0,1);
