@@ -202,29 +202,12 @@ Page({
     })
   },
   onShareAppMessage: function () {
-    console.log('share')
-    var nickname = app.globalData.userInfo.nickname;
-    nickname = nickname == undefined ? '' : nickname;
-    console.log(nickname)
+
     return {
-      title: nickname + '为你准备了一份惊喜,请火速查收!',
-      imageUrl:'https://www.9pointstars.com/image/back.png',
-      path: '/pages/card/go',
-      success:function(res){
-        console.log(res)
-        wx.showModal({
-          title: '分享成功',
-          content: '分享成功',
-        })
-      },
-      fail:function(res){
-        console.log(res)
-        wx.showModal({
-          title: '分享失败',
-          content: '分享失败',
-        })
-      }
+      title: '九点星选',
+      path: '/pages/index/index'
     }
+    
   },
   // 轮播图卡死问题
   changeGoodsSwip: function (e) {
