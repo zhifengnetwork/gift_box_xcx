@@ -18,21 +18,21 @@
 </view> -->
 
 
-<view class="wrap" >
-<swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange" bindanimationfinish="changeGoodsSwip">
-<block wx:for="{{imgs}}" wx:key="imgs">
-<swiper-item>
-<image src="{{item.picture}}"></image>
-</swiper-item>
-</block>
-</swiper>
+<view class="wrap">
+  <swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange" bindanimationfinish="changeGoodsSwip">
+    <block wx:for="{{imgs}}" wx:key="imgs">
+      <swiper-item>
+        <image src="{{item.picture}}"></image>
+      </swiper-item>
+    </block>
+  </swiper>
 
-<!--重置小圆点的样式 -->
+  <!--重置小圆点的样式 -->
 </view>
 <view class="dots">
-<block wx:for="{{imgs}}" wx:key="imgs">
-<view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
-</block>
+  <block wx:for="{{imgs}}" wx:key="imgs">
+    <view class="dot{{index == currentSwiper ? ' active' : ''}}"></view>
+  </block>
 </view>
 
 <image src="../public/images/index/red_enpole.png" class="red_enpole" bindtap="zefeng"></image>
@@ -81,10 +81,10 @@
 <!-- 享物圈 -->
 <text class="jiali_title">{{sharing_name.name}}</text>
 <text class="english">{{sharing_name.english}}</text>
-<view class="img_box">         
-  <view class="img_item" wx:for="{{sharing}}" wx:key  bindtap="xwq" data-id='{{item.id}}'>
+<view class="img_box">
+  <view class="img_item" wx:for="{{sharing}}" wx:key bindtap="xwq" data-id='{{item.id}}'>
     <image src="{{item.cover}}" class="huadon" wx:if="{{!item.type}}" mode='aspectFill'></image>
-    <video src="{{item.cover}}" class="huadon" wx:else controls="{{false}}"  muted="{{true}}"></video>
+    <video src="{{item.cover}}" class="huadon" wx:else controls="{{false}}" muted="{{true}}"></video>
   </view>
 </view>
 <!-- 佳礼
@@ -105,9 +105,9 @@
 <text class="jiali_title">{{shishangdapai.name}}</text>
 <text class="english">{{shishangdapai.english}}</text>
 <view class="fashion_ear">
-<view class="fashion_item" wx:for="{{shishangdapai.goods_list}}" wx:key="" bindtap='brand' data-id='{{item.id}}' >
-  <image src="{{item.picture}}" class="dapai"></image>
-</view>
+  <view class="fashion_item" wx:for="{{shishangdapai.goods_list}}" wx:key="" bindtap='brand' data-id='{{item.id}}'>
+    <image src="{{item.picture}}" class="dapai"></image>
+  </view>
 </view>
 <!-- 时尚指南 -->
 <text class="jiali_title">{{shishangzhinan.name}}</text>
@@ -120,7 +120,7 @@
 <!-- 轮播图2 -->
 <swiper class="lunbo2" indicator-dots="{{indicatorDots}}" interval="{{interval}}" duration="{{duration}}" current="{{currentSwiper2}}" bindchange="swiperChange2">
   <block wx:for="{{shishangzhinan.goods_list}}" wx:key="">
-    <swiper-item class="swiper_boxxxx"  bindtap='details' data-id='{{item.goods_id}}'>
+    <swiper-item class="swiper_boxxxx" bindtap='details' data-id='{{item.goods_id}}'>
       <image src="{{item.picture}}" class="slide-image" width="695" height="370" />
     </swiper-item>
   </block>
@@ -151,20 +151,20 @@
 </view> -->
 
 
-<swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper3}}" bindchange="swiperChange3" bindanimationfinish="changeGoodsSwip">
-<block bindtap='details' data-id='{{item.goods_id}}' wx:for="{{chaoliudaogou.goods_list}}" wx:key class="chaoliu_ear">
-<swiper-item>
-<view class="images_wu">
-<image class="images_wu_img" src="{{item.picture}}"></image>
-</view>
- <view class="zaixian">
-      <view class="bu">{{item.goods_name}}</view>
-    </view>
-    <view class="zaixian">
-      <view class="jiansu">{{item.desc}}</view>
-    </view>
-</swiper-item>
-</block>
+<swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper3}}" bindchange="swiperChange3" bindanimationfinish="changeGoodsSwip" style="height:450rpx">
+  <block bindtap='details' data-id='{{item.goods_id}}' wx:for="{{chaoliudaogou.goods_list}}" wx:key class="chaoliu_ear">
+    <swiper-item style="width:90%;margin-left:4%">
+      <view class="images_wu">
+        <image class="images_wu_img" src="{{item.picture}}"></image>
+      </view>
+      <view class="zaixian">
+        <view class="bu">{{item.goods_name}}</view>
+      </view>
+      <view class="zaixian">
+        <view class="jiansu">{{item.desc}}</view>
+      </view>
+    </swiper-item>
+  </block>
 </swiper>
 
 
@@ -175,7 +175,7 @@
 <text class="jiali_title">{{guess_like.name}}</text>
 <text class="english">{{guess_like.english}}</text>
 <view class="love_ear">
-  <view class="love_love"  wx:for="{{goods_list}}" wx:key bindtap='details' data-id='{{item.goods_id}}'>
+  <view class="love_love" wx:for="{{goods_list}}" wx:key bindtap='details' data-id='{{item.goods_id}}'>
     <view class="love_item">
       <image src="{{item.picture}}" class="love_pic"></image>
     </view>
