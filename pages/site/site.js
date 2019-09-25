@@ -14,7 +14,8 @@ Page({
     invoice_id:'',
     order_id: '',
     pwdstr: '',
-    addressid:null
+    addressid:null,
+    hao:null
   },
   // 跳转到添加地址
   newsite: function () {
@@ -24,7 +25,7 @@ Page({
       })
     } else if (this.data.award){
       wx.redirectTo({
-        url: 'newsite/newsite?award='+true,
+        url: 'newsite/newsite?award=' + true,
       })
     }else{
       wx.redirectTo({
@@ -56,6 +57,7 @@ Page({
    */
   onLoad: function (options) {
     console.log(options)
+    this.setData({hao: options.hao})
     if (options){
       this.setData({
         invoice_id: options.invoice_id == undefined ? "" : options.invoice_id,
@@ -119,6 +121,20 @@ Page({
       }
       console.log(res)
     })
+  },
+  goBack: function () {
+    if (this.data.hao==='1'){
+    wx.navigateTo({
+      url: '../../../../commodity/detalis/payment/award/award'
+    })
+    }else{
+      console.log("ohua")
+      wx.navigateBack({
+        delta: 1,
+      })
+    }
+   
+    console.log(typeof (this.data.hao))
   },
   redact: function (e){
     let item = e.currentTarget.dataset.item;

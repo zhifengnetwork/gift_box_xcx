@@ -1,5 +1,13 @@
 
-  <component title='地址管理' show_bol='{{false}}'></component>
+  <!-- <component title='地址管理' show_bol='{{false}}'></component> -->
+<view  class="header"> 
+   <view class='goBack' bindtap='goBack' style="padding-top:{{bar_Height+40}}rpx;">			
+      <image src='../public/images/index/back.png' class="back_back22"></image>
+    </view>
+    <view class="tabar" style="padding-top:{{bar_Height+40}}rpx;">
+      <text class="red">地址管理</text>
+    </view>
+ </view>
 
 <!-- 无地址 -->
 <view class="site sitewu" wx:if="{{site==''}}" >

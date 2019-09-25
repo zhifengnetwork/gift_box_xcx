@@ -25,13 +25,21 @@ Page({
     is_default:0,
     flag:'',
     again:'',
-    pwdstr:''
+    pwdstr:'',
+    hao:null
   },
   // 返回
   goBack:function(){
-    wx.navigateTo({
-      url: '../../site/site'
-    })
+    // if (this.data.hao==='1'){
+      wx.navigateTo({
+        url: '../../site/site?hao=1'
+      })
+    // }else{
+        // wx.navigateBack({
+        //   delta: 1,
+        // })
+    // }
+    console.log(typeof (this.data.hao))
   },
 
   //默认按钮选中取消事件
@@ -179,6 +187,7 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    this.setData({hao:options.hao})
     // 初始化动画变量
     var animation = wx.createAnimation({
       duration: 500,
