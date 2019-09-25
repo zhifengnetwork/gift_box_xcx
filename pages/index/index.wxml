@@ -150,10 +150,9 @@
   </view>
 </view> -->
 
-
-<swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper3}}" bindchange="swiperChange3" bindanimationfinish="changeGoodsSwip" style="height:450rpx">
-  <block bindtap='details' data-id='{{item.goods_id}}' wx:for="{{chaoliudaogou.goods_list}}" wx:key class="chaoliu_ear">
-    <swiper-item style="width:90%;margin-left:4%">
+<swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper3}}" bindchange="swiperChange3" bindanimationfinish="changeGoodsSwip" style="height:450rpx" >
+  <block  wx:for="{{chaoliudaogou.goods_list}}" wx:key class="chaoliu_ear">
+    <swiper-item style="width:90%;margin-left:4%" bindtap='details' data-id='{{item.goods_id}}'>
       <view class="images_wu">
         <image class="images_wu_img" src="{{item.picture}}"></image>
       </view>
@@ -166,10 +165,6 @@
     </swiper-item>
   </block>
 </swiper>
-
-
-
-
 
 <!-- 猜你喜欢 -->
 <text class="jiali_title">{{guess_like.name}}</text>
