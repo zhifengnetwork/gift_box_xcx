@@ -136,7 +136,7 @@
 <!-- 潮流导购 -->
 <text class="jiali_title">{{chaoliudaogou.name}}</text>
 <text class="english">{{chaoliudaogou.englist}}</text>
-<view class="daogou_ear">
+<!-- <view class="daogou_ear">
   <view bindtap='details' data-id='{{item.goods_id}}' wx:for="{{chaoliudaogou.goods_list}}" wx:key class="chaoliu_ear">
     <view class="images_wu">
       <image class="images_wu_img" src="{{item.picture}}"></image>
@@ -148,7 +148,29 @@
       <view class="jiansu">{{item.desc}}</view>
     </view>
   </view>
+</view> -->
+
+
+<swiper class="swipers" autoplay="{{autoplay}}" current="{{currentSwiper3}}" bindchange="swiperChange3" bindanimationfinish="changeGoodsSwip">
+<block bindtap='details' data-id='{{item.goods_id}}' wx:for="{{chaoliudaogou.goods_list}}" wx:key class="chaoliu_ear">
+<swiper-item>
+<view class="images_wu">
+<image class="images_wu_img" src="{{item.picture}}"></image>
 </view>
+ <view class="zaixian">
+      <view class="bu">{{item.goods_name}}</view>
+    </view>
+    <view class="zaixian">
+      <view class="jiansu">{{item.desc}}</view>
+    </view>
+</swiper-item>
+</block>
+</swiper>
+
+
+
+
+
 <!-- 猜你喜欢 -->
 <text class="jiali_title">{{guess_like.name}}</text>
 <text class="english">{{guess_like.english}}</text>

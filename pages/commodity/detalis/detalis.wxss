@@ -218,7 +218,7 @@ color:rgba(51,51,51,1);
 }
 .detalis_frl{
   display: inline-block;
-  height: 66rpx;
+  height: 69.58rpx;
   width: 49%;
   text-align: center;
   background: #fff;
