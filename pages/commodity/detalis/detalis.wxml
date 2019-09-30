@@ -16,9 +16,16 @@
         <image src="../../../images/qiuliwu.png" />
       </button>
       <swiper class='detalis_swipers' autoplay="{{autoplay}}" current="{{currentSwiper}}" bindchange="swiperChange" circular="true">
+        
+        <block wx:if="{{goods_data.video}}">
+          <swiper-item>
+            <video class="detalis_swiper_image" src="{{goods_data.video}}" lazy-load="true" bindtap="imgYu" data-src="{{goods_data.video}}" data-list="{{goods_data.video}}" />
+          </swiper-item>
+        </block>
+
         <block wx:for="{{goods_data.img}}" wx:key>
-        <swiper-item>
-          <image class="detalis_swiper_image" src="{{item}}" lazy-load="true" bindtap="imgYu"  data-src="{{item}}" data-list="{{goods_data.img}}"/>
+          <swiper-item>
+            <image class="detalis_swiper_image" src="{{item}}" lazy-load="true" bindtap="imgYu" data-src="{{item}}" data-list="{{goods_data.img}}" />
           </swiper-item>
         </block>
       </swiper>
@@ -197,10 +204,10 @@
   </view>
   <!-- 购物车小图标 -->
   <view class="cart" bindtap="tocart">
-     <image src="../../../images/cart.png" class="cart_img"></image>
-     <view class="xixi">{{goods_data.cart_num}}</view>
+    <image src="../../../images/cart.png" class="cart_img"></image>
+    <view class="xixi">{{goods_data.cart_num}}</view>
   </view>
-   
+
 
 
 
