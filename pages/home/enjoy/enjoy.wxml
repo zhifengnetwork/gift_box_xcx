@@ -15,7 +15,6 @@
     <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{nav_title}}" wx:key data-id="{{item.id}}">{{item.name}}</view>
   </scroll-view>
 
-
    <!-- tab切换下面的公共部分 bindtap="xwq"-->
 <view class="img_box">
   <view class="img_item1" bindtap="upimg">
