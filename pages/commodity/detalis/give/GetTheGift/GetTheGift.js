@@ -255,7 +255,7 @@ Page({
   again: function() {
     console.log(this.data.joinid)
     wx.navigateTo({
-      url: '../../../../site/site?again=' + true + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr + '&joinid=' + this.data.joinid,
+      url: '../../../../site/site?redirect_url=/pages/commodity/detalis/give/GetTheGift/GetTheGift&again=' + true + '&order_id=' + this.data.order_id + '&pwdstr=' + this.data.pwdstr + '&joinid=' + this.data.joinid,
     })
   },
   /**

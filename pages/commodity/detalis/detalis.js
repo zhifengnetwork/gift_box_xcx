@@ -214,7 +214,7 @@ Page({
 
             wx.navigateTo({
               // url: '../detalis/payment/award/award?sku_id=' + app.globalData.sku_id + '&num=' + app.globalData.productNum
-              url: '../detalis/payment/award/award?type=1'
+              url: '../detalis/payment/award/award?type=1&goods_id=' + that.data.goods_data.goods_id
             })
 
           } else {

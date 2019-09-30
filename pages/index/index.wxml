@@ -96,8 +96,8 @@
   </view>
 </view>
  -->
-<text class="jiali_title">{{xingxuanyoupin.name}}</text>
-<text class="english">{{xingxuanyoupin.english}}</text>
+<!-- <text class="jiali_title">{{xingxuanyoupin.name}}</text>
+<text class="english">{{xingxuanyoupin.english}}</text> -->
 <view class="dangimg_box">
   <image class="dangimg_box_img" src="{{xingxuanyoupin.goods_info.picture}}" bindtap='details' data-id='{{xingxuanyoupin.goods_info.goods_id}}'></image>
 </view>

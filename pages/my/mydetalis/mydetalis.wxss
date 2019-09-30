@@ -1,3 +1,34 @@
+.header{
+  margin-top:65rpx;
+}
+.newsite_nav{
+  height: 125rpx;
+  line-height: 50rpx;
+  /* border-bottom: 2rpx solid #D8D8D8; */
+  background: #fff;
+}
+.goBack{
+  position: absolute;
+  top: 60rpx;
+  font-size:12pt;
+}
+.goBack image{
+  width: 21rpx;
+  height: 40rpx;
+  padding: 0rpx 20px 0 30rpx;
+}
+.tabar {
+  display: flex;
+  justify-content: center;
+  /* background-color: rgba(255, 255,255, .3); */
+}
+.tabar text {
+  padding: 0rpx 30rpx 20rpx 0;
+  color: #353535;
+  font-size: 30rpx;
+  font-weight: bold;
+}
+
 .mydetalis_top{
   height: 115rpx;
 }

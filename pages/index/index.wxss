@@ -116,11 +116,12 @@
 .dangimg_box{
   width: 100%;
   height: 400rpx;
-  box-sizing: border-box
+  box-sizing: border-box;
+  margin-top:30rpx
 }
 .dangimg_box_img{
   width: 100%;
-  height: 100%;
+ 
 }
 .fashion_ear{
   width: 100%;

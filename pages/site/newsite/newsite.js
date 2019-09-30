@@ -17,58 +17,51 @@ Page({
     city: '',
     area: '',
     site_show: true,
-    item:'',
+    item: '',
     // 发送的数据
-    consignee:'',
-    address:'',
-    mobile:'',
-    is_default:0,
-    flag:'',
-    again:'',
-    pwdstr:'',
-    hao:null
+    consignee: '',
+    address: '',
+    mobile: '',
+    is_default: 0,
+    flag: '',
+    again: '',
+    pwdstr: '',
+    hao: null
   },
   // 返回
-  goBack:function(){
-    // if (this.data.hao==='1'){
-      wx.navigateTo({
-        url: '../../site/site?hao=1'
-      })
-    // }else{
-        // wx.navigateBack({
-        //   delta: 1,
-        // })
-    // }
-    console.log(typeof (this.data.hao))
+  goBack: function () {
+    wx.navigateTo({
+      url: '/pages/site/site',
+    })
   },
 
   //默认按钮选中取消事件
   switchChange: function (e) {
     console.log('switch1 发生 change 事件，携带值为', e.detail.value)
-    if(e.detail.value){
+    if (e.detail.value) {
       this.setData({
         is_default: 1
       })
-      console.log('选中',e.detail.value)
-    }else{
+      console.log('选中', e.detail.value)
+    } else {
       this.setData({
         is_default: 0
       })
-      console.log("取消",e.detail.value)
+      console.log("取消", e.detail.value)
     }
   },
-  newsiteshow:function () {
+  newsiteshow: function () {
     let that = this;
     let title = null;
     let url = null;
-    if (that.data.consignee==''){
+    if (that.data.consignee == '') {
       wx.showModal({
         title: '提示',
         content: '请输入收货人姓名',
         showCancel: false
       })
       return false;
-    } else if (that.data.mobile==''){
+    } else if (that.data.mobile == '') {
       wx.showModal({
         title: '提示',
         content: '请输入联系电话',
@@ -83,14 +76,14 @@ Page({
       })
       return false;
     }
-    if(that.data.item==''){
+    if (that.data.item == '') {
       url = 'api/user/add_address';
       title = '添加成功';
-    }else{
+    } else {
       url = 'api/user/edit_address';
       title = '修改成功';
     }
-    api.postJSON(url,{
+    api.postJSON(url, {
       token: app.globalData.token,
       address_id: that.data.address_id,
       consignee: that.data.consignee,
@@ -101,74 +94,74 @@ Page({
       city: that.data.city.area_id,
       district: that.data.area.area_id
     },
-    function(res){
-      if(res.data.status==1){
-        wx.showToast({
-          title: title,
-          icon: 'success',
-          duration: 2000
-        })
-        setTimeout(function () {
-          console.log(that.data.flag)
-          console.log(that.data.again)
-          if (that.data.flag && that.data.again){
-            wx.redirectTo({
-              url: '../site?again=' + true + '&pwdstr=' + that.data.pwdstr + '&joinid=' + that.data.joinid,
-            });
-          } else if (that.data.flag){
-            wx.redirectTo({
-              url: '../site?award=' + true,
-            });
-          }else{
-            wx.redirectTo({
-              url: '../site',
-            });
-          }
-        }, 2000)
-      }else{
-        wx.showModal({
-          title: '提示',
-          content: res.data.msg,
-          showCancel: false
-        })
-      }
-      console.log(res)
-    })
+      function (res) {
+        if (res.data.status == 1) {
+          wx.showToast({
+            title: title,
+            icon: 'success',
+            duration: 2000
+          })
+          setTimeout(function () {
+            console.log(that.data.flag)
+            console.log(that.data.again)
+            if (that.data.flag && that.data.again) {
+              wx.redirectTo({
+                url: '../site?again=' + true + '&pwdstr=' + that.data.pwdstr + '&joinid=' + that.data.joinid,
+              });
+            } else if (that.data.flag) {
+              wx.redirectTo({
+                url: '../site?award=' + true,
+              });
+            } else {
+              wx.redirectTo({
+                url: '../site',
+              });
+            }
+          }, 2000)
+        } else {
+          wx.showModal({
+            title: '提示',
+            content: res.data.msg,
+            showCancel: false
+          })
+        }
+        console.log(res)
+      })
   },
   // 三级联动
-  provinces:function(code,index){
+  provinces: function (code, index) {
     let that = this
     api.postJSON('api/user/get_address', {
       token: app.globalData.token
     },
-    function (res) {
-      that.setData({
-        provinces: res.data.data,
-        province: res.data.data[that.data.value[0]]
+      function (res) {
+        that.setData({
+          provinces: res.data.data,
+          province: res.data.data[that.data.value[0]]
+        })
+        that.citys(res.data.data[code].code, index);
       })
-      that.citys(res.data.data[code].code,index);
-    })
   },
-  citys: function (code,index){
+  citys: function (code, index) {
     let that = this
     api.postJSON('api/user/get_address', {
       token: app.globalData.token,
-      parent_id:code
+      parent_id: code
     },
-    function (res) {
-      if(res.data.data.length==0){
+      function (res) {
+        if (res.data.data.length == 0) {
+          that.setData({
+            areas: '',
+            citys: ''
+          })
+          return false;
+        }
         that.setData({
-          areas: '',
-          citys: ''
+          citys: res.data.data,
+          city: res.data.data[that.data.value[1]]
         })
-        return false;
-      }
-      that.setData({
-        citys: res.data.data,
-        city: res.data.data[that.data.value[1]]
+        that.areas(res.data.data[index].code);
       })
-      that.areas(res.data.data[index].code);
-    })
   },
   areas: function (code) {
     let that = this
@@ -187,30 +180,33 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
-    this.setData({hao:options.hao})
+    this.setData({
+      hao: options.hao == undefined ? null : options.hao,
+    })
+
     // 初始化动画变量
     var animation = wx.createAnimation({
       duration: 500,
       transformOrigin: "50% 50%",
       timingFunction: 'ease',
     })
-    if (options.award){
-      this.data.flag=true;
+    if (options.award) {
+      this.data.flag = true;
     }
     console.log(options)
     if (options.again) {
-      this.data.again=true;
+      this.data.again = true;
     }
     let pwdstr = options.pwdstr == undefined ? '' : options.pwdstr;
     let joinid = options.joinid == undefined ? '' : options.joinid;
-    this.setData({ 
-      flag: this.data.flag, 
+    this.setData({
+      flag: this.data.flag,
       again: this.data.again,
       pwdstr: pwdstr,
       joinid: joinid
     })
     this.animation = animation;
-    if (!options.item){
+    if (!options.item) {
       return false;
     }
     let item = JSON.parse(options.item);
@@ -277,12 +273,12 @@ Page({
     var cityNum = value[1]
     var countyNum = value[2]
     if (this.data.value[0] != provinceNum) {
-      this.provinces(provinceNum,0);
+      this.provinces(provinceNum, 0);
       this.setData({
         value: [provinceNum, 0, 0]
       })
     } else if (this.data.value[1] != cityNum) {
-      this.provinces(provinceNum,cityNum);
+      this.provinces(provinceNum, cityNum);
       this.setData({
         value: [provinceNum, cityNum, 0]
       })
@@ -294,7 +290,7 @@ Page({
     }
     console.log(this.data)
   },
-  consignee:function(e){
+  consignee: function (e) {
     this.setData({
       consignee: e.detail.value
     })

@@ -1,6 +1,14 @@
-<view class="mydetalis_top">
-  <component title='個人信息' show_bol='{{false}}'></component>
-</view>
+
+<view  class="header"> 
+   <view class='goBack' bindtap='goBack' style="padding-top:{{bar_Height+40}}rpx;">			
+      <image src='../../public/images/index/back.png' class="back_back22"></image>
+    </view>
+    <view class="tabar" style="padding-top:{{bar_Height+40}}rpx;">
+      <text class="red">個人信息</text>
+    </view>
+ </view>
+
+
 <view class="mydetalis_head">
   <view class="mydetalis_headimg">
     <image class="mydetalis_headimg_img" src="{{avatar}}"></image>

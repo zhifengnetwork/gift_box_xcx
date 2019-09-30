@@ -1,6 +1,16 @@
-<view class="award_top">
+<!-- <view class="award_top">
   <component title='確認支付' show_bol='{{falsr}}'></component>
-</view>
+</view> -->
+
+<view  class="header"> 
+   <view class='goBack' bindtap='goBack' style="padding-top:{{bar_Height+40}}rpx;">			
+      <image src='../../../../public/images/index/back.png' class="back_back22"></image>
+    </view>
+    <view class="tabar" style="padding-top:{{bar_Height+40}}rpx;">
+      <text class="red">確認支付</text>
+    </view>
+ </view>
+
 
 <view class="body">
 
@@ -14,7 +24,7 @@
   <image src="https://www.9pointstars.com/public/images/detalis/you_icon.png" class="award_you"></image>
 </view>
 
-<view class="detailshop" wx:for="{{goods}}">
+<view class="detailshop" wx:for="{{goods}}" wx:key>
   <view class="award_ct">
     <view class="award_ct_l">
       <image src="{{item.img}}" class="shop_img"></image>
