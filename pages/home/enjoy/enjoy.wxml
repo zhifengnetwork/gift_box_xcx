@@ -61,8 +61,6 @@
     </view>
   </view>
 
-
-
 <!-- tab -->
 <!-- <scroll-view class="swiper-tab" scroll-x>
     <view class="swiper-tab-item {{currentTab==index?'active':''}}"  data-current="{{index}}" bindtap="clickTab" wx:for="{{nav_title}}" wx:key data-id="{{item.id}}">{{item.name}}</view>
