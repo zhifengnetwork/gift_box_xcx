@@ -301,6 +301,7 @@
 .jiantext{
   text-align-last:justify;
 	text-align:justify;
+  -moz-text-align-last: justify;
 	text-justify:distribute-all-lines; 
   padding:0 30rpx;
   box-sizing: border-box

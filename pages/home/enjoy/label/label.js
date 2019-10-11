@@ -52,9 +52,12 @@ Page({
   queryData: function (e) {
     let that = this
     if (that.data.inputValue != ''){
-        wx.navigateTo({
+        wx.redirectTo({
           url: '../labelsearch/labelsearch?inputValue=' + that.data.inputValue + '&pageid=' + that.data.pageid
         });
+        // wx.navigateTo({
+        //   url: '../labelsearch/labelsearch?inputValue=' + that.data.inputValue + '&pageid=' + that.data.pageid
+        // });
         that.setData({
           // status: true,
           inputValue:'',
@@ -121,9 +124,12 @@ Page({
   clickTab:function(e){
     console.log(e)
     let that = this
-    wx.navigateTo({
+    wx.redirectTo({
       url: '../labelsearch/labelsearch?pageid=' + that.data.pageid + '&current=' + e.currentTarget.dataset.current,
     })
+    // wx.navigateTo({
+    //   url: '../labelsearch/labelsearch?pageid=' + that.data.pageid + '&current=' + e.currentTarget.dataset.current,
+    // })
   },
 
   // 品牌里点击加载更多
