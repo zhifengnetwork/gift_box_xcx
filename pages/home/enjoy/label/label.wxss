@@ -1,11 +1,11 @@
 page{
-  background: #000;
+  background: #362F2B;
 }
 .sousou_ear{
   margin-left: 8%;
   width:671rpx;
   height:60rpx;
-  background:rgba(67,67,67,1);
+  background:#362F2B;
   border-radius:30rpx;
   position: relative;
   top:160rpx;

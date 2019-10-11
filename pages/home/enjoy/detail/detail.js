@@ -17,7 +17,7 @@ Page({
     detaillist: [],
     comments: [],
     status: true,
-    placeholder: "選填，請先和商家協商一致",
+    placeholder: "添加評論",
     focus: false,
     pid: null,
     hhh: '',
