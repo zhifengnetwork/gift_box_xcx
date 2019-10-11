@@ -98,9 +98,12 @@
  -->
 <!-- <text class="jiali_title">{{xingxuanyoupin.name}}</text>
 <text class="english">{{xingxuanyoupin.english}}</text> -->
+
 <view class="dangimg_box">
   <image class="dangimg_box_img" src="{{xingxuanyoupin.goods_info.picture}}" bindtap='details' data-id='{{xingxuanyoupin.goods_info.goods_id}}'></image>
 </view>
+
+
 <!-- 时尚大牌 -->
 <text class="jiali_title">{{shishangdapai.name}}</text>
 <text class="english">{{shishangdapai.english}}</text>
