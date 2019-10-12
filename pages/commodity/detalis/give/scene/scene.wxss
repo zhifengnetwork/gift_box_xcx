@@ -8,7 +8,7 @@ page{
   overflow-x: scroll;
   overflow-y: hidden;
   font-size: 0;
-  margin: 60rpx 0 120rpx 80rpx;
+  margin: 40rpx 0 126rpx 44rpx;
 }
 .tabBar::after{
   display: block;
@@ -23,9 +23,9 @@ page{
   flex-shrink:0;
   display: inline-block;
   position: relative;
-  margin-left: 10rpx;
-  width: 210rpx;
-  height: 120rpx;
+  margin-right: 42rpx;
+  width: 214rpx;
+  height: 113rpx;
   line-height: 160rpx;
   background: #f5f5f5;
   border-radius: 10rpx;
@@ -66,24 +66,24 @@ page{
   position: absolute;
   left: 0;
   right: 0;
-  bottom: 0;
+  bottom: 10px;
   margin: 0 auto;
-  width: 400rpx;
-  height: 80%;
+  width: 420rpx;
+  height: 560rpx;
+  box-shadow: 0 5rpx 14rpx 5rpx #adadad;
   transition: .3s all;
   border-radius: 20rpx;
 }
 .tabCont_active{
-  width: 450rpx;
-  height: 90%;
+  height: 700rpx;
 }
 .btn{
-  margin: 50rpx auto;
+  margin: 50rpx 130rpx;
   width: 270rpx;
   height: 65rpx;
   line-height: 65rpx;
   text-align: center;
   color: #fff;
-  border-radius: 20rpx;
+  border-radius: 100rpx;
   background: #f79c97;
 }
