@@ -1,10 +1,12 @@
 <component title='享物圈' show_bol='{{false}}' side="{{true}}"></component>
 <view class="body">
   <view class="header">
-    <view class="user_pic">
-      <image src="{{detaillist.avatar}}" class="touxia"></image>
+    <view class="user_left" bindtap="pageTo">
+      <view class="user_pic">
+        <image src="{{detaillist.avatar}}" class="touxia"></image>
+      </view>
+      <view class="user_name">{{detaillist.nickname}}</view>
     </view>
-    <view class="user_name">{{detaillist.nickname}}</view>
     <view class="care" bindtap="guanzhu" wx:if="{{!follow_count}}">關注</view>
     <view class="yiguanzhu" bindtap="guanzhu" wx:if="{{follow_count}}">已關注</view>
   </view>

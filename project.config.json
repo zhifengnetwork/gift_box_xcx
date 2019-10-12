@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 29,
+			"current": 30,
 			"list": [
 				{
 					"id": -1,
@@ -259,6 +259,13 @@
 					"name": "caiyu",
 					"pathName": "pages/home/enjoy/topic/topic",
 					"query": "caogao=",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "标签页",
+					"pathName": "pages/home/enjoy/label/label",
+					"query": "pageid=0",
 					"scene": null
 				}
 			]

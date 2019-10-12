@@ -402,12 +402,13 @@ position: relative;
 .swipers {
   height: 767rpx;
 }
-swiper-item{
+/* swiper-item{
   height: 800rpx;
-}
+} */
 swiper-item image{
   width: 100%;
-  height: 800rpx;
+  /* height: 800rpx; */
+  height: 100%;
 }
 
 /*用来包裹所有的小圆点 */

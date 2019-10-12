@@ -134,6 +134,11 @@ Page({
       })
     }
   },
+  pageTo(){
+    wx.navigateTo({
+      url: '/pages/my/other/other?user_id=' + this.data.user_id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

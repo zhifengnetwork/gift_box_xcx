@@ -8,7 +8,11 @@
   margin-left: 5%;
   padding-top: 31rpx;
   display: flex;
-  justify-items: center;
+  justify-content: space-between;
+  align-items: center;
+}
+.user_left{
+  display: flex!important;
   align-items: center;
 }
 .user_pic{
@@ -30,9 +34,9 @@
   display: inline-block
 }
 .care{
-  position: absolute;
+  /* position: absolute;
   right: 4%;
-  top: 190rpx;
+  top: 190rpx; */
   width: 140rpx;
   background:rgba(255,255,255,1);
   border:2rpx solid rgba(255,38,64,1);
@@ -43,9 +47,9 @@
   text-align: center
 }
 .yiguanzhu{
-  position: absolute;
-  right: 7%;
-  top: 190rpx;
+  /* position: absolute; */
+  /* right: 7%; */
+  /* top: 190rpx; */
   width: 140rpx;
   background:rgba(255,255,255,1);
   border:2rpx solid #999999;
@@ -57,7 +61,8 @@
 }
 swiper{
   /* width: 750rpx; */
-  height: 835rpx;
+  /* height: 835rpx; */
+  height: 767rpx;
   display: flex;
   align-items: center;
   justify-content: center;
