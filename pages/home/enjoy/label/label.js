@@ -17,7 +17,8 @@ Page({
     pagepp: 1,
     pagesp:1,
     inputValue: '',
-    pageid:''
+    pageid:'',
+    bgImage: ''
   },
 
   // 输入框输入时跳转到搜索页
@@ -232,7 +233,8 @@ Page({
   onLoad: function(options) {
     let that = this
     that.setData({
-      pageid: options.pageid
+      pageid: options.pageid,
+      bgImage: wx.getStorageSync('bgImage')
     })
     that.hideShareMenu()
   },

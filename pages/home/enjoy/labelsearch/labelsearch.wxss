@@ -1,5 +1,16 @@
 page{
-  background: #000;
+  /* background: #000; */
+  position: relative
+}
+.bg_color{
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(20px);
 }
 .sousou_ear{
   margin-left: 8%;
@@ -101,7 +112,7 @@ page{
 .hidden{
   display: none;
 }
-/* 添加标签 */
+/* ���ӱ�ǩ */
 .tianjia{
   margin: 40rpx;
   height:110rpx;
@@ -215,11 +226,10 @@ page{
   text-overflow:ellipsis;
 }
 .more{
-  background: #000;
+  /* background: #000; */
   text-align: center;
   position: relative;
   height: 100rpx;
-  
 }
 .more text{
   position: absolute;

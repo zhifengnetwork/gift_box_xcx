@@ -35,6 +35,7 @@ Page({
       app.globalData.a = that.data.name
       console.log(app.globalData.a)
     }
+    wx.setStorageSync('bgImage', this.data.image)
     wx.navigateTo({
       url: '../label/label?pageid=0',
     })

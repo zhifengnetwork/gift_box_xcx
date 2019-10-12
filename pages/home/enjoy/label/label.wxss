@@ -1,5 +1,16 @@
 page{
-  background: #fff;
+  /* background: #fff; */
+  position: relative;
+}
+.bg_color{
+  width: 100%;
+  min-height: 100vh;
+  height: 100%;
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: -1;
+  filter: blur(20px);
 }
 .sousou_ear{
   margin-left: 8%;

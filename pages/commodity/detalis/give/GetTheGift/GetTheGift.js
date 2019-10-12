@@ -159,7 +159,11 @@ Page({
         }
       }
   },
-
+  pageTo:function(){
+    wx.navigateTo({
+      url: '/pages/commodity/detalis/detalis?id=' + this.data.goods.goods_id,
+    })
+  },
 
   /**
    * 生命周期函数--监听页面初次渲染完成

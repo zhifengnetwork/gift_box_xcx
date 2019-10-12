@@ -1,4 +1,5 @@
 <component title='標籤' show_bol='{{false}}' side="{{true}}" quan="{{true}}" heise="{{true}}" my_class="{{true}}"></component>
+<image src="{{bgImage}}" class="bg_color"></image>
 <view class="sousou_ear">
   <input type="text" class="find" placeholder="搜索" placeholder-style="color:#fff;" focus="false" bindinput="userNameInput" value='{{inputValue}}'></input>
   <image src="/images/ss.png" class="sousou" bindtap="huiche"></image>

@@ -32,7 +32,8 @@ Page({
     xianshi:true,
     forward_num:0,
     note:[],
-    topic_id:null
+    topic_id:null,
+    pName: ''
   },
 
   // 视频播放函数
@@ -327,9 +328,7 @@ Page({
       api.getJSON('/api/sharing/add_comment?sharing_id='+that.data.id+'&token=' + app.globalData.token + '&content=' + that.data.context, function(res) {
         if (res.data.status == 1) {
           that.setData({
-            placeholder: "選填，請先和商家協商一致"
-          })
-          that.setData({
+            placeholder: "添加評論",
             hhh: ""
           })
           // 重新请求接口渲染数据
@@ -342,14 +341,17 @@ Page({
         }
       })
     } else {
-
-      api.getJSON('/api/sharing/add_comment?sharing_id='+that.data.id+'&token=' + app.globalData.token + '&content=' + that.data.context + '&pid=' + that.data.pid, function(res) {
+      // that.data.context
+      let text = ''
+      if (this.data.context){
+        text = '@' + this.data.pName + this.data.context
+      }
+      api.getJSON('/api/sharing/add_comment?sharing_id=' + that.data.id + '&token=' + app.globalData.token + '&content=' + text + '&pid=' + that.data.pid, function(res) {
         if (res.data.status == 1) {
           that.setData({
-            placeholder: "選填，請先和商家協商一致"
-          })
-          that.setData({
-            hhh: ""
+            placeholder: "添加評論",
+            hhh: "",
+            pid: null
           })
           // 重新请求接口渲染数据
           api.getJSON('/api/sharing/sharing_comment_list?sharing_id=' + that.data.id + '&token=' + app.globalData.token + '&page=1&num=100000', function (res) {
@@ -387,15 +389,16 @@ Page({
     var nickname = e.currentTarget.dataset.nickname;
     var pid = e.currentTarget.dataset.pid;
     nickname = "回复" + nickname + ":"
-    console.log(nickname)
+    // console.log(nickname)
     this.setData({
-      placeholder: nickname
+      placeholder: nickname,
+      pName: e.currentTarget.dataset.nickname
     });
     this.setData({
       focus: true
     });
     this.setData({pid:pid});
-    console.log(this.data.hhh)
+    // console.log(this.data.hhh)
   },
 
   // 关注按钮

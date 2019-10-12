@@ -433,7 +433,8 @@ Page({
       inputValue: options.inputValue,
       status: true,
       pageid: options.pageid,
-      currentTab: current
+      currentTab: current,
+      bgImage: wx.getStorageSync('bgImage')
     })
     console.log(that.data.inputValue)
     // 点击进来这个页面的时候,需要渲染对应的项的内容
