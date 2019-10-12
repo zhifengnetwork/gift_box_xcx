@@ -15,8 +15,8 @@
   <view wx:if="{{get_scene.length>1}}" style="width:200rpx;height:1rpx;display:inline-block;flex-shrink:0;"></view>
 </view> -->
 
-<swiper duration="500" style="height:730rpx;" previous-margin="120rpx" next-margin="120rpx" current="{{current}}" bindchange="tabCont">
-  <block wx:for="{{get_scene}}">
+<swiper duration="500" style="height:730rpx;" previous-margin="0rpx" next-margin="240rpx" current="{{current}}" bindchange="tabCont">
+  <block wx:for="{{get_scene}}" style="width:456rpx;">
     <swiper-item>
       <image src="{{item.picture}}" class="tabCont_img {{index==current?'tabCont_active':''}}"/>
     </swiper-item>
