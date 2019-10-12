@@ -24,7 +24,7 @@
 	"compileType": "miniprogram",
 	"libVersion": "2.2.5",
 	"appid": "wxe7d1d050fd8dc078",
-	"projectname": "xingxuan",
+	"projectname": "%E7%94%B5%E5%AD%90%E7%A4%BC%E7%9B%92",
 	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 27,
+			"current": 29,
 			"list": [
 				{
 					"id": -1,
@@ -244,6 +244,21 @@
 					"id": -1,
 					"name": "pages/commodity/detalis/give/scene/scene",
 					"pathName": "pages/commodity/detalis/give/scene/scene",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 28,
+					"name": "礼物",
+					"pathName": "pages/commodity/detalis/give/GetTheGift/GetTheGift",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "caiyu",
+					"pathName": "pages/home/enjoy/topic/topic",
+					"query": "caogao=",
 					"scene": null
 				}
 			]

@@ -1,7 +1,7 @@
 <component title='{{xingxuanderen.name}}' show_bol='{{false}}' side="{{true}}"></component>
 <view class="bossbox">
   <view class="boss_img" style="margin-top:{{bar_Height+140}}rpx">
-    <image src="{{xingxuanderen.priture}}" class="imgimgimg"></image>
+    <image src="{{xingxuanderen.priture}}" class="imgimgimg" mode="aspectFill"></image>
   </view>
   <view class="swiper-tab">
     <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" 
@@ -25,7 +25,7 @@
         <view class="boss_cbox">
           <view class="boss_cbox_box" wx:for="{{items}}"  wx:key bindtap="detail" data-id="{{item.goods_id}}">
             <view class="boss_cbox_img">
-            <image src="{{item. picture}}" style="width:250rpx;height:310rpx;" ></image>
+            <image src="{{item. picture}}" style="width:250rpx;height:310rpx;" mode="aspectFill"></image>
             </view>
             <view class="boss_cbox_name">{{item. goods_name}}</view>
             <view class="boss_cbox_price">HK${{item.price}}</view>

@@ -19,7 +19,7 @@
     <view class="tabimgbox">
       <image src="{{item.img}}"></image>
     </view>
-    <view class="tabtext">{{item.name}}</view>
+    <view class="tabtext {{currentTab == index && 'tabActive'}}">{{item.name}}</view>
   </view>
 </scroll-view>
 

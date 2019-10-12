@@ -18,22 +18,34 @@ Page({
     context: "",
     addrid: '',
     // buyao: 5
-    c_cn:'',
-    d_cn:'',
-    p_cn:'',
-    address_id:'',
-    invoice_id:'',
-    shipping_price:'',
-    order_num:'',
-    order_id:''
+    c_cn: '',
+    d_cn: '',
+    p_cn: '',
+    address_id: '',
+    invoice_id: '',
+    shipping_price: '',
+    order_num: ''
   },
+  goBack: function () {
 
-  show: function() {
-    var that=this;
+    if (app.globalData.redirect_goods_id) {
+      console.log('有goods_id' + app.globalData.redirect_goods_id)
+      wx.navigateTo({
+        url: '/pages/commodity/detalis/detalis?id=' + app.globalData.redirect_goods_id,
+      })
+    } else {
+      console.log('没有goods_id')
+      wx.navigateBack({
+      })
+    }
+
+  },
+  show: function () {
+    var that = this;
     this.setData({
       flag: false
     });
-    if (that.data.address_id == '' || that.data.address_id==undefined){
+    if (that.data.address_id == '' || that.data.address_id == undefined) {
       wx.showToast({
         icon: 'none',
         title: "请先添加地址",
@@ -42,8 +54,8 @@ Page({
       this.setData({
         flag: true
       });
-     
-    }else{
+
+    } else {
       this.setData({
         flag: false
       });
@@ -54,10 +66,10 @@ Page({
         }
       })
     }
-   
+
 
   },
-  hide: function() {
+  hide: function () {
     console.log(666)
     this.setData({
       flag: true
@@ -111,12 +123,18 @@ Page({
   /**
    * 生命周期函数--监听页面加载
    */
-  onLoad: function(options) {
-   
+  onLoad: function (options) {
+
     this.setData({
       address_id: options.address_id == undefined ? "" : options.address_id,
-      invoice_id: options.invoice_id == undefined ? "" : options.invoice_id
+      invoice_id: options.invoice_id == undefined ? "" : options.invoice_id,
+      
     })
+
+    var redirect_goods_id = options.goods_id == undefined ? null : options.goods_id;
+    if (redirect_goods_id != undefined && redirect_goods_id != null) {
+      app.globalData.redirect_goods_id = redirect_goods_id
+    }
 
     console.log('=========')
     console.log(options)
@@ -134,46 +152,46 @@ Page({
     // that.setData({
     //   buyao: options.buyao
     // })
-   // if (options.type === "1") {
+    // if (options.type === "1") {
 
-      //这个1是 商品详情
+    //这个1是 商品详情
 
-      // 该商品加入购物车
-      // api.getJSON('/api/order/immediatelyOrder?sku_id=' + app.globalData.sku_id + '&cart_number=' + app.globalData.productNum + '&token=' + app.globalData.token, function(res) {
-      //   if (res.data.status == 1) {
-      //     console.log("加入购物车成功啦")
-      //     console.log(res.data.data);
-      //     that.setData({
-      //       order_id: res.data.data
-      //     })
-      //     // 请求接口,获取order_id
-      //     api.getJSON('/api/order/submitOrder?token=' + app.globalData.token,
-      //       function(res) {
-      //         if (res.data.status == 1) {
-      //           console.log("生成订单成功了")
-      //           console.log(res.data.data);
-      //           app.globalData.dingdang_id = res.data.data;
-      //           console.log("订单id为", app.globalData.dingdang_id)
-      //           // that.setData({ dingdang_id: res.data.data })
-      //           //渲染页面数据
-      //           api.getJSON('/api/order/order_detail?order_id=' + app.globalData.dingdang_id + "&token=" + app.globalData.token, function(res) {
+    // 该商品加入购物车
+    // api.getJSON('/api/order/immediatelyOrder?sku_id=' + app.globalData.sku_id + '&cart_number=' + app.globalData.productNum + '&token=' + app.globalData.token, function(res) {
+    //   if (res.data.status == 1) {
+    //     console.log("加入购物车成功啦")
+    //     console.log(res.data.data);
+    //     that.setData({
+    //       order_id: res.data.data
+    //     })
+    //     // 请求接口,获取order_id
+    //     api.getJSON('/api/order/submitOrder?token=' + app.globalData.token,
+    //       function(res) {
+    //         if (res.data.status == 1) {
+    //           console.log("生成订单成功了")
+    //           console.log(res.data.data);
+    //           app.globalData.dingdang_id = res.data.data;
+    //           console.log("订单id为", app.globalData.dingdang_id)
+    //           // that.setData({ dingdang_id: res.data.data })
+    //           //渲染页面数据
+    //           api.getJSON('/api/order/order_detail?order_id=' + app.globalData.dingdang_id + "&token=" + app.globalData.token, function(res) {
 
-      //             if (res.data.status == 1) {
-      //               console.log("订单列表")
-      //               console.log(res.data.data)
-      //               that.setData({
-      //                 order_detail: res.data.data
-      //               })
-      //               that.setData({
-      //                 goods: res.data.data.goods_res
-      //               })
-      //               console.log(that.data.goods)
-      //             }
-      //           })
-      //         }
-      //       })
-      //   }
-      // })
+    //             if (res.data.status == 1) {
+    //               console.log("订单列表")
+    //               console.log(res.data.data)
+    //               that.setData({
+    //                 order_detail: res.data.data
+    //               })
+    //               that.setData({
+    //                 goods: res.data.data.goods_res
+    //               })
+    //               console.log(that.data.goods)
+    //             }
+    //           })
+    //         }
+    //       })
+    //   }
+    // })
 
 
     // } else {
@@ -220,15 +238,15 @@ Page({
 
 
   },
-  site: function() {
+  site: function () {
     wx.navigateTo({
-      url: '../../../../site/site?award=true&invoice_id=' + this.data.invoice_id,
+      url: '../../../../site/site?redirect_url=/pages/commodity/detalis/payment/award/award&award=true&invoice_id=' + this.data.invoice_id,
     });
   },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
-  onReady: function() {
+  onReady: function () {
 
   },
 
@@ -258,7 +276,7 @@ Page({
   /**
    *加载数据
    */
-  loadData: function (address_id=''){
+  loadData: function (address_id = '') {
     var that = this
 
     api.getJSON('/api/order/temporary?address_id=' + address_id + '&token=' + app.globalData.token, function (res) {
@@ -287,51 +305,51 @@ Page({
   /**
    * 生命周期函数--监听页面隐藏
    */
-  onHide: function() {
+  onHide: function () {
 
   },
 
   /**
    * 生命周期函数--监听页面卸载
    */
-  onUnload: function() {
+  onUnload: function () {
 
   },
 
   /**
    * 页面相关事件处理函数--监听用户下拉动作
    */
-  onPullDownRefresh: function() {
+  onPullDownRefresh: function () {
 
   },
 
   /**
    * 页面上拉触底事件的处理函数
    */
-  onReachBottom: function() {
+  onReachBottom: function () {
 
   },
 
   /**
    * 用户点击右上角分享
    */
-  onShareAppMessage: function() {
+  onShareAppMessage: function () {
 
   },
-  tiaofapiao: function() {
+  tiaofapiao: function () {
     var that = this
     wx.navigateTo({
       url: '../../../../my/invoice/invoice?award=true&address_id=' + this.data.address_id
     });
   },
   // 文本域失去焦点
-  changeContext: function(e) {
+  changeContext: function (e) {
     console.log(e.detail.value);
     this.setData({
       context: e.detail.value
     })
   },
-  jifen: function() {
+  jifen: function () {
     this.setData({
       flag: true
     });
@@ -344,11 +362,11 @@ Page({
       url: '/pages/commodity/detalis/give/integral/integral?order_id=' + this.data.order_id,
     })
   },
-  weixin: function() {
+  weixin: function () {
     this.setData({
       flag: true
     });
-    api.getJSON('/api/pay/order_wx_pay?order_id=' + this.data.order_id + '&user_note=' + this.data.context + '&token=' + app.globalData.token, function(res) {
+    api.getJSON('/api/pay/order_wx_pay?order_id=' + this.data.order_id + '&user_note=' + this.data.context + '&token=' + app.globalData.token, function (res) {
 
       if (res.data.status == 1) {
         wx.requestPayment({
@@ -358,7 +376,7 @@ Page({
           signType: 'MD5',
           paySign: res.data.data.paySign,
           success(res) {
-            console.log(res); 
+            console.log(res);
             wx.switchTab({
               url: '../../../../index/index',
             })

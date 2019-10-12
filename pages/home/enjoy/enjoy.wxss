@@ -111,6 +111,9 @@
   color: black;
   font-size: 32rpx;
   font-weight: bolder;
+  /* text-decoration: underline; */
+  /* border-bottom: 2rpx solid #000;
+  height: 86rpx; */
 }
 
 .juzhong {

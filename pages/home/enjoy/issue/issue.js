@@ -466,6 +466,8 @@ Page({
     })
   },
   quxiao2: function() {
+    console.log(getCurrentPages())
+    // return
     this.setData({
       xianshi2: false
     })
@@ -476,7 +478,7 @@ Page({
     })
 
     wx.navigateBack({//返回
-      delta:2
+      delta: getCurrentPages().length - 2
     })
 
   },
@@ -530,9 +532,12 @@ Page({
           success: function(res) {
             setTimeout(function() {　　　　
               wx.hideToast();
-              wx.navigateBack({
-                delta: 2,
-              })　　
+              // wx.navigateBack({
+              //   delta: 2,
+              // })　
+              wx.navigateBack({//返回
+                delta: getCurrentPages().length - 2
+              })　
             }, 1000);
           }
         })

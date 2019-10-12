@@ -52,7 +52,6 @@
     "pages/my/FAQ/FAQ",
     "pages/site/site",
     "pages/site/newsite/newsite",
-    "pages/site/sitemanage/sitemanage",
     "pages/turntable/turntable",
     "pages/authorize/authorize",
     "pages/my/after/after",
@@ -97,32 +96,32 @@
     "list": [
       {
         "pagePath": "pages/index/index",
-        "iconPath": "pages/public/images/index/zhuye.png",
-        "selectedIconPath": "pages/public/images/index/zhuye_x.png",
+        "iconPath": "pages/public/images/index/7.png",
+        "selectedIconPath": "pages/public/images/index/77.png",
         "text": "首页"
       },
       {
         "pagePath": "pages/classify/classify",
-        "iconPath": "pages/public/images/index/fenglei.png",
-        "selectedIconPath": "pages/public/images/index/fenglei_x.png",
+        "iconPath": "pages/public/images/index/6.png",
+        "selectedIconPath": "pages/public/images/index/66.png",
         "text": "分类"
       },
       {
         "pagePath": "pages/message/message",
-        "iconPath": "pages/public/images/index/message.png",
-        "selectedIconPath": "pages/public/images/index/message_x.png",
+        "iconPath": "pages/public/images/index/8.png",
+        "selectedIconPath": "pages/public/images/index/88.png",
         "text": "消息"
       },
       {
         "pagePath": "pages/cart/cart",
-        "iconPath": "pages/public/images/index/shouye.png",
-        "selectedIconPath": "pages/public/images/index/gouwuche_x.png",
+        "iconPath": "pages/public/images/index/9.png",
+        "selectedIconPath": "pages/public/images/index/99.png",
         "text": "购物车"
       },
       {
         "pagePath": "pages/my/my",
-        "iconPath": "pages/public/images/index/feren.png",
-        "selectedIconPath": "pages/public/images/index/wo_x.png",
+        "iconPath": "pages/public/images/index/10.png",
+        "selectedIconPath": "pages/public/images/index/1010.png",
         "text": "个人中心"
       }
     ]

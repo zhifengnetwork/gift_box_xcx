@@ -2,13 +2,13 @@
 <view class="body">
   <view class="header">
     <view class="user_pic">
-      <image src="{{detaillist.avatar}}" class="touxia" ></image>
+      <image src="{{detaillist.avatar}}" class="touxia"></image>
     </view>
     <view class="user_name">{{detaillist.nickname}}</view>
     <view class="care" bindtap="guanzhu" wx:if="{{!follow_count}}">關注</view>
     <view class="yiguanzhu" bindtap="guanzhu" wx:if="{{follow_count}}">已關注</view>
   </view>
-  
+
   <!-- 显示展示第几屏 -->
   <view class="screen">{{currentSwiper+1}}/{{priture.length}}</view>
 
@@ -22,7 +22,7 @@
               <image src="{{item}}" class="slide-image" mode='aspectFit'></image>
               <!-- 拖拽的表情 -->
               <movable-view class="popupimg" wx:for="{{biaoqing}}" wx:key x="{{item.x}}" y="{{item.y}}" direction="all" data-index="{{index}}" disabled="{{true}}">
-                <image src="{{item.img}}" ></image>
+                <image src="{{item.img}}"></image>
               </movable-view>
               <!-- 拖拽的标签 -->
               <movable-view class="popuptext" x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{biaoqian}}" wx:key data-index="{{index}}" disabled="{{true}}">
@@ -42,15 +42,20 @@
     </block>
   </view>
 
-
   <!-- 文字介绍 -->
-  <view class="intriduce1" wx:if="{{liang}}"><view style="font-size:14px">{{detaillist.title}}</view><view>{{detaillist.content}}</view></view>
-  <view class="intriduce2" wx:else><view style="font-size:14px">{{detaillist.title}}</view><view>{{detaillist.content}}</view></view>
-  <view wx:if="{{xianshi}}">
-      <view class="zhankai" wx:if="{{liang}}" bindtap="zhankai">展開</view>
-      <view class="zhankai" wx:else bindtap="shouqi">收起</view>
+  <view class="intriduce1" wx:if="{{liang}}">
+    <view style="font-size:14px">{{detaillist.title}}</view>
+    <view>{{detaillist.content}}</view>
   </view>
-  
+  <view class="intriduce2" wx:else>
+    <view style="font-size:14px">{{detaillist.title}}</view>
+    <view>{{detaillist.content}}</view>
+  </view>
+  <view wx:if="{{xianshi}}">
+    <view class="zhankai" wx:if="{{liang}}" bindtap="zhankai">展開</view>
+    <view class="zhankai" wx:else bindtap="shouqi">收起</view>
+  </view>
+
 
   <!-- 点赞,转发,收藏区域 -->
   <view class="collect_ear">
@@ -93,9 +98,6 @@
     </view>
 
 
-
-
-
     <view wx:if="{{!status}}">
       <view class="ear" wx:for="{{comments}}" wx:key bindtap="huifu" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
@@ -112,12 +114,9 @@
       </view>
     </view>
 
-
-
-
     <view class="looks_detail" bindtap="quanbu" wx:if="{{detaillist.comment_num>3}}">查看全部{{comments.length}}條評論></view>
 
-    <view class="white_ear">
+    <view class="white_ear" wx:if="{{detaillist.is_comment_open == 1 }}">
       <image src="../../../../images/white.png" class="white_pic"></image>
       <textarea class="weui-textarea" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;" bindblur="changeContext" focus="{{focus}}" value="{{hhh}}" />
     </view>
@@ -125,50 +124,33 @@
     <!-- 相关推荐 -->
     <view style="padding:30rpx 30px 30rpx 0rpx;font-size:30rpx;color:rgba(102,102,102,1);">相关推荐</view>
     <scroll-view>
-        <view class='case-page'>
-          <view class='list-masonry'>
-            <view  class='lan'  wx:for="{{note}}" wx:key bindtap="details" data-id="{{item.id}}" data-type="{{item.type}}">
-              <!-- ' class='pic {{item.show? "Action" : ""}}' -->
-              <!-- <image src='{{item.stutus ? item.cover : ""}}' mode='widthFix'></image> -->
-              <image src='{{item.cover}}' mode='widthFix' wx:if="{{!item.type}}" class="xixihhhhhaaa"></image>
-              <video src='{{item.cover}}' mode='widthFix' wx:else controls="{{false}}" loop="{{false}}" muted="{{true}}"></video>
-              <view class="biaoti">{{item.title}}</view>
-              <view class="touxiang">
-                <image class="user_pic" src="{{item.avatar}}"></image>
-                <view class="nike">{{item.nickname}}</view>
-                <view class="aixin_ear">
-                  <!-- bindtap="dianji" -->
-                  <!-- wx:if="{{dianzang[index]}}" -->
-                  <!-- catchtap="dianji" -->
-                  <image class="aixin77" src="../../../public/images/home/xuanaixin.png"  wx:if="{{item.point_count}}"  data-index="{{index}}" data-id="{{item.id}}"></image>
+      <view class='case-page'>
+        <view class='list-masonry'>
+          <view class='lan' wx:for="{{note}}" wx:key bindtap="details" data-id="{{item.id}}" data-type="{{item.type}}">
+            <!-- ' class='pic {{item.show? "Action" : ""}}' -->
+            <!-- <image src='{{item.stutus ? item.cover : ""}}' mode='widthFix'></image> -->
+            <image src='{{item.cover}}' mode='widthFix' wx:if="{{!item.type}}" class="xixihhhhhaaa"></image>
+            <video src='{{item.cover}}' mode='widthFix' wx:else controls="{{false}}" loop="{{false}}" muted="{{true}}"></video>
+            <view class="biaoti">{{item.title}}</view>
+            <view class="touxiang">
+              <image class="user_pic" src="{{item.avatar}}"></image>
+              <view class="nike">{{item.nickname}}</view>
+              <view class="aixin_ear">
+                <!-- bindtap="dianji" -->
+                <!-- wx:if="{{dianzang[index]}}" -->
+                <!-- catchtap="dianji" -->
+                <image class="aixin77" src="../../../public/images/home/xuanaixin.png" wx:if="{{item.point_count}}" data-index="{{index}}" data-id="{{item.id}}"></image>
 
-                  <image class="aixin77" src="../../../public/images/home/aixin.png" wx:else  data-index="{{index}}" data-id="{{item.id}}"></image>
-                  <text style="margin-left:5rpx">{{item.point_num}}</text>
-                </view>
-                
+                <image class="aixin77" src="../../../public/images/home/aixin.png" wx:else data-index="{{index}}" data-id="{{item.id}}"></image>
+                <text style="margin-left:5rpx">{{item.point_num}}</text>
               </view>
+
             </view>
           </view>
         </view>
-      </scroll-view>
-
-
-
-
-
-
-
-
-
-
+      </view>
+    </scroll-view>
 
   </view>
-
-
-
-
-
-
-
 
 </view>

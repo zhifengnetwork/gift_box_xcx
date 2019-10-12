@@ -93,12 +93,22 @@ page{
   text-align: center;
   margin-top: 40rpx;
   z-index: 2;
-  line-height: 88rpx;
+  /* line-height: 88rpx; */
   font-size:22rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:bold;
   color:rgba(255,255,255,1);
   
+}
+.tabActive:after{
+  content: '';
+  display: inline-block;
+  width: 40rpx;
+  height: 2rpx;
+  background-color: #fff;
+  position: absolute;
+  bottom: 0;
+  left: calc(50% - 20rpx);
 }
 .active{
     font-size: 35;

@@ -23,10 +23,10 @@ Page({
           item: res.data.data
         })
       }
-      console.log(that.data.item)
+      
     })
     app.getUserInfo( userinfo => {
-        console.log(userinfo);
+       
     });
 
   },

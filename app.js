@@ -40,10 +40,7 @@ App({
       })
 
     } else {
-
-      console.log('已登录')
       cb && cb(this.globalData.userInfo)
-
     }
   },
 
@@ -98,7 +95,8 @@ App({
     type:'',
     music_id:'',
     isIPX: false,
-   
+    address_redirect_url:null,
+    redirect_goods_id:null
   }
 
 
