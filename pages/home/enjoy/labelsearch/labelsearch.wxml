@@ -1,4 +1,4 @@
-<component title='標籤' show_bol='{{false}}' side="{{true}}" quan="{{true}}" heise="{{true}}" my_class="{{true}}"></component>
+<component title='標籤' show_bol='{{false}}' side="{{true}}" quan="{{true}}"></component>
 <image src="{{bgImage}}" class="bg_color"></image>
 <view class="sousou_ear">
   <input type="text" class="find" placeholder="搜索" placeholder-style="color:#fff;" focus="false" bindinput="userNameInput" value='{{inputValue}}'></input>
@@ -14,7 +14,7 @@
   <view class="swiper-tab-item {{currentTab==4?'active':''}}" data-current="4" bindtap="clickTab">影視</view>
 </view>
 <!-- 添加标签 -->
-<view class="tianjia">
+<view class="tianjia" wx:if="{{currentTab != 0}}">
   <view class="tianjia_l">
     <view class="tianjia_limg">
       <image src="/images/jiahao.png"></image>
@@ -28,55 +28,69 @@
 <!-- tab切换 -->
 <!-- 全部 -->
 <view class="{{currentTab == 0 ? 'show':'hidden'}}">
-  <scroll-view class="yonghu_ear">
-  <view class="tab_t">推薦地點</view>
-    <view class="tab_c">
+
+  <view wx:if="{{allData.address.length > 0}}">
+    <view class="tab_t">地點</view>
+    <view class="tab_c" wx:for="{{allData.address}}" wx:key bindtap="addressbox" data-id="{{item.id}}" data-title="{{item.title}}">
       <view class="tab_cl">
-        <!-- <image src=""></image> -->
         <view class="tab_climg">
-          <image src="/images/site.png" />
+          <image src="{{item.img}}"/>
         </view>
       </view>
       <view class="tab_cr">
-        <view>大洲科技園</view>
-        <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
+        <view>{{item.title}}</view>
+        <text>{{item.desc}}</text>
       </view>
     </view>
-    <view class="tab_c">
+  </view>
+  <view wx:if="{{allData.brand.length > 0}}">
+    <view class="tab_t">品牌</view>
+    <view class="tab_c" wx:for="{{allData.brand}}" wx:key bindtap="pinpaibox" data-id="{{item.id}}" data-title="{{item.name}}">
       <view class="tab_cl">
         <view class="tab_climg">
-          <image src="/images/site.png" />
+          <image src="{{item.priture}}" />
         </view>
       </view>
       <view class="tab_cr">
-        <view>大洲科技園</view>
-        <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
+        <view>{{item.name}}</view>
+        <text>{{item.introduce}}</text>
       </view>
     </view>
-    <view class="more">
-      <text>查看更多</text>
-      <view class="xiaimg">
-        <image src="/images/xia.png" />
+  </view>
+  <view wx:if="{{allData.goods.length > 0}}">
+    <view class="tab_t">商品</view>
+    <view class="tab_c" wx:for="{{allData.goods}}" wx:key bindtap="shangpinbox" data-id="{{item.goods_id}}" data-title="{{item.goods_name}}">
+      <view class="tab_cl">
+        <view class="tab_climg">
+          <image src="{{item.picture}}" />
+        </view>
+      </view>
+      <view class="tab_cr">
+        <view>{{item.goods_name}}</view>
+        <text>{{item.desc}}</text>
       </view>
     </view>
-  </scroll-view>
+  </view>
+  <view wx:if="{{allData.video.length > 0}}">
+    <view class="tab_t">影視</view>
+    <view class="tab_c" wx:for="{{allData.video}}" wx:key bindtap="moviebox" data-id="{{item.id}}" data-title="{{item.title}}">
+      <view class="tab_cl">
+        <view class="tab_climg">
+          <image src="{{item.img}}" />
+        </view>
+      </view>
+      <view class="tab_cr">
+        <view>{{item.title}}</view>
+        <text>{{item.desc}}</text>
+      </view>
+    </view>
+  </view>
+
 </view>
 
 <!-- 地點 -->
 <view class="{{currentTab == 1 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
-    <!-- <view class="tab_t">推薦地點</view> -->
-    <!-- <view class="tab_c">
-      <view class="tab_cl">
-        <view class="tab_climg">
-          <image src="/images/site.png" />
-        </view>
-      </view>
-      <view class="tab_cr">
-        <view>大洲科技園</view>
-        <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
-      </view>
-    </view> -->
     <view class="tab_c" wx:for="{{addresslist}}" wx:key bindtap="addressbox" data-id="{{item.id}}" data-title="{{item.title}}">
       <view class="tab_cl">
         <view class="tab_climg">
@@ -88,8 +102,8 @@
         <text>{{item.desc}}</text>
       </view>
     </view>
-    <view class="more">
-      <text>查看更多</text>
+    <view class="more" wx:if="{{addresslist.length >= 10}}">
+      <text bindtap="gengduopp">查看更多</text>
       <view class="xiaimg">
         <image src="/images/xia.png" />
       </view>
@@ -101,7 +115,7 @@
 <view class="{{currentTab == 2 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
     <!-- <view class="tab_t">推薦地點</view> -->
-    <view class="tab_c" wx:for="{{pinpai}}" bindtap="pinpaibox" data-id="{{item.id}}">
+    <view class="tab_c" wx:for="{{pinpai}}" bindtap="pinpaibox" data-id="{{item.id}}" data-title="{{item.name}}">
       <view class="tab_cl">
         <view class="tab_climg">
           <image src="{{item.priture}}" />
@@ -112,7 +126,7 @@
         <text>{{item.introduce}}</text>
       </view>
     </view>
-    <view class="more">
+    <view class="more" wx:if="{{pinpai.length >= 10}}">
       <text bindtap="gengduopp">查看更多</text>
       <view class="xiaimg">
         <image src="/images/xia.png" />
@@ -125,7 +139,7 @@
 <view class="{{currentTab == 3 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
     <!-- <view class="tab_t">推薦地點</view> -->
-    <view class="tab_c" wx:for="{{shangpin}}" bindtap="shangpinbox" data-id="{{item.goods_id}}">
+    <view class="tab_c" wx:for="{{shangpin}}" bindtap="shangpinbox" data-id="{{item.goods_id}}" data-title="{{item.goods_name}}">
       <view class="tab_cl">
         <view class="tab_climg">
           <image src="{{item.picture}}" />
@@ -136,9 +150,9 @@
         <text>{{item.desc}}</text>
       </view>
     </view>
-    
-    <view class="more">
-      <text>查看更多</text>
+
+    <view class="more" wx:if="{{shangpin.length >= 10}}">
+      <text bindtap="gengduopp">查看更多</text>
       <view class="xiaimg">
         <image src="/images/xia.png" />
       </view>
@@ -161,19 +175,8 @@
         <text>{{item.desc}}</text>
       </view>
     </view>
-    <!-- <view class="tab_c">
-      <view class="tab_cl">
-        <view class="tab_climg">
-          <image src="/images/site.png" />
-        </view>
-      </view>
-      <view class="tab_cr">
-        <view>大洲科技園</view>
-        <text>廣東省珠海市香洲區港樂路1號西南方向66米</text>
-      </view>
-    </view> -->
-    <view class="more">
-      <text>查看更多</text>
+    <view class="more" wx:if="{{movie.length >= 10}}">
+      <text bindtap="gengduopp">查看更多</text>
       <view class="xiaimg">
         <image src="/images/xia.png" />
       </view>

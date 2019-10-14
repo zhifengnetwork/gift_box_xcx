@@ -58,6 +58,8 @@ page{
     flex-flow: row;
     justify-content: space-between;
     font-size: 16px;
+    position: sticky;
+    top: 0;
 }
 .swiper_img{
   width: 90rpx;
@@ -174,6 +176,7 @@ page{
   overflow: hidden;
   background:rgba(0,0,0,0.2);
   border-radius:15rpx;
+  margin-bottom: 10rpx;
 }
 .tab_cl{
   float: left;

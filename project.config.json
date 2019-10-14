@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 32,
+			"current": 34,
 			"list": [
 				{
 					"id": -1,
@@ -287,6 +287,13 @@
 					"name": "确认",
 					"pathName": "pages/commodity/detalis/give/GetTheSuccess/success",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "标签后一页",
+					"pathName": "pages/home/enjoy/labelsearch/labelsearch",
+					"query": "pageid=0&current=0",
 					"scene": null
 				}
 			]

@@ -299,12 +299,18 @@
   color:rgba(42,42,42,1);
 }
 .jiantext{
-  text-align-last:justify;
+  /* text-align-last:justify;
 	text-align:justify;
   -moz-text-align-last: justify;
-	text-justify:distribute-all-lines; 
+	text-justify:distribute-all-lines;  */
   padding:0 38rpx;
   box-sizing: border-box;
+}
+.jiantext text{
+  display: inline-block;
+  width: 100%;
+  text-align-last: justify;
+  -moz-text-align-last: justify;
 }
 .item1_icon{
   position: absolute;
