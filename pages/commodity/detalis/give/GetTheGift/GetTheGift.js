@@ -32,6 +32,11 @@ Page({
       }
       that.loadData(options);
     })
+    if (options.ispopup){
+      this.setData({
+        flag: false
+      })
+    }
   },
 
   /**
@@ -117,7 +122,7 @@ Page({
             active: false
           })
         }
-        console.log(res.data)
+        // console.log(res.data)
       })
       if (this.data.type != 1) {
         let that = this;
@@ -158,6 +163,11 @@ Page({
           return false;
         }
       }
+      // if(){
+      //   this.setData({
+
+      //   })
+      // }
   },
   pageTo:function(){
     wx.navigateTo({
@@ -236,6 +246,7 @@ Page({
       })
   },
   show: function() {
+
     if(!this.data.give){
       wx.showToast({
         title: this.data.givetext,
@@ -243,6 +254,7 @@ Page({
       })
       return false;
     }
+    console.log(2222)
     this.setData({
       flag: false
     })

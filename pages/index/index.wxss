@@ -305,12 +305,18 @@
 	text-justify:distribute-all-lines;  */
   padding:0 38rpx;
   box-sizing: border-box;
+  width: 100%;
 }
 .jiantext text{
   display: inline-block;
   width: 100%;
-  text-align-last: justify;
-  -moz-text-align-last: justify;
+  text-align: justify;
+  /* -moz-text-align-last: justify; */
+}
+.jiantext text:after{
+  content: '';
+  display: inline-block;
+  width: 100%;
 }
 .item1_icon{
   position: absolute;

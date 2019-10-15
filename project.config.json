@@ -4,8 +4,9 @@
 		"ignore": []
 	},
 	"setting": {
-		"urlCheck": true,
+		"urlCheck": false,
 		"es6": true,
+		"enhance": true,
 		"postcss": true,
 		"minified": true,
 		"newFeature": true,
@@ -18,13 +19,12 @@
 			"ignore": [],
 			"disablePlugins": [],
 			"outputPath": ""
-		},
-		"enhance": true
+		}
 	},
 	"compileType": "miniprogram",
 	"libVersion": "2.2.5",
 	"appid": "wxe7d1d050fd8dc078",
-	"projectname": "%E7%94%B5%E5%AD%90%E7%A4%BC%E7%9B%92",
+	"projectname": "%E7%94%B5%E5%AD%90%E7%A4%BC%E7%9B%9211",
 	"cloudfunctionTemplateRoot": "",
 	"debugOptions": {
 		"hidedInDevtools": []
@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 34,
+			"current": 32,
 			"list": [
 				{
 					"id": -1,
@@ -279,7 +279,7 @@
 					"id": 32,
 					"name": "领取礼物",
 					"pathName": "pages/commodity/detalis/give/GetTheGift/GetTheGift",
-					"query": "",
+					"query": "address_id=1186&order_id=3709&pwdstr=111&type=1&joinid=1",
 					"scene": null
 				},
 				{
@@ -294,6 +294,13 @@
 					"name": "标签后一页",
 					"pathName": "pages/home/enjoy/labelsearch/labelsearch",
 					"query": "pageid=0&current=0",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "收礼物",
+					"pathName": "pages/card/go",
+					"query": "id=909&type=1& order_id=3709&pwdstr= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU3MTExMTQ5MCwiZXhwIjoxNTcxMTQ3NDkwLCJ1c2VyX2lkIjozNzA5fQ.QAouHmIVVaP0cdxi8Pqpeg-hZ7nHcxX70NXRuLwUF_w",
 					"scene": null
 				}
 			]

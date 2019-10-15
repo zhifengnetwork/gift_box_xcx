@@ -118,12 +118,12 @@
       </view>
       <view class="detalis_fr">
         <view class="detalis_frbox">
-          <form report-submit="true" bindsubmit="kaolao">
-            <button class="detalis_frl" form-type="submit">犒勞自己</button>
-          </form>
-          <form report-submit="true" bindsubmit="give_goods">
-            <button class="detalis_frr" form-type="submit">贈送他人</button>
-          </form>
+          <!-- <form report-submit="true" bindsubmit="kaolao"> -->
+            <button class="detalis_frl" form-type="submit" bindtap="kaolao">犒勞自己</button>
+          <!-- </form> -->
+          <!-- <form report-submit="true" bindsubmit="give_goods"> -->
+            <button class="detalis_frr" form-type="submit" bindtap="give_goods">贈送他人</button>
+          <!-- </form> -->
         </view>
       </view>
     </view>

@@ -120,3 +120,13 @@
 .success_bbox_view>text{
   margin-left: 40rpx;
 }
+.success_tcimg{
+  display: flex;
+  align-items: center;
+  font-size: 24rpx;
+  justify-content: center;
+  color: #999;
+}
+.success_tcimg icon{
+  margin-right: 10rpx;
+}

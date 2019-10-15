@@ -10,7 +10,8 @@
       <view class="success_tct">這是一份精心挑選的禮物</view>
       <view class="success_tct">祝您生活愉快</view>
       <view class="success_tcimg">
-        <image src="../../../../public/images/card/success_icon.png" class="success_tcimage"></image>
+        <!-- <image src="../../../../public/images/card/success_icon.png" class="success_tcimage"></image> -->
+        <icon type="success" size="13" color="#999"/> 禮物領取成功!
       </view>
       <view class="success_tcb" bindtap="index">去謝謝TA</view>
     </view>

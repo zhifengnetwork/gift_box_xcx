@@ -39,9 +39,8 @@ Page({
 
     if (this.data.award && this.data.again) {
       wx.redirectTo({
-        url: '../commodity/detalis/give/GetTheGift/GetTheGift?address_id=' + address_id + '&order_id=' + that.data.order_id + '&pwdstr=' + that.data.pwdstr + '&type=1&joinid=' + that.data.joinid,
+        url: '../commodity/detalis/give/GetTheGift/GetTheGift?address_id=' + address_id + '&order_id=' + that.data.order_id + '&pwdstr=' + that.data.pwdstr + '&type=1&joinid=' + that.data.joinid + '&ispopup=true',
       })
-      getCurrentPages()[getCurrentPages().length - 2].show();
     } else if (this.data.award) {
       console.log('++++++++++')
       console.log(address_id)

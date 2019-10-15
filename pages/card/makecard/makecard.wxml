@@ -8,7 +8,7 @@
   <!-- 选择列表-s -->
   <view class="select_list">
     <!-- 列表项-s -->
-    <view class="select_item" wx:for="{{list}}" wx:key="{{index}}" bindtap="skip" data-url="{{item.url}}">
+    <view class="select_item" wx:for="{{list}}" wx:key="{{index}}" bindtap="skip" data-url="{{item.url}}" wx:if="{{item.isShow}}">
       <view class="select_imgwrap">
         <image class="select_img" src="{{item.img}}"></image>
       </view>

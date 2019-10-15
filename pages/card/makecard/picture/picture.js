@@ -121,14 +121,14 @@ Page({
   },
   // 提交
   send: function() {
-    if (!this.data.imglist&&!this.data.video){
-      wx.showModal({
-        title: '提示',
-        content: '请添加图片或视频',
-        showCancel: false
-      })
-      return false;
-    }
+    // if (!this.data.imglist&&!this.data.video){
+    //   wx.showModal({
+    //     title: '提示',
+    //     content: '请添加图片或视频',
+    //     showCancel: false
+    //   })
+    //   return false;
+    // }
     var that = this
     api.postJSON('api/box/set_box', {
       'token': app.globalData.token,

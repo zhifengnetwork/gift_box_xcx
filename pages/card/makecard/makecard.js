@@ -13,7 +13,8 @@ Page({
         text: '选择音乐',
         tips: '请选择歌曲',
         img: '../../public/images/card/music.png',
-        icon: '../../public/images/card/revision.png'
+        icon: '../../public/images/card/revision.png',
+        isShow: false
       },
       {
         id: '2',
@@ -21,7 +22,8 @@ Page({
         text: '选择照片',
         tips: '请选择照片',
         img: '../../public/images/card/picture.png',
-        icon: '../../public/images/card/revision.png'
+        icon: '../../public/images/card/revision.png',
+        isShow: false
       },
       {
         id: '3',
@@ -29,7 +31,8 @@ Page({
         text: '录入语音',
         tips: '请录入语音',
         img: '../../public/images/card/record.png',
-        icon: '../../public/images/card/revision.png'
+        icon: '../../public/images/card/revision.png',
+        isShow: true
       },
       {
         id: '4',
@@ -37,7 +40,8 @@ Page({
         text: '写下祝福',
         tips: '请填写祝福',
         img: '../../public/images/card/blessing.png',
-        icon: '../../public/images/card/revision.png'
+        icon: '../../public/images/card/revision.png',
+        isShow: false
       },
     ],
     blessing: false,
@@ -226,7 +230,9 @@ Page({
           datalist[1].tips = res.data.data.photo_url == '' ? '请选择照片' : photourl;//图片
           datalist[2].tips = res.data.data.voice_url == '' ? '请录入语音' : voice_url;//录音
           datalist[3].tips = res.data.data.content == '' ? '请填写祝福' : res.data.data.content;//祝福
-          
+          datalist[0].isShow = res.data.data.is_music == 1 ? true : false
+          datalist[1].isShow = res.data.data.is_photo == 1 ? true : false
+          datalist[3].isShow = res.data.data.is_content == 1 ? true : false
           that.setData({ list: datalist })
 
        // } else {
