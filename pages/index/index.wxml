@@ -43,7 +43,7 @@
     <view class="dsdsds">
       <view class="xiaode" wx:for="{{hot_category}}" wx:key>
         <view class="item1" bindtap="xingxuan" data-id="{{item.id}}">
-          <view class="item1_text {{item.name.length===2 ? 'jiantext':''}}">
+          <view class="item1_text jiantext">
             <text>{{item.name}}</text>
           </view>
           <!-- ../public/images/index/ninepoint.png -->

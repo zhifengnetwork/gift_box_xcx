@@ -57,12 +57,13 @@
 }
 .selection_bar_box{
   width: 100%;
-  height: 140rpx;
+  height: 164rpx;
   position: relative;
-  top: -90rpx;
+  top: -50rpx;
   background: white;
   box-shadow: 0 0 10rpx #DDDDDD; 
-  /* padding-bottom: 40rpx  */
+  padding-top: 16rpx;
+  box-sizing: border-box;
 }
 /* 选择栏--e */
 .jiali_title{
@@ -72,7 +73,7 @@
   height: 80rpx;
   line-height: 80rpx;
   font-weight: bolder;
-  margin-top: 31rpx;
+  margin-top: 20rpx;
   font-size:36rpx;
   font-family:Source Han Sans CN;
   color:rgba(0,0,0,1);
@@ -95,6 +96,7 @@
   display: flex;
   overflow-x: scroll;
   overflow-y:hidden;
+  margin-top: 20rpx;
 }
 /* 隐藏滚动条 */
 ::-webkit-scrollbar {display:none}
@@ -303,13 +305,13 @@
 	text-align:justify;
   -moz-text-align-last: justify;
 	text-justify:distribute-all-lines;  */
-  padding:0 38rpx;
+  padding:0 30rpx;
   box-sizing: border-box;
   width: 100%;
 }
 .jiantext text{
   display: inline-block;
-  width: 100%;
+  width: 110rpx;
   text-align: justify;
   /* -moz-text-align-last: justify; */
 }
@@ -374,7 +376,7 @@
   white-space: nowrap;
 }
 .bar-ear{
-  margin:0 21rpx;
+  margin:90rpx 21rpx 0;
   box-sizing: border-box
 }
 .bar_ear_item{
@@ -407,7 +409,7 @@
 /* 轮播图样式 */
 .wrap{
 
-height: 800rpx;
+/* height: 800rpx; */
 /* border: 1px solid red; */
 position: relative;
 }
