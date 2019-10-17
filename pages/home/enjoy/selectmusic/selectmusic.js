@@ -27,7 +27,9 @@ Page({
     } else {
       that.setData({
         currentTab: e.target.dataset.current,
+        music: []
       })
+      this.getData(e.target.dataset.id)
     }
   },
 
@@ -74,8 +76,13 @@ Page({
       }
     })
 
+    this.getData(-1)
+  },
+  getData(pid){
+    var that = this;
     api.postJSON('api/sharing/get_sharing_music', {
-      pid: -1,
+      pid,
+      num: 100
     }, function (res) {
       console.log(res.data.data)
       if (res.data.status == 1) {
@@ -85,8 +92,8 @@ Page({
             songName: res.data.data[i].name,
             singer: res.data.data[i].desc,
             src: res.data.data[i].url,
+            length: res.data.data[i].length
           })
-          console.log(that.data.src)
         }
         that.setData({
           music: that.data.music,
@@ -97,7 +104,6 @@ Page({
       }
     })
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

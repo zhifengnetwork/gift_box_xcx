@@ -30,8 +30,11 @@ Page({
   },
   // 返回
   goBack: function () {
-    wx.navigateTo({
-      url: '/pages/site/site',
+    // wx.navigateTo({
+    //   url: '/pages/site/site',
+    // })
+    wx.navigateBack({
+      delta: 1,
     })
   },
 

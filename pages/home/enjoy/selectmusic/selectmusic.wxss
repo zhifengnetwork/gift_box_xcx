@@ -21,9 +21,19 @@ page{
     /* background:linear-gradient(0deg,rgba(156,145,142,1) 0%,rgba(77,77,76,1) 100%); */
 }
 .active{
-    border-bottom: 4rpx solid #fff;
+    /* border-bottom: 4rpx solid #fff;
     font-size: 35;
-    font-weight: bold;
+    font-weight: bold; */
+    position: relative;
+}
+.active:before{
+  content: '';
+  position: absolute;
+  width: 30%;
+  left: 35%;
+  bottom: 0;
+  height: 4rpx;
+  background-color: #fff;
 }
 .juzhong{
   margin: 0 auto;

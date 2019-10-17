@@ -2,6 +2,7 @@
   <component title='澳門星選' show_bol='{{falsr}}'></component>
 </view>
 <view class="success_t">
+  <image class="bg" src="../../../../public/images/card/gift_bg.png"></image>
   <view class="success_tbox">
     <view class="success_timg">
       <image class="success_tim" src="../../../../public/images/card/gift.png"></image>
@@ -16,7 +17,7 @@
       <view class="success_tcb" bindtap="index">去謝謝TA</view>
     </view>
   </view>
-  <view class="up_img">
+  <view class="up_img" bindtap="pageScrollToBottom">
     <image src="../../../../public/images/card/up.png"></image>
   </view>
 </view>

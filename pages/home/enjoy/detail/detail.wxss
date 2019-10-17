@@ -194,11 +194,13 @@ height: 100%
   top: -10rpx
 }
 .comment_ear{
-  width: 90%;
-  margin-left: 5%;
+  /* width: 90%; */
+  /* margin-left: 5%; */
   /* background: #f6f5f5; */
   border-radius: 10rpx;
-  margin-top: 15rpx
+  margin-top: 15rpx;
+  padding: 0 5%;
+  background-color: rgba(246,249,251,1);
 }
 .ear{
   width: 90%;

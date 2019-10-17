@@ -49,7 +49,7 @@
 			"list": []
 		},
 		"miniprogram": {
-			"current": 32,
+			"current": 35,
 			"list": [
 				{
 					"id": -1,
@@ -297,10 +297,17 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 35,
 					"name": "收礼物",
 					"pathName": "pages/card/go",
-					"query": "id=909&type=1& order_id=3709&pwdstr= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU3MTExMTQ5MCwiZXhwIjoxNTcxMTQ3NDkwLCJ1c2VyX2lkIjozNzA5fQ.QAouHmIVVaP0cdxi8Pqpeg-hZ7nHcxX70NXRuLwUF_w",
+					"query": "id=909&type=1&address_id=1186&order_id=3709&pwdstr= eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU3MTExMTQ5MCwiZXhwIjoxNTcxMTQ3NDkwLCJ1c2VyX2lkIjozNzA5fQ.QAouHmIVVaP0cdxi8Pqpeg-hZ7nHcxX70NXRuLwUF_w",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "场景应用",
+					"pathName": "pages/commodity/detalis/give/scene/scene",
+					"query": "",
 					"scene": null
 				}
 			]

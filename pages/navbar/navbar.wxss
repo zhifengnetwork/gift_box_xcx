@@ -33,7 +33,7 @@
 }
 .tabar2 text{
   color: #fff !important;
-  font-weight: lighter !important;
+  font-weight: bold !important;
 }
 .tabar text {
   padding: 30rpx 30rpx;

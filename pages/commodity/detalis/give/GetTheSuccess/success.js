@@ -34,6 +34,11 @@ Page({
       url: '/pages/index/index'
     })
   },
+  pageScrollToBottom: function () {
+    wx.pageScrollTo({
+      scrollTop: wx.getSystemInfoSync().windowHeight
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

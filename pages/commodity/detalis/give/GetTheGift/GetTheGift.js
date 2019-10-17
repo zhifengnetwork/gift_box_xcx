@@ -52,7 +52,7 @@ Page({
     let joinid = options.joinid == undefined ? '' : options.joinid;
     //3个参数
     //如果是调试
-    //https://www.9pointstars.com/card?card_id=506&type=1&order_id=2895&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDMwNzY3NSwiZXhwIjoxNTY0MzQzNjc1LCJ1c2VyX2lkIjoyODk1fQ.A-57frG7cyDBD5FBiVbI3PPmMBY28qLyMw2eLz_7GOQ
+    // https://www.9pointstars.com/card?card_id=506&type=1&order_id=2895&pwdstr=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJpc3MiOiJEQyIsImlhdCI6MTU2NDMwNzY3NSwiZXhwIjoxNTY0MzQzNjc1LCJ1c2VyX2lkIjoyODk1fQ.A-57frG7cyDBD5FBiVbI3PPmMBY28qLyMw2eLz_7GOQ
 
     // let address_id = '506';
     // let order_id = '2895';
@@ -228,7 +228,7 @@ Page({
     api.postJSON('api/gift/share_callback', {
       'token': app.globalData.token,
       'order_id': that.data.order_id,
-      'act': 3
+      'act': 2
     },
       function (res) {
         if (res.data.status == 1) {
@@ -247,13 +247,13 @@ Page({
   },
   show: function() {
 
-    if(!this.data.give){
-      wx.showToast({
-        title: this.data.givetext,
-        icon: 'none'
-      })
-      return false;
-    }
+    // if(!this.data.give){
+    //   wx.showToast({
+    //     title: this.data.givetext,
+    //     icon: 'none'
+    //   })
+    //   return false;
+    // }
     console.log(2222)
     this.setData({
       flag: false

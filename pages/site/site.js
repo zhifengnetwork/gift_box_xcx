@@ -20,15 +20,24 @@ Page({
   // 跳转到添加地址
   newsite: function () {
     if (this.data.award && this.data.again) {
-      wx.redirectTo({
+      // wx.redirectTo({
+      //   url: 'newsite/newsite?backurl=again=' + true + '&award=' + true + '&pwdstr=' + this.data.pwdstr + '&joinid=' + this.data.joinid,
+      // })
+      wx.navigateTo({
         url: 'newsite/newsite?backurl=again=' + true + '&award=' + true + '&pwdstr=' + this.data.pwdstr + '&joinid=' + this.data.joinid,
       })
     } else if (this.data.award) {
-      wx.redirectTo({
+      // wx.redirectTo({
+      //   url: 'newsite/newsite?award=' + true,
+      // })
+      wx.navigateTo({
         url: 'newsite/newsite?award=' + true,
       })
     } else {
-      wx.redirectTo({
+      // wx.redirectTo({
+      //   url: 'newsite/newsite',
+      // })
+      wx.navigateTo({
         url: 'newsite/newsite',
       })
     }
@@ -133,7 +142,12 @@ Page({
       })
   },
   goBack: function () {
-
+    if (app.globalData.address_redirect_url == '/pages/commodity/detalis/give/GetTheGift/GetTheGift'){
+      wx.navigateBack({
+        delta: 1,
+      })
+      return
+    }
     if (app.globalData.address_redirect_url != null) {
       wx.navigateTo({
         url: app.globalData.address_redirect_url,

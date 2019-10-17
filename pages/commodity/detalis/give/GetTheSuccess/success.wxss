@@ -2,14 +2,24 @@
   height: 115rpx;
 }
 .success_t{
-  height: 1065rpx;
+  height: 1080rpx;
   background: #000;
   padding-top: 140rpx;
+  position: relative;
+}
+.success_t .bg{
+  width: 100%;
+  height: 100%;
+  position: absolute;
+  left: 0;
+  top: 0;
+  z-index: 0;
 }
 .success_tbox{
   width: 614rpx;
   height: 915rpx;
   margin: 0 68rpx;
+  position: relative;
 }
 .success_timg{
   width: 614rpx;

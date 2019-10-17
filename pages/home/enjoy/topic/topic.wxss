@@ -91,7 +91,7 @@ page{
   position: absolute;
   width: 100%;
   text-align: center;
-  margin-top: 40rpx;
+  margin-top: 54rpx;
   z-index: 2;
   /* line-height: 88rpx; */
   font-size:22rpx;

@@ -27,13 +27,19 @@ page{
   width: 214rpx;
   height: 113rpx;
   line-height: 160rpx;
-  background: #f5f5f5;
+  background: #f5f9f8;
   border-radius: 10rpx;
   font-size: 30rpx;
   padding-left: 30rpx;
   box-sizing: border-box;
   -moz-box-sizing: border-box;
   -webkit-box-sizing: border-box;
+}
+.tabBar_item text{
+  color: #a5b3b5
+}
+.active text{
+  color: #fff;
 }
 .tabBar_icon{
   position: absolute;

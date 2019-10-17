@@ -2,15 +2,19 @@ page{
   /* background: #fff; */
   position: relative;
 }
+.bg{
+  min-height: 100vh;
+  background-color: rgba(0,0,0,0.9)
+}
 .bg_color{
   width: 100%;
-  min-height: 100vh;
-  height: 100%;
+  /* min-height: 100vh; */
+  /* height: 100%; */
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -1;
-  filter: blur(20px);
+  z-index: 0;
+  filter: blur(10px);
 }
 .sousou_ear{
   margin-left: 8%;
