@@ -80,6 +80,7 @@
 
     <view class="music_fbox {{xiabiao===index ? 'dianjile':''}}" wx:for="{{music}}" data-ind="{{index}}" bindtap="bofang">
       <view class="music_ft">{{item.songName}}</view>
+      <image class="gif" src="../../../public/images/card/music.gif"></image>
       <text class="music_ff">{{item.singer}}</text>
       <audio id="myAudio" src="{{src}}" ></audio>
     </view>

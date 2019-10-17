@@ -373,11 +373,12 @@ height: 100%
   border-radius: 50%;
 }
 .aixin_ear{
-  width: 100rpx;
-  height:50rpx;
-  line-height: 50rpx;
-  display: inline-block;
-  vertical-align: center;
+  /* width: 100rpx; */
+  /* height:50rpx; */
+  /* line-height: 50rpx; */
+  display: flex;
+  align-items: center;
+  /* vertical-align: center; */
   text-align: center;
 }
 .aixin77{
@@ -411,4 +412,13 @@ height: 100%
   left: 0;
   right:0;
   margin:0 auto
+}
+.touxiang{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.touxiang .left{
+  display: flex;
+  align-items: center;
 }

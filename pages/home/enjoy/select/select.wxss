@@ -276,3 +276,15 @@ audio{
   height: 1rpx;
   overflow: hidden;
 }
+
+.gif{
+  width: 30rpx;
+  height: 30rpx;
+  display: none;
+}
+.dianjile .gif{
+  display: inline-block;
+}
+.dianjile .music_ff{
+  display: none;
+}
