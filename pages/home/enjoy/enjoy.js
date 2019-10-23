@@ -25,7 +25,10 @@ Page({
     draglist:[],
     si:false,
     shebei:false,
-    sb:false
+    sb:false,
+    latitude: '', // 维度
+    longitude: '',  // 经度
+    totalNoteList:[]  //附近总列表 自制分页
   },
 
   // 上传图片或视频按钮
@@ -214,7 +217,7 @@ Page({
       this.setData({ sb: false })
     }
     // console.log(app.globalData.isIPX)
-   
+    // wx.openSetting()
   },
   /**
    * 生命周期函数--监听页面显示
@@ -225,9 +228,22 @@ Page({
     that.loadData();
     that.setData({ page: 1, goodslist: array})
     that.GetList(that)
-
+    that.getPosition()
   },
-
+  //获取经度纬度
+  getPosition(){
+    var that = this
+    wx.getLocation({
+      type: 'wgs84',
+      success(res) {
+        console.log(res, '地理位置?')
+        that.setData({
+          latitude: res.latitude,
+          longitude: res.longitude
+        })
+      }
+    })
+  },
   /**
    * 加载数据
    */
@@ -280,7 +296,20 @@ Page({
  
 
   GetList: function(that) {
-   
+    if (this.data.currentTab == 1){
+      if (!this.data.totalNoteList.length){
+        this.setData({
+          bujia: false
+        })
+      }else{
+        this.data.note =  this.data.note.concat(this.data.totalNoteList.splice(0,10))
+        this.setData({
+          note: this.data.note,
+          page: this.data.page++
+        })
+      }
+      return
+   }
     api.getJSON('/api/sharing/sharing_list?num=10' + '&topic_id=' + that.data.topic_id + '&page=' + that.data.page + '&token=' + app.globalData.token, function(res) {
       if (res.data.status == 1) {
         if (res.data.data.length > 0) {
@@ -354,6 +383,24 @@ Page({
     that.setData({
       goodslist: arr
     });
+    if (e.target.dataset.id === that.data.nav_title[1].id) {
+      if (that.data.latitude == ''){
+        wx.showModal({
+          content: '检测到您没打开定位权限，是否去设置打开？',
+          confirmText: "确认",
+          cancelText: "取消",
+          success: function (res) {
+            if (res.confirm) {
+              console.log('用户点击确认')
+              wx.openSetting()
+            } else {
+              console.log('用户点击取消')
+            }
+          }
+        });
+        return false 
+      }
+    }
     if (this.data.currentTab === e.target.dataset.current) {
       return false;
     } else {
@@ -372,12 +419,13 @@ Page({
     // 如果点击的是附近的话,就不分页了,点击其他的滚动条滚动到底部加载下一页
     console.log(that.data.nav_title[1].id)
     if (e.target.dataset.id === that.data.nav_title[1].id){
-      api.getJSON('/api/sharing/sharing_list?topic_id=' + that.data.topic_id + '&token=' + app.globalData.token, function (res) {
+      api.getJSON('/api/sharing/sharing_list?topic_id=' + that.data.topic_id + '&token=' + app.globalData.token + '&lat=' + that.data.latitude + '&lat=' + that.data.longitude, 
+      function (res) {
         if (res.data.status == 1) { 
-          console.log('==');
 
           console.log(res.data.data);
-          that.setData({ note: res.data.data, bujia: false})
+
+          that.setData({ note: res.data.data.splice(0, 10), bujia: true, totalNoteList: res.data.data})
         
         }
       })

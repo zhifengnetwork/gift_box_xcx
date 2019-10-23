@@ -12,7 +12,8 @@
 
   <!-- tab切换  -->
   <scroll-view class="{{shebei===true ? 'ipx':(si===false ? 'swiper-tab': 'swiper-tab2')}}" scroll-x>
-    <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{nav_title}}" wx:key data-id="{{item.id}}">{{item.name}}</view>
+    <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{nav_title}}" wx:key data-id="{{item.id}}">{{item.name}}
+    </view>
   </scroll-view>
 
 
