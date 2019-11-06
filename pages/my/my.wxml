@@ -112,7 +112,8 @@
 <!-- 2期 -->
 <component title='' show_bol='{{true}}'></component>
 <!-- 头部 -->
-<view class="my_t">
+<view class="my_t " style="{{item.user_diy_background == null ? 'background-color:#111111': ''}}">
+  <image class="imageBg" src="{{item.user_diy_background}}" wx:if="{{item.user_diy_background != ''}}"></image>
   <!-- 头像名字区域 -->
   <view class="my_tt">
     <view class="my_ttl">
@@ -122,6 +123,7 @@
     <view class="my_ttr" bindtap="mydetalis">
       <image src="{{item.avatar}}" />
     </view>
+    
   </view>
   <!-- 文章、个人信息区域 -->
   <view class="my_tf">
@@ -137,9 +139,9 @@
       <view>粉絲</view>
       <text>{{item.fans_num}}</text>
     </view>
-    <!-- <view class="my_tf_box2"> -->
-    <!-- <view class="back">更改封面</view> -->
-    <!-- </view> -->
+    <view class="my_tf_box2">
+      <view class="back" bindtap="chooseImageBg">更改封面</view>
+    </view>
     <view class="my_tf_box2" bindtap="mydetalis">
       <view class="back">個人信息</view>
     </view>

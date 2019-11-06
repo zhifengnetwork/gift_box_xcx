@@ -130,7 +130,7 @@ Page({
 
   /**犒劳自己 */
   kaolao: function (e) {
-    app.save_form_id(e.detail.formId)
+    // app.save_form_id(e.detail.formId)
 
     this.setData({
       statussxianshi: true
@@ -156,10 +156,13 @@ Page({
     })
     
   },
-
+  changeVideo(e){
+    console.log(e)
+    this.setData({ autoplay: !this.data.autoplay })
+  },
   /**赠送他人 */
   give_goods: function (e) {
-    app.save_form_id(e.detail.formId)
+    // app.save_form_id(e.detail.formId)
 
     this.setData({
       statussxianshi: true

@@ -27,17 +27,19 @@ Page({
     order_num: ''
   },
   goBack: function () {
-
-    if (app.globalData.redirect_goods_id) {
-      console.log('有goods_id' + app.globalData.redirect_goods_id)
-      wx.navigateTo({
-        url: '/pages/commodity/detalis/detalis?id=' + app.globalData.redirect_goods_id,
-      })
-    } else {
-      console.log('没有goods_id')
-      wx.navigateBack({
-      })
-    }
+    wx.navigateBack({
+      delta: 1
+    })
+    // if (app.globalData.redirect_goods_id) {
+    //   console.log('有goods_id' + app.globalData.redirect_goods_id)
+    //   wx.navigateTo({
+    //     url: '/pages/commodity/detalis/detalis?id=' + app.globalData.redirect_goods_id,
+    //   })
+    // } else {
+    //   console.log('没有goods_id')
+    //   wx.navigateBack({
+    //   })
+    // }
 
   },
   show: function () {

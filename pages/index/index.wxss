@@ -61,7 +61,7 @@
   position: relative;
   top: -50rpx;
   background: white;
-  box-shadow: 0 0 10rpx #DDDDDD; 
+  box-shadow: 0 10rpx 20rpx #DDDDDD; 
   padding-top: 16rpx;
   box-sizing: border-box;
 }
@@ -154,11 +154,12 @@
 .swiper_boxxxx{
   width: 87%;
   height: 400rpx!important;
-  margin-left: 21rpx;
+  /* margin-left: 21rpx; */
   /* border: 1px solid green; */
 }
 .lunbo2{
   height: 400rpx!important;
+  margin-left: 21rpx;
 }
 .slide-image{
   width: 100%;
@@ -295,9 +296,9 @@
   right: 0;
   margin: 0 auto;
   top: 15rpx;
-  font-size:24rpx;
+  /* font-size:24rpx; */
   font-family:Source Han Sans CN;
-  font-weight:bold;
+  /* font-weight:bold; */
   color:rgba(42,42,42,1);
 }
 .jiantext{
@@ -313,6 +314,9 @@
   display: inline-block;
   width: 110rpx;
   text-align: justify;
+  font-weight: 800;
+  font-size:24rpx;
+  font-family:Source Han Sans CN;
   /* -moz-text-align-last: justify; */
 }
 .jiantext text:after{
@@ -393,7 +397,7 @@
   vertical-align: top;
 }
 .bar_title{
-  font-size: 24rpx;
+  font-size: 20rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:bold;
   color:rgba(102,102,102,1);

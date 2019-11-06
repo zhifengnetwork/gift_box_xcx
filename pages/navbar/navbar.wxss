@@ -12,6 +12,9 @@
   top: 0;
   background: white;
 }
+.sticky{
+  position: static;
+}
 .goBack{
   position: absolute;
   top: 15rpx;

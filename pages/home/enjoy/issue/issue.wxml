@@ -22,7 +22,7 @@
 </view>
 <!-- 视频封面   bindtap="selectfengmian"   -->
 <view class="videobox" wx:else >
-  <video src="{{images}}" controls="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}"></video>
+  <video id="video" src="{{images}}" controls="{{false}}" show-center-play-btn="{{false}}" show-play-btn="{{false}}"></video>
 </view>
 <!-- 填写标题 -->
 <view class="title_ear">

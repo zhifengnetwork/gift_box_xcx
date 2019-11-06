@@ -33,9 +33,17 @@ Page({
     forward_num:0,
     note:[],
     topic_id:null,
-    pName: ''
+    pName: '',
+    showProup: false,
+    proupText:'',
+    isShowDete: true,
+    proupIndex: [0,0],
+    deleteId:'',
+    replyId:''
   },
-
+  onCloseProup(){
+    this.setData({ showProup: !this.data.showProup });
+  },
   // 视频播放函数
   audioplay: function(){
     let taht = this
@@ -138,6 +146,24 @@ Page({
   pageTo(){
     wx.navigateTo({
       url: '/pages/my/other/other?user_id=' + this.data.user_id,
+    })
+  },
+  pageToChat() {
+    var obj = {
+      my_id: getApp().globalData.userInfo.id,
+      you_id: this.data.user_id
+    }
+    if (obj.my_id == obj.you_id){
+      this.pageTo()
+      return
+    }
+    wx.navigateTo({
+      url: '/pages/message/chat/chat?obj=' + JSON.stringify(obj)
+    })
+  },
+  pageToDetails(e){
+    wx.navigateTo({
+      url: '/pages/commodity/detalis/detalis?id=' + e.currentTarget.dataset.id,
     })
   },
   /**
@@ -374,31 +400,62 @@ Page({
       this.setData({
         status: false
       })
-      console.log("aaaa")
       return;
     }
     if (this.data.status == false) {
       this.setData({
         status: true
       })
-      console.log("bbbb")
     }
   },
   //回复别人的评论
   huifu: function(e) {
-    var nickname = e.currentTarget.dataset.nickname;
-    var pid = e.currentTarget.dataset.pid;
-    nickname = "回复" + nickname + ":"
-    // console.log(nickname)
-    this.setData({
-      placeholder: nickname,
-      pName: e.currentTarget.dataset.nickname
-    });
-    this.setData({
-      focus: true
-    });
-    this.setData({pid:pid});
-    // console.log(this.data.hhh)
+    // var nickname = e.currentTarget.dataset.nickname;
+    // var pid = e.currentTarget.dataset.pid;
+    // var userId = e.currentTarget.dataset.userid
+    
+    var { index , idx } = e.currentTarget.dataset
+    var obj = this.data.comments[index];
+  console.log(idx)
+    if (idx == undefined){
+      if (obj.user_id == getApp().globalData.userInfo.id) {
+        // this.data.proupIndex[0] = index
+        this.setData({
+          showProup: true,
+          proupText: '你的评论: ' + obj.content,
+          isShowDete: true,
+          deleteId: obj.id,
+          pName: obj.nickname
+        })
+      } else {
+        this.setData({
+          showProup: true,
+          proupText: obj.nickname + '的评论: ' + obj.content,
+          isShowDete: false,
+          deleteId: obj.id,
+          pName: obj.nickname
+        })
+      }
+    }else{
+      let ob = obj.list[idx]
+      if (ob.user_id == getApp().globalData.userInfo.id) {
+        this.setData({
+          showProup: true,
+          proupText: '你的评论: ' + ob.content,
+          isShowDete: true,
+          deleteId: ob.id,
+          pName: ob.nickname
+        })
+      } else {
+        this.setData({
+          showProup: true,
+          proupText: ob.nickname + '的评论: ' + ob.content,
+          isShowDete: false,
+          deleteId: ob.id,
+          pName: ob.nickname
+        })
+      }
+    }
   },
 
   // 关注按钮
@@ -438,8 +495,45 @@ Page({
         }
       })
     }
+  },
+  // 点击回复
+  replyComment(){
+    // nickname = "回复" + nickname + ":"
 
+    // this.setData({
+    //   placeholder: nickname,
+    //   pName: e.currentTarget.dataset.nickname,
+    //   focus: true,
+    //   pid
+    // });
+    this.setData({
+      showProup: false,
+      focus: true,
+      pid: this.data.deleteId,
+      placeholder: '回复' + this.data.pName + ':'
+    })
+  },
+  //删除评论
+  deleteComment(){
+    var that = this
+    api.postJSON('api/Sharing/del_comment', {
+      token: app.globalData.token,
+      id: this.data.deleteId,
+      sharing_id: this.data.id
+    }, function (res) {
+      console.log(res.data)
+      if (res.data.status == 1) {
+        that.setData({
+          showProup: false
+        })
+        api.getJSON('/api/sharing/sharing_comment_list?sharing_id=' + that.data.id + '&token=' + app.globalData.token + '&page=1&num=100000', function (res) {
+          if (res.data.status == 1) {
+            // console.log(res.data.data);
+            that.setData({ comments: res.data.data })
+          }
+        })
+      }
+    })
   }
-  
 
 })

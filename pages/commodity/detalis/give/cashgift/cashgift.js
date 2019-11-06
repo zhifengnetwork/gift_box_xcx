@@ -30,7 +30,8 @@ Page({
       'token': app.globalData.token,
       'order_type': that.data.order_type,
       'box_id': app.globalData.makecard,
-      'invoice_id': that.data.invoice_id
+      'invoice_id': that.data.invoice_id,
+      'isDeleteCard': 1
     },
     function (res) {
       that.setData({
@@ -66,7 +67,8 @@ Page({
       'token': app.globalData.token,
       'order_type': that.data.order_type,
       'box_id': app.globalData.makecard,
-      'invoice_id': that.data.invoice_id
+      'invoice_id': that.data.invoice_id,
+      'isDeleteCard': 1
     },
     function (res) {
 
@@ -118,9 +120,16 @@ Page({
           fail(res) {
             wx.showToast({
               icon: 'none',
-              title: "支付失败",
+              title: "支付失败,请重新购买!",
               duration: 2500
-            })
+             })
+            
+            // console.log(getCurrentPages())
+            // setTimeout(()=>{
+            //   wx.navigateBack({
+            //     delta: getCurrentPages().length - 2
+            //   })
+            // },1000)
           }
         })
       }else{

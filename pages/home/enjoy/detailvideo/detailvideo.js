@@ -127,7 +127,9 @@ Page({
    * 用户点击右上角分享
    */
   onShareAppMessage: function () {
-
+    return {
+      path: '/pages/home/enjoy/detailvideo/detailvideo?id=' + this.data.id
+    }
   },
   // 文本域失去焦点
   changeContext: function (e) {

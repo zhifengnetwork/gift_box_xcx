@@ -1,0 +1,104 @@
+<!-- <import src="../../../utils/WxEmojiView.wxml"/> -->
+<view class="whatContainer" style="height: calc(100vh - {{inputBottom}}px)">
+  <view class="after_nav">
+    <component title='{{title}}' show_bol='{{false}}' side="{{true}}" isSticky="{{true}}"></component>
+  </view>
+
+  <scroll-view class="scrollView" bindscrolltoupper="scrollUppper" bindscroll="scroll_view" scroll-y="true" bindtap="scrollClick"  scroll-top="{{scrollTop}}" >
+    <view class="history">
+    <!-- <block wx:key="{{index}}" wx:for="{{allContentList}}">
+      <view class='my_right' wx:if="{{item.is_my}}">
+        <view class='p_r' wx:if='{{item.is_my.content}}'>
+          <text class='new_txt'><text class='new_txt_my'>{{item.is_my.content}}</text></text>
+          <view class='sanjiao my'></view>
+          <image class='new_img' src='{{item.is_my.avatar}}'></image>
+        </view>
+        <view class='p_r' wx:if='{{item.is_my.img}}' bindtap='my_audio_click' data-id='{{index}}'>
+          <text class='new_txt'> </text>
+          <view class='my_img_bg'>
+          <image class='my_audio' src='{{img}}'></image></view>
+          <view class='sanjiao my'></view>
+          <image class='new_img' src='/images/test.jpg'></image>
+        </view>
+      </view>
+      <view class='you_left' id='id_{{allContentList.length}}' wx:key="{{index}}" wx:if="{{item.is_ai}}">
+        <view class='p_r'>
+          <image class='new_img' src='{{item.is_ai.avatar}}'></image>
+          <view class='sanjiao you'></view>
+          <view class='new_txt'>
+            <view class='new_txt_ai'>
+              <block wx:for='{{item.is_two}}' wx:key='index'>
+                <text>{{item.is_ai.content}}</text>
+                <text wx:if='{{item.is_ai.title}}' style='color:#0000EE' bindtap='link' id='{{item.is_ai.link}}'>{{item.is_ai.title}}</text>
+              </block>
+            </view>
+          </view>
+        </view>
+      </view>
+    </block> -->
+
+    <block wx:key="{{index}}" wx:for="{{allContentList}}">
+    <!-- <block wx:if="{{isShow < index}}"> -->
+      <view class='my_right' wx:if="{{item.is_my}}">
+        <view class="chatTimer" wx:if="{{item.is_my.add_time}}">{{item.is_my.add_time}}</view>
+
+        <view class='my_r'>
+          <view class='my_r_box' wx:if="{{item.is_my.msg_type == 1}}">
+            <!-- <text class='new_txt'>{{item.is_my.content}}</text> -->
+            <block wx:for="{{item.is_my.content}}" wx:key="" wx:for-item="items">
+              <block wx:if="{{items.msgType == 'text'}}">{{items.msgCont}}</block>
+              <block wx:elif="{{items.msgType == 'emoji'}}">
+                <image class="wxEmoji" src="{{items.msgImage}}" />
+              </block>
+            </block>
+          </view>
+          <view class='my_img' wx:if="{{item.is_my.msg_type == 2}}">
+            <image mode="widthFix" catchtap="preview" data-url="{{item.is_my.img_src}}" src='{{item.is_my.img_src}}'></image>
+          </view> 
+          <image class='new_head_img' src='{{item.is_my.avatar}}'></image>
+        </view>
+      </view>
+      <view class='you_left' wx:key="{{index}}" wx:if="{{item.is_ai}}">
+        <view class="chatTimer" wx:if="{{item.is_ai.add_time}}">{{item.is_ai.add_time}}</view>
+
+        <view class='you_r'>
+          <image class='new_head_img' src='{{item.is_ai.avatar}}'></image>
+          <view class='you_r_box' wx:if="{{item.is_ai.msg_type == 1}}">
+            <!-- <text class='new_txt'>{{item.is_ai.content}}</text> -->
+            <block wx:for="{{item.is_ai.content}}" wx:key="" wx:for-item="items">
+              <block wx:if="{{items.msgType == 'text'}}">{{items.msgCont}}</block>
+              <block wx:elif="{{items.msgType == 'emoji'}}">
+                <image class="wxEmoji" src="{{items.msgImage}}" />
+              </block>
+            </block>
+          </view>
+          <view class='you_img' wx:if="{{item.is_ai.msg_type == 2}}">
+            <image mode="widthFix" catchtap="preview" data-url="{{item.is_my.img_src}}" src='{{item.is_ai.img_src}}'></image>
+          </view> 
+        </view>
+      </view>
+    <!-- </block> -->
+    </block>
+    </view>
+  </scroll-view>
+
+  <view class="sendmessage">
+    <view class="input_box">
+      <image class='voice_icon' bindtap='upimg' src='../../public/images/my/Album.png'></image>
+       <block wx:if='{{!addImg}}'><!-- WxEmojiTextareaBlur  submitTo -->
+        <input type="text" adjust-position="{{false}}" bindfocus="inputFocus" bindblur="inputBlur" placeholder="發消息..." bindconfirm="submitTo" bindinput="bindKeyInput" value='{{inputValue}}' confirm-type="send" />
+        <!-- <button bindtap="submitTo" class='user_input_text'>发送</button> -->
+      </block>
+      <!-- <block wx:if='{{addImg}}'>
+        <view class='voice_ing' bindtap="upimg">发送图片</view>
+      </block> -->
+      <image class='voice_icon' bindtap="showExpression"  src='../../public/images/my/Expression.png'></image>
+    </view>
+    <view class="Expression_box" style="height: {{expressionHeight}}rpx">
+      <block wx:for="{{emojiList}}" wx:key="">
+          <image bindtap="wxPreEmojiTap" data-key="{{item.key}}" class="wxPreEmoji" src="{{item.img}}"/>
+        </block>
+    </view>
+  </view>
+
+</view>

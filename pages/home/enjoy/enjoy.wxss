@@ -55,6 +55,11 @@
   overflow-y: hidden;
   padding-left: 0 20rpx;
   box-sizing: border-box;
+  
+  position: sticky;
+  top: 122rpx;
+  z-index: 9999;
+  background: white
 }
 .swiper-tab2 {
   /* border-bottom: 2rpx solid #ccc; */
@@ -234,24 +239,28 @@ swiper {
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  font-size: 26rpx;
 }
 .nike{
   margin-left: 20rpx;
-  font-size: 24rpx;
+  font-size: 22rpx;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; 
-
+  color: #777777;
+  width: 220rpx;
 }
 .user_pic{
   display: inline-block;
-  width: 50rpx!important;
-  height: 50rpx;
+  width: 35rpx!important;
+  height: 35rpx;
   border-radius: 50%;
   
 }
 .aixin_ear{
-  width: 200rpx;
+  /* width: 200rpx; */
+  flex: 1;
+  overflow: hidden;
   height:50rpx;
   line-height: 50rpx;
   display: inline-block;
@@ -260,8 +269,8 @@ swiper {
   justify-content: flex-end;
 }
 .aixin{
-   width: 30rpx!important;
-   height: 30rpx;
+   width: 26rpx!important;
+   height: 23rpx;
 }
 
 .huadong{

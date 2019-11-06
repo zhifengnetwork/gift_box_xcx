@@ -80,7 +80,8 @@
     "pages/my/other/other",
     "pages/home/enjoy/select/select",
     "pages/home/enjoy/selectmusic/selectmusic",
-    "pages/home/enjoy/detailvideo/detailvideo"
+    "pages/home/enjoy/detailvideo/detailvideo",
+    "pages/message/chat/chat"
   ],
   "window": {
     "backgroundTextStyle": "light",

@@ -1,4 +1,4 @@
-<image src="{{bgImage}}" class="bg_color" mode="widthFix"></image>
+<image src="{{bgImage}}" class="bg_color" mode="center"></image>
 <view class="bg">
 <component title='標籤' show_bol='{{false}}' side="{{true}}" quan="{{true}}"></component>
 <view class="sousou_ear">

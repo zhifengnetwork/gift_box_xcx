@@ -152,7 +152,7 @@ height: 100%
 }
 .second{
    position: relative!important;
-   left: 0rpx !important;
+   left: 30rpx !important;
    width: 20% !important;
    height: 60rpx !important;
    text-align: left !important;
@@ -200,7 +200,6 @@ height: 100%
   border-radius: 10rpx;
   margin-top: 15rpx;
   padding: 0 5%;
-  background-color: rgba(246,249,251,1);
 }
 .ear{
   width: 90%;
@@ -229,24 +228,23 @@ height: 100%
   width:92%;
   margin-left: 4%;
   margin-top: 40rpx;
-  padding-bottom: 100rpx
+  /* padding-bottom: 100rpx; */
+  display: flex;
 }
 .white_pic{
   width: 9%;
   height: 55rpx;
-  position: relative;
+  margin-right: 20rpx;
+  /* position: relative;
   left: -15rpx;
-  top:53rpx;
-
+  top:53rpx; */
 }
 .weui-textarea{
-  width: 70%;
-  height: 40rpx;
+  flex: 1;
+  overflow: hidden;
   font-size: 32rpx;
-  /* padding-top: 20rpx; */
-  position: absolute;
-  left: 105rpx;
-  padding-left:10rpx
+  padding: 0 10rpx;
+  background-color: #F6F5F5;
 }
 .ear:last-child{
   padding-bottom: 20rpx
@@ -262,7 +260,10 @@ height: 100%
 }
 .huifucontext{
   font-size: 30rpx;
-  display: inline-block
+  display: inline-block;
+}
+.huifucontext text{
+  color: #6c8dd4;
 }
 .huifuear{
   background: #f6f5f5;
@@ -287,6 +288,7 @@ height: 100%
   width: 100rpx;
   height: 100rpx;
   overflow: hidden;
+  z-index: 10;
 }
 .popupimg image{
   width: 100%;
@@ -295,9 +297,11 @@ height: 100%
 }
 .popuptext{
   color: #fff;
-  font-size: 30rpx;
+  font-size: 34rpx;
   height:auto;
   width: auto;
+  z-index: 10;
+  text-shadow: 2px 2px 2px #000;
 }
 .flex{
   display: flex;
@@ -323,7 +327,9 @@ height: 100%
   font-size:28rpx
 }
 .case-page {
-  width:100%
+  width:100%;
+  padding: 0 20rpx;
+  box-sizing: border-box;
 }
 
 .list-masonry {
@@ -333,7 +339,7 @@ height: 100%
 }
 
 .lan {
-  background-color: #fff;
+  /* background-color: #fff; */
   break-inside: avoid;
   box-sizing: border-box;
   /* padding: 0  0rpx 20rpx 20rpx; */
@@ -421,4 +427,50 @@ height: 100%
 .touxiang .left{
   display: flex;
   align-items: center;
+}
+
+/* 回复 删除 弹窗 */
+.proup_box{
+  padding: 0 20rpx 20rpx;
+}
+.proup_top{
+  background-color: #F6F6F6;
+  border-radius: 20rpx;
+  overflow: hidden;
+}
+.proup_close{
+  background-color: #F6F6F6;
+  border-radius: 20rpx;
+  margin-top: 15rpx;
+  height: 100rpx;
+  font-weight:500;
+  line-height: 100rpx;
+  text-align: center;
+  font-size:36rpx;
+  color: #3377F7;
+}
+.proup_comment{
+  border-bottom: 2rpx solid #DEDDDF;
+  font-size:22rpx;
+  font-weight:500;
+  color: #888888;
+  padding: 25rpx;
+  text-align: center;
+}
+.proup_reply{
+  border-bottom: 2rpx solid #DEDDDF;
+  height: 100rpx;
+  font-weight:500;
+  line-height: 100rpx;
+  text-align: center;
+  font-size:36rpx;
+  color: #3377F7;
+}
+.proup_delete{
+  height: 100rpx;
+  font-weight:500;
+  line-height: 100rpx;
+  text-align: center;
+  font-size:36rpx;
+  color: #EB4736;
 }

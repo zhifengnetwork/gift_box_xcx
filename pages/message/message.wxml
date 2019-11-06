@@ -46,3 +46,21 @@
     <view style="line-height: 120rpx;">11:41</view>
   </view>
 </view>
+<block  wx:for="{{chatList}}" wx:key=""> 
+<van-swipe-cell left-width="{{1}}" right-width="{{ 65 }}" async-close bind:close="onClose" data-id="{{item.user_id}}">
+  <view class="message_box chat" bindtap="pageTo" data-id="{{item.user_id}}" data-isread="{{item.unread_data}}">
+    <view class="chat_head">
+        <image src="{{item.avatar}}"/>
+    </view>
+    <view class="chat_details">
+      <view class="chat_name">{{item.nickname ? item.nickname : '获取微信昵称'}}</view>
+      <view class="chat_message">{{item.content}}</view>
+    </view>
+    <view class="chat_times">
+      <view class="chat_time">{{item.add_time}}</view>
+      <view class="chat_spot" wx:if="{{item.unread_data != 0}}">{{item.unread_data}}</view>
+    </view>
+  </view>
+  <view slot="right" class="delete">删除</view>
+</van-swipe-cell>
+</block>

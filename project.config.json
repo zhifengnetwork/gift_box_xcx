@@ -48,8 +48,12 @@
 		"game": {
 			"list": []
 		},
+		"gamePlugin": {
+			"current": -1,
+			"list": []
+		},
 		"miniprogram": {
-			"current": 35,
+			"current": 19,
 			"list": [
 				{
 					"id": -1,
@@ -185,10 +189,10 @@
 					"scene": null
 				},
 				{
-					"id": -1,
+					"id": 19,
 					"name": "享物圈详情",
 					"pathName": "pages/home/enjoy/detail/detail",
-					"query": "",
+					"query": "id=304",
 					"scene": null
 				},
 				{
@@ -308,6 +312,20 @@
 					"name": "场景应用",
 					"pathName": "pages/commodity/detalis/give/scene/scene",
 					"query": "",
+					"scene": null
+				},
+				{
+					"id": -1,
+					"name": "消息",
+					"pathName": "pages/message/message",
+					"query": "",
+					"scene": null
+				},
+				{
+					"id": 38,
+					"name": "聊天室",
+					"pathName": "pages/message/chat/chat",
+					"query": "obj= {\"my_id\":199,\"you_id\":244}",
 					"scene": null
 				}
 			]

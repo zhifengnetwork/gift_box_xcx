@@ -132,7 +132,7 @@ Page({
               success(res) {
                 // tempFilePath可以作为img标签的src属性显示图片
                 const tempFilePath = res.tempFilePath
-                console.log(tempFilePath)
+                console.log(res)
                 wx.uploadFile({
                   url: 'https://www.9pointstars.com/api/Sharing/upload_file',
                   filePath: tempFilePath,
@@ -169,6 +169,7 @@ Page({
               camera: 'back',
               success(res) {
                 // tempFilePath可以作为img标签的src属性显示图片
+                console.log(res)
                 const tempFilePath = res.tempFilePath
                 console.log(tempFilePath)
                 wx.uploadFile({
@@ -217,7 +218,7 @@ Page({
       this.setData({ sb: false })
     }
     // console.log(app.globalData.isIPX)
-    // wx.openSetting()
+    // that.getPosition()
   },
   /**
    * 生命周期函数--监听页面显示
@@ -302,12 +303,13 @@ Page({
           bujia: false
         })
       }else{
-        this.data.note =  this.data.note.concat(this.data.totalNoteList.splice(0,10))
+        this.data.note =  this.data.note.concat(this.data.totalNoteList.splice(0,8))
         this.setData({
           note: this.data.note,
           page: this.data.page++
         })
       }
+      wx.hideLoading()
       return
    }
     api.getJSON('/api/sharing/sharing_list?num=10' + '&topic_id=' + that.data.topic_id + '&page=' + that.data.page + '&token=' + app.globalData.token, function(res) {
@@ -326,7 +328,7 @@ Page({
             bujia: false
           })
         }
-       
+        wx.hideLoading()
       }
     })
 
@@ -415,18 +417,43 @@ Page({
       bujia: true,
       page: 1
     })
-    console.log(e.target.dataset.id)
+    console.log(e.target.dataset.id, that.data.nav_title[2].id)
     // 如果点击的是附近的话,就不分页了,点击其他的滚动条滚动到底部加载下一页
-    console.log(that.data.nav_title[1].id)
-    if (e.target.dataset.id === that.data.nav_title[1].id){
+    // console.log(that.data.nav_title[1].id)
+    if (e.target.dataset.id == that.data.nav_title[1].id){
       api.getJSON('/api/sharing/sharing_list?topic_id=' + that.data.topic_id + '&token=' + app.globalData.token + '&lat=' + that.data.latitude + '&lat=' + that.data.longitude, 
       function (res) {
         if (res.data.status == 1) { 
 
           console.log(res.data.data);
 
-          that.setData({ note: res.data.data.splice(0, 10), bujia: true, totalNoteList: res.data.data})
+          that.setData({ note: res.data.data.splice(0, 8), bujia: true, totalNoteList: res.data.data})
         
+        }
+      })
+    } else if (e.target.dataset.id == that.data.nav_title[2].id){
+      api.getJSON('/api/sharing/sharing_list?is_new=1&num=10' + '&topic_id=' + that.data.topic_id + '&page=1&token=' + app.globalData.token, function (res) {
+        if (res.data.status == 1) {
+
+          if (res.data.data.length > 0) {
+            for (var i = 0; i < res.data.data.length; i++) {
+              that.data.goodslist.push(res.data.data[i])
+            }
+            console.log(that.data.goodslist)
+            that.setData({
+              note: that.data.goodslist
+            })
+            that.data.page++;
+          } else {
+            var kong = []
+            that.setData({
+              bujia: false
+            })
+            that.setData({
+              note: kong
+            })
+          }
+
         }
       })
     }else{
@@ -520,10 +547,13 @@ Page({
     //该方法绑定了页面滑动到底部的事件,下拉一次请求一次数据
     if (this.data.bujia) {
       console.log("hhh")
-      wx.showToast({
+      // wx.showToast({
+      //   title: '加载中',
+      //   icon: 'loading',
+      //   duration: 400
+      // })
+      wx.showLoading({
         title: '加载中',
-        icon: 'loading',
-        duration: 400
       })
       var that = this;
       that.GetList(that); //页面拉一次，加载一次

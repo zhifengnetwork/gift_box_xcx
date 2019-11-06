@@ -13,9 +13,13 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    // app.getUserInfo( userinfo => {});
+  },
+  getData(){
+    let token = app.globalData.token
     let that = this
     api.postJSON('api/sharing/my_user', {
-      token: app.globalData.token,
+      token,
       user_id: that.data.user_id
     }, function (res) {
       if (res.data.status == 1) {
@@ -23,14 +27,8 @@ Page({
           item: res.data.data
         })
       }
-      
     })
-    app.getUserInfo( userinfo => {
-       
-    });
-
   },
-
   /**
    * 生命周期函数--监听页面初次渲染完成
    */
@@ -47,7 +45,7 @@ Page({
    * 生命周期函数--监听页面显示
    */
   onShow: function() {
-    this.onLoad()
+    this.getData()
   },
 
   /**
@@ -83,6 +81,53 @@ Page({
    */
   onShareAppMessage: function() {
 
+  },
+  //更改封面
+  chooseImageBg(){
+    var that = this
+    wx.chooseImage({
+      count: 1,
+      sizeType: ['original', 'compressed'],
+      sourceType: ['album','camera'],
+      success(res) {
+        // tempFilePath可以作为img标签的src属性显示图片
+        const tempFilePaths = res.tempFilePaths
+        console.log(that.data.item.id)
+        wx.uploadFile({
+          url: 'https://www.9pointstars.com/api/XS/upload',
+          filePath: tempFilePaths[0],
+          name: 'file',
+          header: {
+            'content-type': 'multipart/form-data'
+          },
+          formData: {
+            'token': app.globalData.token,
+            'user_id': that.data.item.id
+          },
+          success: function (res) {
+            console.log(res.data)
+            that.data.item.user_diy_background = JSON.parse(res.data).data.user_diy_background
+            that.setData({
+              item: that.data.item
+            })
+            // let avatar = JSON.parse(res.data)
+            // that.setData({
+            //   avatar: avatar.data
+            // })
+            // console.log(that.data.avatar)
+            // that.setData({
+            //   image: that.data.avatar
+            // })
+            // app.globalData.image = that.data.image
+            // if (that.data.image) {
+            //   wx.navigateTo({
+            //     url: 'selectimg/selectimg?type=0',
+            //   })
+            // }
+          }
+        })
+      }
+    })
   },
   // 点击跳转到文章列表
   article:function(){

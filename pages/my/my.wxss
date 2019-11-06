@@ -148,11 +148,21 @@ button{
   padding-left: 0rpx;
   padding-right:0rpx
 }
+button:after{
+  border: none;
+}
 .my_t {
   height: 400rpx;
-  background: rgba(17, 17, 17, 1);
+  position: relative;
 }
-
+.imageBg{
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  left: 0;
+  top: 0;
+  z-index: -1;
+}
 .my_tt {
   height: 260rpx;
 }

@@ -45,8 +45,73 @@ page{
   float: right;
   margin-right: 40rpx;
   line-height: 60rpx;
-  font-size:21rpx;
+  font-size:19rpx;
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
   color:rgba(153,153,153,1);
+}
+.chat{
+  display: flex;
+  align-items: center;
+}
+.chat_head image{
+  width: 70rpx;
+  height: 70rpx;
+  border-radius: 50%;
+}
+.chat_details{
+  flex: 1;
+  overflow: hidden;
+}
+.chat_head{
+  margin-left: 40rpx;
+  margin-right: 22rpx;
+  height: 70rpx;
+}
+.chat_details .chat_name{
+  font-size:27rpx;
+  color: #444444;
+}
+.chat_details .chat_message{
+  font-size:21rpx;
+  color: #999999;
+  white-space: nowrap;
+  text-overflow: ellipsis;
+  overflow: hidden;
+  margin-top: 10rpx;
+
+}
+.chat_times{
+  margin-left: 20rpx;
+  margin-right: 40rpx;
+  height: 66rpx;
+}
+.chat_times .chat_time{
+  color: #999999;
+  font-size:19rpx;
+
+}
+.chat_times .chat_spot{
+  height: 28rpx;
+  line-height: 28rpx;
+  min-width: 28rpx;
+  text-align: center;
+  box-sizing: border-box;
+  padding:  0 8rpx;
+  border-radius: 14rpx;
+  background-color: #FF4151;
+  font-size:23rpx;
+  color: #fff;
+  width: fit-content;
+  margin-top: 15rpx;
+  float: right;
+}
+.delete{
+  width: 130rpx;
+  height: 100%;
+  background-color: #ee0a24;
+  text-align: center;
+  color: #fff;
+  line-height: 120rpx;
+  font-size: 32rpx;
 }

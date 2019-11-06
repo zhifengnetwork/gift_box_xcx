@@ -1,5 +1,5 @@
 <component title='標籤' show_bol='{{false}}' side="{{true}}" quan="{{true}}"></component>
-<image src="{{bgImage}}" class="bg_color" mode="widthFix"></image>
+<image src="{{bgImage}}" class="bg_color" mode="center"></image>
 <view class="bg">
 <view class="sousou_ear">
   <input type="text" class="find" placeholder="搜索" placeholder-style="color:#fff;" focus="false" bindinput="userNameInput" value='{{inputValue}}'></input>
@@ -30,7 +30,7 @@
 <!-- 全部 -->
 <view class="{{currentTab == 0 ? 'show':'hidden'}}">
 
-  <view wx:if="{{allData.address.length > 0}}">
+  <view wx:if="{{allData.address.length > 0}}" style="position: relative;">
     <view class="tab_t">地點</view>
     <view class="tab_c" wx:for="{{allData.address}}" wx:key bindtap="addressbox" data-id="{{item.id}}" data-title="{{item.title}}">
       <view class="tab_cl">
@@ -44,7 +44,7 @@
       </view>
     </view>
   </view>
-  <view wx:if="{{allData.brand.length > 0}}">
+  <view wx:if="{{allData.brand.length > 0}}" style="position: relative;">
     <view class="tab_t">品牌</view>
     <view class="tab_c" wx:for="{{allData.brand}}" wx:key bindtap="pinpaibox" data-id="{{item.id}}" data-title="{{item.name}}">
       <view class="tab_cl">
@@ -58,7 +58,7 @@
       </view>
     </view>
   </view>
-  <view wx:if="{{allData.goods.length > 0}}">
+  <view wx:if="{{allData.goods.length > 0}}" style="position: relative;">
     <view class="tab_t">商品</view>
     <view class="tab_c" wx:for="{{allData.goods}}" wx:key bindtap="shangpinbox" data-id="{{item.goods_id}}" data-title="{{item.goods_name}}">
       <view class="tab_cl">
@@ -72,7 +72,7 @@
       </view>
     </view>
   </view>
-  <view wx:if="{{allData.video.length > 0}}">
+  <view wx:if="{{allData.video.length > 0}}" style="position: relative;">
     <view class="tab_t">影視</view>
     <view class="tab_c" wx:for="{{allData.video}}" wx:key bindtap="moviebox" data-id="{{item.id}}" data-title="{{item.title}}">
       <view class="tab_cl">

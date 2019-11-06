@@ -11,7 +11,8 @@
       </view>
 
   <!-- tab切换  -->
-  <scroll-view class="{{shebei===true ? 'ipx':(si===false ? 'swiper-tab': 'swiper-tab2')}}" scroll-x>
+  <!-- <scroll-view class="{{shebei===true ? 'ipx':(si===false ? 'swiper-tab': 'swiper-tab2')}}" scroll-x> -->
+  <scroll-view class="swiper-tab" scroll-x>
     <view class="swiper-tab-item {{currentTab==index?'active':''}}" data-current="{{index}}" bindtap="clickTab" wx:for="{{nav_title}}" wx:key data-id="{{item.id}}">{{item.name}}
     </view>
   </scroll-view>
@@ -32,14 +33,15 @@
  
 <view wx:for="{{nav_title.length}}" wx:for-index="idx" wx:key>
     <view class="{{currentTab == idx ? 'show':'hidden'}}">
-      <scroll-view>
+      <!-- <scroll-view> -->
         <view class='case-page'>
           <view class='list-masonry'>
             <view  class='lan' wx:for="{{note}}" wx:key bindtap="details" data-id="{{item.id}}" data-type="{{item.type}}">
               <!-- ' class='pic {{item.show? "Action" : ""}}' -->
               <!-- <image src='{{item.stutus ? item.cover : ""}}' mode='widthFix'></image> -->
-              <image src='{{item.cover}}' mode='widthFix' wx:if="{{!item.type}}" class="xixihhhhhaaa"></image>
-              <video src='{{item.cover}}' mode='widthFix' wx:else controls="{{false}}" loop="{{false}}" muted="{{true}}"></video>
+              <!-- wx:if="{{!item.type}}" -->
+              <image src='{{item.cover}}' lazy-load="true" mode='widthFix' class="xixihhhhhaaa"></image>
+              <!-- <video src="{{item.type == 1 ? item.cover : ''}}" mode='widthFix' wx:if="{{item.type}}" controls="{{false}}" loop="{{false}}" muted="{{true}}"></video> -->
               <view class="biaoti">{{item.title}}</view>
               <view class="touxiang">
                 <image class="user_pic" src="{{item.avatar}}"></image>
@@ -51,14 +53,14 @@
                   <image class="aixin" src="../../public/images/home/xuanaixin.png"  wx:if="{{item.point_count}}"  data-index="{{index}}" data-id="{{item.id}}"></image>
 
                   <image class="aixin" src="../../public/images/home/aixin.png" wx:else  data-index="{{index}}" data-id="{{item.id}}"></image>
-                  <text style="margin-left:5rpx">{{item.point_num}}</text>
+                  <text style="margin-left:10rpx;color: #777777;font-size: 22rpx;">{{item.point_num}}</text>
                 </view>
                 
               </view>
             </view>
           </view>
         </view>
-      </scroll-view>
+      <!-- </scroll-view> -->
     </view>
   </view>
 

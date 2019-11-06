@@ -1,5 +1,6 @@
 {
   "usingComponents": {
-    "component": "../navbar/navbar"
+    "component": "../navbar/navbar",
+    "van-swipe-cell": "/vant-weapp/swipe-cell/index"
   }
 }

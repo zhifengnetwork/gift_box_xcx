@@ -1,14 +1,14 @@
 <component title='享物圈' show_bol='{{false}}' side="{{true}}"></component>
 <view class="body">
-  <view class="header">
-    <view class="user_left" bindtap="pageTo">
+  <view class="header" bindtap="pageTo">
+    <view class="user_left" catchtap="pageToChat">
       <view class="user_pic">
         <image src="{{detaillist.avatar}}" class="touxia"></image>
       </view>
       <view class="user_name">{{detaillist.nickname}}</view>
     </view>
-    <view class="care" bindtap="guanzhu" wx:if="{{!follow_count}}">關注</view>
-    <view class="yiguanzhu" bindtap="guanzhu" wx:if="{{follow_count}}">已關注</view>
+    <view class="care" catchtap="guanzhu" wx:if="{{!follow_count}}">關注</view>
+    <view class="yiguanzhu" catchtap="guanzhu" wx:if="{{follow_count}}">已關注</view>
   </view>
 
   <!-- 显示展示第几屏 -->
@@ -27,9 +27,9 @@
                 <image src="{{item.img}}"></image>
               </movable-view>
               <!-- 拖拽的标签 -->
-              <movable-view class="popuptext" x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{biaoqian}}" wx:key data-index="{{index}}" disabled="{{true}}">
+              <movable-view class="popuptext" data-id="{{item.goods_id}}" bindtap="pageToDetails" x="{{item.bqx}}" y="{{item.bqy}}" direction="all" wx:for="{{biaoqian}}" wx:key data-index="{{index}}" disabled="{{true}}">
                 <!-- <image src="{{item.img}}"></image> -->
-                <text>{{item.name}}</text>
+                <text># {{item.name}}</text>
               </movable-view>
             </swiper-item>
           </block>
@@ -45,6 +45,7 @@
   </view>
 
   <!-- 文字介绍 -->
+  <view style="background-color: #fff;">
   <view class="intriduce1" wx:if="{{liang}}">
     <view style="font-size:14px">{{detaillist.title}}</view>
     <view>{{detaillist.content}}</view>
@@ -76,55 +77,54 @@
       <text class="tiaoshu3">{{detaillist.collection_num}}</text>
     </view>
   </view>
+  </view>
   <!-- 评论区域 -->
-  <view class="comment_ear">
-
-    <!-- {{comments[5].list[0].content}} -->
-
-    <view wx:if="{{status}}">
-      <view class="ear" wx:for="{{comments}}" wx:if="{{index<3}}" wx:key bindtap="huifu" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
+  <view class="comment_ear" wx:if="{{detaillist.is_comment_open == 1 }}">
+    <view wx:if="{{status}}" style="background-color: #F6F5F5;">
+      <view class="ear" wx:for="{{comments}}" wx:if="{{index<3}}" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key>
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
-        <text class="comment_text">{{itemname.content}}</text>
+        <text class="comment_text" bindtap="huifu" data-index="{{index}}">{{itemname.content}}</text>
         <view class="flex">
           <view class="yingcang" wx:if="{{itemname.list.length}}">{{itemname.nickname}}:</view>
           <view class="huifuear" wx:if="{{itemname.list.length}}">
-            <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui">
-              <view class="huifucontext">{{xijinzui.nickname}}:{{xijinzui.content}}</view>
+            <view wx:for="{{itemname.list}}" wx:for-item="xijinzui"  wx:for-index="idx">
+              <view class="huifucontext" bindtap="huifu" data-index="{{index}}" data-idx="{{idx}}">{{xijinzui.nickname}}:<text>{{xijinzui.content}}</text></view>
             </view>
           </view>
         </view>
-
-
       </view>
-
     </view>
 
 
-    <view wx:if="{{!status}}">
-      <view class="ear" wx:for="{{comments}}" wx:key bindtap="huifu" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key-index='idx'>
+    <view wx:if="{{!status}}" style="background-color: #F6F5F5;">
+      <view class="ear" wx:for="{{comments}}" data-userid="{{itemname.user_id}}" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key>
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
-        <text class="comment_text">{{itemname.content}}</text>
+        <text class="comment_text" bindtap="huifu" data-index="{{index}}">{{itemname.content}}</text>
         <view class="flex">
           <view class="yingcang" wx:if="{{itemname.list.length}}">{{itemname.nickname}}:</view>
           <view class="huifuear" wx:if="{{itemname.list.length}}">
-            <view wx:for="{{itemname.list}}" wx:key wx:for-item="xijinzui">
-              <view class="huifucontext">{{xijinzui.nickname}}:{{xijinzui.content}}</view>
+            <view wx:for="{{itemname.list}}" wx:for-item="xijinzui" wx:for-index="idx">
+              <view class="huifucontext" bindtap="huifu" data-index="{{index}}" data-idx="{{idx}}">{{xijinzui.nickname}}:<text>{{xijinzui.content}}</text></view>
             </view>
           </view>
         </view>
-
       </view>
     </view>
 
-    <view class="looks_detail" bindtap="quanbu" wx:if="{{detaillist.comment_num>3}}">查看全部{{comments.length}}條評論></view>
+    <view class="looks_detail" bindtap="quanbu" wx:if="{{detaillist.comment_num>3}}">{{status  ? '查看全部' + comments.length + '條評論 >' : '收起評論 >'}} </view>
 
-    <view class="white_ear" wx:if="{{detaillist.is_comment_open == 1 }}">
+    <view class="white_ear" >
       <image src="../../../../images/white.png" class="white_pic"></image>
-      <textarea class="weui-textarea" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;" bindblur="changeContext" focus="{{focus}}" value="{{hhh}}" />
+      <textarea wx:if="{{!showProup}}" auto-height class="weui-textarea" cursor-spacing="10" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;" bindblur="changeContext" focus="{{focus}}" value="{{hhh}}" />
     </view>
 
+    
+
+  </view>
+
+  <view style="background:rgba(246,249,251,1);margin-top: 100rpx;">
     <!-- 相关推荐 -->
-    <view style="padding:30rpx 30px 30rpx 0rpx;font-size:30rpx;color:rgba(102,102,102,1);">相关推荐</view>
+    <view style="padding:30rpx;font-size:30rpx;color:rgba(102,102,102,1);">相關推薦</view>
     <scroll-view>
       <view class='case-page'>
         <view class='list-masonry'>
@@ -154,7 +154,19 @@
         </view>
       </view>
     </scroll-view>
-
   </view>
-
 </view>
+
+<van-popup show="{{ showProup }}" bind:close="onCloseProup"  position="bottom">
+  <view class="proup_box">
+    <view class="proup_top">
+      <view class="proup_comment">{{proupText}}</view>
+      <view class="proup_reply" bindtap="replyComment">回复</view>
+      <view class="proup_delete" wx:if="{{isShowDete}}" bindtap="deleteComment">删除</view>
+    </view>
+
+    <view class="proup_close" bindtap="onCloseProup">
+      取消
+    </view>
+  </view>
+</van-popup>

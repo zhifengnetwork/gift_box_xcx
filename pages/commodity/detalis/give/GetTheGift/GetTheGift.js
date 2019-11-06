@@ -247,13 +247,13 @@ Page({
   },
   show: function() {
 
-    // if(!this.data.give){
-    //   wx.showToast({
-    //     title: this.data.givetext,
-    //     icon: 'none'
-    //   })
-    //   return false;
-    // }
+    if(!this.data.give){
+      wx.showToast({
+        title: this.data.givetext,
+        icon: 'none'
+      })
+      return false;
+    }
     console.log(2222)
     this.setData({
       flag: false

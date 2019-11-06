@@ -37,7 +37,7 @@
 </view>
 
 <!-- 第二部分 -->
-<scroll-view class='dataContainer' scroll-y bindscrolltolower="nextDataPage" style="height:100%;background:#fff;">
+<scroll-view class='dataContainer' scroll-y bindscrolltolower="nextDataPage" style="height:calc(100vh - 400rpx);background:#fff;">
   <!-- tab切换 -->
   <view class="swiper-tab">
     <view class="swiper-tab-item {{currentTab==0?'active':''}}" data-current="0" bindtap="clickTab">
@@ -55,7 +55,7 @@
       <view class="articlebox">
         <view class="article_box" wx:for="{{wenzhang}}" bindtap="detail" data-id="{{item.id}}">
           <view class="article_imgbox">
-            <image src="{{item.cover}}"></image>
+            <image src="{{item.cover}}" mode="aspectFit"></image>
           </view>
           <view class="article_con">
             {{item.title}}

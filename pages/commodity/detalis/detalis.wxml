@@ -19,7 +19,7 @@
         
         <block wx:if="{{goods_data.video}}">
           <swiper-item>
-            <video class="detalis_swiper_image" src="{{goods_data.video}}" lazy-load="true" bindtap="imgYu" data-src="{{goods_data.video}}" data-list="{{goods_data.video}}" />
+            <video class="detalis_swiper_image" autoplay src="{{goods_data.video}}" bindplay="changeVideo" bindpause="changeVideo" bindtap="imgYu" data-src="{{goods_data.video}}" data-list="{{goods_data.video}}"/>
           </swiper-item>
         </block>
 
@@ -119,10 +119,10 @@
       <view class="detalis_fr">
         <view class="detalis_frbox">
           <!-- <form report-submit="true" bindsubmit="kaolao"> -->
-            <button class="detalis_frl" form-type="submit" bindtap="kaolao">犒勞自己</button>
+            <button class="detalis_frl" bindtap="kaolao">犒勞自己</button>
           <!-- </form> -->
           <!-- <form report-submit="true" bindsubmit="give_goods"> -->
-            <button class="detalis_frr" form-type="submit" bindtap="give_goods">贈送他人</button>
+            <button class="detalis_frr" bindtap="give_goods">贈送他人</button>
           <!-- </form> -->
         </view>
       </view>
