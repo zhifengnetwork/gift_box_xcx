@@ -17,7 +17,7 @@ Page({
     detaillist: [],
     comments: [],
     status: true,
-    placeholder: "添加評論",
+    placeholder: "添加評論...",
     focus: false,
     pid: null,
     hhh: '',
@@ -39,7 +39,8 @@ Page({
     isShowDete: true,
     proupIndex: [0,0],
     deleteId:'',
-    replyId:''
+    replyId:'',
+    time: ''
   },
   onCloseProup(){
     this.setData({ showProup: !this.data.showProup });
@@ -69,12 +70,14 @@ Page({
     windowWidth = windowWidth * 0.9
     var geshu = windowWidth /11
     geshu = parseInt(geshu) * 2 - 1
-    console.log(geshu)
+    console.log(new Date().getHours(), new Date().getMonth())
 
-    that.setData({ nickname: app.globalData.userInfo.nickname}) 
-    that.setData({
-      id: options.id
-    })
+    that.setData({ 
+      nickname: app.globalData.userInfo.nickname,
+      id: options.id,
+      time: new Date().getMonth() + 1 + '-' + new Date().getDate()
+    }) 
+
     api.getJSON('/api/sharing/sharing_info?id=' + that.data.id + '&token=' + app.globalData.token, function(res) {
       if (res.data.status == 1) {
         console.log(res.data.data);
@@ -354,7 +357,7 @@ Page({
       api.getJSON('/api/sharing/add_comment?sharing_id='+that.data.id+'&token=' + app.globalData.token + '&content=' + that.data.context, function(res) {
         if (res.data.status == 1) {
           that.setData({
-            placeholder: "添加評論",
+            placeholder: "添加評論...",
             hhh: ""
           })
           // 重新请求接口渲染数据
@@ -375,7 +378,7 @@ Page({
       api.getJSON('/api/sharing/add_comment?sharing_id=' + that.data.id + '&token=' + app.globalData.token + '&content=' + text + '&pid=' + that.data.pid, function(res) {
         if (res.data.status == 1) {
           that.setData({
-            placeholder: "添加評論",
+            placeholder: "添加評論...",
             hhh: "",
             pid: null
           })
@@ -414,18 +417,17 @@ Page({
     // var pid = e.currentTarget.dataset.pid;
     // var userId = e.currentTarget.dataset.userid
     
-    var { index , idx } = e.currentTarget.dataset
+    var { index,idx } = e.currentTarget.dataset
     var obj = this.data.comments[index];
-  console.log(idx)
     if (idx == undefined){
       if (obj.user_id == getApp().globalData.userInfo.id) {
-        // this.data.proupIndex[0] = index
         this.setData({
           showProup: true,
           proupText: '你的评论: ' + obj.content,
           isShowDete: true,
           deleteId: obj.id,
-          pName: obj.nickname
+          pName: obj.nickname,
+          replyId: obj.id
         })
       } else {
         this.setData({
@@ -433,7 +435,8 @@ Page({
           proupText: obj.nickname + '的评论: ' + obj.content,
           isShowDete: false,
           deleteId: obj.id,
-          pName: obj.nickname
+          pName: obj.nickname,
+          replyId: obj.id
         })
       }
     }else{
@@ -444,7 +447,8 @@ Page({
           proupText: '你的评论: ' + ob.content,
           isShowDete: true,
           deleteId: ob.id,
-          pName: ob.nickname
+          pName: ob.nickname,
+          replyId: obj.id
         })
       } else {
         this.setData({
@@ -452,10 +456,12 @@ Page({
           proupText: ob.nickname + '的评论: ' + ob.content,
           isShowDete: false,
           deleteId: ob.id,
-          pName: ob.nickname
+          pName: ob.nickname,
+          replyId: obj.id
         })
       }
     }
+
   },
 
   // 关注按钮
@@ -509,8 +515,8 @@ Page({
     this.setData({
       showProup: false,
       focus: true,
-      pid: this.data.deleteId,
-      placeholder: '回复' + this.data.pName + ':'
+      pid: this.data.replyId,
+      // placeholder: '回复' + this.data.pName + ':'
     })
   },
   //删除评论

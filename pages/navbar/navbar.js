@@ -28,6 +28,10 @@ Component({
     isSticky: {       
       type: Boolean,
       value: false
+    },
+    touming:{
+      type: Boolean,
+      value: false
     }
   },
   /* 组件的初始数据 */

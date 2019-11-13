@@ -7,7 +7,7 @@ Page({
    * 页面的初始数据
    */
   data: {
-    item:[],
+    items:[],
     navheight:'',
     page: 1,
     rows: 20,
@@ -40,14 +40,14 @@ Page({
 
         if (res.data.data) {
           if (pageIndex > 1) {
-            var listBefore = that.data.item;
+            var listBefore = that.data.items;
             var currentList = res.data.data;
             that.setData({
-              item: listBefore.concat(currentList)
+              items: listBefore.concat(currentList)
             })
           } else {
             that.setData({
-              item: res.data.data
+              items: res.data.data
             })
           }
         }
@@ -151,7 +151,7 @@ Page({
     that.searchDataList(page);
     // that.fenye()
     // try {
-    //   const res = wx.getSystemInfoSync()
+      const res = wx.getSystemInfoSync()
     //   console.log(res.model)
     //   console.log(res.pixelRatio)
     //   console.log(res.windowWidth)
@@ -160,12 +160,16 @@ Page({
     //   console.log(res.statusBarHeight)
     //   console.log(res.version)
     //   console.log(res.platform)
-    //   that.setData({ navheight: res.statusBarHeight })
+      that.setData({ navheight: res.statusBarHeight })
     // } catch (e) {
     //   // Do something when catch error
     // }
   },
-
+  pageTo(e){
+    wx.navigateTo({
+      url: '/pages/home/enjoy/detail/detail?id=' + e.currentTarget.dataset.id,
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

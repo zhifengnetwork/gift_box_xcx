@@ -212,6 +212,12 @@ button:after{
 .my_tf_box{
   flex: 2;
   text-align: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+.tf_box{
+  text-align: left;
 }
 .my_tf_box2{
   flex: 3;
@@ -248,7 +254,7 @@ button:after{
 /* 首个导航栏 */
 .my_nav_top{
   margin: 20rpx;
-  height:150rpx;
+  height:175rpx;
   background:rgba(255,255,255,1);
   border-radius:2rpx;
   display: flex;
@@ -257,26 +263,33 @@ button:after{
 }
 .nav_tbox{
   flex: 1;
-  text-align: center;
+  /* text-align: center; */
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
 }
 .nav_imgbox{
-  width: 60rpx;
-  height: 60rpx;
+  width: 80rpx;
+  height: 80rpx;
   /* border-radius: 50%; */
   overflow: hidden;
-  margin-left: 50%;
-  margin-top: 20rpx;
-  transform: translate(-50%);
+  /* margin-left: 50%;
+  margin-top: 20rpx; */
+  /* transform: translate(-50%); */
+  /* box-shadow:0px 0px 20rpx 2rpx rgba(200,177,124,0.4); */
 }
 .nav_imgbox image{
   width: 100%;
   height: 100%;
+  
 }
 .nav_tbox text{
   font-size:25rpx;
   font-family:SourceHanSansCN-Medium;
   font-weight:500;
   color:rgba(51,51,51,1);
+  /* margin-top: 20rpx; */
 }
 /* 第二个导航栏 */
 .nav_con{
@@ -313,6 +326,12 @@ button:after{
 .nav_contr{
   float: right;
   margin-top: 30rpx;
+  display: flex;
+}
+.progress{
+  font-size: 29rpx;
+  color: #999999;
+  margin-right: 10rpx;
 }
 .nav_contrimg{
   width: 30rpx;

@@ -120,6 +120,7 @@ page {
 .giftbank_conent{
   float: left;
   margin-left: 20rpx;
+  width: 350rpx;
 }
 .giftbank_brand{
   font-size:25rpx;
@@ -127,7 +128,7 @@ page {
   font-family:SourceHanSansCN-Regular;
   font-weight:bold;
   color:rgba(34,34,34,1);
-  width: 400rpx;
+  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -138,7 +139,7 @@ page {
   font-family:SourceHanSansCN-Regular;
   font-weight:400;
   color:rgba(34,34,34,1);
-  width: 400rpx;
+  width: 100%;
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap;
@@ -221,5 +222,5 @@ page {
   text-align: center;
 }
 .hhhhhaaaa .giftbank_box:first-child{
-  padding-top: 40px
+  padding-top: 50px
 }

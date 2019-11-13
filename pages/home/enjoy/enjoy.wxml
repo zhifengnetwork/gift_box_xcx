@@ -30,50 +30,69 @@
   </view>
 </view>
 
- 
-<view wx:for="{{nav_title.length}}" wx:for-index="idx" wx:key>
-    <view class="{{currentTab == idx ? 'show':'hidden'}}">
-      <!-- <scroll-view> -->
+ <!-- 滚动列表 -->
+
+    <view class="show">
         <view class='case-page'>
-          <view class='list-masonry'>
+          <!-- <view class='list-masonry'>
             <view  class='lan' wx:for="{{note}}" wx:key bindtap="details" data-id="{{item.id}}" data-type="{{item.type}}">
-              <!-- ' class='pic {{item.show? "Action" : ""}}' -->
-              <!-- <image src='{{item.stutus ? item.cover : ""}}' mode='widthFix'></image> -->
-              <!-- wx:if="{{!item.type}}" -->
               <image src='{{item.cover}}' lazy-load="true" mode='widthFix' class="xixihhhhhaaa"></image>
-              <!-- <video src="{{item.type == 1 ? item.cover : ''}}" mode='widthFix' wx:if="{{item.type}}" controls="{{false}}" loop="{{false}}" muted="{{true}}"></video> -->
               <view class="biaoti">{{item.title}}</view>
               <view class="touxiang">
                 <image class="user_pic" src="{{item.avatar}}"></image>
                 <text class="nike">{{item.nickname}}</text>
                 <view class="aixin_ear">
-                  <!-- bindtap="dianji" -->
-                  <!-- wx:if="{{dianzang[index]}}" -->
-                  <!-- catchtap="dianji" -->
-                  <image class="aixin" src="../../public/images/home/xuanaixin.png"  wx:if="{{item.point_count}}"  data-index="{{index}}" data-id="{{item.id}}"></image>
-
+                  <image class="aixin" src="../../public/images/home/xuanaixin.png"  
+                  wx:if="{{item.point_count}}"  data-index="{{index}}" data-id="{{item.id}}"></image>
                   <image class="aixin" src="../../public/images/home/aixin.png" wx:else  data-index="{{index}}" data-id="{{item.id}}"></image>
                   <text style="margin-left:10rpx;color: #777777;font-size: 22rpx;">{{item.point_num}}</text>
                 </view>
-                
               </view>
+            </view>
+          </view> -->
+
+          <view class="masonry-list-left" style="margin-right: 10rpx">
+            <view id="left-col-inner">
+               <block wx:for="{{note}}" wx:key="{{item.id}}">
+                <view wx:if="{{item.columnPosition === 'left'}}" bindtap="details" data-id="{{item.id}}" data-type="{{item.type}}">
+                  <image src='{{item.cover}}' lazy-load="true" mode='widthFix' class="xixihhhhhaaa"></image>
+                  <view class="biaoti">{{item.title}}</view>
+                  <view class="touxiang">
+                    <image class="user_pic" src="{{item.avatar}}"></image>
+                    <text class="nike">{{item.nickname}}</text>
+                    <view class="aixin_ear">
+                      <image class="aixin" src="../../public/images/home/xuanaixin.png"  
+                      wx:if="{{item.point_count}}"  data-index="{{index}}" data-id="{{item.id}}"></image>
+                      <image class="aixin" src="../../public/images/home/aixin.png" wx:else  data-index="{{index}}" data-id="{{item.id}}"></image>
+                      <text style="margin-left:10rpx;color: #777777;font-size: 22rpx;">{{item.point_num}}</text>
+                    </view>
+                  </view>
+                </view> 
+              </block>
+            </view>
+          </view>
+          <view class="masonry-list-right">
+            <view id="right-col-inner">
+              <block wx:for="{{note}}" wx:key="{{item.id}}">
+                <view wx:if="{{item.columnPosition === 'right'}}" bindtap="details" data-id="{{item.id}}" data-type="{{item.type}}">
+                  <image src='{{item.cover}}' lazy-load="true" mode='widthFix' class="xixihhhhhaaa"></image>
+                  <view class="biaoti">{{item.title}}</view>
+                  <view class="touxiang">
+                    <image class="user_pic" src="{{item.avatar}}"></image>
+                    <text class="nike">{{item.nickname}}</text>
+                    <view class="aixin_ear">
+                      <image class="aixin" src="../../public/images/home/xuanaixin.png"  
+                      wx:if="{{item.point_count}}"  data-index="{{index}}" data-id="{{item.id}}"></image>
+                      <image class="aixin" src="../../public/images/home/aixin.png" wx:else  data-index="{{index}}" data-id="{{item.id}}"></image>
+                      <text style="margin-left:10rpx;color: #777777;font-size: 22rpx;">{{item.point_num}}</text>
+                    </view>
+                  </view>
+                </view>   
+              </block>
             </view>
           </view>
         </view>
-      <!-- </scroll-view> -->
     </view>
-  </view>
 
-<!-- tab -->
-<!-- <scroll-view class="swiper-tab" scroll-x>
-    <view class="swiper-tab-item {{currentTab==index?'active':''}}"  data-current="{{index}}" bindtap="clickTab" wx:for="{{nav_title}}" wx:key data-id="{{item.id}}">{{item.name}}</view>
-</scroll-view>
-
-  <view class = "{{currentTab == idx ? 'show':'hidden'}}" wx:for="{{nav_title.length}}" wx:for-index="idx" wx:key>
-    <scroll-view>
-      <text>{{idx}}</text>
-    </scroll-view>
-  </view> -->
-  
 </view>
 </scroll-view>

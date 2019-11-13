@@ -1,6 +1,7 @@
 // pages/my/invoice/invoice.js
 var app = getApp()
 var api = require('../../../utils/api');
+var WxParse = require('../../../wxParse/wxParse.js');
 Page({
 
   /**
@@ -32,7 +33,9 @@ Page({
     is_lipinka: '',
     is_gouwuka: '',
     order_type:'',
-    order_id:''
+    order_id:'',
+    isShowTitle: true,
+    showProup: true
   },
   /**
     * 生命周期函数--监听页面加载
@@ -47,19 +50,23 @@ Page({
       order_id: options.order_id == undefined ? "" : options.order_id,
       source: options.source == undefined ? "" : options.source,//一个是?source=cashgift
     });
-
+  
+    this.getIdentification()
     this.get_invoice();
     
     console.log("来源"+this.data.source)
 
   },
-
-  show: function () {
+  onCloseProup: function () {
     this.setData({
-      footer_show: !this.data.footer_show
+      showProup: !this.data.showProup
     })
   },
-
+  choseTitle: function(){
+    this.setData({
+      isShowTitle: false
+    })
+  },
   footer_hidden: function () {
     this.setData({
       footer_show: !this.data.footer_show
@@ -215,7 +222,19 @@ Page({
     })
 
   },
-
+  getIdentification: function(){
+    var that = this
+    api.getJSON('api/index/getIdentification', function (res) {
+      console.log(res.data)
+      if (res.data.status == 1) {
+        // that.setData({
+        //   proupContent: res.data.data
+        // })
+        console.log(WxParse)
+        WxParse.wxParse('content', 'html', res.data.data, that, 5)
+      }
+    })
+  },
   /**
    * 生命周期函数--监听页面初次渲染完成
    */

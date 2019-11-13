@@ -66,19 +66,16 @@ Page({
   init: function() {
 
     let windowHeight = wx.getSystemInfoSync().windowHeight // 屏幕的高度
-    console.log("windowHeight" + windowHeight)
+    // console.log("windowHeight" + windowHeight)
     let windowWidth = wx.getSystemInfoSync().windowWidth // 屏幕的宽度
-    console.log("windowWidth" + windowWidth)
+    // console.log("windowWidth" + windowWidth)
     // 236
     this.setData({
-      scroll_height: windowHeight * 750 / windowWidth - 250 - 30
-    })
-    this.setData({
-      scroll_height1: windowHeight * 750 / windowWidth - 250 - 30
-    })
-    this.setData({
+      scroll_height: windowHeight * 750 / windowWidth - 250 - 30,
+      scroll_height1: windowHeight * 750 / windowWidth - 250 - 30,
       scroll_height2: windowHeight * 750 / windowWidth - 325 - 30
     })
+
     // 加载的使用进行网络访问，把需要的数据设置到data数据对象  
     var that = this
    
@@ -86,14 +83,14 @@ Page({
         if (res.data.status == 1) {
          console.log(res.data.data);
          console.log("brand_list")
-         console.log(res.data.data.brand_list)
+        //  console.log(res.data.data.brand_list)
          that.setData({city: res.data.data.brand_list})
          that.setData({navLeftItems: res.data.data.category_list})
          for (let i in that.data.city) {
             // 将后台给的字母表换成另外的一种形式,也就是改变结构
             that.data.createArr.push(that.data.city[i]);
           }
-          console.log(that.data.createArr)
+          // console.log(that.data.createArr)
           var key=[];
           for (var i = 0; i < that.data.createArr.length;i++){
             var ss = that.data.createArr[i][0].key

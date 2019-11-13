@@ -1,4 +1,22 @@
-<image src="{{bgImage}}" class="bg_color" mode="center"></image>
+<view class="bg_box">
+  <image src="{{bgImage}}" class="bg_color" mode="center"></image>
+  <view class="select">
+    <view class="select_l">
+      <view class="selectl_img">
+        <image src="/images/biaoqian.png" />
+      </view>
+      <text>標籤</text>
+    </view>
+    <view class="select_r">
+      <view class="selectr_img">
+        <image src="/images/tiezhi.png" />
+      </view>
+      <text>貼紙</text>
+    </view>
+  </view>
+  <view class="send">下一步</view>
+</view>
+
 <view class="bg">
 <component title='標籤' show_bol='{{false}}' side="{{true}}" quan="{{true}}"></component>
 <view class="sousou_ear">
@@ -81,7 +99,7 @@
 <view class="{{currentTab == 1 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
     <!-- <view class="tab_t">推薦地點</view> -->
-    <view class="tab_c" wx:for="{{pinpai}}" bindtap="pinpaibox" data-id="{{item.id}}">
+    <view class="tab_c" wx:for="{{pinpai}}" wx:key bindtap="pinpaibox" data-id="{{item.id}}">
       <view class="tab_cl">
         <!-- <view class="tab_climg">
           <image src="/images/site.png" />

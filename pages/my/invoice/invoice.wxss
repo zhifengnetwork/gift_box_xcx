@@ -1,7 +1,45 @@
+@import '../../../wxParse/wxParse.wxss';
 .invoice_nav {
   height: 115rpx;
+  position: fixed;
+  top: 0;
+  background-color: #fff;
+  z-index: 9999;
+  width: 100%;
 }
-
+.tips{
+  position: fixed;
+  top: 115rpx;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 4rpx 20rpx;
+  letter-spacing: 4rpx;
+  box-sizing: border-box;
+  background-color: rgba(239,130,130,.9);
+  z-index: 99;
+}
+.invoice{
+  margin-top: 115rpx;
+}
+.tips view{
+  flex: 1;
+  overflow: hidden;
+  color: #FFFFFF;
+  font-size: 22rpx;
+  line-height: 36rpx;
+}
+.tips .ling{
+  width: 23rpx;
+  height: 28rpx;
+  margin-right: 20rpx;
+}
+.tips .err{
+  width: 19rpx;
+  height: 18rpx;
+  margin-left: 35rpx;
+  padding: 10rpx;
+}
 .invoice_top {
   height: 200rpx;
   background: #fff;
@@ -315,4 +353,27 @@ cover-view{
   text-align: center;
   font-size: 30rpx;
   line-height: 80rpx;
+}
+.proup_box{
+  background-color: #Fff;
+  border-radius: 20rpx;
+  width: 570rpx;
+  box-sizing: border-box;
+  padding: 40rpx 20rpx;
+}
+.proup_title{
+  font-size:32rpx;
+  color: #333333;
+  text-align: center;
+  font-family:SourceHanSansCN;
+  font-weight:400;
+}
+.proup_content{
+  height: 350rpx;
+  overflow: hidden;
+  overflow-y: scroll;
+  margin: 40rpx 0;
+}
+.proup_btn{
+  text-align: center;
 }

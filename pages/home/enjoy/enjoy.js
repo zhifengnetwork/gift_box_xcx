@@ -15,7 +15,7 @@ Page({
     nav_title: [],
     list: [],
     bujia: true,
-    goodslist: [],
+    // goodslist: [],
     topic_id: 0,
     page: 1,
     image: [],
@@ -225,9 +225,8 @@ Page({
    */
   onShow: function () {
     var that=this
-    var array=[]
     that.loadData();
-    that.setData({ page: 1, goodslist: array})
+    that.setData({ page: 1})
     that.GetList(that)
     that.getPosition()
   },
@@ -303,9 +302,10 @@ Page({
           bujia: false
         })
       }else{
-        this.data.note =  this.data.note.concat(this.data.totalNoteList.splice(0,8))
+        // this.data.note =  this.data.note.concat(this.data.totalNoteList.splice(0,8))
+        this._refresh(this.data.totalNoteList.splice(0, 8))
         this.setData({
-          note: this.data.note,
+          // note: this.data.note,
           page: this.data.page++
         })
       }
@@ -315,13 +315,14 @@ Page({
     api.getJSON('/api/sharing/sharing_list?num=10' + '&topic_id=' + that.data.topic_id + '&page=' + that.data.page + '&token=' + app.globalData.token, function(res) {
       if (res.data.status == 1) {
         if (res.data.data.length > 0) {
-          for (var i = 0; i < res.data.data.length; i++) {
-            that.data.goodslist.push(res.data.data[i])
-          }
-          that.setData({
-            note: that.data.goodslist
-          })
-          console.log(that.data.note)
+          // for (var i = 0; i < res.data.data.length; i++) {
+          //   that.data.goodslist.push(res.data.data[i])
+          // }
+          // that.setData({
+          //   note: that.data.goodslist
+          // })
+          that._refresh(res.data.data)
+          // console.log(that.data.note)
           that.data.page++;
         } else {
           that.setData({
@@ -341,8 +342,40 @@ Page({
 
   },
 
- 
+  
 
+  _refresh(items) {
+    const query = wx.createSelectorQuery().in(this)
+    this.columnNodes = query.selectAll('#left-col-inner, #right-col-inner')
+
+    return new Promise((resolve, reject) => {
+      this._render(items, 0, () => {
+        resolve()
+      })
+    })
+  },
+  _render(items, i, onComplete) {
+    if (items.length > i ) {
+      this.columnNodes.boundingClientRect().exec(arr => {
+        const item = items[i]
+        const rects = arr[0]
+
+        const leftColHeight = rects[0].height
+        const rightColHeight = rects[1].height
+
+        this.setData({
+          note: [...this.data.note, {
+            ...item,
+            columnPosition: leftColHeight <= rightColHeight ? 'left' : 'right'
+          }]
+        }, () => {
+          this._render(items, ++i, onComplete)
+        })
+      })
+    } else {
+      onComplete && onComplete()
+    }
+  },
   /**
    * 生命周期函数--监听页面隐藏
    */
@@ -382,9 +415,9 @@ Page({
   clickTab: function(e) {
     var that = this;
     var arr = [];
-    that.setData({
-      goodslist: arr
-    });
+    // that.setData({
+    //   goodslist: arr
+    // });
     if (e.target.dataset.id === that.data.nav_title[1].id) {
       if (that.data.latitude == ''){
         wx.showModal({
@@ -411,12 +444,12 @@ Page({
       })
     }
     that.setData({
-      topic_id: e.target.dataset.id
-    });
-    that.setData({
+      topic_id: e.target.dataset.id,
       bujia: true,
-      page: 1
-    })
+      page: 1,
+      note: []
+    });
+
     console.log(e.target.dataset.id, that.data.nav_title[2].id)
     // 如果点击的是附近的话,就不分页了,点击其他的滚动条滚动到底部加载下一页
     // console.log(that.data.nav_title[1].id)
@@ -425,9 +458,13 @@ Page({
       function (res) {
         if (res.data.status == 1) { 
 
-          console.log(res.data.data);
-
-          that.setData({ note: res.data.data.splice(0, 8), bujia: true, totalNoteList: res.data.data})
+          // console.log(res.data.data);
+          that._refresh(res.data.data.splice(0, 8))
+          that.setData({ 
+            // note: res.data.data.splice(0, 8),
+            bujia: true,
+            totalNoteList: res.data.data
+          })
         
         }
       })
@@ -436,13 +473,14 @@ Page({
         if (res.data.status == 1) {
 
           if (res.data.data.length > 0) {
-            for (var i = 0; i < res.data.data.length; i++) {
-              that.data.goodslist.push(res.data.data[i])
-            }
-            console.log(that.data.goodslist)
-            that.setData({
-              note: that.data.goodslist
-            })
+            // for (var i = 0; i < res.data.data.length; i++) {
+            //   that.data.goodslist.push(res.data.data[i])
+            // }
+            // console.log(that.data.goodslist)
+            // that.setData({
+            //   note: that.data.goodslist
+            // })
+            that._refresh(res.data.data)
             that.data.page++;
           } else {
             var kong = []
@@ -461,13 +499,14 @@ Page({
         if (res.data.status == 1) {
 
           if (res.data.data.length > 0) {
-            for (var i = 0; i < res.data.data.length; i++) {
-              that.data.goodslist.push(res.data.data[i])
-            }
-            console.log(that.data.goodslist)
-            that.setData({
-              note: that.data.goodslist
-            })
+            // for (var i = 0; i < res.data.data.length; i++) {
+            //   that.data.goodslist.push(res.data.data[i])
+            // }
+            // console.log(that.data.goodslist)
+            // that.setData({
+            //   note: that.data.goodslist
+            // })
+            that._refresh(res.data.data)
             that.data.page++;
           } else {
             var kong = []
@@ -546,12 +585,7 @@ Page({
   bindDownLoad: function() {
     //该方法绑定了页面滑动到底部的事件,下拉一次请求一次数据
     if (this.data.bujia) {
-      console.log("hhh")
-      // wx.showToast({
-      //   title: '加载中',
-      //   icon: 'loading',
-      //   duration: 400
-      // })
+      console.log("触底了~")
       wx.showLoading({
         title: '加载中',
       })
@@ -561,7 +595,7 @@ Page({
   },
   // 滚动条滚动
   scroll:function(e){
-    console.log(e.detail.scrollTop)
+    // console.log(e.detail.scrollTop)
     if (app.globalData.isIPX === true) {
       this.setData({ shebei: true })
     } else {

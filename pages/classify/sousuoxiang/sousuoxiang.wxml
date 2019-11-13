@@ -17,9 +17,9 @@
 <view class="shop_ear" wx:if="{{shopzu.length>0}}">
    <view class="didi" wx:for="{{shopzu}}" wx:key bindtap="detail" data-id="{{item.goods_id}}">
     <image src="{{item.picture}}" class="shoot_pic"></image>
-    <view class="name">{{item.brand_name}}</view>
+    <view class="name">{{item.name}}</view>
     <view class="desc">{{item.goods_name}}</view>
-    <view class="price">{{item.price}}</view>
+    <view class="price">￥{{item.price}}</view>
   </view>
 </view>
 <view  class="baoqian" wx:if="{{shopzu.length==0}}">抱歉! 没有搜索到相应的商品~</view>

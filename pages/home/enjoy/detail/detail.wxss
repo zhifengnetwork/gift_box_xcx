@@ -209,7 +209,8 @@ height: 100%
 .nick_name_ear{
   font-size: 34rpx;
   font-weight: bolder;
-  display: inline-block
+  display: inline-block;
+  color: #333;
 }
 .comment_text{
   font-size: 30rpx;
@@ -222,7 +223,8 @@ height: 100%
   font-family:SourceHanSansCN-Regular;
   margin-top: 18rpx;
   font-size: 30rpx;
-  padding-bottom: 20rpx
+  padding-bottom: 20rpx;
+  font-weight: bold;
 }
 .white_ear{
   width:92%;
@@ -244,10 +246,15 @@ height: 100%
   overflow: hidden;
   font-size: 32rpx;
   padding: 0 10rpx;
-  background-color: #F6F5F5;
 }
 .ear:last-child{
   padding-bottom: 20rpx
+}
+.timer{
+  color: #999999;
+  font-size: 26rpx;
+  margin-left: 3.5%;
+  margin-top: 30rpx;
 }
 .list{
   padding-left: 140rpx;
@@ -360,6 +367,8 @@ height: 100%
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
+  color: #333;
+  font-weight: bold;
 }
 .nike{
   display: inline-block;
@@ -370,7 +379,7 @@ height: 100%
   overflow: hidden;
   text-overflow: ellipsis;
   white-space: nowrap; 
-
+  color: #777777;
 }
 .user_pic{
   display: inline-block;
@@ -386,6 +395,7 @@ height: 100%
   align-items: center;
   /* vertical-align: center; */
   text-align: center;
+  color: #777777;
 }
 .aixin77{
    width: 30rpx!important;

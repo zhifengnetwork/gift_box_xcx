@@ -2,11 +2,11 @@
   <view style="overflow: hidden;height:{{navheight+46}}px">
     <component title='評論' show_bol='{{false}}' side="{{true}}" quan="{{true}}" side="{{true}}"></component>
   </view>
-  <view class="comment" wx:for="{{item}}" wx:key>
+  <view class="comment" wx:for="{{items}}" wx:key>
     <view class="comment_t">
       <view class="comment_tl">
         <view class="comment_tlimg">
-          <iamge src="{{item.avatar}}" />
+          <image src="{{item.avatar}}" />
         </view>
       </view>
       <view class="comment_tc">
@@ -14,21 +14,21 @@
         <text>{{item.addtime}}</text>
       </view>
       <view class="comment_tr">
-        <view>回復</view>
+        <view bindtap="pageTo" data-id="{{item.sharing_id}}">回復</view>
       </view>
     </view>
     <view class="comment_c">
       {{item.comment_content}}
     </view>
-    <view class="comment_f">
+    <view class="comment_f" bindtap="pageTo" data-id="{{item.sharing_id}}">
       <view class="comment_fl">
         <view class="comment_flimg">
-          <image src="{{item.cover}}" />
+          <image mode="aspectFit" src="{{item.cover}}" />
         </view>
       </view>
       <view class="comment_fr">
-        <view>{{item.nickname}}</view>
-        <text>{{item.content}}</text>
+        <view class="view">{{item.nickname}}</view>
+        <view class="text">{{item.content}}</view>
       </view>
     </view>
   </view>

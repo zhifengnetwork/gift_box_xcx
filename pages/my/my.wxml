@@ -117,7 +117,7 @@
   <!-- 头像名字区域 -->
   <view class="my_tt">
     <view class="my_ttl">
-      <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo">{{item.nickname}}</button>
+      <button open-type="getUserInfo" bindgetuserinfo="bindGetUserInfo" style="font-weight: bold;">{{item.nickname}}</button>
       <text>{{item.user_no}}</text>
     </view>
     <view class="my_ttr" bindtap="mydetalis">
@@ -128,16 +128,22 @@
   <!-- 文章、个人信息区域 -->
   <view class="my_tf">
     <view class="my_tf_box front" bindtap="article">
-      <view>文章</view>
-      <text>{{item.article_num}}</text>
+      <view class="tf_box">
+        <view>文章</view>
+        <text>{{item.article_num}}</text>
+      </view>
     </view>
     <view class="my_tf_box front" bindtap="follow">
-      <view>關註</view>
-      <text>{{item.follow_num}}</text>
+      <view class="tf_box">
+        <view>關註</view>
+        <text>{{item.follow_num}}</text>
+      </view>
     </view>
     <view class="my_tf_box front" bindtap="fans">
-      <view>粉絲</view>
-      <text>{{item.fans_num}}</text>
+      <view class="tf_box">
+        <view>粉絲</view>
+        <text>{{item.fans_num}}</text>
+      </view>
     </view>
     <view class="my_tf_box2">
       <view class="back" bindtap="chooseImageBg">更改封面</view>
@@ -217,6 +223,7 @@
     </view>
     <view class="nav_contc">退還/售後</view>
     <view class="nav_contr">
+      <view class="progress">進度有更新</view>
       <view class="nav_contrimg">
         <image src="/images/right.png" />
       </view>

@@ -15,7 +15,8 @@ Page({
     songName: '',
     musicone: '',
     block:'',
-    xiabiao:null
+    xiabiao:null,
+    video: ''
   },
 
   // tab切换
@@ -57,6 +58,9 @@ Page({
     wx.navigateTo({
       url: '../select/select?id=' + that.data.music_id + '&url=' + that.data.src + '&songName=' + that.data.songName,
     })
+    // wx.redirectTo({
+    //   url: '../select/select?id=' + that.data.music_id + '&url=' + that.data.src + '&songName=' + that.data.songName,
+    // })
     that.audioCtx.pause()
   },
 
@@ -65,7 +69,11 @@ Page({
    * 生命周期函数--监听页面加载
    */
   onLoad: function(options) {
+    
     let that = this
+    that.setData({
+      video: getApp().globalData.image,
+    })
     // tab切换接口
     api.postJSON('api/sharing/get_sharing_music',function(res){
       if (res.data.status == 1){

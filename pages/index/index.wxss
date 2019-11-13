@@ -455,7 +455,7 @@ margin-right: 26rpx;
 background-color: white;
 opacity:0.3;
 float: left;
-
+transition: all .5s;
 }
 
 /*选中以后的小圆点样式 */

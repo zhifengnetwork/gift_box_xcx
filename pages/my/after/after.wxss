@@ -116,6 +116,13 @@ page {
   font-family:SourceHanSansCN-Regular;
   font-weight:bold;
   color:rgba(34,34,34,1);
+  width: 330rpx;
+  text-overflow: -o-ellipsis-lastline;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
 }
 .after_standard{
   font-size:22rpx;
@@ -150,7 +157,14 @@ page {
 }
 .after_bott{
   height: 90rpx;
-  position: relative;
+  /* position: relative; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.after_state{
+  color: #999999;
+  font-size: 24rpx;
 }
 .after_bottnum{
   float: left;
@@ -169,7 +183,7 @@ page {
 } */
 .after_payment{
   width:160rpx;
-  float: left;
+  /* float: left; */
   height:60rpx;
   border-radius:30rpx;
   text-align: center;
@@ -180,7 +194,7 @@ page {
   line-height: 60rpx;
   background:rgba(12,14,13,1);
   margin-left: 20rpx;
-  position: absolute;
-  bottom: -20rpx;
-  right: 20rpx;
+  /* position: absolute; */
+  /* bottom: -20rpx; */
+  /* right: 20rpx; */
 }

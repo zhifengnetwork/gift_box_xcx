@@ -22,6 +22,21 @@
   <view class="after_bott">
     <!-- <view class="after_bottnum">{{item.goods_list[0].type}}</view> -->
     <!-- <view class="after_bottprice">合计：HK$124.00</view> -->
+    <view class="after_state">{{
+      item.goods_list[0].type == 1 ? '仅退款' : 
+      item.goods_list[0].type == 2 ? '退款退货' :
+      item.goods_list[0].type == 3 ? '换货' :
+      '未知状态'
+      }} 
+      {{
+        item.goods_list[0].status == 0 ? '申请中' : 
+        item.goods_list[0].status == 1 ? '未同意' :
+        item.goods_list[0].status == 2  ? '已同意' :
+        item.goods_list[0].status == 3  ? '已完成' :
+        item.goods_list[0].status == 4  ? '已撤销' :
+        '未知状态'
+      }}
+      </view>
     <view class="after_payment" bindtap="refund" id="{{item.refund_id}}" >查看詳情</view>
   </view>
 </view>

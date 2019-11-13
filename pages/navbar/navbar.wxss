@@ -50,3 +50,6 @@
 .heise{
   background: #000;
 }
+.istouming{
+  background-color: transparent!important;
+}

@@ -97,7 +97,7 @@
 
 .desc {
   font-size: 32rpx;
-  color: #ccc;
+  color: #444444;
   overflow: hidden;
   text-overflow: ellipsis;
   display: -webkit-box;
@@ -105,11 +105,12 @@
   -webkit-box-orient: vertical;
   margin: 11rpx 0rpx;
   padding: 0 15rpx;
-  box-sizing: border-box
+  box-sizing: border-box;
+  min-height: 84rpx;
 }
 .price {
   font-size: 32rpx;
-  color: #ccc;
+  color: #333333;
   padding: 0 15rpx;
   box-sizing: border-box
 }

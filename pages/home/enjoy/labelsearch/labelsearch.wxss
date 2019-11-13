@@ -2,19 +2,100 @@ page{
   /* background: #000; */
   position: relative
 }
+.bg_box{
+  position: fixed;
+  width: 100%;
+  height: 100vh;
+  filter: blur(5px);
+  z-index: -1;
+  background-color: black;
+}
+.select{
+  height: 250rpx;
+  /* margin-top: 200rpx; */
+}
+.select_l{
+  width: 50%;
+  height: 250rpx;
+  float: left;
+  text-align: center;
+}
+.selectl_img{
+  width: 50rpx;
+  height: 50rpx;
+  overflow: hidden;
+  margin-top: 80rpx;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+.selectl_img image{
+  width: 100%;
+  height: 100%;
+}
+.select_l text{
+  font-size:23rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  line-height:50rpx;
+  /* margin-left: 50%; */
+}
+.select_r{
+  width: 50%;
+  height: 250rpx;
+  float: left;
+  text-align: center;
+}
+.selectr_img{
+  width: 50rpx;
+  height: 50rpx;
+  overflow: hidden;
+  margin-top: 80rpx;
+  margin-left: 50%;
+  transform: translate(-50%);
+}
+.selectr_img image{
+  width: 100%;
+  height: 100%;
+}
+.select_r text{
+  font-size:23rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(255,255,255,1);
+  line-height:50rpx;
+  /* margin-left: 50%; */
+}
+.send{
+  width: 500rpx;
+  height: 80rpx;
+  background: #fff;
+  font-size:25rpx;
+  font-family:SourceHanSansCN-Regular;
+  font-weight:bold;
+  color:rgba(51,51,51,1);
+  line-height:80rpx;
+  text-align: center;
+  border-radius:40rpx;
+  position: absolute;
+  bottom: 100rpx;
+  left: 50%;
+  transform: translate(-50%);
+}
 .bg{
   min-height: 100vh;
-  background-color: rgba(0,0,0,0.9)
+  background-color: rgba(0,0,0,0.7)
 }
 .bg_color{
   width: 100%;
   /* min-height: 100vh; */
   height: 560rpx;
-  position: absolute;
+  /* position: absolute;
   top: 250rpx;
   left: 0;
   z-index: 0;
-  filter: blur(10px);
+  filter: blur(10px); */
+  margin-top: 200rpx;
 }
 .sousou_ear{
   margin-left: 8%;

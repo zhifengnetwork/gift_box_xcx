@@ -19,12 +19,24 @@
     <image src="../../public/images/classify/shang.png" class="cen_pic"></image>
   </view>
 </view>
-<view class="paixu_ear" bindtap="xialakuang">
-  <view class="pai_ear">
-    <view class="pai" style="color:{{color}}">{{sort}}</view>
-    <image src="../../public/images/classify/san.png" class="san_pic"></image>
+
+<view class="screen_box">
+  <view class="paixu_ear" bindtap="xialakuang">
+    <view class="pai_ear">
+      <view class="pai" style="color:{{color}}">{{sort}}</view>
+      <image src="../../public/images/classify/san.png" class="san_pic"></image>
+    </view>
+  </view>
+  <!-- 点击推荐,出现下拉框 -->
+  <view class="xiala_ear" wx:if="{{zhanshidd}}">
+    <view class="xiala_ear_item" wx:for="{{checkboxArr}}" bindtap="xuanze" data-index="{{index}}" wx:key data-sortfangshi="{{item.sortting}}">
+      <view class="left_desc">{{item.name}}</view>
+      <view class="right_desc {{item.checked?'checkbox':''}}">
+      </view>
+    </view>
   </view>
 </view>
+
 <view class="shop_ear">
   <!-- <view class="didi" >
     <image src="../../public/images/classify/shoot.png" class="shoot_pic"></image>
@@ -40,12 +52,5 @@
   </view>
 
 </view>
-<!-- 点击推荐,出现下拉框 -->
-<view class="xiala_ear" wx:if="{{zhanshidd}}">
-  <view class="xiala_ear_item" wx:for="{{checkboxArr}}" bindtap="xuanze" data-index="{{index}}" wx:key data-sortfangshi="{{item.sortting}}">
-    <view class="left_desc">{{item.name}}</view>
-    <view class="right_desc {{item.checked?'checkbox':''}}">
-    </view>
-  </view>
-</view>
+
 </scroll-view>

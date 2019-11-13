@@ -1,5 +1,22 @@
 <component title='標籤' show_bol='{{false}}' side="{{true}}" quan="{{true}}"></component>
-<image src="{{bgImage}}" class="bg_color" mode="center"></image>
+<view class="bg_box">
+  <image src="{{bgImage}}" class="bg_color" mode="center"></image>
+  <view class="select">
+    <view class="select_l">
+      <view class="selectl_img">
+        <image src="/images/biaoqian.png" />
+      </view>
+      <text>標籤</text>
+    </view>
+    <view class="select_r">
+      <view class="selectr_img">
+        <image src="/images/tiezhi.png" />
+      </view>
+      <text>貼紙</text>
+    </view>
+  </view>
+  <view class="send">下一步</view>
+</view>
 <view class="bg">
 <view class="sousou_ear">
   <input type="text" class="find" placeholder="搜索" placeholder-style="color:#fff;" focus="false" bindinput="userNameInput" value='{{inputValue}}'></input>
@@ -140,7 +157,7 @@
 <view class="{{currentTab == 3 ? 'show':'hidden'}}">
   <scroll-view class="yonghu_ear">
     <!-- <view class="tab_t">推薦地點</view> -->
-    <view class="tab_c" wx:for="{{shangpin}}" bindtap="shangpinbox" data-id="{{item.goods_id}}" data-title="{{item.goods_name}}">
+    <view class="tab_c" wx:for="{{shangpin}}" wx:key bindtap="shangpinbox" data-id="{{item.goods_id}}" data-title="{{item.goods_name}}">
       <view class="tab_cl">
         <view class="tab_climg">
           <image src="{{item.picture}}" />

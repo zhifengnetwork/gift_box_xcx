@@ -73,7 +73,9 @@ Page({
     
   },
   onShow: function () {
-    
+    wx.showLoading({
+      title: '数据加载中',
+    })
     app.globalData.give.order_id = '';
     var that = this;
     that.setData({bujia:true,page:2})
@@ -85,35 +87,37 @@ Page({
           url: '../authorize/authorize',//授权页面
         })
       }else{
-        wx.showToast({
-          title: '数据加载中',
-          icon: 'loading',
-          success: function(){
-            api.getJSON('api/index/index', function (res) {
-                  if (res.data.status == 1) {
-                    that.setData({
-                      advimg: res.data.data.banner,
-                      hot_category: res.data.data.hot_category,
-                      jiali: res.data.data.jializhixuan,
-                      shishangdapai: res.data.data.shishangdapai,
-                      shishangzhinan: res.data.data.shishangzhinan,
-                      guess_like: res.data.data.guess_like,
-                      imgUrlslength: res.data.data.shishangzhinan.goods_list.length,
-                      xinpinshangshi: res.data.data.xinpinshangshi,
-                      xingxuanyoupin: res.data.data.xingxuanyoupin,
-                      guess_like: res.data.data.cainixihuan,
-                      chaoliudaogou: res.data.data.chaoliudaogou,
-                      imgs: res.data.data.banner,
-                      sharing_name: res.data.data.sharing_name,
-                      sharing: res.data.data.sharing,
-                      goods_list: res.data.data.cainixihuan.goods_list
-                    })
+        // wx.showToast({
+        //   title: '数据加载中',
+        //   icon: 'loading',
+        //   success: function(){
+            
+        //    }
+        // })
 
-                  }
-                })
-           },
+        api.getJSON('api/index/index', function (res) {
+          if (res.data.status == 1) {
+            that.setData({
+              advimg: res.data.data.banner,
+              hot_category: res.data.data.hot_category,
+              jiali: res.data.data.jializhixuan,
+              shishangdapai: res.data.data.shishangdapai,
+              shishangzhinan: res.data.data.shishangzhinan,
+              guess_like: res.data.data.guess_like,
+              imgUrlslength: res.data.data.shishangzhinan.goods_list.length,
+              xinpinshangshi: res.data.data.xinpinshangshi,
+              xingxuanyoupin: res.data.data.xingxuanyoupin,
+              guess_like: res.data.data.cainixihuan,
+              chaoliudaogou: res.data.data.chaoliudaogou,
+              imgs: res.data.data.banner,
+              sharing_name: res.data.data.sharing_name,
+              sharing: res.data.data.sharing,
+              goods_list: res.data.data.cainixihuan.goods_list
+            },()=>{
+              wx.hideLoading()
+            })
+          }
         })
-      
         
       }
     })
@@ -127,7 +131,6 @@ Page({
     this.setData({
       currentSwiper: e.detail.current
     });
-   
   },
   swiperChange2: function (e) {
     console.log("首先" + e.detail.current)
@@ -224,9 +227,9 @@ Page({
   },
   // 轮播图卡死问题
   changeGoodsSwip: function (e) {
-    this.setData({
-      currentSwiper: e.detail.current
-    });
+    // this.setData({
+    //   currentSwiper: e.detail.current
+    // });
   },
   onHide:function(){
     this.setData({autoplay:false})

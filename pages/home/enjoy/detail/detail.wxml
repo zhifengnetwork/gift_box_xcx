@@ -80,7 +80,8 @@
   </view>
   <!-- 评论区域 -->
   <view class="comment_ear" wx:if="{{detaillist.is_comment_open == 1 }}">
-    <view wx:if="{{status}}" style="background-color: #F6F5F5;">
+  <view style="background-color: #F6F5F5;border-radius:15rpx;">
+    <view wx:if="{{status}}" >
       <view class="ear" wx:for="{{comments}}" wx:if="{{index<3}}" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key>
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
         <text class="comment_text" bindtap="huifu" data-index="{{index}}">{{itemname.content}}</text>
@@ -96,7 +97,7 @@
     </view>
 
 
-    <view wx:if="{{!status}}" style="background-color: #F6F5F5;">
+    <view wx:if="{{!status}}">
       <view class="ear" wx:for="{{comments}}" data-userid="{{itemname.user_id}}" data-pid="{{itemname.id}}" data-nickname="{{itemname.nickname}}" wx:for-item="itemname" wx:key>
         <view class="nick_name_ear">{{itemname.nickname}}:</view>
         <text class="comment_text" bindtap="huifu" data-index="{{index}}">{{itemname.content}}</text>
@@ -111,13 +112,15 @@
       </view>
     </view>
 
-    <view class="looks_detail" bindtap="quanbu" wx:if="{{detaillist.comment_num>3}}">{{status  ? '查看全部' + comments.length + '條評論 >' : '收起評論 >'}} </view>
-
+    <view class="looks_detail" bindtap="quanbu" wx:if="{{comments.length > 3}}">
+      {{status  ? '查看全部' + comments.length + '條評論 >' : '收起評論 >'}} 
+    </view>
+  </view>
     <view class="white_ear" >
       <image src="../../../../images/white.png" class="white_pic"></image>
       <textarea wx:if="{{!showProup}}" auto-height class="weui-textarea" cursor-spacing="10" placeholder="{{placeholder}}" placeholder-style="font-size:26rpx;" bindblur="changeContext" focus="{{focus}}" value="{{hhh}}" />
     </view>
-
+    <view class="timer">{{time}}</view>
     
 
   </view>

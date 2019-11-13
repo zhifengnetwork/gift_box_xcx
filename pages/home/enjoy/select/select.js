@@ -304,10 +304,13 @@ Page({
       that.setData({
       audio_name: options.songName,
       audio_url: options.url,
+      // audio: options.url,
       audioid: options.id,
       // music_pop: true,
       })
       console.log(1234)
+      // this.audio = wx.createAudioContext('audio')
+      // this.audio.play()
     }
     // that.audioCtx = wx.createAudioContext('myAudio')
     // console.log(that.audioCtx)

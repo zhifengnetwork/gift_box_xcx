@@ -209,8 +209,14 @@ swiper {
 }
 .case-page {
   padding: 0 20rpx 20rpx 20rpx;
+  display: flex;
+  width: 100%;
+  box-sizing: border-box;
 }
 
+.masonry-list-left, .masonry-list-right {
+    flex: 1;
+}
 .list-masonry {
   column-count: 2;
   column-gap: 10rpx;
@@ -240,6 +246,7 @@ swiper {
   overflow: hidden;
   text-overflow: ellipsis;
   font-size: 26rpx;
+  font-weight: bold;
 }
 .nike{
   margin-left: 20rpx;

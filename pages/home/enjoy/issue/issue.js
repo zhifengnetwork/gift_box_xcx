@@ -83,7 +83,7 @@ Page({
                 if (res.data.status == 1) {
                   console.log(res)
                   wx.showToast({
-                    title: '發布成功',
+                    title: '發布成功,待审核!',
                     icon: 'none',
                     duration: 1000,
                     success: function(res) {

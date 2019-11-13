@@ -166,8 +166,8 @@ page{
   overflow: hidden;
 }
 .dianjile{
-  border: 9rpx solid #e1a74a;
-  color:#706a5d
+  border: 4rpx solid #e1a74a;
+  color:#706a5d;
 }
 .music_t{
   height: 62rpx;
@@ -191,7 +191,7 @@ page{
 }
 .music_tr{
   float: right;
-  width: 32rpx;
+  width: 40rpx;
   height: 32rpx;
   margin-top: 15rpx;
 }
@@ -216,7 +216,7 @@ page{
   background: #171917;
   border-radius: 24rpx;
   overflow: hidden;
-  text-align: center;
+  /* text-align: center; */
   position: relative;
 }
 .music_f .music_fbox:nth-child(1){
@@ -225,6 +225,7 @@ page{
   color: #fff;
   font-size: 22rpx;
   float: left;
+  text-align: center;
 }
 .music_f :last-of-type .music_fbox{
   margin-right: 40rpx;
@@ -249,10 +250,10 @@ page{
 }
 .music_ft{
   color: #fff;
-  font-size: 22rpx;
+  font-size: 20rpx;
   /* line-height: 40rpx; */
-  margin: 10rpx;
- word-break:break-all;
+  margin: 22rpx 12rpx 12rpx;
+  word-break:break-all;
   display:-webkit-box;
   -webkit-line-clamp:2;
   -webkit-box-orient:vertical;
@@ -262,6 +263,7 @@ page{
   font-size: 22rpx;
   color: #999999;
   line-height: 20rpx;
+  margin-left: 12rpx;
 }
 audio{
   width: 130rpx;
@@ -278,9 +280,10 @@ audio{
 }
 
 .gif{
-  width: 30rpx;
-  height: 30rpx;
+  width: 24rpx;
+  height: 24rpx;
   display: none;
+  margin-left: 14rpx;
 }
 .dianjile .gif{
   display: inline-block;

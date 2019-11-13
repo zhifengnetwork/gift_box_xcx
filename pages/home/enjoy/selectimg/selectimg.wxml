@@ -1,4 +1,5 @@
 <component title='享物圈' show_bol='{{false}}' side="{{true}}" quan="{{true}}" heise="{{true}}" my_class="{{true}}"></component>
+
 <movable-area class="imgbox" bindtap="guanbi">
   <image src="{{image}}" mode="aspectFill"></image>
   <!-- 拖拽的表情 -->

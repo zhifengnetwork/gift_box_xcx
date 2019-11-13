@@ -10,7 +10,7 @@
   </view>
   <view class="message_c">
     <view>通知消息</view>
-    <text>靠預告續命的電視劇 看不夠啊啊啊</text>
+    <text>您有新的消息,请点击查看!</text>
   </view>
   <view class="message_r">
     <view>11:41</view>

@@ -46,7 +46,7 @@ page {
 .text_detail {
   background: white;
   font-size: 27rpx;
-  padding: 80rpx 40rpx 0 40rpx;
+  padding: 40rpx 40rpx 0 40rpx;
   color: #333;
   line-height: 18px
 }
@@ -120,7 +120,7 @@ page {
 .xiala_ear {
   width: 100%;
   position: absolute;
-  top: 600rpx;
+  top: 70rpx;
   box-sizing: border-box;
   font-size: 30rpx;
   background: white;
@@ -177,4 +177,8 @@ page {
   -webkit-box-orient: vertical;
   padding: 0 15rpx;
   box-sizing: border-box
+}
+.screen_box{
+  position: relative;
+  width: 100%;
 }
